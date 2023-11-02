@@ -1,0 +1,112 @@
+site_name: Lily's Notebook
+#site_url: https://note.tonycrane.cc/
+repo_name: Lily/note
+#repo_url: https://github.com/TonyCrane/note/
+#edit_uri: tree/master/docs
+site_description: Lily's Notebook
+#copyright: Copyright &copy; 2022-2023 <a href="https://github.com/TonyCrane" target="_blank" rel="noopener">TonyCrane</a>
+
+theme: 
+  name: 'material'
+  language: 'zh'
+  icon: 
+    logo: material/notebook-outline
+  custom_dir: overrides
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font: false
+  palette:
+    - scheme: default
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: ignore
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+
+plugins:
+  - rss
+  - search
+  - glightbox:
+      width: 80%
+  - encryptcontent:  # now just for one page, need to be improved
+      title_prefix: "🔒 "
+      remember_password: True 
+      default_expire_dalay: 48
+      decryption_failure_message: '密码错误'
+      encrypted_something:
+        mkdocs-encrypted-toc: [nav, class]
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+        - writeups/AAA.md
+  - changelog
+  - statistics:
+      page_check_metadata: comment
+  - toc
+  - heti
+  - tikzautomata
+
+not_in_nav: todo.md
+
+nav:
+  - Home:
+    - index.md
+    - 更新记录: changelog.md
+    - 友链: links.md
+  - Computer Science:
+    - cs/index.md
+    - 编程语言 & ISA:
+      - cs/pl/index.md
+      - C/C++:
+        - C 语言杂项: cs/pl/c_cpp/c.md
+        - C++ 面向对象: cs/pl/c_cpp/oop.md
+      - Python:
+        - cs/pl/python/index.md
+        - Python 基础语法: cs/pl/python/basic.md
+        - NumPy: cs/pl/python/numpy.md
+        - PIL: cs/pl/python/pil.md
