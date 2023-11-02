@@ -69,21 +69,12 @@ plugins:
   - search
   - glightbox:
       width: 80%
-  - encryptcontent:  # now just for one page, need to be improved
-      title_prefix: "🔒 "
-      remember_password: True 
-      default_expire_dalay: 48
-      decryption_failure_message: '密码错误'
-      encrypted_something:
-        mkdocs-encrypted-toc: [nav, class]
+
   - git-revision-date-localized:
       type: datetime
       timezone: Asia/Shanghai
       locale: zh
       enable_creation_date: true
-      exclude:
-        - index.md
-        - writeups/AAA.md
   - changelog
   - statistics:
       page_check_metadata: comment
@@ -91,22 +82,5 @@ plugins:
   - heti
   - tikzautomata
 
-not_in_nav: todo.md
 
 nav:
-  - Home:
-    - index.md
-    - 更新记录: changelog.md
-    - 友链: links.md
-  - Computer Science:
-    - cs/index.md
-    - 编程语言 & ISA:
-      - cs/pl/index.md
-      - C/C++:
-        - C 语言杂项: cs/pl/c_cpp/c.md
-        - C++ 面向对象: cs/pl/c_cpp/oop.md
-      - Python:
-        - cs/pl/python/index.md
-        - Python 基础语法: cs/pl/python/basic.md
-        - NumPy: cs/pl/python/numpy.md
-        - PIL: cs/pl/python/pil.md
