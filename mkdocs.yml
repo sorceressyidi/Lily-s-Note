@@ -1,26 +1,34 @@
 site_name: Lily's Notebook
-#site_url: https://note.tonycrane.cc/
-repo_name: Lily/note
-#repo_url: https://github.com/TonyCrane/note/
-#edit_uri: tree/master/docs
+site_url: https://note.lilyarnold.cc/
 site_description: Lily's Notebook
-#copyright: Copyright &copy; 2022-2023 <a href="https://github.com/TonyCrane" target="_blank" rel="noopener">TonyCrane</a>
+copyright: Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
 
-theme: 
-  name: 'material'
-  language: 'zh'
-  icon: 
-    logo: material/notebook-outline
-  custom_dir: overrides
-  features:
-    - content.code.annotate
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.indexes
-    - navigation.top
-  font: false
+theme:
+  name: material
+  language: zh
   palette:
-    - scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+extra:
+  manifest: manifest.webmanifest
+  palette:     #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default  #配色方案：浅色模式
+      primary: brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      accent: brown  #强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+      toggle:
+        icon: material/weather-sunny #图标，太阳
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  
+      scheme: slate  #配色方案：深色模式
+      # primary: Brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      toggle:
+        icon: material/weather-night  #图标，月亮
+        name: Switch to light mode
+
 
 markdown_extensions:
   - toc:
@@ -41,6 +49,7 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.smartsymbols  #智能符号
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -53,19 +62,37 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-validation:
-  nav:
-    omitted_files: info
-    not_found: warn
-    absolute_links: info
-  links:
-    not_found: ignore
-    absolute_links: ignore
-    unrecognized_links: ignore
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 
 
 plugins:
   - search
-
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
 
 nav:
+  - Home:
+    - index.md
+  - Computer Science:
+    - Fundamentals of Data Structure:
+      - Maximum Subsequence Sum Problem: note/最大子列和.md
+      - 基础数据结构: note/基础数据结构.md
+    - x86-Assembly:
+      - 显卡输出: assembly/显卡输出.md
+      - 寄存器: assemvly/寄存器.md
+      - 堆栈 : assembly/堆栈.md
+    
+ 
+     
+   
+
+
