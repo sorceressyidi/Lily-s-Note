@@ -65,22 +65,7 @@ validation:
 
 
 plugins:
-  - rss
   - search
-  - glightbox:
-      width: 80%
-
-  - git-revision-date-localized:
-      type: datetime
-      timezone: Asia/Shanghai
-      locale: zh
-      enable_creation_date: true
-  - changelog
-  - statistics:
-      page_check_metadata: comment
-  - toc
-  - heti
-  - tikzautomata
 
 
 nav:
