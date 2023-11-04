@@ -95,11 +95,15 @@ nav:
     - x86-Assembly:
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
-      - 端口: assembly / 端口.md
+      - 端口: assembly/端口.md
       - 寄存器: assembly/寄存器.md
       - 堆栈 : assembly/堆栈.md
       - 中断: assembly/中断.md
       - 函数: assembly/函数.md
+  - Computer Vision :
+   - ML-4360:
+    - Basic Transformations : CV/ML-4369/BS/lec2.md
+    
     
  
      
