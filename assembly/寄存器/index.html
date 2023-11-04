@@ -358,6 +358,8 @@
       
         
       
+        
+      
     
     
     
@@ -485,6 +487,118 @@
                 
   
   
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DIP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            DIP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab1/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1:灰度图以及亮度调整
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab2/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2:灰度图二值化以及形态学操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab3/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3:对数增强可实现以及直方图均衡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -514,10 +628,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -528,8 +642,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             x86-Assembly
           </label>
@@ -1010,35 +1124,35 @@
 <li>stc : cf=1</li>
 <li>adc ax,bx;ax=ax+bx+cf</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    data segment
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    abc dw 32767
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    data ends
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    code segment
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    assume cs:code,ds:data
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    main:
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        mov ax,data
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        mov ds,ax
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        mov ax,[abc]
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        mov cx,16
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    again:
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        shl ax,1
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        jc is_one
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    is_zero:
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        mov dl,&#39;0&#39;
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        jmp out_put
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    is_one:
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        mov dl,&#39;1&#39;
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    out_put:
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        push ax
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        mov ah,2
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        int 21h
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        pop ax
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        sub cx,1
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        jnz again
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    mov ah,4Ch
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    int 21h
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    code ends
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    end main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">data</span><span class="w"> </span><span class="ow">seg</span><span class="nv">ment</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">abc</span><span class="w"> </span><span class="nv">dw</span><span class="w"> </span><span class="mi">32767</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nf">data</span><span class="w"> </span><span class="nv">ends</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nf">code</span><span class="w"> </span><span class="ow">seg</span><span class="nv">ment</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nf">assume</span><span class="w"> </span><span class="nb">cs</span><span class="p">:</span><span class="nv">code</span><span class="p">,</span><span class="nb">ds</span><span class="p">:</span><span class="nv">data</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nl">main:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nv">data</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,[</span><span class="nv">abc</span><span class="p">]</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mi">16</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nl">again:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nf">shl</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nf">jc</span><span class="w"> </span><span class="nv">is_one</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nl">is_zero:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="s">&#39;0&#39;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nf">jmp</span><span class="w"> </span><span class="nv">out_put</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nl">is_one:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="s">&#39;1&#39;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nl">out_put:</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mi">2</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nf">sub</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="nf">jnz</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mh">4Ch</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="nf">code</span><span class="w"> </span><span class="nv">ends</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nf">end</span><span class="w"> </span><span class="nv">main</span>
 </code></pre></div>
 </li>
 </ul>
@@ -1219,85 +1333,83 @@
 <li>
 <p>bp的隐含段地址是ss「用以代替sp，可获得堆栈中的内容』</p>
 </li>
-<li>
-<p>anti-debug 例子：</p>
-</li>
+<li>anti-debug 例子：</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>code segment
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>assume cs:code,ds:data
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>main:
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    jmp begin
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>old1h dw 0,0
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>prev_addr dw offset first,code  
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>[段地址+偏移地址：2x16位]
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>[如：A0 00:00 01 是一个地址]
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>begin:
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    push cs
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    pop ds
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    xor ax,ax
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    mov es,ax  ;es=0
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    mov bx,4   ;bx=4 es:[bx]-&gt;int1h 的中断向量(该函数的首地址) 其中前16位存放偏移地址0:[4]，后16位存放段地址0:[6]
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    push es:[bx]
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    pop old1h[0]
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    push es:[bx+2]
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    pop old1h[2]
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>    mov word ptr es:[bx],offset int1h
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>    mov word ptr es:[bx+2],cs
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>    pushf   [save old FL 把flag压入堆栈]
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>    pushf   [为了之后再把TF改成0][and ax,0FEFFh]
-<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>    pop ax  [不可用mov ax,fl 即fl和ip唯二不能被引用的寄存器]
-<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>    or ax,100h [将TF改成1]！TF=1
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>    push ax
-<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>    popf    [FL=AX]
-<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>first:
-<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>    nop  
-<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>    当某指令执行前TF=1 则该指令执行之后才会自动执行int01h单步中断
-<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>single——step_begin:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nf">code</span><span class="w"> </span><span class="ow">seg</span><span class="nv">ment</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nf">assume</span><span class="w"> </span><span class="nb">cs</span><span class="p">:</span><span class="nv">code</span><span class="p">,</span><span class="nb">ds</span><span class="p">:</span><span class="nv">data</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nl">main:</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nf">jmp</span><span class="w"> </span><span class="nv">begin</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nf">old1h</span><span class="w"> </span><span class="nv">dw</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nf">prev_addr</span><span class="w"> </span><span class="nv">dw</span><span class="w"> </span><span class="nv">offset</span><span class="w"> </span><span class="nv">first</span><span class="p">,</span><span class="nv">code</span><span class="w">  </span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="err">[段地址+偏移地址：2</span><span class="nf">x16位</span><span class="p">]</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="err">[如：</span><span class="nf">A0</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="w"> </span><span class="mi">01</span><span class="w"> </span><span class="err">是一个地址</span><span class="p">]</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nl">begin:</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">cs</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nf">xor</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">ax</span><span class="w">  </span><span class="c1">;es=0</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bx</span><span class="p">,</span><span class="mi">4</span><span class="w">   </span><span class="c1">;bx=4 es:[bx]-&gt;int1h 的中断向量(该函数的首地址) 其中前16位存放偏移地址0:[4]，后16位存放段地址0:[6]</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nv">old1h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nv">old1h</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="p">],</span><span class="nv">offset</span><span class="w"> </span><span class="nv">int1h</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span><span class="nb">cs</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span><span class="nf">pushf</span><span class="w">   </span><span class="p">[</span><span class="nv">save</span><span class="w"> </span><span class="nv">old</span><span class="w"> </span><span class="nv">FL</span><span class="w"> </span><span class="err">把</span><span class="nv">flag压入堆栈</span><span class="p">]</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="nf">pushf</span><span class="w">   </span><span class="p">[</span><span class="err">为了之后再把</span><span class="nv">TF改成0</span><span class="p">][</span><span class="nv">and</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mh">0FEFFh</span><span class="p">]</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ax</span><span class="w">  </span><span class="p">[</span><span class="err">不可用</span><span class="nv">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nv">fl</span><span class="w"> </span><span class="err">即</span><span class="nv">fl和ip唯二不能被引用的寄存器</span><span class="p">]</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="nf">or</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mh">100h</span><span class="w"> </span><span class="p">[</span><span class="err">将</span><span class="nv">TF改成1</span><span class="p">]</span><span class="err">！</span><span class="nv">TF</span><span class="err">=</span><span class="mi">1</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">    </span><span class="nf">popf</span><span class="w">    </span><span class="p">[</span><span class="nv">FL</span><span class="err">=</span><span class="nb">AX</span><span class="p">]</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="nl">first:</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">    </span><span class="nf">nop</span><span class="w">  </span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">    </span><span class="err">当某指令执行前</span><span class="nf">TF</span><span class="err">=</span><span class="mi">1</span><span class="w"> </span><span class="err">则该指令执行之后才会自动执行</span><span class="nv">int01h单步中断</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="nf">single</span><span class="err">——</span><span class="nv">step_begin</span><span class="p">:</span>
 <a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>
-<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>[first int 1h] 
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>int1h发生的时候 cpu会做以下的动作：
-<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>pushf      将flag压入堆栈
-<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>push cs    将下一条指令的段地址压入堆栈
-<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>push offset back 将下一条指令的偏移地址压入堆栈 &lt;- ss:sp
-<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>jmp dword ptr 0:[4]进入函数int1h
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="err">[</span><span class="nf">first</span><span class="w"> </span><span class="nv">int</span><span class="w"> </span><span class="mh">1h</span><span class="p">]</span><span class="w"> </span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="nf">int1h发生的时候</span><span class="w"> </span><span class="nv">cpu会做以下的动作</span><span class="err">：</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="nf">pushf</span><span class="w">      </span><span class="err">将</span><span class="nv">flag压入堆栈</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="nf">push</span><span class="w"> </span><span class="nb">cs</span><span class="w">    </span><span class="err">将下一条指令的段地址压入堆栈</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="nf">push</span><span class="w"> </span><span class="nv">offset</span><span class="w"> </span><span class="nv">back</span><span class="w"> </span><span class="err">将下一条指令的偏移地址压入堆栈</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nb">ss</span><span class="p">:</span><span class="nb">sp</span>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="nf">jmp</span><span class="w"> </span><span class="kt">dword</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="mi">0</span><span class="p">:[</span><span class="mi">4</span><span class="p">]</span><span class="err">进入函数</span><span class="nv">int1h</span>
 <a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
-<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>back:
-<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>    xor ax,ax
-<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>    mov cx,3
-<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>next：
-<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>    add ax,cx  ;已解密
-<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>    nop
-<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>    loop next
-<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>    popf
-<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>    nop
-<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>single_step_end:
-<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>    push old1h[0]
-<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>    pop es:[bx]
-<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>    push old1h[2]
-<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>    pop es:[bx+2]
-<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>    mov ah,4Ch
-<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>    int 21h
-<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>int1h:
-<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>    push bp
-<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>    mov bp,sp
-<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>    push bx
-<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>    push es
-<a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>    mov bx,cs:prev_addr[0]
-<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a>    mov es,cs:prev_addr[2]
-<a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a>    inc byte ptr es:[bx]
-<a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a>    mov bx,[bp+2]
-<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>    mov es,[bp+4]
-<a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a>    dec byte ptr es:[bx]
-<a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a>    mov cs:prev_addr[0],bx
-<a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>    mov cs:prev_addr[2],es 
-<a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a>    pop es
-<a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a>    pop bx
-<a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a>    pop bp
-<a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a>    iret[中断返回 cpu会执行pop ip ，pop cs，popf]
-<a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a>code ends
-<a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a>end main
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="nl">back:</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="w">    </span><span class="nf">xor</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mi">3</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="nf">next</span><span class="err">：</span>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">cx</span><span class="w">  </span><span class="c1">;已解密</span>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="w">    </span><span class="nf">nop</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">    </span><span class="nf">loop</span><span class="w"> </span><span class="nv">next</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="w">    </span><span class="nf">popf</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="w">    </span><span class="nf">nop</span>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="nl">single_step_end:</span>
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nv">old1h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nv">old1h</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mh">4Ch</span>
+<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a><span class="nl">int1h:</span>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bp</span><span class="p">,</span><span class="nb">sp</span>
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bx</span>
+<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bx</span><span class="p">,</span><span class="nb">cs</span><span class="p">:</span><span class="nv">prev_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">cs</span><span class="p">:</span><span class="nv">prev_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a><span class="w">    </span><span class="nf">inc</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span>
+<a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bx</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a><span class="w">    </span><span class="nf">dec</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span>
+<a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cs</span><span class="p">:</span><span class="nv">prev_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nb">bx</span>
+<a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cs</span><span class="p">:</span><span class="nv">prev_addr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="nb">es</span><span class="w"> </span>
+<a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bx</span>
+<a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a><span class="w">    </span><span class="nf">iret</span><span class="p">[</span><span class="err">中断返回</span><span class="w"> </span><span class="nv">cpu会执行pop</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="err">，</span><span class="nv">pop</span><span class="w"> </span><span class="nb">cs</span><span class="err">，</span><span class="nv">popf</span><span class="p">]</span>
+<a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a><span class="nf">code</span><span class="w"> </span><span class="nv">ends</span>
+<a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a><span class="nf">end</span><span class="w"> </span><span class="nv">main</span>
 </code></pre></div>
 
   <hr>
@@ -1372,6 +1484,8 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>

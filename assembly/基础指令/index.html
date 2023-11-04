@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/">
       
       
-        <link rel="prev" href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        <link rel="prev" href="../../DIP/lab3/lab3/">
       
       
         <link rel="next" href="../%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/">
@@ -358,6 +358,8 @@
       
         
       
+        
+      
     
     
     
@@ -485,6 +487,118 @@
                 
   
   
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DIP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            DIP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab1/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1:灰度图以及亮度调整
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab2/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2:灰度图二值化以及形态学操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab3/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3:对数增强可实现以及直方图均衡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -514,10 +628,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -528,8 +642,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             x86-Assembly
           </label>
@@ -1619,36 +1733,36 @@
 <li>jecxz 表示jump if ecx is zero</li>
 </ul>
 <h4 id="call-ret">call, ret指令<a class="headerlink" href="#call-ret" title="Permanent link">&para;</a></h4>
-<p><code>近调用：call near ptr dest
-近返回：retn，在多数情况下可写成ret
-远调用：call far ptr dest
-远返回：retf</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>近返回：retn，在多数情况下可写成ret
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>远调用：call far ptr dest
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>远返回：retf
+</code></pre></div>
 <h4 id="movpushpopxchg">通用数据传送指令：MOV，PUSH，POP，XCHG<a class="headerlink" href="#movpushpopxchg" title="Permanent link">&para;</a></h4>
 <ul>
 <li>mov byte ptr ds:[bx], byte ptr es:[di]</li>
 <li>错误原因:两个操作数<strong>不能同时为内存变量</strong>以下为正确写法:</li>
 </ul>
-<p><code>nasm
-mov al, es:[di]
-mov ds:[bx], al</code>
-* push、pop遵循先进后出(FILO)规则,例如:
-32位push、pop过程演示: <a href="http://cc.zju.edu.cn/bhh/stk1.txt">http://cc.zju.edu.cn/bhh/stk1.txt</a> 代码</p>
-<p>```nasm
-eax=12345678h
-ebx=89ABCDEFh
-ss=1000h
-sp=2000h
-现执行以下指令:
-push eax;(1)
-push ebx;(2)
-pop ebx;(3)
-pop eax;(4)
-<code>* exchange 指令</code>nasm
-mov ax,1
-mov bx,2
-xchg ax,bx
-xchg ax,ds:[bx] 可以交换寄存器和变量 不允许对两个变量进行交换
-````</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">bx</span><span class="p">],</span><span class="w"> </span><span class="nb">al</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>eax=12345678h
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>ebx=89ABCDEFh
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>ss=1000h
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>sp=2000h
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>现执行以下指令:
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>push eax;(1)
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>push ebx;(2)
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>pop ebx;(3)
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>pop eax;(4)
+</code></pre></div>
+<ul>
+<li>exchange 指令
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">bx</span><span class="p">,</span><span class="mi">2</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nf">xchg</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">bx</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nf">xchg</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">ds</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span><span class="w"> </span><span class="err">可以交换寄存器和变量</span><span class="w"> </span><span class="err">不允许对两个变量进行交换</span>
+</code></pre></div></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
@@ -1722,6 +1836,8 @@ xchg ax,ds:[bx] 可以交换寄存器和变量 不允许对两个变量进行交
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>
