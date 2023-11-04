@@ -1,0 +1,1581 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lily's Notebook">
+      
+      
+      
+        <link rel="canonical" href="https://note.lilyarnold.cc/assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/">
+      
+      
+        <link rel="prev" href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+      
+      
+        <link rel="next" href="../%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>基础指令 - Lily's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lily's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基础指令
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Lily's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maximum Subsequence Sum Problem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    x86-Assembly
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            x86-Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    逻辑运算和移位指令
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑运算和移位指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#andorxornottest" class="md-nav__link">
+    逻辑运算指令：AND，OR，XOR，NOT，TEST
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑运算指令：AND，OR，XOR，NOT，TEST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    移位指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    字符串操作指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmpsbcmpswcmpsd" class="md-nav__link">
+    字符串比较指令：CMPSB，CMPSW，CMPSD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scasbscasw-scasd" class="md-nav__link">
+    字符串扫描指令：scasb，scasw, scasd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    字符串操作指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C语言字符串函数转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    控制转移指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    循环指令：LOOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-ret" class="md-nav__link">
+    call, ret指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movpushpopxchg" class="md-nav__link">
+    通用数据传送指令：MOV，PUSH，POP，XCHG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assembly / 端口.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    逻辑运算和移位指令
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑运算和移位指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#andorxornottest" class="md-nav__link">
+    逻辑运算指令：AND，OR，XOR，NOT，TEST
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑运算指令：AND，OR，XOR，NOT，TEST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    移位指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    字符串操作指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmpsbcmpswcmpsd" class="md-nav__link">
+    字符串比较指令：CMPSB，CMPSW，CMPSD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scasbscasw-scasd" class="md-nav__link">
+    字符串扫描指令：scasb，scasw, scasd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    字符串操作指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C语言字符串函数转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    控制转移指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    循环指令：LOOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-ret" class="md-nav__link">
+    call, ret指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movpushpopxchg" class="md-nav__link">
+    通用数据传送指令：MOV，PUSH，POP，XCHG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>基础指令</h1>
+
+<h2 id="_1">逻辑运算和移位指令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="andorxornottest">逻辑运算指令：AND，OR，XOR，NOT，TEST<a class="headerlink" href="#andorxornottest" title="Permanent link">&para;</a></h3>
+<ul>
+<li>not:单目运算符 not ax =~ax</li>
+<li>test: 丢弃运算结果 ，保留标志位状态；本质上是and指令
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">9234h</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">test</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">8000h</span><span class="c1">; ZF=0, AX=9234h</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nf">jnz</span><span class="w"> </span><span class="nv">msb_is_one</span><span class="c1">; most significant bit最高位</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">;test和and的关系相当于cmp和sub的关系。</span>
+</code></pre></div></li>
+<li>判断某个寄存器是否为0的几种方法:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nf">test</span><span class="w"> </span><span class="nb">cl</span><span class="p">,</span><span class="w"> </span><span class="nb">cl</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">or</span><span class="w"> </span><span class="nb">cl</span><span class="p">,</span><span class="w"> </span><span class="nb">cl</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nf">and</span><span class="w"> </span><span class="nb">cl</span><span class="p">,</span><span class="w"> </span><span class="nb">cl</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nf">or</span><span class="w"> </span><span class="nb">cl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nf">cmp</span><span class="w"> </span><span class="nb">cl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></li>
+</ul>
+<h4 id="_2">移位指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>shl shr 逻辑左移、逻辑右移[针对非符号数]</li>
+<li>sal sar 算术左移、算术右移[针对符号数]</li>
+<li>sal=shl 均右边补零</li>
+<li>shr右移时左边永远补零， sar右移时左边补上元素的最高位 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">1011</span><span class="w"> </span><span class="mb">0110B</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">rol</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="c1">;  AH=0110 1101, CF=1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">;sal: shift arithmetic left 算术左移</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mb">11111100B</span><span class="c1">;AH=-4</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nf">sar</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mi">2</span><span class="c1">;AH=11111111 AH=-2</span>
+</code></pre></div></li>
+<li>sar对负数右移时左边要补1</li>
+<li>rcl: rotate through carry left 带进位循环左移</li>
+<li>rcr: rotate through carry right带进位循环右移
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mh">0B6h</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">clc</span><span class="w">       </span><span class="c1">;CF=0</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nf">rcl</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mi">1</span><span class="w">  </span><span class="c1">;CF=原来最高位的值 ah最地位会变成原CF的值</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">          </span><span class="c1">;ah=01101100 CF=1</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mh">0B6h</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nf">stc</span><span class="w">         </span><span class="c1">; CF=1</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nf">rcl</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="c1">; CF=1 AH=1011 0110 移位前</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="c1">; CF=1 AH=0110 1101 移位后</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mh">0B6h</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nf">stc</span><span class="w">         </span><span class="c1">; CF=1</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nf">rcr</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="c1">; AH=1011 0110  CF=1移位前</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="c1">; AH=1101 1011  CF=0移位后</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mh">0B6h</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nf">stc</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nf">rcl</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="c1">;  CF=1 AH=0110 1101</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">           </span><span class="c1">;dx   ax</span>
+</code></pre></div></li>
+<li>shl, shr, rol, ror, rcl, rcr 最后移出去的那一位一定在CF中。 </li>
+</ul>
+<blockquote>
+<p>假定要把AX中的16位值转化成二进制输出:
+* 解法1:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nl">next:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nf">shl</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nf">jc</span><span class="w"> </span><span class="nv">is_1</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nl">is_0:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;0&#39;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nf">jmp</span><span class="w"> </span><span class="nv">output</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nl">is_1:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;1&#39;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nl">output:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nf">push</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nf">pop</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nf">dec</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nf">jnz</span><span class="w"> </span><span class="nv">next</span>
+</code></pre></div>
+* 解法2:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nl">next:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nf">shl</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;0&#39;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nf">adc</span><span class="w"> </span><span class="nb">dl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nl">output:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nf">push</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nf">pop</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nf">dec</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nf">jnz</span><span class="w"> </span><span class="nv">next</span>
+</code></pre></div></p>
+</blockquote>
+<h4 id="_3">字符串操作指令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h5 id="movsbmovswmovsd">字符串传送指令：MOVSB，MOVSW，MOVSD<a class="headerlink" href="#movsbmovswmovsd" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>rep movsb : 其中rep表示repeat，s表示string，b表示byte</p>
+</li>
+<li>
+<p>在执行此指令前要做以下准备工作：</p>
+</li>
+<li>①ds:si-&gt;源字符串(si就是source index)</li>
+<li>②es:di-&gt;目标字符串(di就是destination index)</li>
+<li>③cx=移动次数</li>
+<li>④DF=0即方向标志设成正方向(用指令cld)</li>
+<li>
+<p>rep movsb所做的操作如下:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nl">again:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">   </span><span class="nf">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nf">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">si</span><span class="p">]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nf">if</span><span class="p">(</span><span class="nv">df</span><span class="err">==</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="err">{</span><span class="nf">si</span><span class="o">++</span><span class="c1">; di++;}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nf">else</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="err">{</span><span class="nf">si</span><span class="o">--</span><span class="c1">; di--;}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nf">goto</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nl">done:</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>例子: 要把以下左侧4个字节复制到右侧</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1000:0000 &#39;A&#39;        2000:0000  &#39;A&#39;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>1000:0001 &#39;B&#39;        2000:0001  &#39;B&#39;
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>1000:0002 &#39;C&#39;        2000:0002  &#39;C&#39;
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>1000:0003 00         2000:0003  00
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">1000h</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">,</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">si</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w">      </span><span class="c1">; mov si, 3</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">2000h</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w">      </span><span class="c1">; mov di, 3</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nf">cld</span><span class="w">             </span><span class="c1">; std</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+</code></pre></div></p>
+<ul>
+<li>rep movsw的操作过程:[word]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>again:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>if(cx == 0)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   goto done;
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>word ptr es:[di] = word ptr ds:[si]
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>if(df==0)
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>{si+=2; di+=2;}
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>else
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>{si-=2; di-=2;}
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>cx--
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>goto again
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>done:
+</code></pre></div></li>
+<li>
+<p>rep movsd的操作过程:[dword]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>again:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>if(cx == 0)
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>   goto done;
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>dword ptr es:[di] = dword ptr ds:[si]
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>if(df==0)
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>{si+=4; di+=4;}
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>else
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>{si-=4; di-=4;}
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>cx--
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>goto again
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>done:
+</code></pre></div></p>
+</li>
+<li>
+<p>在32位系统下, 假定<code>ds:esi-&gt;源内存块</code>, <code>es:edi-&gt;目标块</code>, <code>DF=0</code>, 则当要复制的字节数ecx不是4的倍数时，可以做如下处理:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nf">push</span><span class="w"> </span><span class="nb">ecx</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nf">shr</span><span class="w"> </span><span class="nb">ecx</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nf">rep</span><span class="w"> </span><span class="nv">movsd</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nf">pop</span><span class="w"> </span><span class="nb">ecx</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nf">and</span><span class="w"> </span><span class="nb">ecx</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="c1">; 相当于ecx = ecx % 4</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h4 id="cmpsbcmpswcmpsd">字符串比较指令：CMPSB，CMPSW，CMPSD<a class="headerlink" href="#cmpsbcmpswcmpsd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>cmpsb [jz je]</p>
+<ul>
+<li>比较byte ptr ds:[si]与byte ptr es:[di]</li>
+<li>当DF=0时，si++，di++</li>
+<li>当DF=1时，si--，di--</li>
+<li>自动对si di更新[为下一次移动准备]</li>
+</ul>
+</li>
+<li>
+<p>repe cmpsb</p>
+</li>
+<li>若本次比较相等则继续比较下一个(repeat if equal)</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>again:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>if(cx == 0) goto done;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>temp=byte ptr ds:[si]-byte ptr es:[di]
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>old_fl=FL
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>当DF=0时，si++，di++
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>当DF=1时，si--，di--
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>cx--
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>FL=old_fl
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>if (ZF==1) goto again
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>done:
+</code></pre></div>
+* cx!=0 也可能提前结束循环
+* repne cmpsb
+  * 若本次比较不等则继续比较下一个(repeat if not equal)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>again:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>if(cx == 0) goto done;
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>temp=byte ptr ds:[si]-byte ptr es:[di]
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>old_fl=FL
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>当DF=0时，si++，di++
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>当DF=1时，si--，di--
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>cx--
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>FL=old_fl
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>if (ZF==0) goto again
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>done:
+</code></pre></div></p>
+<h4 id="scasbscasw-scasd">字符串扫描指令：scasb，scasw, scasd<a class="headerlink" href="#scasbscasw-scasd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>scasb:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nf">cmp</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nf">di</span><span class="o">++</span><span class="c1">; (当DF=1时，为di--)</span>
+</code></pre></div></li>
+<li>
+<p>repne scasb:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nl">next:</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="nv">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nf">cmp</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="nf">di</span><span class="o">++</span><span class="c1">; 当DF=1时，为di--</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">      </span><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nf">je</span><span class="w"> </span><span class="nv">done</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="nf">goto</span><span class="w"> </span><span class="nv">next</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nl">done:</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>例子: 假定从地址1000:2000开始存放一个字符串，请计算该字符串的长度并存放到CX中。假定字符串以ASCII码0结束，字符串长度不包括0。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">1000h</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="w"> </span><span class="mh">2000h</span><span class="c1">; ES:DI-&gt;目标串</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mh">0FFFFh</span><span class="c1">; CX=最多找FFFF次</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="c1">; AL=待找的字符</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nf">cld</span><span class="w">       </span><span class="c1">; DF=0，表示正方向</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nf">repne</span><span class="w"> </span><span class="nv">scasb</span><span class="c1">; again:</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nf">not</span><span class="w"> </span><span class="nb">cx</span><span class="w">      </span><span class="c1">; 相当于cx=FFFF-cx</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nf">dec</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1">;上述两条指令也可以替换成以下两条指令:</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">;inc cx</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1">;not cx</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">;not cx相当于cx=FFFF-cx </span>
+</code></pre></div></p>
+</li>
+<li>repe scasb<ul>
+<li>假定从地址1000:0000起存放以下字符串"###ABC"，现要求跳过前面的#，把后面剩余的全部字符复制到2000:0000中</li>
+<li>假定es=1000h, di=0, cx=7, 则</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;#&#39;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nf">cld</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nf">repe</span><span class="w"> </span><span class="nv">scasb</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nf">dec</span><span class="w"> </span><span class="nb">di</span><span class="c1">; ES:DI-&gt;&quot;ABC&quot;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nf">inc</span><span class="w"> </span><span class="nb">cx</span><span class="c1">; CX=4</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nf">pop</span><span class="w"> </span><span class="nb">ds</span><span class="c1">; DS=ES</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nf">pop</span><span class="w"> </span><span class="nb">si</span><span class="c1">; SI=DI</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mh">2000h</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+</code></pre></div>
+<h4 id="_4">字符串操作指令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>stosb:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nl">es:</span><span class="err">[</span><span class="nf">di</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nb">AL</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nf">di</span><span class="o">++</span><span class="c1">; DF=1时为di--</span>
+</code></pre></div></li>
+<li>rep stosb: 循环CX次stosb
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nl">again:</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="nv">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nl">es:</span><span class="err">[</span><span class="nf">di</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nb">al</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nf">di</span><span class="o">++</span><span class="c1">; 当DF=1时, 为DI--</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nf">goto</span><span class="w"> </span><span class="nv">again</span><span class="c1">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nl">done:</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">memset</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>lodsb
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nf">al</span><span class="err">=</span><span class="nb">ds</span><span class="p">:[</span><span class="nb">si</span><span class="p">]</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nf">SI</span><span class="o">++</span><span class="c1">;当DF=1时, 为SI--</span>
+</code></pre></div></li>
+<li>Exercise:</li>
+<li>设ds:si-&gt; "##AB#12#XY"</li>
+<li>es:di指向一个空的数组,</li>
+<li>CX=11</li>
+<li>通过编程过滤#最后使得es:di -&gt;"AB12XY"</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nf">cld</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nl">again:</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">   </span><span class="nf">lodsb</span><span class="w"> </span><span class="c1">; AL=DS:[SI], SI++</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">         </span><span class="c1">; mov al, ds:[si]</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">         </span><span class="c1">; inc si</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">   </span><span class="nf">cmp</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;#&#39;</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">   </span><span class="nf">je</span><span class="w">   </span><span class="nv">next</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">   </span><span class="nf">stosb</span><span class="w"> </span><span class="c1">; ES:[DI]=AL, DI++</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">         </span><span class="c1">; mov es:[di], al</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">         </span><span class="c1">; inc di</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="nl">next:</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">   </span><span class="nf">dec</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">   </span><span class="nf">jnz</span><span class="w"> </span><span class="nv">again</span>
+</code></pre></div>
+<h4 id="c">C语言字符串函数转换<a class="headerlink" href="#c" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nl">strlen:</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bp</span><span class="p">,</span><span class="nb">sp</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nv">data</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mh">0FFFFh</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="nf">xor</span><span class="w"> </span><span class="nb">al</span><span class="p">,</span><span class="nb">al</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">    </span><span class="nf">repne</span><span class="w"> </span><span class="nv">scasb</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">    </span><span class="nf">inc</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">    </span><span class="nf">not</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nb">cx</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">sp</span><span class="p">,</span><span class="nb">bp</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="nl">_memcpy:</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bp</span><span class="p">,</span><span class="nb">sp</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">si</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nv">data</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">si</span><span class="p">,</span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a><span class="w">    </span><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">si</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">sp</span><span class="p">,</span><span class="nb">bp</span>
+<a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a><span class="nl">_strncpy:</span>
+<a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bp</span><span class="p">,</span><span class="nb">sp</span>
+<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">si</span>
+<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-54" name="__codelineno-23-54" href="#__codelineno-23-54"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">si</span><span class="p">,</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-23-56" name="__codelineno-23-56" href="#__codelineno-23-56"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">si</span>
+<a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a><span class="w">    </span><span class="nf">call</span><span class="w"> </span><span class="nv">_strlen</span>
+<a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a><span class="w">    </span><span class="nf">cmp</span><span class="w"> </span><span class="nb">ax</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-23-60" name="__codelineno-23-60" href="#__codelineno-23-60"></a><span class="w">    </span><span class="nf">jl</span><span class="w"> </span><span class="nv">tricky_form</span>
+<a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-23-62" name="__codelineno-23-62" href="#__codelineno-23-62"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-63" name="__codelineno-23-63" href="#__codelineno-23-63"></a><span class="w">    </span><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+<a id="__codelineno-23-64" name="__codelineno-23-64" href="#__codelineno-23-64"></a><span class="w">    </span><span class="nl">tricky_form:</span>
+<a id="__codelineno-23-65" name="__codelineno-23-65" href="#__codelineno-23-65"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">dx</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-23-66" name="__codelineno-23-66" href="#__codelineno-23-66"></a><span class="w">    </span><span class="nf">sub</span><span class="w"> </span><span class="nb">dx</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-67" name="__codelineno-23-67" href="#__codelineno-23-67"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-68" name="__codelineno-23-68" href="#__codelineno-23-68"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-69" name="__codelineno-23-69" href="#__codelineno-23-69"></a><span class="w">    </span><span class="nf">rep</span><span class="w"> </span><span class="nv">movsb</span>
+<a id="__codelineno-23-70" name="__codelineno-23-70" href="#__codelineno-23-70"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="nb">dx</span>
+<a id="__codelineno-23-71" name="__codelineno-23-71" href="#__codelineno-23-71"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-23-72" name="__codelineno-23-72" href="#__codelineno-23-72"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-73" name="__codelineno-23-73" href="#__codelineno-23-73"></a><span class="w">    </span><span class="nf">rep</span><span class="w"> </span><span class="nv">stosb</span>
+<a id="__codelineno-23-74" name="__codelineno-23-74" href="#__codelineno-23-74"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-75" name="__codelineno-23-75" href="#__codelineno-23-75"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">si</span>
+<a id="__codelineno-23-76" name="__codelineno-23-76" href="#__codelineno-23-76"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">ds</span>
+<a id="__codelineno-23-77" name="__codelineno-23-77" href="#__codelineno-23-77"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-78" name="__codelineno-23-78" href="#__codelineno-23-78"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">sp</span><span class="p">,</span><span class="nb">bp</span>
+<a id="__codelineno-23-79" name="__codelineno-23-79" href="#__codelineno-23-79"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-80" name="__codelineno-23-80" href="#__codelineno-23-80"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-23-81" name="__codelineno-23-81" href="#__codelineno-23-81"></a><span class="nl">_memset:</span>
+<a id="__codelineno-23-82" name="__codelineno-23-82" href="#__codelineno-23-82"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-83" name="__codelineno-23-83" href="#__codelineno-23-83"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">bp</span><span class="p">,</span><span class="nb">sp</span>
+<a id="__codelineno-23-84" name="__codelineno-23-84" href="#__codelineno-23-84"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-85" name="__codelineno-23-85" href="#__codelineno-23-85"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-86" name="__codelineno-23-86" href="#__codelineno-23-86"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="nv">data</span>
+<a id="__codelineno-23-87" name="__codelineno-23-87" href="#__codelineno-23-87"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-88" name="__codelineno-23-88" href="#__codelineno-23-88"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-23-89" name="__codelineno-23-89" href="#__codelineno-23-89"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-23-90" name="__codelineno-23-90" href="#__codelineno-23-90"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,[</span><span class="nb">bp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-23-91" name="__codelineno-23-91" href="#__codelineno-23-91"></a><span class="w">    </span><span class="nf">cld</span>
+<a id="__codelineno-23-92" name="__codelineno-23-92" href="#__codelineno-23-92"></a><span class="w">    </span><span class="nf">rep</span><span class="w"> </span><span class="nv">stosb</span>
+<a id="__codelineno-23-93" name="__codelineno-23-93" href="#__codelineno-23-93"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-94" name="__codelineno-23-94" href="#__codelineno-23-94"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-95" name="__codelineno-23-95" href="#__codelineno-23-95"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">sp</span><span class="p">,</span><span class="nb">bp</span>
+<a id="__codelineno-23-96" name="__codelineno-23-96" href="#__codelineno-23-96"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">bp</span>
+<a id="__codelineno-23-97" name="__codelineno-23-97" href="#__codelineno-23-97"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-23-98" name="__codelineno-23-98" href="#__codelineno-23-98"></a>
+<a id="__codelineno-23-99" name="__codelineno-23-99" href="#__codelineno-23-99"></a><span class="nl">_clrscr:</span>
+<a id="__codelineno-23-100" name="__codelineno-23-100" href="#__codelineno-23-100"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-101" name="__codelineno-23-101" href="#__codelineno-23-101"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-102" name="__codelineno-23-102" href="#__codelineno-23-102"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mh">0B800h</span>
+<a id="__codelineno-23-103" name="__codelineno-23-103" href="#__codelineno-23-103"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">,</span><span class="nb">ax</span>
+<a id="__codelineno-23-104" name="__codelineno-23-104" href="#__codelineno-23-104"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-23-105" name="__codelineno-23-105" href="#__codelineno-23-105"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="mh">0000h</span>
+<a id="__codelineno-23-106" name="__codelineno-23-106" href="#__codelineno-23-106"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mi">2000</span>
+<a id="__codelineno-23-107" name="__codelineno-23-107" href="#__codelineno-23-107"></a><span class="nl">again:</span>
+<a id="__codelineno-23-108" name="__codelineno-23-108" href="#__codelineno-23-108"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">],</span><span class="nb">ax</span>
+<a id="__codelineno-23-109" name="__codelineno-23-109" href="#__codelineno-23-109"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="nb">di</span><span class="p">,</span><span class="mi">2</span>
+<a id="__codelineno-23-110" name="__codelineno-23-110" href="#__codelineno-23-110"></a><span class="w">    </span><span class="nf">sub</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-23-111" name="__codelineno-23-111" href="#__codelineno-23-111"></a><span class="w">    </span><span class="nf">jnz</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-23-112" name="__codelineno-23-112" href="#__codelineno-23-112"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">di</span>
+<a id="__codelineno-23-113" name="__codelineno-23-113" href="#__codelineno-23-113"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="nb">es</span>
+<a id="__codelineno-23-114" name="__codelineno-23-114" href="#__codelineno-23-114"></a><span class="w">    </span><span class="nf">ret</span>
+</code></pre></div>
+<h4 id="_5">控制转移指令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>jmp的3种类型
+①jmp short target           ; 短跳
+②jmp near ptr target    ; 近跳
+③jmp far ptr target     ; 远跳</li>
+<li>一般情况下，编译器会自动度量跳跃的距离，因此我们在
+写源程序的时候不需要加上short、near ptr、far ptr等类型修饰即上述三种写法一律可以简化为jmp target。</li>
+<li>短跳指令[only one byte]</li>
+<li>格式 jmp + 偏移地址或标号</li>
+<li>以下条件跳转指令也都属于短跳: <code>jc jnc jo jno js jns jz jnz ja jb jae jbe jg jge jl jle jp jnp</code> </li>
+<li>短跳指令的机器码
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>     地址            机器码   汇编指令  
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    1D3E:0090     ...
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    1D3E:00F0
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    1D3E:0100     EB06     jmp  0108h
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    1D3E:0102     B402     mov  ah，2
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    1D3E:0104     B241     mov  dl, 41h
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    1D3E:0106     CD21     int  21h
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>    1D3E:0108     B44C     mov  ah，4Ch
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>    1D3E:010A     CD21     int  21h
+</code></pre></div></li>
+<li>短跳太远跳不过去的解决办法
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nf">cmp</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="nb">bx</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="err">（</span><span class="no">je</span><span class="w">  </span><span class="kd">equ</span><span class="nb">al</span><span class="c1">; jump out of range）</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nf">jne</span><span class="w"> </span><span class="nv">not_equal</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="no">jmp</span><span class="w"> </span><span class="kd">equ</span><span class="nb">al</span><span class="c1">; 近跳</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nl">not_equal:</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nf">...</span><span class="c1">; 假定这里省略指令的机器码总长度超过7Fh字节</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nl">equal:</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nf">...</span>
+</code></pre></div></li>
+<li>近跳指令[two bytes]</li>
+<li>近跳指令的3种格式
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nf">jmp</span><span class="w"> </span><span class="err">偏移地址或标号</span><span class="w">        </span><span class="c1">; 如jmp 1000h</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nf">jmp</span><span class="w"> </span><span class="mi">16</span><span class="err">位寄存器</span><span class="w">      </span><span class="c1">; 如jmp bx</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nf">jmp</span><span class="w"> </span><span class="mi">16</span><span class="err">位变量</span><span class="w">       </span><span class="c1">; 如jmp word ptr [addr]</span>
+</code></pre></div></li>
+<li>远跳指令[跨段跳跃]</li>
+<li>远跳指令的2种格式<ul>
+<li>jmp 段地址:偏移地址</li>
+<li>jmp dword ptr 32位变量</li>
+</ul>
+</li>
+<li>远跳指令的机器码<ul>
+<li><code>jmp 1234h:5678h</code>; 机器码为<code>0EAh,78h,56h,34h,12h</code></li>
+</ul>
+</li>
+<li>远跳没有用△，而是直接地址.远跳到某个常数地址时,在源程序中不能直接用jmp指令，而应该改用机器码0EAh定义，如:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">db</span><span class="w"> </span><span class="mh">0EAh</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kd">dw</span><span class="w"> </span><span class="mh">5678h</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="kd">dw</span><span class="w"> </span><span class="mh">1234h</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="kd">db</span><span class="w"> </span><span class="mh">0EAh</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="kd">dd</span><span class="w"> </span><span class="mh">0FFFF0000h</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="c1">;或 dw 0000h</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c1">;dw 0FFFFh</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1">;上述3行定义合在一起表示jmp 1234h:5678h</span>
+</code></pre></div></li>
+<li>jmp dword ptr 32位变量的用法
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nf">mov</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">bx</span><span class="p">],</span><span class="mh">1234h</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nf">mov</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">bx</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span><span class="mh">5678h</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nf">jmp</span><span class="w"> </span><span class="kt">dword</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">bx</span><span class="p">]</span><span class="w"> </span><span class="c1">;jmp 5678h:1234h</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nf">data</span><span class="w"> </span><span class="ow">seg</span><span class="nv">ment</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nf">addr</span><span class="w"> </span><span class="nv">dw</span><span class="w"> </span><span class="mh">0000h</span><span class="p">,</span><span class="w"> </span><span class="mh">0FFFFh</span><span class="w"> </span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1">;或写成addr dd 0FFFF0000h</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nf">data</span><span class="w"> </span><span class="nv">ends</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nf">code</span><span class="w"> </span><span class="ow">seg</span><span class="nv">ment</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="nf">assume</span><span class="w"> </span><span class="nb">cs</span><span class="p">:</span><span class="nv">code</span><span class="p">,</span><span class="w"> </span><span class="nb">ds</span><span class="p">:</span><span class="nv">data</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="nl">main:</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="nv">data</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ds</span><span class="p">,</span><span class="w"> </span><span class="nb">ax</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="nf">jmp</span><span class="w"> </span><span class="kt">dword</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="p">[</span><span class="nv">addr</span><span class="p">]</span><span class="w"> </span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="c1">;相当于jmp FFFF:0000</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="nf">code</span><span class="w"> </span><span class="nv">ends</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="nf">end</span><span class="w"> </span><span class="nv">main</span>
+</code></pre></div></li>
+</ul>
+<h4 id="loop">循环指令：LOOP<a class="headerlink" href="#loop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>loop  dest的操作过程:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nf">CX</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nb">CX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w">     </span><span class="c1">; 循环次数减1</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">CX</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">     </span><span class="c1">; 若CX不等于0，则</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="nf">goto</span><span class="w">  </span><span class="nv">dest</span><span class="w">  </span><span class="c1">; 跳转至dest</span>
+</code></pre></div></li>
+<li>例: 求1+2+3的和
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nl">next:</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nf">add</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="nb">cx</span><span class="c1">; ax +3, +2, +1</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="nf">loop</span><span class="w"> </span><span class="nv">next</span><span class="c1">; cx=2, 1, 0</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">           </span><span class="c1">; dec cx</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">           </span><span class="c1">; jnz next  先-1再判断</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">           </span><span class="c1">;--cx初始值=0时能达到最大循环次数 10000h次</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="nf">mov</span><span class="w"> </span><span class="nb">cx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="nf">jcxz</span><span class="w"> </span><span class="nv">done</span><span class="w">  </span><span class="err">这条指令可以防止</span><span class="nv">cx为0时进入循环</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="nl">next:</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="nf">add</span><span class="w"> </span><span class="nb">ax</span><span class="p">,</span><span class="w"> </span><span class="nb">cx</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="nf">loop</span><span class="w"> </span><span class="nv">next</span><span class="c1">; 循环10000h次</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="nl">done:</span>
+</code></pre></div></li>
+<li>jecxz 表示jump if ecx is zero</li>
+</ul>
+<h4 id="call-ret">call, ret指令<a class="headerlink" href="#call-ret" title="Permanent link">&para;</a></h4>
+<p><code>近调用：call near ptr dest
+近返回：retn，在多数情况下可写成ret
+远调用：call far ptr dest
+远返回：retf</code></p>
+<h4 id="movpushpopxchg">通用数据传送指令：MOV，PUSH，POP，XCHG<a class="headerlink" href="#movpushpopxchg" title="Permanent link">&para;</a></h4>
+<ul>
+<li>mov byte ptr ds:[bx], byte ptr es:[di]</li>
+<li>错误原因:两个操作数<strong>不能同时为内存变量</strong>以下为正确写法:</li>
+</ul>
+<p><code>nasm
+mov al, es:[di]
+mov ds:[bx], al</code>
+* push、pop遵循先进后出(FILO)规则,例如:
+32位push、pop过程演示: <a href="http://cc.zju.edu.cn/bhh/stk1.txt">http://cc.zju.edu.cn/bhh/stk1.txt</a> 代码</p>
+<p>```nasm
+eax=12345678h
+ebx=89ABCDEFh
+ss=1000h
+sp=2000h
+现执行以下指令:
+push eax;(1)
+push ebx;(2)
+pop ebx;(3)
+pop eax;(4)
+<code>* exchange 指令</code>nasm
+mov ax,1
+mov bx,2
+xchg ax,bx
+xchg ax,ds:[bx] 可以交换寄存器和变量 不允许对两个变量进行交换
+````</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:18:52</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:18:52</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
