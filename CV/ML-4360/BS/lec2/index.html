@@ -13,6 +13,8 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/BS/lec2/">
       
       
+        <link rel="prev" href="../../../../assembly/%E5%87%BD%E6%95%B0/">
+      
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Lec2 for ML-4360 - Lily's Notebook</title>
+        <title>Basic Transformations - Lily's Notebook</title>
       
     
     
@@ -105,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec2 for ML-4360
+              Basic Transformations
             
           </span>
         </div>
@@ -220,17 +222,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../ML-4369/BS/lec2.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -682,6 +688,8 @@
       
   
   
+    
+  
   
     
     
@@ -695,12 +703,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -714,7 +722,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
@@ -725,6 +733,8 @@
                 
   
   
+    
+  
   
     
     
@@ -735,12 +745,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -754,7 +764,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
@@ -765,9 +775,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../ML-4369/BS/lec2.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -776,6 +806,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-primitives-transformations" class="md-nav__link">
+    2.1 Primitives &amp; Transformations
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Primitives & Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homogeneous" class="md-nav__link">
+    \(Homogeneous\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformations" class="md-nav__link">
+    \(Transformations\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" class="md-nav__link">
+    Direct Linear Transform for Homography Estimation[algorithm DLT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-geometric-image-formation" class="md-nav__link">
+    2.2 Geometric Image Formation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-photometric-image-formation" class="md-nav__link">
+    2.3 Photometric Image Formation
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Photometric Image Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rendering-equation" class="md-nav__link">
+    \(Rendering Equation\)
+  </a>
+  
+    <nav class="md-nav" aria-label="\(Rendering Equation\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brdf-radiance_outirradiance_in" class="md-nav__link">
+    \(BRDF\) "\(Radiance_{out}/Irradiance_{in}\)"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-reflection-equation" class="md-nav__link">
+    \(The Reflection Equation\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-to-cameras" class="md-nav__link">
+    Back To Cameras
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chromatic-aberration" class="md-nav__link">
+    \(Chromatic Aberration\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-image-sensing-pipeline" class="md-nav__link">
+    2.4 Image Sensing Pipeline
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
