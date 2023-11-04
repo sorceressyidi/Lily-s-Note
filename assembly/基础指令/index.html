@@ -225,6 +225,35 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CV/ML-4369/BS/lec2.md" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -684,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly / 端口.md" class="md-nav__link">
+      <a href="../%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,6 +798,124 @@
   
   <span class="md-ellipsis">
     函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/ML-4369/BS/lec2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
   </span>
   
 
@@ -1072,31 +1219,31 @@
 </code></pre></div></p>
 <ul>
 <li>rep movsw的操作过程:[word]
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>again:
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>if(cx == 0)
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   goto done;
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>word ptr es:[di] = word ptr ds:[si]
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>if(df==0)
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>{si+=2; di+=2;}
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>else
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>{si-=2; di-=2;}
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>cx--
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>goto again
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>done:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nl">again:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">   </span><span class="nf">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nf">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kt">word</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">si</span><span class="p">]</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nf">if</span><span class="p">(</span><span class="nv">df</span><span class="err">==</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="err">{</span><span class="nf">si</span><span class="o">+</span><span class="err">=</span><span class="mi">2</span><span class="c1">; di+=2;}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nf">else</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="err">{</span><span class="nf">si</span><span class="o">-</span><span class="err">=</span><span class="mi">2</span><span class="c1">; di-=2;}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nf">goto</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nl">done:</span>
 </code></pre></div></li>
 <li>
 <p>rep movsd的操作过程:[dword]
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>again:
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>if(cx == 0)
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>   goto done;
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>dword ptr es:[di] = dword ptr ds:[si]
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>if(df==0)
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>{si+=4; di+=4;}
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>else
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>{si-=4; di-=4;}
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>cx--
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>goto again
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>done:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nl">again:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">   </span><span class="nf">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">dw</span><span class="nv">ord</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kt">dword</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">si</span><span class="p">]</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nf">if</span><span class="p">(</span><span class="nv">df</span><span class="err">==</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="err">{</span><span class="nf">si</span><span class="o">+</span><span class="err">=</span><span class="mi">4</span><span class="c1">; di+=4;}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nf">else</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="err">{</span><span class="nf">si</span><span class="o">-</span><span class="err">=</span><span class="mi">4</span><span class="c1">; di-=4;}</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nf">goto</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nl">done:</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -1140,16 +1287,16 @@
 * cx!=0 也可能提前结束循环
 * repne cmpsb
   * 若本次比较不等则继续比较下一个(repeat if not equal)
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>again:
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>if(cx == 0) goto done;
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>temp=byte ptr ds:[si]-byte ptr es:[di]
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>old_fl=FL
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>当DF=0时，si++，di++
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>当DF=1时，si--，di--
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>cx--
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>FL=old_fl
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>if (ZF==0) goto again
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>done:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nl">again:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nf">if</span><span class="p">(</span><span class="nb">cx</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="nv">goto</span><span class="w"> </span><span class="nv">done</span><span class="c1">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nf">temp</span><span class="err">=</span><span class="kt">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">ds</span><span class="p">:[</span><span class="nb">si</span><span class="p">]</span><span class="o">-</span><span class="kt">byte</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="nb">es</span><span class="p">:[</span><span class="nb">di</span><span class="p">]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nf">old_fl</span><span class="err">=</span><span class="nv">FL</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="err">当</span><span class="nf">DF</span><span class="err">=</span><span class="mi">0</span><span class="err">时，</span><span class="nb">si</span><span class="o">++</span><span class="err">，</span><span class="nb">di</span><span class="o">++</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="err">当</span><span class="nf">DF</span><span class="err">=</span><span class="mi">1</span><span class="err">时，</span><span class="nb">si</span><span class="o">--</span><span class="err">，</span><span class="nb">di</span><span class="o">--</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nf">cx</span><span class="o">--</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nf">FL</span><span class="err">=</span><span class="nv">old_fl</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="nv">ZF</span><span class="err">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="nv">goto</span><span class="w"> </span><span class="nv">again</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nl">done:</span>
 </code></pre></div></p>
 <h4 id="scasbscasw-scasd">字符串扫描指令：scasb，scasw, scasd<a class="headerlink" href="#scasbscasw-scasd" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1508,11 +1655,11 @@ xchg ax,ds:[bx] 可以交换寄存器和变量 不允许对两个变量进行交
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:47:52</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:21:51</span>
       
     
   </small>

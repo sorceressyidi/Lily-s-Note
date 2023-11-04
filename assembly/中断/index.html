@@ -225,6 +225,35 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CV/ML-4369/BS/lec2.md" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -552,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly / 端口.md" class="md-nav__link">
+      <a href="../%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,6 +716,124 @@
   
   <span class="md-ellipsis">
     函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/ML-4369/BS/lec2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
   </span>
   
 
@@ -888,30 +1035,30 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>1000:2006 mov ah,4Ch
 </code></pre></div>
 * 上面这条int 21h指令执行时, cpu做了以下4件事:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>IF=0
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>TF=0  -防止中断里再次产生中断
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>pushf
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>push cs即1000h
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>push 下条指令的偏移地址即2006h
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>jmp dword ptr 0:[84h]; jmp 1234h:5678h
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">IF</span><span class="err">=</span><span class="mi">0</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nf">TF</span><span class="err">=</span><span class="mi">0</span><span class="w">  </span><span class="o">-</span><span class="err">防止中断里再次产生中断</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nf">pushf</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nf">push</span><span class="w"> </span><span class="nv">cs即1000h</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nf">push</span><span class="w"> </span><span class="err">下条指令的偏移地址即</span><span class="mh">2006h</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nf">jmp</span><span class="w"> </span><span class="kt">dword</span><span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="mi">0</span><span class="p">:[</span><span class="mh">84h</span><span class="p">]</span><span class="c1">; jmp 1234h:5678h</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>上面这条jmp会跳转到int 21h的中断服务函数内部:
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>1234:5678  ...
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>             ...
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>1234:56FF  iret; 中断返回
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>iret在执行时, cpu做了以下3件事情:
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>pop ip即ip=2006h
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>pop cs即cs=1000h
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>popf
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="err">上面这条</span><span class="nf">jmp会跳转到int</span><span class="w"> </span><span class="mh">21h</span><span class="err">的中断服务函数内部</span><span class="p">:</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="err">1234:5678</span><span class="w">  </span><span class="nf">...</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">             </span><span class="nf">...</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="err">1234:56</span><span class="nf">FF</span><span class="w">  </span><span class="nv">iret</span><span class="c1">; 中断返回</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nf">iret在执行时</span><span class="p">,</span><span class="w"> </span><span class="nv">cpu做了以下3件事情</span><span class="p">:</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nf">pop</span><span class="w"> </span><span class="nv">ip即ip</span><span class="err">=</span><span class="mh">2006h</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nf">pop</span><span class="w"> </span><span class="nv">cs即cs</span><span class="err">=</span><span class="mh">1000h</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nf">popf</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>1000:2000 call 1234:5678; 远调用
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>;此时会push 1000h 再 push 2005h
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>;最后jmp 1234:5678
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>1000:2005 mov ah, 4Ch
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>1000:2007 int 21h
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>...
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>1234:5678 ...
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>            retf; 此时执行pop ip再pop cs
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="err">1000:2000</span><span class="w"> </span><span class="nf">call</span><span class="w"> </span><span class="mi">1234</span><span class="p">:</span><span class="mi">5678</span><span class="c1">; 远调用</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">;此时会push 1000h 再 push 2005h</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1">;最后jmp 1234:5678</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="err">1000:2005</span><span class="w"> </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="w"> </span><span class="mh">4Ch</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="err">1000:2007</span><span class="w"> </span><span class="nf">int</span><span class="w"> </span><span class="mh">21h</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="nf">...</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="err">1234:5678</span><span class="w"> </span><span class="nf">...</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">            </span><span class="nf">retf</span><span class="c1">; 此时执行pop ip再pop cs</span>
 </code></pre></div></p>
 <blockquote>
 <p>中断程序例子
@@ -976,11 +1123,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:47:52</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:21:51</span>
       
     
   </small>

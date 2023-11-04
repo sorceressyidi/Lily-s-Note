@@ -223,6 +223,35 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CV/ML-4369/BS/lec2.md" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -550,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly / 端口.md" class="md-nav__link">
+      <a href="../%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,6 +799,124 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/ML-4369/BS/lec2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1025,18 +1172,18 @@
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="p">}</span>
 </code></pre></div>
 * call far ptr dest retf
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1000:2000 call 1234:5678  ;跨段跳远
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cpu会做一下动作：
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[1]push cs
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>[2]push 2005h
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>[3]jmp 1234:5678h
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>;一定先压入段地址，再压入偏移地址  WHY?5.18最后一段
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>1000:2005 mov ah,4Ch
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>1234:5678 ...
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>1234:5688 retf
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>cpu 在retf时会做以下动作
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>[1]pop ip;
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>[2]pop cs;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">1000:2000</span><span class="w"> </span><span class="nf">call</span><span class="w"> </span><span class="mi">1234</span><span class="p">:</span><span class="mi">5678</span><span class="w">  </span><span class="c1">;跨段跳远</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nf">cpu会做一下动作</span><span class="err">：</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="err">[1]</span><span class="nf">push</span><span class="w"> </span><span class="nb">cs</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="err">[2]</span><span class="nf">push</span><span class="w"> </span><span class="mh">2005h</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="err">[3]</span><span class="nf">jmp</span><span class="w"> </span><span class="mi">1234</span><span class="p">:</span><span class="mh">5678h</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">;一定先压入段地址，再压入偏移地址  WHY?5.18最后一段</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="err">1000:2005</span><span class="w"> </span><span class="nf">mov</span><span class="w"> </span><span class="nb">ah</span><span class="p">,</span><span class="mh">4Ch</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="err">1234:5678</span><span class="w"> </span><span class="nf">...</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="err">1234:5688</span><span class="w"> </span><span class="nf">retf</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">cpu</span><span class="w"> </span><span class="err">在</span><span class="nv">retf时会做以下动作</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="err">[1]</span><span class="nf">pop</span><span class="w"> </span><span class="nv">ip</span><span class="c1">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="err">[2]</span><span class="nf">pop</span><span class="w"> </span><span class="nb">cs</span><span class="c1">;</span>
 </code></pre></div></p>
 <h3 id="3">用堆栈传递参数有3种方式:<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <h4 id="__cdecl">__cdecl<a class="headerlink" href="#__cdecl" title="Permanent link">&para;</a></h4>
@@ -1264,11 +1411,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:47:52</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:19:54</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:21:51</span>
       
     
   </small>
