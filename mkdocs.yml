@@ -9,6 +9,12 @@ theme:
   palette:
     primary: indigo
     accent: indigo
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
   font:
     text: Roboto
     code: Roboto Mono
@@ -87,9 +93,13 @@ nav:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
       - 基础数据结构: note/基础数据结构.md
     - x86-Assembly:
+      - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
+      - 端口: assembly / 端口.md
       - 寄存器: assembly/寄存器.md
       - 堆栈 : assembly/堆栈.md
+      - 中断: assembly/中断.md
+      - 函数: assembly/函数.md
     
  
      
