@@ -10,28 +10,26 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/DIP/lab3/lab3/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/SR/lec4/">
       
       
-        <link rel="prev" href="../../lab2/lab2/">
+        <link rel="prev" href="../../SFM/lec3/">
       
       
-        <link rel="next" href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/">
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Lab3:对数增强可实现以及直方图均衡 - Lily's Notebook</title>
+        <title>Stereo Reconstruction - Lily's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -50,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#stereo-reconstruction" class="md-skip">
           跳转至
         </a>
       
@@ -89,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -109,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab3:对数增强可实现以及直方图均衡
+              Stereo Reconstruction
             
           </span>
         </div>
@@ -179,7 +177,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
     
@@ -188,6 +186,35 @@
 
         </a>
       </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
     
   
 
@@ -209,36 +236,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
-          
-  
-    
-  
-  Computer Science
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+        <a href="../../BS/lec2/" class="md-tabs__link">
           
   
     
@@ -276,7 +274,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +314,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -348,8 +346,6 @@
       
   
   
-    
-  
   
     
     
@@ -367,12 +363,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -386,7 +382,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -441,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+      <a href="../../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -461,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,8 +483,6 @@
                 
   
   
-    
-  
   
     
     
@@ -503,12 +497,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -522,7 +516,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             DIP
@@ -535,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lab1/DIP/" class="md-nav__link">
+      <a href="../../../../DIP/lab1/DIP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lab2/lab2/" class="md-nav__link">
+      <a href="../../../../DIP/lab2/lab2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -573,27 +567,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lab3:对数增强可实现以及直方图均衡
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../DIP/lab3/lab3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,65 +578,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、实验目的和要求
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、实验内容和原理
-  </a>
-  
-    <nav class="md-nav" aria-label="二、实验内容和原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.增强图像的可视性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.直方图均衡化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、心得体会
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -732,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -772,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+      <a href="../../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+      <a href="../../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+      <a href="../../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -832,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+      <a href="../../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -885,6 +802,8 @@
       
   
   
+    
+  
   
     
     
@@ -898,12 +817,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -917,7 +836,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
@@ -928,6 +847,8 @@
                 
   
   
+    
+  
   
     
     
@@ -942,12 +863,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -961,7 +882,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
@@ -974,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -994,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1012,9 +933,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1023,6 +953,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1060,55 +991,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、实验目的和要求
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、实验内容和原理
-  </a>
-  
-    <nav class="md-nav" aria-label="二、实验内容和原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.增强图像的可视性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.直方图均衡化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、心得体会
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1123,106 +1007,18 @@
                   
 
 
-  <h1>Lab3:对数增强可实现以及直方图均衡</h1>
-
-<h3 id="_1">一、实验目的和要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>通过图像对数运算，探讨如何增强图像的可视性，特别是在低对比度或暗部细节不清晰的情况下。</p>
-</li>
-<li>
-<p>通过直方图均衡化，研究如何改善图像的对比度和亮度分布，使图像更容易分辨和分析。</p>
-</li>
-</ul>
-<h3 id="_2">二、实验内容和原理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="1">1.增强图像的可视性<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<p>为了增强图像的可视信息，对图像中的像素进行基于对数的操作
-$$
-L_d =  \frac{log{({L_{w}+1})}}{log{({L_{max}+1})}}
-$$
-其中，<span class="arithmatex">\(Ld <span class="arithmatex">\(是显示亮度，\)</span>Lw <span class="arithmatex">\(是真实世界亮度，\)</span>Lmax\)</span>是场景中的最亮值。</p>
-<ul>
-<li>这个映射能够确保不管场景的动态范围是怎么样的，其最大值都能映射到 1(白)，其他的值能够比较平滑地变化。</li>
-</ul>
-<h4 id="2">2.直方图均衡化<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<h5 id="1_1">(1)直方图<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
-<h6 id="a">a.灰度直方图<a class="headerlink" href="#a" title="Permanent link">&para;</a></h6>
-<ul>
-<li>灰度直方图是一种统计图，它表示给定图像中不同灰度级的像素数占总像素数的比例。</li>
-<li>计算公式如下：</li>
-</ul>
-<div class="arithmatex">\[
-p(rk)=\frac{nk}{MN}\\
-rk -- 像素的灰度级\\
-nk -- 具有灰度rk的像素的个数\\
-MN -- 图像中总的像素个数\\
-\sum_{k=0}^{MN-1}P(rk)=1
-\]</div>
-<h6 id="b">b.彩色直方图<a class="headerlink" href="#b" title="Permanent link">&para;</a></h6>
-<ul>
-<li>彩色直方图表示给定图像中不同 R、G、B等级的像素数占总像素数的比例,计算方法与灰度直方图类似</li>
-</ul>
-<p><img alt="b" src="../b.png" /></p>
-<h5 id="2_1">（2）直方图均衡化<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h5>
-<p>直方图均衡化（Histogram Equalization）是一种用于增强数字图像对比度的图像处理技术。它通过重新分布图像的像素值，使直方图变得更均匀，从而改善图像的视觉质量。直方图均衡化常被用于提高图像的可视性、分析性能和自动图像处理应用中。例如，过曝光图像的灰度级集中在高亮度范围内，而曝光不足将使图像灰度级集中在低亮度范围内。采用直方图均衡化，可以把原始图像的直方图变换为均匀分布(均衡)的形式，这样就增加了像素之间灰度值差别的动态范围，从而达到增强图像整体对比度的效果。</p>
-<p>换言之，直方图均衡化的基本原理是:对在图像中像素个数多的灰度值(即对画面起主要作用的灰度值)进行展宽，而对像素个数少的灰度 值(即对画面不起主要作用的灰度值)进行归并，从而增大对比度，使图像清晰，达到增强的目的。</p>
-<p>尽管直方图均衡化具有显著的优点，但它也有一些限制。它可能导致图像出现噪点或过度增强细节，特别是在噪音存在的情况下。此外，均衡化可能改变图像的整体亮度，这可能不适用于所有图像。</p>
-<ul>
-<li>连续情况的转换<span class="arithmatex">\(T\)</span>:</li>
-</ul>
-<p><img alt="c" src="../c.png" /></p>
-<ul>
-<li>
-<p>设 r 为转换前的灰度级， s 为变换前后的灰度级</p>
-</li>
-<li>
-<p><span class="arithmatex">\(0 ≤ r,s ≤ 1\)</span> [对应<span class="arithmatex">\((0,255)\)</span>]</p>
-</li>
-<li>
-<p>P&reg; 和 P(s) 是对应于 r 和 s 的概率。转换规则为:</p>
-<ul>
-<li>
-<p>T&reg;是单调递增函数，<span class="arithmatex">\(0≤r≤1\)</span>且<span class="arithmatex">\(0≤T(r)≤1\)</span></p>
-</li>
-<li>
-<p>逆变换 r = <span class="arithmatex">\(T^{-1}(s)\)</span>也是一个单调递增函数 考虑到灰度变换不会改变位置和像素数，我们有
-  $$
-  \int_0^rP&reg;dr = \int_0^sP(s)ds=\int_0^s 1*ds = s = T&reg;\
-  Thus: T&reg;=\int_0^rP&reg;dr
-  $$
-  <img alt="d" src="../d.png" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p>离散情况的转换 <span class="arithmatex">\(T\)</span>:</p>
-</li>
-</ul>
-<p>设一幅图像的像素总数为n，分L个灰度级，<span class="arithmatex">\(n_k\)</span>为第k个灰度级出现的像素数，则第<span class="arithmatex">\(k\)</span>个灰度级出现的概率为：
-$$
-P(r_k)= \frac{n_k}{n}(0≤n_k ≤1,k=0,1,2,...,MN−1)
-$$</p>
-<ul>
-<li>离散灰度直方图均衡化的转换公式为
-  $$
-  s_k = T(r_k)=\sum_{i=0}^kP(ri)=\frac{1}{n}\sum_{i=0}^{k}ni
-  $$</li>
-</ul>
-<h3 id="_3">三、心得体会<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>​   在本次实验中，我们学习了图像处理中的两个重要概念：灰度直方图和直方图均衡化。首先，我们进行了图像的灰度直方图分析，这有助于我们了解图像的亮度分布情况，进而为图像增强提供基础。接着，我们学习了直方图均衡化的原理和方法，它是一种用于增强图像对比度的技术。</p>
-<p>​   在实验过程中，我们首先编写了代码来计算图像的灰度直方图，了解了不同灰度级别在图像中的分布情况。这为直方图均衡化提供了必要的信息，帮助我们确定如何调整图像的像素值以获得更好的可视效果。接着，我们实施了直方图均衡化，通过累积分布函数的计算和像素值的映射，将图像的亮度分布均匀化。这使得图像的对比度增加，细节更加清晰，从而提高了图像的可视性。</p>
-<p>​   总的来说，本次实验使我们深入了解了图像处理中的一些关键概念和技术。通过实际编写和运行图像处理代码，我们不仅理论上理解了这些概念，还获得了实际操作的经验。这些技能对于处理和增强图像在许多领域，如计算机视觉、医学影像和数字媒体等方面都非常重要。通过这次实验，我更深刻地理解了图像处理的重要性和应用价值。</p>
+<h1 id="stereo-reconstruction">Stereo Reconstruction<a class="headerlink" href="#stereo-reconstruction" title="Permanent link">&para;</a></h1>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 11:09:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 11:09:32</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
       
     
   </small>
@@ -1275,12 +1071,12 @@ $$</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

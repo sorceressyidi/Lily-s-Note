@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/BS/lec2/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/SFM/lec3/">
       
       
-        <link rel="prev" href="../../../../assembly/%E5%87%BD%E6%95%B0/">
+        <link rel="prev" href="../../BS/lec2/">
       
       
-        <link rel="next" href="../../SFM/lec3/">
+        <link rel="next" href="../../SR/lec4/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Basic Transformations - Lily's Notebook</title>
+        <title>structure from motion - Lily's Notebook</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lec2-for-ml-4360" class="md-skip">
+        <a href="#structure-form-motion" class="md-skip">
           跳转至
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basic Transformations
+              structure from motion
             
           </span>
         </div>
@@ -238,7 +238,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../BS/lec2/" class="md-tabs__link">
           
   
     
@@ -895,6 +895,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../BS/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -910,7 +930,7 @@
           
   
   <span class="md-ellipsis">
-    Basic Transformations
+    structure from motion
   </span>
   
 
@@ -921,7 +941,7 @@
         
   
   <span class="md-ellipsis">
-    Basic Transformations
+    structure from motion
   </span>
   
 
@@ -943,72 +963,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-primitives-transformations" class="md-nav__link">
-    2.1 Primitives &amp; Transformations
+  <a href="#preliminarynaries" class="md-nav__link">
+    preliminarynaries
   </a>
   
-    <nav class="md-nav" aria-label="2.1 Primitives & Transformations">
+    <nav class="md-nav" aria-label="preliminarynaries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homogeneous" class="md-nav__link">
-    \(Homogeneous\)
+  <a href="#point-features" class="md-nav__link">
+    Point Features
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformations" class="md-nav__link">
-    \(Transformations\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" class="md-nav__link">
-    Direct Linear Transform for Homography Estimation[algorithm DLT
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-geometric-image-formation" class="md-nav__link">
-    2.2 Geometric Image Formation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-photometric-image-formation" class="md-nav__link">
-    2.3 Photometric Image Formation
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Photometric Image Formation">
+    <nav class="md-nav" aria-label="Point Features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rendering-equation" class="md-nav__link">
-    \(Rendering Equation\)
-  </a>
-  
-    <nav class="md-nav" aria-label="\(Rendering Equation\)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#brdf-radiance_outirradiance_in" class="md-nav__link">
-    \(BRDF\) "\(Radiance_{out}/Irradiance_{in}\)"
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-reflection-equation" class="md-nav__link">
-    \(The Reflection Equation\)
+  <a href="#scale-invariant-feature-transform-sift" class="md-nav__link">
+    Scale Invariant Feature Transform (SIFT)
   </a>
   
 </li>
@@ -1018,17 +990,57 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epipolar-geometry" class="md-nav__link">
+    Epipolar Geometry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factorization" class="md-nav__link">
+    Factorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Factorization">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#back-to-cameras" class="md-nav__link">
-    Back To Cameras
+  <a href="#orthographic-factorization" class="md-nav__link">
+    Orthographic Factorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthographic Factorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#chromatic-aberration" class="md-nav__link">
-    \(Chromatic Aberration\)
+  <a href="#remarks" class="md-nav__link">
+    Remarks:
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1038,8 +1050,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-image-sensing-pipeline" class="md-nav__link">
-    2.4 Image Sensing Pipeline
+  <a href="#bundle-adjustment" class="md-nav__link">
+    Bundle Adjustment
   </a>
   
 </li>
@@ -1048,26 +1060,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../SFM/lec3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    structure from motion
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1135,72 +1127,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-primitives-transformations" class="md-nav__link">
-    2.1 Primitives &amp; Transformations
+  <a href="#preliminarynaries" class="md-nav__link">
+    preliminarynaries
   </a>
   
-    <nav class="md-nav" aria-label="2.1 Primitives & Transformations">
+    <nav class="md-nav" aria-label="preliminarynaries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homogeneous" class="md-nav__link">
-    \(Homogeneous\)
+  <a href="#point-features" class="md-nav__link">
+    Point Features
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformations" class="md-nav__link">
-    \(Transformations\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" class="md-nav__link">
-    Direct Linear Transform for Homography Estimation[algorithm DLT
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-geometric-image-formation" class="md-nav__link">
-    2.2 Geometric Image Formation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-photometric-image-formation" class="md-nav__link">
-    2.3 Photometric Image Formation
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Photometric Image Formation">
+    <nav class="md-nav" aria-label="Point Features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rendering-equation" class="md-nav__link">
-    \(Rendering Equation\)
-  </a>
-  
-    <nav class="md-nav" aria-label="\(Rendering Equation\)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#brdf-radiance_outirradiance_in" class="md-nav__link">
-    \(BRDF\) "\(Radiance_{out}/Irradiance_{in}\)"
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-reflection-equation" class="md-nav__link">
-    \(The Reflection Equation\)
+  <a href="#scale-invariant-feature-transform-sift" class="md-nav__link">
+    Scale Invariant Feature Transform (SIFT)
   </a>
   
 </li>
@@ -1210,17 +1154,57 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epipolar-geometry" class="md-nav__link">
+    Epipolar Geometry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factorization" class="md-nav__link">
+    Factorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Factorization">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#back-to-cameras" class="md-nav__link">
-    Back To Cameras
+  <a href="#orthographic-factorization" class="md-nav__link">
+    Orthographic Factorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthographic Factorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#chromatic-aberration" class="md-nav__link">
-    \(Chromatic Aberration\)
+  <a href="#remarks" class="md-nav__link">
+    Remarks:
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1230,8 +1214,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-image-sensing-pipeline" class="md-nav__link">
-    2.4 Image Sensing Pipeline
+  <a href="#bundle-adjustment" class="md-nav__link">
+    Bundle Adjustment
   </a>
   
 </li>
@@ -1251,102 +1235,264 @@
                   
 
 
-<h1 id="lec2-for-ml-4360">Lec2 for ML-4360<a class="headerlink" href="#lec2-for-ml-4360" title="Permanent link">&para;</a></h1>
-<h2 id="21-primitives-transformations">2.1 Primitives &amp; Transformations<a class="headerlink" href="#21-primitives-transformations" title="Permanent link">&para;</a></h2>
-<h3 id="homogeneous"><span class="arithmatex">\(Homogeneous\)</span><a class="headerlink" href="#homogeneous" title="Permanent link">&para;</a></h3>
+<h1 id="structure-form-motion">Structure Form Motion<a class="headerlink" href="#structure-form-motion" title="Permanent link">&para;</a></h1>
+<h2 id="preliminarynaries">preliminarynaries<a class="headerlink" href="#preliminarynaries" title="Permanent link">&para;</a></h2>
+<h3 id="point-features">Point Features<a class="headerlink" href="#point-features" title="Permanent link">&para;</a></h3>
 <ul>
-<li>homogeneous coordinates &amp; inhomogeneous coordinates</li>
-<li>argmented vector[one element out of the whole equivalent class],homogeneous vectors,homogeneous vectors</li>
-<li>points at infinity
-<img alt="Alt text" src="../a.png" /></li>
-<li>In homogeneous coordinates, the intersection of two lines is given by:<blockquote>
-<p><span class="arithmatex">\(\tilde{x}\)</span>=<span class="arithmatex">\(\tilde{l1}\)</span> × <span class="arithmatex">\(\tilde{l2}\)</span> 
-<img alt="Alt text" src="../b.png" /></p>
-</blockquote>
+<li><strong>Point features</strong> describe the appearance of <strong>local, salient regions</strong> in an image</li>
+<li>They can be used to <strong>describe and match images</strong> taken from different viewpoints</li>
+<li>
+<p>They form the <strong>basis of sparse 3D reconstruction methods</strong> covered in this lecture</p>
 </li>
-<li>the line joining two points can be compactly written as:<blockquote>
-<p><span class="arithmatex">\(\tilde{l}\)</span>=<span class="arithmatex">\(\tilde{x1}\)</span> × <span class="arithmatex">\(\tilde{x2}\)</span> </p>
+<li>
+<p>Features should be <strong>invariant</strong> to <strong>perspective</strong> effects and <strong>illumination</strong></p>
+</li>
+<li>The same point should have <strong>similar vectors</strong> independent of pose/viewpoint</li>
+<li>Plain RGB/intensity patches will not have this property, we need something better</li>
+</ul>
+<h4 id="scale-invariant-feature-transform-sift">Scale Invariant Feature Transform (SIFT)<a class="headerlink" href="#scale-invariant-feature-transform-sift" title="Permanent link">&para;</a></h4>
+<ul>
+<li>SIFT constructs a <strong>scale space</strong> by iteratively filtering the image with a Gaussian</li>
+<li>Adjacent scales are subtracted, yielding <strong>Difference of Gaussian (DoG)</strong> images</li>
+<li><strong>Interest points</strong> (=blobs) are detected as <strong>extrema</strong> in the resulting scale space</li>
+</ul>
+<h5 id="1-scale">(1) Scale<a class="headerlink" href="#1-scale" title="Permanent link">&para;</a></h5>
+<p><span class="arithmatex">\(L(x,y,σ)=G(x,y,σ)∗I(x,y)\)</span></p>
+<blockquote>
+<p>Note ：卷积</p>
+<p>连续形式：</p>
+<p><span class="arithmatex">\((f∗g)(n)=\int_{-\infty }^{\infty}f(\tau )g(n-\tau)d\tau\)</span></p>
+<p>离散形式：</p>
+<p><span class="arithmatex">\((f∗g)(n)=\sum_{\tau=-\infty }^{\infty}f(\tau)g(n-\tau)\)</span></p>
+<p>对图像的处理函数（如平滑，或者边缘提取），也可以用一个g矩阵来表示，如：</p>
+<p><span class="arithmatex">\(g=\begin{bmatrix} &amp;b_{-1,-1} &amp;b_{-1,0} &amp;b_{-1,1}\\ &amp;b_{0,-1} &amp;b_{0,0} &amp;b_{0,1} \\ &amp;b_{1,-1} &amp;b_{1,0} &amp;b_{1,1} \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(f(x,y)=a_{x,y}\)</span>   </p>
+<p><span class="arithmatex">\(g(x,y)=b_{x,y}\)</span></p>
+<p>按卷积的定义，二维离散形式的卷积公式应该是：</p>
+<p><span class="arithmatex">\((f∗g)(u,v)=∑_i∑_jf(i,j)g(u−i,v−j)=\sum_{i} \sum_{j} a_{i,j} b_{u-i,v-j}\)</span></p>
+<p><img alt="img" src="https://picx.zhimg.com/80/v2-29b46dc4d83fb10239888227fceac1a3_1440w.webp?source=1940ef5c" /></p>
+<p>首先我们在原始图像矩阵中取出（u,v)处的矩阵：</p>
+<p><span class="arithmatex">\(f=\begin{bmatrix} &amp;a_{u-1,v-1} &amp;a_{u-1,v} &amp;a_{u-1,v+1}\\ &amp;a_{u,v-1} &amp;a_{u,v} &amp;a_{u,v+1} \\ &amp;a_{u+1,v-1} &amp;a_{u+1,v} &amp;a_{u+1,v+1} \end{bmatrix}\)</span></p>
+<p>然后将图像处理矩阵翻转</p>
+<ul>
+<li>原始矩阵： </li>
+</ul>
+<p><img src="https://pic1.zhimg.com/80/v2-6904fa21bf262e735a41159796534dfd_1440w.webp?source=1940ef5c" alt="img" style="zoom:50%;" /></p>
+<ul>
+<li>翻转后的矩阵： </li>
+</ul>
+<p><span class="arithmatex">\(g^{'}=\begin{bmatrix} &amp;b_{1,1} &amp;b_{1,0} &amp;b_{1,-1}\\ &amp;b_{0,1} &amp;b_{0,0} &amp;b_{0,-1} \\ &amp;b_{-1,1} &amp;b_{-1,0} &amp;b_{-1,-1} \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(f∗g(u,v)=f1*g'1+f2*g'2+f3*g'3(all\ row\ vectors)\)</span></p>
 </blockquote>
+<h5 id="2construct-the-gaussian-pyramid">(2)Construct the Gaussian Pyramid<a class="headerlink" href="#2construct-the-gaussian-pyramid" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Apply Gaussian blur at different scales to the image.</p>
+</li>
+<li>
+<p>Downsample the image, typically reducing it by half in the horizontal and vertical directions before sampling.</p>
+</li>
+<li>To reflect the continuity of scale space ,Gaussian pyramids perform Gaussian blurring in addition to simple downsampling.</li>
+<li>Different parameters are used for Gaussian blurring on each image in each level of the pyramid, resulting in multiple Gaussian-blurred images within each level of the pyramid. Here, each level of the pyramid with multiple images is referred to as a "group" (Octave). </li>
+<li>Each level of the pyramid contains one group of images, and it's easy to see that the number of groups is equal to the number of levels in the pyramid. Each image within a group is referred to as a "layer" (Interval) in that group.</li>
+<li>IGaussian pyramids consist of multiple groups, and each group contains multiple layers. </li>
+<li>The scales between the layers within a group are different (meaning different Gaussian parameters σ are used),and the scale difference between adjacent layers is a factor of k.</li>
+<li>If each group has S layers, then <span class="arithmatex">\(k = 2^{1/S}\)</span>. The bottommost image in the previous group is obtained by downsampling the image with a scale of 2σ from the previous group by a factor of 2 (Gaussian pyramids are built from the bottom-up).</li>
+</ul>
+<p><img alt="1" src="../1.png" /></p>
+<h5 id="3difference-of-gaussian-dog">(3)Difference of Gaussian (DoG)<a class="headerlink" href="#3difference-of-gaussian-dog" title="Permanent link">&para;</a></h5>
+<p>Image feature points are composed of local extrema in the DoG (Difference of Gaussians) scale space. To find these extrema in the DoG space, each pixel is compared with all of its neighboring points to determine whether it is larger or smaller than its neighboring points in both the image domain and scale domain. As shown in the figure below, the central detection point is compared with its 8 neighboring points at the same scale and 18 points corresponding to the upper and lower adjacent scales, totaling 26 points to ensure the detection of extrema in both the two-dimensional image space and scale space. If a point is the maximum or minimum value among these 26 points in the DoG scale space at the current layer and the two neighboring layers, it is considered a feature point in the image at that scale.</p>
+<h5 id="4-histogram">(4) Histogram<a class="headerlink" href="#4-histogram" title="Permanent link">&para;</a></h5>
+<ul>
+<li>SIFT <strong>rotates</strong> the descriptor to <strong>align with the dominant gradient orientation</strong></li>
+<li><strong>Gradient histograms</strong> are computed for local sub-regions of the descriptor</li>
+<li>All histograms are concatenated and normalized to form a <strong>128D feature vector</strong></li>
+</ul>
+<h2 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h2>
+<p><img alt="9" src="../9.png" /></p>
+<ul>
+<li>
+<p>Let R and t denote the relative pose between <strong>two perspective cameras</strong> </p>
+</li>
+<li>
+<p>A 3D point x is projected to pixel <span class="arithmatex">\(\bar{x}_1\)</span> in image 1 and to pixel <span class="arithmatex">\(\bar{x_2}\)</span> in image 2 </p>
+</li>
+<li>
+<p>The 3D point x and the two cameracenters span the <strong>epipolar plane</strong> </p>
+</li>
+<li>
+<p>The correspondence of pixel <span class="arithmatex">\(\bar{x}_1\)</span> in image 2 must lie on the <strong>epipolar line</strong> <span class="arithmatex">\(\widetilde{l2}\)</span> in image 2 </p>
+</li>
+<li>
+<p>All epipolar lines pass through the <strong>epipole</strong></p>
+</li>
+<li>
+<p>Equations:</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(Ki ∈ R_{3×3}\)</span>denote the <strong>camera matrix</strong> of camera i.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(\widetilde{x}i\)</span> = <span class="arithmatex">\(K^{−1} x ̄_i\)</span>denote the <strong>local ray direction</strong> of pixel <span class="arithmatex">\(x ̄_i\)</span> in camera i.</p>
+</li>
+<li>
+<p>We have: </p>
+<ul>
+<li>
+<p><span class="arithmatex">\(x ̃_2\)</span> <span class="arithmatex">\(∝\)</span> <span class="arithmatex">\(x_2\)</span> = <span class="arithmatex">\(Rx_1+t ∝ Rx ̃_1+st\)</span></p>
+</li>
+<li>
+<p>Taking the <strong>cross product</strong> of both sides with t we obtain:</p>
+</li>
+<li>
+<p><span class="arithmatex">\([t]×x ̃2 ∝ [t]×R x ̃1\)</span> </p>
+</li>
+<li>
+<p>Taking the <strong>dotproduct</strong> of both sides with<span class="arithmatex">\(x ̃^⊤_2\)</span>yields (triple product):</p>
+</li>
+<li>
+<p><span class="arithmatex">\(x ̃^⊤_2 [t]×R x ̃1 ∝ x ̃^⊤_2 [t]×x ̃2 = 0 ⇒ x ̃^⊤_2 [t]×R x ̃1 = 0\)</span></p>
+</li>
+<li>
+<p>We arrive at the <strong>epipolar constraint</strong>with <strong>essential matrix:</strong></p>
+</li>
+<li>
+<p><span class="arithmatex">\(x ̃^⊤_2 E ̃ x ̃ _1 = 0 \ \ \widetilde{E} = [ t ] × R\)</span></p>
+</li>
+<li><span class="arithmatex">\(\widetilde{E}\)</span>  maps a point <span class="arithmatex">\(x ̃_1\)</span> in image 1 to the corresponding <strong>epipolar line in image 2</strong> <span class="arithmatex">\(\widetilde{l}_2=\widetilde{E} x ̃ 1\)</span></li>
+<li>
+<p>Similarly, by transposition, we obtain the <strong>epipolar line in image 1:</strong><span class="arithmatex">\(\widetilde{l}_1 = \widetilde{E}^⊤ x ̃ 2\)</span></p>
+</li>
+<li>
+<p>For any point <span class="arithmatex">\(x ̃1\)</span>in the first image, the corresponding <strong>epipolar line</strong> <span class="arithmatex">\(\widetilde{l}_2 = \widetilde{E}x ̃_1\)</span>in the second image passes through the so-called <strong>epipole</strong> <span class="arithmatex">\(e ̃2\)</span> which therefore satisfies <span class="arithmatex">\(\widetilde{e}^⊤_2 \ \widetilde{l}_2 = \widetilde{e}^⊤_2 \widetilde{E}x ̃_1 = 0\)</span>   for all <span class="arithmatex">\(x ̃_1.\)</span></p>
 </li>
 </ul>
-<h3 id="transformations"><span class="arithmatex">\(Transformations\)</span><a class="headerlink" href="#transformations" title="Permanent link">&para;</a></h3>
+<p>It follows that:<span class="arithmatex">\(\widetilde{e}^⊤_2 \widetilde{E} = 0\)</span>
+   Thus,<span class="arithmatex">\(e ̃^⊤_2\)</span> is the <strong>leftnull-space</strong> (left singular vector with singular value 0)of<span class="arithmatex">\(\widetilde{E}\)</span>.</p>
+<p>Further:<span class="arithmatex">\(\widetilde{E}e ̃_1 = 0\)</span>
+   Thus, <span class="arithmatex">\(e ̃^⊤_1\)</span> is the <strong>rightnull-space</strong> (right  singular vector with singular value 0)of<span class="arithmatex">\(\widetilde{E}.\)</span></p>
+</li>
+<li>
+<p>Recover R &amp; t</p>
+</li>
+<li>
+<p>Derivation</p>
+<p><span class="arithmatex">\(\widetilde{x_{2i}}^T \widetilde{E} \widetilde{x_{1i}}=0\)</span></p>
+<p><span class="arithmatex">\(\widetilde{E}=\begin{pmatrix}  e_{11} &amp; e_{12} &amp; e_{13} \\   e_{21} &amp; e_{22} &amp; e_{23} \\ e_{31} &amp; e_{32} &amp; e_{33} \end{pmatrix}          \ \ \ \ \ \ \ \ E =  \begin{pmatrix}  e_{11} \\ e_{12} \\ e_{13} \\   e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow x_1x_2e_{11} + y_1x_2e_{12} + x_2e_{13}+ x_1y_2e_{21} + y_1y_2e_{22} + y_2e_{23}+ x_1e{31} + y_1e_{32} + e_{33 }= 0\)</span></p>
 <ul>
-<li>translation 2DOF</li>
-<li>Euclidean 3DOF <span class="arithmatex">\(RR^T=I \ der(R)=1\)</span>
-<img alt="Alt text" src="../c.png" /></li>
-<li>正交矩阵<span class="arithmatex">\(A^TA=I\)</span></li>
+<li>As <span class="arithmatex">\(\widetilde{E}\)</span> is homogeneous we use <strong>singular value decomposition</strong> to constrain the scale.</li>
 </ul>
-<blockquote>
-<p><span class="arithmatex">\(A^{-1}=A^T\)</span></p>
-<p><span class="arithmatex">\(\left|A\right|\)</span> = +-1</p>
-<p>A的行（列）向量组为n维单位正交向量组
-* Similarity 4DOF
-* Affine: 6DOF
-arbitrary <span class="arithmatex">\(2×2\)</span> matrix</p>
-<p>Parallels Remain!
-* Projective :8DOF——preserve straight lines</p>
-<blockquote>
-<p>DOF（2D）:n(n-1)/2</p>
-</blockquote>
-</blockquote>
-<p><img alt="Alt text" src="../d.png" /></p>
-<blockquote>
-<p><span class="arithmatex">\(\tilde{l}'\)</span> = <span class="arithmatex">\((\tilde{H}^T)^{-1}\)</span><span class="arithmatex">\(\tilde{l}\)</span></p>
-</blockquote>
-<h3 id="direct-linear-transform-for-homography-estimationalgorithm-dlt">Direct Linear Transform for Homography Estimation[algorithm DLT<a class="headerlink" href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" title="Permanent link">&para;</a></h3>
+<p>Note that some terms are products of two image measurements and hence amplify measurement noise asymmetrically. Thus, the <strong>normalized 8-point algorithm</strong> whitens the observations to have zero-mean and unit variance before the calculation and back-transforms the matrix recovered by SVD accordingly.</p>
 <ul>
-<li>UDV！ SVD!</li>
+<li>SVD Method</li>
 </ul>
-<h2 id="22-geometric-image-formation">2.2 Geometric Image Formation<a class="headerlink" href="#22-geometric-image-formation" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Orthographic projection</p>
-<p>Perspective　projection</p>
-</blockquote>
-<p><img alt="Alt text" src="../f.png" />
-* Complete perspective projection</p>
+<p>Rearranging the product, so E is on the left hand side:</p>
+<p><span class="arithmatex">\(\widetilde{x_2}^T\widetilde{E}\widetilde{x_1} =\begin{pmatrix}  x_{11}x_{12} &amp; y_{11}x_{12} &amp; x_{12}&amp;x_{11}y_{12}&amp;y_{11}y_{12}&amp;y_{12}&amp;x_{11}&amp;y_{11}&amp;1 \\ …… \\ x_{i1}x_{i2} &amp; y_{i1}x_{i2} &amp; x_{i2}&amp;x_{i1}y_{i2}&amp;y_{i1}y_{i2}&amp;y_{i2}&amp;x_{i1}&amp;y_{i1}&amp;1 \\…… \\x_{81}x_{82} &amp; y_{81}x_{82} &amp; x_{82}&amp;x_{81}y_{82}&amp;y_{81}y_{82}&amp;y_{82}&amp;x_{81}&amp;y_{81}&amp;1\end{pmatrix}      \begin{pmatrix}  e_{11} \\ e_{12} \\ e_{13} \\   e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}  =0\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow AE = 0\)</span></p>
+<ul>
+<li>
+<p>If there are more than 8 point correspondences, the system is usually over-determined and an exact solution is not possible. Instead, we solve a least squares problem for <strong>AE</strong></p>
+<ul>
+<li><span class="arithmatex">\(min(||AE||),||E||=1\)</span></li>
+</ul>
+<p><iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.cs.cmu.edu/%7E16385/s17/Slides/11.5_SVD.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe></p>
+<p>Credits to Carnegie Mellon University and Kris Kitani, <a href="http://www.cs.cmu.edu/~16385/s17/Slides/11.5_SVD.pdf">http://www.cs.cmu.edu/~16385/s17/Slides/11.5_SVD.pdf</a> </p>
+</li>
+<li>
+<p>Properties of the <span class="arithmatex">\(\widetilde{E}\)</span></p>
+<ul>
+<li>
+<p>by readjustment:</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\widetilde{E} =\begin{bmatrix} u0&amp;u1&amp;u2 \end{bmatrix}\begin{bmatrix} s&amp;0&amp;0\\0&amp;s&amp;0\\0&amp;0&amp;s \end{bmatrix} \begin{bmatrix}v0^T\\v1^T\\v2^T \end{bmatrix} =U\sum V^T\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(s=\frac{\lambda_1+\lambda_2}{2}\)</span> <span class="arithmatex">\(\lambda_1\ge \lambda_2\ge\lambda_3\)</span> </p>
+</li>
+<li>
+<p>Proof</p>
+<ul>
+<li>证明本质矩阵E EE奇异值具有<span class="arithmatex">\([σ,σ,0]^ T\)</span>的形式，只需证明矩阵<span class="arithmatex">\(E^TE\)</span>的特征值具有[<span class="arithmatex">\([\lambda, \lambda, 0]^T <span class="arithmatex">\(的形式。由于矩阵\)</span>EE^T\)</span>与<span class="arithmatex">\(E^TE\)</span>有相同的非零特征值，所以证明内在性质也等价于证明矩阵<span class="arithmatex">\(EE^T\)</span>的特征值具有<span class="arithmatex">\([\lambda, \lambda, 0]^T\)</span>的形式</li>
+<li>具体证明见https://blog.csdn.net/weixin_44387324/article/details/119182590</li>
+</ul>
+</li>
+<li>
+<p>Thus we have </p>
+<p><span class="arithmatex">\(W=\begin{bmatrix} 0&amp;-1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;1 \\ \end{bmatrix} \\ t_x=UW\sum U^T \\ R=UW^{-1}V^T \\E=U\sum V^T\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Fundamental matrix (if Ki unknown):</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\widetilde{x_2}^T\widetilde{E}\widetilde{x_1}=\bar{x_2}^T\widetilde{F}\bar{x_1}\)</span></p>
+</li>
+<li><span class="arithmatex">\(\widetilde{F} = K_2^{−1}\widetilde{E} K_1^{−1}\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="triangulation">Triangulation<a class="headerlink" href="#triangulation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Let <span class="arithmatex">\(x ̃^s_i = \widetilde{P}_ i x ̃_w\)</span> denote the projection of a 3D world point <span class="arithmatex">\(x ̃_w\)</span> onto the image of the i’th camera <span class="arithmatex">\(x ̃^s_i\)</span>. </li>
+<li>Consider the cross product <span class="arithmatex">\(x ̄^s_i × \widetilde{P}_ix ̃_w =0\)</span>. </li>
+<li>Using <span class="arithmatex">\(p ̃^⊤_{ik}\)</span> to denote the k’th row of the i’th camera’s projection matrix <span class="arithmatex">\(\widetilde{P_i}\)</span>, we obtain:</li>
+<li><span class="arithmatex">\(\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\)</span> <span class="arithmatex">\(\bar{x}_i^s=(x_i^s,y_i^s,1)\)</span></li>
+<li>Stacking N ≥ 2 observations of a point, we obtain a linear system <span class="arithmatex">\(Ax ̃_w = 0.\)</span> As <span class="arithmatex">\(x ̃_w\)</span> is homogeneous this leads to a constrained least squares problem. The solution to this problem is the <strong>right singular vector</strong> corresponding to the smallest singular value of A. This is the <strong>Direct Linear Transformation</strong> we are already familiar with from Lecture 2.</li>
+<li>
+<p>Proof <a href="https://blog.csdn.net/u011178262/article/details/86729887">https://blog.csdn.net/u011178262/article/details/86729887</a></p>
+</li>
+<li>
+<p><strong>Reprojection Error Minimization:</strong></p>
+</li>
+</ul>
+<p>While DLT often works well, it is not invariant to perspective transformations.The gold standard is to minimize the reprojection error using numerical methods:</p>
+<p><img alt="2" src="../2.png" /></p>
+<ul>
+<li>
+<p>This allows to take measurement noise appropriately into account</p>
+</li>
+<li>
+<p>The minimum can also be obtained in closed form as the solution of a sixth degree polynomial, see Hartley &amp; Zisserman, Section 12.5 for details.</p>
+</li>
+</ul>
+<h2 id="factorization">Factorization<a class="headerlink" href="#factorization" title="Permanent link">&para;</a></h2>
+<h3 id="orthographic-factorization">Orthographic Factorization<a class="headerlink" href="#orthographic-factorization" title="Permanent link">&para;</a></h3>
+<p><img alt="3" src="../3.png" /></p>
+<p><img alt="4" src="../4.png" /></p>
+<p><img alt="5" src="../5.png" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p><img alt="7" src="../7.png" /></p>
 <p><img alt="8" src="../8.png" /></p>
-<blockquote>
-<p>lens distortion</p>
-</blockquote>
+<h4 id="algorithm"><strong>Algorithm:</strong><a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Take measurements <span class="arithmatex">\(\hat{W}\)</span></li>
+<li>Compute SVD $\hat{W} = UΣV^⊤ $and keep the top 3 SVs </li>
+<li>Define<span class="arithmatex">\(\hat{R} =UΣ^{\frac{1}{2}}\)</span> and <span class="arithmatex">\(\hat{X} =\sum^{\frac{1}{2}}V^T\)</span></li>
+<li>Compute <span class="arithmatex">\(QQ^⊤\)</span> and from this Q</li>
+<li>Compute<span class="arithmatex">\(R=\hat{R}Q\)</span>and<span class="arithmatex">\(X=Q^{−1}\hat{X}\)</span></li>
+</ol>
+<h4 id="remarks">Remarks:<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h4>
 <ul>
-<li>radial and tangential distortion<img alt="Alt text" src="../f.png" /></li>
+<li>Advantage: <strong>closed form solution</strong> (determined up to an arbitrary global rotation) </li>
+<li>Disadvantage: <strong>complete feature tracks</strong> required (⇒ cannot handle occlusions) </li>
+<li>Solution: Apply to subsets of features/frames and propagate (see T&amp;K, Sec. 5)</li>
 </ul>
-<h2 id="23-photometric-image-formation">2.3 Photometric Image Formation<a class="headerlink" href="#23-photometric-image-formation" title="Permanent link">&para;</a></h2>
-<h3 id="rendering-equation"><span class="arithmatex">\(Rendering Equation\)</span><a class="headerlink" href="#rendering-equation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>intensity :power per solid angle<blockquote>
-<p><span class="arithmatex">\(dw=\sin\theta\)</span><span class="arithmatex">\(d\theta\)</span><span class="arithmatex">\(d\phi\)</span></p>
-</blockquote>
-</li>
-<li>Irradiance ： power per unit area<blockquote>
-<p>E(x)=d<span class="arithmatex">\(\Phi(x)\)</span>/dA</p>
-</blockquote>
-</li>
-<li>Radiannce<blockquote>
-<p>L(p,w)=<span class="arithmatex">\(d^2\Phi(p,\omega)\)</span>/<span class="arithmatex">\(d\omega\)</span><span class="arithmatex">\(dAcos\theta\)</span>
-<img alt="Alt text" src="../g.png" /></p>
-</blockquote>
-</li>
-</ul>
-<h4 id="brdf-radiance_outirradiance_in"><span class="arithmatex">\(BRDF\)</span> "<span class="arithmatex">\(Radiance_{out}/Irradiance_{in}\)</span>"<a class="headerlink" href="#brdf-radiance_outirradiance_in" title="Permanent link">&para;</a></h4>
-<h4 id="the-reflection-equation"><span class="arithmatex">\(The Reflection Equation\)</span><a class="headerlink" href="#the-reflection-equation" title="Permanent link">&para;</a></h4>
-<p><img alt="Alt text" src="../i.png" />
-<img alt="Alt text" src="../h.png" /></p>
-<h3 id="back-to-cameras">Back To Cameras<a class="headerlink" href="#back-to-cameras" title="Permanent link">&para;</a></h3>
-<p><img alt="Alt text" src="../j.png" /></p>
-<h3 id="chromatic-aberration"><span class="arithmatex">\(Chromatic Aberration\)</span><a class="headerlink" href="#chromatic-aberration" title="Permanent link">&para;</a></h3>
-<h2 id="24-image-sensing-pipeline">2.4 Image Sensing Pipeline<a class="headerlink" href="#24-image-sensing-pipeline" title="Permanent link">&para;</a></h2>
+<h2 id="bundle-adjustment">Bundle Adjustment<a class="headerlink" href="#bundle-adjustment" title="Permanent link">&para;</a></h2>
+<p><img alt="10" src="../10.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 11:09:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:47:52</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
       
     
   </small>
