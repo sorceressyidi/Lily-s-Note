@@ -1414,7 +1414,7 @@
 <li>
 <p>Proof</p>
 <ul>
-<li>证明本质矩阵E EE奇异值具有<span class="arithmatex">\([σ,σ,0]^ T\)</span>的形式，只需证明矩阵<span class="arithmatex">\(E^TE\)</span>的特征值具有[<span class="arithmatex">\([\lambda, \lambda, 0]^T <span class="arithmatex">\(的形式。由于矩阵\)</span>EE^T\)</span>与<span class="arithmatex">\(E^TE\)</span>有相同的非零特征值，所以证明内在性质也等价于证明矩阵<span class="arithmatex">\(EE^T\)</span>的特征值具有<span class="arithmatex">\([\lambda, \lambda, 0]^T\)</span>的形式</li>
+<li>证明本质矩阵E EE奇异值具有<span class="arithmatex">\([σ,σ,0]^ T\)</span>的形式，只需证明矩阵<span class="arithmatex">\(E^TE\)</span>的特征值具有<span class="arithmatex">\([\lambda, \lambda, 0]^T\)</span>的形式。由于矩阵 <span class="arithmatex">\(EE^T\)</span> 与 <span class="arithmatex">\(E^TE\)</span>有相同的非零特征值，所以证明内在性质也等价于证明矩阵<span class="arithmatex">\(EE^T\)</span>的特征值具有<span class="arithmatex">\([\lambda, \lambda, 0]^T\)</span>的形式</li>
 <li>具体证明见https://blog.csdn.net/weixin_44387324/article/details/119182590</li>
 </ul>
 </li>
@@ -1439,7 +1439,8 @@
 <li>Let <span class="arithmatex">\(x ̃^s_i = \widetilde{P}_ i x ̃_w\)</span> denote the projection of a 3D world point <span class="arithmatex">\(x ̃_w\)</span> onto the image of the i’th camera <span class="arithmatex">\(x ̃^s_i\)</span>. </li>
 <li>Consider the cross product <span class="arithmatex">\(x ̄^s_i × \widetilde{P}_ix ̃_w =0\)</span>. </li>
 <li>Using <span class="arithmatex">\(p ̃^⊤_{ik}\)</span> to denote the k’th row of the i’th camera’s projection matrix <span class="arithmatex">\(\widetilde{P_i}\)</span>, we obtain:</li>
-<li><span class="arithmatex">\(\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\)</span> <span class="arithmatex">\(\bar{x}_i^s=(x_i^s,y_i^s,1)\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\widetilde{x}_w=0\)</span></li>
+<li><span class="arithmatex">\(\bar{x}_i^s=(x_i^s,y_i^s,1)\)</span></li>
 <li>Stacking N ≥ 2 observations of a point, we obtain a linear system <span class="arithmatex">\(Ax ̃_w = 0.\)</span> As <span class="arithmatex">\(x ̃_w\)</span> is homogeneous this leads to a constrained least squares problem. The solution to this problem is the <strong>right singular vector</strong> corresponding to the smallest singular value of A. This is the <strong>Direct Linear Transformation</strong> we are already familiar with from Lecture 2.</li>
 <li>
 <p>Proof <a href="https://blog.csdn.net/u011178262/article/details/86729887">https://blog.csdn.net/u011178262/article/details/86729887</a></p>
@@ -1488,11 +1489,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 21:48:09</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 15:43:19</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 21:48:09</span>
       
     
   </small>
