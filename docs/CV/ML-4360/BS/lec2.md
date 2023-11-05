@@ -42,7 +42,7 @@
 ![Alt text](f.png)
 * Complete perspective projection
 
-<img src="/Users/lily/Desktop/note/截屏2023-11-04 10.41.00.png" alt="截屏2023-11-04 10.41.00" style="zoom:50%;" />
+<img src="/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/BS/8.png" alt="8" style="zoom:50%;" />
 
 >lens distortion
 
