@@ -6,9 +6,10 @@ copyright: Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  tar
 theme:
   name: material
   language: zh
-  palette:
-    primary: indigo
-    accent: indigo
+  primary: indigo
+  accent: indigo
+  logo: log.ico
+  favicon: log.ico
   features:
     - content.code.annotate
     - navigation.tracking
@@ -18,8 +19,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-extra:
-  manifest: manifest.webmanifest
+
   palette:     #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
     - media: "(prefers-color-scheme: light)" 
       scheme: default  #配色方案：浅色模式
@@ -67,13 +67,19 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.arithmatex:
       generic: true
-
+extra_css:
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
-
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sorceressyidi/
 plugins:
   - search
   - git-revision-date-localized:
@@ -90,7 +96,8 @@ nav:
   - Computer Science:
     - Fundamentals of Data Structure:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
-      - 基础数据结构: note/基础数据结构.md
+      - Basic data Structures I: note/基础数据结构.md
+      - Basic data Structures II: note/basicII.md
     - DIP:
       - Lab1:灰度图以及亮度调整: DIP/lab1/DIP.md
       - Lab2:灰度图二值化以及形态学操作: DIP/lab2/lab2.md
@@ -106,6 +113,11 @@ nav:
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
+      - structure from motion : CV/ML-4360/SFM/lec3.md
+      - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
+      - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
+      
+      
     
     
  
