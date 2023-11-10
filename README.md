@@ -1,2 +1,2 @@
 # Lily-s-Note
-Link :note.lilyarnold.cc
+Link :https://note.lilyarnold.cc
