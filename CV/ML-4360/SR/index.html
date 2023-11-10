@@ -513,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../note/basicII.md" class="md-nav__link">
+      <a href="../../../../note/basicII/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1371,56 +1371,58 @@
 <h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h2>
 <h3 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h3>
 <ul>
-<li>A point<span class="arithmatex">\(\bar{x}\)</span>in the left image must be located on the epipolar line<span class="arithmatex">\(\widetilde{l}_2\)</span></li>
-<li>This reduces correspondence search to a (much simpler) <strong>1D problem</strong> I For VGA images: ～640 instead of ～300k hypotheses (factor 480 less)</li>
+<li>A point <span class="arithmatex">\(\bar{x}\)</span> in the left image must be located on the epipolar line<span class="arithmatex">\(\widetilde{l}_2\)</span> </li>
+<li>This reduces correspondence search to a (much simpler) <strong>1D problem</strong> I For VGA images: ∼640 instead of ∼300k hypotheses (factor 480 less)</li>
 </ul>
 <h4 id="image-rectification">Image Rectification<a class="headerlink" href="#image-rectification" title="Permanent link">&para;</a></h4>
 <p><strong>What if both cameras face exactly the same direction?</strong></p>
 <ul>
-<li>Image planes are co-planar ⇒ Epipoles at infinity, epipolar lines parallel.</li>
+<li>Image planes are co-planar ⇒ Epipoles at infinity, epipolar lines parallel. </li>
 <li>Correspondences search along <strong>horizontal scanlines</strong> (simplifies implementation)</li>
-<li>
-<p>Let<span class="arithmatex">\(K1 = K2 = R = I\)</span> and<span class="arithmatex">\(t = (t,0,0)^⊤\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\bar{x_2}^T\tilde{E}\bar{x_1}=\bar{x_2}^T \begin{bmatrix}0&amp;0&amp;0\\0&amp;0&amp;-t\\0&amp;t&amp;0\end{bmatrix}\bar{x1}=ty1-ty2=0\)</span></p>
-</li>
-<li>
-<p>Thus <span class="arithmatex">\(y1=y2\)</span></p>
-</li>
+<li>Let<span class="arithmatex">\(K1 = K2 = R = I\)</span> and<span class="arithmatex">\(t = (t,0,0)^⊤\)</span></li>
+<li><span class="arithmatex">\(\bar{x_2}^T\tilde{E}\bar{x_1}=\bar{x_2}^T \begin{bmatrix}0&amp;0&amp;0\\0&amp;0&amp;-t\\0&amp;t&amp;0\end{bmatrix}\bar{x1}=ty1-ty2=0\)</span></li>
+<li>Thus <span class="arithmatex">\(y1=y2\)</span></li>
 </ul>
 <p><strong>What if the images are not in the required setup?</strong></p>
 <ul>
-<li>There is a trick: We can rewarp them through <strong>rotation,</strong> mapping both image planes to a common plane parallel to the baseline, this is called</li>
+<li>There is a trick: We can rewarp them through <strong>rotation,</strong> mapping both image planes to a common plane parallel to the baseline, this is called </li>
 <li>For this rotation around the camera center, the 3D structure must not be known</li>
 </ul>
 <p><strong>How can we make epipolar lines horizontal?</strong></p>
 <p><img alt="1" src="../1.png" /></p>
 <ul>
 <li>
-<p>Step1:Estimate<span class="arithmatex">\(\tilde{E}\)</span> , decompose into <span class="arithmatex">\(t\)</span>and <span class="arithmatex">\(R\)</span></p>
+<p>Step1:Estimate<span class="arithmatex">\(\tilde{E}\)</span> , decompose into <span class="arithmatex">\(t\)</span> and <span class="arithmatex">\(R\)</span></p>
 </li>
 <li>
 <p>Step2: Find <span class="arithmatex">\(R_{rect}\)</span></p>
 </li>
-</ul>
-<blockquote>
+<li>
 <p>Choose <span class="arithmatex">\(OO^′=t=(t_x,t_y,t_z)^T\)</span></p>
-<p><span class="arithmatex">\(e_1=\frac{T}{∣∣T∣∣}\)</span></p>
-<p><span class="arithmatex">\(e_2=\frac{1}{\sqrt{T_x^2+T_y^2}}(-Ty,Tx,0)^T= [(0, 0, 1)^⊤]×r_1\)</span></p>
-<p><span class="arithmatex">\(e_3=e_2\)</span> x <span class="arithmatex">\(e_1\)</span></p>
-<p><span class="arithmatex">\(\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}\)</span></p>
-</blockquote>
-<ul>
-<li>Step3:Adjust <span class="arithmatex">\(\tilde{x}_i\)</span></li>
+</li>
+<li><span class="arithmatex">\(e_1=\frac{T}{∣∣T∣∣}\)</span></li>
+<li><span class="arithmatex">\(e_2=\frac{1}{\sqrt{T_x^2+T_y^2}}(−Ty,Tx,0)^T= [(0, 0, 1)^⊤]×r_1\)</span> </li>
+<li><span class="arithmatex">\(e_3=e_2\)</span>  x  <span class="arithmatex">\(e_1\)</span></li>
 </ul>
-<blockquote>
-<p>Warp pixels in the first image as follows: <span class="arithmatex">\(\tilde{x}_1^{'}= KR_{rect}K_1^{-1}x ̄_1\)</span></p>
-<p>Warp pixels in the second image as follows: <span class="arithmatex">\(\tilde{x}_2^{'}=KRR_{rect}K_2^{-1}x ̄_2\)</span></p>
-<p>NOTE ：Different coordinate systems result in different perception of <span class="arithmatex">\(R_{rect}\)</span>,Thus the <span class="arithmatex">\(R_{rect}^{'}=RR_{rect}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}\)</span></p>
+<ul>
+<li>
+<p>Step3:Adjust <span class="arithmatex">\(\tilde{x}_i\)</span></p>
+</li>
+<li>
+<p>Warp pixels in the first image as follows: <span class="arithmatex">\(\tilde{x}_1^{'}\)</span>= <span class="arithmatex">\(KR_{rect}K_1^{−1}x ̄_1\)</span></p>
+</li>
+<li>
+<p>Warp pixels in the second image as follows: <span class="arithmatex">\(\tilde{x}_2^{'}\)</span>= <span class="arithmatex">\(KRR_{rect}K_2^{−1}x ̄_2\)</span></p>
+<ul>
+<li>NOTE ：Different coordinate systems result in different perception of <span class="arithmatex">\(R_{rect}\)</span>,Thus the <span class="arithmatex">\(R_{rect}^{'}=RR_{rect}\)</span></li>
+</ul>
+</li>
+<li>
 <p>K is a shared projection matrix that can be chosen arbitrarily (e.g., K = K1)</p>
-<p>In practice, the inverse transformation is used for warping (i.e. query the source)</p>
-</blockquote>
+</li>
+<li>In practice, the inverse transformation is used for warping (i.e. query the source)  </li>
+</ul>
 <h4 id="disparity-to-depth">Disparity to Depth<a class="headerlink" href="#disparity-to-depth" title="Permanent link">&para;</a></h4>
 <p><img alt="2" src="../2.png" /></p>
 <h3 id="block-matching">Block Matching<a class="headerlink" href="#block-matching" title="Permanent link">&para;</a></h3>
@@ -1435,12 +1437,8 @@
 <p><img alt="4" src="../4.png" /></p>
 <h4 id="assumption-violations">Assumption Violations<a class="headerlink" href="#assumption-violations" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>Block matching assumes that all pixels inside the window are displaced by d</p>
-</li>
-<li>
-<p>This is called the <strong>fronto-parallel assumption</strong> which is often invalid</p>
-</li>
+<li>Block matching assumes that all pixels inside the window are displaced by d </li>
+<li>This is called the <strong>fronto-parallel assumption</strong> which is often invalid</li>
 <li>
 <p><strong>Slanted surfaces</strong> deform perspectively when the viewpoint changes</p>
 </li>
@@ -1452,23 +1450,23 @@
 </li>
 <li>
 <p>Larger windows lead to smoother results, but loss of details and border bleeding</p>
-</li>
-<li>
-<p><strong>Border Bleeding:</strong></p>
-</li>
+<ul>
+<li><strong>Border Bleeding:</strong></li>
 </ul>
 <p><img alt="5" src="../5.png" /></p>
-<ul>
-<li><strong>Left-Right Consistency Test:</strong></li>
+</li>
+<li>
+<p><strong>Left-Right Consistency Test:</strong></p>
+</li>
 </ul>
 <h3 id="siamese-networks">Siamese Networks<a class="headerlink" href="#siamese-networks" title="Permanent link">&para;</a></h3>
 <h4 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h4>
 <p><img alt="6" src="../6.png" /></p>
 <h4 id="loss-function">Loss Function<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h4>
-<p><strong>Hinge Loss:</strong><span class="arithmatex">\(L = max(0, m + s_- - s_+)\)</span></p>
+<p><strong>Hinge Loss:</strong><span class="arithmatex">\(L = max(0, m + s_− − s_+)\)</span></p>
 <ul>
 <li>
-<p><span class="arithmatex">\(s_- / s_+\)</span> is the score of the network for the negative/positive example</p>
+<p><span class="arithmatex">\(s_− / s_+\)</span> is the score of the network for the negative/positive example</p>
 </li>
 <li>
 <p>The loss is zero when the similarity of the positive example is greater than the similarity of the negative example by at least margin m</p>
@@ -1476,21 +1474,11 @@
 <li>
 <p>The network is trained by <strong>minimizing</strong> a <strong>hinge loss</strong>. </p>
 </li>
-<li>
-<p>The loss is computed by considering pairs of examples centered around the same image position where one example belongs to the positive and one to the negative class.</p>
-</li>
-<li>
-<p>Let <span class="arithmatex">\(s_+\)</span>be the output of the network for the positive example, <span class="arithmatex">\(s_-\)</span> be the output of the network for the negative example</p>
-</li>
-<li>
-<p>Let m, the margin, be a positive real number.</p>
-</li>
-<li>
-<p>The hinge loss for that pair of examples is defined as <span class="arithmatex">\(L = max(0, m + s_- - s_+)\)</span> The loss is zero when the similarity of the positive example is greater than the similarity of the negative example by at least the margin m.</p>
-</li>
-<li>
-<p>Set the margin to 0.2 in our experiments.</p>
-</li>
+<li>The loss is computed by considering pairs of examples centered around the same image position where one example belongs to the positive and one to the negative class. </li>
+<li>Let <span class="arithmatex">\(s_+\)</span> be the output of the network for the positive example, <span class="arithmatex">\(s_−\)</span> be the output of the network for the negative example</li>
+<li>Let m, the margin, be a positive real number. </li>
+<li>The hinge loss for that pair of examples is defined as <span class="arithmatex">\(L = max(0, m + s_− − s_+)\)</span>. The loss is zero when the similarity of the positive example is greater than the similarity of the negative example by at least the margin m.</li>
+<li>Set the margin to 0.2 in our experiments.</li>
 </ul>
 <h4 id="paper">Paper<a class="headerlink" href="#paper" title="Permanent link">&para;</a></h4>
 <iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.jmlr.org/papers/volume17/15-535/15-535.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
@@ -1498,36 +1486,34 @@
 <p><a href="https://www.jmlr.org/papers/volume17/15-535/15-535.pdf">https://www.jmlr.org/papers/volume17/15-535/15-535.pdf</a></p>
 <h3 id="spatial-regularization">Spatial Regularization<a class="headerlink" href="#spatial-regularization" title="Permanent link">&para;</a></h3>
 <ul>
+<li>Add Pairwise terms: Smoothness between adjacent pixels in addition to matching costs;</li>
+<li>Potts: <span class="arithmatex">\(ψ_{smooth}(d, d^′) = [d\ne d^′]\)</span></li>
 <li>
-<p>Add Pairwise terms: Smoothness between adjacent pixels in addition to matching costs;</p>
+<p>Truncated<span class="arithmatex">\(l_1:ψ+{smooth}(d,d^′)=min(|d−d^′|,τ)\)</span></p>
 </li>
 <li>
-<p>Potts: <span class="arithmatex">\(ψ_{smooth}(d, d^′) = [d\ne d^′]\)</span></p>
-</li>
-<li>
-<p>Truncated<span class="arithmatex">\(l_1:ψ+{smooth}(d,d^′)=min(|d-d^′|,τ)\)</span></p>
-</li>
-<li>
-<p>Paper </p>
+<p>Paper</p>
 </li>
 </ul>
-<p><a href="https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&amp;isAllowed=y">https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&amp;isAllowed=y</a></p>
+<iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&isAllowed=y&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
+
+<p>Credits to <a href="https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&amp;isAllowed=y">https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&amp;isAllowed=y</a></p>
 <h3 id="end-to-end-learning">End-to-End Learning<a class="headerlink" href="#end-to-end-learning" title="Permanent link">&para;</a></h3>
 <p><strong>End to End learning</strong> in the context of AI and ML is a technique where the model learns all the steps between the initial input phase and the final output result. This is a deep learning process where all of the different parts are simultaneously trained instead of sequentially.</p>
-<h5 id="dispnet">DISPNET<a class="headerlink" href="#dispnet" title="Permanent link">&para;</a></h5>
-<h5 id="gcnet">GCNET<a class="headerlink" href="#gcnet" title="Permanent link">&para;</a></h5>
-<h5 id="stereo-mixture-density-networks-smd-nets">STEREO MIXTURE DENSITY NETWORKS (SMD-NETS)<a class="headerlink" href="#stereo-mixture-density-networks-smd-nets" title="Permanent link">&para;</a></h5>
+<h5 id="dispnet">DispNet<a class="headerlink" href="#dispnet" title="Permanent link">&para;</a></h5>
+<h5 id="gcnet">GCNet<a class="headerlink" href="#gcnet" title="Permanent link">&para;</a></h5>
+<h5 id="stereo-mixture-density-networks-smd-nets">Stereo Mixture Density Networks (SMD-Nets)<a class="headerlink" href="#stereo-mixture-density-networks-smd-nets" title="Permanent link">&para;</a></h5>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 00:56:58</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月10日 20:04:07</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 00:20:53</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月10日 20:04:07</span>
       
     
   </small>
@@ -1579,7 +1565,7 @@
       
       
     
-    <a href="https://github.com/sorceressyidi/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/HobbitQia/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
