@@ -4,7 +4,7 @@
 
 ### Epipolar Geometry
 
-- A poin$\bar{x}$in the left image must be located on the epipolar line$\widetilde{l}_2$
+- A point$\bar{x}$in the left image must be located on the epipolar line$\widetilde{l}_2$
 - This reduces correspondence search to a (much simpler) **1D problem** I For VGA images: ～640 instead of ～300k hypotheses (factor 480 less)
 
 #### Image Rectification
@@ -26,37 +26,37 @@
 
 **How can we make epipolar lines horizontal?**
 
-![1](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/1.png)
+![1](1.png)
 
 - Step1:Estimate$\tilde{E}$ , decompose into $t$and $R$
 
 - Step2: Find $R_{rect}$
 
-- Choose $OO^′=t=(t_x,t_y,t_z)^T$
-
-- $e_1=\frac{T}{∣∣T∣∣}$
-
-- $e_2=\frac{1}{\sqrt{T_x^2+T_y^2}}(-Ty,Tx,0)^T= [(0, 0, 1)^⊤]×r_1$
-
-- $e_3=e_2$ x $e_1$
-
-$\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
+  > Choose $OO^′=t=(t_x,t_y,t_z)^T$
+  >
+  > $e_1=\frac{T}{∣∣T∣∣}$
+  >
+  > $e_2=\frac{1}{\sqrt{T_x^2+T_y^2}}(-Ty,Tx,0)^T= [(0, 0, 1)^⊤]×r_1$
+  >
+  > $e_3=e_2$ x $e_1$
+  >
+  > $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 - Step3:Adjust $\tilde{x}_i$
 
-- Warp pixels in the first image as follows: $\tilde{x}_1^{'}= KR_{rect}K_1^{-1}x ̄_1$
-
-- Warp pixels in the second image as follows: $\tilde{x}_2^{'}=KRR_{rect}K_2^{-1}x ̄_2$
-
-- NOTE ：Different coordinate systems result in different perception of $R_{rect}$,Thus the $R_{rect}^{'}=RR_{rect}$
-
-- K is a shared projection matrix that can be chosen arbitrarily (e.g., K = K1)
-
-- In practice, the inverse transformation is used for warping (i.e. query the source)
+  > Warp pixels in the first image as follows: $\tilde{x}_1^{'}= KR_{rect}K_1^{-1}x ̄_1$
+  >
+  > Warp pixels in the second image as follows: $\tilde{x}_2^{'}=KRR_{rect}K_2^{-1}x ̄_2$
+  >
+  > NOTE ：Different coordinate systems result in different perception of $R_{rect}$,Thus the $R_{rect}^{'}=RR_{rect}$
+  >
+  > K is a shared projection matrix that can be chosen arbitrarily (e.g., K = K1)
+  >
+  > In practice, the inverse transformation is used for warping (i.e. query the source)
 
 #### Disparity to Depth
 
-![2](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/2.png)
+![2](2.png)
 
 ### Block Matching
 
@@ -66,11 +66,11 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Zero Normalized Cross-Correlation
 
-![3](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/3.png)
+![3](3.png)
 
 #### Sum of squared differences (SSD)
 
-![4](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/4.png)
+![4](4.png)
 
 #### Assumption Violations
 
@@ -88,7 +88,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
   - **Border Bleeding:**
 
-  ![5](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/5.png)
+  ![5](5.png)
 
 - **Left-Right Consistency Test:**
 
@@ -96,7 +96,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Training
 
-![6](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/6.png)
+![6](6.png)
 
 #### Loss Function
 
@@ -120,7 +120,8 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Paper
 
-<iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.jmlr.org/papers/volume17/15-535/15-535.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;">
+<iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.jmlr.org/papers/volume17/15-535/15-535.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
+
 
 
 
@@ -134,7 +135,10 @@ https://www.jmlr.org/papers/volume17/15-535/15-535.pdf
 - Potts: $ψ_{smooth}(d, d^′) = [d\ne d^′]$
 
 - Truncated$l_1:ψ+{smooth}(d,d^′)=min(|d-d^′|,τ)$
-- Paper https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&isAllowed=y
+
+- Paper 
+
+  https://dash.harvard.edu/bitstream/handle/1/3637107/Mumford_StatRangeImage.pdf?sequence=3&isAllowed=y
 
 ### End-to-End Learning
 
