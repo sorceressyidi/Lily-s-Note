@@ -16,15 +16,15 @@
         <link rel="prev" href="../%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/">
       
       
-        <link rel="next" href="../../DIP/lab1/DIP/">
+        <link rel="next" href="../basicII/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../log.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>基础数据结构 - Lily's Notebook</title>
+        <title>Basic data Structures I - Lily's Notebook</title>
       
     
     
@@ -50,6 +50,12 @@
       
     
     
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -62,12 +68,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -91,8 +101,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../log.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,13 +118,37 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              基础数据结构
+              Basic data Structures I
             
           </span>
         </div>
       </div>
     </div>
     
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
       
     
     
@@ -278,8 +311,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../log.ico" alt="logo">
 
     </a>
     Lily's Notebook
@@ -407,6 +439,8 @@
       
         
       
+        
+      
     
     
     
@@ -474,7 +508,7 @@
           
   
   <span class="md-ellipsis">
-    基础数据结构
+    Basic data Structures I
   </span>
   
 
@@ -485,7 +519,7 @@
         
   
   <span class="md-ellipsis">
-    基础数据结构
+    Basic data Structures I
   </span>
   
 
@@ -634,10 +668,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-dynamic-equivalence-problem" class="md-nav__link">
+    The Dynamic Equivalence Problem
+  </a>
+  
+    <nav class="md-nav" aria-label="The Dynamic Equivalence Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-disjoint-set-adt" class="md-nav__link">
+    THE DISJOINT SET ADT
+  </a>
+  
+    <nav class="md-nav" aria-label="THE DISJOINT SET ADT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smart-union-algorithms" class="md-nav__link">
+    Smart Union Algorithms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basicII/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures II
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1027,6 +1114,8 @@
       
         
       
+        
+      
     
     
     
@@ -1108,6 +1197,26 @@
   
   <span class="md-ellipsis">
     Stereo Reconstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probabilistic Graphical Models
   </span>
   
 
@@ -1286,6 +1395,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-dynamic-equivalence-problem" class="md-nav__link">
+    The Dynamic Equivalence Problem
+  </a>
+  
+    <nav class="md-nav" aria-label="The Dynamic Equivalence Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-disjoint-set-adt" class="md-nav__link">
+    THE DISJOINT SET ADT
+  </a>
+  
+    <nav class="md-nav" aria-label="THE DISJOINT SET ADT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smart-union-algorithms" class="md-nav__link">
+    Smart Union Algorithms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1301,7 +1443,7 @@
                   
 
 
-  <h1>基础数据结构</h1>
+  <h1>Basic data Structures I</h1>
 
 <h2 id="sparse-matrix">SPARSE MATRIX<a class="headerlink" href="#sparse-matrix" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -2009,6 +2151,237 @@
 <blockquote>
 <p>Question: how to make it a natural stop without using <span class="arithmatex">\(Child != H-&gt;size\)</span></p>
 </blockquote>
+<h2 id="the-dynamic-equivalence-problem">The Dynamic Equivalence Problem<a class="headerlink" href="#the-dynamic-equivalence-problem" title="Permanent link">&para;</a></h2>
+<p>A dynamic graph generally refers to a graph that keeps on changing its configuration. Let’s deep dive into it using an example:</p>
+<ul>
+<li>Let’s consider the edge information for the given graph as: {{1,2}, {2,3}, {4,5}, {6,7}, {5,6}, {3,7}}. Now if we start adding the edges one by one, in each step the structure of the graph will change. So, after each step, if we perform the same operation on the graph while updating the edges, the result might be different. In this case, the graph will be considered a dynamic graph.</li>
+<li>For example, after adding the first 4 edges if we look at the graph, we will find that node 4 and node 1 belong to different components but after adding all 6 edges if we search for the same we will figure out that node 4 and node 1 belong to the same component.</li>
+</ul>
+<h3 id="the-disjoint-set-adt">THE DISJOINT SET ADT<a class="headerlink" href="#the-disjoint-set-adt" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNION</li>
+</ul>
+<blockquote>
+<p>NOTE:UNION is the union of the head of one head to another(thus for a random element x,always find the "head" element Find(x) and modify s[Find(x)]</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>void  SetUnion ( DisjSet S, 
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>                 SetType Rt1, 
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>                 SetType Rt2 )
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>{    S [ Rt2 ] = Rt1 ;     }
+</code></pre></div>
+<ul>
+<li>Find</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>SetType  Find ( ElementType X, DisjSet S )
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>{   for ( ; S[X] &gt; 0; X = S[X] )   ;
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    return  X ;
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>}
+</code></pre></div>
+<ul>
+<li>Analysis for the Given problem</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Algorithm using union-find operations
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>{  Initialize  Si = { i }  for  i = 1, ..., 12 ;
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>   for  ( k = 1; k &lt;= 9; k++ )  {  /* for each pair  i 等价j  即如果给出九组等价关系*/
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>      if  ( Find( i ) != Find( j ) )
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>          SetUnion( Find( i ), Find( j ) );
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>   }
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>}
+</code></pre></div>
+<h4 id="smart-union-algorithms">Smart Union Algorithms<a class="headerlink" href="#smart-union-algorithms" title="Permanent link">&para;</a></h4>
+<ul>
+<li>！！其实可以不开新数组，只记录在根的数据中</li>
+</ul>
+<h5 id="union-by-rank">Union by rank<a class="headerlink" href="#union-by-rank" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Rank:</strong></li>
+</ul>
+<p>The rank of a node generally refers to the distance (the number of nodes including the leaf node) between the furthest leaf node and the current node. Basically rank includes all the nodes beneath the current node.</p>
+<ul>
+<li>
+<p><strong>Algorithm:</strong></p>
+</li>
+<li>
+<p><strong>Initial configuration:</strong></p>
+</li>
+<li>
+<p><strong>rank array:</strong> This array is initialized with zero.</p>
+</li>
+<li>
+<p><strong>parent array:</strong> The array is initialized with the value of nodes i.e. parent[i] =i.</p>
+</li>
+<li>
+<p>The algorithm steps are as follows:</p>
+</li>
+<li>
+<p>Firstly, the Union function requires two nodes(<strong>let’s say u and v</strong>) as arguments. Then we will find the ultimate parent (using the findPar() function that is discussed later) of u and v. Let’s consider the ultimate parent of u is <strong>pu</strong> and the ultimate parent of v is <strong>pv</strong>.</p>
+</li>
+<li>After that, we will find the rank of <strong>pu</strong> and <strong>pv</strong>.</li>
+<li>Finally, we will connect the ultimate parent with a smaller rank to the other ultimate parent with a larger rank. But if the ranks are equal, we can connect any parent to the other parent and we will increase the rank by one for the parent node to whom we have connected the other one.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">make_set</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">parent</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">rank</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">union_sets</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_set</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_set</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rank</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">        </span><span class="n">parent</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rank</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">            </span><span class="n">rank</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="p">}</span>
+</code></pre></div>
+<h5 id="union-by-size">Union by size<a class="headerlink" href="#union-by-size" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Quite similar as Union by rank.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">make_set</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">parent</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">size</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">union_sets</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_set</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find_set</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">        </span><span class="n">parent</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">        </span><span class="n">size</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Let T be a tree created by union-by-size with N nodes, then <span class="arithmatex">\(Height(T) \le \lfloor log_2N \rfloor + 1\)</span></li>
+<li>Proof:  By induction.  (Each element can have its set name changed at most <span class="arithmatex">\(log_2N\)</span> times.）「Union by size」<ul>
+<li>First , all note are at depth 0 at the very beginning</li>
+<li>Every time,we do Union:the node was set on a new tree whose size is at least twice its size</li>
+<li>So a node from either set can only incrase the depth by 1</li>
+<li>For n nodes ,every node can have its set name changed at most log2 N times.</li>
+<li>Thus,Time complexity for Find is <span class="arithmatex">\(O (l o g N )\)</span></li>
+</ul>
+</li>
+<li>Here is a proof by induction on the tree height k. 「Union By Size」<ul>
+<li>The base case K=0 is easy, since a tree of height 0 always has just 1 node</li>
+<li>Suppose the claim is true for h=k. Now consider a union-by-height tree of height k+1. </li>
+<li>There must have been a union that brought two trees together and increased the height of one of them from k to k+1. </li>
+<li>Let those two trees (at the time of that union) be T1 and T2. We know that both T1 and T2 were of height k before the union. </li>
+<li>If one of them were of height less than k, then union-by-height would have changed the root of that shorter one to make it point to the root of the taller one, and the height of the unioned tree would still be k. </li>
+<li>Now we can apply the induction hypothesis: the trees T1 and T2 each have at least <span class="arithmatex">\(2^k\)</span> nodes. Thus, the unioned tree has at least $2^k + 2^k = 2^{k+1} $nodes. </li>
+</ul>
+</li>
+<li>Time complexity of  <span class="arithmatex">\(N\)</span>  Union and <span class="arithmatex">\(M\)</span> Find operations is now. <span class="arithmatex">\(O( N + M log_2N)\)</span>.</li>
+</ul>
+<h5 id="path-compression">Path Compression<a class="headerlink" href="#path-compression" title="Permanent link">&para;</a></h5>
+<p>Basically, connecting each node in a particular path to its ultimate parent refers to path compression. Let’s understand it using the following illustration</p>
+<ol>
+<li><strong>Base case:</strong> If the node and the parent of the node become the same, it will return the node.</li>
+<li>We will call the findPar() function for a node until it hits the base case and while backtracking we will update the parent of the current node with the returned value.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">SetType</span><span class="w">  </span><span class="nf">Find</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w">  </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w">  </span><span class="n">S</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="k">return</span><span class="w">  </span><span class="n">X</span><span class="p">;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="k">else</span><span class="w">  </span><span class="k">return</span><span class="w">  </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">);</span><span class="c1">//IMPORTANT！！！</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p">}</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1">//The simple implementation does what was intended: first find the representative of the set (root vertex), and then in the process of stack unwinding the visited nodes are attached directly to the representative.</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">SetType</span><span class="w">  </span><span class="nf">Find</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w">  </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">DisjSet</span><span class="w">  </span><span class="n">S</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">{</span><span class="w">   </span><span class="n">ElementType</span><span class="w">  </span><span class="n">root</span><span class="p">,</span><span class="w">  </span><span class="n">trail</span><span class="p">,</span><span class="w">  </span><span class="n">lead</span><span class="p">;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="p">;</span><span class="w">  </span><span class="cm">/* find the root */</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lead</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">       </span><span class="n">lead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">   </span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">       </span><span class="n">S</span><span class="p">[</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="p">;</span><span class="w">   </span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="cm">/* collapsing */</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="k">return</span><span class="w">  </span><span class="n">root</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>NOTE</strong></p>
+<ul>
+<li>Though using the path compression technique it seems like the rank of the node is also changing, we cannot be sure about it. So, we will not make any changes to the rank array while applying path compression. </li>
+<li>Just take “height” as an estimated rank.</li>
+</ul>
+<h5 id="worst-case-for-union-by-rank-and-path-compression">Worst Case for Union-by-Rank and Path Compression<a class="headerlink" href="#worst-case-for-union-by-rank-and-path-compression" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">size</span><span class="p">;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">};</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">createDisjointSet</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">ds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="p">));</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ds</span><span class="p">;</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="p">}</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="kt">int</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">node</span><span class="p">])</span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">node</span><span class="p">]);</span><span class="c1">//PATH COMPRESSION</span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">node</span><span class="p">];</span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="p">}</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="kt">void</span><span class="w"> </span><span class="n">unionByRank</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ulp_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">);</span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ulp_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ulp_u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ulp_v</span><span class="p">)</span>
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ulp_v</span><span class="p">;</span>
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ulp_u</span><span class="p">;</span>
+<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ulp_u</span><span class="p">;</span>
+<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a><span class="p">}</span>
+<a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a><span class="kt">void</span><span class="w"> </span><span class="n">unionBySize</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ulp_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">);</span>
+<a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ulp_v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ulp_u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ulp_v</span><span class="p">)</span>
+<a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ulp_v</span><span class="p">;</span>
+<a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">];</span>
+<a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ulp_u</span><span class="p">;</span>
+<a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a><span class="w">        </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_u</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">[</span><span class="n">ulp_v</span><span class="p">];</span>
+<a id="__codelineno-21-51" name="__codelineno-21-51" href="#__codelineno-21-51"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-52" name="__codelineno-21-52" href="#__codelineno-21-52"></a><span class="p">}</span>
+<a id="__codelineno-21-53" name="__codelineno-21-53" href="#__codelineno-21-53"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-54" name="__codelineno-21-54" href="#__codelineno-21-54"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="o">*</span><span class="w"> </span><span class="n">ds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDisjointSet</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+<a id="__codelineno-21-55" name="__codelineno-21-55" href="#__codelineno-21-55"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-21-56" name="__codelineno-21-56" href="#__codelineno-21-56"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-21-57" name="__codelineno-21-57" href="#__codelineno-21-57"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-21-58" name="__codelineno-21-58" href="#__codelineno-21-58"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+<a id="__codelineno-21-59" name="__codelineno-21-59" href="#__codelineno-21-59"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+<a id="__codelineno-21-60" name="__codelineno-21-60" href="#__codelineno-21-60"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-61" name="__codelineno-21-61" href="#__codelineno-21-61"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Same</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-21-62" name="__codelineno-21-62" href="#__codelineno-21-62"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-63" name="__codelineno-21-63" href="#__codelineno-21-63"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Not same</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-21-64" name="__codelineno-21-64" href="#__codelineno-21-64"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-65" name="__codelineno-21-65" href="#__codelineno-21-65"></a><span class="w">    </span><span class="n">unionBySize</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+<a id="__codelineno-21-66" name="__codelineno-21-66" href="#__codelineno-21-66"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">findUPar</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-67" name="__codelineno-21-67" href="#__codelineno-21-67"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Same</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-21-68" name="__codelineno-21-68" href="#__codelineno-21-68"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-69" name="__codelineno-21-69" href="#__codelineno-21-69"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Not same</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-21-70" name="__codelineno-21-70" href="#__codelineno-21-70"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-71" name="__codelineno-21-71" href="#__codelineno-21-71"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">);</span>
+<a id="__codelineno-21-72" name="__codelineno-21-72" href="#__codelineno-21-72"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">parent</span><span class="p">);</span>
+<a id="__codelineno-21-73" name="__codelineno-21-73" href="#__codelineno-21-73"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">ds</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">);</span>
+<a id="__codelineno-21-74" name="__codelineno-21-74" href="#__codelineno-21-74"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">ds</span><span class="p">);</span>
+<a id="__codelineno-21-75" name="__codelineno-21-75" href="#__codelineno-21-75"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-21-76" name="__codelineno-21-76" href="#__codelineno-21-76"></a><span class="p">}</span>
+</code></pre></div>
+<p><img alt="3" src="../3.png" /></p>
 
   <hr>
 <div class="md-source-file">
@@ -2058,6 +2431,21 @@
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/HobbitQia/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
 </div>

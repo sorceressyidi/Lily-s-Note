@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/DIP/lab2/lab2/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/note/basicII/">
       
       
-        <link rel="prev" href="../../lab1/DIP/">
+        <link rel="prev" href="../%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
       
       
-        <link rel="next" href="../../lab3/lab3/">
+        <link rel="next" href="../../DIP/lab1/DIP/">
       
       
-      <link rel="icon" href="../../../log.ico">
+      <link rel="icon" href="../../log.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Lab2:灰度图二值化以及形态学操作 - Lily's Notebook</title>
+        <title>Basic data Structures II - Lily's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -56,7 +56,7 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#the-dynamic-equivalence-problem" class="md-skip">
           跳转至
         </a>
       
@@ -99,9 +99,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../../log.ico" alt="logo">
+  <img src="../../log.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab2:灰度图二值化以及形态学操作
+              Basic data Structures II
             
           </span>
         </div>
@@ -212,7 +212,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -242,7 +242,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+        <a href="../%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
           
   
     
@@ -271,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+        <a href="../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
           
   
     
@@ -309,9 +309,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../../log.ico" alt="logo">
+  <img src="../../log.ico" alt="logo">
 
     </a>
     Lily's Notebook
@@ -348,7 +348,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -429,118 +429,6 @@
                 
   
   
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Fundamentals of Data Structure
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Fundamentals of Data Structure
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Maximum Subsequence Sum Problem
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic data Structures I
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../note/basicII/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic data Structures II
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -562,24 +450,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    DIP
+    Fundamentals of Data Structure
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            DIP
+            Fundamentals of Data Structure
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -589,11 +477,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lab1/DIP/" class="md-nav__link">
+      <a href="../%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lab1:灰度图以及亮度调整
+    Maximum Subsequence Sum Problem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures I
   </span>
   
 
@@ -620,7 +528,7 @@
           
   
   <span class="md-ellipsis">
-    Lab2:灰度图二值化以及形态学操作
+    Basic data Structures II
   </span>
   
 
@@ -631,7 +539,7 @@
         
   
   <span class="md-ellipsis">
-    Lab2:灰度图二值化以及形态学操作
+    Basic data Structures II
   </span>
   
 
@@ -651,83 +559,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、实验目的和要求
-  </a>
-  
-    <nav class="md-nav" aria-label="一、实验目的和要求">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.图像二值化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.二值图像腐蚀
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3.二值图像膨胀
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4.二值图像开运算
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5.二值图像闭运算
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、实验内容和原理
-  </a>
-  
-    <nav class="md-nav" aria-label="二、实验内容和原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    1.图像二值化：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1_3" class="md-nav__link">
-    1.形态学操作：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、心得体会
+  <a href="#the-dynamic-equivalence-problem" class="md-nav__link">
+    The Dynamic Equivalence Problem
   </a>
   
 </li>
@@ -741,13 +574,105 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DIP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            DIP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../../lab3/lab3/" class="md-nav__link">
+      <a href="../../DIP/lab1/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1:灰度图以及亮度调整
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab2/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2:灰度图二值化以及形态学操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DIP/lab3/lab3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -827,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+      <a href="../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -887,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+      <a href="../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -907,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+      <a href="../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+      <a href="../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -947,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../CV/ML-4360/BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+      <a href="../../CV/ML-4360/SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+      <a href="../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1185,83 +1110,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、实验目的和要求
-  </a>
-  
-    <nav class="md-nav" aria-label="一、实验目的和要求">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.图像二值化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.二值图像腐蚀
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3.二值图像膨胀
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4.二值图像开运算
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5.二值图像闭运算
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、实验内容和原理
-  </a>
-  
-    <nav class="md-nav" aria-label="二、实验内容和原理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    1.图像二值化：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1_3" class="md-nav__link">
-    1.形态学操作：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、心得体会
+  <a href="#the-dynamic-equivalence-problem" class="md-nav__link">
+    The Dynamic Equivalence Problem
   </a>
   
 </li>
@@ -1281,115 +1131,20 @@
                   
 
 
-  <h1>Lab2:灰度图二值化以及形态学操作</h1>
+  <h1>Basic data Structures II</h1>
 
-<h3 id="_1">一、实验目的和要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<h4 id="1">1.图像二值化<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>使用适当的阈值技术（大津算法）将一张灰度图像转换为二值图像。</li>
-<li>记录并分析选择的阈值方法对二值化结果的影响。</li>
-</ul>
-<h4 id="2">2.二值图像腐蚀<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<ul>
-<li>对二值图像应用腐蚀操作</li>
-</ul>
-<h4 id="3">3.二值图像膨胀<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
-<ul>
-<li>对二值图像应用膨胀操作</li>
-</ul>
-<h4 id="4">4.二值图像开运算<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
-<ul>
-<li>实现二值图像的开运算，即腐蚀后膨胀。</li>
-<li>观察开运算对去除小噪声和分离物体的效果。</li>
-</ul>
-<h4 id="5">5.二值图像闭运算<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
-<ul>
-<li>实现二值图像的闭运算，即膨胀后腐蚀。</li>
-<li>观察闭运算对填充空洞和连接物体的效果。</li>
-</ul>
-<h3 id="_2">二、<strong>实验内容和原理</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="1_1">1.图像二值化：<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<h5 id="1_2">（1）二值图像<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h5>
-<p>二值图像（Binary Image）中，像素值限定为 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>（编程中一般用 <span class="arithmatex">\(0\)</span> 和<span class="arithmatex">\(255\)</span> 来构造二值图像)。</p>
-<ul>
-<li>优点：占用更少内存、更高效，有时可应用于灰度图像，同时更加便宜。</li>
-<li>缺点：应用领域有限，不能用于三维数据，表达能力较弱，难以传达视觉细节，也不能控制对比度。</li>
-</ul>
-<h5 id="2otsus-algorithm">（2）大津算法（Otsu's algorithm）<a class="headerlink" href="#2otsus-algorithm" title="Permanent link">&para;</a></h5>
-<p>在把灰度图转换为二值图像的时候，一个基本的想法是找到一个合适的阈值（Threshold），像素点值比阈值大的设为<span class="arithmatex">\(255\)</span>，比阈值小的设为<span class="arithmatex">\(0\)</span>。即为如下：</p>
-<p><span class="arithmatex">\(\left\{  
-             \begin{array}{**lr**}     
-             I(x,y) = 0\ if\ I(x,y)\leq Threshold  \\
-             I(x,y) = 255\ if\ I(x,y)\geq Threshold \\   
-             \end{array}  
-\right.\)</span></p>
-<p>而大津算法就是一种自动确定该合适阈值的方法，旨在找到一个阈值，将图像分成两个类别（前景和背景），以使两个类别内的方差最小，同时两个类别之间的方差最大，步骤如下。</p>
-<blockquote>
-<p>a.统计像素点的最大值和最小值</p>
-<p>b.对于每个可能的阈值，计算分成两个类别后的背景和前景的内部协方差和外部协方差。</p>
-<p>c.选择最大外部和最小内部协方差对应的 threshold作为二值化阈值。</p>
-<p>d.应用选择的阈值将图像分割成前景和背景。</p>
-</blockquote>
-<p>其中，最大外部方差和最小内部方差是等价的，我们选择找到最大外部方差，推导过程如下：</p>
-<p>设图像尺寸为<span class="arithmatex">\(M\ *\ N\)</span>，其二值化的最佳阈值为<span class="arithmatex">\(T\)</span>，该阈值将图像分为背景和目标两个类别。其中属于背景的像素点数量为<span class="arithmatex">\(N0\)</span>,属于目标的像素点数量为<span class="arithmatex">\(N1\)</span>,背景像素点数占整幅图像的比例<span class="arithmatex">\(\omega0\)</span>,其灰度均值<span class="arithmatex">\(μ0\)</span>,目标像素点数占整幅图像的比例为<span class="arithmatex">\(ω1\)</span>,其灰度均值为<span class="arithmatex">\(μ1\)</span> ，整幅图像的灰度均值为<span class="arithmatex">\(\mu\)</span>。</p>
-<p><span class="arithmatex">\(\omega_0=\frac{N0}{M*N}\\\)</span></p>
-<p><span class="arithmatex">\(\omega_1=\frac{N1}{M*N}\\\)</span></p>
-<p><span class="arithmatex">\(N0+N1=M*N\\\)</span></p>
-<p><span class="arithmatex">\(\omega0\ + \omega1\ = 1\\\)</span></p>
-<p><span class="arithmatex">\(\mu = \frac{\mu0*N0+\mu1*N1}{M*N}=\mu0\omega0\ + \mu1\omega1\\\)</span></p>
-<p><span class="arithmatex">\(类内方差(Within-class\ variance)公式:\)</span></p>
-<p><span class="arithmatex">\(\sigma_{Withen}^{2}=\omega_{0} \sigma_{0}^{2}+\omega_{1} \sigma_{1}^{2} \\\)</span></p>
-<p><span class="arithmatex">\(类间方差(Between-class\ variance)的公式:\sigma_{Between}^{2}=\sigma^{2}-\sigma_{Within}^{2}\\\)</span></p>
-<p><span class="arithmatex">\(有此可推导得到\)</span></p>
-<p><span class="arithmatex">\(\sigma_{Between}^{2}=\omega_{0}(\mu_{0}-\mu)^{2}+\omega_{1}(\mu_{1}-\mu)^{2}\)</span></p>
-<p><span class="arithmatex">\(\ \ \ \ \ \ \ \ \ \ \ \ \ =\omega0(\mu0-\omega0\mu0-\omega1\mu1)^{2}+\omega1(\mu1-\omega0\mu0-\omega1\mu1)^{2}\)</span>
-<span class="arithmatex">\(\ \ \ \ \ \ \ \ \ \ \ \ \ =\omega0(\omega1\mu0-\omega1\mu1)^{2}+\omega1(\omega0\mu1-\omega0\mu0)^{2}\\\)</span>
-<span class="arithmatex">\(\ \ \ \ \ \ \ \ \ \ \ \ =(\omega0\omega1^{2}+\omega1\omega0^{2})(\mu1-\mu0)^{2}\\\)</span></p>
-<p><span class="arithmatex">\(\ \ \ \ \ \ \ \ \ \ \ \ =\omega0\omega1(\mu0-\mu1)^{2}\\\)</span></p>
-<ul>
-<li>即在计算最大外部和最小内部方差时，只需判断<span class="arithmatex">\(\omega0\omega1(\mu0-\mu1)^{2}\)</span>取得最大值即可</li>
-</ul>
-<h4 id="1_3">1.形态学操作：<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
-<p>​   数学形态学（也称图像代数）是一种用于分析图像形态和结构的工具。其基本思想是通过利用结构元素来度量和提取形状，从而实现对图像的分析和识别。图像形态学操作基于集合论，可以简化图像，去除不需要的结构，同时保留主要的形状特征。在这里有四种形态学操作符：膨胀、腐蚀、开运算和闭运算。</p>
-<p>​   在下面的介绍中，我们的 A 指二值图像; B 指二值模板，称为结构元(structure element)。</p>
-<h5 id="1_4">（1）膨胀<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h5>
-<p>​   形态学的膨胀操作是图像处理中的一种基本操作，通常用于增强图像中的特定目标或结构，使其更加显著和容易检测。膨胀操作的主要思想是利用一个称为结构元素的小窗口或模板，沿着图像的各个方向扫描，并根据结构元素与图像的重叠程度来改变图像的像素值。</p>
-<p>​   膨胀操作的结果通常是增强了原始图像中的目标或特定结构。这是因为它可以将目标区域扩展，填充空洞，使边缘更加清晰。因此，膨胀操作可用于改善图像中的特定特征，使它们更容易检测和分析。
-$$
-A⊕B={ z|(B)z ∩A̸=∅ }
-$$</p>
-<h5 id="2_1">（2）腐蚀<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h5>
-<p>​   形态学的腐蚀操作是图像处理中的一种基本操作，通常用于减小图像中的特定目标或结构，从而弱化或消除一些特征。腐蚀操作的主要思想是利用一个称为结构元素的小窗口或模板，沿着图像的各个方向扫描，并根据结构元素与图像的重叠程度来改变图像的像素值。</p>
-<p>​   腐蚀操作的结果通常是减小了原始图像中的目标或特定结构。这是因为它可以去除小的特征、缩小目标区域或消除噪声。腐蚀操作可用于弱化图像中的特定特征，使其更容易检测和分析。
-$$
-A⊖B={(x,y)|(B)xy ⊆A}
-$$</p>
-<h5 id="3_1">（3）开操作<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h5>
-<p>​   形态学的开操作是一种常见的图像处理操作，它结合了腐蚀（erosion）和膨胀（dilation）操作，通常用于去噪和分割图像中的目标。开操作的主要思想是首先对图像执行腐蚀操作，然后再对其执行膨胀操作，这个过程通常使用一个特定的结构元素进行。</p>
-<p>​   开操作在图像处理中常用于去除噪声、分割目标、减小目标区域的不规则性以及减小目标之间的干扰。它也有助于改善二值化图像的质量，以便后续的分析和特征提取。
-$$
-A ◦ B = (A ⊖ B) ⊕ B
-$$</p>
-<h5 id="4_1">（4）闭操作<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h5>
-<p>​   形态学的开操作是一种常见的图像处理操作，它结合了腐蚀（erosion）和膨胀（dilation）操作，通常用于去噪和分割图像中的目标。开操作的主要思想是首先对图像执行腐蚀操作，然后再对其执行膨胀操作，这个过程通常使用一个特定的结构元素进行。</p>
-<p>​   闭操作在图像处理中常用于去除小孔、连接断开的线条、填充不规则目标的内部空洞、增强图像中的连通区域。它也有助于改善二值化图像的质量，以便后续的分析和特征提取。
-$$
-A • B = (A ⊕ B) ⊖ B
-$$</p>
-<h3 id="_3">三、心得体会<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>​   在本次实验中，我学习并掌握了图像二值化和形态学的基本操作。在过程中遇到了几个问题：一个是在做形态学操作和改进全局大津算法的时候，最开始我忘记建立新的结构体来保存原先的bmp图像，而是直接在原bmp图像上进行修改和保存，导致图像处理出错，发现问题后改正得以正常进行。第二是在进行形态学操作的过程中，最开始忘记对边界点讨论，同时在将处理好的图像存储到新的结构体的时候忘记对“没有进行形态学操作的像素点”做原来的赋值导致处理图像出错，经改正后能够正常完成对图像的处理。</p>
-<p>​   在处理图像和改进的过程中，我感到非常有成就感，尤其是在成功用滑动窗口的大津算法处理得到比较好看的图片的时候，感到非常开心且学有所得，期待之后的作业内容。</p>
+<h2 id="the-dynamic-equivalence-problem">The Dynamic Equivalence Problem<a class="headerlink" href="#the-dynamic-equivalence-problem" title="Permanent link">&para;</a></h2>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 11:09:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月10日 20:04:08</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月5日 11:09:32</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月10日 20:04:08</span>
       
     
   </small>
@@ -1457,12 +1212,12 @@ $$</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
