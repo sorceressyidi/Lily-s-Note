@@ -4,7 +4,7 @@
 
 ### Epipolar Geometry
 
-- A point$\bar{x}$in the left image must be located on the epipolar line$\widetilde{l}_2$
+- A poin$\bar{x}$in the left image must be located on the epipolar line$\widetilde{l}_2$
 - This reduces correspondence search to a (much simpler) **1D problem** I For VGA images: ～640 instead of ～300k hypotheses (factor 480 less)
 
 #### Image Rectification
@@ -26,7 +26,7 @@
 
 **How can we make epipolar lines horizontal?**
 
-![1](1.png)
+![1](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/1.png)
 
 - Step1:Estimate$\tilde{E}$ , decompose into $t$and $R$
 
@@ -44,9 +44,9 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 - Step3:Adjust $\tilde{x}_i$
 
-- Warp pixels in the first image as follows: $\tilde{x}_1^{'}\)= \(KR_{rect}K_1^{-1}x ̄_1$
+- Warp pixels in the first image as follows: $\tilde{x}_1^{'}= KR_{rect}K_1^{-1}x ̄_1$
 
-- Warp pixels in the second image as follows: $\tilde{x}_2^{'}\)= \(KRR_{rect}K_2^{-1}x ̄_2$
+- Warp pixels in the second image as follows: $\tilde{x}_2^{'}=KRR_{rect}K_2^{-1}x ̄_2$
 
 - NOTE ：Different coordinate systems result in different perception of $R_{rect}$,Thus the $R_{rect}^{'}=RR_{rect}$
 
@@ -56,7 +56,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Disparity to Depth
 
-![2](2.png)
+![2](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/2.png)
 
 ### Block Matching
 
@@ -66,11 +66,11 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Zero Normalized Cross-Correlation
 
-![3](3.png)
+![3](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/3.png)
 
-#### Sum of squared differences (SSD)[¶](http://127.0.0.1:8000/CV/ML-4360/SR/#sum-of-squared-differences-ssd)
+#### Sum of squared differences (SSD)
 
-![4](4.png)
+![4](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/4.png)
 
 #### Assumption Violations
 
@@ -88,7 +88,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
   - **Border Bleeding:**
 
-  ![5](5.png)
+  ![5](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/5.png)
 
 - **Left-Right Consistency Test:**
 
@@ -96,7 +96,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 #### Training
 
-![6](6.png)
+![6](/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/SR/6.png)
 
 #### Loss Function
 
@@ -127,7 +127,7 @@ $\Rightarrow R_{rect}=\begin{bmatrix}e_1^T\\e_2^T\\e_3^T\end{bmatrix}$
 
 https://www.jmlr.org/papers/volume17/15-535/15-535.pdf
 
-### Spatial Regularization[¶](http://127.0.0.1:8000/CV/ML-4360/SR/#spatial-regularization)
+### Spatial Regularization
 
 - Add Pairwise terms: Smoothness between adjacent pixels in addition to matching costs;
 
