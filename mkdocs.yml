@@ -117,6 +117,10 @@ nav:
       - 堆栈 : assembly/堆栈.md
       - 中断: assembly/中断.md
       - 函数: assembly/函数.md
+  - Math & Physics:
+    - General physics II : 
+      - Electrci Charge & Field & Potential: GP/lec1-3/lec1.md
+      - Current : GP/current/current.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
