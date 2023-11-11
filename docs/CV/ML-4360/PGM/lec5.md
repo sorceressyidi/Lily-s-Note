@@ -48,13 +48,11 @@ $(P(x_1……x_n)=\frac{1}{Z}\prod_{c\in C}\phi_c(x_c)$
 
 $(Z = \sum_{x_1……x_n}\prod_{c\in C}\phi_c(x_c)$
 
-#### Defination of **Markov Random Field
+#### Defination of Markov Random Field
 
 - For a set of variables $X ={x_1,...,x_M}$, a **Markov Random Field** is defined as a product of potentials over the **(maximal) cliques** ${(X_k)}_{k=1}^K$of the undirected graph G
 
   $p(X)=\frac{1}{Z}\prod_{k=1}^K\phi_k(X_k)$
-
-�(�)=1�∏�=1���(��)
 
 - $Z$normalizes the distribution and is called **partition function**
 - Examples：
