@@ -39,7 +39,7 @@
 
 >Perspective　projection
 
-![Alt text](f.png)
+![Alt text](e.png)
 * Complete perspective projection
 
 <img src="/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/BS/8.png" alt="8" style="zoom:50%;" />
@@ -60,6 +60,7 @@
 #### $The Reflection Equation$
 ![Alt text](<i.png>)
 ![Alt text](h.png)
+
 ### Back To Cameras
 ![Alt text](<j.png>)
 ### $Chromatic Aberration$
