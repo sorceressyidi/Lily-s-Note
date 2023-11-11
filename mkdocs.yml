@@ -123,7 +123,9 @@ nav:
       - structure from motion : CV/ML-4360/SFM/lec3.md
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
-      
+  - Miscellaneous :
+    - Ai导 : 
+      - 数据降维: AI/pca.md 
       
     
     
