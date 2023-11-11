@@ -1,0 +1,2512 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lily's Notebook">
+      
+      
+      
+        <link rel="canonical" href="https://note.lilyarnold.cc/GP/lec1-3/lec1/">
+      
+      
+        <link rel="prev" href="../../../assembly/%E5%87%BD%E6%95%B0/">
+      
+      
+        <link rel="next" href="../../current/current/">
+      
+      
+      <link rel="icon" href="../../../log.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>Electrci Charge & Field & Potential - Lily's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coulombs-law-and-the-electric-field" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lily's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Electrci Charge & Field & Potential
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Math & Physics
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AI/pca/" class="md-tabs__link">
+          
+  
+    
+  
+  Miscellaneous
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    Lily's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maximum Subsequence Sum Problem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/basicII.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DIP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            DIP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab1/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1:灰度图以及亮度调整
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab2/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2:灰度图二值化以及形态学操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab3/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3:对数增强可实现以及直方图均衡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    x86-Assembly
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            x86-Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Math & Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Math & Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            General physics II
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Electrci Charge & Field & Potential
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Electrci Charge & Field & Potential
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coulombs-law" class="md-nav__link">
+    Coulomb‘s Law
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diphole" class="md-nav__link">
+    Diphole
+  </a>
+  
+    <nav class="md-nav" aria-label="Diphole">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-diphole-in-a-uniform-electric-filed" class="md-nav__link">
+    A diphole in a uniform electric filed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electric-field-due-to-a-ring-of-charge" class="md-nav__link">
+    The Electric Field Due to a Ring of Charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electric-field-due-to-a-charged-disk" class="md-nav__link">
+    The Electric Field Due to a Charged Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gausss-law" class="md-nav__link">
+    Gauss's Law
+  </a>
+  
+    <nav class="md-nav" aria-label="Gauss's Law">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electric-flux" class="md-nav__link">
+    Electric Flux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gausss-law_1" class="md-nav__link">
+    Gauss's Law
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1spherical-symmetry" class="md-nav__link">
+    1.Spherical Symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2planar-symmetry" class="md-nav__link">
+    2.Planar Symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3cylindrical-symmetry" class="md-nav__link">
+    3.Cylindrical Symmetry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electrostatic-potential" class="md-nav__link">
+    The Electrostatic Potential
+  </a>
+  
+    <nav class="md-nav" aria-label="The Electrostatic Potential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-due-to-an-electric-diphole" class="md-nav__link">
+    Potential due to an electric diphole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems-of-charged-particles" class="md-nav__link">
+    Systems of Charged Particles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-charge-distribution-rod" class="md-nav__link">
+    Continuous Charge Distribution: Rod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-charge-distribution-disk" class="md-nav__link">
+    Continuous Charge Distribution: Disk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-triangle-of-electrostatics" class="md-nav__link">
+    The Triangle of Electrostatics
+  </a>
+  
+    <nav class="md-nav" aria-label="The Triangle of Electrostatics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preknowledge" class="md-nav__link">
+    PreKnowledge
+  </a>
+  
+    <nav class="md-nav" aria-label="PreKnowledge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient" class="md-nav__link">
+    gradient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergence" class="md-nav__link">
+    divergence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-leftrightarrow-rho" class="md-nav__link">
+    \(E \Leftrightarrow \ \rho\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electrical-properties-of-conductors" class="md-nav__link">
+    The Electrical Properties of Conductors
+  </a>
+  
+    <nav class="md-nav" aria-label="The Electrical Properties of Conductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-charged-isolated-conductor" class="md-nav__link">
+    A Charged Isolated Conductor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-outside-spherical-conductors" class="md-nav__link">
+    Electric Field Outside Spherical Conductors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-outside-isolated-conductors" class="md-nav__link">
+    Electric Field Outside Isolated Conductors
+  </a>
+  
+    <nav class="md-nav" aria-label="Electric Field Outside Isolated Conductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flat-surface" class="md-nav__link">
+    Flat surface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-plates" class="md-nav__link">
+    Parallel Plates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-inside-a-spherical-metal-shell" class="md-nav__link">
+    Charge Inside a Spherical Metal Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantify-charge-distributionthe-method-of-images" class="md-nav__link">
+    Quantify Charge Distribution(The Method of Images)
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantify Charge Distribution(The Method of Images)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asimple-analysis" class="md-nav__link">
+    A.Simple Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-a-single-grounded-pallete-with-a-charge-q-at-a-distance-d" class="md-nav__link">
+    B. A single grounded pallete with a charge q at a distance d
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-charge-q-and-a-conducting-sphere" class="md-nav__link">
+    positive charge +Q  and a conducting sphere
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix ：
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix ：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-product" class="md-nav__link">
+    Cross product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    立体角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../current/current/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Current
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    structure from motion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stereo Reconstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probabilistic Graphical Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ai导
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ai导
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据降维
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    随笔
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            随笔
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大侠
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coulombs-law" class="md-nav__link">
+    Coulomb‘s Law
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diphole" class="md-nav__link">
+    Diphole
+  </a>
+  
+    <nav class="md-nav" aria-label="Diphole">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-diphole-in-a-uniform-electric-filed" class="md-nav__link">
+    A diphole in a uniform electric filed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electric-field-due-to-a-ring-of-charge" class="md-nav__link">
+    The Electric Field Due to a Ring of Charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electric-field-due-to-a-charged-disk" class="md-nav__link">
+    The Electric Field Due to a Charged Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gausss-law" class="md-nav__link">
+    Gauss's Law
+  </a>
+  
+    <nav class="md-nav" aria-label="Gauss's Law">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electric-flux" class="md-nav__link">
+    Electric Flux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gausss-law_1" class="md-nav__link">
+    Gauss's Law
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1spherical-symmetry" class="md-nav__link">
+    1.Spherical Symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2planar-symmetry" class="md-nav__link">
+    2.Planar Symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3cylindrical-symmetry" class="md-nav__link">
+    3.Cylindrical Symmetry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electrostatic-potential" class="md-nav__link">
+    The Electrostatic Potential
+  </a>
+  
+    <nav class="md-nav" aria-label="The Electrostatic Potential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-due-to-an-electric-diphole" class="md-nav__link">
+    Potential due to an electric diphole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems-of-charged-particles" class="md-nav__link">
+    Systems of Charged Particles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-charge-distribution-rod" class="md-nav__link">
+    Continuous Charge Distribution: Rod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-charge-distribution-disk" class="md-nav__link">
+    Continuous Charge Distribution: Disk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-triangle-of-electrostatics" class="md-nav__link">
+    The Triangle of Electrostatics
+  </a>
+  
+    <nav class="md-nav" aria-label="The Triangle of Electrostatics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preknowledge" class="md-nav__link">
+    PreKnowledge
+  </a>
+  
+    <nav class="md-nav" aria-label="PreKnowledge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient" class="md-nav__link">
+    gradient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divergence" class="md-nav__link">
+    divergence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-leftrightarrow-rho" class="md-nav__link">
+    \(E \Leftrightarrow \ \rho\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-electrical-properties-of-conductors" class="md-nav__link">
+    The Electrical Properties of Conductors
+  </a>
+  
+    <nav class="md-nav" aria-label="The Electrical Properties of Conductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-charged-isolated-conductor" class="md-nav__link">
+    A Charged Isolated Conductor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-outside-spherical-conductors" class="md-nav__link">
+    Electric Field Outside Spherical Conductors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-outside-isolated-conductors" class="md-nav__link">
+    Electric Field Outside Isolated Conductors
+  </a>
+  
+    <nav class="md-nav" aria-label="Electric Field Outside Isolated Conductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flat-surface" class="md-nav__link">
+    Flat surface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-plates" class="md-nav__link">
+    Parallel Plates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-inside-a-spherical-metal-shell" class="md-nav__link">
+    Charge Inside a Spherical Metal Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantify-charge-distributionthe-method-of-images" class="md-nav__link">
+    Quantify Charge Distribution(The Method of Images)
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantify Charge Distribution(The Method of Images)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asimple-analysis" class="md-nav__link">
+    A.Simple Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-a-single-grounded-pallete-with-a-charge-q-at-a-distance-d" class="md-nav__link">
+    B. A single grounded pallete with a charge q at a distance d
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-charge-q-and-a-conducting-sphere" class="md-nav__link">
+    positive charge +Q  and a conducting sphere
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix ：
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix ：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-product" class="md-nav__link">
+    Cross product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    立体角
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="coulombs-law-and-the-electric-field">Coulomb's Law and the Electric Field<a class="headerlink" href="#coulombs-law-and-the-electric-field" title="Permanent link">&para;</a></h1>
+<h3 id="coulombs-law">Coulomb‘s Law<a class="headerlink" href="#coulombs-law" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\vec{F}=k\frac{q_1q_2}{r^2}\)</span></p>
+<p><span class="arithmatex">\(k = 8.99 * 10^{-12} N*m^2/C^2=\frac{1}{4\pi\epsilon_0}\\\)</span> </p>
+<p><span class="arithmatex">\(\epsilon_0=8.85*10^{-12}C^2/N*m^2\)</span></p>
+<h3 id="diphole">Diphole<a class="headerlink" href="#diphole" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The product <span class="arithmatex">\(\vec{q}d\)</span> is known as the electric dipole moment <span class="arithmatex">\(\vec{p}\)</span> of the dipole.</li>
+</ul>
+<p><img alt="1" src="../1.png" /></p>
+<ul>
+<li>Derivation</li>
+</ul>
+<p>​   <span class="arithmatex">\(\begin{align*}E&amp;=\frac{q}{4\pi\epsilon_0(z-\frac{d}{2})^2}- \frac{q}{4\pi\epsilon_0(z+\frac{d}{2})^2}\\ &amp;=\frac{q\vec{d}}{2\pi\epsilon_0}*\frac{z}{(z-\frac{d}{2})^2(z+\frac{d}{2})^2}\\ &amp;=\frac{\vec{p}}{2\pi\epsilon_0z^3}*\frac{1}{(1-\frac{d}{2z}^2)(1+\frac{d}{2z}^2)}\\ &amp;=\frac{1}{2\pi\epsilon_0}\frac{p}{z^3} \ \ when (z&gt;&gt;d)\end{align*}\)</span></p>
+<h4 id="a-diphole-in-a-uniform-electric-filed">A diphole in a uniform electric filed<a class="headerlink" href="#a-diphole-in-a-uniform-electric-filed" title="Permanent link">&para;</a></h4>
+<p><img alt="2" src="../2.png" /></p>
+<p><strong>Note</strong>:<span class="arithmatex">\(\tau=p\times E\)</span></p>
+<h3 id="the-electric-field-due-to-a-ring-of-charge">The Electric Field Due to a Ring of Charge<a class="headerlink" href="#the-electric-field-due-to-a-ring-of-charge" title="Permanent link">&para;</a></h3>
+<p><img alt="3" src="../3.png" /></p>
+<ul>
+<li>When <span class="arithmatex">\(z&gt;&gt;R\)</span> <span class="arithmatex">\(E=\frac{qz}{4\pi\epsilon_0z^3(1+(\frac{R}{z})^2)^{\frac{3}{2}}}=\frac{q}{4\pi\epsilon_0z^2}\)</span></li>
+</ul>
+<h3 id="the-electric-field-due-to-a-charged-disk">The Electric Field Due to a Charged Disk<a class="headerlink" href="#the-electric-field-due-to-a-charged-disk" title="Permanent link">&para;</a></h3>
+<p><img alt="4" src="../4.png" /></p>
+<p><span class="arithmatex">\(\begin{align*}dE_z &amp;= \int \frac{\sigma(2πrdr)}{4\pi\epsilon_0(z^2+r^2)}\frac{z}{\sqrt{z^2+r^2}}=\frac{\sigma z}{2\epsilon_0}\int_0^R\frac{rdr}{(z^2+r^2)^\frac{3}{2}}\\ &amp;= \frac{\sigma}{2\epsilon_0}(1-\frac{z}{\sqrt{z^2+R^2}})\end{align*}\)</span></p>
+<h2 id="gausss-law">Gauss's Law<a class="headerlink" href="#gausss-law" title="Permanent link">&para;</a></h2>
+<h3 id="electric-flux">Electric Flux<a class="headerlink" href="#electric-flux" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(∆Φ = (E cosθ)∆A=\vec{E}\cdot{\vec{A}}\)</span></p>
+<p><span class="arithmatex">\(Φ=\int\vec{E}\cdot{d\vec{A}}\)</span></p>
+</blockquote>
+<h3 id="gausss-law_1">Gauss's Law<a class="headerlink" href="#gausss-law_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><span class="arithmatex">\(\epsilon_0 \oint\vec{E}\cdot d\vec{A}=q_{encore}\)</span></p>
+</blockquote>
+<h3 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h3>
+<h4 id="1spherical-symmetry">1.Spherical Symmetry<a class="headerlink" href="#1spherical-symmetry" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><span class="arithmatex">\(4\pi r^2\cdot E = \frac{q{(\frac{r}{R})^3}}{\epsilon_0}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow \ \vec{E}=\frac{q}{4\pi\epsilon_0R^3}\cdot \vec{r}\)</span></p>
+</blockquote>
+<h4 id="2planar-symmetry">2.Planar Symmetry<a class="headerlink" href="#2planar-symmetry" title="Permanent link">&para;</a></h4>
+<p><img alt="5" src="../5.png" /></p>
+<h4 id="3cylindrical-symmetry">3.Cylindrical Symmetry<a class="headerlink" href="#3cylindrical-symmetry" title="Permanent link">&para;</a></h4>
+<p><img alt="6" src="../6.png" /></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(ε_0 Φ = λh\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(E=\frac{\lambda}{2\pi r\epsilon_0}\)</span></p>
+</li>
+</ul>
+<h2 id="the-electrostatic-potential">The Electrostatic Potential<a class="headerlink" href="#the-electrostatic-potential" title="Permanent link">&para;</a></h2>
+<h3 id="potential-due-to-an-electric-diphole">Potential due to an electric diphole<a class="headerlink" href="#potential-due-to-an-electric-diphole" title="Permanent link">&para;</a></h3>
+<p><img alt="8" src="../8.png" /></p>
+<ul>
+<li>For points that are relatively far from the the two lines to <em>P</em> as being parallel and their length dif- dipole <span class="arithmatex">\((r ≫ d)\)</span>, we can approximate the leg of a right triangle with hypotenuse <em>d</em> .Thus</li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(r_--r_+\approx dcos\theta\)</span></p>
+<p><span class="arithmatex">\(r_-\cdot r_+\approx r^2\)</span></p>
+<p><span class="arithmatex">\(V=\frac{\vec{p}\cdot\vec{r}}{4\pi\epsilon_0r^3}\)</span></p>
+</blockquote>
+<h3 id="systems-of-charged-particles">Systems of Charged Particles<a class="headerlink" href="#systems-of-charged-particles" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The lesson here is this: If you are given an assembly of charged particles, you can find the potential energy of the assembly by finding the potential of every possible pair of the particles and then summing the results.</li>
+</ul>
+<h3 id="continuous-charge-distribution-rod">Continuous Charge Distribution: Rod<a class="headerlink" href="#continuous-charge-distribution-rod" title="Permanent link">&para;</a></h3>
+<p><img alt="9" src="../9.png" /></p>
+<blockquote>
+<p><span class="arithmatex">\(\begin{align*} V &amp;= \int dV = \int _0^L \frac{\lambda dx}{4\pi\epsilon_0\sqrt{x^2+d^2}}\\ &amp;=\int \frac{\lambda}{4\pi\epsilon_0}\int_0^L\frac{dx}{\sqrt{x^2+d^2}}\\ &amp;=\frac{\lambda}{4\pi\epsilon_0}ln\frac{L+\sqrt{L^2+d^2}}{d} \end{align*}\)</span></p>
+</blockquote>
+<h3 id="continuous-charge-distribution-disk">Continuous Charge Distribution: Disk<a class="headerlink" href="#continuous-charge-distribution-disk" title="Permanent link">&para;</a></h3>
+<p><img alt="4" src="../4.png" /></p>
+<blockquote>
+<p><span class="arithmatex">\(\begin{align*}V &amp;= \int_0^R \frac{\sigma(2πrdr)}{4\pi\epsilon_0\sqrt{z^2+r^2}}\\ &amp;= \frac{σ}{2\epsilon_0}(\sqrt{z^2+R^2}−z)\end{align*}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(\Rightarrow Ez=-\frac{dV}{dz}\)</span></p>
+<h2 id="the-triangle-of-electrostatics">The Triangle of Electrostatics<a class="headerlink" href="#the-triangle-of-electrostatics" title="Permanent link">&para;</a></h2>
+<h3 id="preknowledge">PreKnowledge<a class="headerlink" href="#preknowledge" title="Permanent link">&para;</a></h3>
+<h4 id="gradient">gradient<a class="headerlink" href="#gradient" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><span class="arithmatex">\(∇V=\frac{\partial{V}}{\partial{x}}\hat{x}+\frac{\partial{V}}{\partial{y}}\hat{y}+\frac{\partial{V}}{\partial{z}}\hat{z}\)</span></p>
+</blockquote>
+<h4 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><span class="arithmatex">\(∇ \times V = \begin{bmatrix}\hat{x}&amp;\hat{y}&amp;\hat{z}\\\frac{\partial{}}{\partial{x}}&amp;\frac{\partial{}}{\partial{y}}&amp;\frac{\partial{}}{\partial{z}}\\ V_x&amp;V_y&amp;V_z\end{bmatrix}\)</span></p>
+</blockquote>
+<ul>
+<li>The curl of a gradient is always <span class="arithmatex">\(ZERO\)</span></li>
+</ul>
+<h4 id="divergence">divergence<a class="headerlink" href="#divergence" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><span class="arithmatex">\(∇ \cdot V\)</span></p>
+<p><span class="arithmatex">\(\frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}=\triangledown \cdot \vec{E}\)</span></p>
+</blockquote>
+<h3 id="e-leftrightarrow-rho"><span class="arithmatex">\(E \Leftrightarrow \ \rho\)</span><a class="headerlink" href="#e-leftrightarrow-rho" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><span class="arithmatex">\(\oint\vec{E}\cdot d\vec{l}=\int\int(\triangledown\times \vec{E})dS = 0\)</span>  <span class="arithmatex">\(By \ Stokes\)</span>  -- independent of <span class="arithmatex">\(PATHS\)</span></p>
+</li>
+<li>
+<p>Choose a Gaussian surface to enclose a small cube centered at <span class="arithmatex">\(\vec{r}\)</span> with side <span class="arithmatex">\(\triangledown x\triangledown y\triangledown z\)</span> such that <span class="arithmatex">\(\triangledown V = \triangledown x \triangledown y \triangledown z\)</span></p>
+</li>
+<li>In the small <span class="arithmatex">\(\triangledown V\)</span> ,We have :<ul>
+<li><span class="arithmatex">\(\frac{\rho(\vec{r})}{\epsilon_0}=lim_{\triangledown V \rightarrow0}\frac{q_{enc}}{\triangledown V\epsilon_0}=lim_{\triangledown V \rightarrow0}\frac{1}{\triangledown V}\oint \vec{E}\cdot d\vec{S}\)</span></li>
+<li><span class="arithmatex">\(\oint \vec{E_x}\cdot d\vec{S}=\vec{E}(x + \frac{∆x}{2} ,y,z)\hat{x}∆y∆z+\vec{E}(x - \frac{∆x}{2} ,y,z)(-\hat{x})∆y∆z = \frac{\partial E_x}{\partial x}\triangledown V\)</span></li>
+<li><span class="arithmatex">\(\frac{\rho(\vec{r})}{\epsilon_0}=\frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}=\triangledown \cdot \vec{E}\)</span></li>
+</ul>
+</li>
+<li>According to Gauss’ law, the only places at which the divergence of the electric field is not zero are those locations at which charge is present. So the divergence is a measure of the tendency of the field to flow away from a (charged) point.</li>
+<li><span class="arithmatex">\(\oiint\vec{E}\cdot d\vec{A} = \iiint(\triangledown \cdot \vec{E})dV\)</span>  <span class="arithmatex">\(Gauss's\ Law\)</span></li>
+</ul>
+<p><img alt="10" src="../10.png" /></p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p><img alt="11" src="../11.png" /></p>
+<h2 id="the-electrical-properties-of-conductors">The Electrical Properties of Conductors<a class="headerlink" href="#the-electrical-properties-of-conductors" title="Permanent link">&para;</a></h2>
+<h3 id="a-charged-isolated-conductor">A Charged Isolated Conductor<a class="headerlink" href="#a-charged-isolated-conductor" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Consider an isolated conductor with excess charge. In electrostatic equilibrium, the electric field <span class="arithmatex">\(\vec{E}\)</span> inside the isolated conductor must be zero. Otherwise, the field would exert forces on the conduction electrons, and thus generate perpetual current in an isolated conductor.</li>
+<li>Gauss’ law then tells us that the net charge inside the Gaussian surface must also be zero; the excess charge must lie on the actual surface of the conductor.</li>
+</ul>
+<p>For the same conductor with a cavity, is there excess charge on the cavity wall?</p>
+<ul>
+<li>We draw a Gaussian surface surrounding the cavity, close to its surface but inside the conducting body.</li>
+<li>Because <span class="arithmatex">\(\vec{E} = 0\)</span> inside the conductor,there can be no flux through  this new Gaussian surface</li>
+<li>No charge on the cavity wall</li>
+<li>The cavity can be enlarged until it consumes the entire conductor, leaving only the charges. The electric field would not change at all; so the electric field is set up by the charges and not by the conductor.</li>
+</ul>
+<h3 id="electric-field-outside-spherical-conductors">Electric Field Outside Spherical Conductors<a class="headerlink" href="#electric-field-outside-spherical-conductors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Shell Therom <a href="https://en.m.wikipedia.org/wiki/Shell_theorem">https://en.m.wikipedia.org/wiki/Shell_theorem</a></li>
+</ul>
+<p>If we enclose the conductor in a concentric Gaussian sphere, Gauss’ law tells us that the electric field outside the surface of the conductor looks as if all the excess charge on the shell were concentrated at its center.</p>
+<h3 id="electric-field-outside-isolated-conductors">Electric Field Outside Isolated Conductors<a class="headerlink" href="#electric-field-outside-isolated-conductors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the electric field just outside the surface of a conductor can be determined using Gauss’ law.</li>
+<li>The electric field <span class="arithmatex">\(\vec{E}\)</span> at and just outside the conductor’s surface must also be perpendicular to that surface.</li>
+</ul>
+<h4 id="flat-surface">Flat surface<a class="headerlink" href="#flat-surface" title="Permanent link">&para;</a></h4>
+<p><img alt="12" src="../12.png" /></p>
+<p><img alt="13" src="../13.png" /></p>
+<h4 id="parallel-plates">Parallel Plates<a class="headerlink" href="#parallel-plates" title="Permanent link">&para;</a></h4>
+<p><img alt="14" src="../14.png" /></p>
+<h3 id="charge-inside-a-spherical-metal-shell">Charge Inside a Spherical Metal Shell<a class="headerlink" href="#charge-inside-a-spherical-metal-shell" title="Permanent link">&para;</a></h3>
+<p><img alt="15" src="../15.png" /></p>
+<ul>
+<li>Therefore, a total charge Q must lie on the inner wall of the shell in order that the net enclosed charge be zero.</li>
+<li>Because the shell is electrically neutral,a total charge -Q leave the inner wall and move to the outer wall.</li>
+<li>They must spread out uniformly.(This would be true no matter where inside the shell the particle happened to be located)</li>
+</ul>
+<h3 id="quantify-charge-distributionthe-method-of-images">Quantify Charge Distribution(The Method of Images)<a class="headerlink" href="#quantify-charge-distributionthe-method-of-images" title="Permanent link">&para;</a></h3>
+<h4 id="asimple-analysis">A.Simple Analysis<a class="headerlink" href="#asimple-analysis" title="Permanent link">&para;</a></h4>
+<p>There is a charge +q outside a spherical metal shell at a distance<span class="arithmatex">\(r+R\)</span> from its center,how to decide the image?</p>
+<ul>
+<li>Note:at the center C,all charges on the spherical shell exerts <span class="arithmatex">\(ZERO\)</span> potentials on the point so <span class="arithmatex">\(V_c=\frac{kq}{(R+r)^2}\)</span></li>
+</ul>
+<h4 id="b-a-single-grounded-pallete-with-a-charge-q-at-a-distance-d">B. A single grounded pallete with a charge q at a distance d<a class="headerlink" href="#b-a-single-grounded-pallete-with-a-charge-q-at-a-distance-d" title="Permanent link">&para;</a></h4>
+<p><img alt="16" src="../16.png" /></p>
+<ul>
+<li>
+<p>In this way <span class="arithmatex">\(V(x,y,z)=\frac{\frac{q}{ 4\pi\epsilon_0}}{\sqrt{x^2+y^2+(z-d)^2}}- \frac{\frac{q}{ 4\pi\epsilon_0}}{\sqrt{x^2+y^2+(z+d)^2}}\)</span></p>
+</li>
+<li>
+<p>We assert this is the solution for the upper half region.</p>
+</li>
+<li>
+<p>We can check that<span class="arithmatex">\(V(x,y,z=0)=0\)</span>,and<span class="arithmatex">\(V →0\)</span>for<span class="arithmatex">\(x^2 +y^2 +z^2 ≫d2.\)</span></p>
+</li>
+<li>At z = 0, <span class="arithmatex">\(\vec{E}\)</span> = −∇V is perpendicular to the xy plane, just as it would need to be with the grounded plane.</li>
+<li>
+<p>The only charge in the region z &gt; 0 is q at (0,0,d).</p>
+</li>
+<li>
+<p>According to Gauss’ law, the surface charge density σ induced on the conductor is:</p>
+</li>
+</ul>
+<blockquote>
+<p><span class="arithmatex">\(E=-\epsilon_0\frac{\partial V}{\partial z}|_{z=0}=\frac{-qd}{2\pi\epsilon_0(x^2+y^2+z^2)^\frac{3}{2}}\hat{z}\)</span></p>
+<p><span class="arithmatex">\(\sigma=\epsilon_0\triangledown \cdot E =\frac{-qd}{2\pi(x^2+y^2+z^2)^\frac{3}{2}}\)</span></p>
+</blockquote>
+<ul>
+<li>Bringing q from infinity needs ? W</li>
+</ul>
+<blockquote>
+<p>Derive as little circles</p>
+<p><span class="arithmatex">\(V=\int_0^\infty\frac{qd\cdot 2\pi r dr}{2\pi(r^2+z^2)^{3/2}}\cdot\frac{q}{4\pi\epsilon_0(r^2+z^2)^{1/2}}=\frac{q^2d}{8\pi\epsilon_0}\int_0^{\infty}\frac{d(r^2)}{r^2+d^2}=-\frac{q^2}{8\pi\epsilon_od}\)</span></p>
+<p>which is half of the energy for bringing two point charges to a distance 2d with no conductor. </p>
+</blockquote>
+<h4 id="positive-charge-q-and-a-conducting-sphere">positive charge +Q  and a conducting sphere<a class="headerlink" href="#positive-charge-q-and-a-conducting-sphere" title="Permanent link">&para;</a></h4>
+<p>Solve the electro-static potential function <span class="arithmatex">\(V(x,y,z)\)</span> and the electrostatic field <span class="arithmatex">\(E(x,y,z)\)</span> in space, with a positive charge <span class="arithmatex">\(+Q\)</span> located at <span class="arithmatex">\((−D, 0, 0)\)</span>and a conducting sphere of radius R (not grounded) at origin <span class="arithmatex">\((R&lt;D)\)</span>.</p>
+<p>Pre - knowledge : </p>
+<ul>
+<li>the grounded case with a charge outside(pictures below)</li>
+</ul>
+<blockquote>
+<p>Image : <span class="arithmatex">\(r'=\frac{R^2}{D}\)</span> <span class="arithmatex">\(q'=-qR/D\)</span></p>
+<p>Derivation :</p>
+<p><span class="arithmatex">\(\begin{align*}V(\theta)&amp;=\frac{q'}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{R^2+r'^2-2Rr'cos\theta}}+\frac{Q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{R^2+D^2-2RDcos\theta}}=0\end{align*}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow \frac{1}{4\pi\epsilon_0}[\frac{\frac{q'}{\sqrt{Rr'}}}{\sqrt{R/r'+r'/R-2cos\theta}}+\frac{\frac{Q}{\sqrt{RD}}}{\sqrt{R/D+D/R-2cos\theta}}]=0\)</span></p>
+<p><span class="arithmatex">\(\begin{align*}\Rightarrow &amp;\frac{q'}{\sqrt{Rr'}}+\frac{Q}{\sqrt{RD}}=0\\ &amp;\frac{R}{r'}+\frac{r'}{R}=\frac{R}{D}+\frac{D}{R}\end{align*}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow R/r'=D/R \Rightarrow r'=R^2/D \Rightarrow q'=-\frac{qR}{D}\)</span></p>
+</blockquote>
+<ul>
+<li>the grounded case with a charge inside(Actually it's bascially the same thing)</li>
+</ul>
+<p><img alt="17" src="../17.png" /></p>
+<p><img alt="18" src="../18.png" /></p>
+<h2 id="appendix">Appendix ：<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h4 id="cross-product"><strong>Cross product</strong><a class="headerlink" href="#cross-product" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="arithmatex">\(\vec{A} ×(\vec{B} +\vec{C})=\vec{A} ×\vec{b} +\vec{A} ×\vec{C}\)</span></li>
+</ul>
+<h4 id="_1">立体角<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p><img alt="7" src="../7.png" /></p>
+<p><span class="arithmatex">\(dA=r^2sin\theta d\theta d\Phi\)</span></p>
+<p><span class="arithmatex">\(Solid \ Angle\  d\Omega = \frac{dA}{r^2}=sin\theta d\theta d\Phi\)</span></p>
+<p><span class="arithmatex">\(dV=r^2sin\theta d\theta d\Phi dr\)</span></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 23:53:27</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 23:53:27</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sorceressyidi/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+      
+        <script src="../../../js/baidu-tongji.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
