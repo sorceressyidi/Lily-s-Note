@@ -1,0 +1,2297 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lily's Notebook">
+      
+      
+      
+        <link rel="canonical" href="https://note.lilyarnold.cc/GP/com/com/">
+      
+      
+        <link rel="prev" href="../../mag/mag/">
+      
+      
+        <link rel="next" href="../../../CV/ML-4360/BS/lec2/">
+      
+      
+      <link rel="icon" href="../../../log.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>Electromagnetic Integration - Lily's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#electromagnetic-integration" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lily's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Electromagnetic Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../lec1-3/lec1/" class="md-tabs__link">
+          
+  
+    
+  
+  Math & Physics
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../AI/pca/" class="md-tabs__link">
+          
+  
+    
+  
+  Miscellaneous
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    Lily's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maximum Subsequence Sum Problem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/basicII.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic data Structures II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DIP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            DIP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab1/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1:灰度图以及亮度调整
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab2/lab2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2:灰度图二值化以及形态学操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/lab3/lab3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3:对数增强可实现以及直方图均衡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    x86-Assembly
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            x86-Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Math & Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Math & Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            General physics II
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lec1-3/lec1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electrci Charge & Field & Potential
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../current/current/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Current
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mag/mag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Magnetic Field
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Electromagnetic Integration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Electromagnetic Integration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faradays-law-of-induction" class="md-nav__link">
+    Faraday’s Law of Induction
+  </a>
+  
+    <nav class="md-nav" aria-label="Faraday’s Law of Induction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-reformulation-of-faradays-law" class="md-nav__link">
+    A Reformulation of Faraday’s Law
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inductors-and-inductance" class="md-nav__link">
+    Inductors and Inductance
+  </a>
+  
+    <nav class="md-nav" aria-label="Inductors and Inductance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#revisiting-solenoid" class="md-nav__link">
+    Revisiting Solenoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-circuits" class="md-nav__link">
+    RL Circuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    Energy
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-stored-in-a-magnetic-field" class="md-nav__link">
+    Energy Stored in a Magnetic Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-density-of-a-magnetic-field" class="md-nav__link">
+    Energy Density of a Magnetic Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-inductance-of-two-parallel-coils" class="md-nav__link">
+    Mutual Inductance of Two Parallel Coils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternating-current-circuits" class="md-nav__link">
+    Alternating-Current Circuits
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternating-Current Circuits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc-oscillations" class="md-nav__link">
+    LC Oscillations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-complex-formalism" class="md-nav__link">
+    The Complex Formalism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damped-oscillations-in-an-rlc-circuit" class="md-nav__link">
+    Damped Oscillations in an RLC Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-circuits-and-forced-oscillations" class="md-nav__link">
+    AC Circuits and Forced Oscillations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-simple-circuits" class="md-nav__link">
+    Three Simple Circuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-series-rlc-circuit" class="md-nav__link">
+    The Series RLC Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resonance" class="md-nav__link">
+    Resonance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxwells-equations-and-em-waves" class="md-nav__link">
+    Maxwell’s Equations and EM Waves
+  </a>
+  
+    <nav class="md-nav" aria-label="Maxwell’s Equations and EM Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    Apply
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxwells-equations" class="md-nav__link">
+    Maxwell’s Equations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electromagnetic-waves" class="md-nav__link">
+    Electromagnetic Waves
+  </a>
+  
+    <nav class="md-nav" aria-label="Electromagnetic Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-of-the-wave-equation" class="md-nav__link">
+    Derivation of the Wave Equation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-transport" class="md-nav__link">
+    Energy Transport
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variation-of-intensity-with-distance" class="md-nav__link">
+    Variation of Intensity with Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    structure from motion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stereo Reconstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probabilistic Graphical Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ai导
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ai导
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据降维
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    随笔
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            随笔
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大侠
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faradays-law-of-induction" class="md-nav__link">
+    Faraday’s Law of Induction
+  </a>
+  
+    <nav class="md-nav" aria-label="Faraday’s Law of Induction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-reformulation-of-faradays-law" class="md-nav__link">
+    A Reformulation of Faraday’s Law
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inductors-and-inductance" class="md-nav__link">
+    Inductors and Inductance
+  </a>
+  
+    <nav class="md-nav" aria-label="Inductors and Inductance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#revisiting-solenoid" class="md-nav__link">
+    Revisiting Solenoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-circuits" class="md-nav__link">
+    RL Circuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    Energy
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-stored-in-a-magnetic-field" class="md-nav__link">
+    Energy Stored in a Magnetic Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-density-of-a-magnetic-field" class="md-nav__link">
+    Energy Density of a Magnetic Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-inductance-of-two-parallel-coils" class="md-nav__link">
+    Mutual Inductance of Two Parallel Coils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternating-current-circuits" class="md-nav__link">
+    Alternating-Current Circuits
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternating-Current Circuits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc-oscillations" class="md-nav__link">
+    LC Oscillations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-complex-formalism" class="md-nav__link">
+    The Complex Formalism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#damped-oscillations-in-an-rlc-circuit" class="md-nav__link">
+    Damped Oscillations in an RLC Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-circuits-and-forced-oscillations" class="md-nav__link">
+    AC Circuits and Forced Oscillations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-simple-circuits" class="md-nav__link">
+    Three Simple Circuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-series-rlc-circuit" class="md-nav__link">
+    The Series RLC Circuit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resonance" class="md-nav__link">
+    Resonance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxwells-equations-and-em-waves" class="md-nav__link">
+    Maxwell’s Equations and EM Waves
+  </a>
+  
+    <nav class="md-nav" aria-label="Maxwell’s Equations and EM Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    Apply
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxwells-equations" class="md-nav__link">
+    Maxwell’s Equations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electromagnetic-waves" class="md-nav__link">
+    Electromagnetic Waves
+  </a>
+  
+    <nav class="md-nav" aria-label="Electromagnetic Waves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-of-the-wave-equation" class="md-nav__link">
+    Derivation of the Wave Equation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-transport" class="md-nav__link">
+    Energy Transport
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variation-of-intensity-with-distance" class="md-nav__link">
+    Variation of Intensity with Distance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="electromagnetic-integration">Electromagnetic Integration<a class="headerlink" href="#electromagnetic-integration" title="Permanent link">&para;</a></h1>
+<h2 id="faradays-law-of-induction">Faraday’s Law of Induction<a class="headerlink" href="#faradays-law-of-induction" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(\Phi_B=\int\vec{B}\cdot d\vec{A}\)</span></p>
+<p><span class="arithmatex">\(\epsilon = -N\frac{d\Phi_B}{dt}\)</span></p>
+<p>When you move the magnet toward or away from the loop, a magnetic force resists the motion, so Lenz’s law requires your applied force to do positive work.</p>
+<p>At the same time, thermal energy is produced in the material of the loop because of the material’s electrical resistance to the induced current.</p>
+<p>The energy you transfer to the closed loop-magnet system via your applied force ends up in this thermal energy. (For now, we neglect energy that is radiated away from the loop as electromagnetic waves during the induction.)</p>
+<p><img alt="1" src="../1.png" /></p>
+<p><span class="arithmatex">\(\epsilon= N\frac{d\Phi_B}{dt}=BLv\)</span></p>
+<p><span class="arithmatex">\(F=F_1=iLB=B^2L^2v/R\)</span></p>
+<p><span class="arithmatex">\(P_1=Fv=B^2L^2v^2/R\)</span></p>
+<p><span class="arithmatex">\(P_{thermal}=i^2R=(\frac{BLv}{R})^2R=B^2L^2v^2/R\)</span></p>
+<h3 id="a-reformulation-of-faradays-law">A Reformulation of Faraday’s Law<a class="headerlink" href="#a-reformulation-of-faradays-law" title="Permanent link">&para;</a></h3>
+<p><img alt="2" src="../2.png" /></p>
+<p>We find that an induced emf can be defined without the need of a current or particle: An induced emf is the sum—via integration—of quantities <span class="arithmatex">\(\vec{E} · d\vec{s}\)</span> around a closed path, where <span class="arithmatex">\(\vec{E}\)</span> is the electric field induced by a changing magnetic flux and <span class="arithmatex">\(d\vec{s}\)</span> is a differential length vector along the path.</p>
+<ul>
+<li>
+<p>Rewrite Faraday's Law as <span class="arithmatex">\(\oint \vec{E}\cdot d\vec{s}=-N\frac{d\Phi_B}{dt}=-\frac{d}{dt}\int\vec{B}\cdot d\vec{A}\)</span></p>
+</li>
+<li>
+<p>We can convert it to differential form by applying the Stokes’ theorem (or the fundamental theorem for curls)</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\oint\vec{E}\cdot d\vec{s}=\int_S(\triangledown \times \vec{E})\cdot d\vec{A}\)</span></p>
+<ul>
+<li>
+<p>Thus, we get : <span class="arithmatex">\(\triangledown \times\vec{E}=-\frac{\partial \vec{B}}{\partial t}\)</span></p>
+</li>
+<li>
+<p>Electric potential has no meaning for electric fields that are produced by induction</p>
+</li>
+</ul>
+<h2 id="inductors-and-inductance">Inductors and Inductance<a class="headerlink" href="#inductors-and-inductance" title="Permanent link">&para;</a></h2>
+<h3 id="revisiting-solenoid">Revisiting Solenoid<a class="headerlink" href="#revisiting-solenoid" title="Permanent link">&para;</a></h3>
+<p><img alt="3" src="../3.png" /></p>
+<p><span class="arithmatex">\(B=\mu_0in\)</span></p>
+<p><span class="arithmatex">\(\Phi_B=BA=\mu_0inA\)</span></p>
+<p><span class="arithmatex">\(Inductance \ L \ =N\Phi_B/i=\mu_0n^2lA\)</span></p>
+<ul>
+<li>If the length <span class="arithmatex">\(l\)</span> of a solenoid is very much longer than its radius, then, to a good approximation, its inductance is <span class="arithmatex">\(L = μ_0n^2lA = N^2(μ_0A/l)\)</span>(By <span class="arithmatex">\(nl=N\)</span>)</li>
+</ul>
+<h3 id="rl-circuits">RL Circuits<a class="headerlink" href="#rl-circuits" title="Permanent link">&para;</a></h3>
+<p><img alt="4" src="../4.png" /></p>
+<ul>
+<li>
+<p>L is like a voltage source</p>
+</li>
+<li>
+<p><span class="arithmatex">\(E_L = −\frac{d(NΦ_B)}{dt} = −L\frac{di }{dt}\)</span></p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\begin{align*}&amp;\epsilon= iR-(-L\frac{di}{dt})\\ &amp;\dot{i}+\frac{R}{L}i-\frac{\epsilon}{L}=0\end{align*}\)</span></p>
+<p><span class="arithmatex">\(i=\frac{\epsilon}{L}(1-e^{-t/\tau_L}) \ \ \ (\tau_L=\frac{L}{R})\)</span></p>
+<h3 id="energy">Energy<a class="headerlink" href="#energy" title="Permanent link">&para;</a></h3>
+<h4 id="energy-stored-in-a-magnetic-field">Energy Stored in a Magnetic Field<a class="headerlink" href="#energy-stored-in-a-magnetic-field" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\epsilon i = Li\frac{di}{dt} + i^2R.\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow U_B=\frac{1}{2}Li^2\)</span></p>
+<h4 id="energy-density-of-a-magnetic-field">Energy Density of a Magnetic Field<a class="headerlink" href="#energy-density-of-a-magnetic-field" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The energy stored per unit volume of the field is</li>
+</ul>
+<p><span class="arithmatex">\(\mu_B=\frac{U_B}{Ah}=\frac{Li^2}{2Ah}=\frac{L}{h}\frac{i^2}{2A}=\frac{i^2n^2\mu_0}{2}=\frac{B^2}{2\mu_0}\)</span></p>
+<p>resembles that in an electric file <span class="arithmatex">\(\mu_E=\frac{1}{2}\epsilon_0E^2\)</span></p>
+<h3 id="mutual-inductance-of-two-parallel-coils">Mutual Inductance of Two Parallel Coils<a class="headerlink" href="#mutual-inductance-of-two-parallel-coils" title="Permanent link">&para;</a></h3>
+<p><img alt="5" src="../5.png" /></p>
+<p><span class="arithmatex">\(M_{21}=\frac{N_2\Phi_{21}}{i_1}\\M_{12}=\frac{N_1\Phi_{12}}{i_2}\)</span></p>
+<p><span class="arithmatex">\(\epsilon_{21}=-M_{21}\frac{di_1}{dt}\\\epsilon_{12}=-M_{12}\frac{di_2}{dt}\)</span></p>
+<p><span class="arithmatex">\(\epsilon_1=\epsilon_{1}+\epsilon_{12}=-L_{11}\frac{di_{1}}{dt}-M_{21}\frac{di_2}{dt}\)</span></p>
+<p><span class="arithmatex">\(\epsilon_2=\epsilon_{22}+\epsilon_{21}=-L_{2}\frac{di_{2}}{dt}-M_{12}\frac{di_1}{dt}\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow-\begin{pmatrix}L_1&amp;M_{12}\\M_{21}&amp;L_2\end{pmatrix}\frac{d}{dt}\begin{pmatrix}i_1\\i_2\end{pmatrix}=\begin{pmatrix}\epsilon_1\\\epsilon_2\end{pmatrix}\)</span></p>
+<p><img alt="7" src="../7.png" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<h2 id="alternating-current-circuits">Alternating-Current Circuits<a class="headerlink" href="#alternating-current-circuits" title="Permanent link">&para;</a></h2>
+<h3 id="lc-oscillations">LC Oscillations<a class="headerlink" href="#lc-oscillations" title="Permanent link">&para;</a></h3>
+<p><img alt="9" src="../9.png" /></p>
+<p><span class="arithmatex">\(L\frac{di}{dt}+\frac{q}{C}=0\)</span></p>
+<p><span class="arithmatex">\(\ddot{q}+\frac{1}{LC}q=0\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow q =Acos(w_0t+\phi)=Qcos(\frac{1}{LC}t+\phi)\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow &amp;Qcos\phi=0 \\&amp;-w_0Qsin\phi=0\)</span></p>
+<p><img alt="10" src="../10.png" /><img alt="11" src="../11.png" /></p>
+<h3 id="the-complex-formalism">The Complex Formalism<a class="headerlink" href="#the-complex-formalism" title="Permanent link">&para;</a></h3>
+<p><img alt="12" src="../12.png" /></p>
+<h3 id="damped-oscillations-in-an-rlc-circuit">Damped Oscillations in an RLC Circuit<a class="headerlink" href="#damped-oscillations-in-an-rlc-circuit" title="Permanent link">&para;</a></h3>
+<ul>
+<li>With Resistance R</li>
+</ul>
+<p><span class="arithmatex">\(\ddot{q}+\frac{R}{L}\dot{q}+\frac{1}{LC}q=0\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow q=Qe^{-\frac{t}{\tau}}cos(wt+\phi) \ where\ \tau=2L/R \ and  \ w=\sqrt{w_0^2-(1/\tau)^2} \ and \ w_0=\frac{1}{\sqrt{LC}}\)</span> </p>
+<p>Note Use ODEs or the method of the below picture</p>
+<p><img alt="13" src="../13.png" /></p>
+<ul>
+<li>When <span class="arithmatex">\(1/τ &lt; ω_0\)</span>, a real <span class="arithmatex">\(ω\)</span> can be found and the system still oscillates, but with decreasing amplitude as its energy is converted to heat. The circuit is said to be <strong>underdamped</strong>. Over time the system should come to rest at equilibrium. </li>
+<li>
+<p>When <span class="arithmatex">\(1/τ &gt; ω_0\)</span>, one can only find imaginary ω, which means the frictional force is so great that the system cannot oscillate. The circuit is said to be <strong>overdamped</strong>.</p>
+</li>
+<li>
+<p>In between, when <span class="arithmatex">\(1/τ = ω_0\)</span>, the circuit is said to be <strong>critically damped</strong>. It is worth noting that the critical damping gives the fastest return of the system to its equilibrium position. In engineering design this is often a desirable property.</p>
+</li>
+</ul>
+<h3 id="ac-circuits-and-forced-oscillations">AC Circuits and Forced Oscillations<a class="headerlink" href="#ac-circuits-and-forced-oscillations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The oscillations in an RLC circuit will not damp out if an external emf device supplies enough energy to make up for the energy dissipated as thermal energy in the resistance R.</li>
+<li>The energy is supplied via oscillating emfs and currents — the current is said to be an <strong>alternating current</strong>, or <strong>ac</strong> for short. These oscillating emfs and currents vary sinusoidally with time, reversing direction 100 times per second and thus having frequency f = 50 Hz.</li>
+<li>When the external alternating emf is connected, the oscillations of charge, potential difference, and current are said to be <strong>driven oscillations</strong> or <strong>forced oscillations</strong>. These oscillations always occur at the <strong>driving angular frequency</strong>.</li>
+</ul>
+<h3 id="three-simple-circuits">Three Simple Circuits<a class="headerlink" href="#three-simple-circuits" title="Permanent link">&para;</a></h3>
+<p><img alt="14" src="../14.png" /></p>
+<p><img alt="15" src="../15.png" /></p>
+<ul>
+<li>For L :</li>
+</ul>
+<p><span class="arithmatex">\(i(t)=\tilde{i}e^{iwt}\\V(t)=L\frac{di}{dt}=L(iw)e^{iwt}\tilde{i}\\\tilde{Z}=\frac{1}{iwL}\)</span></p>
+<ul>
+<li>For C:</li>
+</ul>
+<p><span class="arithmatex">\(Q(t)=\tilde{Q}e^{iwt}\\\tilde{V}(t)=\tilde{Q}/C\cdot e^{iwt}\\\tilde{i}=\frac{d\tilde{Q}}{dt}=iw\tilde{\tilde{Q}e^{iwt}}\\\tilde{Z}=\frac{1}{iwC}=-\frac{i}{wC}\)</span></p>
+<h3 id="the-series-rlc-circuit">The Series RLC Circuit<a class="headerlink" href="#the-series-rlc-circuit" title="Permanent link">&para;</a></h3>
+<p><img alt="16" src="../16.png" /></p>
+<p><img alt="17" src="../17.png" /></p>
+<h3 id="resonance">Resonance<a class="headerlink" href="#resonance" title="Permanent link">&para;</a></h3>
+<p>When <span class="arithmatex">\(ω_d\)</span> equals <span class="arithmatex">\(ω_0\)</span>, the circuit is in <strong>resonance</strong>.</p>
+<ul>
+<li>The circuit is equally capacitive and inductive <span class="arithmatex">\((|Z_C | = |Z_L|)\)</span>. </li>
+<li>The current amplitude <span class="arithmatex">\(I = E_m/R\)</span> is maximum.</li>
+<li>Current and emf are in phase (φ = 0).</li>
+</ul>
+<p><img alt="18" src="../18.png" /></p>
+<h2 id="maxwells-equations-and-em-waves">Maxwell’s Equations and EM Waves<a class="headerlink" href="#maxwells-equations-and-em-waves" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Applying Divergence to Faraday's Law ,we get:<span class="arithmatex">\(\triangledown\cdot(\triangledown \times \vec{E})=\triangledown \cdot(-\frac{\partial\vec{B}}{\partial t})=-\frac{\partial}{\partial t}(\triangledown\cdot\vec{B})=0 (Consistency)\)</span></p>
+</li>
+<li>
+<p>However,when applying Divergence to Ampere's Law,we get<span class="arithmatex">\(\triangledown\cdot(\triangledown \times \vec{B})=\triangledown\cdot(\mu_0\vec{J})=\mu_0(\triangledown\cdot\vec{J})\)</span></p>
+</li>
+</ul>
+<p>While <span class="arithmatex">\(\triangledown \cdot \vec{J} = -\frac{\partial\rho}{\partial t}=-\frac{\partial{(\epsilon_0\triangledown\cdot E)}}{\partial t} =-\triangledown\cdot(\epsilon_0\frac{\partial\vec{E}}{\partial t}) \ Which \ is\ not\ necessarily\  ZERO\)</span></p>
+<ul>
+<li>Maxwell pointed out that the extra divergence can be removed by fixing Ampere’s law to be:</li>
+</ul>
+<p><span class="arithmatex">\(\triangledown\times\vec{B}=\mu_0\vec{J}+\mu_0\vec{J_d}=\mu_0\vec{J}+\mu_0\epsilon_0\frac{\partial\vec{E}}{\partial t}\)</span></p>
+<h3 id="apply">Apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
+<p><img alt="19" src="../19.png" /></p>
+<p><span class="arithmatex">\(E=\frac{\sigma}{\epsilon_0}=\frac{Q}{\epsilon_0A}\\ \frac{\partial{E}}{\partial t}=\frac{J_d}{\epsilon_0}=\frac{I}{\epsilon_0A}\)</span></p>
+<ul>
+<li>
+<p>Choose surface 1 to integral : <span class="arithmatex">\(E=0\ I_{enc}=I\)</span></p>
+</li>
+<li>
+<p>Choose surface 2 to integral:</p>
+</li>
+</ul>
+<p>$ I_{enc}=0\\mu_0\epsilon_0\frac{\partial{E}}{\partial t}=\mu_0I/A  \iint \mu_0\epsilon_0\frac{\partial{E}}{\partial t}\cdot d\vec{A}=\mu_0I$</p>
+<h3 id="maxwells-equations">Maxwell’s Equations<a class="headerlink" href="#maxwells-equations" title="Permanent link">&para;</a></h3>
+<p><img alt="20" src="../20.png" /></p>
+<h3 id="electromagnetic-waves">Electromagnetic Waves<a class="headerlink" href="#electromagnetic-waves" title="Permanent link">&para;</a></h3>
+<p><img alt="21" src="../21.png" /></p>
+<h4 id="derivation-of-the-wave-equation">Derivation of the Wave Equation<a class="headerlink" href="#derivation-of-the-wave-equation" title="Permanent link">&para;</a></h4>
+<p>1.Decouple </p>
+<p><span class="arithmatex">\(\triangledown\times(\triangledown\times\vec{E})=\triangledown\times(-\frac{\partial\vec{B}}{\partial t})=-\frac{\partial}{\partial t}(\triangledown\times\vec{B})=-\mu_0\epsilon_0\frac{\partial^2\vec{E}}{\partial t^2}\)</span></p>
+<p><span class="arithmatex">\(\triangledown\times(\triangledown\times\vec{B})=\triangledown\times(\mu_0\epsilon_0\frac{\partial\vec{E}}{\partial t})=\mu_0\epsilon_0\frac{\partial}{\partial t}(\triangledown\times\vec{E})=-\mu_0\epsilon_0\frac{\partial^2\vec{B}}{\partial t^2}\)</span></p>
+<p>Another way to solution :</p>
+<p><span class="arithmatex">\(\vec{A}\times(\vec{B}\times\vec{C})=\vec{B}\cdot(\vec{A}\cdot \vec{C})-\vec{C}\cdot(\vec{A}\cdot \vec{B})\)</span></p>
+<p><span class="arithmatex">\(\triangledown\times(\triangledown\times\vec{C})=\triangledown\cdot(\triangledown\cdot \vec{C})-\triangledown^2\vec{C}\)</span></p>
+<p>Thus:</p>
+<p><span class="arithmatex">\(\triangledown^2\vec{B}=\mu_0\epsilon_0\frac{\partial^2\vec{B}}{\partial t^2}\\ \triangledown^2\vec{E}=\mu_0\epsilon_0\frac{\partial^2\vec{E}}{\partial t^2}\)</span></p>
+<p><img alt="22" src="../22.png" /></p>
+<p><img alt="23" src="../23.png" /></p>
+<p><span class="arithmatex">\(\lambda=\frac{2\pi}{k}\\ v=\lambda f=\lambda/T \\w=\frac{2\pi}{T}\)</span></p>
+<p><img alt="24" src="../24.png" /></p>
+<ul>
+<li>For <span class="arithmatex">\(\triangledown\cdot \vec{E}=0\\\triangledown\cdot \vec{B}=0\)</span></li>
+</ul>
+<p>We have <span class="arithmatex">\(E_m(x)=B_m(x)=0\)</span></p>
+<ul>
+<li>For <span class="arithmatex">\(\triangledown\times\vec{E}=-\frac{\partial{B}}{\partial t}\)</span></li>
+</ul>
+<p><span class="arithmatex">\(-k\hat{x}\times\vec{E_m}=-w\vec{B_m}\)</span></p>
+<ul>
+<li>Therefore <span class="arithmatex">\(\vec{B}=\frac{1}{c}(\hat{x}(unit\ vector)\times\vec{E})\)</span></li>
+</ul>
+<p><img alt="25" src="../25.png" /></p>
+<h3 id="energy-transport">Energy Transport<a class="headerlink" href="#energy-transport" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For <span class="arithmatex">\(\vec{B}=\frac{1}{c}(\hat{x}(unit\ vector)\times\vec{E})\)</span> We have <span class="arithmatex">\(\mu_E=\frac{\epsilon_0 E^2}{2}=\frac{B^2}{2\mu_0}=\mu_B\)</span></li>
+<li>The rate of energy transport per unit area in a plane wave is the product of total energy density and the speed of the electromagnetic wave, i.e <span class="arithmatex">\(S=(u_E +u_B)c.\)</span></li>
+<li><span class="arithmatex">\(I = S_{avg}= \frac{\epsilon_0 E_m^2}{2}c=\frac{B_m^2}{2\mu_0}c.\)</span></li>
+</ul>
+<h4 id="variation-of-intensity-with-distance">Variation of Intensity with Distance<a class="headerlink" href="#variation-of-intensity-with-distance" title="Permanent link">&para;</a></h4>
+<p>When spherical wavefronts spread from an isotropic point source S with power Ps, the energy of the waves is conserved.</p>
+<p>The intensity I at the sphere must decrease with r as <span class="arithmatex">\(I=\frac{P_S}{4\pi r^2}\)</span></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月13日 11:36:51</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月13日 11:36:51</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sorceressyidi/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+      
+        <script src="../../../js/baidu-tongji.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
