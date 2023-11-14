@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/BS/lec2/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/AI/net/">
       
       
-        <link rel="prev" href="../../../../GP/com/com/">
+        <link rel="prev" href="../pca/">
       
       
-        <link rel="next" href="../../SFM/lec3/">
+        <link rel="next" href="../../GP/lec1-3/lec1/">
       
       
-      <link rel="icon" href="../../../../log.ico">
+      <link rel="icon" href="../../log.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Basic Transformations - Lily's Notebook</title>
+        <title>Neural Networks and Deep Learning - Lily's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -56,17 +56,17 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../../../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-      <link rel="stylesheet" href="../../../../css/card.css">
+      <link rel="stylesheet" href="../../css/card.css">
     
-      <link rel="stylesheet" href="../../../../css/tasklist.css">
+      <link rel="stylesheet" href="../../css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../css/flink.css">
+      <link rel="stylesheet" href="../../css/flink.css">
     
-      <link rel="stylesheet" href="../../../../css/more_changelog.css">
+      <link rel="stylesheet" href="../../css/more_changelog.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lec2-for-ml-4360" class="md-skip">
+        <a href="#neural-networks-and-deep-learning" class="md-skip">
           跳转至
         </a>
       
@@ -109,9 +109,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../../../log.ico" alt="logo">
+  <img src="../../log.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basic Transformations
+              Neural Networks and Deep Learning
             
           </span>
         </div>
@@ -222,7 +222,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -238,17 +238,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
           
   
     
@@ -277,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../GP/lec1-3/lec1/" class="md-tabs__link">
+        <a href="../../GP/lec1-3/lec1/" class="md-tabs__link">
           
   
     
@@ -296,21 +300,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
           
   
     
@@ -339,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../invisible/" class="md-tabs__link">
+        <a href="../../invisible/" class="md-tabs__link">
           
   
     
@@ -377,9 +377,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../../../log.ico" alt="logo">
+  <img src="../../log.ico" alt="logo">
 
     </a>
     Lily's Notebook
@@ -416,7 +416,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -448,6 +448,8 @@
       
   
   
+    
+  
   
     
     
@@ -467,12 +469,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -486,7 +488,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -543,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+      <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -563,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -583,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../note/basicII/" class="md-nav__link">
+      <a href="../../note/basicII/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -655,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DIP/lab1/DIP/" class="md-nav__link">
+      <a href="../../DIP/lab1/DIP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DIP/lab2/lab2/" class="md-nav__link">
+      <a href="../../DIP/lab2/lab2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../DIP/lab3/lab3/" class="md-nav__link">
+      <a href="../../DIP/lab3/lab3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -815,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+      <a href="../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -835,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+      <a href="../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -855,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+      <a href="../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+      <a href="../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,6 +923,8 @@
                 
   
   
+    
+  
   
     
     
@@ -933,12 +937,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -952,7 +956,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Ai导
@@ -965,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../AI/pca/" class="md-nav__link">
+      <a href="../pca/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -983,9 +987,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../AI/net/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Neural Networks and Deep Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -994,6 +1018,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#convolutional-neural-networkcnn" class="md-nav__link">
+    Convolutional Neural Network(CNN)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recurrent-neural-network-rnn" class="md-nav__link">
+    Recurrent Neural Network （RNN）
+  </a>
+  
+    <nav class="md-nav" aria-label="Recurrent Neural Network （RNN）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#back-propagation" class="md-nav__link">
+    Back propagation
+  </a>
+  
+    <nav class="md-nav" aria-label="Back propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    梯度的计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参数更新
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-propagation-in-cnn" class="md-nav__link">
+    Back propagation in CNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-short-term-memory" class="md-nav__link">
+    Long Short-Term Memory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention" class="md-nav__link">
+    Attention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1109,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GP/lec1-3/lec1/" class="md-nav__link">
+      <a href="../../GP/lec1-3/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GP/current/current/" class="md-nav__link">
+      <a href="../../GP/current/current/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1149,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GP/mag/mag/" class="md-nav__link">
+      <a href="../../GP/mag/mag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1169,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GP/com/com/" class="md-nav__link">
+      <a href="../../GP/com/com/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1202,8 +1321,6 @@
       
   
   
-    
-  
   
     
     
@@ -1217,12 +1334,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -1236,7 +1353,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
@@ -1247,8 +1364,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1265,12 +1380,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -1284,7 +1399,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
@@ -1295,29 +1410,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Basic Transformations
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../CV/ML-4360/BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1326,128 +1421,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#21-primitives-transformations" class="md-nav__link">
-    2.1 Primitives &amp; Transformations
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Primitives & Transformations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#homogeneous" class="md-nav__link">
-    \(Homogeneous\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformations" class="md-nav__link">
-    \(Transformations\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" class="md-nav__link">
-    Direct Linear Transform for Homography Estimation[algorithm DLT
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-geometric-image-formation" class="md-nav__link">
-    2.2 Geometric Image Formation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-photometric-image-formation" class="md-nav__link">
-    2.3 Photometric Image Formation
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Photometric Image Formation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rendering-equation" class="md-nav__link">
-    \(Rendering Equation\)
-  </a>
-  
-    <nav class="md-nav" aria-label="\(Rendering Equation\)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#brdf-radiance_outirradiance_in" class="md-nav__link">
-    \(BRDF\) "\(Radiance_{out}/Irradiance_{in}\)"
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-reflection-equation" class="md-nav__link">
-    \(The Reflection Equation\)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#back-to-cameras" class="md-nav__link">
-    Back To Cameras
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chromatic-aberration" class="md-nav__link">
-    \(Chromatic Aberration\)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#24-image-sensing-pipeline" class="md-nav__link">
-    2.4 Image Sensing Pipeline
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1459,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SFM/lec3/" class="md-nav__link">
+      <a href="../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1479,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SR/lec4/" class="md-nav__link">
+      <a href="../../CV/ML-4360/SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1499,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PGM/lec5/" class="md-nav__link">
+      <a href="../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../invisible/" class="md-nav__link">
+      <a href="../../invisible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1639,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+      <a href="../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1695,72 +1668,59 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-primitives-transformations" class="md-nav__link">
-    2.1 Primitives &amp; Transformations
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Primitives & Transformations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#homogeneous" class="md-nav__link">
-    \(Homogeneous\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transformations" class="md-nav__link">
-    \(Transformations\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" class="md-nav__link">
-    Direct Linear Transform for Homography Estimation[algorithm DLT
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-geometric-image-formation" class="md-nav__link">
-    2.2 Geometric Image Formation
+  <a href="#convolutional-neural-networkcnn" class="md-nav__link">
+    Convolutional Neural Network(CNN)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-photometric-image-formation" class="md-nav__link">
-    2.3 Photometric Image Formation
+  <a href="#recurrent-neural-network-rnn" class="md-nav__link">
+    Recurrent Neural Network （RNN）
   </a>
   
-    <nav class="md-nav" aria-label="2.3 Photometric Image Formation">
+    <nav class="md-nav" aria-label="Recurrent Neural Network （RNN）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rendering-equation" class="md-nav__link">
-    \(Rendering Equation\)
+  <a href="#back-propagation" class="md-nav__link">
+    Back propagation
   </a>
   
-    <nav class="md-nav" aria-label="\(Rendering Equation\)">
+    <nav class="md-nav" aria-label="Back propagation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#brdf-radiance_outirradiance_in" class="md-nav__link">
-    \(BRDF\) "\(Radiance_{out}/Irradiance_{in}\)"
+  <a href="#intro" class="md-nav__link">
+    Intro
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-reflection-equation" class="md-nav__link">
-    \(The Reflection Equation\)
+  <a href="#_1" class="md-nav__link">
+    梯度的计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参数更新
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-propagation-in-cnn" class="md-nav__link">
+    Back propagation in CNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-short-term-memory" class="md-nav__link">
+    Long Short-Term Memory
   </a>
   
 </li>
@@ -1771,28 +1731,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#back-to-cameras" class="md-nav__link">
-    Back To Cameras
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chromatic-aberration" class="md-nav__link">
-    \(Chromatic Aberration\)
+  <a href="#attention" class="md-nav__link">
+    Attention
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#24-image-sensing-pipeline" class="md-nav__link">
-    2.4 Image Sensing Pipeline
-  </a>
   
 </li>
       
@@ -1811,102 +1757,67 @@
                   
 
 
-<h1 id="lec2-for-ml-4360">Lec2 for ML-4360<a class="headerlink" href="#lec2-for-ml-4360" title="Permanent link">&para;</a></h1>
-<h2 id="21-primitives-transformations">2.1 Primitives &amp; Transformations<a class="headerlink" href="#21-primitives-transformations" title="Permanent link">&para;</a></h2>
-<h3 id="homogeneous"><span class="arithmatex">\(Homogeneous\)</span><a class="headerlink" href="#homogeneous" title="Permanent link">&para;</a></h3>
+<h1 id="neural-networks-and-deep-learning">Neural Networks and Deep Learning<a class="headerlink" href="#neural-networks-and-deep-learning" title="Permanent link">&para;</a></h1>
+<h2 id="convolutional-neural-networkcnn">Convolutional Neural Network(CNN)<a class="headerlink" href="#convolutional-neural-networkcnn" title="Permanent link">&para;</a></h2>
+<p><a href="https://leovan.me/cn/2018/08/cnn/">https://leovan.me/cn/2018/08/cnn/</a></p>
+<h2 id="recurrent-neural-network-rnn">Recurrent Neural Network （RNN）<a class="headerlink" href="#recurrent-neural-network-rnn" title="Permanent link">&para;</a></h2>
+<p><img alt="v2-b0175ebd3419f9a11a3d0d8b00e28675_1440w" src="https://pic2.zhimg.com/80/v2-b0175ebd3419f9a11a3d0d8b00e28675_1440w.webp" /></p>
+<p><span class="arithmatex">\(O_t=g(V\cdot S_t)\)</span></p>
+<p><span class="arithmatex">\(S_t=\Phi(U\cdot X_t+W\cdot S_{t-1})\)</span> <span class="arithmatex">\(\Phi\)</span>（激活函数）</p>
+<p><img alt="v2-9e50e23bd3dff0d91b0198d0e6b6429a_1440w" src="https://pic3.zhimg.com/80/v2-9e50e23bd3dff0d91b0198d0e6b6429a_1440w.webp" /></p>
+<h3 id="back-propagation">Back propagation<a class="headerlink" href="#back-propagation" title="Permanent link">&para;</a></h3>
+<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(Cost=H(W_{11},W_{12},……,W_{mn})\)</span></p>
+<p><span class="arithmatex">\(\triangledown H=\frac{\partial H}{\partial W_{11}}e_{11}+\frac{\partial H}{\partial W_{12}}e_{12}+……+\frac{\partial H}{\partial W_{mn}}e_{mn}\)</span></p>
+<p><a href="https://zhuanlan.zhihu.com/p/115571464">https://zhuanlan.zhihu.com/p/115571464</a></p>
+<p><a href="https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd">https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd</a></p>
+<p>反向传播（Backpropagation）是一种用于训练神经网络的优化算法，通过计算损失函数关于网络参数的梯度，并利用这些梯度来更新参数，以最小化损失函数。</p>
+<ol>
+<li><strong>前向传播（Forward Propagation）：</strong> 将输入数据通过神经网络进行正向传播，计算每一层的输出。</li>
+<li><strong>计算损失（Compute Loss）：</strong> 使用网络的输出和真实标签计算损失函数，衡量网络的性能好坏。</li>
+<li><strong>反向传播梯度（Backward Pass）：</strong> 从输出层开始，计算损失函数关于每个参数的梯度。这是通过使用链式法则来计算的，将梯度从输出层向输入层传播。</li>
+<li><strong>参数更新（Update Parameters）：</strong> 使用梯度下降或其他优化算法，通过将梯度乘以一个学习率，来更新网络参数。学习率控制了每次参数更新的步长，以避免跳过最优解。</li>
+<li><strong>重复迭代（Repeat）：</strong> 重复以上步骤，直到损失函数收敛到满意的程度或达到预定的训练次数。</li>
+</ol>
+<h4 id="_1">梯度的计算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>计算损失函数对网络输出的梯度（即损失函数关于输出的导数）。</p>
 <ul>
-<li>homogeneous coordinates &amp; inhomogeneous coordinates</li>
-<li>argmented vector[one element out of the whole equivalent class],homogeneous vectors,homogeneous vectors</li>
-<li>points at infinity
-<img alt="Alt text" src="../a.png" /></li>
-<li>In homogeneous coordinates, the intersection of two lines is given by:<blockquote>
-<p><span class="arithmatex">\(\tilde{x}\)</span>=<span class="arithmatex">\(\tilde{l1}\)</span> × <span class="arithmatex">\(\tilde{l2}\)</span> 
-<img alt="Alt text" src="../b.png" /></p>
-</blockquote>
-</li>
-<li>the line joining two points can be compactly written as:<blockquote>
-<p><span class="arithmatex">\(\tilde{l}\)</span>=<span class="arithmatex">\(\tilde{x1}\)</span> × <span class="arithmatex">\(\tilde{x2}\)</span> </p>
-</blockquote>
-</li>
+<li>使用链式法则，将梯度从输出层传播到输入层，计算每一层的梯度。</li>
+<li>根据梯度和选择的优化算法，更新每个参数。</li>
 </ul>
-<h3 id="transformations"><span class="arithmatex">\(Transformations\)</span><a class="headerlink" href="#transformations" title="Permanent link">&para;</a></h3>
+<p>这个过程是通过反向传播和梯度下降算法的结合来实现的，以最小化损失函数并优化神经网络的参数。</p>
+<h4 id="_2">参数更新<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(θ_{new}=θ_{old}−α∇L(θ_{old})\)</span></p>
+<p>其中：</p>
 <ul>
-<li>translation 2DOF</li>
-<li>Euclidean 3DOF <span class="arithmatex">\(RR^T=I \ der(R)=1\)</span>
-<img alt="Alt text" src="../c.png" /></li>
-<li>正交矩阵<span class="arithmatex">\(A^TA=I\)</span></li>
+<li><span class="arithmatex">\(θ_{old}\)</span> 是当前的参数值。</li>
+<li><span class="arithmatex">\(∇L(θ_{old}\)</span>是损失函数相对于参数的梯度。</li>
+<li><span class="arithmatex">\(α\)</span> 是学习率，是一个小正数。</li>
 </ul>
-<blockquote>
-<p><span class="arithmatex">\(A^{-1}=A^T\)</span></p>
-<p><span class="arithmatex">\(\left|A\right|\)</span> = +-1</p>
-<p>A的行（列）向量组为n维单位正交向量组
-* Similarity 4DOF
-* Affine: 6DOF
-arbitrary <span class="arithmatex">\(2×2\)</span> matrix</p>
-<p>Parallels Remain!
-* Projective :8DOF——preserve straight lines</p>
-<blockquote>
-<p>DOF（2D）:n(n-1)/2</p>
-</blockquote>
-</blockquote>
-<p><img alt="Alt text" src="../d.png" /></p>
-<blockquote>
-<p><span class="arithmatex">\(\tilde{l}'\)</span> = <span class="arithmatex">\((\tilde{H}^T)^{-1}\)</span><span class="arithmatex">\(\tilde{l}\)</span></p>
-</blockquote>
-<h3 id="direct-linear-transform-for-homography-estimationalgorithm-dlt">Direct Linear Transform for Homography Estimation[algorithm DLT<a class="headerlink" href="#direct-linear-transform-for-homography-estimationalgorithm-dlt" title="Permanent link">&para;</a></h3>
-<ul>
-<li>UDV！ SVD!</li>
-</ul>
-<h2 id="22-geometric-image-formation">2.2 Geometric Image Formation<a class="headerlink" href="#22-geometric-image-formation" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Orthographic projection</p>
-<p>Perspective　projection</p>
-</blockquote>
-<p><img alt="Alt text" src="../e.png" />
-* Complete perspective projection</p>
-<p><img src="/Users/lily/Desktop/Lily-s-Note/docs/CV/ML-4360/BS/8.png" alt="8" style="zoom:50%;" /></p>
-<blockquote>
-<p>lens distortion</p>
-</blockquote>
-<ul>
-<li>radial and tangential distortion<img alt="Alt text" src="../f.png" /></li>
-</ul>
-<h2 id="23-photometric-image-formation">2.3 Photometric Image Formation<a class="headerlink" href="#23-photometric-image-formation" title="Permanent link">&para;</a></h2>
-<h3 id="rendering-equation"><span class="arithmatex">\(Rendering Equation\)</span><a class="headerlink" href="#rendering-equation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>intensity :power per solid angle<blockquote>
-<p><span class="arithmatex">\(dw=\sin\theta\)</span><span class="arithmatex">\(d\theta\)</span><span class="arithmatex">\(d\phi\)</span></p>
-</blockquote>
-</li>
-<li>Irradiance ： power per unit area<blockquote>
-<p>E(x)=d<span class="arithmatex">\(\Phi(x)\)</span>/dA</p>
-</blockquote>
-</li>
-<li>Radiannce<blockquote>
-<p>L(p,w)=<span class="arithmatex">\(d^2\Phi(p,\omega)\)</span>/<span class="arithmatex">\(d\omega\)</span><span class="arithmatex">\(dAcos\theta\)</span>
-<img alt="Alt text" src="../g.png" /></p>
-</blockquote>
-</li>
-</ul>
-<h4 id="brdf-radiance_outirradiance_in"><span class="arithmatex">\(BRDF\)</span> "<span class="arithmatex">\(Radiance_{out}/Irradiance_{in}\)</span>"<a class="headerlink" href="#brdf-radiance_outirradiance_in" title="Permanent link">&para;</a></h4>
-<h4 id="the-reflection-equation"><span class="arithmatex">\(The Reflection Equation\)</span><a class="headerlink" href="#the-reflection-equation" title="Permanent link">&para;</a></h4>
-<p><img alt="Alt text" src="../i.png" />
-<img alt="Alt text" src="../h.png" /></p>
-<h3 id="back-to-cameras">Back To Cameras<a class="headerlink" href="#back-to-cameras" title="Permanent link">&para;</a></h3>
-<p><img alt="Alt text" src="../j.png" /></p>
-<h3 id="chromatic-aberration"><span class="arithmatex">\(Chromatic Aberration\)</span><a class="headerlink" href="#chromatic-aberration" title="Permanent link">&para;</a></h3>
-<h2 id="24-image-sensing-pipeline">2.4 Image Sensing Pipeline<a class="headerlink" href="#24-image-sensing-pipeline" title="Permanent link">&para;</a></h2>
+<p>这个更新规则的直观解释是，我们沿着损失函数下降最快的方向更新参数。梯度告诉我们损失函数在当前点上升最快的方向，我们沿着梯度的反方向前进，以降低损失。</p>
+<p>学习率的选择是关键的。如果学习率太小，收敛速度会很慢，而如果学习率太大，我们可能会跳过损失函数的最小值。因此，选择一个合适的学习率对于训练神经网络至关重要。</p>
+<p>通常，在训练过程中，学习率可能会随着时间的推移而变化，这被称为学习率调度（learning rate scheduling）。例如，初始时可以使用较大的学习率以快速收敛，然后随着训练的进行逐渐减小学习率，以提高收敛的精度。</p>
+<p>总的来说，学习率是一个平衡训练速度和性能的关键因素。不同的问题可能需要不同的学习率，因此它通常需要通过实验来调整。</p>
+<h4 id="back-propagation-in-cnn">Back propagation in CNN<a class="headerlink" href="#back-propagation-in-cnn" title="Permanent link">&para;</a></h4>
+<p><a href="https://mmuratarat.github.io/2019-02-07/bptt-of-rnn">https://mmuratarat.github.io/2019-02-07/bptt-of-rnn</a></p>
+<h4 id="long-short-term-memory">Long Short-Term Memory<a class="headerlink" href="#long-short-term-memory" title="Permanent link">&para;</a></h4>
+<p><a href="https://easyai.tech/ai-definition/rnn/">https://easyai.tech/ai-definition/rnn/</a></p>
+<p><a href="https://blog.csdn.net/u012328159/article/details/87567358">https://blog.csdn.net/u012328159/article/details/87567358</a></p>
+<h3 id="attention">Attention<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.cnblogs.com/gczr/p/14693829.html">https://www.cnblogs.com/gczr/p/14693829.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/379722366">https://zhuanlan.zhihu.com/p/379722366</a></p>
+<p><img alt="v2-740c1ab6d6600c003ca092a8e8a5668b_1440w" src="https://pic4.zhimg.com/80/v2-740c1ab6d6600c003ca092a8e8a5668b_1440w.webp" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 10:26:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月14日 23:26:01</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月4日 10:47:52</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月14日 23:26:01</span>
       
     
   </small>
@@ -1974,10 +1885,10 @@ arbitrary <span class="arithmatex">\(2×2\)</span> matrix</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
@@ -1987,9 +1898,9 @@ arbitrary <span class="arithmatex">\(2×2\)</span> matrix</p>
       
         <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
-        <script src="../../../../js/baidu-tongji.js"></script>
+        <script src="../../js/baidu-tongji.js"></script>
       
-        <script src="../../../../js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
     
   </body>
