@@ -62,7 +62,7 @@ $Inductance \ L \ =N\Phi_B/i=\mu_0n^2lA$
 
   $\begin{align*}&\epsilon= iR-(-L\frac{di}{dt})\\ &\dot{i}+\frac{R}{L}i-\frac{\epsilon}{L}=0\end{align*}$
 
-  $i=\frac{\epsilon}{L}(1-e^{-t/\tau_L}) \ \ \ (\tau_L=\frac{L}{R})$
+  $i=\frac{\epsilon}{R}(1-e^{-t/\tau_L}) \ \ \ (\tau_L=\frac{L}{R})$
 
 ### Energy 
 
@@ -110,9 +110,9 @@ $L\frac{di}{dt}+\frac{q}{C}=0$
 
 $\ddot{q}+\frac{1}{LC}q=0$
 
-$\Rightarrow q =Acos(w_0t+\phi)=Qcos(\frac{1}{LC}t+\phi)$
+$\Rightarrow q =Acos(w_0t+\phi)=Qcos(\frac{1}{\sqrt{LC}}t+\phi)$
 
-$\Rightarrow &Qcos\phi=0 \\&-w_0Qsin\phi=0$
+$\Rightarrow Qcos\phi=0 \\-w_0Qsin\phi=0$
 
 ![10](10.png)![11](11.png)
 
@@ -151,11 +151,21 @@ Note Use ODEs or the method of the below picture
 
 * For L :
 
-   $i(t)=\tilde{i}e^{iwt}\\V(t)=L\frac{di}{dt}=L(iw)e^{iwt}\tilde{i}\\\tilde{Z}=\frac{1}{iwL}$
+   $i(t)=\tilde{i}e^{iwt}$
+
+   $V(t)=L\frac{di}{dt}=L(iw)e^{iwt}\tilde{i}$
+
+   $\tilde{Z}=iwL$
 
 * For C:
 
-$Q(t)=\tilde{Q}e^{iwt}\\\tilde{V}(t)=\tilde{Q}/C\cdot e^{iwt}\\\tilde{i}=\frac{d\tilde{Q}}{dt}=iw\tilde{\tilde{Q}e^{iwt}}\\\tilde{Z}=\frac{1}{iwC}=-\frac{i}{wC}$
+$Q(t)=\tilde{Q}e^{iwt}$
+
+$\tilde{V}(t)=\tilde{Q}/C\cdot e^{iwt}$
+
+$\tilde{i}=\frac{d\tilde{Q}}{dt}=iw\tilde{\tilde{Q}e^{iwt}}$
+
+$\tilde{Z}=\frac{1}{iwC}=-\frac{i}{wC}$
 
 ### The Series RLC Circuit
 

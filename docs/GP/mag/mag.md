@@ -52,7 +52,7 @@ Where the constant $\mu_0=4\pi \cdot 10^{-7(T\cdot m/A)}$is called the **permeab
 
 * Derivation
 
-$\begin{align*}d\vec{B}&=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{r}}{r^3}\\ &=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{R}}{r^3} \\B&=\frac{\mu_0i}{4\pi R}\int_{-\infty}^{+\infty}\frac{R^2dS}{r^3} (sin\theta=R/r \ cos\theta=-s/r \ dr/ds=s/r)\\ &=\frac{\mu_0i}{4\pi R}\int_{0}^{R}sin\theta d\theta \ (cos\theta d\theta = d(sin\theta)=-\frac{R^2dr}{r^2ds}ds=-\frac{R^2s}{r^2r}ds=cos\theta \frac{Rds}{r^2})\\ &= \frac{\mu_0 i}{2\pi R}\end{align*}$
+$\begin{align*}d\vec{B}&=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{r}}{r^3}\\ &=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{R}}{r^3} \\B&=\frac{\mu_0i}{4\pi R}\int_{-\infty}^{+\infty}\frac{R^2dS}{r^3} (sin\theta=R/r \ cos\theta=-s/r \ dr/ds=s/r)\\ &=\frac{\mu_0i}{4\pi R}\int_{0}^{\pi}sin\theta d\theta \ (cos\theta d\theta = d(sin\theta)=-\frac{R^2dr}{r^2ds}ds=-\frac{R^2s}{r^2r}ds=cos\theta \frac{Rds}{r^2})\\ &= \frac{\mu_0 i}{2\pi R}\end{align*}$
 
 #### Force Between Two Parallel Wires 
 
@@ -140,7 +140,7 @@ $U_B=-\vec{\mu}\cdot\vec{B} = -\mu Bcos\theta$
 
 * Thus , at the center of a single-loop coil, we have $B=\frac{\mu_0i}{2R}=\frac{\mu_0\mu}{2\pi R^3}$
 
-#### at axial points far from the loop$ (z ≫ R)$
+#### at axial points far from the loop$(z ≫ R)$
 
 ![15](15.png)
 

@@ -124,9 +124,9 @@ $\Rightarrow Ez=-\frac{dV}{dz}$
 
 * $\oint\vec{E}\cdot d\vec{l}=\int\int(\triangledown\times \vec{E})dS = 0$  $By \ Stokes$  -- independent of $PATHS$
 
-* Choose a Gaussian surface to enclose a small cube centered at $\vec{r}$ with side $\triangledown x\triangledown y\triangledown z$ such that $\triangledown V = \triangledown x \triangledown y \triangledown z$
+* Choose a Gaussian surface to enclose a small cube centered at $\vec{r}$ with side $\triangledown x\triangledown y\triangledown z$ such that $\triangle V = \triangle x \triangle y \triangle z$
   * In the small $\triangledown V$ ,We have :
-    * $\frac{\rho(\vec{r})}{\epsilon_0}=lim_{\triangledown V \rightarrow0}\frac{q_{enc}}{\triangledown V\epsilon_0}=lim_{\triangledown V \rightarrow0}\frac{1}{\triangledown V}\oint \vec{E}\cdot d\vec{S}$
+    * $\frac{\rho(\vec{r})}{\epsilon_0}=lim_{\triangle V \rightarrow0}\frac{q_{enc}}{\triangle V\epsilon_0}=lim_{\triangle V \rightarrow0}\frac{1}{\triangle V}\oint \vec{E}\cdot d\vec{S}$
     * $\oint \vec{E_x}\cdot d\vec{S}=\vec{E}(x + \frac{∆x}{2} ,y,z)\hat{x}∆y∆z+\vec{E}(x - \frac{∆x}{2} ,y,z)(-\hat{x})∆y∆z = \frac{\partial E_x}{\partial x}\triangledown V$
     * $\frac{\rho(\vec{r})}{\epsilon_0}=\frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}=\triangledown \cdot \vec{E}$
 * According to Gauss’ law, the only places at which the divergence of the electric field is not zero are those locations at which charge is present. So the divergence is a measure of the tendency of the field to flow away from a (charged) point.
@@ -203,15 +203,15 @@ There is a charge +q outside a spherical metal shell at a distance$r+R$ from its
 
 * According to Gauss’ law, the surface charge density σ induced on the conductor is:
 
-  > $E=-\epsilon_0\frac{\partial V}{\partial z}|_{z=0}=\frac{-qd}{2\pi\epsilon_0(x^2+y^2+z^2)^\frac{3}{2}}\hat{z}$
+  > $E=-\epsilon_0\frac{\partial V}{\partial z}|_{z=0}=\frac{-qd}{2\pi\epsilon_0(x^2+y^2+d^2)^\frac{3}{2}}\hat{z}$
 
-  > $\sigma=\epsilon_0\triangledown \cdot E =\frac{-qd}{2\pi(x^2+y^2+z^2)^\frac{3}{2}}$
+  > $\sigma=\epsilon_0\triangledown \cdot E =\frac{-qd}{2\pi(x^2+y^2+d^2)^\frac{3}{2}}$
 
 * Bringing q from infinity needs ? W
 
   > Derive as little circles
 
-  >$V=\int_0^\infty\frac{qd\cdot 2\pi r dr}{2\pi(r^2+z^2)^{3/2}}\cdot\frac{q}{4\pi\epsilon_0(r^2+z^2)^{1/2}}=\frac{q^2d}{8\pi\epsilon_0}\int_0^{\infty}\frac{d(r^2)}{r^2+d^2}=-\frac{q^2}{8\pi\epsilon_od}$
+  >$V=\int_0^\infty\frac{qd\cdot 2\pi r dr}{2\pi(r^2+d^2)^{3/2}}\cdot\frac{q}{4\pi\epsilon_0(r^2+d^2)^{1/2}}=\frac{q^2d}{8\pi\epsilon_0}\int_0^{\infty}\frac{d(r^2)}{r^2+d^2}=-\frac{q^2}{8\pi\epsilon_od}$
 
   > which is half of the energy for bringing two point charges to a distance 2d with no conductor. 
 
@@ -240,12 +240,12 @@ Pre - knowledge :
 ![17](17.png)
 
 ![18](18.png)
-
+* Also See https://galileoandeinstein.phys.virginia.edu/Elec_Mag/2022_Lectures/EM_08_Images.html
 ## Appendix ：
 
 #### **Cross product**
 
-* $\vec{A} ×(\vec{B} +\vec{C})=\vec{A} ×\vec{b} +\vec{A} ×\vec{C}$
+* $\vec{A} ×(\vec{B} +\vec{C})=\vec{A} ×\vec{B} +\vec{A} ×\vec{C}$
 
 #### 立体角
 

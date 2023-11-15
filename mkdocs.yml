@@ -117,6 +117,9 @@ nav:
       - 堆栈 : assembly/堆栈.md
       - 中断: assembly/中断.md
       - 函数: assembly/函数.md
+    - Ai导 : 
+      - 数据降维: AI/pca.md
+      - Neural Networks and Deep Learning : AI/net.md
   - Math & Physics:
     - General physics II : 
       - Electrci Charge & Field & Potential: GP/lec1-3/lec1.md
@@ -129,9 +132,7 @@ nav:
       - structure from motion : CV/ML-4360/SFM/lec3.md
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
-  - Miscellaneous :
-    - Ai导 : 
-      - 数据降维: AI/pca.md 
+  - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
       - 大侠 : 大侠.md
