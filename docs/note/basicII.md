@@ -143,3 +143,77 @@ void Topsort( Graph G )
 
 ### Shortest Path Problem
 
+#### 1.Single-Source Shortest Path Problem
+
+* Unweighted Shortest Path
+
+```C
+void unweighted(Table T){
+  	int CurrDist;
+  	Vertex V,W;
+  	 for(CurrDist=0;CurrDist<NumVertex;CurrDist++){
+      for(each vertex V){      if(!T[V].Known&&T[V].Dust==CurrDist){
+          R[V].Known=true;
+          for(each W adjacent to V){
+            if(T[W].Dist==infinity){
+              T[W].Dist=CurrDist+1;
+                T[E].Path=V;
+            }
+          }
+        }
+      }
+    }
+}
+```
+
+But the time complexity is $O(|V|^2)$
+
+* Note: If V is unknown yet has $Dist < Infinity$,then Dist is either $CurrDist$ or $CurrDist +1$(Remember Tree?)
+
+> Improvement
+
+```C
+void unweighted (Table T){
+  Queue Q;
+  Vertex V,W;
+  Q=CreateQueue(NumVertex);MakeEmpty(Q);
+  Enqueue(S,Q);
+  while(!isEmpty(Q)){
+    V=Dequeue(Q);
+    T[V].known=true;//not really necessary
+    for(each W adjacent to V){
+      if(T[W].Dist==Infinity){
+        T[W].Dist=T[V].Dist+1;
+        T[W].Path=V;
+        ENqueue(W,Q)
+      }
+    }
+  }
+  DisposeQueue(Q);
+}
+```
+
+* $T=O(|V|+|E|)$
+
+#### Dijkstra's Algorithm(for weighted shortest paths)
+
+```C
+void Dijkstra(Table T){
+  //T is initialized by Figure 9.30 on p 303
+  Vertex V,W;
+  for(;;){
+    V=smallest unknown distance vertex;
+    if(V==NotAVertex){break;}
+    T[V].known=true;
+    for(each W adjacent to V){
+      if(!T[W].Known){
+        if(T[V].Dist+Cvw<T[W].Dist){
+          Decrease(T[W].Dist to T[V].Dist+Cvw);
+          T[W].Path=V
+        }
+      }
+    }
+  }
+}
+```
+

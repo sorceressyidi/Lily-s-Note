@@ -122,10 +122,13 @@ nav:
       - Neural Networks and Deep Learning : AI/net.md
   - Math & Physics:
     - General physics II : 
-      - Electrci Charge & Field & Potential: GP/lec1-3/lec1.md
-      - Current : GP/current/current.md
-      - The Magnetic Field : GP/mag/mag.md
-      - Electromagnetic Integration : GP/com/com.md
+      - Electromagnetics:
+        - Electrci Charge & Field & Potential: GP/lec1-3/lec1.md
+        - Current : GP/current/current.md
+        - The Magnetic Field : GP/mag/mag.md
+        - Electromagnetic Integration : GP/com/com.md
+      - Optics:
+        - Light Waves : GP/light/light.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
