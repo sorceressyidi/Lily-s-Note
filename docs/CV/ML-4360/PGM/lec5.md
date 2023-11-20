@@ -261,15 +261,17 @@ That simplifies the computation of any marginal distribution significantly
 
 Let's consider an autonomous vehicle driving on a highway and tracking a vehicle in front in order to initiate an overtaking maneuver. Let $x_t\in\{1,2,3\}$ denote the lane the vehicle in front is driving on at time $t\in\{1,\dots,10\}$. Unfortunately, the sensor readings are noisy as depicted below.
 
-<img src="gfx/car_on_lane_map_unary_1.png" width="500"/>
+![19](19.png)
 
 Selecting the most likely lane at each time $t$ independently (green) leads to wrong estimates for $t=\{3,7,10\}$. To solve this problem, and recover the correct situation depicted below
 
-<img src="gfx/car_on_lane.png" width="500"/>
+![20](20.png)
 
 we can integrate prior knowledge and infer the most likely situation using max-product belief propagation. A sensible prior would favor staying on the same lane over changing one lane at a time over changing two lanes at a time. This prior can be integrated via a pairwise, chain-structured Markov Random Field (also called: Hidden Markov Model or HMM) where pairwise factors between adjacent frames modulate transition likelihoods:
 
-<img src="gfx/chain_10_nodes.png" width="400"/>
+![21](21.png)
+
+
 
 $$g_\theta(x_i,x_{i+1}) = \begin{bmatrix}0.8 & 0.2 & 0.0\\ 0.2 & 0.6 & 0.2 \\ 0.0 & 0.2 & 0.8\end{bmatrix}$$
 
@@ -339,10 +341,9 @@ print(np.argmax(max_marginals,axis=1))
 # Image Denoising
 
 You are given a noisy binary image ($10 \times 10$ pixels) which you want to denoise.
-<table><tr>
-<td> <img src="gfx/camera_lego.jpg" width="250"/> </td>
-<td> <img src="gfx/image_noisy_large.png" width="200"/> </td>
-</tr></table>
+
+![22](23.png)
+
 Make use of the Ising model for that purpose where neighboring pixels are encouraged to take the same value:
 $$p(x_1,\dots,x_{100}) \propto \exp \left\{\sum_{i=1}^{100} \psi_i(x_i) + \sum_{i\sim j} \psi_{ij} (x_i,x_j) \right\}$$
 

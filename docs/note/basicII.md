@@ -2,6 +2,8 @@
 
 ### Some defs
 
+#### $r=v-e+2\\R=V-E+k+1$
+
 * Complete graphs
 
   > $Undirected \ V=n \ \ \ \  E=C_n^2=\frac{n(n-1)}{2}$
@@ -20,11 +22,11 @@
 
 * Connected
 
-  > $Undirected: $  An undirected graph G is connected if every pair of distinct $v_i$ and $v_j$ are connected
+  > $Undirected:$  An undirected graph G is connected if every pair of distinct $v_i$ and $v_j$ are connected
   >
   > * A tree = a graph that is connected and acyclic.
 
-  > $Directed: $  
+  > $Directed:$  
   >
   > > Strongly connected directed graph G = for every pair of $v_i$ and $v_j$ in V( G ), there exist directed paths from $v_i$ to $v_j$ and from $v_j$ to $v_i$. 
   > >
@@ -85,7 +87,7 @@ B.Multilists
 Digraph G in which V( G ) represents activities ( e.g.  the courses ) and E( G ) represents precedence relations
 
 * i  is a predecessor of j $:$ there is a path from i  to j 
-* i  is an immediate predecessor of  j $:$   < i,  j > $\in$ E( G )  then $j$ is called a successor ( immediate successor ) of i
+* i  is an immediate predecessor of  j $:$  $< i,  j >\in E( G )$  then $j$ is called a successor ( immediate successor ) of i
 * Partial order $:$ a precedence relation which is both transitive and irreflexive.
 
 > If the precedence relation is reflexive, then there must be an i such that i is a predecessor of i.  
@@ -109,12 +111,12 @@ void Topsort( Graph G )
 {   int  Counter;
     Vertex  V, W;
     for ( Counter = 0; Counter < NumVertex; Counter ++ ) {
-	V = FindNewVertexOfDegreeZero( );
-	if ( V == NotAVertex ) {
+		V = FindNewVertexOfDegreeZero( );
+		if ( V == NotAVertex ) {
 	    Error ( “Graph has a cycle” );   break;  }
-	TopNum[ V ] = Counter; /* or output V */
-	for ( each W adjacent to V )
-	    Indegree[ W ] – – ;
+		TopNum[ V ] = Counter; /* or output V */
+		for ( each W adjacent to V )
+	    	Indegree[ W ] – – ;
     }
 }
 ```
@@ -141,6 +143,22 @@ void Topsort( Graph G )
 }
 ```
 
+
+
+
+
+### Midterm Review
+
+* Which of the following statements is TRUE about topological sorting? (5分)
+  1. If a graph has a topological sequence, then its adjacency matrix must be triangular.
+  2. If the adjacency matrix is triangular, then the corresponding directed graph must have a unique topological sequence.
+  3. In a DAG, if for any pair of distinct vertices *Vi* and *Vj*, there is a path either from *Vi* to *Vj* or from *Vj* to *Vi*, then the DAG must have a unique topological sequence.
+  4. If *Vi* precedes *Vj* in a topological sequence, then there must be a path from *Vi* to *Vj*.
+
+> 3 is true
+
+
+
 ### Shortest Path Problem
 
 #### 1.Single-Source Shortest Path Problem
@@ -152,7 +170,8 @@ void unweighted(Table T){
   	int CurrDist;
   	Vertex V,W;
   	 for(CurrDist=0;CurrDist<NumVertex;CurrDist++){
-      for(each vertex V){      if(!T[V].Known&&T[V].Dust==CurrDist){
+      for(each vertex V){      
+        if(!T[V].Known&&T[V].Dust==CurrDist){
           R[V].Known=true;
           for(each W adjacent to V){
             if(T[W].Dist==infinity){
@@ -216,4 +235,61 @@ void Dijkstra(Table T){
   }
 }
 ```
+
+* Implementation 1
+
+  $T = O( |V|^2 + |E| )$
+
+  * **Initialization:** The initialization phase involves traversing all vertices, setting their distances to infinity, and setting the initial vertex's distance to 0. The time complexity of this step is O(V), where V is the number of vertices.
+
+  * **Main Loop:** The number of iterations in the main loop depends on the number of vertices. In each iteration, the algorithm selects the smallest unknown distance vertex V and then traverses all vertices W adjacent to V. For each W, it checks if there is a shorter path through V to W, and if so, it updates the distance of W. 
+
+    The time complexity of this step is $O(V^2)$, as, for each vertex V, all vertices adjacent to V are considered.
+
+  * **Finding the Minimum Distance Vertex:** In the main loop, the algorithm needs to find the smallest unknown distance vertex V. The time complexity of this step is O(V^2), as it needs to check the distance of each vertex.
+
+  In summary, the time complexity of the Dijkstra algorithm is $O(V^2)$.
+
+* Implementation 2
+
+  * **V = smallest unknown distance vertex:**  Keep distances in a priority queue and call DeleteMin – $O(log|V|)$
+
+  * **Decrease( T[ W ].Dist  to  T[ V ].Dist + Cvw )**
+
+    * Method 1: DecreaseKey – $O(log|V|)$
+
+    $T = O( |V|log|V|+|E|log|V|)=O(|E|log|V|)$  ----**Good if the graph is sparse**
+
+    * Method 2: insert $W$ with updated Dist into the priority queue. 
+
+      Must keep doing DeleteMin until an **unknown** vertex emerges
+
+      $T = O(|E| log|V| )$ but requires $|E|$ DeleteMin with $|E|$ space
+
+#### Graphs with Negative Edge Costs
+
+* Why don’t we simply add a constant to each edge and thus remove negative edges? --**Path with different count of PATHS!**
+
+```C
+void  WeightedNegative( Table T )
+{   /* T is initialized by Figure 9.30 on p.303 */
+    Queue  Q;
+    Vertex  V, W;
+    Q = CreateQueue (NumVertex );  MakeEmpty( Q );
+    Enqueue( S, Q ); /* Enqueue the source vertex */
+  	while (!IsEmpty(Q)){
+      V=Dequeue(Q);/* each vertex can dequeue at most |V| times */
+      for(each W adjacent to V){
+        if ( T[ V ].Dist + Cvw < T[ W ].Dist ){/* no longer once per edge */
+            T[ W ].Dist = T[ V ].Dist + Cvw;
+            T[ W ].Path = V;
+            if(W is not already in Q){Enqueue(W,Q)}
+        }/* end-if update */
+      }
+    }/* end-while */
+    DisposeQueue( Q ); /* free memory */
+}
+```
+
+#### Acyclic Graphs
 
