@@ -2374,11 +2374,11 @@
 <h4 id="example-1-vehicle-localization">Example 1: Vehicle Localization<a class="headerlink" href="#example-1-vehicle-localization" title="Permanent link">&para;</a></h4>
 <p><strong>#</strong> <strong>Max-Product Belief Propagation on chain structured Markov Random Fields for Vehicle Localization</strong></p>
 <p>Let's consider an autonomous vehicle driving on a highway and tracking a vehicle in front in order to initiate an overtaking maneuver. Let <span class="arithmatex">\(x_t\in\{1,2,3\}\)</span> denote the lane the vehicle in front is driving on at time <span class="arithmatex">\(t\in\{1,\dots,10\}\)</span>. Unfortunately, the sensor readings are noisy as depicted below.</p>
-<p><img src="gfx/car_on_lane_map_unary_1.png" width="500"/></p>
+<p><img alt="19" src="../19.png" /></p>
 <p>Selecting the most likely lane at each time <span class="arithmatex">\(t\)</span> independently (green) leads to wrong estimates for <span class="arithmatex">\(t=\{3,7,10\}\)</span>. To solve this problem, and recover the correct situation depicted below</p>
-<p><img src="gfx/car_on_lane.png" width="500"/></p>
+<p><img alt="20" src="../20.png" /></p>
 <p>we can integrate prior knowledge and infer the most likely situation using max-product belief propagation. A sensible prior would favor staying on the same lane over changing one lane at a time over changing two lanes at a time. This prior can be integrated via a pairwise, chain-structured Markov Random Field (also called: Hidden Markov Model or HMM) where pairwise factors between adjacent frames modulate transition likelihoods:</p>
-<p><img src="gfx/chain_10_nodes.png" width="400"/></p>
+<p><img alt="21" src="../21.png" /></p>
 <div class="arithmatex">\[g_\theta(x_i,x_{i+1}) = \begin{bmatrix}0.8 &amp; 0.2 &amp; 0.0\\ 0.2 &amp; 0.6 &amp; 0.2 \\ 0.0 &amp; 0.2 &amp; 0.8\end{bmatrix}\]</div>
 <div class="arithmatex">\[ p_\theta({\bf x}) \propto \prod_{1}^{10} f_i(x_i)\prod_{1}^{9}g_{\theta}(x_i, x_{i+1})\]</div>
 <ul>
@@ -2440,10 +2440,7 @@
 <h4 id="example-2-image-denoising">Example 2: Image Denoising<a class="headerlink" href="#example-2-image-denoising" title="Permanent link">&para;</a></h4>
 <h1 id="image-denoising">Image Denoising<a class="headerlink" href="#image-denoising" title="Permanent link">&para;</a></h1>
 <p>You are given a noisy binary image (<span class="arithmatex">\(10 \times 10\)</span> pixels) which you want to denoise.</p>
-<table><tr>
-<td> <img src="gfx/camera_lego.jpg" width="250"/> </td>
-<td> <img src="gfx/image_noisy_large.png" width="200"/> </td>
-</tr></table>
+<p><img alt="22" src="../23.png" /></p>
 <p>Make use of the Ising model for that purpose where neighboring pixels are encouraged to take the same value:
 <span class="arithmatex">\(<span class="arithmatex">\(p(x_1,\dots,x_{100}) \propto \exp \left\{\sum_{i=1}^{100} \psi_i(x_i) + \sum_{i\sim j} \psi_{ij} (x_i,x_j) \right\}\)</span>\)</span></p>
 <p>Here, <span class="arithmatex">\(i\)</span> is the pixel index and <span class="arithmatex">\(i\sim j\)</span> are neighboring pixels on a 4-connected grid. The unary term <span class="arithmatex">\(\psi_i(x_i) = [x_i = o_i]\)</span> models the observation at pixel <span class="arithmatex">\(i\)</span>, and the pairwise term is the Ising prior <span class="arithmatex">\(\psi_{ij}(x_i,x_j) = \alpha \cdot [x_i = x_j]\)</span>, where <span class="arithmatex">\(\alpha\)</span> controls the strength of the interaction/smoothing. </p>
@@ -2592,7 +2589,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 09:40:23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月19日 23:34:09</span>
       
         <br>
         创建日期:

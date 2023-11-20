@@ -740,6 +740,40 @@
     完全二叉树（complete binary tree）
   </a>
   
+    <nav class="md-nav" aria-label="完全二叉树（complete binary tree）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-properties_2" class="md-nav__link">
+    Basic Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    INSERT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    DELETE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildheap-h" class="md-nav__link">
+    BuildHeap ( H )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1999,6 +2033,40 @@
     完全二叉树（complete binary tree）
   </a>
   
+    <nav class="md-nav" aria-label="完全二叉树（complete binary tree）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-properties_2" class="md-nav__link">
+    Basic Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    INSERT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    DELETE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buildheap-h" class="md-nav__link">
+    BuildHeap ( H )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2663,9 +2731,15 @@
 <p>Calculating the size of the directory「Typical Postorder Traversal」</p>
 </li>
 <li>
-<p>线索二叉树 Threader Binary Tree</p>
+<p>线索二叉树 Threader Binary Tree
+  Inorder   </p>
 </li>
 </ul>
+<blockquote>
+<p>Rule 1:  If Tree-&gt;Left is null, replace it with a pointer to the inorder predecessor of Tree.</p>
+<p>Rule 2:  If Tree-&gt;Right is null, replace it with a pointer to the inorder successor of Tree.</p>
+<p>Rule 3:  There must not be any loose threads.  Therefore a threaded binary tree must have a head node of which the left child points to the first node.</p>
+</blockquote>
 <h3 id="binary-search-tree">Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Delete</li>
@@ -2697,6 +2771,7 @@
 <p><span class="arithmatex">\(C_{n}=\sum_{i=1}^{n} C_{i}C{n-i-1}\)</span></p>
 </blockquote>
 <h3 id="complete-binary-tree">完全二叉树（complete binary tree）<a class="headerlink" href="#complete-binary-tree" title="Permanent link">&para;</a></h3>
+<h4 id="basic-properties_2">Basic Properties<a class="headerlink" href="#basic-properties_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>所有叶节点都在相邻的两层上的二叉树</p>
@@ -2716,10 +2791,8 @@
 <li>
 <p><span class="arithmatex">\(h=O(log(n))\)</span></p>
 </li>
-<li>
-<p>INSERT</p>
-</li>
 </ul>
+<h4 id="insert">INSERT<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">MaxHeap</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsFull</span><span class="p">(</span><span class="n">H</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">        </span><span class="n">Error</span><span class="p">(</span><span class="s">&quot;Full Heap&quot;</span><span class="p">);</span>
@@ -2732,9 +2805,7 @@
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>DELETE</li>
-</ul>
+<h4 id="delete">DELETE<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ElementType</span><span class="w"> </span><span class="nf">DeleteMax</span><span class="p">(</span><span class="n">MaxHeap</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsEmpty</span><span class="p">(</span><span class="n">H</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="n">Error</span><span class="p">(</span><span class="s">&quot;Empty Heap&quot;</span><span class="p">);</span>
@@ -2762,6 +2833,9 @@
 <blockquote>
 <p>Question: how to make it a natural stop without using <span class="arithmatex">\(Child != H-&gt;size\)</span></p>
 </blockquote>
+<h4 id="buildheap-h">BuildHeap ( H )<a class="headerlink" href="#buildheap-h" title="Permanent link">&para;</a></h4>
+<p>For the perfect binary tree of height h containing <span class="arithmatex">\(2^{h+1}-1\)</span> nodes, the sum of the heights of the nodes is <span class="arithmatex">\(2^{h+1}-1 -(h + 1)\)</span>.</p>
+<p><span class="arithmatex">\(T ( N ) = O ( N )\)</span></p>
 <h2 id="the-dynamic-equivalence-problem">The Dynamic Equivalence Problem<a class="headerlink" href="#the-dynamic-equivalence-problem" title="Permanent link">&para;</a></h2>
 <p>A dynamic graph generally refers to a graph that keeps on changing its configuration. Let’s deep dive into it using an example:</p>
 <ul>
@@ -2855,38 +2929,36 @@
 </code></pre></div>
 <ul>
 <li>
-<p>Let T be a tree created by union-by-size with N nodes, then <span class="arithmatex">\((Height(T) \le \lfloor log_2N \rfloor + 1\)</span></p>
+<p>Let T be a tree created by union-by-size with N nodes, then <span class="arithmatex">\((Height(T) \le \lfloor log_2N \rfloor + 1)\)</span></p>
 </li>
 <li>
-<p>Proof: By induction. (Each element can have its set name changed at most<span class="arithmatex">\(log_2N\)</span></p>
+<p>Proof: By induction. (Each element can have its set name changed at most. <span class="arithmatex">\(log_2N\)</span></p>
 </li>
 </ul>
-<p>times.）「Union by size」</p>
-<ul>
-<li>First , all note are at depth 0 at the very beginning</li>
-<li>Every time,we do Union:the node was set on a new tree whose size is at least twice its size</li>
-<li>So a node from either set can only incrase the depth by 1</li>
-<li>For n nodes ,every node can have its set name changed at most log2 N times.</li>
-<li>
+<p>times.）<strong>「Union by size」</strong></p>
+<p>First , all note are at depth 0 at the very beginning</p>
+<p>Every time,we do Union:the node was set on a new tree whose size is at least twice its size</p>
+<p>So a node from either set can only incrase the depth by <span class="arithmatex">\(1\)</span></p>
+<p>For n nodes ,every node can have its set name changed at most <span class="arithmatex">\(log_2N\)</span> times.</p>
 <p>Thus,Time complexity for Find is <span class="arithmatex">\(O (l o g N )\)</span></p>
-</li>
-<li>
-<p>Here is a proof by induction on the tree height k. 「Union By Size」</p>
-</li>
-<li>
+<ul>
+<li>Here is a proof by induction on the tree height k. <strong>「Union By Size」</strong></li>
+</ul>
 <p>The base case K=0 is easy, since a tree of height 0 always has just 1 node</p>
-</li>
-<li>Suppose the claim is true for h=k. Now consider a union-by-height tree of height k+1.</li>
-<li>There must have been a union that brought two trees together and increased the height of one of them from k to k+1.</li>
-<li>Let those two trees (at the time of that union) be T1 and T2. We know that both T1 and T2 were of height k before the union.</li>
+<p>Suppose the claim is true for h=k. Now consider a union-by-height tree of height k+1.</p>
+<p>There must have been a union that brought two trees together and increased the height of one of them from k to k+1.</p>
+<p>Let those two trees (at the time of that union) be T1 and T2. We know that both T1 and T2 were of height k before the union.</p>
+<ul>
 <li>If one of them were of height less than k, then union-by-height would have changed the root of that shorter one to make it point to the root of the taller one, and the height of the unioned tree would still be k.</li>
 <li>
-<p>Now we can apply the induction hypothesis: the trees T1 and T2 each have at least  <span class="arithmatex">\(2^k\)</span> nodes. Thus, the unioned tree has at least $2^k + 2^k = 2^{k+1} $nodes.</p>
+<p>Now we can apply the induction hypothesis: the trees T1 and T2 each have at least  <span class="arithmatex">\(2^k\)</span> nodes. Thus, the unioned tree has at least <span class="arithmatex">\(2^k + 2^k = 2^{k+1}\)</span>nodes.</p>
 </li>
 <li>
 <p>Time complexity of <span class="arithmatex">\(N\)</span> Union and <span class="arithmatex">\(M\)</span> Find operations is now. <span class="arithmatex">\(O( N + M log_2N)\)</span></p>
 </li>
 </ul>
+<h5 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h5>
+<p>We can set <span class="arithmatex">\(S [ Root ] = – size\)</span>, thus we don't need the array <strong>size[ ]</strong></p>
 <h5 id="path-compression">Path Compression<a class="headerlink" href="#path-compression" title="Permanent link">&para;</a></h5>
 <p>Basically, connecting each node in a particular path to its ultimate parent refers to path compression. Let’s understand it using the following illustration</p>
 <ol>
@@ -2915,7 +2987,7 @@
 <li>Though using the path compression technique it seems like the rank of the node is also changing, we cannot be sure about it. So, we will not make any changes to the rank array while applying path compression.</li>
 <li>Just take “height” as an estimated rank.</li>
 </ul>
-<h5 id="worst-case-for-union-by-rank-and-path-compression">Worst Case for Union-by-Rank and Path Compression<a href="#worst-case-for-union-by-rank-and-path-compression">¶</a><a class="headerlink" href="#worst-case-for-union-by-rank-and-path-compression" title="Permanent link">&para;</a></h5>
+<h5 id="worst-case-for-union-by-rank-and-path-compression">Worst Case for Union-by-Rank and Path Compression<a class="headerlink" href="#worst-case-for-union-by-rank-and-path-compression" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">DisjointSet</span><span class="w"> </span><span class="p">{</span>
