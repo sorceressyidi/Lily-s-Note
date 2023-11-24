@@ -129,6 +129,7 @@ nav:
         - Electromagnetic Integration : GP/com/com.md
       - Optics:
         - Light Waves : GP/light/light.md
+        - interference & diffraction: GP/light/inteference.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md

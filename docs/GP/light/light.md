@@ -133,3 +133,96 @@ Or.  $n_i(\hat{k_i}\times\hat{u_n})=n_t(\hat{k_t}\times\hat{u_n})$「**REFRACTIO
 * Note that the law of reflection and the law of refraction only rely on the phase relationship that exists among the phases of $\vec{E}_{0i}$, $\vec{E}_{0r}$ and $\vec{E}_{0t}$  at the boundary.
 
 * There is still an interdependence shared by the amplitudes $\vec{E}_{0i}$, $\vec{E}_{0r}$ and $\vec{E}_{0t}$. The additional constraint can be used to calculate the amplitude of the reflected wave and the transmitted wave (the Fresnel equations). This will lead to the phenomenon of polarization by reflection (to be discussed in the lecture on polarization).
+
+## Geometrical Optics
+### Spherical Mirrors
+* Store surveillance mirrors are usually convex to take advantage of the increase in the field of view — more of the store can then be seen with a single mirror.
+* Makeup mirrors and shaving mirrors are concave — they produce a larger image of a face.
+* For mirrors of both types, the focal length f is related to the radius of curvature r of the mirror by $f=r/2$ where r is positive for a concave mirror and negative for a convex mirror.
+
+#### Focal Points of Spherical Mirrors
+
+$Proof$
+
+![9](9.jpg)
+
+
+
+#### Images from Spherical Mirrors
+
+![14](14.png)
+
+![10](10.png)
+
+$\frac{1}{p}+\frac{1}{i}=\frac{1}{f}$
+
+$Proof$
+
+* We assume small angles (but for clarity the rays are drawn with exaggerated angles). 
+
+![11](11.jpg)
+
+* Clearly, When $p>f$  $i$ is positive, indictaing a real image.
+
+  When $p<f$  $i$ is negative,indicating an imaginary image.
+
+* $-\frac{i}{p}$ -- scaling factor
+
+   When $i$ > 0 : an upsidedown real image
+
+  When  $i$ <0 : an erect imaginary image
+
+$Proof$
+
+![12](12.jpg)
+
+ 
+
+### Spherical Refraction
+
+![13](13.png)  
+
+$Proof$
+
+![15](15.jpg)
+
+* Quite the same when convex(only $i$ & $r_0$ Are negative)
+
+![16](16.png)
+
+> Thus $f$ for convex lens is positive , for concave lens is negative
+
+![17](17.png)
+
+$Proof$
+
+![19](19.jpg)
+
+
+
+![18](18.png) 
+
+It can also be applied for any number of lenses. 
+
+The overall (or net) lateral magnification M of a system of lenses (or lenses and a mirror) is the product of the individual lateral magnifications as given by $m = −i/p$.
+
+#### Application
+
+The normal human eye can focus a sharp image of an object on the retina if the object is located beyond the **near point** (∼ 25 cm from the eye).
+
+To see better, we want to generate an magnified image of an object at the near point, instead of putting the object there.
+
+![20](20.png)
+
+![21](21.png)
+
+* Explain eg $p2$ : $\frac{1}{p_2}+\frac{1}{i_2}=\frac{1}{f}$ but $i_2<0$,Thus if we want $|i_2|$to be large ,$p_2$ has to be relatively large, but also $p_2$has to be smaller than $f_{ey}$ , thus $p2 <\approx f_{ey}$.
+
+* This leaves the distance between the two lenses $f_{ob} + s + f_{ey}$ the only parameter to tune. The longer the distance, the larger the magnification
+
+  $M = m_1m_2 \approx -\frac{f_{ob}+s}{f_{ob}}\frac{25}{f_{ey}}$ 
+
+* We can make $s ≫ fob$, so $M ≈ −(s/f_{ob})(25 cm/f_{ey})$  (s still limited by the practical sizes of microscope)
+
+![22](22.png)
+

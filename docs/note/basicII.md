@@ -2,8 +2,6 @@
 
 ### Some defs
 
-#### $r=v-e+2\\R=V-E+k+1$
-
 * Complete graphs
 
   > $Undirected \ V=n \ \ \ \  E=C_n^2=\frac{n(n-1)}{2}$
@@ -38,6 +36,8 @@
 
 * Degree: Number of edges incident to v.
   * For a directed G, we have in-degree and out-degree. 
+  
+* $r=v-e+2$
 
 ### Representation of Graphs
 
@@ -49,7 +49,7 @@ $adj_- mat[i][j]=\left\{\begin{array}{l} 1 \ if (v_i,v_j) \ or <v_i,v_j> \in E(G
 
 > > The trick is to store the matrix as a 1-D array: adj_mat [ $n(n+1)/2 $] = ${ a_{11}, a_{21}, a_{22}, ..., a_{n1}, ..., a_{nn} }$
 >
-> > The index for $a_{ij}$  is  $ i  ( i - 1 ) / 2 + j $.
+> > The index for $a_{ij}$  is  $i( i - 1 )/2+j$.
 
 $\begin{align*}degree(i) &= \sum_{j=0}^{n-1}adj_-mat[i][j] \ (If\ G\ is\ undirected)\\ & \ \ +\sum_{j=0}^{n-1}adj_-mat[j][i]\ (If\ G\ is\ directed)\end{align*}$
 
@@ -77,7 +77,7 @@ B.Multilists
 
 
 
-* The space taken :$ (n+2e)$ ptrs + $2e$ ints  and “mark” is not counted
+* The space taken :$ (n+2e)$ ptrs + $2e$ ints  and “mark” is not counted.
 * Sometimes we need to mark the edge after examine it,and then find the next edge.This representation makesit easy to do so.
 
 ### Topological Sort
@@ -86,8 +86,8 @@ B.Multilists
 
 Digraph G in which V( G ) represents activities ( e.g.  the courses ) and E( G ) represents precedence relations
 
-* i  is a predecessor of j $:$ there is a path from i  to j 
-* i  is an immediate predecessor of  j $:$  $< i,  j >\in E( G )$  then $j$ is called a successor ( immediate successor ) of i
+* i  is a predecessor of j $:$ there is a path from i  to j.
+* i  is an immediate predecessor of  j $:$  $< i,  j >\in E( G )$  then $j$ is called a successor ( immediate successor ) of i.
 * Partial order $:$ a precedence relation which is both transitive and irreflexive.
 
 > If the precedence relation is reflexive, then there must be an i such that i is a predecessor of i.  
@@ -143,10 +143,6 @@ void Topsort( Graph G )
 }
 ```
 
-
-
-
-
 ### Midterm Review
 
 * Which of the following statements is TRUE about topological sorting? (5分)
@@ -156,8 +152,6 @@ void Topsort( Graph G )
   4. If *Vi* precedes *Vj* in a topological sequence, then there must be a path from *Vi* to *Vj*.
 
 > 3 is true
-
-
 
 ### Shortest Path Problem
 
@@ -272,8 +266,7 @@ void Dijkstra(Table T){
 
 ```C
 void  WeightedNegative( Table T )
-{   /* T is initialized by Figure 9.30 on p.303 */
-    Queue  Q;
+{   Queue  Q;
     Vertex  V, W;
     Q = CreateQueue (NumVertex );  MakeEmpty( Q );
     Enqueue( S, Q ); /* Enqueue the source vertex */
@@ -292,4 +285,14 @@ void  WeightedNegative( Table T )
 ```
 
 #### Acyclic Graphs
+
+If the graph is acyclic, vertices may be selected in topological order since when a vertex is selected, its distance can no longer be lowered without any incoming edges from unknown nodes.
+
+$T=O(|E| + |V|)$ and no priority queue is needed.
+
+> Application: AOE ( Activity On Edge ) Networks           —— scheduling a project
+
+![6](6.png)
+
+#### All-pairs Shortest path problem
 
