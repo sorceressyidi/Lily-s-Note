@@ -650,19 +650,6 @@
     Some defs
   </a>
   
-    <nav class="md-nav" aria-label="Some defs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rv-e2rv-ek1" class="md-nav__link">
-    \(r=v-e+2\\R=V-E+k+1\)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -765,6 +752,13 @@
           <li class="md-nav__item">
   <a href="#acyclic-graphs" class="md-nav__link">
     Acyclic Graphs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-pairs-shortest-path-problem" class="md-nav__link">
+    All-pairs Shortest path problem
   </a>
   
 </li>
@@ -1434,6 +1428,8 @@
       
         
       
+        
+      
     
     
     
@@ -1475,6 +1471,26 @@
   
   <span class="md-ellipsis">
     Light Waves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GP/light/inteference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    interference & diffraction
   </span>
   
 
@@ -1868,19 +1884,6 @@
     Some defs
   </a>
   
-    <nav class="md-nav" aria-label="Some defs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rv-e2rv-ek1" class="md-nav__link">
-    \(r=v-e+2\\R=V-E+k+1\)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1987,6 +1990,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#all-pairs-shortest-path-problem" class="md-nav__link">
+    All-pairs Shortest path problem
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2016,7 +2026,6 @@
 
 <h2 id="graphs">Graphs<a class="headerlink" href="#graphs" title="Permanent link">&para;</a></h2>
 <h3 id="some-defs">Some defs<a class="headerlink" href="#some-defs" title="Permanent link">&para;</a></h3>
-<h4 id="rv-e2rv-ek1"><span class="arithmatex">\(r=v-e+2\\R=V-E+k+1\)</span><a class="headerlink" href="#rv-e2rv-ek1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Complete graphs</li>
 </ul>
@@ -2059,7 +2068,12 @@
 </blockquote>
 <ul>
 <li>Degree: Number of edges incident to v.</li>
-<li>For a directed G, we have in-degree and out-degree. </li>
+<li>
+<p>For a directed G, we have in-degree and out-degree. </p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=v-e+2\)</span></p>
+</li>
 </ul>
 <h3 id="representation-of-graphs">Representation of Graphs<a class="headerlink" href="#representation-of-graphs" title="Permanent link">&para;</a></h3>
 <h4 id="adjacency-matrix">Adjacency Matrix<a class="headerlink" href="#adjacency-matrix" title="Permanent link">&para;</a></h4>
@@ -2068,7 +2082,7 @@
 <p>If G is undirected the matrix is symmetric,thus sorting only half of the matrix</p>
 <blockquote>
 <p>The trick is to store the matrix as a 1-D array: adj_mat [ $n(n+1)/2 $] = <span class="arithmatex">\({ a_{11}, a_{21}, a_{22}, ..., a_{n1}, ..., a_{nn} }\)</span></p>
-<p>The index for <span class="arithmatex">\(a_{ij}\)</span>  is  $ i  ( i - 1 ) / 2 + j $.</p>
+<p>The index for <span class="arithmatex">\(a_{ij}\)</span>  is  <span class="arithmatex">\(i( i - 1 )/2+j\)</span>.</p>
 </blockquote>
 </blockquote>
 <p><span class="arithmatex">\(\begin{align*}degree(i) &amp;= \sum_{j=0}^{n-1}adj_-mat[i][j] \ (If\ G\ is\ undirected)\\ &amp; \ \ +\sum_{j=0}^{n-1}adj_-mat[j][i]\ (If\ G\ is\ directed)\end{align*}\)</span></p>
@@ -2090,15 +2104,15 @@
 <p><img alt="2" src="../2.png" /></p>
 <p><img alt="4" src="../4.png" /></p>
 <ul>
-<li>The space taken :$ (n+2e)$ ptrs + <span class="arithmatex">\(2e\)</span> ints  and “mark” is not counted</li>
+<li>The space taken :$ (n+2e)$ ptrs + <span class="arithmatex">\(2e\)</span> ints  and “mark” is not counted.</li>
 <li>Sometimes we need to mark the edge after examine it,and then find the next edge.This representation makesit easy to do so.</li>
 </ul>
 <h3 id="topological-sort">Topological Sort<a class="headerlink" href="#topological-sort" title="Permanent link">&para;</a></h3>
 <h4 id="aov-network">AOV Network<a class="headerlink" href="#aov-network" title="Permanent link">&para;</a></h4>
 <p>Digraph G in which V( G ) represents activities ( e.g.  the courses ) and E( G ) represents precedence relations</p>
 <ul>
-<li>i  is a predecessor of j <span class="arithmatex">\(:\)</span> there is a path from i  to j </li>
-<li>i  is an immediate predecessor of  j <span class="arithmatex">\(:\)</span>  <span class="arithmatex">\(&lt; i,  j &gt;\in E( G )\)</span>  then <span class="arithmatex">\(j\)</span> is called a successor ( immediate successor ) of i</li>
+<li>i  is a predecessor of j <span class="arithmatex">\(:\)</span> there is a path from i  to j.</li>
+<li>i  is an immediate predecessor of  j <span class="arithmatex">\(:\)</span>  <span class="arithmatex">\(&lt; i,  j &gt;\in E( G )\)</span>  then <span class="arithmatex">\(j\)</span> is called a successor ( immediate successor ) of i.</li>
 <li>Partial order <span class="arithmatex">\(:\)</span> a precedence relation which is both transitive and irreflexive.</li>
 </ul>
 <blockquote>
@@ -2277,32 +2291,38 @@
 <li>Why don’t we simply add a constant to each edge and thus remove negative edges? --<strong>Path with different count of PATHS!</strong></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w">  </span><span class="nf">WeightedNegative</span><span class="p">(</span><span class="w"> </span><span class="n">Table</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span><span class="w">   </span><span class="cm">/* T is initialized by Figure 9.30 on p.303 */</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">Queue</span><span class="w">  </span><span class="n">Q</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">Vertex</span><span class="w">  </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateQueue</span><span class="w"> </span><span class="p">(</span><span class="n">NumVertex</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="n">MakeEmpty</span><span class="p">(</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">Enqueue</span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Enqueue the source vertex */</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">IsEmpty</span><span class="p">(</span><span class="n">Q</span><span class="p">)){</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="n">V</span><span class="o">=</span><span class="n">Dequeue</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span><span class="cm">/* each vertex can dequeue at most |V| times */</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="k">for</span><span class="p">(</span><span class="n">each</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">adjacent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">V</span><span class="p">){</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cvw</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="p">){</span><span class="cm">/* no longer once per edge */</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cvw</span><span class="p">;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">            </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">W</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Q</span><span class="p">){</span><span class="n">Enqueue</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">Q</span><span class="p">)}</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="p">}</span><span class="cm">/* end-if update */</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="p">}</span><span class="cm">/* end-while */</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="n">DisposeQueue</span><span class="p">(</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* free memory */</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="p">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span><span class="w">   </span><span class="n">Queue</span><span class="w">  </span><span class="n">Q</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">Vertex</span><span class="w">  </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateQueue</span><span class="w"> </span><span class="p">(</span><span class="n">NumVertex</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="n">MakeEmpty</span><span class="p">(</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">Enqueue</span><span class="p">(</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Enqueue the source vertex */</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">IsEmpty</span><span class="p">(</span><span class="n">Q</span><span class="p">)){</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="n">V</span><span class="o">=</span><span class="n">Dequeue</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span><span class="cm">/* each vertex can dequeue at most |V| times */</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="k">for</span><span class="p">(</span><span class="n">each</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">adjacent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">V</span><span class="p">){</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cvw</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="p">){</span><span class="cm">/* no longer once per edge */</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="p">].</span><span class="n">Dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cvw</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="n">T</span><span class="p">[</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="p">].</span><span class="n">Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V</span><span class="p">;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">W</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Q</span><span class="p">){</span><span class="n">Enqueue</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">Q</span><span class="p">)}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="p">}</span><span class="cm">/* end-if update */</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">}</span><span class="cm">/* end-while */</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">DisposeQueue</span><span class="p">(</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* free memory */</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="acyclic-graphs">Acyclic Graphs<a class="headerlink" href="#acyclic-graphs" title="Permanent link">&para;</a></h4>
+<p>If the graph is acyclic, vertices may be selected in topological order since when a vertex is selected, its distance can no longer be lowered without any incoming edges from unknown nodes.</p>
+<p><span class="arithmatex">\(T=O(|E| + |V|)\)</span> and no priority queue is needed.</p>
+<blockquote>
+<p>Application: AOE ( Activity On Edge ) Networks           —— scheduling a project</p>
+</blockquote>
+<p><img alt="6" src="../6.png" /></p>
+<h4 id="all-pairs-shortest-path-problem">All-pairs Shortest path problem<a class="headerlink" href="#all-pairs-shortest-path-problem" title="Permanent link">&para;</a></h4>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月19日 23:34:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月20日 23:13:56</span>
       
         <br>
         创建日期:
