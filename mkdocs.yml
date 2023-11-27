@@ -132,7 +132,7 @@ nav:
         - interference & diffraction: GP/light/inteference.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
-      - Order Statistics : PT/order_states.pdf
+      - Order Statistics : PT/order_stats.pdf
 
   - Computer Vision :
     - ML-4360:
