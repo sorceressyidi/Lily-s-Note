@@ -130,6 +130,10 @@ nav:
       - Optics:
         - Light Waves : GP/light/light.md
         - interference & diffraction: GP/light/inteference.md
+    - Probability Theory :
+      - 随机变量与分布函数: PT/PT.md
+      - Order Statistics : PT/order_states.pdf
+
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md

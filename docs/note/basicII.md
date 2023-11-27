@@ -277,7 +277,7 @@ void  WeightedNegative( Table T )
             T[ W ].Dist = T[ V ].Dist + Cvw;
             T[ W ].Path = V;
             if(W is not already in Q){Enqueue(W,Q)}
-        }/* end-if update */
+        }/* end-if update */                                              
       }
     }/* end-while */
     DisposeQueue( Q ); /* free memory */
@@ -295,4 +295,77 @@ $T=O(|E| + |V|)$ and no priority queue is needed.
 ![6](6.png)
 
 #### All-pairs Shortest path problem
+
+### Network Flow Problem
+
+#### Ford-Fulkerson Algorithm
+
+* If the edge capabilities are rational numbers, this algorithm always terminate with a maximum flow.
+
+* The algorithm works for G with cycles as well.
+
+> Analysis
+
+#### 1.An augmenting path can be found by an unweighted shortest path algorithm.
+
+$T = O( f\cdot|E| )$  where  f  is the maximum flow.
+
+![7](7.png)
+
+#### 2.always choose the augmenting path that allows the largest increase in flow.
+
+$「modify\ Dijkstra’s\ algorithm\ 」$
+
+$\begin{align*}T&=T_{argmentation}*T_{find\ a\ path}\\ &=O(E)log(cap_{max})*O(|E|log|V|)\\ &= O( |E|^2log|V|).\end{align*}$ if capmax is a small integer
+
+#### 3.Always choose the augmenting path that has the least number of edges.
+
+Simple $BSF$ Unweighted shortest path algorithm
+
+$\begin{align*}T&=T_{argmentation}*T_{find\ a\ path}\\ &=O(E)*O(|E||V|)\\ &= O( |E|^2|V|).\end{align*}$
+
+* If every v $\notin$ { s, t } has either a single incoming edge of capacity 1 or a single outgoing edge of capacity 1, then time bound is reduced to $O( |E| |V|^{1/2} )$.
+* The min-cost flow problem is to find, among all maximum flows, the one flow of minimum cost provided that each edge has a cost per unit of flow.
+
+### Minimum Spanning Tree
+
+* A spanning tree of a graph G is a tree which consists of $V( G )$ and a subset of $E( G )$
+  * The minimum spanning tree is a tree since it is acyclic -- the number of edges is |V| – 1.
+  * It is minimum for the total cost of edges is minimized.
+  * It is spanning because it covers every vertex.
+  * A minimum spanning tree exists iff G is connected.
+  * Adding a non-tree edge to a spanning tree, we obtain a cycle.
+
+#### Algorithm 
+
+(1)  we must use only edges within the graph
+
+(2)  we must use exactly |V| -1 edges
+
+(3)  we may not use edges that would produce a cycle.
+
+#### 1.Prim’s Algorithm – grow a tree
+
+#### 2.Prim’s Algorithm – grow a tree
+
+```C
+void Kruskal ( Graph G )
+{   T = { } ;
+    while  ( T contains less than |V| - 1 edges 
+                   && E is not empty ) {
+        choose a least cost edge (v, w) from E ; /* Delete Min */
+        delete (v, w) from E ;
+        if  ( (v, w) does not create a cycle in T )     /Union Find/
+	add (v, w) to T ;*
+        else     
+	discard (v, w) ;
+    }
+    if  ( T contains fewer than |V| - 1 edges )
+        Error ( “No spanning tree” ) ;
+}
+```
+
+
+
+
 
