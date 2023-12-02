@@ -80,7 +80,7 @@ We can map a wave, which has an amplitude and a phase, to a vector, known as a *
 
 ![h](h.png)
 
- #### Summary
+#### Summary
 
 * The three methods all deal with addition in a two-dimensional space.
   * The phasor addition adds vectors (with x component and y component) in a two-dimensional real space.

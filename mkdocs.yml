@@ -106,9 +106,7 @@ nav:
       - Basic data Structures I: note/基础数据结构.md
       - Basic data Structures II: note/basicII.md
     - DIP:
-      - Lab1:灰度图以及亮度调整: DIP/lab1/DIP.md
-      - Lab2:灰度图二值化以及形态学操作: DIP/lab2/lab2.md
-      - Lab3:对数增强可实现以及直方图均衡: DIP/lab3/lab3.md
+      - 滤波: DIP/filter/filter.md
     - x86-Assembly:
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
@@ -129,7 +127,8 @@ nav:
         - Electromagnetic Integration : GP/com/com.md
       - Optics:
         - Light Waves : GP/light/light.md
-        - interference & diffraction: GP/light/inteference.md
+        - interference & refraction: GP/light/inteference.md
+        - Diffraction(&inteference) : GP/light/df/diffraction.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf

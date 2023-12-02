@@ -346,7 +346,7 @@ $\begin{align*}T&=T_{argmentation}*T_{find\ a\ path}\\ &=O(E)*O(|E||V|)\\ &= O( 
 
 #### 1.Prim’s Algorithm – grow a tree
 
-#### 2.Prim’s Algorithm – grow a tree
+#### 2.Krukal’s Algorithm – grow a tree
 
 ```C
 void Kruskal ( Graph G )
