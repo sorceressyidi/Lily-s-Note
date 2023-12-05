@@ -365,6 +365,114 @@ void Kruskal ( Graph G )
 }
 ```
 
+### Applications of Depth-First Search
+
+```C
+void DFS ( Vertex V )  /* this is only a template */
+{   visited[ V ] = true;  /* mark this vertex to avoid cycles */
+    for ( each W adjacent to V )
+        if ( !visited[ W ] )
+	DFS( W );
+} 
+/* T = O( |E| + |V| ) as long as adjacency lists are used */
+```
+
+#### Biconnectivity
+
+* v is an articulation point if G’ = DeleteVertex( G, v ) has at least 2 connected components.
+* G is a biconnected graph if G is connected and has no articulation points.
+* A biconnected component is a maximal biconnected subgraph.
+
+#### find  the biconected components of a connected undirected graph G
+
+![8](8.png)
+
+#### Directed case
+
+Refert to https://www.baeldung.com/cs/scc-tarjans-algorithm
+
+A directed graph is strongly connected if there is a path between all pairs of vertices. A strongly connected component (**SCC**) of a directed graph is a maximal strongly connected subgraph. 
+
+- DFS search produces a DFS tree/forest 
+- Strongly Connected Components form subtrees of the DFS tree. 
+- If we can find the head of such subtrees, we can print/store all the nodes in that subtree (including the head) and that will be one SCC. 
+- There is no back edge from one SCC to another (There can be cross edges, but cross edges will not be used while processing the graph).
+
+- **Case1 (Tree Edge):** If node v is not visited already, then after the DFS of v is complete, a minimum of low[u] and low[v] will be updated to low[u]. 
+  low[u] = min(low[u], low[v])
+- **Case 2 (Back Edge):** When child v is already visited, then a minimum of low[u] and Disc[v] will be updated to low[u]. 
+  low[u] = min(low[u], disc[v]); 
+
+#### Euler Circuit
+
+- 欧拉回路（Euler circuit）为包含所有边的简单环，欧拉路径（Euler path）为包含所有边的简单路径
+- 无向图
+  - 无向图 G 有欧拉回路当且仅当 G 是连通的且每个顶点的度数都是偶数
+  - 无向图 G 有欧拉路径当且仅当 G 是连通的且有且仅有两个顶点的度数是奇数
+- 有向图
+  - 有向图 G 有欧拉回路当且仅当 G 是弱连通的且每个顶点的出度等于入度
+  - 有向图 G 有欧拉路径当且仅当 G 是弱连通的且有且仅有一个顶点的出度比入度大 1，有且仅有一个顶点的入度比出度大 1，其余顶点的出度等于入度
+
+#### DFS
+
+* The path should be maintained as a linked list.
+* For each adjacency list, maintain a pointer to the last edge scanned.
+* T = $O( |E| + |V| )$
+
+```C
+#include <iostream>
+#include <cstring>
+using namespace std;
+const int maxn = 1005;  // 假设最大节点数为1005
+int G[maxn][maxn];      // 邻接矩阵表示图
+int deg[maxn];          // 节点的度
+int ans[maxn];          // 存储结果的数组
+int ansi = 0;           // 结果数组的索引
+bool visited[maxn];     // 标记节点是否被访问过
+void dfs(int x) {
+    for (int y = 1; y <= maxn; ++y) {
+        if (G[x][y]) {
+            G[x][y] = G[y][x] = 0;
+            dfs(y);
+        }
+    }
+    ans[++ansi] = x;
+}
+int main() {
+    // ... 读取输入，初始化 G 和 deg
+    int cnt = 0, root = 0;
+    for (int i = 1; i <= maxn; ++i) {
+        if (deg[i] % 2) {
+            cnt++;
+            if (!root) root = i;
+        }
+    }
+    if (!root) {
+        for (int i = 1; i <= maxn; ++i) {
+            if (deg[i]) {
+                root = i; break;
+            }
+        }
+    }
+    if (cnt && cnt != 2) {
+        cout << "No Solution\n";
+        return 0;
+    }
+    dfs(root);
+    // 输出结果
+    for (int i = ansi; i > 0; --i) {
+        cout << ans[i] << ' ';}
+    cout << '\n';
+    return 0;
+}
+```
+
+#### Hamilton cycle
+
+
+
+
+
 
 
 

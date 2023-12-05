@@ -105,6 +105,7 @@ nav:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
       - Basic data Structures I: note/基础数据结构.md
       - Basic data Structures II: note/basicII.md
+      - Sort : note/sort.md
     - DIP:
       - 滤波: DIP/filter/filter.md
     - x86-Assembly:

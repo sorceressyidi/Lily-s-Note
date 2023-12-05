@@ -194,7 +194,11 @@ $p(x,y)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-r^2}}exp(-\frac{1}{2(1-r^2)}\times[
 * $\epsilon$ ~ $N(0,\sigma^2) \ \eta = k\epsilon+b\ \eta$~ $N(ka+b,k^2\sigma^2)$
 * $\epsilon$~ $N(a_1,\sigma_1^2)$ $\eta$~$N(a_2,\sigma_2^2)$   $\eta + \epsilon$~$N(a_1+a_2,\sigma_1^2+\sigma_2^2)$
 
-* $\epsilon$ ~ $N(0,\ 1) \ \eta = \epsilon^2 $
+* $\epsilon$ ~ $N(0,\ 1) \ \eta = \epsilon^2$
+
+* 若$(X,Y)$~$N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,r)$ 则 $C_1X+C_2Y$~$N(C_1\mu_1+C_2\mu_2,C_1^2\sigma_1^2+C_2^2\sigma_2^2+2C_1C_2r\sigma_1\sigma_2)$
+
+
 
 **2.6 多维正态分布** P93
 
