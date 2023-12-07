@@ -108,6 +108,7 @@ nav:
       - Sort : note/sort.md
     - DIP:
       - 滤波: DIP/filter/filter.md
+      - 傅立叶变换 : DIP/Fourier/Fourier.md
     - x86-Assembly:
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
@@ -119,6 +120,8 @@ nav:
     - Ai导 : 
       - 数据降维: AI/pca.md
       - Neural Networks and Deep Learning : AI/net.md
+    - 计算机逻辑设计基础:
+      - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
@@ -130,6 +133,7 @@ nav:
         - Light Waves : GP/light/light.md
         - interference & refraction: GP/light/inteference.md
         - Diffraction(&inteference) : GP/light/df/diffraction.md
+        - Polarization : GP/Polar/Polarization.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
@@ -140,6 +144,7 @@ nav:
       - structure from motion : CV/ML-4360/SFM/lec3.md
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
+      
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
