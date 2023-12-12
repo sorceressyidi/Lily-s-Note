@@ -134,6 +134,7 @@ nav:
         - interference & refraction: GP/light/inteference.md
         - Diffraction(&inteference) : GP/light/df/diffraction.md
         - Polarization : GP/Polar/Polarization.md
+        - The Quantum Nature of Light : GP/light/quantum light/quantum.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf

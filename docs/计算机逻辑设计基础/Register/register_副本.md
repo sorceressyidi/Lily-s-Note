@@ -169,48 +169,9 @@ The 3-input MUX can be replaced by a 3-state node (bus) and 3-state buffers.
 
 #### **Ripple Counter**
 
-??? Example 2-bit
-
-    <div align=center> ![11](o.png) </div>   
-
-* The operating frequency gradually reduces to half of the previous layer.
-
-![j](j.png)
-
-* Also, there is an intermediate process, eg.  the transition from 111 to 000 has to go through 010 
-
-#### Synchronous Counter
-
 ![h](h.png)
 
-Internal details => Incrementer
 
-Internal Logic
 
-- ﻿﻿XOR complements each bit
-- ﻿﻿AND chain causes complement of a bit if all bits toward LSB from it equal 1
-
-Count Enable
-
-* Forces all outputs of AND chain to 0 to "hold" the state
-
-Carry Out
-
-* Added as part of incrementer
-
-* Connect to Count Enable of additional 4-bit counters to form **larger counters**
-
-> Improve? : Parallel Gating
-
-#### Counter with parallel load
-
-![e](e.png)
-
-![i](i.png)
-
-### Design Example
-
-#### Synchronous BCD
-
-#### Counting Modulo N
+#### Synchronous Counter
 
