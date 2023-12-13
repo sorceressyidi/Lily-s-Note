@@ -62,7 +62,7 @@ In 1924, Louis de Broglie proposed that one could assign a wavelength $λ$ to a 
 
 Electron diffraction and neutron diffraction are used to study the atomic structures of solids and liquids, and electron diffraction is often used to study the atomic.
 
-![1](1.PNG)
+![1](1.png)
 
 #### The Interference of Electrons
 
@@ -102,11 +102,11 @@ Do particles interfere with each other?
 
 When an event can occur in several alternative ways, the probability amplitude for the event is the sum of the probability amplitudes for each way considered separately
 
-*  $ψ = ψ_1 + ψ_2 + · · · $.
+*  $ψ = ψ_1 + ψ_2 + · · ·$.
 
-* The probability for the event is, then,$P=|ψ|^2 =|ψ1|^2+|ψ2|^2+2\R(ψ1^∗ψ2)+···.$（**note**:模）
+* The probability for the event is, then,$P=|ψ|^2 =|ψ1|^2+|ψ2|^2+2R(ψ1^∗ψ2)+···.$（**note**:模）
 
-* The interference term $2\R(ψ_1^∗ψ_2)$ is responsible for the rapid oscillations of $P$ observed in the experiment.
+* The interference term $2R(ψ_1^∗ψ_2)$ is responsible for the rapid oscillations of $P$ observed in the experiment.
 
 #### The Which-Way Experiment
 
