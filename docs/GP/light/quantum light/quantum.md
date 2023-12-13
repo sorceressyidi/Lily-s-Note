@@ -123,7 +123,7 @@ A beam of linearly polarized light will interact with matter as if it were compo
 
 Rather, each individual photon exists in either spin state with equal likelihood.
 
-$|H⟩ =\frac{|R⟩+|L⟩}{\sqrt{2}} = \frac{1}{\sqrt{2}}[\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-i\end{pmatrix} +\frac{1}{\sqrt{2}}\begin{pmatrix}1\\i\end{pmatrix}] $
+$|H⟩ =\frac{|R⟩+|L⟩}{\sqrt{2}} = \frac{1}{\sqrt{2}}[\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-i\end{pmatrix} +\frac{1}{\sqrt{2}}\begin{pmatrix}1\\i\end{pmatrix}]$
 
 ![8](8.png)
 
@@ -179,3 +179,6 @@ Overall, Alice and Bob had 25% of the binary digits in the key that do not match
 
 * Take-home message: Eve will have success in preventing the construction of a key, but not in secretly learning a key that will be used by Alice and Bob. 
 * 测量的不确定性使得Eve无法获取完整的密钥信息，而且任何她的干扰都会被Alice和Bob察觉到。
+
+## 
+

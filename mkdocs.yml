@@ -122,6 +122,8 @@ nav:
       - Neural Networks and Deep Learning : AI/net.md
     - 计算机逻辑设计基础:
       - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
+    - Mumerical Analysis :
+      - Chapter 5 : NA/Chap5/Chap5.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
@@ -134,7 +136,9 @@ nav:
         - interference & refraction: GP/light/inteference.md
         - Diffraction(&inteference) : GP/light/df/diffraction.md
         - Polarization : GP/Polar/Polarization.md
-        - The Quantum Nature of Light : GP/light/quantum light/quantum.md
+        - Quantum  : GP/light/quantum light/quantum.md
+      - Quantum :
+        matter wave: GP/matter wave/matter.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
