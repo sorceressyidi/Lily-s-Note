@@ -80,7 +80,7 @@ Do particles interfere with each other?
 
 ![3](3.png)
 
- ### Matter Wave
+### Matter Wave
 
 **In Newtonian physics**: a particle is only aware of the slit through which it goes, it has no idea how many other slits are open or closed or even exist. Therefore, when both slits are open, $P_{12} = P_1 + P_2$.
 

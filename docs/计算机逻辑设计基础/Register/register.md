@@ -185,26 +185,46 @@ The 3-input MUX can be replaced by a 3-state node (bus) and 3-state buffers.
 
 Internal details => Incrementer
 
-Internal Logic
+**Internal Logic**
 
 - ﻿﻿XOR complements each bit
 - ﻿﻿AND chain causes complement of a bit if all bits toward LSB from it equal 1
 
-Count Enable
+**Count Enable**
 
 * Forces all outputs of AND chain to 0 to "hold" the state
 
-Carry Out
+**Carry Out**
 
 * Added as part of incrementer
 
 * Connect to Count Enable of additional 4-bit counters to form **larger counters**
 
-> Improve? : Parallel Gating
+> 为了实现逆向计数器，我们则需要将自增器换为自减器。做法只不过是将异或门的控制信号取反
 
 #### Counter with parallel load
 
-![e](e.png)
+<table>
+  <tr>
+  <td>count</td>
+  <td>Load</td>
+  <td>Operation</td>
+  </tr>
+  <td>0</td>
+  <td>0</td>
+  <td>Hold</td>
+  </tr>
+	<tr>
+  <td>0</td>
+  <td>1</td>
+  <td>Load Parallel data</td>
+  </tr>
+  <tr>
+  <td>1</td>
+  <td>x</td>
+  <td>count</td>
+  </tr>
+</table>
 
 ![i](i.png)
 
@@ -213,4 +233,6 @@ Carry Out
 #### Synchronous BCD
 
 #### Counting Modulo N
+
+## Serial Transforms and Microoperations
 

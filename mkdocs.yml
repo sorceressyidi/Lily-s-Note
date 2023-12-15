@@ -109,6 +109,7 @@ nav:
     - DIP:
       - 滤波: DIP/filter/filter.md
       - 傅立叶变换 : DIP/Fourier/Fourier.md
+      - 特征识别 : DIP/feature/feature.md
     - x86-Assembly:
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
@@ -139,6 +140,7 @@ nav:
         - Quantum  : GP/light/quantum light/quantum.md
       - Quantum :
         - matter wave: GP/matter wave/matter.md
+        - Schroedinger's Equation : GP/sch/sch.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
