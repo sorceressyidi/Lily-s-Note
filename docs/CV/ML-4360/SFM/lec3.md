@@ -11,13 +11,14 @@
 - The same point should have **similar vectors** independent of pose/viewpoint
 - Plain RGB/intensity patches will not have this property, we need something better
 
-#### Scale Invariant Feature Transform (SIFT)
-
+### Scale Invariant Feature Transform (SIFT)
+**Reference to https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40**
+https://www.qixinbo.info/2021/10/26/sift/
 - SIFT constructs a **scale space** by iteratively filtering the image with a Gaussian
 - Adjacent scales are subtracted, yielding **Difference of Gaussian (DoG)** images
 - **Interest points** (=blobs) are detected as **extrema** in the resulting scale space
 
-##### (1) Scale
+#### (1) Scale
 
 $L(x,y,σ)=G(x,y,σ)∗I(x,y)$
 
@@ -59,7 +60,7 @@ $L(x,y,σ)=G(x,y,σ)∗I(x,y)$
 >
 > $(g^{'}=\begin{bmatrix} &b_{1,1} &b_{1,0} &b_{1,-1}\\ &b_{0,1} &b_{0,0} &b_{0,-1} \\ &b_{-1,1} &b_{-1,0} &b_{-1,-1} \end{bmatrix}$
 
-##### (2)Construct the Gaussian Pyramid
+#### (2)Construct the Gaussian Pyramid
 
 - Apply Gaussian blur at different scales to the image.
 - Downsample the image, typically reducing it by half in the horizontal and vertical directions before sampling.
@@ -72,16 +73,59 @@ $L(x,y,σ)=G(x,y,σ)∗I(x,y)$
 
 ![1](1.png)
 
-##### (3)Difference of Gaussian (DoG)
+#### (3)Difference of Gaussian (DoG)
 
 Image feature points are composed of local extrema in the DoG (Difference of Gaussians) scale space. To find these extrema in the DoG space, each pixel is compared with all of its neighboring points to determine whether it is larger or smaller than its neighboring points in both the image domain and scale domain. As shown in the figure below, the central detection point is compared with its 8 neighboring points at the same scale and 18 points corresponding to the upper and lower adjacent scales, totaling 26 points to ensure the detection of extrema in both the two-dimensional image space and scale space. If a point is the maximum or minimum value among these 26 points in the DoG scale space at the current layer and the two neighboring layers, it is considered a feature point in the image at that scale.
+#### （4）Keypoint Localization
+Key0points generated in the previous step produce a lot of keypoints. Some of them lie along an edge, or they don’t have enough contrast. In both cases, they are not as useful as features. So we get rid of them. 
+The approach is similar to the one used in the Harris Corner Detector for removing edge features. For low contrast features, we simply check their intensities.
 
-##### (4) Histogram
+They used Taylor series expansion of scale space to get a more accurate location of extrema, and if the intensity at this extrema is less than a threshold value (0.03 as per the paper), it is rejected. DoG has a higher response for edges, so edges also need to be removed. They used a 2x2 Hessian matrix (H) to compute the principal curvature.
 
-- SIFT **rotates** the descriptor to **align with the dominant gradient orientation**
-- **Gradient histograms** are computed for local sub-regions of the descriptor
-- All histograms are concatenated and normalized to form a **128D feature vector**
+Detailed explanation:
+* Keypoint Filtering:
+Keypoints generated in the previous step might include features along edges or those with low contrast, which may not be sufficiently prominent or useful.
+For features with low contrast, their intensities are examined. If the intensity is below a specified threshold (as mentioned in the paper, 0.03), the feature is excluded.
+* Taylor Series Expansion:
+Utilizing a Taylor series expansion of the scale space to obtain a more accurate location of extrema, improving the precision of keypoint localization.
+Intensity Check and Exclusion:
+For extrema identified through the Taylor series expansion, their intensities are checked. If the intensity falls below the set threshold, they are excluded.
+* Edge Removal:
+Due to the higher response of the Difference of Gaussians (DoG) for edges, further removal of edge features is necessary.
+A **2x2 Hessian matrix** is employed to calculate the principal curvature. If the principal curvature is **small**, indicating the point may lie along an edge, it can be excluded.
+![a](a.png)
+($f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$) for the Harris operator
+Which means f is large indicates an edge
+#### (5) Orientation Assignment
+Now we have legitimate keypoints. They’ve been tested to be stable. We already know the scale at which the keypoint was detected (it’s the same as the scale of the blurred image). 
+So we have **scale invariance**. The next thing is to assign an orientation to each keypoint to make it rotation invariance.
 
+A neighborhood is taken around the keypoint location depending on the scale, and the gradient magnitude and direction is calculated in that region. 
+An orientation histogram with 36 bins covering 360 degrees is created. Let's say the gradient direction at a certain point (in the “orientation collection region”) is 18.759 degrees, then it will go into the 10–19-degree bin. And the “amount” that is added to the bin is proportional to the magnitude of the gradient at that point. Once you’ve done this for all pixels around the keypoint, the histogram will have a peak at some point.
+![b](b.png)
+The highest peak in the histogram is taken and any peak above 80% of it is also considered to calculate the orientation. It creates keypoints with same location and scale, but different directions. It contributes to the stability of matching.
+#### (6)Keypoint descriptor
+At this point, each keypoint has a **location**, **scale**, **orientation**. Next is to compute a descriptor for the local image region about each keypoint that is highly distinctive and invariant as possible to variations such as changes in viewpoint and illumination.
+
+To do this, a 16x16 window around the keypoint is taken. It is divided into 16 sub-blocks of 4x4 size.
+![c](c.png)
+For each sub-block, 8 bin orientation histogram is created.
+![d](d.png)
+So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 directions give 128 bin values. It is represented as a feature vector to form keypoint descriptor. This feature vector introduces a few complications. We need to get rid of them before finalizing the fingerprint.
+
+* Rotation dependence 
+  The feature vector uses gradient orientations. 
+  Clearly, if you rotate the image, everything changes. All gradient orientations also change. 
+  To achieve rotation independence, the keypoint’s rotation is **subtracted** from each orientation. Thus each gradient orientation is relative to the keypoint’s orientation.
+* Illumination dependence 
+  If we threshold numbers that are big, we can achieve illumination independence. So, any number (of the 128) greater than 0.2 is changed to 0.2. This resultant feature vector is normalized again. And now you have an illumination independent feature vector!
+#### （7）Keypoint Matching
+* Feature Descriptor Extraction: 
+  For each detected feature point, SIFT calculates the gradient direction histogram in its surrounding neighborhood and arranges these histograms into a 128-dimensional vector, acting as the feature descriptor of this feature point. This step is based on the detection of keypoints, ensuring the scale and rotation invariance of the descriptor.
+* Feature Matching: 
+  A feature descriptor is used to find the nearest neighbor in the feature descriptor set of another image. The nearest neighbor distance measurement often uses Euclidean distance, meaning the smaller the distance, the higher the match. If no obvious nearest neighbor can be found, this feature point will be discarded and not used for further matching.
+* Discarding Mismatches: 
+  To enhance the reliability of matches, SIFT employs a ratio test to discard potential mismatches. This criterion involves the ratio of the distance of the nearest neighbor to that of the second nearest neighbor of a feature descriptor. If this ratio exceeds a predetermined threshold (such as 0.8), then the nearest neighbor is deemed a mismatch and should be discarded.
 ## Epipolar Geometry
 
 ![9](9.png)
