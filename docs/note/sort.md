@@ -174,7 +174,7 @@ Algorithm 1:
 $T ( N ) = O ( N  log N  )$ but space needed is doubled.
 #### Algorithm 2:
 > Review
- ```C
+```C
 void PercolateDown( int p, PriorityQueue H ){	
     int temp=H->Elements[p];
     int parent,son;
@@ -190,7 +190,8 @@ void PercolateDown( int p, PriorityQueue H ){
     }
     H->Elements[parent]=temp;
 }
- ```
+```
+
 ```C
 void Heapsort( ElementType A[ ], int N ) 
 {   int i; 
@@ -204,9 +205,9 @@ void Heapsort( ElementType A[ ], int N )
 ```
 The average number of comparisons used to heapsort a random permutation of N distinct items is $2N log N - O( N log log N )$.
 
-
-
 Although Heapsort gives the best average time, in practice it is slower than a version of Shellsort that uses Sedgewick's increment sequence.
+
+
 
 ### Mergesort
 ```C
@@ -346,10 +347,10 @@ void  Qsort( ElementType A[ ], int Left, int Right )
         i = Left;     
         j = Right – 1;  /* why not set Left+1 and Right-2? */
         for( ; ; ) { 
-	 					while ( A[ ++i ] < Pivot ) { }  /* scan from left */
-	 					while ( A[ ––j ] > Pivot ) { }  /* scan from right */
-	 					if ( i < j ) {Swap( &A[ i ], &A[ j ] ); } /* adjust partition */
-	 					else {break; } /* partition done */
+	 				while ( A[ ++i ] < Pivot ) { }  /* scan from left */
+	 				while ( A[ ––j ] > Pivot ) { }  /* scan from right */
+	 				if ( i < j ) {Swap( &A[ i ], &A[ j ] ); } /* adjust partition */
+	 				else {break; } /* partition done */
         } 
         Swap( &A[ i ], &A[ Right - 1 ] ); /* restore pivot */ 
         Qsort( A, Left, i - 1 );      /* recursively sort left part */
@@ -362,6 +363,41 @@ void  Qsort( ElementType A[ ], int Left, int Right )
 ```
 
 ### Sorting Large Structures
+Swapping large structures can be very much expensive.
+* Add a pointer field to the structure and swap pointers instead – indirect sorting.  
+  ![9](9.png)
+* Physically rearrange the structures at last if it is really necessary.
+    In the worst case there are $[N/2]$(down) cycles and requires $[3N/2]$ (down) record moves.
+    $T = O( m N )$ where m is the **size of a structure**
+### A General Lower Bound for Sorting
+Any algorithm that sorts by comparisons only must have a worst case computing time of $\Omega( N log N )$.
 
+When sorting N distinct elements, there are $N!$ (N factorial) different possible sorting outcomes. This arises from the numerous ways of arranging the elements, with $N$ choices for the first element, $N-1$ choices for the second, and so forth, yielding a total of $N!$.
+
+In the context of decision trees representing the decision-making process of comparison-based sorting algorithms, the number of leaves in the tree is at least $N!$. Each leaf node signifies a distinct sorting outcome.
+
+The relationship between the height of the decision tree $(k)$ and complete binary trees is emphasized. 
+For a **complete binary tree** with $k$ levels, it can have at most $2^{k-1}$ leaves. Combining this with the earlier discussion, the inequality $N! ≤ 2^{k-1}$ is established, where k is the height of the decision tree.
+
+Expressing the relationship between height and N! using logarithms, we find that $k ≥ log(N!) + 1$.
+* Logarithms are preferred due to their intuitive representation of exponential growth in tree height.
+
+These insights delineate theoretical limits for comparison-based sorting algorithms and underscore the significance of N log N as the theoretical lower bound for their time complexity.
 ### Bucket Sort and Radix Sort
-
+#### Bucket Sort
+```C
+Algorithm
+{
+    initialize count[ ];
+    while (read in a student’s record)
+        insert to list count[stdnt.grade];
+    for (i=0; i<M; i++) {
+        if (count[i])
+            output list count[i];
+    }
+}
+T(N,M)=O(M+N)
+```
+* What if $M >> N$ ?
+#### Radix Sort
+![10](10.png)

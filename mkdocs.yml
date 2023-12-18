@@ -91,11 +91,13 @@ plugins:
   - search
   - git-revision-date-localized:
       type: datetime
+      fallback_to_build_date: true
       timezone: Asia/Shanghai
       locale: zh
       enable_creation_date: true
       exclude:
         - index.md
+  - git-authors 
 
 nav:
   - Home:
@@ -106,6 +108,7 @@ nav:
       - Basic data Structures I: note/基础数据结构.md
       - Basic data Structures II: note/basicII.md
       - Sort : note/sort.md
+      - HASH : note/hash.md
     - DIP:
       - 滤波: DIP/filter/filter.md
       - 傅立叶变换 : DIP/Fourier/Fourier.md
@@ -124,7 +127,7 @@ nav:
     - 计算机逻辑设计基础:
       - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
       - Chapter 7 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
-    - Mumerical Analysis :
+    - Numerical Analysis :
       - Chapter 5 : NA/Chap5/Chap5.md
   - Math & Physics:
     - General physics II : 
