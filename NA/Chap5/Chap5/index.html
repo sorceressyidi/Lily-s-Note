@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/NA/Chap5/Chap5/">
       
       
-        <link rel="prev" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/">
+        <link rel="prev" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/">
       
       
         <link rel="next" href="../../../GP/lec1-3/lec1/">
@@ -524,6 +524,8 @@
       
         
       
+        
+      
     
     
     
@@ -625,6 +627,26 @@
   
   <span class="md-ellipsis">
     Sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HASH
   </span>
   
 
@@ -1054,6 +1076,8 @@
       
         
       
+        
+      
     
     
     
@@ -1104,6 +1128,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7 Digital Hardware Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1140,7 +1184,7 @@
             
   
   <span class="md-ellipsis">
-    Mumerical Analysis
+    Numerical Analysis
   </span>
   
 
@@ -1150,7 +1194,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            Mumerical Analysis
+            Numerical Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1225,6 +1269,26 @@
   <a href="#runge-kutta-methods" class="md-nav__link">
     Runge-Kutta Methods
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multistep-methods" class="md-nav__link">
+    Multistep Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Multistep Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adams-bashforth-explicit-m-step-technique" class="md-nav__link">
+    Adams-Bashforth explicit m-step technique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2223,6 +2287,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multistep-methods" class="md-nav__link">
+    Multistep Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Multistep Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adams-bashforth-explicit-m-step-technique" class="md-nav__link">
+    Adams-Bashforth explicit m-step technique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2273,13 +2357,51 @@
 <p><img alt="4" src="../4.png" /></p>
 <p><img alt="5" src="../5.png" /></p>
 <p><img alt="6" src="../6.png" /></p>
+<h2 id="multistep-methods">Multistep Methods<a class="headerlink" href="#multistep-methods" title="Permanent link">&para;</a></h2>
+<p>Use a linear combination of y and y at several mesh points to better approximate <span class="arithmatex">\(y(t_{i+1})\)</span></p>
+<p><span class="arithmatex">\(w_{i+1}=a_{m-1}w_i+a_{m-2}w_{i-1}+……+h[b_mf_{i+1}+b_{m-1}f_i+……+b_0f_{i+1-m}]\)</span></p>
+<blockquote>
+<p>Newton's Forward Difference Interpolation and Newton's Backward Difference Interpolation are both methods for constructing polynomial interpolants, but they differ in terms of the direction in which they compute the differences.</p>
+<ol>
+<li><strong>Newton's Forward Difference Interpolation:</strong>
+  - <strong>Differences:</strong> Forward interpolation starts with the given data point closest to the beginning (usually the lowest x-value) and moves forward.
+  - <strong>Formula:</strong> The forward difference formula is given by: <span class="arithmatex">\(f[x_0]+f[x_0,x_1](x−x_0)+f[x_0,x_1,x_2](x−x_0)(x−x_1)+…\)</span></li>
+<li><strong>Newton's Backward Difference Interpolation:</strong>
+  - <strong>Differences:</strong> Backward interpolation starts with the given data point closest to the end (usually the highest x-value) and moves backward.
+  - <strong>Formula:</strong> The backward difference formula is given by: <span class="arithmatex">\(f[x_n]+f[x_n,x_{n−1}](x−x_n)+f[x_n,x_{n−1},x_{n−2}](x−x_n)(x−x_{n−1})+…\)</span></li>
+</ol>
+<p>In both cases, the differences <span class="arithmatex">\(f[x_i,x_{i−1},…,x_0]\)</span> are computed using the divided difference approach. The primary difference between the two methods lies in the direction in which these differences are calculated.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Newton's Forward Difference Interpolation works from the initial data point towards the desired point.</li>
+<li>Newton's Backward Difference Interpolation works from the final data point towards the desired point.</li>
+<li>Both methods use divided differences to calculate the coefficients of the interpolation polynomial.</li>
+<li>The choice between forward and backward interpolation may depend on the specific problem and the nature of the available data.</li>
+</ul>
+</blockquote>
+<h3 id="adams-bashforth-explicit-m-step-technique">Adams-Bashforth explicit m-step technique<a class="headerlink" href="#adams-bashforth-explicit-m-step-technique" title="Permanent link">&para;</a></h3>
+<p><strong>Derive from integration</strong></p>
+<ul>
+<li>Adams-Bashforth explicit m-step technique</li>
+</ul>
+<p><strong>1.</strong>Use the Newton backward-difference formula to interpolate f  on <span class="arithmatex">\((t_i,f_i),(t_{i-1},f_{i-1})……(t_{i+1-m},f_{i+1-m})\)</span> and obtain <span class="arithmatex">\(P_{m-1}(t)\)</span> </p>
+<p><strong>2.</strong>Or Let <span class="arithmatex">\(t=t_i+sh\ s\in[0,1]\)</span> we have</p>
+<p><span class="arithmatex">\(\int_{t_{i}}^{t_{i+1}}f(t,y(t))dt=h\int_0^1P_{m-1}(t_i+sh)ds+h\int_0^1R_{m-1(t_i+sh)}ds\)</span></p>
+<p><span class="arithmatex">\(\Rightarrow w_{i+1}=w_i+h\int_0^1P_{m-1}(t_i+sh)ds\)</span></p>
+<p><strong>3.</strong>  The local truncation error for a multistep method is <span class="arithmatex">\(\tau_{i+1}(h)=y_{i+1}-(a_{m-1}y_i+……+a_0y_{i+1-m})/h-[b_mf_{i+1}+……+b_0f_{i+1-m}]\)</span> for each <span class="arithmatex">\(i=m-1,m……,n-1\)</span></p>
+<p><strong>Example</strong></p>
+<p><strong>derive the Adams-Bashforth two-step explicit method.</strong></p>
+<p>Note ： <span class="arithmatex">\(h\)</span> is step length <span class="arithmatex">\(h=\triangle x/n\)</span></p>
+<p><img alt="7" src="../7.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<p><strong>Use the</strong> <strong>Newton forward-difference formula to interpolate f</strong></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月13日 18:52:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月17日 20:51:07</span>
       
         <br>
         创建日期:

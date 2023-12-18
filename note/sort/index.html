@@ -16,7 +16,7 @@
         <link rel="prev" href="../basicII/">
       
       
-        <link rel="next" href="../../DIP/filter/filter/">
+        <link rel="next" href="../hash/">
       
       
       <link rel="icon" href="../../log.ico">
@@ -526,6 +526,8 @@
       
         
       
+        
+      
     
     
     
@@ -761,6 +763,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mergesort" class="md-nav__link">
+    Mergesort
+  </a>
+  
+    <nav class="md-nav" aria-label="Mergesort">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#complexity" class="md-nav__link">
     Complexity
@@ -815,9 +830,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#a-general-lower-bound-for-sorting" class="md-nav__link">
+    A General Lower Bound for Sorting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bucket-sort-and-radix-sort" class="md-nav__link">
     Bucket Sort and Radix Sort
   </a>
+  
+    <nav class="md-nav" aria-label="Bucket Sort and Radix Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucket-sort" class="md-nav__link">
+    Bucket Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radix-sort" class="md-nav__link">
+    Radix Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -830,6 +872,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HASH
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1255,6 +1317,8 @@
       
         
       
+        
+      
     
     
     
@@ -1305,6 +1369,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7 Digital Hardware Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1339,7 +1423,7 @@
             
   
   <span class="md-ellipsis">
-    Mumerical Analysis
+    Numerical Analysis
   </span>
   
 
@@ -1349,7 +1433,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            Mumerical Analysis
+            Numerical Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2430,6 +2514,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mergesort" class="md-nav__link">
+    Mergesort
+  </a>
+  
+    <nav class="md-nav" aria-label="Mergesort">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#complexity" class="md-nav__link">
     Complexity
@@ -2484,9 +2581,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#a-general-lower-bound-for-sorting" class="md-nav__link">
+    A General Lower Bound for Sorting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bucket-sort-and-radix-sort" class="md-nav__link">
     Bucket Sort and Radix Sort
   </a>
+  
+    <nav class="md-nav" aria-label="Bucket Sort and Radix Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucket-sort" class="md-nav__link">
+    Bucket Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radix-sort" class="md-nav__link">
+    Radix Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2666,115 +2790,110 @@ The worst-case running time of Shellsort, using Hibbard's increments, is <span c
 <h4 id="algorithm-2">Algorithm 2:<a class="headerlink" href="#algorithm-2" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Review
- <code>C
-void PercolateDown( int p, PriorityQueue H ){   
-    int temp=H-&gt;Elements[p];
-    int parent,son;
-    for(parent=p;parent*2&lt;=H-&gt;Size;parent=son){
-        son=parent*2;
-        if(son&lt;H-&gt;Size&amp;&amp;H-&gt;Elements[son]&gt;H-&gt;Elements[son+1]){
-            son++;      
-        }
-        if(temp&lt;=H-&gt;Elements[son])
-            break;      
-        else
-            H-&gt;Elements[parent]=H-&gt;Elements[son];
-    }
-    H-&gt;Elements[parent]=temp;
-}</code>
-```C
-void Heapsort( ElementType A[ ], int N ) 
-{   int i; 
-    for ( i = N / 2; i &gt;= 0; i - - ) /<em> BuildHeap </em>/ 
-        PercDown( A, i, N ); 
-    for ( i = N - 1; i &gt; 0; i - - ) { 
-        Swap( &amp;A[ 0 ], &amp;A[ i ] ); /<em> DeleteMax </em>/ 
-        PercDown( A, 0, i ); 
-    } 
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>The average number of comparisons used to heapsort a random permutation of N distinct items is $2N log N - O( N log log N )$.
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Although Heapsort gives the best average time, in practice it is slower than a version of Shellsort that uses Sedgewick&#39;s increment sequence.
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>### Mergesort
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>```C
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>void Mergesort( ElementType A[ ], int N );
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>void MSort( ElementType A[ ], ElementType TmpArray[ ],int Left,int Right);
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>void Merge( ElementType A[ ], ElementType TmpArray[ ],int Lpos,int Rpos, int RightEnd);
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>void Mergesort( ElementType A[ ], int N ) {
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    ElementType  *TmpArray;  /* need O(N) extra space */
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    TmpArray = malloc( N * sizeof( ElementType ) ); 
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    if ( TmpArray != NULL ) { 
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            MSort( A, TmpArray, 0, N - 1 ); 
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            free( TmpArray ); 
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    } 
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    else  FatalError( &quot;No space for tmp array!!!&quot; ); 
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>}
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>void MSort( ElementType A[ ], ElementType TmpArray[ ],int Left, int Right){
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    int  Center; 
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    if ( Left &lt; Right ) {  /* if there are elements to be sorted */
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        Center = ( Left + Right ) / 2; 
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        MSort( A, TmpArray, Left, Center );     /* T( N / 2 ) */
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        MSort( A, TmpArray, Center + 1, Right );    /* T( N / 2 ) */
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        Merge( A, TmpArray, Left, Center + 1, Right );  /* O( N ) */
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    } 
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>} 
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>/* Lpos = start of left half, Rpos = start of right half */ 
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>void Merge( ElementType A[ ], ElementType TmpArray[ ], int Lpos, int Rpos, int RightEnd ) {
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    int  i, LeftEnd, NumElements, TmpPos; 
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>    LeftEnd = Rpos - 1; 
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    TmpPos = Lpos; 
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    NumElements = RightEnd - Lpos + 1; 
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    while(Lpos&lt;=LeftEnd &amp;&amp; Rpos&lt;=RightEnd){
-<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>        if(A[Lpos]&lt;=A[Rpos]){TmpArray[TmpPos++]=A[Lpos++];}
-<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>        else{TmpArray[TmpPos++]=A[Rpos++];}
-<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        while(Lpos&lt;=LeftEnd){TmpArray[ TmpPos++ ] = A[ Lpos++ ];}
-<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        while(Rpos&lt;=RightEnd){TmpArray[ TmpPos++ ] = A[ Rpos++ ];}
-<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>    }
-<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>    for( i = 0; i &lt; NumElements; i++, RightEnd - - ) 
-<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>         /* Copy TmpArray back */ 
-<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        A[ RightEnd ] = TmpArray[ RightEnd ]; 
-<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>}
-<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>/** version2 **/
-<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>void Merge2( ElementType A[ ], ElementType TmpArray[ ], int Lpos, int Rpos, int RightEnd ) {
-<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>    int  i, LeftEnd, NumElements, TmpPos; 
-<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    LeftEnd = Rpos - 1; 
-<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    TmpPos = Lpos; 
-<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    NumElements = RightEnd - Lpos + 1; 
-<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>    for(int i=0;i&lt;NumElements;i++){
-<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>        if((Lpos&lt;=LeftEnd)&amp;&amp;(Rpos&gt;RightEnd||A[Lpos]&lt;=A[Rpos])){TmpArray[i]=A[Lpos++];}
-<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>        else{TmpArray[TmpPos++]=A[Rpos++];}
-<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>    }
-<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>
-<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>}
-<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>/** version3 **/
-<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>void CopyArray(int B[],int iBegin,int iEnd,int A[]);
-<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>void Merge (int A[],int ileft,int iright,int iend,int B[]);
-<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>void BottomupMergeSort(int A[],int B[],int n){
-<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>   for(int width=1;width&lt;n;width=width*2){
-<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>           for(int i=0;i&lt;n;i=i+2*width){
-<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>            Merge(A,i,min(i+width,n),min(i+2*width,n),B);
-<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>           }
-<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>           CopyArray(B,0,n,A);
-<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>   }
-<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>
-<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>}
-<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>// (iBegin,iEnd]
-<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>void Merge (int A[],int ileft,int iright,int iend,int B[]){
-<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>     int i=ileft,j=iright;
-<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>
-<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>    for(int k=ileft;k&lt;iend;k++){
-<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>
-<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>         if(i&lt;iright&amp;&amp;(j&gt;=iend||A[i]&lt;=A[j])){
-<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>            B[k]=A[i++];
-<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>         }
-<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>         else{B[k]=A[j++];}
-<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>    }
-<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PercolateDown</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">){</span><span class="w">   </span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="o">=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="n">son</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">p</span><span class="p">;</span><span class="n">parent</span><span class="o">*</span><span class="mi">2</span><span class="o">&lt;=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="p">;</span><span class="n">parent</span><span class="o">=</span><span class="n">son</span><span class="p">){</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="n">son</span><span class="o">=</span><span class="n">parent</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">son</span><span class="o">&lt;</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Size</span><span class="o">&amp;&amp;</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">son</span><span class="p">]</span><span class="o">&gt;</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">son</span><span class="o">+</span><span class="mi">1</span><span class="p">]){</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">            </span><span class="n">son</span><span class="o">++</span><span class="p">;</span><span class="w">      </span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">&lt;=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">son</span><span class="p">])</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">      </span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">            </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="o">=</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">son</span><span class="p">];</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">Elements</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
 </code></pre></div></p>
 </blockquote>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Heapsort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="cm">/* BuildHeap */</span><span class="w"> </span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="n">PercDown</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* DeleteMax */</span><span class="w"> </span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="n">PercDown</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</code></pre></div>
+The average number of comparisons used to heapsort a random permutation of N distinct items is <span class="arithmatex">\(2N log N - O( N log log N )\)</span>.</p>
+<p>Although Heapsort gives the best average time, in practice it is slower than a version of Shellsort that uses Sedgewick's increment sequence.</p>
+<h3 id="mergesort">Mergesort<a class="headerlink" href="#mergesort" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Mergesort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">Lpos</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">Rpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RightEnd</span><span class="p">);</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Mergesort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">  </span><span class="o">*</span><span class="n">TmpArray</span><span class="p">;</span><span class="w">  </span><span class="cm">/* need O(N) extra space */</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">TmpArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">TmpArray</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">            </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="w"> </span><span class="n">TmpArray</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="k">else</span><span class="w">  </span><span class="n">FatalError</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;No space for tmp array!!!&quot;</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="p">){</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">Center</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* if there are elements to be sorted */</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="n">Center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">);</span><span class="w">     </span><span class="cm">/* T( N / 2 ) */</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="n">MSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">    </span><span class="cm">/* T( N / 2 ) */</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">        </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="cm">/* O( N ) */</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="cm">/* Lpos = start of left half, Rpos = start of right half */</span><span class="w"> </span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Lpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Rpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">LeftEnd</span><span class="p">,</span><span class="w"> </span><span class="n">NumElements</span><span class="p">,</span><span class="w"> </span><span class="n">TmpPos</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span><span class="n">LeftEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="n">TmpPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lpos</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="n">NumElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Lpos</span><span class="o">&lt;=</span><span class="n">LeftEnd</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Rpos</span><span class="o">&lt;=</span><span class="n">RightEnd</span><span class="p">){</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">Lpos</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">A</span><span class="p">[</span><span class="n">Rpos</span><span class="p">]){</span><span class="n">TmpArray</span><span class="p">[</span><span class="n">TmpPos</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">Lpos</span><span class="o">++</span><span class="p">];}</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">        </span><span class="k">else</span><span class="p">{</span><span class="n">TmpArray</span><span class="p">[</span><span class="n">TmpPos</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">Rpos</span><span class="o">++</span><span class="p">];}</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">Lpos</span><span class="o">&lt;=</span><span class="n">LeftEnd</span><span class="p">){</span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Lpos</span><span class="o">++</span><span class="w"> </span><span class="p">];}</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">Rpos</span><span class="o">&lt;=</span><span class="n">RightEnd</span><span class="p">){</span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">TmpPos</span><span class="o">++</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Rpos</span><span class="o">++</span><span class="w"> </span><span class="p">];}</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumElements</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">         </span><span class="cm">/* Copy TmpArray back */</span><span class="w"> </span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">        </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">];</span><span class="w"> </span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="p">}</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="cm">/** version2 **/</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Merge2</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">TmpArray</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Lpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Rpos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">LeftEnd</span><span class="p">,</span><span class="w"> </span><span class="n">NumElements</span><span class="p">,</span><span class="w"> </span><span class="n">TmpPos</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="w">    </span><span class="n">LeftEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rpos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">    </span><span class="n">TmpPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lpos</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="w">    </span><span class="n">NumElements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RightEnd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Lpos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">NumElements</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a><span class="w">        </span><span class="k">if</span><span class="p">((</span><span class="n">Lpos</span><span class="o">&lt;=</span><span class="n">LeftEnd</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">Rpos</span><span class="o">&gt;</span><span class="n">RightEnd</span><span class="o">||</span><span class="n">A</span><span class="p">[</span><span class="n">Lpos</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">A</span><span class="p">[</span><span class="n">Rpos</span><span class="p">])){</span><span class="n">TmpArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">Lpos</span><span class="o">++</span><span class="p">];}</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a><span class="w">        </span><span class="k">else</span><span class="p">{</span><span class="n">TmpArray</span><span class="p">[</span><span class="n">TmpPos</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">Rpos</span><span class="o">++</span><span class="p">];}</span>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a><span class="p">}</span>
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a><span class="cm">/** version3 **/</span>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a><span class="kt">void</span><span class="w"> </span><span class="nf">CopyArray</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">iBegin</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iEnd</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">[]);</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">ileft</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iright</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iend</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="p">[]);</span>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a><span class="kt">void</span><span class="w"> </span><span class="nf">BottomupMergeSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a><span class="w">   </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">width</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="o">*</span><span class="mi">2</span><span class="p">){</span>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a><span class="w">           </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">width</span><span class="p">){</span>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a><span class="w">            </span><span class="n">Merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">width</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">B</span><span class="p">);</span>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="w">           </span><span class="p">}</span>
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a><span class="w">           </span><span class="n">CopyArray</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">);</span>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a><span class="w">   </span><span class="p">}</span>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a><span class="p">}</span>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a><span class="c1">// (iBegin,iEnd]</span>
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Merge</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">ileft</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iright</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">iend</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">B</span><span class="p">[]){</span>
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a><span class="w">     </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">ileft</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="n">iright</span><span class="p">;</span>
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">ileft</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;</span><span class="n">iend</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a><span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">iright</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;=</span><span class="n">iend</span><span class="o">||</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">])){</span>
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a><span class="w">            </span><span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a><span class="w">         </span><span class="p">}</span>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a><span class="w">         </span><span class="k">else</span><span class="p">{</span><span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];}</span>
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a><span class="p">}</span>
+</code></pre></div>
 <h4 id="complexity">Complexity<a class="headerlink" href="#complexity" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(T(n)=2T(n/2)+O(n)\)</span> &rarr; <span class="arithmatex">\(O(nlogn)\)</span>
 Note:  Mergesort requires linear extra memory, and copying an array is slow.  It is hardly ever used for internal sorting, but is quite useful for external sorting.</p>
@@ -2795,62 +2914,93 @@ Note:  Mergesort requires linear extra memory, and copying an array is slow.  It
 <ul>
 <li>双指针</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w">  </span><span class="nf">Quicksort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="cm">/* A:   the array   */</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="cm">/* 0:   Left index  */</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="cm">/* N – 1: Right index   */</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cm">/* Return median of Left, Center, and Right */</span><span class="w"> </span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="cm">/* Order these and hide the pivot */</span><span class="w"> </span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">ElementType</span><span class="w"> </span><span class="nf">Median3</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">Center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span><span class="cm">/* Invariant: A[ Left ] &lt;= A[ Center ] &lt;= A[ Right ] */</span><span class="w"> </span>
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Hide pivot */</span><span class="w"> </span>
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="cm">/* only need to sort A[ Left + 1 ] … A[ Right – 2 ] */</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="k">return</span><span class="w">  </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">];</span><span class="w">  </span><span class="cm">/* Return pivot */</span><span class="w"> </span>
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="p">}</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="kt">void</span><span class="w">  </span><span class="nf">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w">  </span><span class="n">j</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">  </span><span class="n">Pivot</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cutoff</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">){</span><span class="w">  </span><span class="cm">/* if the sequence is not too short */</span>
-<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">        </span><span class="n">Pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Median3</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="cm">/* select pivot */</span>
-<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Left</span><span class="p">;</span><span class="w">     </span>
-<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* why not set Left+1 and Right-2? */</span>
-<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">                        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* scan from left */</span>
-<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">                        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="err">––</span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* scan from right */</span>
-<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* adjust partition */</span>
-<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">                        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* partition done */</span>
-<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span>
-<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* restore pivot */</span><span class="w"> </span>
-<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">        </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w">      </span><span class="cm">/* recursively sort left part */</span>
-<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">        </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">   </span><span class="cm">/* recursively sort right part */</span>
-<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="cm">/* end if - the sequence is long */</span>
-<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
-<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="cm">/* do an insertion sort on the short subarray */</span><span class="w"> </span>
-<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">    </span><span class="p">{</span><span class="n">InsertionSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);}</span>
-<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w">  </span><span class="nf">Quicksort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="cm">/* A:   the array   */</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="cm">/* 0:   Left index  */</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="cm">/* N – 1: Right index   */</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cm">/* Return median of Left, Center, and Right */</span><span class="w"> </span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="cm">/* Order these and hide the pivot */</span><span class="w"> </span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">ElementType</span><span class="w"> </span><span class="nf">Median3</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">Center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="cm">/* Invariant: A[ Left ] &lt;= A[ Center ] &lt;= A[ Right ] */</span><span class="w"> </span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Center</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Hide pivot */</span><span class="w"> </span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="cm">/* only need to sort A[ Left + 1 ] … A[ Right – 2 ] */</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">    </span><span class="k">return</span><span class="w">  </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">];</span><span class="w">  </span><span class="cm">/* Return pivot */</span><span class="w"> </span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="p">}</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="kt">void</span><span class="w">  </span><span class="nf">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">i</span><span class="p">,</span><span class="w">  </span><span class="n">j</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">  </span><span class="n">Pivot</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Cutoff</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">){</span><span class="w">  </span><span class="cm">/* if the sequence is not too short */</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">        </span><span class="n">Pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Median3</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="cm">/* select pivot */</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Left</span><span class="p">;</span><span class="w">     </span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* why not set Left+1 and Right-2? */</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">                    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* scan from left */</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">                    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="err">––</span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* scan from right */</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* adjust partition */</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* partition done */</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">        </span><span class="n">Swap</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* restore pivot */</span><span class="w"> </span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">        </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);</span><span class="w">      </span><span class="cm">/* recursively sort left part */</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">        </span><span class="n">Qsort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="p">);</span><span class="w">   </span><span class="cm">/* recursively sort right part */</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="cm">/* end if - the sequence is long */</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="cm">/* do an insertion sort on the short subarray */</span><span class="w"> </span>
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="w">    </span><span class="p">{</span><span class="n">InsertionSort</span><span class="p">(</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Left</span><span class="p">,</span><span class="w"> </span><span class="n">Right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">);}</span>
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="sorting-large-structures">Sorting Large Structures<a class="headerlink" href="#sorting-large-structures" title="Permanent link">&para;</a></h3>
+<p>Swapping large structures can be very much expensive.
+* Add a pointer field to the structure and swap pointers instead – indirect sorting.<br />
+<img alt="9" src="../9.png" />
+* Physically rearrange the structures at last if it is really necessary.
+    In the worst case there are <span class="arithmatex">\([N/2]\)</span>(down) cycles and requires <span class="arithmatex">\([3N/2]\)</span> (down) record moves.
+    <span class="arithmatex">\(T = O( m N )\)</span> where m is the <strong>size of a structure</strong></p>
+<h3 id="a-general-lower-bound-for-sorting">A General Lower Bound for Sorting<a class="headerlink" href="#a-general-lower-bound-for-sorting" title="Permanent link">&para;</a></h3>
+<p>Any algorithm that sorts by comparisons only must have a worst case computing time of <span class="arithmatex">\(\Omega( N log N )\)</span>.</p>
+<p>When sorting N distinct elements, there are <span class="arithmatex">\(N!\)</span> (N factorial) different possible sorting outcomes. This arises from the numerous ways of arranging the elements, with <span class="arithmatex">\(N\)</span> choices for the first element, <span class="arithmatex">\(N-1\)</span> choices for the second, and so forth, yielding a total of <span class="arithmatex">\(N!\)</span>.</p>
+<p>In the context of decision trees representing the decision-making process of comparison-based sorting algorithms, the number of leaves in the tree is at least <span class="arithmatex">\(N!\)</span>. Each leaf node signifies a distinct sorting outcome.</p>
+<p>The relationship between the height of the decision tree <span class="arithmatex">\((k)\)</span> and complete binary trees is emphasized. 
+For a <strong>complete binary tree</strong> with <span class="arithmatex">\(k\)</span> levels, it can have at most <span class="arithmatex">\(2^{k-1}\)</span> leaves. Combining this with the earlier discussion, the inequality <span class="arithmatex">\(N! ≤ 2^{k-1}\)</span> is established, where k is the height of the decision tree.</p>
+<p>Expressing the relationship between height and N! using logarithms, we find that <span class="arithmatex">\(k ≥ log(N!) + 1\)</span>.
+* Logarithms are preferred due to their intuitive representation of exponential growth in tree height.</p>
+<p>These insights delineate theoretical limits for comparison-based sorting algorithms and underscore the significance of N log N as the theoretical lower bound for their time complexity.</p>
 <h3 id="bucket-sort-and-radix-sort">Bucket Sort and Radix Sort<a class="headerlink" href="#bucket-sort-and-radix-sort" title="Permanent link">&para;</a></h3>
+<h4 id="bucket-sort">Bucket Sort<a class="headerlink" href="#bucket-sort" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Algorithm</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">initialize</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="w"> </span><span class="p">];</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">student</span><span class="err">’</span><span class="n">s</span><span class="w"> </span><span class="n">record</span><span class="p">)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="n">insert</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="n">stdnt</span><span class="p">.</span><span class="n">grade</span><span class="p">];</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">M</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="n">output</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">}</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="n">T</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">M</span><span class="p">)</span><span class="o">=</span><span class="n">O</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="n">N</span><span class="p">)</span>
+</code></pre></div>
+* What if <span class="arithmatex">\(M &gt;&gt; N\)</span> ?</p>
+<h4 id="radix-sort">Radix Sort<a class="headerlink" href="#radix-sort" title="Permanent link">&para;</a></h4>
+<p><img alt="10" src="../10.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月13日 00:06:30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月18日 15:33:37</span>
       
         <br>
         创建日期:

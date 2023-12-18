@@ -522,6 +522,8 @@
       
         
       
+        
+      
     
     
     
@@ -623,6 +625,26 @@
   
   <span class="md-ellipsis">
     Sort
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../note/hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HASH
   </span>
   
 
@@ -1052,6 +1074,8 @@
       
         
       
+        
+      
     
     
     
@@ -1102,6 +1126,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7 Digital Hardware Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1136,7 +1180,7 @@
             
   
   <span class="md-ellipsis">
-    Mumerical Analysis
+    Numerical Analysis
   </span>
   
 
@@ -1146,7 +1190,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            Mumerical Analysis
+            Numerical Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1958,12 +2002,61 @@
     Point Features
   </a>
   
-    <nav class="md-nav" aria-label="Point Features">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#scale-invariant-feature-transform-sift" class="md-nav__link">
     Scale Invariant Feature Transform (SIFT)
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale Invariant Feature Transform (SIFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-scale" class="md-nav__link">
+    (1) Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2construct-the-gaussian-pyramid" class="md-nav__link">
+    (2)Construct the Gaussian Pyramid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3difference-of-gaussian-dog" class="md-nav__link">
+    (3)Difference of Gaussian (DoG)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4keypoint-localization" class="md-nav__link">
+    （4）Keypoint Localization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-orientation-assignment" class="md-nav__link">
+    (5) Orientation Assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6keypoint-descriptor" class="md-nav__link">
+    (6)Keypoint descriptor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7keypoint-matching" class="md-nav__link">
+    （7）Keypoint Matching
   </a>
   
 </li>
@@ -2288,12 +2381,61 @@
     Point Features
   </a>
   
-    <nav class="md-nav" aria-label="Point Features">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#scale-invariant-feature-transform-sift" class="md-nav__link">
     Scale Invariant Feature Transform (SIFT)
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale Invariant Feature Transform (SIFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-scale" class="md-nav__link">
+    (1) Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2construct-the-gaussian-pyramid" class="md-nav__link">
+    (2)Construct the Gaussian Pyramid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3difference-of-gaussian-dog" class="md-nav__link">
+    (3)Difference of Gaussian (DoG)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4keypoint-localization" class="md-nav__link">
+    （4）Keypoint Localization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-orientation-assignment" class="md-nav__link">
+    (5) Orientation Assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6keypoint-descriptor" class="md-nav__link">
+    (6)Keypoint descriptor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7keypoint-matching" class="md-nav__link">
+    （7）Keypoint Matching
   </a>
   
 </li>
@@ -2401,13 +2543,13 @@
 <li>The same point should have <strong>similar vectors</strong> independent of pose/viewpoint</li>
 <li>Plain RGB/intensity patches will not have this property, we need something better</li>
 </ul>
-<h4 id="scale-invariant-feature-transform-sift">Scale Invariant Feature Transform (SIFT)<a class="headerlink" href="#scale-invariant-feature-transform-sift" title="Permanent link">&para;</a></h4>
-<ul>
-<li>SIFT constructs a <strong>scale space</strong> by iteratively filtering the image with a Gaussian</li>
-<li>Adjacent scales are subtracted, yielding <strong>Difference of Gaussian (DoG)</strong> images</li>
-<li><strong>Interest points</strong> (=blobs) are detected as <strong>extrema</strong> in the resulting scale space</li>
-</ul>
-<h5 id="1-scale">(1) Scale<a class="headerlink" href="#1-scale" title="Permanent link">&para;</a></h5>
+<h3 id="scale-invariant-feature-transform-sift">Scale Invariant Feature Transform (SIFT)<a class="headerlink" href="#scale-invariant-feature-transform-sift" title="Permanent link">&para;</a></h3>
+<p><strong>Reference to <a href="https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40">https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40</a></strong>
+<a href="https://www.qixinbo.info/2021/10/26/sift/">https://www.qixinbo.info/2021/10/26/sift/</a>
+- SIFT constructs a <strong>scale space</strong> by iteratively filtering the image with a Gaussian
+- Adjacent scales are subtracted, yielding <strong>Difference of Gaussian (DoG)</strong> images
+- <strong>Interest points</strong> (=blobs) are detected as <strong>extrema</strong> in the resulting scale space</p>
+<h4 id="1-scale">(1) Scale<a class="headerlink" href="#1-scale" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(L(x,y,σ)=G(x,y,σ)∗I(x,y)\)</span></p>
 <blockquote>
 <p>Note ：卷积</p>
@@ -2434,7 +2576,7 @@
 </ul>
 <p><span class="arithmatex">\((g^{'}=\begin{bmatrix} &amp;b_{1,1} &amp;b_{1,0} &amp;b_{1,-1}\\ &amp;b_{0,1} &amp;b_{0,0} &amp;b_{0,-1} \\ &amp;b_{-1,1} &amp;b_{-1,0} &amp;b_{-1,-1} \end{bmatrix}\)</span></p>
 </blockquote>
-<h5 id="2construct-the-gaussian-pyramid">(2)Construct the Gaussian Pyramid<a class="headerlink" href="#2construct-the-gaussian-pyramid" title="Permanent link">&para;</a></h5>
+<h4 id="2construct-the-gaussian-pyramid">(2)Construct the Gaussian Pyramid<a class="headerlink" href="#2construct-the-gaussian-pyramid" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Apply Gaussian blur at different scales to the image.</li>
 <li>Downsample the image, typically reducing it by half in the horizontal and vertical directions before sampling.</li>
@@ -2446,13 +2588,56 @@
 <li>If each group has S layers, then <span class="arithmatex">\(k = 2^{1/S}\)</span>. The bottommost image in the previous group is obtained by downsampling the image with a scale of 2σ from the previous group by a factor of 2 (Gaussian pyramids are built from the bottom-up).</li>
 </ul>
 <p><img alt="1" src="../1.png" /></p>
-<h5 id="3difference-of-gaussian-dog">(3)Difference of Gaussian (DoG)<a class="headerlink" href="#3difference-of-gaussian-dog" title="Permanent link">&para;</a></h5>
+<h4 id="3difference-of-gaussian-dog">(3)Difference of Gaussian (DoG)<a class="headerlink" href="#3difference-of-gaussian-dog" title="Permanent link">&para;</a></h4>
 <p>Image feature points are composed of local extrema in the DoG (Difference of Gaussians) scale space. To find these extrema in the DoG space, each pixel is compared with all of its neighboring points to determine whether it is larger or smaller than its neighboring points in both the image domain and scale domain. As shown in the figure below, the central detection point is compared with its 8 neighboring points at the same scale and 18 points corresponding to the upper and lower adjacent scales, totaling 26 points to ensure the detection of extrema in both the two-dimensional image space and scale space. If a point is the maximum or minimum value among these 26 points in the DoG scale space at the current layer and the two neighboring layers, it is considered a feature point in the image at that scale.</p>
-<h5 id="4-histogram">(4) Histogram<a class="headerlink" href="#4-histogram" title="Permanent link">&para;</a></h5>
+<h4 id="4keypoint-localization">（4）Keypoint Localization<a class="headerlink" href="#4keypoint-localization" title="Permanent link">&para;</a></h4>
+<p>Key0points generated in the previous step produce a lot of keypoints. Some of them lie along an edge, or they don’t have enough contrast. In both cases, they are not as useful as features. So we get rid of them. 
+The approach is similar to the one used in the Harris Corner Detector for removing edge features. For low contrast features, we simply check their intensities.</p>
+<p>They used Taylor series expansion of scale space to get a more accurate location of extrema, and if the intensity at this extrema is less than a threshold value (0.03 as per the paper), it is rejected. DoG has a higher response for edges, so edges also need to be removed. They used a 2x2 Hessian matrix (H) to compute the principal curvature.</p>
+<p>Detailed explanation:
+* Keypoint Filtering:
+Keypoints generated in the previous step might include features along edges or those with low contrast, which may not be sufficiently prominent or useful.
+For features with low contrast, their intensities are examined. If the intensity is below a specified threshold (as mentioned in the paper, 0.03), the feature is excluded.
+* Taylor Series Expansion:
+Utilizing a Taylor series expansion of the scale space to obtain a more accurate location of extrema, improving the precision of keypoint localization.
+Intensity Check and Exclusion:
+For extrema identified through the Taylor series expansion, their intensities are checked. If the intensity falls below the set threshold, they are excluded.
+* Edge Removal:
+Due to the higher response of the Difference of Gaussians (DoG) for edges, further removal of edge features is necessary.
+A <strong>2x2 Hessian matrix</strong> is employed to calculate the principal curvature. If the principal curvature is <strong>small</strong>, indicating the point may lie along an edge, it can be excluded.
+<img alt="a" src="../a.png" />
+(<span class="arithmatex">\(f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}\)</span>) for the Harris operator
+Which means f is large indicates an edge</p>
+<h4 id="5-orientation-assignment">(5) Orientation Assignment<a class="headerlink" href="#5-orientation-assignment" title="Permanent link">&para;</a></h4>
+<p>Now we have legitimate keypoints. They’ve been tested to be stable. We already know the scale at which the keypoint was detected (it’s the same as the scale of the blurred image). 
+So we have <strong>scale invariance</strong>. The next thing is to assign an orientation to each keypoint to make it rotation invariance.</p>
+<p>A neighborhood is taken around the keypoint location depending on the scale, and the gradient magnitude and direction is calculated in that region. 
+An orientation histogram with 36 bins covering 360 degrees is created. Let's say the gradient direction at a certain point (in the “orientation collection region”) is 18.759 degrees, then it will go into the 10–19-degree bin. And the “amount” that is added to the bin is proportional to the magnitude of the gradient at that point. Once you’ve done this for all pixels around the keypoint, the histogram will have a peak at some point.
+<img alt="b" src="../b.png" />
+The highest peak in the histogram is taken and any peak above 80% of it is also considered to calculate the orientation. It creates keypoints with same location and scale, but different directions. It contributes to the stability of matching.</p>
+<h4 id="6keypoint-descriptor">(6)Keypoint descriptor<a class="headerlink" href="#6keypoint-descriptor" title="Permanent link">&para;</a></h4>
+<p>At this point, each keypoint has a <strong>location</strong>, <strong>scale</strong>, <strong>orientation</strong>. Next is to compute a descriptor for the local image region about each keypoint that is highly distinctive and invariant as possible to variations such as changes in viewpoint and illumination.</p>
+<p>To do this, a 16x16 window around the keypoint is taken. It is divided into 16 sub-blocks of 4x4 size.
+<img alt="c" src="../c.png" />
+For each sub-block, 8 bin orientation histogram is created.
+<img alt="d" src="../d.png" />
+So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 directions give 128 bin values. It is represented as a feature vector to form keypoint descriptor. This feature vector introduces a few complications. We need to get rid of them before finalizing the fingerprint.</p>
 <ul>
-<li>SIFT <strong>rotates</strong> the descriptor to <strong>align with the dominant gradient orientation</strong></li>
-<li><strong>Gradient histograms</strong> are computed for local sub-regions of the descriptor</li>
-<li>All histograms are concatenated and normalized to form a <strong>128D feature vector</strong></li>
+<li>Rotation dependence 
+  The feature vector uses gradient orientations. 
+  Clearly, if you rotate the image, everything changes. All gradient orientations also change. 
+  To achieve rotation independence, the keypoint’s rotation is <strong>subtracted</strong> from each orientation. Thus each gradient orientation is relative to the keypoint’s orientation.</li>
+<li>Illumination dependence 
+  If we threshold numbers that are big, we can achieve illumination independence. So, any number (of the 128) greater than 0.2 is changed to 0.2. This resultant feature vector is normalized again. And now you have an illumination independent feature vector!</li>
+</ul>
+<h4 id="7keypoint-matching">（7）Keypoint Matching<a class="headerlink" href="#7keypoint-matching" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Feature Descriptor Extraction: 
+  For each detected feature point, SIFT calculates the gradient direction histogram in its surrounding neighborhood and arranges these histograms into a 128-dimensional vector, acting as the feature descriptor of this feature point. This step is based on the detection of keypoints, ensuring the scale and rotation invariance of the descriptor.</li>
+<li>Feature Matching: 
+  A feature descriptor is used to find the nearest neighbor in the feature descriptor set of another image. The nearest neighbor distance measurement often uses Euclidean distance, meaning the smaller the distance, the higher the match. If no obvious nearest neighbor can be found, this feature point will be discarded and not used for further matching.</li>
+<li>Discarding Mismatches: 
+  To enhance the reliability of matches, SIFT employs a ratio test to discard potential mismatches. This criterion involves the ratio of the distance of the nearest neighbor to that of the second nearest neighbor of a feature descriptor. If this ratio exceeds a predetermined threshold (such as 0.8), then the nearest neighbor is deemed a mismatch and should be discarded.</li>
 </ul>
 <h2 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h2>
 <p><img alt="9" src="../9.png" /></p>
@@ -2654,7 +2839,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 00:20:53</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月17日 20:51:07</span>
       
         <br>
         创建日期:
