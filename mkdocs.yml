@@ -128,7 +128,14 @@ nav:
       - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
       - Chapter 7 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
     - Numerical Analysis :
+      - Chapter 1 : NA/Chap1/Chap1.md
+      - Chapter 2 : NA/Chap2/Chap2.md
+      - Chapter 3 : NA/Chap3/Chap3.md
+      - Chapter 4 : NA/Chap4/Chap4.md
       - Chapter 5 : NA/Chap5/Chap5.md
+      - Chapter 6 : NA/Chap6/Chap6.md
+      - Chapter 7 : NA/Chap7/Chap7.md
+      - Chapter 8 : NA/Chap8/Chap8.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
@@ -136,6 +143,7 @@ nav:
         - Current : GP/current/current.md
         - The Magnetic Field : GP/mag/mag.md
         - Electromagnetic Integration : GP/com/com.md
+        - Quantum Wells: GP/QW/QW.md
       - Optics:
         - Light Waves : GP/light/light.md
         - interference & refraction: GP/light/inteference.md

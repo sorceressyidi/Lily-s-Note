@@ -1,3 +1,7 @@
+## Preknowledge
+
+![10](10.png)
+
 ## Euler's method：
 
 The Euler’s method is a first-order numerical procedure for solving ordinary differential equations (ODE) with a given initial value.
@@ -9,6 +13,10 @@ In Euler’s method, you can approximate the curve of the solution by the tangen
 ![1](1.png)
 
 ![2](2.png)
+
+### Error Analysis
+
+Refer to the BOOK
 
 ### modified Euler’s method:
 
@@ -35,6 +43,10 @@ The Modified Euler's method improves upon this by using a two-step process:
    In this step, $f(t_i,y_i)$represents the derivative at the initial point, and $f(t_{i+1},y_{i+1})$ represents the derivative at the predicted point.
 
 Modified Euler's method has a local truncation error of $O(h^3)$, which is an improvement over the $O(h^2)$ local truncation error of the basic Euler method. This makes it more accurate for a wide range of ODEs, and it is still relatively simple to implement.
+
+## Higher-order Taylor Methods
+
+![11](11.png)
 
 ## Runge-Kutta Methods
 
@@ -106,4 +118,55 @@ Note ： $h$ is step length $h=\triangle x/n$
 
 ![8](8.png)
 
-**Use the** **Newton forward-difference formula to interpolate f**
+
+
+* **Use the** **Newton forward-difference formula to interpolate f** 
+
+![9](9.png)
+
+### **Adams predictor-corrector system**
+
+* **Step 1**  Compute the first m initial values by Runge-Kutta method.
+
+* **Step 2** Predict by Adams-Bashforth explicit method.
+
+* **Step 3** Correct by Adams-Moulton implicit method.
+
+#### EXAMPLE
+
+Consider a simple first-order ordinary differential equation given by:
+
+$dy/dt=−y$
+
+We will use the Adams predictor-corrector method to numerically solve this equation.
+
+### Step 1: Compute the First m*m* Initial Values by Runge-Kutta Method
+
+First, we use the Runge-Kutta method to calculate the initial values. For the given equation, the Runge-Kutta scheme is:
+
+$k_1=−y_n$
+
+$k_2=−(y_n+0.5hk_1)$
+
+$y_{n+1}=y_n+hk_2$
+
+Here, $h$ is the time step.
+
+### Step 2: Predict by Adams-Bashforth Explicit Method
+
+The Adams-Bashforth method for a second-order equation is:
+
+$y_{n+1}^{(p)}=y_n+h(−y_n+\frac{3}{2}y_{n−1})$
+
+### Step 3: Correct by Adams-Moulton Implicit Method
+
+The Adams-Moulton method for a second-order equation is:
+
+$$y_{n+1}=y_n+h(−\frac{1}{2}y_{n+1}+\frac{3}{2}y_{n})$$
+
+This equation needs to be solved iteratively as $y_{n+1}$ appears on both sides of the equation.
+
+This is a simple example, and in practice, the Adams predictor-corrector method can be applied to higher-order differential equations. The specific steps and coefficients will vary based on the chosen order. In real-world applications, computational tools or programming languages may be used to perform these calculations.
+
+### **Derive from Taylor expansion**
+

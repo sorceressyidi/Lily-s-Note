@@ -224,8 +224,8 @@ Now consider a potential energy barrier, which is a region of thickness L where 
 * To the right of the barrier (for x > L), the probability density plot describes a transmitted wave (through the barrier) with low but constant amplitude.
 
 We can assign a transmission coeffient T to the incident matter wave and the barrier. The transmission coefficient T is approximately $T\approx e^{-2kL}$ where $k=\frac{\sqrt{2m(qV_b-E)}}{\bar{h}}$
-
-$T$ is sensitive to L,m and $U_b-E$
+**Try Derive (imaginary k' actually)**
+$T$ is sensitive to L,m and $U_b-E$ 
 
 ![8](8.png)
 
@@ -261,12 +261,56 @@ A fine metallic tip, mounted on quartz rods, is placed close to the surface to b
 An STM not only can provide an image of a static surface, it can also be used to manipulate atoms and molecules on a surface.
 
 
-
-
-
 ![12](12.png)
 
 ![a](a.jpg)
 
 
 
+### S-Matrix
+![13](13.png)
+![14](14.png)
+
+> The expression $|r|^2+|t|^2=1$ is a consequence of probability conservation in quantum mechanics. Let's break down the meaning of this expression in the context of quantum mechanics and scattering theory.
+>
+> In quantum mechanics, when a particle encounters a potential barrier or undergoes scattering, the probabilities of reflection$|r|^2$ and transmission$t|^2$must add up to unity. Here's why:
+>
+> 1. **Probability Conservation:** The total probability of finding the particle must be conserved. When a particle encounters a potential barrier, it can either be reflected back or transmitted through the barrier. The sum of the probabilities of these two outcomes must be equal to 1.
+>
+>    Mathematically, this is expressed as $|r|^2+|t|^2=1$
+>
+> 2. **Normalization Condition:** The probability amplitude is related to the wave function, and the square of the amplitude gives the probability density. For the wave function to represent a physically meaningful probability density, it must be normalized.
+>
+>    The normalization condition for probability amplitudes requires that the sum of the probabilities over all possible outcomes is equal to 1.
+>
+>    Mathematically, this normalization condition is expressed as $∫∣Ψ(x)∣^2 dx=1$, where $Ψ(x)$ is the wave function.
+
+#### Example
+
+![15](15.png)
+
+> $Explain\ for\ the\ below\ Pic$
+>
+> - $t_1$ and $t_2$: These are the transmission coefficients at the first and second barriers, respectively. They represent the fraction of the wave that gets transmitted through the barriers.
+>
+> - $r_1$ and $r_2$: These are the reflection coefficients at the first and second barriers, respectively. They represent the fraction of the wave that gets reflected at the barriers.
+>
+> - $e^{iθ}$: This term introduces a phase shift (θ) to the wave. 
+>
+>   The term is a complex exponential that represents a phase change in the wave. It's common in wave optics and quantum mechanics to introduce phase factors.
+>
+> Now, let's interpret the terms in the sum:
+>
+> 1. The first term $t_1e^{iθ}t_2$ represents the wave being transmitted through the first barrier ($t_1$), undergoing a phase change ($e^{i\theta}$), and then being transmitted through the second barrier $(t_2)$
+>
+> 2. The second term $t_1e^{i\theta}r_2e^{i\theta}r_1e^{i\theta}t_2$ represents a more complex scenario. 
+>
+>    The wave is transmitted through the first barrier ($t_1$), undergoes a phase change ($e^{i\theta}$), gets partially reflected $r_2$, undergoes another phase change$e^{i\theta}$, gets reflected again$(r_1)$, undergoes yet another phase change$(e^{i\theta})$, and finally gets transmitted through the second barrier $t_2$.
+
+![16](16.png)
+
+![17](17.png)
+
+* Question? 
+
+  > $b_4b_4^∗=\frac{t_{1}^2t_2^2}{1−2r_1r_2cos⁡(2θ)+r_1^2r_2^2}$
