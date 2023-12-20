@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/NA/Chap5/Chap5/">
       
       
-        <link rel="prev" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/">
+        <link rel="prev" href="../../Chap4/Chap4/">
       
       
         <link rel="next" href="../../../GP/lec1-3/lec1/">
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#eulers-method" class="md-skip">
+        <a href="#preknowledge" class="md-skip">
           跳转至
         </a>
       
@@ -1168,6 +1168,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1197,6 +1211,86 @@
             Numerical Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap1/Chap1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap2/Chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap3/Chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap4/Chap4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1246,12 +1340,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preknowledge" class="md-nav__link">
+    Preknowledge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#eulers-method" class="md-nav__link">
     Euler's method：
   </a>
   
     <nav class="md-nav" aria-label="Euler's method：">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-analysis" class="md-nav__link">
+    Error Analysis
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#modified-eulers-method" class="md-nav__link">
@@ -1262,6 +1370,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-taylor-methods" class="md-nav__link">
+    Higher-order Taylor Methods
+  </a>
   
 </li>
       
@@ -1287,6 +1402,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adams-predictor-corrector-system" class="md-nav__link">
+    Adams predictor-corrector system
+  </a>
+  
+    <nav class="md-nav" aria-label="Adams predictor-corrector system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    EXAMPLE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-compute-the-first-mm-initial-values-by-runge-kutta-method" class="md-nav__link">
+    Step 1: Compute the First mm Initial Values by Runge-Kutta Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-predict-by-adams-bashforth-explicit-method" class="md-nav__link">
+    Step 2: Predict by Adams-Bashforth Explicit Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-correct-by-adams-moulton-implicit-method" class="md-nav__link">
+    Step 3: Correct by Adams-Moulton Implicit Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derive-from-taylor-expansion" class="md-nav__link">
+    Derive from Taylor expansion
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1296,6 +1459,66 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap6/Chap6.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap7/Chap7.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Chap8/Chap8.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1421,6 +1644,8 @@
       
         
       
+        
+      
     
     
     
@@ -1522,6 +1747,26 @@
   
   <span class="md-ellipsis">
     Electromagnetic Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/QW/QW/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Wells
   </span>
   
 
@@ -2261,12 +2506,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preknowledge" class="md-nav__link">
+    Preknowledge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#eulers-method" class="md-nav__link">
     Euler's method：
   </a>
   
     <nav class="md-nav" aria-label="Euler's method：">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-analysis" class="md-nav__link">
+    Error Analysis
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#modified-eulers-method" class="md-nav__link">
@@ -2277,6 +2536,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-taylor-methods" class="md-nav__link">
+    Higher-order Taylor Methods
+  </a>
   
 </li>
       
@@ -2298,6 +2564,54 @@
           <li class="md-nav__item">
   <a href="#adams-bashforth-explicit-m-step-technique" class="md-nav__link">
     Adams-Bashforth explicit m-step technique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adams-predictor-corrector-system" class="md-nav__link">
+    Adams predictor-corrector system
+  </a>
+  
+    <nav class="md-nav" aria-label="Adams predictor-corrector system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    EXAMPLE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-compute-the-first-mm-initial-values-by-runge-kutta-method" class="md-nav__link">
+    Step 1: Compute the First mm Initial Values by Runge-Kutta Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-predict-by-adams-bashforth-explicit-method" class="md-nav__link">
+    Step 2: Predict by Adams-Bashforth Explicit Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-correct-by-adams-moulton-implicit-method" class="md-nav__link">
+    Step 3: Correct by Adams-Moulton Implicit Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derive-from-taylor-expansion" class="md-nav__link">
+    Derive from Taylor expansion
   </a>
   
 </li>
@@ -2324,12 +2638,16 @@
 
   <h1>Chapter 5</h1>
 
+<h2 id="preknowledge">Preknowledge<a class="headerlink" href="#preknowledge" title="Permanent link">&para;</a></h2>
+<p><img alt="10" src="../10.png" /></p>
 <h2 id="eulers-method">Euler's method：<a class="headerlink" href="#eulers-method" title="Permanent link">&para;</a></h2>
 <p>The Euler’s method is a first-order numerical procedure for solving ordinary differential equations (ODE) with a given initial value.</p>
 <p>In Euler’s method, you can approximate the curve of the solution by the tangent in each interval (that is, by a sequence of short line segments), at steps of <code>h</code>.</p>
 <p><em>In general</em>, if you use small step size, the accuracy of approximation increases.</p>
 <p><img alt="1" src="../1.png" /></p>
 <p><img alt="2" src="../2.png" /></p>
+<h3 id="error-analysis">Error Analysis<a class="headerlink" href="#error-analysis" title="Permanent link">&para;</a></h3>
+<p>Refer to the BOOK</p>
 <h3 id="modified-eulers-method">modified Euler’s method:<a class="headerlink" href="#modified-eulers-method" title="Permanent link">&para;</a></h3>
 <p>Modified Euler's method, also known as the Improved Euler method or Heun's method, is a numerical technique used for approximating solutions to ordinary differential equations (ODEs). It is an extension of the basic Euler's method and provides better accuracy by incorporating a simple correction.</p>
 <p>The standard Euler's method is a first-order numerical method that uses a linear approximation to update the solution from one time step to the next. However, it can have limited accuracy, especially for ODEs with rapidly changing behavior.</p>
@@ -2347,6 +2665,8 @@
 <p>Corrected Value <span class="arithmatex">\((C)\)</span>:<span class="arithmatex">\(y_{i+1}=y_i+\frac{h}{2}[f(t_i,y_i)+f(t_{i+1},\tilde{y}_{i+1})]\)</span></p>
 <p>In this step, <span class="arithmatex">\(f(t_i,y_i)\)</span>represents the derivative at the initial point, and <span class="arithmatex">\(f(t_{i+1},y_{i+1})\)</span> represents the derivative at the predicted point.</p>
 <p>Modified Euler's method has a local truncation error of <span class="arithmatex">\(O(h^3)\)</span>, which is an improvement over the <span class="arithmatex">\(O(h^2)\)</span> local truncation error of the basic Euler method. This makes it more accurate for a wide range of ODEs, and it is still relatively simple to implement.</p>
+<h2 id="higher-order-taylor-methods">Higher-order Taylor Methods<a class="headerlink" href="#higher-order-taylor-methods" title="Permanent link">&para;</a></h2>
+<p><img alt="11" src="../11.png" /></p>
 <h2 id="runge-kutta-methods">Runge-Kutta Methods<a class="headerlink" href="#runge-kutta-methods" title="Permanent link">&para;</a></h2>
 <p>Runge-Kutta methods are a family of iterative numerical techniques used for solving ordinary differential equations (ODEs) or systems of ODEs. These methods provide an approximation of the solution at discrete points in the domain by iteratively updating the solution from one point to the next.</p>
 <p><strong>Single-Step Method:</strong> </p>
@@ -2394,14 +2714,48 @@
 <p>Note ： <span class="arithmatex">\(h\)</span> is step length <span class="arithmatex">\(h=\triangle x/n\)</span></p>
 <p><img alt="7" src="../7.png" /></p>
 <p><img alt="8" src="../8.png" /></p>
-<p><strong>Use the</strong> <strong>Newton forward-difference formula to interpolate f</strong></p>
+<ul>
+<li><strong>Use the</strong> <strong>Newton forward-difference formula to interpolate f</strong> </li>
+</ul>
+<p><img alt="9" src="../9.png" /></p>
+<h3 id="adams-predictor-corrector-system"><strong>Adams predictor-corrector system</strong><a class="headerlink" href="#adams-predictor-corrector-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Step 1</strong>  Compute the first m initial values by Runge-Kutta method.</p>
+</li>
+<li>
+<p><strong>Step 2</strong> Predict by Adams-Bashforth explicit method.</p>
+</li>
+<li>
+<p><strong>Step 3</strong> Correct by Adams-Moulton implicit method.</p>
+</li>
+</ul>
+<h4 id="example">EXAMPLE<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>Consider a simple first-order ordinary differential equation given by:</p>
+<p><span class="arithmatex">\(dy/dt=−y\)</span></p>
+<p>We will use the Adams predictor-corrector method to numerically solve this equation.</p>
+<h3 id="step-1-compute-the-first-mm-initial-values-by-runge-kutta-method">Step 1: Compute the First m<em>m</em> Initial Values by Runge-Kutta Method<a class="headerlink" href="#step-1-compute-the-first-mm-initial-values-by-runge-kutta-method" title="Permanent link">&para;</a></h3>
+<p>First, we use the Runge-Kutta method to calculate the initial values. For the given equation, the Runge-Kutta scheme is:</p>
+<p><span class="arithmatex">\(k_1=−y_n\)</span></p>
+<p><span class="arithmatex">\(k_2=−(y_n+0.5hk_1)\)</span></p>
+<p><span class="arithmatex">\(y_{n+1}=y_n+hk_2\)</span></p>
+<p>Here, <span class="arithmatex">\(h\)</span> is the time step.</p>
+<h3 id="step-2-predict-by-adams-bashforth-explicit-method">Step 2: Predict by Adams-Bashforth Explicit Method<a class="headerlink" href="#step-2-predict-by-adams-bashforth-explicit-method" title="Permanent link">&para;</a></h3>
+<p>The Adams-Bashforth method for a second-order equation is:</p>
+<p><span class="arithmatex">\(y_{n+1}^{(p)}=y_n+h(−y_n+\frac{3}{2}y_{n−1})\)</span></p>
+<h3 id="step-3-correct-by-adams-moulton-implicit-method">Step 3: Correct by Adams-Moulton Implicit Method<a class="headerlink" href="#step-3-correct-by-adams-moulton-implicit-method" title="Permanent link">&para;</a></h3>
+<p>The Adams-Moulton method for a second-order equation is:</p>
+<div class="arithmatex">\[y_{n+1}=y_n+h(−\frac{1}{2}y_{n+1}+\frac{3}{2}y_{n})\]</div>
+<p>This equation needs to be solved iteratively as <span class="arithmatex">\(y_{n+1}\)</span> appears on both sides of the equation.</p>
+<p>This is a simple example, and in practice, the Adams predictor-corrector method can be applied to higher-order differential equations. The specific steps and coefficients will vary based on the chosen order. In real-world applications, computational tools or programming languages may be used to perform these calculations.</p>
+<h3 id="derive-from-taylor-expansion"><strong>Derive from Taylor expansion</strong><a class="headerlink" href="#derive-from-taylor-expansion" title="Permanent link">&para;</a></h3>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月17日 20:51:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月20日 23:31:34</span>
       
         <br>
         创建日期:
