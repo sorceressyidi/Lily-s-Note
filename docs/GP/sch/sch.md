@@ -6,7 +6,7 @@ In the quantum theory, a microscopic **particle** is described by a probability 
 
 * What is, then, the wave equation that governs the motion of the quantum particle?
 
- ## Schroedinger’s Equation
+## Schroedinger’s Equation
 
 ### Classical Particle
 
@@ -314,3 +314,12 @@ An STM not only can provide an image of a static surface, it can also be used to
 * Question? 
 
   > $b_4b_4^∗=\frac{t_{1}^2t_2^2}{1−2r_1r_2cos⁡(2θ)+r_1^2r_2^2}$
+
+### Two Particle System
+
+https://www.youtube.com/watch?v=M7VJa5eim5o
+
+https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Introductory_Quantum_Mechanics_(Fitzpatrick)/05%3A_Multi-Particle_Systems/5.03%3A_Two-Particle_Systems
+
+$i\bar{h}\frac{\partial}{\partial t}ψ(x_1,x_2,t)=[-\frac{\bar{h}^2}{2m_1}\frac{\partial^2}{\partial x_1^2}-\frac{\bar{h}^2}{2m_2}\frac{\partial^2}{\partial x_2^2}+V(x_1,x_2)]ψ(x_1,x_2,t)$
+
