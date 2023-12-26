@@ -125,8 +125,8 @@ nav:
       - 数据降维: AI/pca.md
       - Neural Networks and Deep Learning : AI/net.md
     - 计算机逻辑设计基础:
-      - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
       - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
+      - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
       - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
     - Numerical Analysis :
       - Chapter 1 : NA/Chap1/Chap1.md

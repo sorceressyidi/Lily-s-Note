@@ -83,19 +83,23 @@ The approach is similar to the one used in the Harris Corner Detector for removi
 They used Taylor series expansion of scale space to get a more accurate location of extrema, and if the intensity at this extrema is less than a threshold value (0.03 as per the paper), it is rejected. DoG has a higher response for edges, so edges also need to be removed. They used a 2x2 Hessian matrix (H) to compute the principal curvature.
 
 Detailed explanation:
+
 * Keypoint Filtering:
 Keypoints generated in the previous step might include features along edges or those with low contrast, which may not be sufficiently prominent or useful.
 For features with low contrast, their intensities are examined. If the intensity is below a specified threshold (as mentioned in the paper, 0.03), the feature is excluded.
+
 * Taylor Series Expansion:
 Utilizing a Taylor series expansion of the scale space to obtain a more accurate location of extrema, improving the precision of keypoint localization.
 Intensity Check and Exclusion:
 For extrema identified through the Taylor series expansion, their intensities are checked. If the intensity falls below the set threshold, they are excluded.
+
 * Edge Removal:
 Due to the higher response of the Difference of Gaussians (DoG) for edges, further removal of edge features is necessary.
 A **2x2 Hessian matrix** is employed to calculate the principal curvature. If the principal curvature is **small**, indicating the point may lie along an edge, it can be excluded.
 ![a](a.png)
 ($f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$) for the Harris operator
 Which means f is large indicates an edge
+
 #### (5) Orientation Assignment
 Now we have legitimate keypoints. They’ve been tested to be stable. We already know the scale at which the keypoint was detected (it’s the same as the scale of the blurred image). 
 So we have **scale invariance**. The next thing is to assign an orientation to each keypoint to make it rotation invariance.
@@ -111,6 +115,7 @@ To do this, a 16x16 window around the keypoint is taken. It is divided into 16 s
 ![c](c.png)
 For each sub-block, 8 bin orientation histogram is created.
 ![d](d.png)
+
 So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 directions give 128 bin values. It is represented as a feature vector to form keypoint descriptor. This feature vector introduces a few complications. We need to get rid of them before finalizing the fingerprint.
 
 * Rotation dependence 

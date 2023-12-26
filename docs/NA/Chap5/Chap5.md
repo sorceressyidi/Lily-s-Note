@@ -4,11 +4,7 @@
 
 ## Euler's method：
 
-The Euler’s method is a first-order numerical procedure for solving ordinary differential equations (ODE) with a given initial value.
-
-In Euler’s method, you can approximate the curve of the solution by the tangent in each interval (that is, by a sequence of short line segments), at steps of `h`.
-
-*In general*, if you use small step size, the accuracy of approximation increases.
+  all step size, the accuracy of approximation increases.
 
 ![1](1.png)
 
@@ -18,7 +14,33 @@ In Euler’s method, you can approximate the curve of the solution by the tangen
 
 Refer to the BOOK
 
-### modified Euler’s method:
+### Other Euler Methods
+
+#### Implicit Euler Method
+
+$y'(t_0)\approx\frac{t(t_0)-y(t_0-h)}{h}\Rightarrow y(t_1)\approx y(t_0)+hy'(t_1)=\alpha+hf(t_1,y(t_1))$
+
+$w_0=\alpha ; w_{i+1}=w_i+hf(t_{i+1},w_{i+1})(i=0,……，n-1)$
+
+$\tau_{i+1}=\frac{y_{i+1}-w_{i+1}}{h}==\frac{h}{2}y''(\epsilon_i)=o(h)$
+
+#### Trapezoidal Method
+
+$w_{i+1}=w_i+\frac{h}{2}[f(t_i,w_i)+f(t_{i+1},w_{i+1})]$
+
+* Error $O(h^2)$ but implict!! so has to be solved iteratively(LOW!)
+
+#### Double-step Method
+
+$y'(t_0)=\frac{1}{2h}[y(t_0+h)-y(t_0-h)]-\frac{h^2}{6}y^{(3)}(\epsilon_1)$
+
+$\Rightarrow y(t_2)\approx y(t_0)+2hf(t_1,y(t_1))$
+
+$w_0=\alpha\\ w_{i+1}=w_{i-1}+2hf(t_i,w_i)$
+
+* Two initial points are required to start moving forward .
+
+#### modified Euler’s method:Trapezoidal Method
 
 Modified Euler's method, also known as the Improved Euler method or Heun's method, is a numerical technique used for approximating solutions to ordinary differential equations (ODEs). It is an extension of the basic Euler's method and provides better accuracy by incorporating a simple correction.
 
@@ -118,9 +140,8 @@ Note ： $h$ is step length $h=\triangle x/n$
 
 ![8](8.png)
 
-
-
 * **Use the** **Newton forward-difference formula to interpolate f** 
+* Note: Include$(t_{i+1},f_{i+1})$ to interpolate So it is **implicit**
 
 ![9](9.png)
 
@@ -140,7 +161,7 @@ $dy/dt=−y$
 
 We will use the Adams predictor-corrector method to numerically solve this equation.
 
-### Step 1: Compute the First m*m* Initial Values by Runge-Kutta Method
+### Step 1: Compute the First m Initial Values by Runge-Kutta Method
 
 First, we use the Runge-Kutta method to calculate the initial values. For the given equation, the Runge-Kutta scheme is:
 
@@ -168,5 +189,50 @@ This equation needs to be solved iteratively as $y_{n+1}$ appears on both sides 
 
 This is a simple example, and in practice, the Adams predictor-corrector method can be applied to higher-order differential equations. The specific steps and coefficients will vary based on the chosen order. In real-world applications, computational tools or programming languages may be used to perform these calculations.
 
+* All the formulae used in the three steps must have the same order of local truncation error.
+
+   The most popularly used system is based on the 4th-order Adams-Bashforth method as predictor and **one iteration** of the Adams-Moulton method as corrector, with the **starting values** obtained from the **4th-order Runge-Kutta method.**
+
 ### **Derive from Taylor expansion**
 
+* derive a formula of order 4 with the form  
+
+![12](12.png)
+
+![13](13.png)
+
+### Higher-Order Equations and Systems of Differential Equations
+
+ ![14](14.png)
+
+  ![15](15.png)
+
+![16](16.png)
+
+### **Stability**
+
+#### Def
+
+* Def one : A one-step difference equation method with local trucation error $\tau_i(h)$ is said to be consistent with the differential equation it approximates if $lim_{h\rightarrow 0}|\tau_i(h)|=0$
+
+  For multistep methods it is also required that for $i=1,2,……m-1$
+
+​	$lim_{h\rightarrow 0}|w_i-y_i|=0$
+
+* A one-step difference equation method is said to be convergent with respect to the differential equation it approximates if $lim_{h\rightarrow 0}max_{1\le i\le n}|w_i-y_i|=0$
+
+* Apply a particular method to a simple test equation,y‘ =λy, y(0) =α, where Re(λ ) < 0.Assume that roundoff error is introduced only at the initial point. If this initial error will decrease for a certain step size h, then this
+
+  method is said to be absolutely stable with respect to **H =λh**. The set of all such H forms the region of absolute stability.
+
+  Method A is said to be more stable than method B if the region of
+
+  absolute stability of A is larger than that of B.
+
+![17](17.png)
+
+![18](18.png)
+
+![20](20.png)
+
+![19](19.png)

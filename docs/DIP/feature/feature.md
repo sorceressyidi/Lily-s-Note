@@ -34,7 +34,7 @@ Since $H$ is symmetric ,so $H=R^{-1}\begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{
 
 ## The Harris operator
 
-- $\lambda_-$  is a variant of the “Harris operator” for feature detection
+- $\lambda_-$  is a variant of the **Harris operator** for feature detection
 
 $f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$
 
@@ -124,6 +124,8 @@ Reference to https://medium.com/@deepanshut041/introduction-to-surf-speeded-up-r
 
 * speeded up robust features
 
+![10](10.png)
+
 ### (1)Feature Extraction
 
 **Basic Hessian matrix approximation.**
@@ -136,27 +138,33 @@ The Integral Image or [*Summed-Area Table*](http://en.wikipedia.org/wiki/Summed_
 
 #### b.Hessian matrix-based interest points
 
-Surf uses the Hessian matrix because of its good performance in computation time and accuracy. Rather than using a different measure for selecting the location and the scale (Hessian-Laplace detector), surf relies on the **determinant of the Hessian matrix** for both. 
+$SURF$ uses the Hessian matrix because of its good performance in computation time and accuracy. Rather than using a different measure for selecting the location and the scale (Hessian-Laplace detector), surf relies on the **determinant of the Hessian matrix** for both. 
 
 For **adapt to any scale**, we filtered the image by a Gaussian kernel, so given a point $X = (x, y)$, the Hessian matrix $H(x, σ)$ in x at scale σ is defined as:
 
 $H(\vec{x},\sigma)=\begin{bmatrix}L_{xx}(x,\sigma)&L_{xy}(x,\sigma)\\ L_{xy}(x,\sigma)&L_{yy}(x,\sigma)\end{bmatrix}$
 
-where $L_{xx}(x, σ)$ is the convolution of the Gaussian second order derivative with the image I in point x, and similarly for $L_{xy} (x, σ)$ and $L_{yy} (x, σ)$. 
+where $L_{xx}(x, σ)$ is the convolution of the **Gaussian second order derivative** with the image $I$ in point $x$, and similarly for $L_{xy} (x, σ)$ and $L_{yy} (x, σ)$. 
 
 Gaussians are optimal for scale-space analysis but in practice, they have to be discretized and cropped. This leads to a loss in repeatability under image rotations around odd multiples of $π /4$. This weakness holds for Hessian-based detectors in general. **Nevertheless**, the detectors still perform well, and the slight decrease in performance does not outweigh the advantage of fast convolutions brought by the discretization and cropping.
 
 After Lowe’s success with **LoG approximations(SIFT)**, SURF pushes the approximation(both convolution and second-order derivative) even further with box filters. These approximate second-order Gaussian derivatives and can be evaluated at a very low computational cost using **integral images** and independently of size, and this is part of the reason why SURF is fast.
 
-* eg $d^2L(x)/dx^2=(L(x+1)-L(x))-(L(x)-L(x-1))=-2*L(x)+L(x+1)+L(x-1)$
+* eg 
+
+  
+
+  $d^2L(x)/dx^2=(L(x+1)-L(x))-(L(x)-L(x-1))=-2*L(x)+L(x+1)+L(x-1)$
 
   ![7](7.png)
 
   ![8](8.png)
-
-  The $9 × 9$ box filters in the above images are approximations for Gaussian second order derivatives with σ = 1.2. We denote these approximations by $D_{xx}, D_{yy}, and D_{xy}$. Now we can represent the determinant of the Hessian (approximated) as:
-
-  $det(H_{approx})=D_{xx}D_{yy}-(wD_{xy})^2$   $w=0.9 (Bay’s\ suggestion)$
+  
+  The $9 × 9$ box filters in the above images are approximations for Gaussian second order derivatives with σ = 1.2.
+  
+  We denote these approximations by $D_{xx}, D_{yy}, and D_{xy}$. 
+  
+  Now we can represent the determinant of the Hessian (approximated) as:$det(H_{approx})=D_{xx}D_{yy}-(wD_{xy})^2$   $w=0.9 (Bay’s\ suggestion)$
 
 #### c.Scale-space representation
 
@@ -164,9 +172,11 @@ After Lowe’s success with **LoG approximations(SIFT)**, SURF pushes the approx
 >
 > It processes the original image directly using box filters at different **scales**, eliminating the need to **build multiple layers** of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.
 
-> 我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分
+> 我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)
 >
-> If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. However, this is just a logical understanding, and the actual results may vary due to the details of filter processing, such as edge handling, stride of the filter, and other factors.
+> If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. 
+>
+> However, this is just a logical understanding, and the actual results may vary due to the details of filter processing, such as edge handling, stride of the filter, and other factors.
 
 ![9](9.png)
 
@@ -174,11 +184,17 @@ After Lowe’s success with **LoG approximations(SIFT)**, SURF pushes the approx
 
 To locate the precise position of feature points, we apply a **Taylor expansion** to the Hessian matrix at the local maximum points. This approximates a smooth surface depicting the variation of image intensity around the feature points. Then, we identify the peak of this smooth surface. Compared to the original discrete maximum point, the location of this peak is more accurate. Hence, we refer to it as the true location of the feature point.
 
+##### Interpolation
+
+For each local maximum, need to interpolate to get true location (to overcome discretization effects)
+
+![11](11.png)
+
 ### (2)Feature Description
 
 #### Orientation Assignment
 
-1. First calculate the Haar-wavelet responses in x and y-direction, and this in a circular neighborhood of radius $6*s$ around the keypoint, with $s$ the scale at which the keypoint was detected. 
+1. First calculate the Haar-wavelet responses in $x$ and $y$-direction, and this in a circular neighborhood of radius $6*s$ around the keypoint, with $s$ the scale at which the keypoint was detected. 
 
    Also, the sampling step is scale dependent and chosen to be s, and the wavelet responses are computed at that current scale s. 
 
@@ -193,11 +209,38 @@ To locate the precise position of feature points, we apply a **Taylor expansion*
 Now it’s time to extract the descriptor
 
 1. The first step consists of constructing a square region centered around the keypoint and oriented along the orientation we already got above. The size of this window is 20s.
-2. Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. For reasons of simplicity, we call **dx** the Haar wavelet response in the horizontal direction and **dy** the Haar wavelet response in the vertical direction (filter size 2s). To increase the robustness towards geometric deformations and localization errors, the responses dx and **dy** are first weighted with a Gaussian (σ = 3.3s) centered at the keypoint.
+
+2. Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. 
+
+   For reasons of simplicity, we call **dx** the **Haar wavelet response** in the horizontal direction and **dy** the Haar wavelet response in the vertical direction (filter size 2s). 
+
+   To increase the robustness towards geometric deformations and localization errors, the responses **dx** and **dy** are first weighted with a Gaussian (σ = 3.3s) centered at the keypoint.
 
 ![img](https://miro.medium.com/v2/resize:fit:900/0*nda8uDh7EYfGtbJW.png)
 
-Then, the wavelet responses **dx** and **dy** are summed up over each subregion and form a first set of entries to the feature vector. In order to bring in information about the polarity of the intensity changes, we also extract the sum of the absolute values of the responses, **|dx|** and **|dy|**. Hence, each sub-region has a four-dimensional descriptor vector v for its underlying intensity structure **V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)**. This results in a descriptor vector for all 4×4 sub-regions of **length 64**(In **Sift**, our descriptor is the **128-D vector**, so this is part of the reason that SURF is faster than Sift).
+Then, the wavelet responses **dx** and **dy** are summed up over each subregion and form a first set of entries to the feature vector.
 
-## RANSAC
+In order to bring in information about the polarity of the intensity changes, we also extract the sum of the absolute values of the responses, **|dx|** and **|dy|**. 
+
+Hence, each sub-region has a four-dimensional descriptor vector $\vec{v}$ for its underlying intensity structure $V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)$.
+
+This results in a descriptor vector for all 4×4 sub-regions of **length 64.**(In $SIFT$, our descriptor is the **128-D vector**, so this is part of the reason that SURF is faster than Sift).
+
+### RANSAC
+
+A further refinement of matches.--**RANdom SAmple Consensus **
+
+In short words, $RANSAC$ fits $N$ models using different random sample *S* of the whole available data each time. Then, for each model it evaluates its performance *P* (i.e. number of inliers or outliers) and chooses the best one. Note that RANSAC doesn’t determine what method should you use to find model parameters.(least squares for example)
+
+![12](12.png)
+
+### Image Blending
+
+
+
+
+
+
+
+
 

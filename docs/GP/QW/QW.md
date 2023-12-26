@@ -152,5 +152,6 @@ We can solve the $ODEs$ for $X(x)$ and $Y(y)$. The wave function for the origina
 
 ![8](8.png)
 
-
-
+### Dirac Delta Function Potential Well
+![9](10.jpg)
+![10](11.jpg)
