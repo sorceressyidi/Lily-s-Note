@@ -1076,6 +1076,8 @@
       
         
       
+        
+      
     
     
     
@@ -1112,6 +1114,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5 Digital Hardware Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
         
   
@@ -1132,11 +1154,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+      <a href="../../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Chapter 7 Digital Hardware Implementation
+    Chapter 7 Memory Basics
   </span>
   
 
@@ -2770,20 +2792,28 @@
 <p>Key0points generated in the previous step produce a lot of keypoints. Some of them lie along an edge, or they don’t have enough contrast. In both cases, they are not as useful as features. So we get rid of them. 
 The approach is similar to the one used in the Harris Corner Detector for removing edge features. For low contrast features, we simply check their intensities.</p>
 <p>They used Taylor series expansion of scale space to get a more accurate location of extrema, and if the intensity at this extrema is less than a threshold value (0.03 as per the paper), it is rejected. DoG has a higher response for edges, so edges also need to be removed. They used a 2x2 Hessian matrix (H) to compute the principal curvature.</p>
-<p>Detailed explanation:
-* Keypoint Filtering:
+<p>Detailed explanation:</p>
+<ul>
+<li>
+<p>Keypoint Filtering:
 Keypoints generated in the previous step might include features along edges or those with low contrast, which may not be sufficiently prominent or useful.
-For features with low contrast, their intensities are examined. If the intensity is below a specified threshold (as mentioned in the paper, 0.03), the feature is excluded.
-* Taylor Series Expansion:
+For features with low contrast, their intensities are examined. If the intensity is below a specified threshold (as mentioned in the paper, 0.03), the feature is excluded.</p>
+</li>
+<li>
+<p>Taylor Series Expansion:
 Utilizing a Taylor series expansion of the scale space to obtain a more accurate location of extrema, improving the precision of keypoint localization.
 Intensity Check and Exclusion:
-For extrema identified through the Taylor series expansion, their intensities are checked. If the intensity falls below the set threshold, they are excluded.
-* Edge Removal:
+For extrema identified through the Taylor series expansion, their intensities are checked. If the intensity falls below the set threshold, they are excluded.</p>
+</li>
+<li>
+<p>Edge Removal:
 Due to the higher response of the Difference of Gaussians (DoG) for edges, further removal of edge features is necessary.
 A <strong>2x2 Hessian matrix</strong> is employed to calculate the principal curvature. If the principal curvature is <strong>small</strong>, indicating the point may lie along an edge, it can be excluded.
 <img alt="a" src="../a.png" />
 (<span class="arithmatex">\(f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}\)</span>) for the Harris operator
 Which means f is large indicates an edge</p>
+</li>
+</ul>
 <h4 id="5-orientation-assignment">(5) Orientation Assignment<a class="headerlink" href="#5-orientation-assignment" title="Permanent link">&para;</a></h4>
 <p>Now we have legitimate keypoints. They’ve been tested to be stable. We already know the scale at which the keypoint was detected (it’s the same as the scale of the blurred image). 
 So we have <strong>scale invariance</strong>. The next thing is to assign an orientation to each keypoint to make it rotation invariance.</p>
@@ -2796,8 +2826,8 @@ The highest peak in the histogram is taken and any peak above 80% of it is also 
 <p>To do this, a 16x16 window around the keypoint is taken. It is divided into 16 sub-blocks of 4x4 size.
 <img alt="c" src="../c.png" />
 For each sub-block, 8 bin orientation histogram is created.
-<img alt="d" src="../d.png" />
-So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 directions give 128 bin values. It is represented as a feature vector to form keypoint descriptor. This feature vector introduces a few complications. We need to get rid of them before finalizing the fingerprint.</p>
+<img alt="d" src="../d.png" /></p>
+<p>So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 directions give 128 bin values. It is represented as a feature vector to form keypoint descriptor. This feature vector introduces a few complications. We need to get rid of them before finalizing the fingerprint.</p>
 <ul>
 <li>Rotation dependence 
   The feature vector uses gradient orientations. 

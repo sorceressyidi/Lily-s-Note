@@ -931,15 +931,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#ransac" class="md-nav__link">
     RANSAC
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-blending" class="md-nav__link">
+    Image Blending
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1262,6 +1269,8 @@
       
         
       
+        
+      
     
     
     
@@ -1298,6 +1307,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5 Digital Hardware Implementation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
         
   
@@ -1318,11 +1347,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Chapter 7 Digital Hardware Implementation
+    Chapter 7 Memory Basics
   </span>
   
 
@@ -2667,15 +2696,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#ransac" class="md-nav__link">
     RANSAC
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-blending" class="md-nav__link">
+    Image Blending
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2723,7 +2759,7 @@
 </ul>
 <h2 id="the-harris-operator">The Harris operator<a class="headerlink" href="#the-harris-operator" title="Permanent link">&para;</a></h2>
 <ul>
-<li><span class="arithmatex">\(\lambda_-\)</span>  is a variant of the “Harris operator” for feature detection</li>
+<li><span class="arithmatex">\(\lambda_-\)</span>  is a variant of the <strong>Harris operator</strong> for feature detection</li>
 </ul>
 <p><span class="arithmatex">\(f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}\)</span></p>
 <ul>
@@ -2802,41 +2838,48 @@
 <ul>
 <li>speeded up robust features</li>
 </ul>
+<p><img alt="10" src="../10.png" /></p>
 <h3 id="1feature-extraction">(1)Feature Extraction<a class="headerlink" href="#1feature-extraction" title="Permanent link">&para;</a></h3>
 <p><strong>Basic Hessian matrix approximation.</strong></p>
 <h4 id="aintegral-images">a.Integral images<a class="headerlink" href="#aintegral-images" title="Permanent link">&para;</a></h4>
 <p>The Integral Image or <a href="http://en.wikipedia.org/wiki/Summed_area_table"><em>Summed-Area Table</em></a> was introduced in 1984. The Integral Image is used as a quick and effective way of calculating the sum of values (pixel values) in a given image — or a rectangular subset of a grid (the given image). It can also, or is mainly, used for calculating the average intensity within a given image.</p>
 <p><img alt="6" src="../6.png" /></p>
 <h4 id="bhessian-matrix-based-interest-points">b.Hessian matrix-based interest points<a class="headerlink" href="#bhessian-matrix-based-interest-points" title="Permanent link">&para;</a></h4>
-<p>Surf uses the Hessian matrix because of its good performance in computation time and accuracy. Rather than using a different measure for selecting the location and the scale (Hessian-Laplace detector), surf relies on the <strong>determinant of the Hessian matrix</strong> for both. </p>
+<p><span class="arithmatex">\(SURF\)</span> uses the Hessian matrix because of its good performance in computation time and accuracy. Rather than using a different measure for selecting the location and the scale (Hessian-Laplace detector), surf relies on the <strong>determinant of the Hessian matrix</strong> for both. </p>
 <p>For <strong>adapt to any scale</strong>, we filtered the image by a Gaussian kernel, so given a point <span class="arithmatex">\(X = (x, y)\)</span>, the Hessian matrix <span class="arithmatex">\(H(x, σ)\)</span> in x at scale σ is defined as:</p>
 <p><span class="arithmatex">\(H(\vec{x},\sigma)=\begin{bmatrix}L_{xx}(x,\sigma)&amp;L_{xy}(x,\sigma)\\ L_{xy}(x,\sigma)&amp;L_{yy}(x,\sigma)\end{bmatrix}\)</span></p>
-<p>where <span class="arithmatex">\(L_{xx}(x, σ)\)</span> is the convolution of the Gaussian second order derivative with the image I in point x, and similarly for <span class="arithmatex">\(L_{xy} (x, σ)\)</span> and <span class="arithmatex">\(L_{yy} (x, σ)\)</span>. </p>
+<p>where <span class="arithmatex">\(L_{xx}(x, σ)\)</span> is the convolution of the <strong>Gaussian second order derivative</strong> with the image <span class="arithmatex">\(I\)</span> in point <span class="arithmatex">\(x\)</span>, and similarly for <span class="arithmatex">\(L_{xy} (x, σ)\)</span> and <span class="arithmatex">\(L_{yy} (x, σ)\)</span>. </p>
 <p>Gaussians are optimal for scale-space analysis but in practice, they have to be discretized and cropped. This leads to a loss in repeatability under image rotations around odd multiples of <span class="arithmatex">\(π /4\)</span>. This weakness holds for Hessian-based detectors in general. <strong>Nevertheless</strong>, the detectors still perform well, and the slight decrease in performance does not outweigh the advantage of fast convolutions brought by the discretization and cropping.</p>
 <p>After Lowe’s success with <strong>LoG approximations(SIFT)</strong>, SURF pushes the approximation(both convolution and second-order derivative) even further with box filters. These approximate second-order Gaussian derivatives and can be evaluated at a very low computational cost using <strong>integral images</strong> and independently of size, and this is part of the reason why SURF is fast.</p>
 <ul>
-<li>eg <span class="arithmatex">\(d^2L(x)/dx^2=(L(x+1)-L(x))-(L(x)-L(x-1))=-2*L(x)+L(x+1)+L(x-1)\)</span></li>
+<li>eg </li>
 </ul>
+<p><span class="arithmatex">\(d^2L(x)/dx^2=(L(x+1)-L(x))-(L(x)-L(x-1))=-2*L(x)+L(x+1)+L(x-1)\)</span></p>
 <p><img alt="7" src="../7.png" /></p>
 <p><img alt="8" src="../8.png" /></p>
-<p>The <span class="arithmatex">\(9 × 9\)</span> box filters in the above images are approximations for Gaussian second order derivatives with σ = 1.2. We denote these approximations by <span class="arithmatex">\(D_{xx}, D_{yy}, and D_{xy}\)</span>. Now we can represent the determinant of the Hessian (approximated) as:</p>
-<p><span class="arithmatex">\(det(H_{approx})=D_{xx}D_{yy}-(wD_{xy})^2\)</span>   <span class="arithmatex">\(w=0.9 (Bay’s\ suggestion)\)</span></p>
+<p>The <span class="arithmatex">\(9 × 9\)</span> box filters in the above images are approximations for Gaussian second order derivatives with σ = 1.2.</p>
+<p>We denote these approximations by <span class="arithmatex">\(D_{xx}, D_{yy}, and D_{xy}\)</span>. </p>
+<p>Now we can represent the determinant of the Hessian (approximated) as:<span class="arithmatex">\(det(H_{approx})=D_{xx}D_{yy}-(wD_{xy})^2\)</span>   <span class="arithmatex">\(w=0.9 (Bay’s\ suggestion)\)</span></p>
 <h4 id="cscale-space-representation">c.Scale-space representation<a class="headerlink" href="#cscale-space-representation" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>SURF can be considered as a faster feature extraction method compared to SIFT.</p>
 <p>It processes the original image directly using box filters at different <strong>scales</strong>, eliminating the need to <strong>build multiple layers</strong> of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.</p>
-<p>我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分</p>
-<p>If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. However, this is just a logical understanding, and the actual results may vary due to the details of filter processing, such as edge handling, stride of the filter, and other factors.</p>
+<p>我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)</p>
+<p>If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. </p>
+<p>However, this is just a logical understanding, and the actual results may vary due to the details of filter processing, such as edge handling, stride of the filter, and other factors.</p>
 </blockquote>
 <p><img alt="9" src="../9.png" /></p>
 <blockquote>
 <p>这里可以看到一个问题，找到的局部最大值如果放回原图的尺度，其实是对应着一个区域的，那么如何确定一个精确的坐标呢？</p>
 </blockquote>
 <p>To locate the precise position of feature points, we apply a <strong>Taylor expansion</strong> to the Hessian matrix at the local maximum points. This approximates a smooth surface depicting the variation of image intensity around the feature points. Then, we identify the peak of this smooth surface. Compared to the original discrete maximum point, the location of this peak is more accurate. Hence, we refer to it as the true location of the feature point.</p>
+<h5 id="interpolation">Interpolation<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h5>
+<p>For each local maximum, need to interpolate to get true location (to overcome discretization effects)</p>
+<p><img alt="11" src="../11.png" /></p>
 <h3 id="2feature-description">(2)Feature Description<a class="headerlink" href="#2feature-description" title="Permanent link">&para;</a></h3>
 <h4 id="orientation-assignment">Orientation Assignment<a class="headerlink" href="#orientation-assignment" title="Permanent link">&para;</a></h4>
 <ol>
-<li>First calculate the Haar-wavelet responses in x and y-direction, and this in a circular neighborhood of radius <span class="arithmatex">\(6*s\)</span> around the keypoint, with <span class="arithmatex">\(s\)</span> the scale at which the keypoint was detected. </li>
+<li>First calculate the Haar-wavelet responses in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>-direction, and this in a circular neighborhood of radius <span class="arithmatex">\(6*s\)</span> around the keypoint, with <span class="arithmatex">\(s\)</span> the scale at which the keypoint was detected. </li>
 </ol>
 <p>Also, the sampling step is scale dependent and chosen to be s, and the wavelet responses are computed at that current scale s. </p>
 <p>Accordingly, at high scales the size of the wavelets is big. Therefore integral images are used again for fast filtering.</p>
@@ -2847,12 +2890,25 @@
 <h4 id="descriptor-components">Descriptor Components<a class="headerlink" href="#descriptor-components" title="Permanent link">&para;</a></h4>
 <p>Now it’s time to extract the descriptor</p>
 <ol>
-<li>The first step consists of constructing a square region centered around the keypoint and oriented along the orientation we already got above. The size of this window is 20s.</li>
-<li>Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. For reasons of simplicity, we call <strong>dx</strong> the Haar wavelet response in the horizontal direction and <strong>dy</strong> the Haar wavelet response in the vertical direction (filter size 2s). To increase the robustness towards geometric deformations and localization errors, the responses dx and <strong>dy</strong> are first weighted with a Gaussian (σ = 3.3s) centered at the keypoint.</li>
+<li>
+<p>The first step consists of constructing a square region centered around the keypoint and oriented along the orientation we already got above. The size of this window is 20s.</p>
+</li>
+<li>
+<p>Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. </p>
+</li>
 </ol>
+<p>For reasons of simplicity, we call <strong>dx</strong> the <strong>Haar wavelet response</strong> in the horizontal direction and <strong>dy</strong> the Haar wavelet response in the vertical direction (filter size 2s). </p>
+<p>To increase the robustness towards geometric deformations and localization errors, the responses <strong>dx</strong> and <strong>dy</strong> are first weighted with a Gaussian (σ = 3.3s) centered at the keypoint.</p>
 <p><img alt="img" src="https://miro.medium.com/v2/resize:fit:900/0*nda8uDh7EYfGtbJW.png" /></p>
-<p>Then, the wavelet responses <strong>dx</strong> and <strong>dy</strong> are summed up over each subregion and form a first set of entries to the feature vector. In order to bring in information about the polarity of the intensity changes, we also extract the sum of the absolute values of the responses, <strong>|dx|</strong> and <strong>|dy|</strong>. Hence, each sub-region has a four-dimensional descriptor vector v for its underlying intensity structure <strong>V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)</strong>. This results in a descriptor vector for all 4×4 sub-regions of <strong>length 64</strong>(In <strong>Sift</strong>, our descriptor is the <strong>128-D vector</strong>, so this is part of the reason that SURF is faster than Sift).</p>
-<h2 id="ransac">RANSAC<a class="headerlink" href="#ransac" title="Permanent link">&para;</a></h2>
+<p>Then, the wavelet responses <strong>dx</strong> and <strong>dy</strong> are summed up over each subregion and form a first set of entries to the feature vector.</p>
+<p>In order to bring in information about the polarity of the intensity changes, we also extract the sum of the absolute values of the responses, <strong>|dx|</strong> and <strong>|dy|</strong>. </p>
+<p>Hence, each sub-region has a four-dimensional descriptor vector <span class="arithmatex">\(\vec{v}\)</span> for its underlying intensity structure <span class="arithmatex">\(V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)\)</span>.</p>
+<p>This results in a descriptor vector for all 4×4 sub-regions of <strong>length 64.</strong>(In <span class="arithmatex">\(SIFT\)</span>, our descriptor is the <strong>128-D vector</strong>, so this is part of the reason that SURF is faster than Sift).</p>
+<h3 id="ransac">RANSAC<a class="headerlink" href="#ransac" title="Permanent link">&para;</a></h3>
+<p>A further refinement of matches.--<strong>RANdom SAmple Consensus </strong></p>
+<p>In short words, <span class="arithmatex">\(RANSAC\)</span> fits <span class="arithmatex">\(N\)</span> models using different random sample <em>S</em> of the whole available data each time. Then, for each model it evaluates its performance <em>P</em> (i.e. number of inliers or outliers) and chooses the best one. Note that RANSAC doesn’t determine what method should you use to find model parameters.(least squares for example)</p>
+<p><img alt="12" src="../12.png" /></p>
+<h3 id="image-blending">Image Blending<a class="headerlink" href="#image-blending" title="Permanent link">&para;</a></h3>
 
   <hr>
 <div class="md-source-file">
