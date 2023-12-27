@@ -1,4 +1,8 @@
-# The Hydrogen Atom
+#  The Hydrogen Atom
+
+https://www.youtube.com/watch?v=-Y0XL-K0jy0
+
+https://youtube.com/watch?v=acN7E7AUHPk
 
 ## Mystery of the Hydrogen Atom
 
@@ -36,18 +40,16 @@ $L=n\bar{h}$ means that the length of the orbit is an integer multiple of $λ$. 
 *  Bohr to quantize the electron orbit $L=rmv=n\bar{h} \Rightarrow v=\frac{n\bar{h}}{mr}$
 * Combining with the Newtonian result $\frac{e^2}{4\pi\epsilon_0r^2}=m\frac{v^2}{r}$ we find $r_n =n^2a_B$. where the characteristic length $a_B=\frac{\bar{h}^2}{me^2/(4\pi\epsilon_0)}=0.529 Å$
 
-In the Bohr model of the hydrogen atom, the electron’s orbital radius r is quantized and the smallest possible orbital radius (for n = 1) is $a_B$, which is called the **Bohr** **radius**.
+In the Bohr model of the hydrogen atom, the electron’s orbital radius r is quantized and the smallest possible orbital radius (for $n = 1$) is $a_B$, which is called the **Bohr** **radius**.
 
-*  Can you obtain the length scale, alternatively, from dimension analysis?
-
-In order that the attraction between electron and nucleus does not simply collapse them together in the Bohr model, the electron should not get any closer to the nucleus than orbital radius aB by taking $n = 0$.
+*  Can you obtain the length scale, alternatively, from dimension analysis?sIn order that the attraction between electron and nucleus does not simply collapse them together in the Bohr model, the electron should not get any closer to the nucleus than orbital radius aB by taking 
 
 * The energy of the hydrogen atom, according to the Bohr model, is then $E_n=\frac{1}{2}mv^2-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r}=-\frac{E_R}{n^2}$ where $E_R=\frac{me^4/(4\pi\epsilon_0)^2}{2\bar{h}^2}=13.6eV$
 * We still have, for each orbit  $E=E_k+E_c=\frac{E_c}{2}=-E_k$
 
 ## The Hydrogen Spectrum
 
-The energy of a hydrogen atom (or, equivalently, of its electron) changes when the atom emits or absorbs light. Emission and absorption involve a quantum of light according to $\bar{h}ω){nm} =E_R(\frac{1}{n^2} −\frac{1}{m^2})$  for integers $m > n$.
+The energy of a hydrogen atom (or, equivalently, of its electron) changes when the atom emits or absorbs light. Emission and absorption involve a quantum of light according to $\bar{h}ω_{nm} =E_R(\frac{1}{n^2} −\frac{1}{m^2})$  for integers $m > n$.
 
 The wavelengths of the emitted or absorbed light are given by $ \frac{1}{\lambda}=\frac{E_R}{hc}(\frac{1}{n^2}-\frac{1}{m^2})$
 
@@ -61,7 +63,7 @@ The wavelengths of the emitted or absorbed light are given by $ \frac{1}{\lambda
 
 ![2](2.png)
 
-## GS Energy from Uncertainty Principle
+## GS Energy from Uncertainty Principle[Ground State]
 
 The ground-state energy is the **lowest energy** allowed by Heisenberg’s uncertainty principle.
 
@@ -71,18 +73,65 @@ The ground-state energy is the **lowest energy** allowed by Heisenberg’s uncer
 
 To find the minimal energy, we solve for $\triangle r$   $\Rightarrow\frac{dE}{d(\triangle r)}=0 \Rightarrow \triangle r = \frac{\bar{h}^2}{me^2/(4\pi\epsilon_0)}=a_B$ and $E=-\frac{me^4/(4\pi\epsilon_0)^2}{2\bar{h}^2}=-E_R$
 
-The energy of the ground state (or any stationary state) is uniquely determined. This is because of the energy-time uncertainty principle, $∆t · ∆E ≥ \bar{h}/2$.In the extreme case of a stationary state, $∆t = ∞$, so we have $∆E = 0$.
- Note, however, both kinetic energy and potential energy have uncertainties, due to the uncertainties of position and momentum.
+The energy of the ground state (or any stationary state) is **uniquely determined**. 「Though the uncertainty of $t\ \&\ x$」
+
+This is because of the energy-time uncertainty principle, $∆t · ∆E ≥ \bar{h}/2$.
+
+* In the extreme case of a stationary state, $∆t = ∞$, so we have $∆E = 0$.
+
+Note, however, both kinetic energy and potential energy have **uncertainties**, due to the uncertainties of position and momentum.
+
+Hydrogen is a three-dimensional, finite electron trap, with walls that vary in depth with distance.
 
 ## Schroedinger's Equation for the H-atom
 
-### Hydrogen Wave Functions
+![3](3.png)
 
+![4](4.png)
 
+#### Derive
+
+![1](1.jpg)
+
+![2](2.jpg)
+
+![3](3.jpg)
+
+![5](5.png)
+
+![14](14.png)
+
+![4](4.jpg)
+
+![6](6.png)
+
+![7](7.png)
+
+![8](8.png)
+
+![9](9.png)
+
+![10](10.png)
 
 ### Ground State Wave Function
 
+  $ψ_{100}(\vec{r})=R_{10}(r)=\frac{1}{\sqrt{\pi}a_B^{3/2}}e^{\frac{r}{a_B}}$
+
+Note that the hydrogen atom in its ground state has **zero angular** momentum ($l = 0$ more details will be discussed in the next lecture), which is not predicted in the Bohr model.)
+
+The probability that the electron can be detected in any given (infinitesimal) volume element $dV$ located at radius $r$ from the center of the atom is $|ψ_{100}(\vec{r})|^2dV.$
+
+* Define radial Probability density $P(r)$ such that $P(r)dr=|ψ_{100}(\vec{r})|^2dV\ (dV=4\pi r^2)$  
+* $P(r)$ takes a  maximum at $r=a_B$
+  * All we can ever know abount the location of the electron in the ground state of the hydrogen atom is the radial probability density
+  * Dot Plot
+
 ### Excited States of the Hydrogen Atom
+
+![11](11.png)
+
+![12](12.png)
 
 ### Bohr’s Correspondence Principle
 
+![13](13.png)

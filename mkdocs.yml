@@ -154,6 +154,8 @@ nav:
         - matter wave: GP/matter wave/matter.md
         - Schroedinger's Equation : GP/sch/sch.md
         - Quantum Wells: GP/QW/QW.md
+        - The Hydrogen Atom : GP/HA/HA.md
+        - Angular Momentum and Spin: GP/AMAS/AMAS.md
     - Probability Theory :
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
