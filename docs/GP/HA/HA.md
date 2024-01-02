@@ -4,6 +4,12 @@ https://www.youtube.com/watch?v=-Y0XL-K0jy0
 
 https://youtube.com/watch?v=acN7E7AUHPk
 
+### Quiz
+
+https://www.youtube.com/watch?v=9GOuZAh9Wg0
+
+
+
 ## Mystery of the Hydrogen Atom
 
 Because the proton’s mass is much greater than the electron’s mass, we shall assume that the proton is fixed in place. So, the atom is a fixed potential trap with the electron moving around inside it.
