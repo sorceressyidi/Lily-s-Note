@@ -17,11 +17,12 @@
 
 <details>
   <summary>Circuit Delay Model</summary>
-  <img src="1.png" >
-  <img src="2.png" >
-  <img src="3.png" >
-  <img src="4.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/1.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/2.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/3.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/4.png" >
 </details>
+
 
 ### Latches
 
@@ -50,8 +51,9 @@
 
 <details>
   <summary>Details</summary>
-  <img src="8.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/8.png" >
 </details>
+
 
 #### D Latch
 
@@ -126,8 +128,9 @@
 
 <details>
   <summary>Details</summary>
-  <img src="12.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/12.png" >
 </details>
+
 
 #### Edge-Triggered D Flip-Flop
 
@@ -167,8 +170,9 @@ More Specifically
 
 <details>
   <summary>Summary</summary>
-  <img src="16.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/16.png" >
 </details>
+
 
 ## Sequential Circuit Design
 
@@ -186,16 +190,55 @@ Outputs are a function of inputs **AND** states
 
 <details>
   <summary>Details</summary>
-  <img src="17.png" >
-  <img src="18.png" >
-  <img src="19.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/17.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/18.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/19.png" >
 </details>
+
 
 #### Equivalent State
 
+![20](20.png)
 
+#### Circuit and System Level Timing
+
+* $t_p$ clock period  --The interval between occurrences of a specific clock edge in a
+
+  periodic clock
+
+* $t_{pd,COMB}$ -- total delay of combinational logic along the path from flip-flop output to
+
+  flip-flop input
+
+* $t_{slack}$ -- extra time in the clock period in addition to the sum of the delays and
+
+  setup time on a path : Must be greater than or equal to zero on all paths for correct operation
+
+* $t_{pd,FF}$ -- Flip-Flop's delay
+
+![21](21.png)
+
+* Timing Equations
+
+  $t_p=t_{slack}+(t_{pd,FF}+t_{pd,COMB}+t_s)$
+
+  **$t_{stack}$ must be greater than or equal to zero**  so $t_{p} \ge max(t_{pd,FF}+t_{pd,COMB}+t_s)$
+
+  from all paths from flip-flop output to flip-flop input
+
+* Can be calculated more precisely by using $t_{PHL}$ and $t_{PLH}$ values instead of $t_{pd}$ values, but requires consideration of inversions on paths
+
+* Calculation[Refer to PPT]
 
 ## State Machine Design
+
+<details>
+  <summary>Example Recognize 1101</summary>
+  <td>Milley Model</td>
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/22.png" >
+  <td>Moore Model</td>
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/23.png" >
+</details>
 
 
 
