@@ -688,6 +688,8 @@
       
         
       
+        
+      
     
     
     
@@ -966,6 +968,26 @@
   
   <span class="md-ellipsis">
     Image feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deep Learning
   </span>
   
 
@@ -2911,19 +2933,31 @@
 <li>Computational workload: <span class="arithmatex">\(2N^2\rightarrow2Nlog_2N\)</span></li>
 </ul>
 <h4 id="fft-principle">FFT Principle<a class="headerlink" href="#fft-principle" title="Permanent link">&para;</a></h4>
+<ul>
+<li>勘误： <span class="arithmatex">\(F(k)=\frac{1}{N}\sum_{n=0}^{N-1}f(n)e^{-j2\pi kn/N}\)</span></li>
+</ul>
 <p><img alt="8" src="../8.png" /></p>
 <p><img alt="9" src="../9.png" /></p>
 <p><img alt="10" src="../10.png" /></p>
-<p><strong>HENCE   <span class="arithmatex">\(F(k+M)=\lfloor F_e(k)-F_o(k)W_{2M}^k\rfloor\)</span>  </strong></p>
-<p>意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 N/2 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值。</p>
+<ul>
+<li>
+<p><strong>HENCE   <span class="arithmatex">\(F(k+M)=\lfloor F_e(k)-F_o(k)W_{2M}^k\rfloor\)</span>!!</strong> </p>
+</li>
+<li>
+<p>意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 <strong>N/2</strong> 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值</p>
+</li>
+</ul>
 <h4 id="magnitude-and-phase-of-dft">Magnitude and Phase of DFT<a class="headerlink" href="#magnitude-and-phase-of-dft" title="Permanent link">&para;</a></h4>
 <p>Hint: use inverse DFT to reconstruct the image by magnitude or phase only information</p>
 <ul>
 <li>
-<p>magnitude determines the contribution of each component!</p>
+<p>magnitude determines the contribution of each component!(cannot be used to reconstruct a image!)</p>
 </li>
 <li>
-<p><strong>phase</strong> determineswhich components are present!</p>
+<p><strong>phase</strong> determines which components are present!</p>
+</li>
+<li>
+<p><strong>PHASE</strong> is more important!</p>
 </li>
 </ul>
 
@@ -2932,7 +2966,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月7日 16:14:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月5日 16:04:01</span>
       
         <br>
         创建日期:

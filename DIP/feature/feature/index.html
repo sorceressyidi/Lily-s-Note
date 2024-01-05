@@ -16,7 +16,7 @@
         <link rel="prev" href="../../Fourier/Fourier/">
       
       
-        <link rel="next" href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/">
+        <link rel="next" href="../../DL/DL/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -688,6 +688,8 @@
       
         
       
+        
+      
     
     
     
@@ -929,6 +931,19 @@
     Harris-Laplacian
   </a>
   
+    <nav class="md-nav" aria-label="Harris-Laplacian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orientation" class="md-nav__link">
+    Orientation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1020,9 +1035,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#image-stitching" class="md-nav__link">
+    Image Stitching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ransac" class="md-nav__link">
     RANSAC
   </a>
+  
+    <nav class="md-nav" aria-label="RANSAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    Pros:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    Cons:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1030,6 +1072,40 @@
   <a href="#image-blending" class="md-nav__link">
     Image Blending
   </a>
+  
+    <nav class="md-nav" aria-label="Image Blending">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-pyramids" class="md-nav__link">
+    Image Pyramids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-pyramids" class="md-nav__link">
+    Gaussian Pyramids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laplacian-pyramid" class="md-nav__link">
+    Laplacian Pyramid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1042,6 +1118,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2826,6 +2922,19 @@
     Harris-Laplacian
   </a>
   
+    <nav class="md-nav" aria-label="Harris-Laplacian">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orientation" class="md-nav__link">
+    Orientation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2917,9 +3026,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#image-stitching" class="md-nav__link">
+    Image Stitching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ransac" class="md-nav__link">
     RANSAC
   </a>
+  
+    <nav class="md-nav" aria-label="RANSAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    Pros:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    Cons:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2927,6 +3063,40 @@
   <a href="#image-blending" class="md-nav__link">
     Image Blending
   </a>
+  
+    <nav class="md-nav" aria-label="Image Blending">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-pyramids" class="md-nav__link">
+    Image Pyramids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-pyramids" class="md-nav__link">
+    Gaussian Pyramids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laplacian-pyramid" class="md-nav__link">
+    Laplacian Pyramid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2981,7 +3151,7 @@
 <ul>
 <li><span class="arithmatex">\(\lambda_-\)</span>  is a variant of the <strong>Harris operator</strong> for feature detection</li>
 </ul>
-<p><span class="arithmatex">\(f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}\)</span></p>
+<p><span class="arithmatex">\(f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}=\frac{determinant(H)}{trace(H)}\)</span></p>
 <ul>
 <li>The trace is the sum of the diagonals, i.e., <span class="arithmatex">\(trace(H) = h_{11} + h_{22}\)</span></li>
 <li>Very similar to <span class="arithmatex">\(\lambda_-\)</span> but less expensive (no square root)</li>
@@ -2993,10 +3163,10 @@
 <p>Rotation Invariance</p>
 </li>
 <li>
-<p>Invariance to image intensity change</p>
+<p>Partial Invariance to additive and multiplicative intensity changes</p>
 </li>
 <li>
-<p>Not invariance to scaling</p>
+<p>Not invariance to scaling. !!!</p>
 </li>
 </ul>
 <h2 id="scale-invariant-detection">Scale Invariant Detection<a class="headerlink" href="#scale-invariant-detection" title="Permanent link">&para;</a></h2>
@@ -3007,7 +3177,7 @@
 <p><img alt="b" src="../b.png" /></p>
 <h3 id="harris-laplacian">Harris-Laplacian<a class="headerlink" href="#harris-laplacian" title="Permanent link">&para;</a></h3>
 <p>We define the characteristic scale as the scale that produces peak of Laplacian response</p>
-<p><strong>Stage 1: Multiscale Harris Corner Detection</strong></p>
+<p><strong>Stage 1: Initialization--Multiscale Harris Corner Detection</strong></p>
 <ol>
 <li><strong>Image Pyramid Construction:</strong> Begin by constructing a scale-space pyramid of the image, generating different scales by applying Gaussian smoothing and downsampling.</li>
 <li><strong>Computation of Harris Corner Response:</strong> At each scale, calculate the corner response using the Harris corner detection method. This typically involves computing local gradients at each pixel position, forming the autocorrelation matrix, calculating the corner response function, and identifying <strong>local maxima</strong> as keypoints.</li>
@@ -3017,9 +3187,12 @@
 <ol>
 <li><strong>Laplacian Scale Selection:</strong> </li>
 </ol>
-<p>The Laplacian is an operator used to detect edges and texture variations in an image by computing the second derivative at each point. In the context of scale selection, the Laplacian serves to measure the changes in the image at different scales.</p>
-<p>Example: Consider an image containing a circle. As you view this circle at different scales, its edges will exhibit varying degrees of change. By applying the Laplacian at different scales, we can observe the intensity of edge variations. </p>
-<p>The optimal scale for a keypoint is where the maximum edge response occurs, indicating that the details of the keypoint are most pronounced at that scale.</p>
+<p>The Laplacian is an operator used to detect edges and texture variations in an image by computing the second derivative at each point. </p>
+<p>In the context of scale selection, the Laplacian serves to measure the changes in the image at different scales.</p>
+<ul>
+<li>Example: Consider an image containing a circle. As you view this circle at different scales, its edges will exhibit varying degrees of change. By applying the Laplacian at different scales, we can observe <strong>the intensity of edge variations.</strong></li>
+</ul>
+<p>The optimal scale for a keypoint is where the <strong>maximum edge response occurs</strong>, indicating that the details of the keypoint are most pronounced at that scale.</p>
 <ol start="2">
 <li><strong>Keypoint Filtering:</strong> </li>
 </ol>
@@ -3029,8 +3202,10 @@
 <h5 id="local-extrema-detection">Local Extrema Detection<a class="headerlink" href="#local-extrema-detection" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Maxima and minima</li>
-<li>Compare <span class="arithmatex">\(x\)</span> with its 26 neighbors at 3 scales </li>
+<li>Compare <span class="arithmatex">\(x\)</span> with its 26 neighbors at 3 scales</li>
 </ul>
+<h4 id="orientation">Orientation<a class="headerlink" href="#orientation" title="Permanent link">&para;</a></h4>
+<p><img alt="13" src="../13.png" /> </p>
 <h3 id="sift">SIFT<a class="headerlink" href="#sift" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Let's illustrate the construction process of a Gaussian pyramid with a simple example. We assume that each group contains S layers, and the scale differences within each group are achieved through downsampling by a factor of 2 and using different Gaussian blur parameters σ.</p>
@@ -3049,10 +3224,14 @@
 <p>This process can be repeated iteratively, and each round of Gaussian blur and downsampling constructs one level of the pyramid. Within each group, we have S images at different scales (determined by different Gaussian blur parameters), and each image, obtained by downsampling, aligns with the corresponding image from the previous group in terms of scale.</p>
 <p>This ensures that the construction of the pyramid is "bottom-up," reflecting the features of the image at different scales.</p>
 </blockquote>
-<p><strong>REFER TO ML-4360 Structure from motion </strong></p>
+<ul>
+<li><strong>REFER TO ML-4360 Structure from motion </strong></li>
+</ul>
+<p><img alt="14" src="../14.png" /></p>
 <h3 id="visual-word-generation">Visual Word Generation<a class="headerlink" href="#visual-word-generation" title="Permanent link">&para;</a></h3>
 <p>Based on the collected images we detect their interest points with Difference of Gaussian, and extract the SIFT descriptors. </p>
 <p>The extracted descriptors are then clustered to generate the vocabulary tree with the hierarchical <strong>k-means clustering</strong>. In this experiment we generated a visual vocabulary containing 32357 visual words</p>
+<p><img alt="15" src="../15.png" /></p>
 <h2 id="surf-detectors-and-descriptors">SURF detectors and descriptors<a class="headerlink" href="#surf-detectors-and-descriptors" title="Permanent link">&para;</a></h2>
 <p>Reference to <a href="https://medium.com/@deepanshut041/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e">https://medium.com/@deepanshut041/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e</a></p>
 <ul>
@@ -3072,7 +3251,7 @@
 <p>Gaussians are optimal for scale-space analysis but in practice, they have to be discretized and cropped. This leads to a loss in repeatability under image rotations around odd multiples of <span class="arithmatex">\(π /4\)</span>. This weakness holds for Hessian-based detectors in general. <strong>Nevertheless</strong>, the detectors still perform well, and the slight decrease in performance does not outweigh the advantage of fast convolutions brought by the discretization and cropping.</p>
 <p>After Lowe’s success with <strong>LoG approximations(SIFT)</strong>, SURF pushes the approximation(both convolution and second-order derivative) even further with box filters. These approximate second-order Gaussian derivatives and can be evaluated at a very low computational cost using <strong>integral images</strong> and independently of size, and this is part of the reason why SURF is fast.</p>
 <ul>
-<li>eg </li>
+<li>eg.</li>
 </ul>
 <p><span class="arithmatex">\(d^2L(x)/dx^2=(L(x+1)-L(x))-(L(x)-L(x-1))=-2*L(x)+L(x+1)+L(x-1)\)</span></p>
 <p><img alt="7" src="../7.png" /></p>
@@ -3081,10 +3260,13 @@
 <p>We denote these approximations by <span class="arithmatex">\(D_{xx}, D_{yy}, and D_{xy}\)</span>. </p>
 <p>Now we can represent the determinant of the Hessian (approximated) as:<span class="arithmatex">\(det(H_{approx})=D_{xx}D_{yy}-(wD_{xy})^2\)</span>   <span class="arithmatex">\(w=0.9 (Bay’s\ suggestion)\)</span></p>
 <h4 id="cscale-space-representation">c.Scale-space representation<a class="headerlink" href="#cscale-space-representation" title="Permanent link">&para;</a></h4>
+<p><img alt="16" src="../16.png" /></p>
 <blockquote>
 <p>SURF can be considered as a faster feature extraction method compared to SIFT.</p>
-<p>It processes the original image directly using box filters at different <strong>scales</strong>, eliminating the need to <strong>build multiple layers</strong> of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.</p>
-<p>我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)</p>
+<p>It processes the original image <strong>directly</strong> using box filters at different <strong>scales</strong>, eliminating the need to <strong>build multiple layers</strong> of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.</p>
+<ul>
+<li>我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)</li>
+</ul>
 <p>If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. </p>
 <p>However, this is just a logical understanding, and the actual results may vary due to the details of filter processing, such as edge handling, stride of the filter, and other factors.</p>
 </blockquote>
@@ -3099,12 +3281,12 @@
 <h3 id="2feature-description">(2)Feature Description<a class="headerlink" href="#2feature-description" title="Permanent link">&para;</a></h3>
 <h4 id="orientation-assignment">Orientation Assignment<a class="headerlink" href="#orientation-assignment" title="Permanent link">&para;</a></h4>
 <ol>
-<li>First calculate the Haar-wavelet responses in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>-direction, and this in a circular neighborhood of radius <span class="arithmatex">\(6*s\)</span> around the keypoint, with <span class="arithmatex">\(s\)</span> the scale at which the keypoint was detected. </li>
+<li>First calculate the Haar-wavelet responses in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>-direction, and this in a circular neighborhood of radius <span class="arithmatex">\(6*s\)</span> around the keypoint, with <span class="arithmatex">\(s\)</span> the <strong>scale</strong> at which the keypoint was detected. </li>
 </ol>
 <p>Also, the sampling step is scale dependent and chosen to be s, and the wavelet responses are computed at that current scale s. </p>
 <p>Accordingly, at high scales the size of the wavelets is big. Therefore integral images are used again for fast filtering.</p>
 <ol start="2">
-<li>Then we calculate the sum of vertical and horizontal wavelet responses in a scanning area, then change the scanning orientation (add <span class="arithmatex">\(π/3\)</span>), and re-calculate, until we find the orientation with largest sum value, this orientation is <strong>the main</strong> orientation of feature descriptor.</li>
+<li>Then we calculate the sum of vertical and horizontal wavelet responses in a scanning area, then change the scanning orientation (add <span class="arithmatex">\(π/3\)</span>), and re-calculate, until we find the orientation with <strong>largest sum value</strong>, this orientation is <strong>the main</strong> orientation of feature descriptor.</li>
 </ol>
 <p><img alt="img" src="https://miro.medium.com/v2/resize:fit:1400/0*UDe_M_7xSVNM8_h_.jpg" /></p>
 <h4 id="descriptor-components">Descriptor Components<a class="headerlink" href="#descriptor-components" title="Permanent link">&para;</a></h4>
@@ -3114,7 +3296,7 @@
 <p>The first step consists of constructing a square region centered around the keypoint and oriented along the orientation we already got above. The size of this window is 20s.</p>
 </li>
 <li>
-<p>Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. </p>
+<p>Then the region is split up regularly into smaller <strong>4 × 4</strong> square sub-regions. For each sub-region, we compute a few simple features at <strong>5×5</strong> regularly spaced sample points. </p>
 </li>
 </ol>
 <p>For reasons of simplicity, we call <strong>dx</strong> the <strong>Haar wavelet response</strong> in the horizontal direction and <strong>dy</strong> the Haar wavelet response in the vertical direction (filter size 2s). </p>
@@ -3123,12 +3305,91 @@
 <p>Then, the wavelet responses <strong>dx</strong> and <strong>dy</strong> are summed up over each subregion and form a first set of entries to the feature vector.</p>
 <p>In order to bring in information about the polarity of the intensity changes, we also extract the sum of the absolute values of the responses, <strong>|dx|</strong> and <strong>|dy|</strong>. </p>
 <p>Hence, each sub-region has a four-dimensional descriptor vector <span class="arithmatex">\(\vec{v}\)</span> for its underlying intensity structure <span class="arithmatex">\(V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)\)</span>.</p>
-<p>This results in a descriptor vector for all 4×4 sub-regions of <strong>length 64.</strong>(In <span class="arithmatex">\(SIFT\)</span>, our descriptor is the <strong>128-D vector</strong>, so this is part of the reason that SURF is faster than Sift).</p>
+<p>This results in a descriptor vector for all 4×4 sub-regions of <strong>length 64.</strong></p>
+<ul>
+<li>(In <span class="arithmatex">\(SIFT\)</span>, our descriptor is the <strong>128-D vector</strong>, so this is part of the reason that SURF is faster than Sift).</li>
+</ul>
+<h3 id="image-stitching">Image Stitching<a class="headerlink" href="#image-stitching" title="Permanent link">&para;</a></h3>
+<p>Procedure</p>
+<ul>
+<li>Detect feature points in both images. --Build SIFT descriptors</li>
+<li>Find correponding pairs -- Match SIFT descriptors (Euclidean distance)</li>
+<li>Use these pairs to align the images --  Fitting the transformation</li>
+<li>RANSAC</li>
+<li>Image Blending</li>
+</ul>
 <h3 id="ransac">RANSAC<a class="headerlink" href="#ransac" title="Permanent link">&para;</a></h3>
+<p><img alt="17" src="../17.png" /></p>
 <p>A further refinement of matches.--<strong>RANdom SAmple Consensus </strong></p>
 <p>In short words, <span class="arithmatex">\(RANSAC\)</span> fits <span class="arithmatex">\(N\)</span> models using different random sample <em>S</em> of the whole available data each time. Then, for each model it evaluates its performance <em>P</em> (i.e. number of inliers or outliers) and chooses the best one. Note that RANSAC doesn’t determine what method should you use to find model parameters.(least squares for example)</p>
 <p><img alt="12" src="../12.png" /></p>
+<ul>
+<li>
+<p>How many samples are needed?</p>
+</li>
+<li>
+<p>Suppose <span class="arithmatex">\(w\)</span> is fraction of inliers (points from line).</p>
+</li>
+<li>
+<p><span class="arithmatex">\(n\)</span> points needed to define hypothesis (2 for lines)</p>
+</li>
+<li>
+<p><span class="arithmatex">\(k\)</span> samples chosen.</p>
+<p>Prob. that a single sample of n points is correct <span class="arithmatex">\(w^n\)</span></p>
+<p>Prob. that all k samples fail is: <span class="arithmatex">\((1-w^n)^k\)</span></p>
+<ul>
+<li>Choose k high enough to keep this below desired failure rate.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="18" src="../18.png" /></p>
+<ul>
+<li>
+<p>k-- iterations</p>
+</li>
+<li>
+<p>RANSAC divides data into inliers and outliers and yields estimate computed from minimal set of inliers.Improve this initial estimate with <strong>estimation over all inliers</strong> (e.g. with standard least-squares minimization).</p>
+</li>
+<li>
+<p>But this may change inliers, so alternate fitting with re-classification as inlier/outlier.</p>
+</li>
+</ul>
+<h4 id="pros">Pros:<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h4>
+<ul>
+<li>General method suited for a wide range of model fitting problems</li>
+<li>Easy to implement and easy to calculate its failure rate</li>
+</ul>
+<h4 id="cons">Cons:<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Only handles a moderate percentage of outliers without cost blowing up</li>
+<li>Many real problems have high rate of outliers (but sometimes selective choice of random subsets can help)</li>
+</ul>
+<p>A voting strategy, the Hough transform, can handle high percentage of outliers</p>
 <h3 id="image-blending">Image Blending<a class="headerlink" href="#image-blending" title="Permanent link">&para;</a></h3>
+<h4 id="image-pyramids">Image Pyramids<a class="headerlink" href="#image-pyramids" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>An image pyramid can be constructed by repeatedly downsampling (or upsampling) an image and creating a set of images at different resolutions. </p>
+</li>
+<li>
+<p>The resulting images are referred to as “levels” of the pyramid, with the highest resolution image at the top and the lowest resolution image at the bottom.</p>
+</li>
+</ul>
+<h4 id="gaussian-pyramids">Gaussian Pyramids<a class="headerlink" href="#gaussian-pyramids" title="Permanent link">&para;</a></h4>
+<p>This type of pyramid is constructed by repeatedly applying a Gaussian blur filter to an image and downsampling it by a factor of <strong>two</strong>. The resulting images are smoother and have lower resolution than the original image because Gaussians are <strong>low pass filters</strong>.</p>
+<h4 id="laplacian-pyramid">Laplacian Pyramid<a class="headerlink" href="#laplacian-pyramid" title="Permanent link">&para;</a></h4>
+<p>This type of pyramid is constructed by <strong>subtracting</strong> a downsampled version of an image from the original image. </p>
+<ul>
+<li>The resulting images are high-pass filtered versions of the original image, which highlight the <strong>fine details and edges</strong>.</li>
+</ul>
+<h4 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h4>
+<p>• Build Laplacian pyramid for both images: <span class="arithmatex">\(L_A, L_B\)</span>.</p>
+<p>• Build Gaussian pyramid for mask: <span class="arithmatex">\(G\)</span>.</p>
+<p>• Build a combined Laplacian pyramid: <span class="arithmatex">\(L(j) = G(j) LA(j) + (1-G(j)) LB(j).\)</span></p>
+<p>• Collapse <span class="arithmatex">\(L\)</span> to obtain the blended image.</p>
+<p><img alt="19" src="../19.png" /></p>
+<p><img alt="20" src="../20.png" /></p>
+<p><img alt="21" src="../21.png" /></p>
 
   <hr>
 <div class="md-source-file">

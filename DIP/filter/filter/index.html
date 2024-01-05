@@ -688,6 +688,8 @@
       
         
       
+        
+      
     
     
     
@@ -1078,6 +1080,26 @@
     Sparse Norm Filter
   </a>
   
+    <nav class="md-nav" aria-label="Sparse Norm Filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p1" class="md-nav__link">
+    p=1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2" class="md-nav__link">
+    p=2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1120,6 +1142,26 @@
   
   <span class="md-ellipsis">
     Image feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deep Learning
   </span>
   
 
@@ -3097,6 +3139,26 @@
     Sparse Norm Filter
   </a>
   
+    <nav class="md-nav" aria-label="Sparse Norm Filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p1" class="md-nav__link">
+    p=1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2" class="md-nav__link">
+    p=2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3254,7 +3316,10 @@
 <p><img alt="3" src="../3.png" /></p>
 <h2 id="_7">双边滤波<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>双边滤波（Bilateral filter）是一种非线性的滤波方法，是结合图像的空间邻近度和像素值相似度的一种折衷处理，同时考虑空域信息和灰度相似性，达到保边去噪的目的。具有简单、非迭代、局部的特点</p>
-<p>双边滤波器的好处是可以做边缘保存（edge preserving），一般用高斯滤波去降噪，会较明显地模糊边缘，对于高频细节的保护效果并不明显。双边滤波器顾名思义比高斯滤波多了一个高斯方差sigma－d，它是基于空间分布的高斯滤波函数，所以在边缘附近，离的较远的像素不会太多影响到边缘上的像素值，这样就保证了边缘附近像素值的保存。但是由于保存了过多的高频信息，对于彩色图像里的高频噪声，双边滤波器不能够干净的滤掉，只能够对于低频信息进行较好的滤波</p>
+<ul>
+<li>去噪，平滑，保留边缘</li>
+</ul>
+<p>双边滤波器的好处是可以<strong>做边缘保存</strong>（edge preserving），一般用高斯滤波去降噪，会较明显地模糊边缘，对于高频细节的保护效果并不明显。双边滤波器顾名思义比高斯滤波多了一个高斯方差sigma－d，它是基于空间分布的高斯滤波函数，所以在边缘附近，离的较远的像素不会太多影响到边缘上的像素值，这样就保证了边缘附近像素值的保存。但是由于保存了过多的高频信息，对于彩色图像里的高频噪声，双边滤波器不能够干净的滤掉，只能够对于低频信息进行较好的滤波</p>
 <ul>
 <li><strong>引入了快速傅立叶变换才实现了加速!</strong></li>
 </ul>
@@ -3370,25 +3435,24 @@
 <h2 id="guided-filter">Guided Filter<a class="headerlink" href="#guided-filter" title="Permanent link">&para;</a></h2>
 <ul>
 <li>保持梯度是bilateral（保持的是梯度的绝对值）做不到的，因为会有梯度翻转现象（Preserves edges, but not gradients）而导向滤波可以避免这一缺点</li>
-<li>Edge-preserving filter</li>
-<li>Non-iterative</li>
-<li><span class="arithmatex">\(O(1)\)</span> time fast accurate</li>
-<li>Gradient preserving</li>
-<li>More genetic than smoothing</li>
 </ul>
+<p><img alt="q" src="../q.png" /></p>
 <p>引入 guided image <span class="arithmatex">\(I\)</span></p>
 <p><img alt="13" src="../13.png" /></p>
 <ul>
 <li>
-<p>保持梯度，so <span class="arithmatex">\(q_i=aI_i+b\)</span></p>
+<p>保持梯度，so <span class="arithmatex">\(q_i(output\ image)=aI_i(guided\ image)+b\)</span></p>
 </li>
 <li>
-<p>Use Lagrange multiplier method , we can get <span class="arithmatex">\(a=\frac{con(I,p)}{var(I)+\epsilon} \ \ \ b=\bar{p}-a\bar{I}\)</span></p>
+<p>Use Lagrange multiplier method , we can get <span class="arithmatex">\(a=\frac{cov(I,p)}{var(I)+\epsilon} \ \ \ b=\bar{p}-a\bar{I}\)</span></p>
 </li>
 </ul>
 <p><img alt="14" src="../14.png" /></p>
 <p><img alt="15" src="../15.png" /></p>
 <p><img alt="16" src="../16.png" /></p>
+<ul>
+<li><span class="arithmatex">\(\epsilon\)</span> -- Degree of edge preserving !!</li>
+</ul>
 <p><img alt="17" src="../17.png" /></p>
 <ul>
 <li><strong>No Distortion</strong></li>
@@ -3398,14 +3462,24 @@
 <li>Limitation : <strong>LOCAL FILTER</strong></li>
 </ul>
 <p>对边缘的定义不清淅，而且边缘是 context-dependent 的。肉眼中的边界，可能不被认为是边界，最终还是会出现 halo 的现象。</p>
+<p><img alt="l" src="../l.png" /></p>
 <h2 id="sparse-norm-filter">Sparse Norm Filter<a class="headerlink" href="#sparse-norm-filter" title="Permanent link">&para;</a></h2>
+<p><a href="https://note.hobbitqia.cc/dip/dip9/#core-algorithm">https://note.hobbitqia.cc/dip/dip9/#core-algorithm</a></p>
+<p><img alt="m" src="../m.png" /></p>
+<h4 id="p1">p=1<a class="headerlink" href="#p1" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(l^1\)</span> norm filter is the <strong>median filter</strong>(中值滤波)</p>
+<ul>
+<li>Because the diffusion in SNF is <strong>non-local</strong>, it is less likely to be trapped as in gradient descent based algorithms.</li>
+</ul>
+<h4 id="p2">p=2<a class="headerlink" href="#p2" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(l^2\)</span> norm mean filter(均值滤波)</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月2日 21:50:52</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月5日 16:04:01</span>
       
         <br>
         创建日期:
