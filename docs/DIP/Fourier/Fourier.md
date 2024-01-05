@@ -122,15 +122,17 @@ Cooley and Tukey presented in 1965:
 
 #### FFT Principle
 
+* 勘误： $F(k)=\frac{1}{N}\sum_{n=0}^{N-1}f(n)e^{-j2\pi kn/N}$
+
 ![8](8.png)
 
 ![9](9.png)
 
 ![10](10.png)
 
-**HENCE   $F(k+M)=\lfloor F_e(k)-F_o(k)W_{2M}^k\rfloor$  **
+* **HENCE   $F(k+M)=\lfloor F_e(k)-F_o(k)W_{2M}^k\rfloor$!!** 
 
-* 意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 N/2 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值。
+* 意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 **N/2** 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值
 
 #### Magnitude and Phase of DFT
 

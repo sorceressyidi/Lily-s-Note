@@ -117,6 +117,7 @@ nav:
       - image filter: DIP/filter/filter.md
       - Fourier transform : DIP/Fourier/Fourier.md
       - Image feature : DIP/feature/feature.md
+      - Deep Learning : DIP/DL/DL.md
     - x86-Assembly: 
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md

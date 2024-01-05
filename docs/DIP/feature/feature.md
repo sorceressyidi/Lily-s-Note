@@ -36,7 +36,7 @@ Since $H$ is symmetric ,so $H=R^{-1}\begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{
 
 - $\lambda_-$  is a variant of the **Harris operator** for feature detection
 
-$f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$
+$f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}=\frac{determinant(H)}{trace(H)}$
 
 * The trace is the sum of the diagonals, i.e., $trace(H) = h_{11} + h_{22}$
 * Very similar to $\lambda_-$ but less expensive (no square root)
@@ -46,9 +46,9 @@ $f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$
 
 * Rotation Invariance
 
-* Invariance to image intensity change
+* Partial Invariance to additive and multiplicative intensity changes
 
-* Not invariance to scaling
+* Not invariance to scaling. !!!
 
 ## Scale Invariant Detection
 
@@ -62,7 +62,7 @@ $f=\frac{\lambda_1\lambda_2}{\lambda_1+\lambda_2}$
 
 We define the characteristic scale as the scale that produces peak of Laplacian response
 
-**Stage 1: Multiscale Harris Corner Detection**
+**Stage 1: Initialization--Multiscale Harris Corner Detection**
 
 1. **Image Pyramid Construction:** Begin by constructing a scale-space pyramid of the image, generating different scales by applying Gaussian smoothing and downsampling.
 2. **Computation of Harris Corner Response:** At each scale, calculate the corner response using the Harris corner detection method. This typically involves computing local gradients at each pixel position, forming the autocorrelation matrix, calculating the corner response function, and identifying **local maxima** as keypoints.
@@ -72,11 +72,13 @@ We define the characteristic scale as the scale that produces peak of Laplacian 
 
 1. **Laplacian Scale Selection:** 
 
-   The Laplacian is an operator used to detect edges and texture variations in an image by computing the second derivative at each point. In the context of scale selection, the Laplacian serves to measure the changes in the image at different scales.
+   The Laplacian is an operator used to detect edges and texture variations in an image by computing the second derivative at each point. 
 
-   Example: Consider an image containing a circle. As you view this circle at different scales, its edges will exhibit varying degrees of change. By applying the Laplacian at different scales, we can observe the intensity of edge variations. 
+   In the context of scale selection, the Laplacian serves to measure the changes in the image at different scales.
 
-   The optimal scale for a keypoint is where the maximum edge response occurs, indicating that the details of the keypoint are most pronounced at that scale.
+   * Example: Consider an image containing a circle. As you view this circle at different scales, its edges will exhibit varying degrees of change. By applying the Laplacian at different scales, we can observe **the intensity of edge variations.**
+
+   The optimal scale for a keypoint is where the **maximum edge response occurs**, indicating that the details of the keypoint are most pronounced at that scale.
 
 2. **Keypoint Filtering:** 
 
@@ -89,7 +91,11 @@ We define the characteristic scale as the scale that produces peak of Laplacian 
 ##### Local Extrema Detection
 
 * Maxima and minima
-* Compare $x$ with its 26 neighbors at 3 scales 
+* Compare $x$ with its 26 neighbors at 3 scales
+
+#### Orientation
+
+![13](13.png) 
 
 ### SIFT
 
@@ -110,13 +116,17 @@ We define the characteristic scale as the scale that produces peak of Laplacian 
 >
 > This ensures that the construction of the pyramid is "bottom-up," reflecting the features of the image at different scales.
 
-**REFER TO ML-4360 Structure from motion **
+* **REFER TO ML-4360 Structure from motion **
+
+![14](14.png)
 
 ### Visual Word Generation
 
 Based on the collected images we detect their interest points with Difference of Gaussian, and extract the SIFT descriptors. 
 
 The extracted descriptors are then clustered to generate the vocabulary tree with the hierarchical **k-means clustering**. In this experiment we generated a visual vocabulary containing 32357 visual words
+
+![15](15.png)
 
 ## SURF detectors and descriptors
 
@@ -150,7 +160,7 @@ Gaussians are optimal for scale-space analysis but in practice, they have to be 
 
 After Lowe’s success with **LoG approximations(SIFT)**, SURF pushes the approximation(both convolution and second-order derivative) even further with box filters. These approximate second-order Gaussian derivatives and can be evaluated at a very low computational cost using **integral images** and independently of size, and this is part of the reason why SURF is fast.
 
-* eg 
+* eg.
 
   
 
@@ -168,11 +178,13 @@ After Lowe’s success with **LoG approximations(SIFT)**, SURF pushes the approx
 
 #### c.Scale-space representation
 
+![16](16.png)
+
 > SURF can be considered as a faster feature extraction method compared to SIFT.
 >
-> It processes the original image directly using box filters at different **scales**, eliminating the need to **build multiple layers** of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.
+> It processes the original image **directly** using box filters at different **scales**, eliminating the need to **build multiple layers** of a pyramid like SIFT. This makes SURF computationally more efficient, especially in scenarios where large-scale image databases or real-time applications are involved.
 
-> 我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)
+> * 我的理解，因为盒子滤波可以用同样处理在一张图上完成象征着改变尺度（对不同尺度的操作）（比如上图就是在做对已经（对原图）降采样后图片，的二阶微分)
 >
 > If you use a 9x9 box filter on a 36x36 image, and you start from the center of the filter, moving the width of the filter at each step, you would end up with a 4x4 grid, deriving 16 new coordinate detection points. This is because 36 divided by 9 equals 4, thus, you can get 4 coordinate points in each direction. 
 >
@@ -194,13 +206,13 @@ For each local maximum, need to interpolate to get true location (to overcome di
 
 #### Orientation Assignment
 
-1. First calculate the Haar-wavelet responses in $x$ and $y$-direction, and this in a circular neighborhood of radius $6*s$ around the keypoint, with $s$ the scale at which the keypoint was detected. 
+1. First calculate the Haar-wavelet responses in $x$ and $y$-direction, and this in a circular neighborhood of radius $6*s$ around the keypoint, with $s$ the **scale** at which the keypoint was detected. 
 
    Also, the sampling step is scale dependent and chosen to be s, and the wavelet responses are computed at that current scale s. 
 
    Accordingly, at high scales the size of the wavelets is big. Therefore integral images are used again for fast filtering.
 
-2. Then we calculate the sum of vertical and horizontal wavelet responses in a scanning area, then change the scanning orientation (add $π/3$), and re-calculate, until we find the orientation with largest sum value, this orientation is **the main** orientation of feature descriptor.
+2. Then we calculate the sum of vertical and horizontal wavelet responses in a scanning area, then change the scanning orientation (add $π/3$), and re-calculate, until we find the orientation with **largest sum value**, this orientation is **the main** orientation of feature descriptor.
 
 ![img](https://miro.medium.com/v2/resize:fit:1400/0*UDe_M_7xSVNM8_h_.jpg)
 
@@ -210,7 +222,7 @@ Now it’s time to extract the descriptor
 
 1. The first step consists of constructing a square region centered around the keypoint and oriented along the orientation we already got above. The size of this window is 20s.
 
-2. Then the region is split up regularly into smaller 4 × 4 square sub-regions. For each sub-region, we compute a few simple features at 5×5 regularly spaced sample points. 
+2. Then the region is split up regularly into smaller **4 × 4** square sub-regions. For each sub-region, we compute a few simple features at **5×5** regularly spaced sample points. 
 
    For reasons of simplicity, we call **dx** the **Haar wavelet response** in the horizontal direction and **dy** the Haar wavelet response in the vertical direction (filter size 2s). 
 
@@ -224,9 +236,23 @@ In order to bring in information about the polarity of the intensity changes, we
 
 Hence, each sub-region has a four-dimensional descriptor vector $\vec{v}$ for its underlying intensity structure $V = (∑ dx, ∑ dy, ∑|dx|, ∑|dy|)$.
 
-This results in a descriptor vector for all 4×4 sub-regions of **length 64.**(In $SIFT$, our descriptor is the **128-D vector**, so this is part of the reason that SURF is faster than Sift).
+This results in a descriptor vector for all 4×4 sub-regions of **length 64.**
+
+* (In $SIFT$, our descriptor is the **128-D vector**, so this is part of the reason that SURF is faster than Sift).
+
+### Image Stitching
+
+Procedure
+
+* Detect feature points in both images. --Build SIFT descriptors
+* Find correponding pairs -- Match SIFT descriptors (Euclidean distance)
+* Use these pairs to align the images --  Fitting the transformation
+* RANSAC
+* Image Blending
 
 ### RANSAC
+
+![17](17.png)
 
 A further refinement of matches.--**RANdom SAmple Consensus **
 
@@ -234,7 +260,75 @@ In short words, $RANSAC$ fits $N$ models using different random sample *S* of th
 
 ![12](12.png)
 
+* How many samples are needed?
+
+  * Suppose $w$ is fraction of inliers (points from line).
+
+  * $n$ points needed to define hypothesis (2 for lines)
+
+  * $k$ samples chosen.
+
+    Prob. that a single sample of n points is correct $w^n$
+
+    Prob. that all k samples fail is: $(1-w^n)^k$
+
+    * Choose k high enough to keep this below desired failure rate.
+
+![18](18.png)
+
+* k-- iterations
+
+* RANSAC divides data into inliers and outliers and yields estimate computed from minimal set of inliers.Improve this initial estimate with **estimation over all inliers** (e.g. with standard least-squares minimization).
+
+* But this may change inliers, so alternate fitting with re-classification as inlier/outlier.
+
+#### Pros:
+
+* General method suited for a wide range of model fitting problems
+* Easy to implement and easy to calculate its failure rate
+
+#### Cons:
+
+* Only handles a moderate percentage of outliers without cost blowing up
+* Many real problems have high rate of outliers (but sometimes selective choice of random subsets can help)
+
+A voting strategy, the Hough transform, can handle high percentage of outliers
+
 ### Image Blending
+
+#### Image Pyramids
+
+* An image pyramid can be constructed by repeatedly downsampling (or upsampling) an image and creating a set of images at different resolutions. 
+
+* The resulting images are referred to as “levels” of the pyramid, with the highest resolution image at the top and the lowest resolution image at the bottom.
+
+#### Gaussian Pyramids
+
+This type of pyramid is constructed by repeatedly applying a Gaussian blur filter to an image and downsampling it by a factor of **two**. The resulting images are smoother and have lower resolution than the original image because Gaussians are **low pass filters**.
+
+#### Laplacian Pyramid
+
+This type of pyramid is constructed by **subtracting** a downsampled version of an image from the original image. 
+
+* The resulting images are high-pass filtered versions of the original image, which highlight the **fine details and edges**.
+
+#### Procedure
+
+• Build Laplacian pyramid for both images: $L_A, L_B$.
+
+• Build Gaussian pyramid for mask: $G$.
+
+• Build a combined Laplacian pyramid: $L(j) = G(j) LA(j) + (1-G(j)) LB(j).$
+
+• Collapse $L$ to obtain the blended image.
+
+
+
+![19](19.png)
+
+![20](20.png)
+
+![21](21.png)
 
 
 
