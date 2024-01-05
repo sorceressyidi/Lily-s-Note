@@ -130,12 +130,14 @@ Cooley and Tukey presented in 1965:
 
 **HENCE   $F(k+M)=\lfloor F_e(k)-F_o(k)W_{2M}^k\rfloor$  **
 
-意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 N/2 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值。
+* 意义：对一个长度为 N 的序列进行傅立叶变换可以通过将其分成两半计算，对第一部分的计算需要通过计算两个长度为 N/2 长度序列的傅立叶变换式进行，然后利用这两个长度为 N/2 的序列可以得到第二部分的值。
 
 #### Magnitude and Phase of DFT
 
 Hint: use inverse DFT to reconstruct the image by magnitude or phase only information
 
-* magnitude determines the contribution of each component!
+* magnitude determines the contribution of each component!(cannot be used to reconstruct a image!)
 
-* **phase** determineswhich components are present!
+* **phase** determines which components are present!
+
+* **PHASE** is more important!

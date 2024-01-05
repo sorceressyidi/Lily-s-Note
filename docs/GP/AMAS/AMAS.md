@@ -177,7 +177,7 @@ Regarding composite particles consisting of multiple fermions (such as atoms), t
 
 ### The Helium Atom
 
-The second simplest atom is the helium atom, which has two 1s electrons (spin up and spin down) in the Coulomb potential of the charge 2e nucleus that obey time-independent Schroedinger’s equation of the form  $(H_1+H_2+V_{12})Ψ(\vec{r_1},\vec{r_2})=EΨ(\vec{r_1},\vec{r_2})$ where $H_i=-\frac{\bar{h^2}}{2m}\triangledown_i^2（Kinetic）-\frac{2e^2}{4\pi\epsilon_0r_i}（Potential）\ and\ V_{12}=\frac{e^2}{4\pi\epsilon_0|\vec{r_1}-\vec{r_2}|}$
+The second simplest atom is the heliuxim atom, which has two 1s electrons (spin up and spin down) in the Coulomb potential of the charge 2e nucleus that obey time-independent Schroedinger’s equation of the form  $(H_1+H_2+V_{12})Ψ(\vec{r_1},\vec{r_2})=EΨ(\vec{r_1},\vec{r_2})$ where $H_i=-\frac{\bar{h^2}}{2m}\triangledown_i^2（Kinetic）-\frac{2e^2}{4\pi\epsilon_0r_i}（Potential）\ and\ V_{12}=\frac{e^2}{4\pi\epsilon_0|\vec{r_1}-\vec{r_2}|}$
 
 * An approximation starts from throwing away the interaction term, which we have not learned to deal with, i.e.,$(H_1 + H_2) Ψ_0 = E_0Ψ_0$, 
 

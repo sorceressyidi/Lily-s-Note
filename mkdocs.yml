@@ -110,10 +110,14 @@ nav:
       - Sort : note/sort.md
       - HASH : note/hash.md
     - DIP:
-      - 滤波: DIP/filter/filter.md
-      - 傅立叶变换 : DIP/Fourier/Fourier.md
-      - 特征识别 : DIP/feature/feature.md
-    - x86-Assembly:
+      - Basic concept and programming introduction  : DIP/Basic/DIP.md
+      - Binary image and morphology : DIP/chap2/chap2.md
+      - Basic Operation : DIP/chap3/chap3.md
+      - Image morphing: DIP/morph/morph.md
+      - image filter: DIP/filter/filter.md
+      - Fourier transform : DIP/Fourier/Fourier.md
+      - Image feature : DIP/feature/feature.md
+    - x86-Assembly: 
       - 基础指令: assembly/基础指令.md
       - 显卡输出: assembly/显卡输出.md
       - 端口: assembly/端口.md

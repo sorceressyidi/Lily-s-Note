@@ -264,18 +264,57 @@ Generally, the **first principle** is of greater importance and should be priori
 * Design a sequential modulo 3 accumulator for 2-bit operands
 
 <details>
-  <summary>Details 1101</summary>
-  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/Chap4/25.png" >
-  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/Chap4/26.png" >
-   <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/Chap4/27.png" >
-   <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/Chap4/28.png" >
+  <summary>Details</summary>
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/25.png" >
+  <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/26.png" >
+   <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/27.png" >
+   <img src="https://raw.githubusercontent.com/sorceressyidi/Lily-s-Note/main/docs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/28.png" >
 </details>
 
 ### Other Flip-Flop Types
 
 #### J-K Flip-Flop
 
+Same as S-R flip-flop with J analogous to S and K analogous to R
+
+* J=K=1 is allowed ; the flip-flop changes to opposite state
+* As a master-slave, has same “1s catching” behavior as S-R flip-flop
+* To avoid 1s catching behavior,one solution used is to use an edge-triggered D as the core of the flip-flop
+
+![29](29.png)
+
 #### T Flip-flop
+
+Has a single input T
+
+* For T = 0, no change to state
+* For T = 1, changes to opposite state
+
+>  **Same as a J-K flip-flop with J = K = T**
+
+* As a master-slave, has same “1s catching” behavior as J-K flip-flop
+* Cannot be initialized to a known state using the T input
+
+* To avoid 1s catching behavior,one solution used is to use an edge-triggered D as the core of the flip-flop
+
+![30](30.png)
+
+### Basic Flip-Flop Descriptors
+
+* Characteristic Table
+* Excitation Table
+
+> Eg.
+>
+> ![31](31.png)
+>
+> ![32](32.png)
+
+#### Flip-Flop Behavior Example
+
+![33](33.png)
+
+![34](34.png)
 
 
 
