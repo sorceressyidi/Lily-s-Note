@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/DIP/filter/filter/">
       
       
-        <link rel="prev" href="../../../note/hash/">
+        <link rel="prev" href="../../morph/morph/">
       
       
         <link rel="next" href="../../Fourier/Fourier/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>滤波 - Lily's Notebook</title>
+        <title>image filter - Lily's Notebook</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              滤波
+              image filter
             
           </span>
         </div>
@@ -680,6 +680,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -714,6 +722,86 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../Basic/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic concept and programming introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary image and morphology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Operation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../morph/morph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image morphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -722,12 +810,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    滤波
+    image filter
   </span>
   
 
@@ -738,7 +828,7 @@
         
   
   <span class="md-ellipsis">
-    滤波
+    image filter
   </span>
   
 
@@ -750,6 +840,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -758,11 +850,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.高斯滤波
+  <a href="#_2" class="md-nav__link">
+    卷积
   </a>
   
-    <nav class="md-nav" aria-label="1.高斯滤波">
+    <nav class="md-nav" aria-label="卷积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    平滑线性空间滤波器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    统计滤波器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpening-spatial-filter" class="md-nav__link">
+    Sharpening spatial filter
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharpening spatial filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    (1)拉普拉斯算子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    (2)拉普拉斯变换图像锐化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    高斯滤波
+  </a>
+  
+    <nav class="md-nav" aria-label="高斯滤波">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -773,7 +940,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2_1" class="md-nav__link">
     (2)滤波过程
   </a>
   
@@ -792,11 +959,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    2.双边滤波
+  <a href="#_7" class="md-nav__link">
+    双边滤波
   </a>
   
-    <nav class="md-nav" aria-label="2.双边滤波">
+    <nav class="md-nav" aria-label="双边滤波">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -821,8 +988,49 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-set-the-parameters" class="md-nav__link">
+    How to Set the Parameters
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilateral-filtering-color-images" class="md-nav__link">
+    Bilateral Filtering Color Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Bilateral Filtering Color Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#denoising" class="md-nav__link">
+    Denoising
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    Tone mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
   
 </li>
         
@@ -859,15 +1067,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3guided-filter" class="md-nav__link">
-    3.Guided Filter
+  <a href="#guided-filter" class="md-nav__link">
+    Guided Filter
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4sparse-norm-filter" class="md-nav__link">
-    4.Sparse Norm Filter
+  <a href="#sparse-norm-filter" class="md-nav__link">
+    Sparse Norm Filter
   </a>
   
 </li>
@@ -891,7 +1099,7 @@
         
   
   <span class="md-ellipsis">
-    傅立叶变换
+    Fourier transform
   </span>
   
 
@@ -911,7 +1119,7 @@
         
   
   <span class="md-ellipsis">
-    特征识别
+    Image feature
   </span>
   
 
@@ -1233,6 +1441,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1262,6 +1478,86 @@
             计算机逻辑设计基础
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1 Digital Systems and Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2 Combinational Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3 Combinational Logic Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4 Sequential Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2563,6 +2859,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2571,11 +2869,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.高斯滤波
+  <a href="#_2" class="md-nav__link">
+    卷积
   </a>
   
-    <nav class="md-nav" aria-label="1.高斯滤波">
+    <nav class="md-nav" aria-label="卷积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    平滑线性空间滤波器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    统计滤波器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpening-spatial-filter" class="md-nav__link">
+    Sharpening spatial filter
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharpening spatial filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    (1)拉普拉斯算子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    (2)拉普拉斯变换图像锐化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    高斯滤波
+  </a>
+  
+    <nav class="md-nav" aria-label="高斯滤波">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2586,7 +2959,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2_1" class="md-nav__link">
     (2)滤波过程
   </a>
   
@@ -2605,11 +2978,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    2.双边滤波
+  <a href="#_7" class="md-nav__link">
+    双边滤波
   </a>
   
-    <nav class="md-nav" aria-label="2.双边滤波">
+    <nav class="md-nav" aria-label="双边滤波">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2634,8 +3007,49 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-set-the-parameters" class="md-nav__link">
+    How to Set the Parameters
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilateral-filtering-color-images" class="md-nav__link">
+    Bilateral Filtering Color Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Bilateral Filtering Color Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#denoising" class="md-nav__link">
+    Denoising
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    Tone mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
   
 </li>
         
@@ -2672,15 +3086,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3guided-filter" class="md-nav__link">
-    3.Guided Filter
+  <a href="#guided-filter" class="md-nav__link">
+    Guided Filter
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4sparse-norm-filter" class="md-nav__link">
-    4.Sparse Norm Filter
+  <a href="#sparse-norm-filter" class="md-nav__link">
+    Sparse Norm Filter
   </a>
   
 </li>
@@ -2700,18 +3114,133 @@
                   
 
 
-  <h1>滤波</h1>
+<h1 id="_1">滤波<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">卷积<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(L(x,y,σ)=G(x,y,σ)∗I(x,y)\)</span></p>
+<p>连续形式：<span class="arithmatex">\((f∗g)(n)=\int_{-\infty }^{\infty}f(\tau )g(n-\tau)d\tau\)</span></p>
+<p>离散形式：<span class="arithmatex">\((f∗g)(n)=\frac{1}{M}\sum_{\tau=0 }^{M-1}f(\tau)g(n-\tau)\)</span></p>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(f(x)*h(x)=h(x)*f(x)\\ f*(g+h)=f*g+f*h\\f*(g*h)=(f*g)*h\)</span></p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p><img alt="a" src="../a.png" /></p>
+<p><img alt="b" src="../b.png" /></p>
+<p><img alt="c" src="../c.png" /></p>
+<p><img alt="d" src="../d.png" /></p>
+<ul>
+<li>Effective range：       </li>
+</ul>
+<p>Covers all the points that <span class="arithmatex">\(h(t)\)</span> go through during the sliding operation.        </p>
+<p>In this example, the effective range of x is from 0 to 799.</p>
+<h2 id="_3">基本概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>滤波器是一个大小为 <span class="arithmatex">\(M\times N\)</span> 的窗口，其中窗口中的元素对应于原始图像中的相应像素进行操作，结果保存为新图像中的像素</p>
+<p>滤波也被称作:遮罩 (mask)、内核 (kernel)、模板 (template) 等。滤波器中的元素是系数而不是像素值，它们表示应用于原始图像中像素的权重。在待处理图像中逐点移动掩模，在每一点(x,y)处，滤波器在该点的响应通过实现定义的关系来计算。对于线性空间滤波，其响应由滤波器系数与滤波掩模扫过区域的对应像素值的乘积之和给出。 </p>
+<p>通常，掩模的长宽都为<strong>奇数</strong></p>
+<ul>
+<li>假设分别为<span class="arithmatex">\(2a+1\)</span>和<span class="arithmatex">\(2b+1\)</span>。当窗口中心处于像素<span class="arithmatex">\((x,y)\)</span>处时，新的像素值为：<span class="arithmatex">\(g(x,y)=\sum_{s=-a}^a\sum_{t=-b}^b w(s,t)f(x+s,y+t)\)</span>.对图像f中所有像素都与掩模进行运算之后，最终产生一幅新图像g  (这实际上是一种卷积操作)</li>
+</ul>
+<p>图像在传输过程中，由于传输信道、采样系统质量较差，或受各种干扰的影响，而造成图像毛糙，此时，就需对图像进行平滑处理。平滑可以抑制高频成分，但也使图像变得模糊。  平滑空间滤波器用于模糊处理和减少噪声。模糊处理经常用于预处理，例如，在提取大的目标之前去除图像中一些琐碎的细节，桥接直线或曲线的缝隙。</p>
+<h2 id="_4">平滑线性空间滤波器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>平滑线性空间滤波器的输出是包含在滤波掩模邻域内像素的简单平均值。因此，这些滤波器也称为均值滤波器。</p>
+<ul>
+<li>
+<p>简单平均(simple mean)，表示窗口中每一个像素对响应的贡献是一样的, 滤波窗口：<span class="arithmatex">\(\frac{1}{9} \times \begin{bmatrix}1&amp;1&amp;1 \\ 1&amp;1&amp;1\\ 1&amp;1&amp;1\end{bmatrix}\)</span></p>
+</li>
+<li>
+<p>加权平均(weighted mean)，表示窗口中的像素对相应的贡献有大小之分，滤波窗口：<span class="arithmatex">\(\frac{1}{16} \times \begin{bmatrix}1&amp;2&amp;1 \\ 2&amp;4&amp;2\\ 1&amp;2&amp;1\end{bmatrix}\)</span></p>
+</li>
+<li>
+<p>General Equation</p>
+</li>
+</ul>
+<p><center><img src="/Users/lily/Library/Application Support/typora-user-images/image-20231116144747133.png" alt="image-20231116144747133" style="zoom:35%;" /></center></p>
+<p>其中，滤波器大小为<span class="arithmatex">\((2a+1) ×(2b+1)\)</span>，<span class="arithmatex">\(w\)</span>为滤波器，<span class="arithmatex">\(f\)</span>为输入图像，<span class="arithmatex">\(g\)</span>为输出图像。</p>
+<ul>
+<li>滤波掩模的大小与图像的平滑效果有直接的关系</li>
+</ul>
+<p>当掩模比较小时，可以观察到在整幅图像中有轻微的模糊</p>
+<p>当掩模大小增加，模糊程度也随之增加</p>
+<ul>
+<li>为了对感兴趣物体得到一个粗略的描述而模糊一幅图像，这样，那些较小物体的强度与背景混合在一起了，较大物体变得像“斑点”而易于检测。掩模的大小由那些即将融入背景中去的物件尺寸来决定。 </li>
+</ul>
+<h2 id="_5">统计滤波器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>统计滤波器是一种<strong>非线性</strong>的空间滤波器，它的响应是基于窗口内图像区域中像素值的排序，由统计排序结果决定的值代替中心像素的值。      </p>
+<ul>
+<li>统计滤波器中最常见的例子就是中值滤波器。</li>
+<li>用像素邻域内灰度的中值代替该像素的值</li>
+<li>提供了优秀的去噪能力，比小尺寸的线性平滑滤波器的模糊程度明显要低</li>
+<li>
+<p>对处理脉冲噪声（也称为椒盐噪声）非常有效，因为这种噪声是以黑白点叠加在图像上的。 </p>
+</li>
+<li>
+<p>为了对一幅图像上的某个点作中值滤波处理。必须先将掩模内欲求的像素及其邻域的像素值排序，确定出中值，并将中值赋予该像素点</p>
+</li>
+</ul>
+<p>中值<span class="arithmatex">\(ξ\)</span> --数值集合中，有一半数值小于或等于<span class="arithmatex">\(ξ\)</span>，还有一半大于或等于<span class="arithmatex">\(ξ\)</span></p>
+<p>为了对一幅图像上的某个点作中值滤波处理,必须先将掩模内欲求的像素及其邻域的像素值排序，确定出中值，并将中值赋予该像素点</p>
+<ul>
+<li>常用<span class="arithmatex">\(n\times n\)</span>的中值滤波器去除那些相对于其邻域像素更亮或更暗，并且其区域小于<span class="arithmatex">\(n^2/2\)</span>（滤波器区域的一半）的孤立像素集</li>
+</ul>
+<h2 id="sharpening-spatial-filter">Sharpening spatial filter<a class="headerlink" href="#sharpening-spatial-filter" title="Permanent link">&para;</a></h2>
+<p>拉普拉斯锐化是一种图像处理技术，旨在突出图像中的边缘和细节，使图像看起来更加锐利。这种技术使用拉普拉斯算子（Laplacian operator）或拉普拉斯滤波器对图像进行卷积操作，以增强图像中的高频信息。</p>
+<h3 id="1">(1)拉普拉斯算子<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>一阶微分算子:<span class="arithmatex">\(\frac{\partial{f}}{\partial{x}}\)</span>$= f(x + 1) − f(x) $</p>
+<p>二阶微分算子:<span class="arithmatex">\(\frac{\partial^2{f}}{\partial{x}^2}\)</span><span class="arithmatex">\(= f(x + 1) +f(x-1)− 2f(x)\)</span></p>
+<ul>
+<li>对于函数f(x,y)，首先定义一个二维列向量：</li>
+</ul>
+<p><img alt="f" src="../f.png" /></p>
+<div STYLE="page-break-after: always;"></div>
 
-<h2 id="1">1.高斯滤波<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>对整幅图像计算梯度时，运算量会很大，因此，在实际操作中，常用绝对值代替平方与平方根运算近似求梯度的模值 <span class="arithmatex">\(\triangledown f \approx |G_x|+|G_y|\)</span></p>
+</li>
+<li>
+<p>离散形式</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\ \ \ \triangledown^2f=f(x+1,y)+f(x-1,y)+f(x,y+1),F(x,y-1)-4f(x,y)\)</span></p>
+<p><img alt="e" src="../e.png" /></p>
+<ul>
+<li>Laplacian operator is defined as <span class="arithmatex">\(\triangledown^2 f=\frac{\partial^2f}{\partial x ^2}+\frac{\partial^2f}{\partial y ^2}\)</span></li>
+<li>Along x axis <span class="arithmatex">\(\frac{\partial^2{f}}{\partial{x}^2}= f(x + 1,y) +f(x-1,y)− 2f(x,y)\)</span></li>
+<li>Along y axis  <span class="arithmatex">\(\frac{\partial^2{f}}{\partial{y}^2}= f(x,y+1) +f(x,y-1)− 2f(x,y)\)</span></li>
+<li>discrete Laplacian operator  <span class="arithmatex">\(\triangledown^2f=f(x+1,y)+f(x-1,y)+f(x,y+1),F(x,y-1)-4f(x,y)\)</span></li>
+</ul>
+<h3 id="2">(2)拉普拉斯变换图像锐化<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>掩模</li>
+</ul>
+<p><img alt="g" src="../g.png" /></p>
+<blockquote>
+<p>如果考虑对角线元素</p>
+</blockquote>
+<p><img alt="h" src="../h.png" /></p>
+<ul>
+<li>
+<p>由于拉普拉斯算子是一种导数算子，它的使用会突出显示图像中的强度不连续性，而不强调具有缓慢 变化的强度级别的区域。这将倾向于生成具有灰色边缘线和其他不连续性的图像，所有这些图像都叠加在黑暗、无特征的背景上。只需将拉普拉斯图像添加到原始图像中，即可“恢复”背景特征，同时仍保持拉 普拉斯图像的锐化效果</p>
+</li>
+<li>
+<p>也就是说，如果使用的定义具有负中心系数，则我们减去而不是添加拉普拉斯图像以获得锐化结果</p>
+</li>
+<li>
+<p>因此，我们使用拉普拉斯函数进行图像锐化的基本方法是:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(g(x,y)=\left\{\begin{array}{ll}f(x,y)-\triangledown^2f(x,y)&amp; if\ the\ center\ of\ the\ mask\ is\ negative \\ f(x,y)+\triangledown^2f(x,y)&amp; if\ the\ center\ of\ the\ mask\ is\ positive  \end{array} \right.\)</span></p>
+<ul>
+<li>将原始图像和拉普拉斯图像叠加在一起的简单方法可以保护拉普拉斯锐化处理的效果，同时又能复原背景信息。  </li>
+</ul>
+<h2 id="_6">高斯滤波<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>高斯滤波是一种常用的图像处理滤波器，其主要目的是对图像进行平滑处理。它的名称来源于所使用的滤波核（卷积核）是一个二维高斯函数。高斯滤波在去除图像中的噪声、模糊处理、边缘检测等方面有着广泛的应用。</p>
 <p>高斯滤波的核心思想是对图像中的每个像素点进行加权平均，其中权值是由二维高斯函数确定的。这意味着离中心像素越远的像素对中心像素的影响越小，这种权值的分布符合高斯分布。通过调整高斯函数的标准差<span class="arithmatex">\(σ\)</span>，可以控制权值的分布范围，从而调整滤波效果。</p>
 <h4 id="1_1">(1)数学表达<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>一般情况下，二维高斯函数表示为<span class="arithmatex">\(f(x,y)=\frac{1}{\sqrt{2\pi}\sigma_x}e^{-\frac{(x-\mu_x)^2}{2\sigma_x^2}}\cdot \frac{1}{\sqrt{2\pi}\sigma_y}e^{-\frac{(y-\mu_y)^2}{2\sigma_y^2}}\)</span></p>
-</blockquote>
+<ul>
+<li>一般情况下，二维高斯函数表示为<span class="arithmatex">\(f(x,y)=\frac{1}{\sqrt{2\pi}\sigma_x}e^{-\frac{(x-\mu_x)^2}{2\sigma_x^2}}\cdot \frac{1}{\sqrt{2\pi}\sigma_y}e^{-\frac{(y-\mu_y)^2}{2\sigma_y^2}}\)</span></li>
+</ul>
 <p>在图像滤波中,一般情况下<span class="arithmatex">\(μ_x = μ_y = 0\)</span>因此二维高斯函数可表示为<span class="arithmatex">\(f(x,y)=\frac{1}{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}\)</span></p>
 <p><img alt="img" src="../20.png" /></p>
-<h4 id="2">(2)滤波过程<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<h4 id="2_1">(2)滤波过程<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>高斯核的求解：</li>
 </ul>
@@ -2723,9 +3252,12 @@
 <h4 id="3">(3) 分离实现高斯滤波<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <p>利用高斯函数进行卷积(高斯滤波)的过程具有可分离性。</p>
 <p><img alt="3" src="../3.png" /></p>
-<h2 id="2_1">2.双边滤波<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
-<p>双边滤波（Bilateral filter）是一种非线性的滤波方法，是结合图像的空间邻近度和像素值相似度的一种折衷处理，同时考虑空域信息和灰度相似性，达到保边去噪的目的。具有简单、非迭代、局部的特点。</p>
-<p>双边滤波器的好处是可以做边缘保存（edge preserving），一般用高斯滤波去降噪，会较明显地模糊边缘，对于高频细节的保护效果并不明显。双边滤波器顾名思义比高斯滤波多了一个高斯方差sigma－d，它是基于空间分布的高斯滤波函数，所以在边缘附近，离的较远的像素不会太多影响到边缘上的像素值，这样就保证了边缘附近像素值的保存。但是由于保存了过多的高频信息，对于彩色图像里的高频噪声，双边滤波器不能够干净的滤掉，只能够对于低频信息进行较好的滤波。</p>
+<h2 id="_7">双边滤波<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>双边滤波（Bilateral filter）是一种非线性的滤波方法，是结合图像的空间邻近度和像素值相似度的一种折衷处理，同时考虑空域信息和灰度相似性，达到保边去噪的目的。具有简单、非迭代、局部的特点</p>
+<p>双边滤波器的好处是可以做边缘保存（edge preserving），一般用高斯滤波去降噪，会较明显地模糊边缘，对于高频细节的保护效果并不明显。双边滤波器顾名思义比高斯滤波多了一个高斯方差sigma－d，它是基于空间分布的高斯滤波函数，所以在边缘附近，离的较远的像素不会太多影响到边缘上的像素值，这样就保证了边缘附近像素值的保存。但是由于保存了过多的高频信息，对于彩色图像里的高频噪声，双边滤波器不能够干净的滤掉，只能够对于低频信息进行较好的滤波</p>
+<ul>
+<li><strong>引入了快速傅立叶变换才实现了加速!</strong></li>
+</ul>
 <h3 id="brute-force-implementation">Brute-force Implementation<a class="headerlink" href="#brute-force-implementation" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2745,10 +3277,14 @@
 <p><img alt="4" src="../4.jpeg" /></p>
 <p><span class="arithmatex">\(h(x)=k_r^{−1}(x)∫^{+∞}_{−∞}∫^{+∞}_{−∞}f(ξ)c(ξ,x)s(f(ξ),f(x))dξ\)</span></p>
 <p><span class="arithmatex">\(c(ξ,x)=\frac{1}{2\pi\sigma_s^2}e^{-\frac{||ξ-x||^2}{2\sigma_s^2}}\)</span></p>
-<p><span class="arithmatex">\(c(ξ,x)=\frac{1}{2\pi\sigma_r^2}e^{-\frac{||f(ξ)-f(x)||^2}{2\sigma_r^2}}\)</span></p>
-<p>Which is <span class="arithmatex">\(BF[I]p=\frac{1}{W_p}\sum_{q\in S}G_{\sigma_s}(||p-q||)G_{\sigma_r}(|O_p-I_q|)I_q\)</span></p>
+<p><span class="arithmatex">\(s(f(ξ),f(x))=\frac{1}{2\pi\sigma_r^2}e^{-\frac{||f(ξ)-f(x)||^2}{2\sigma_r^2}}\)</span></p>
 <ul>
-<li><span class="arithmatex">\(\frac{1}{W_p}\)</span>为归一化因子</li>
+<li>
+<p><span class="arithmatex">\(Which\)</span> <span class="arithmatex">\(is\)</span> <span class="arithmatex">\(BF[I]p=\frac{1}{W_p}\sum_{q\in S}G_{\sigma_s}(||p-q||)G_{\sigma_r}(|O_p-I_q|)I_q\)</span>  !!!</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\frac{1}{W_p}\)</span>为归一化因子</p>
+</li>
 </ul>
 <h4 id="2_2">(2)参数设置<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2759,6 +3295,52 @@
 <li><span class="arithmatex">\(σ_r\)</span> 越大，边缘越模糊，极限情况为<span class="arithmatex">\(σ_r\)</span> 无穷大，值域系数近似相等(忽略常数时，将近为 <span class="arithmatex">\(e_0 = 1\)</span>)，与高斯模板(空间域模板)相乘后可认为等效于高斯滤波.</li>
 </ul>
 <p><span class="arithmatex">\(σ_r\)</span> 越小，边缘越清晰，极限情况为 <span class="arithmatex">\(σ_r\)</span> 无限接近 0，值域系数除了中心位置，其他近似为 0(接近 <span class="arithmatex">\(e_∞ = 0\)</span>)，与高斯模板(空间域模板)相乘进行滤波的结果等效于原图像.</p>
+<h4 id="how-to-set-the-parameters">How to Set the Parameters<a class="headerlink" href="#how-to-set-the-parameters" title="Permanent link">&para;</a></h4>
+<p>Depends on the application. For instance:</p>
+<ul>
+<li>space parameter: proportional to image size </li>
+</ul>
+<p>e.g., 2% of image diagonal </p>
+<ul>
+<li>intensity parameter: proportional to edge amplitude</li>
+</ul>
+<p>e.g., mean or median of image gradients </p>
+<ul>
+<li>
+<p>independent of resolution and exposure</p>
+</li>
+<li>
+<p>Iterating the Bilateral Filter</p>
+</li>
+</ul>
+<h3 id="bilateral-filtering-color-images">Bilateral Filtering Color Images<a class="headerlink" href="#bilateral-filtering-color-images" title="Permanent link">&para;</a></h3>
+<p><img alt="i" src="../i.png" /></p>
+<h4 id="denoising">Denoising<a class="headerlink" href="#denoising" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Small</strong> spatial sigma (e.g. 7x7 window)</p>
+</li>
+<li>
+<p>Adapt intensity sigma to noise level </p>
+</li>
+<li>Maybe not best denoising method, but best simplicity/quality trade-off</li>
+<li>No need for acceleration (small kernel)But the denoising feature in e.g. Photoshop is better</li>
+</ul>
+<h4 id="tone-mapping">Tone mapping<a class="headerlink" href="#tone-mapping" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Match limited contrast of the medium</li>
+<li>Preserve details</li>
+</ul>
+<p><img alt="j" src="../j.png" /></p>
+<p><img alt="k" src="../k.png" /></p>
+<h3 id="disadvantages">Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nonlinear</li>
+<li>Vompex spatially varying kernels</li>
+<li>Connot be pre-computed</li>
+<li>Brute-force implementation is slow</li>
+<li>梯度翻转</li>
+</ul>
 <h3 id="a-fast-approximation-of-the-bilateral-filter-using-a-signal-processing-approach">A Fast Approximation of the bilateral filter using a signal processing approach<a class="headerlink" href="#a-fast-approximation-of-the-bilateral-filter-using-a-signal-processing-approach" title="Permanent link">&para;</a></h3>
 <h4 id="preknowledge">PreKnowledge<a class="headerlink" href="#preknowledge" title="Permanent link">&para;</a></h4>
 <p>卷积定理告诉我们，在频域中，卷积等价于相乘。所以，在频域中，图像 F<em>(</em>u<em>,</em>v*) 与滤波核 Hb(u,v)的卷积结果 G(u,v)可以表示为：</p>
@@ -2785,8 +3367,15 @@
 <p><strong>（5）整个流程：线性卷积+非线性归一化</strong></p>
 <p><img alt="12" src="../12.png" /></p>
 <p>在这个过程中，主要的加速来自于在频域中执行卷积操作。频域卷积通常比时域卷积更快，尤其是在使用快速傅里叶变换（FFT）等高效算法时。</p>
-<h2 id="3guided-filter">3.Guided Filter<a class="headerlink" href="#3guided-filter" title="Permanent link">&para;</a></h2>
-<p>保持梯度是bilateral做不到的，因为会有梯度翻转现象（Preserves edges, but not gradients）而导向滤波可以避免这一缺点</p>
+<h2 id="guided-filter">Guided Filter<a class="headerlink" href="#guided-filter" title="Permanent link">&para;</a></h2>
+<ul>
+<li>保持梯度是bilateral（保持的是梯度的绝对值）做不到的，因为会有梯度翻转现象（Preserves edges, but not gradients）而导向滤波可以避免这一缺点</li>
+<li>Edge-preserving filter</li>
+<li>Non-iterative</li>
+<li><span class="arithmatex">\(O(1)\)</span> time fast accurate</li>
+<li>Gradient preserving</li>
+<li>More genetic than smoothing</li>
+</ul>
 <p>引入 guided image <span class="arithmatex">\(I\)</span></p>
 <p><img alt="13" src="../13.png" /></p>
 <ul>
@@ -2809,7 +3398,7 @@
 <li>Limitation : <strong>LOCAL FILTER</strong></li>
 </ul>
 <p>对边缘的定义不清淅，而且边缘是 context-dependent 的。肉眼中的边界，可能不被认为是边界，最终还是会出现 halo 的现象。</p>
-<h2 id="4sparse-norm-filter">4.Sparse Norm Filter<a class="headerlink" href="#4sparse-norm-filter" title="Permanent link">&para;</a></h2>
+<h2 id="sparse-norm-filter">Sparse Norm Filter<a class="headerlink" href="#sparse-norm-filter" title="Permanent link">&para;</a></h2>
 
   <hr>
 <div class="md-source-file">
