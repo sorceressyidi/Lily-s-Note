@@ -47,14 +47,6 @@ $\frac{dt}{dx}=\frac{n_i}{c}\frac{x}{\bar{SO}}-\frac{n_t}{c}\frac{a-x}{\bar{OP}}
 
 Thus $n_isin\theta_i=n_tsin\theta_t$
 
-##### Understanding Mirage with Fermat’s Principle
-
-* At very low angles the rays appear to be coming from beneath the road as if reflected in a puddle
-
-* The effect is easy to view on long modern highways. The only requirement is that you look at the road at near
-
-  glancing incidence, because the rays bend very gradually.
-
 ### Huygens’ Principle
 
 **Huygens’ principle** is: All points on a wavefront serve as point sources of spherical secondary wavelets. After a time $t$, the new position of the wavefront will be that of a surface tangent to these secondary wavelets.
@@ -105,7 +97,7 @@ $Boundary\ conditions$
 
 * The loop can be made so narrow such that there is no flux through C.
 * Define $\hat{u}_n$to be the unit vector normal to the interface
-* The boundary condition leads to :**$ (\vec{E}_i+\vec{E}_r-\vec{E}_t)$perpendicular to $\vec{l}$  thus parallel to  $\vec{u_n}$ **
+* The boundary condition leads to :**$(\vec{E}_i+\vec{E}_r-\vec{E}_t)$perpendicular to $\vec{l}$  thus parallel to  $\vec{u_n}$ **
 
 $\hat{u}_n \times (\vec{E}_i+\vec{E}_r)-\hat{u}_n \times \vec{E}_t=0$  which is satisfied for all values of time and at any point on the interface.
 

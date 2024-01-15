@@ -88,9 +88,9 @@ $M_{21}=\frac{N_2\Phi_{21}}{i_1}\\M_{12}=\frac{N_1\Phi_{12}}{i_2}$
 
 $\epsilon_{21}=-M_{21}\frac{di_1}{dt}\\\epsilon_{12}=-M_{12}\frac{di_2}{dt}$
 
-$\epsilon_1=\epsilon_{1}+\epsilon_{12}=-L_{11}\frac{di_{1}}{dt}-M_{21}\frac{di_2}{dt}$
+$\epsilon_1=\epsilon_{1}+\epsilon_{12}=-L_{1}\frac{di_{1}}{dt}-M_{12}\frac{di_2}{dt}$
 
-$\epsilon_2=\epsilon_{22}+\epsilon_{21}=-L_{2}\frac{di_{2}}{dt}-M_{12}\frac{di_1}{dt}$
+$\epsilon_2=\epsilon_{22}+\epsilon_{21}=-L_{2}\frac{di_{2}}{dt}-M_{21}\frac{di_1}{dt}$
 
 $\Rightarrow-\begin{pmatrix}L_1&M_{12}\\M_{21}&L_2\end{pmatrix}\frac{d}{dt}\begin{pmatrix}i_1\\i_2\end{pmatrix}=\begin{pmatrix}\epsilon_1\\\epsilon_2\end{pmatrix}$
 
@@ -205,7 +205,7 @@ $E=\frac{\sigma}{\epsilon_0}=\frac{Q}{\epsilon_0A}\\ \frac{\partial{E}}{\partial
 
 * Choose surface 2 to integral:
 
-  $ I_{enc}=0\\\mu_0\epsilon_0\frac{\partial{E}}{\partial t}=\mu_0I/A \ \iint \mu_0\epsilon_0\frac{\partial{E}}{\partial t}\cdot d\vec{A}=\mu_0I$
+  $I_{enc}=0\\\mu_0\epsilon_0\frac{\partial{E}}{\partial t}=\mu_0I/A \ \iint \mu_0\epsilon_0\frac{\partial{E}}{\partial t}\cdot d\vec{A}=\mu_0I$
 
 ### Maxwell’s Equations
 

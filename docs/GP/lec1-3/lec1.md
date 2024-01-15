@@ -16,7 +16,7 @@ $\epsilon_0=8.85*10^{-12}C^2/N*m^2$
 
 * Derivation
 
-​	$\begin{align*}E&=\frac{q}{4\pi\epsilon_0(z-\frac{d}{2})^2}- \frac{q}{4\pi\epsilon_0(z+\frac{d}{2})^2}\\ &=\frac{q\vec{d}}{2\pi\epsilon_0}*\frac{z}{(z-\frac{d}{2})^2(z+\frac{d}{2})^2}\\ &=\frac{\vec{p}}{2\pi\epsilon_0z^3}*\frac{1}{(1-\frac{d}{2z}^2)(1+\frac{d}{2z}^2)}\\ &=\frac{1}{2\pi\epsilon_0}\frac{p}{z^3} \ \ when (z>>d)\end{align*}$
+​	$\begin{align*}E&=\frac{q}{4\pi\epsilon_0(z-\frac{d}{2})^2}- \frac{q}{4\pi\epsilon_0(z+\frac{d}{2})^2}\\ &=\frac{q\vec{d}}{2\pi\epsilon_0}*\frac{z}{(z-\frac{d}{2})^2(z+\frac{d}{2})^2}\\ &=\frac{\vec{p}}{2\pi\epsilon_0z^3}*\frac{1}{(1-\frac{d}{2z})^2(1+\frac{d}{2z})^2}\\ &=\frac{1}{2\pi\epsilon_0}\frac{p}{z^3} \ \ when (z>>d)\end{align*}$
 
 #### A diphole in a uniform electric filed
 
@@ -205,7 +205,7 @@ There is a charge +q outside a spherical metal shell at a distance$r+R$ from its
 
   > $E=-\epsilon_0\frac{\partial V}{\partial z}|_{z=0}=\frac{-qd}{2\pi\epsilon_0(x^2+y^2+d^2)^\frac{3}{2}}\hat{z}$
 
-  > $\sigma=\epsilon_0\triangledown \cdot E =\frac{-qd}{2\pi(x^2+y^2+d^2)^\frac{3}{2}}$
+  > $\sigma=\epsilon_0\cdot E =\frac{-qd}{2\pi(x^2+y^2+d^2)^\frac{3}{2}}$
 
 * Bringing q from infinity needs ? W
 

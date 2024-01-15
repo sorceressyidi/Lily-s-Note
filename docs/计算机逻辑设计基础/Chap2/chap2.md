@@ -126,29 +126,6 @@ If the function F contains the both of the variables $x,\bar{x}$ may be follow:
 
 ![14](14.png)
 
-#### Example
-
-  ```
-  AB + A'C + BC = AB + A'C (Consensus Theorem)
-  Justification 1: 1 . X = X
-  Justification 2:X + X’ = 1
-  原式 = AB + A’C + ABC + A’BC  X(Y + Z) = XY + XZ (Distributive Law)
-  		 = AB + ABC + A’C + A’BC  X + Y = Y + X (Commutative Law)
-  		 = AB . 1 + ABC + A’C . 1 + A’C . B  X . 1 = X, X . Y = Y . X(Commutative Law)
-  			= AB (1 + C) + A’C (1 + B) X(Y + Z) = XY +XZ (Distributive Law)
-  			= AB . 1 + A’C . 1 = AB + A’C X . 1 = X
-  ```
-
-  ```
-  (X+Y)'Z + XY' = Y'(X+Z) 
-  原式 = X’ Y’ Z + X Y’ 		(A + B)’ = A’ . B’ (DeMorgan’s Law)
-  = Y’ X’ Z + Y’ X 					A . B = B . A (Commutative Law)
-  = Y’ (X’ Z + X) 					A(B + C)=AB + AC (Distributive Law)
-  = Y’ (X’ + X)(Z + X) 			A + BC = (A + B)(A + C) (Distributive Law)
-  = Y’·1 ·(Z + X) 					A + A’ = 1 = Y’ (X + Z) 1 . 
-  													A = A, A + B = B + A (Commutative Law)
-  ```
-
 ### Simplification
 
 * Example
@@ -169,10 +146,10 @@ Minterms are AND terms with every variable present in either true or complemente
 
 Given that each binary variable may appear normal (e.g., x) or complemented (e.g., x ), there are $2^n$ minterms for n variables. denoted as $m_i$
 
-1) only one set of variables value make to 1 for any one minterm . 
-2) any two minterms multiplied equal to 0 
-3) Sum of all minterms equal to 1
-4) Any one minterm is not contained in the original function F,it can be seen as inAnti-function $\bar{F}$ 。
+* only one set of variables value make to 1 for any one minterm . 
+* any two minterms multiplied equal to 0 
+* Sum of all minterms equal to 1
+* Any one minterm is not contained in the original function F,it can be seen as inAnti-function $\bar{F}$ 。
 
 ![17](17.png)
 
@@ -182,10 +159,10 @@ Maxterms are OR terms with every variable in true or complemented form.
 
 Given that each binary variable may appear normal (e.g., x) or complemented (e.g., x), there are $2^n$ maxterms for n variables. denoted as $M_i$
 
-1) only one set of variables value make to 0 for any one Maxterm
-2) sum of any two Maxterms equal to $M_i+M_j=1 \ i\ne j$
-3) Product of all Maxterms equal to 0 
-4) Any one Maxterm is not contained in the original function F,it can be seen as inAnti-function $\bar{F}$
+* only one set of variables value make to 0 for any one Maxterm
+* sum of any two Maxterms equal to $M_i+M_j=1 \ i\ne j$
+* Product of all Maxterms equal to 0 
+* Any one Maxterm is not contained in the original function F,it can be seen as inAnti-function $\bar{F}$
 
 ![18](18.png)
 
@@ -206,7 +183,7 @@ Given that each binary variable may appear normal (e.g., x) or complemented (e.g
 #### Standard Forms
 
 * Standard Sum-of-Products (SOP) : Equations are written as OR of AND terms
-* Standard Sum-of-Products (POP) : Equations are written as AND of OR terms
+* Standard Product-of-Sums (POS) : Equations are written as AND of OR terms
 
 For a logical function SOP or POS is the optimized（两级门，门级数最小）
 
@@ -216,7 +193,7 @@ For a logical function SOP or POS is the optimized（两级门，门级数最小
 
 ## Multi-level circuit optimization
 
- #### COST
+#### COST
 
 * Literal Cost  : Just Literal Appearances
 
@@ -250,15 +227,15 @@ Requires more than one primitive operation type for its description.
 
 * Odd Functions and Even Functions
 
-> XOR -- Odd Functions
->
-> Use inversions -- Even Functions
+XOR -- Odd Functions
+
+Use inversions -- Even Functions
 
 ![24](24.png)
 
-> P -- Generate the Parity bit
->
-> E--Decide whether the translated inf is **Error**
+* P -- Generate the Parity bit
+
+* E--Decide whether the translated inf is **Error**
 
 ## High-Resistance output (tristate gate)
 

@@ -12,9 +12,11 @@
 
 * **NOTE**: The '1' comes from -- $\bar{T_1}$
 
-  We can neglect the inversion of input iterals ; but the intermediate varaible’s inversions cannot be neglected
+  **We can neglect the inversion of input iterals ; but the intermediate varaible’s inversions cannot be neglected**
 
-* For the first -- 3级 but high cost -- For the latter-- 4级but low cost
+* For the first --  3级 but high cost 
+
+* For the latter-- 4级 but low cost
 
 ![7](7.png)
 
@@ -32,18 +34,19 @@
 
 ### 3-to-8 line decoder
 
-* Basic Form : eight $(2^3)$ 3-input AND gates. --$2^n， n-input\ gates$
+* Basic Form : $(2^3)$ 8-3-input AND gates. 
 
 * Split to **2-to-4-line decoder** and **1-to-2-line decoder**. [Simplify]
 
 ![1](1.png)
 
-> Another Example
->
-> ![2](2.png)
->
-> * Basic $128*7$
-> * 3-to-8 & 4-to-16 $128*2 + 8*3+16*4$
+Another Example
+
+![2](2.png)
+
+* Basic $128*7$
+
+* **3-to-8 & 4-to-16**. -- $128*2 + 8*3+16*4$
 
 ### Decoder with Enable
 
@@ -65,7 +68,7 @@ Theoratically realize all logic functions $(SOM)$
 
 ![13](13.png)
 
-> To decrease count of the pins
+To decrease count of the pins
 
  ![14](14.png)
 
@@ -109,17 +112,17 @@ One encoder that can accept all possible combinations of  input values and produ
 
 ![18](18.png)![19](19.png)
 
-> GN(22) 
+* GN(22) 
 
-> Three State can connect all output to one line. --GN=18 (a)
+* Three State can connect all output to one line. --GN=18 (a)
 
-> GN=14 (b)
+* GN=14 (b)
 
 Disadvantages : Takes much time . 
 
 ### Example
 
-**Gray to Binary Code*
+* Gray to Binary Code
 
 #### Approach 1
 
@@ -151,7 +154,10 @@ Note that the multiplexer with fixed inputs is identical to a **ROM** with 3-bit
 
 ![27](27.png)
 
-* The most COMMON: $S=X\oplus Y\ C=XY\\S=(X+Y)\bar{C}\ C=\overline{(\overline{XY})}$
+The most COMMON: 
+
+* $S=X\oplus Y\ C=XY$
+* $S=(X+Y)\bar{C}\ C=\overline{(\overline{XY})}$
 
 ### Full-Adder
 
@@ -237,7 +243,7 @@ So Simple copy the CLA to more bits is not practical.
 
 Overflow V = $C_n\oplus C_{n-1}$
 
- ### Incrementing & Decrementing
+### Incrementing & Decrementing
 
 #### Incrementing
 
