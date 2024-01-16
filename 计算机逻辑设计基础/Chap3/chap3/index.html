@@ -1563,6 +1563,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incrementing-decrementing" class="md-nav__link">
+    Incrementing &amp; Decrementing
+  </a>
+  
+    <nav class="md-nav" aria-label="Incrementing & Decrementing">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#incrementing" class="md-nav__link">
     Incrementing
@@ -3183,6 +3196,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incrementing-decrementing" class="md-nav__link">
+    Incrementing &amp; Decrementing
+  </a>
+  
+    <nav class="md-nav" aria-label="Incrementing & Decrementing">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#incrementing" class="md-nav__link">
     Incrementing
@@ -3249,9 +3275,14 @@
 <ul>
 <li><strong>NOTE</strong>: The '1' comes from -- <span class="arithmatex">\(\bar{T_1}\)</span></li>
 </ul>
-<p>We can neglect the inversion of input iterals ; but the intermediate varaible’s inversions cannot be neglected</p>
+<p><strong>We can neglect the inversion of input iterals ; but the intermediate varaible’s inversions cannot be neglected</strong></p>
 <ul>
-<li>For the first -- 3级 but high cost -- For the latter-- 4级but low cost</li>
+<li>
+<p>For the first --  3级 but high cost </p>
+</li>
+<li>
+<p>For the latter-- 4级 but low cost</p>
+</li>
 </ul>
 <p><img alt="7" src="../7.png" /></p>
 <h3 id="technology-mapping">Technology Mapping<a class="headerlink" href="#technology-mapping" title="Permanent link">&para;</a></h3>
@@ -3263,21 +3294,23 @@
 <h3 id="3-to-8-line-decoder">3-to-8 line decoder<a class="headerlink" href="#3-to-8-line-decoder" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Basic Form : eight <span class="arithmatex">\((2^3)\)</span> 3-input AND gates. --<span class="arithmatex">\(2^n， n-input\ gates\)</span></p>
+<p>Basic Form : <span class="arithmatex">\((2^3)\)</span> 8-3-input AND gates. </p>
 </li>
 <li>
 <p>Split to <strong>2-to-4-line decoder</strong> and <strong>1-to-2-line decoder</strong>. [Simplify]</p>
 </li>
 </ul>
 <p><img alt="1" src="../1.png" /></p>
-<blockquote>
 <p>Another Example</p>
 <p><img alt="2" src="../2.png" /></p>
 <ul>
-<li>Basic <span class="arithmatex">\(128*7\)</span></li>
-<li>3-to-8 &amp; 4-to-16 <span class="arithmatex">\(128*2 + 8*3+16*4\)</span></li>
+<li>
+<p>Basic <span class="arithmatex">\(128*7\)</span></p>
+</li>
+<li>
+<p><strong>3-to-8 &amp; 4-to-16</strong>. -- <span class="arithmatex">\(128*2 + 8*3+16*4\)</span></p>
+</li>
 </ul>
-</blockquote>
 <h3 id="decoder-with-enable">Decoder with Enable<a class="headerlink" href="#decoder-with-enable" title="Permanent link">&para;</a></h3>
 <p><img alt="3" src="../3.png" /></p>
 <ul>
@@ -3292,9 +3325,7 @@
 <h4 id="7-segment-displayer">7-segment Displayer<a class="headerlink" href="#7-segment-displayer" title="Permanent link">&para;</a></h4>
 <p><img alt="12" src="../12.png" /></p>
 <p><img alt="13" src="../13.png" /></p>
-<blockquote>
 <p>To decrease count of the pins</p>
-</blockquote>
 <p><img alt="14" src="../14.png" /></p>
 <h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3332,14 +3363,22 @@
 <p><img alt="17" src="../17.png" /></p>
 <h3 id="multiplexer-width-expansion">Multiplexer Width Expansion<a class="headerlink" href="#multiplexer-width-expansion" title="Permanent link">&para;</a></h3>
 <p><img alt="18" src="../18.png" /><img alt="19" src="../19.png" /></p>
-<blockquote>
+<ul>
+<li>
 <p>GN(22) </p>
+</li>
+<li>
 <p>Three State can connect all output to one line. --GN=18 (a)</p>
+</li>
+<li>
 <p>GN=14 (b)</p>
-</blockquote>
+</li>
+</ul>
 <p>Disadvantages : Takes much time . </p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<p>*<em>Gray to Binary Code</em></p>
+<ul>
+<li>Gray to Binary Code</li>
+</ul>
 <h4 id="approach-1">Approach 1<a class="headerlink" href="#approach-1" title="Permanent link">&para;</a></h4>
 <p>Refer to <span class="arithmatex">\(PPT\)</span></p>
 <p><img alt="20" src="../20.png" /></p>
@@ -3357,8 +3396,10 @@
 <h3 id="half-adder">Half-Adder<a class="headerlink" href="#half-adder" title="Permanent link">&para;</a></h3>
 <p><img alt="26" src="../26.png" /></p>
 <p><img alt="27" src="../27.png" /></p>
+<p>The most COMMON: </p>
 <ul>
-<li>The most COMMON: <span class="arithmatex">\(S=X\oplus Y\ C=XY\\S=(X+Y)\bar{C}\ C=\overline{(\overline{XY})}\)</span></li>
+<li><span class="arithmatex">\(S=X\oplus Y\ C=XY\)</span></li>
+<li><span class="arithmatex">\(S=(X+Y)\bar{C}\ C=\overline{(\overline{XY})}\)</span></li>
 </ul>
 <h3 id="full-adder">Full-Adder<a class="headerlink" href="#full-adder" title="Permanent link">&para;</a></h3>
 <p><img alt="28" src="../28.png" /></p>
@@ -3418,7 +3459,7 @@
 <p><img alt="44" src="../44.png" /></p>
 <h4 id="overflow-detection">Overflow Detection<a class="headerlink" href="#overflow-detection" title="Permanent link">&para;</a></h4>
 <p>Overflow V = <span class="arithmatex">\(C_n\oplus C_{n-1}\)</span></p>
-<p>### Incrementing &amp; Decrementing</p>
+<h3 id="incrementing-decrementing">Incrementing &amp; Decrementing<a class="headerlink" href="#incrementing-decrementing" title="Permanent link">&para;</a></h3>
 <h4 id="incrementing">Incrementing<a class="headerlink" href="#incrementing" title="Permanent link">&para;</a></h4>
 <p><img alt="45" src="../45.png" /></p>
 <h3 id="multiplicationdivision-by-2n">Multiplication/Division by <span class="arithmatex">\(2^n\)</span><a class="headerlink" href="#multiplicationdivision-by-2n" title="Permanent link">&para;</a></h3>
@@ -3449,7 +3490,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月2日 12:12:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月15日 12:39:38</span>
       
         <br>
         创建日期:

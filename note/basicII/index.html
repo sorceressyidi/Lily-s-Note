@@ -3279,10 +3279,11 @@
 <p>A. Add inverse adjacency lists</p>
 <p>B.Multilists</p>
 <h4 id="adjacency-multilist">Adjacency Multilist<a class="headerlink" href="#adjacency-multilist" title="Permanent link">&para;</a></h4>
+<p><img alt="14" src="../14.png" /></p>
 <p><img alt="2" src="../2.png" /></p>
 <p><img alt="4" src="../4.png" /></p>
 <ul>
-<li>The space taken :$ (n+2e)$ ptrs + <span class="arithmatex">\(2e\)</span> ints  and “mark” is not counted.</li>
+<li>The space taken :<span class="arithmatex">\((n+2e)\)</span> ptrs + <span class="arithmatex">\(2e\)</span> ints  and “mark” is not counted.</li>
 <li>Sometimes we need to mark the edge after examine it,and then find the next edge.This representation makesit easy to do so.</li>
 </ul>
 <h3 id="topological-sort">Topological Sort<a class="headerlink" href="#topological-sort" title="Permanent link">&para;</a></h3>
@@ -3307,10 +3308,9 @@
 <p>Test an AOV for feasibility, and generate a topological order if possible.</p>
 </li>
 <li>
-<p>Method One</p>
+<p>Method One <span class="arithmatex">\(T=O(|V|^2)\)</span></p>
 </li>
 </ul>
-<p><span class="arithmatex">\(O(|V|^2)\)</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Topsort</span><span class="p">(</span><span class="w"> </span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w">   </span><span class="kt">int</span><span class="w">  </span><span class="n">Counter</span><span class="p">;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">Vertex</span><span class="w">  </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">;</span>
@@ -3325,7 +3325,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Method Two</li>
+<li>Method Two. <span class="arithmatex">\(T = O( |V| + |E| )\)</span></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Topsort</span><span class="p">(</span><span class="w"> </span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span><span class="w">   </span><span class="n">Queue</span><span class="w">  </span><span class="n">Q</span><span class="p">;</span>
@@ -3346,16 +3346,14 @@
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="midterm-review">Midterm Review<a class="headerlink" href="#midterm-review" title="Permanent link">&para;</a></h3>
+<p>Which of the following statements is TRUE about topological sorting? (5分)</p>
 <ul>
-<li>Which of the following statements is TRUE about topological sorting? (5分)
-  1. If a graph has a topological sequence, then its adjacency matrix must be triangular.
-  2. If the adjacency matrix is triangular, then the corresponding directed graph must have a unique topological sequence.
-  3. In a DAG, if for any pair of distinct vertices <em>Vi</em> and <em>Vj</em>, there is a path either from <em>Vi</em> to <em>Vj</em> or from <em>Vj</em> to <em>Vi</em>, then the DAG must have a unique topological sequence.
-  4. If <em>Vi</em> precedes <em>Vj</em> in a topological sequence, then there must be a path from <em>Vi</em> to <em>Vj</em>.</li>
+<li>If a graph has a topological sequence, then its adjacency matrix must be triangular.</li>
+<li>If the adjacency matrix is triangular, then the corresponding directed graph must have a unique topological sequence.</li>
+<li>In a DAG, if for any pair of distinct vertices <em>Vi</em> and <em>Vj</em>, there is a path either from <em>Vi</em> to <em>Vj</em> or from <em>Vj</em> to <em>Vi</em>, then the DAG must have a unique topological sequence.</li>
+<li>If <em>Vi</em> precedes <em>Vj</em> in a topological sequence, then there must be a path from <em>Vi</em> to <em>Vj</em>.</li>
 </ul>
-<blockquote>
 <p>3 is true</p>
-</blockquote>
 <h3 id="shortest-path-problem">Shortest Path Problem<a class="headerlink" href="#shortest-path-problem" title="Permanent link">&para;</a></h3>
 <h4 id="1single-source-shortest-path-problem">1.Single-Source Shortest Path Problem<a class="headerlink" href="#1single-source-shortest-path-problem" title="Permanent link">&para;</a></h4>
 <ul>
