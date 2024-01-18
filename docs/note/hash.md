@@ -183,9 +183,8 @@ Position  Find ( ElementType Key, HashTable H )
     int  CollisionNum; 
     CollisionNum = 0; 
     CurrentPos = Hash( Key, H->TableSize ); 
-    while( H->TheCells[ CurrentPos ].Info != Empty && 
-	H->TheCells[ CurrentPos ].Element != Key ) { 
-	CurrentPos += 2 * ++CollisionNum  1; 
+    while( H->TheCells[ CurrentPos ].Info != Empty && H->TheCells[ CurrentPos ].Element != Key) { 
+	CurrentPos += 2 * (++CollisionNum)-1; 
 	if ( CurrentPos >= H->TableSize )  CurrentPos  = H->TableSize; 
     } 
     return CurrentPos; 
@@ -195,11 +194,10 @@ Position  Find ( ElementType Key, HashTable H )
 * Insert
 
 ```C
-void  Insert ( ElementType Key, HashTable H ) 
-{ 
+void  Insert ( ElementType Key, HashTable H ){ 
     Position  Pos; 
     Pos = Find( Key, H ); 
-    if ( H->TheCells[ Pos ].Info != Legitimate ) { /* OK to insert here */ 
+   if ( H->TheCells[ Pos ].Info != Legitimate ) { /* OK to insert here */ 
 	H->TheCells[ Pos ].Info = Legitimate; 
 	H->TheCells[ Pos ].Element = Key; /* Probably need strcpy */ 
     } 
@@ -214,7 +212,9 @@ void  Insert ( ElementType Key, HashTable H )
 
 #### Double Hashing
 
-$f ( i ) = i * hash_2( x )$   hash2( x ) is the 2nd hash function 
+$f ( i ) = i * hash_2( x )$   
+
+* hash2( x ) is the 2nd hash function  -- usually $hash_2( x ) = R-(x\% R)$  with R a prime smaller than TableSize, will work well.
 
 ### Rehashing
 

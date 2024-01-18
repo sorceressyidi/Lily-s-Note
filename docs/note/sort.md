@@ -180,13 +180,11 @@ void PercolateDown( int p, PriorityQueue H ){
     int parent,son;
     for(parent=p;parent*2<=H->Size;parent=son){
         son=parent*2;
-        if(son<H->Size&&H->Elements[son]>H->Elements[son+1]){
+        if(son<H->Size&&H->Elements[son]<H->Elements[son+1]){
             son++;		
         }
-        if(temp<=H->Elements[son])
-            break;		
-        else
-            H->Elements[parent]=H->Elements[son];
+        if(temp>=H->Elements[son]){break;}		
+        else{H->Elements[parent]=H->Elements[son];}
     }
     H->Elements[parent]=temp;
 }
@@ -195,8 +193,7 @@ void PercolateDown( int p, PriorityQueue H ){
 ```C
 void Heapsort( ElementType A[ ], int N ) 
 {   int i; 
-    for ( i = N / 2; i >= 0; i - - ) /* BuildHeap */ 
-        PercDown( A, i, N ); 
+    for ( i = N / 2; i >= 0; i - - ) /* BuildHeap */ {PercDown( A, i, N ); }
     for ( i = N - 1; i > 0; i - - ) { 
         Swap( &A[ 0 ], &A[ i ] ); /* DeleteMax */ 
         PercDown( A, 0, i ); 
@@ -214,6 +211,7 @@ Although Heapsort gives the best average time, in practice it is slower than a v
 void Mergesort( ElementType A[ ], int N );
 void MSort( ElementType A[ ], ElementType TmpArray[ ],int Left,int Right);
 void Merge( ElementType A[ ], ElementType TmpArray[ ],int Lpos,int Rpos, int RightEnd);
+
 void Mergesort( ElementType A[ ], int N ) {
   	ElementType  *TmpArray;  /* need O(N) extra space */
     TmpArray = malloc( N * sizeof( ElementType ) ); 
@@ -223,6 +221,7 @@ void Mergesort( ElementType A[ ], int N ) {
     } 
     else  FatalError( "No space for tmp array!!!" ); 
 }
+
 void MSort( ElementType A[ ], ElementType TmpArray[ ],int Left, int Right){
   	int  Center; 
     if ( Left < Right ) {  /* if there are elements to be sorted */
@@ -232,6 +231,7 @@ void MSort( ElementType A[ ], ElementType TmpArray[ ],int Left, int Right){
 		Merge( A, TmpArray, Left, Center + 1, Right );  /* O( N ) */
     } 
 } 
+
 /* Lpos = start of left half, Rpos = start of right half */ 
 void Merge( ElementType A[ ], ElementType TmpArray[ ], int Lpos, int Rpos, int RightEnd ) {
   	int  i, LeftEnd, NumElements, TmpPos; 
@@ -241,9 +241,9 @@ void Merge( ElementType A[ ], ElementType TmpArray[ ], int Lpos, int Rpos, int R
     while(Lpos<=LeftEnd && Rpos<=RightEnd){
         if(A[Lpos]<=A[Rpos]){TmpArray[TmpPos++]=A[Lpos++];}
         else{TmpArray[TmpPos++]=A[Rpos++];}
-        while(Lpos<=LeftEnd){TmpArray[ TmpPos++ ] = A[ Lpos++ ];}
-        while(Rpos<=RightEnd){TmpArray[ TmpPos++ ] = A[ Rpos++ ];}
     }
+    while(Lpos<=LeftEnd){TmpArray[ TmpPos++ ] = A[ Lpos++ ];}
+    while(Rpos<=RightEnd){TmpArray[ TmpPos++ ] = A[ Rpos++ ];}
     for( i = 0; i < NumElements; i++, RightEnd - - ) 
          /* Copy TmpArray back */ 
         A[ RightEnd ] = TmpArray[ RightEnd ]; 
@@ -258,7 +258,6 @@ void Merge2( ElementType A[ ], ElementType TmpArray[ ], int Lpos, int Rpos, int 
         if((Lpos<=LeftEnd)&&(Rpos>RightEnd||A[Lpos]<=A[Rpos])){TmpArray[i]=A[Lpos++];}
         else{TmpArray[TmpPos++]=A[Rpos++];}
     }
-
 }
 /** version3 **/
 void CopyArray(int B[],int iBegin,int iEnd,int A[]);
@@ -270,14 +269,11 @@ void BottomupMergeSort(int A[],int B[],int n){
            }
            CopyArray(B,0,n,A);
    }
-
 }
 // (iBegin,iEnd]
 void Merge (int A[],int ileft,int iright,int iend,int B[]){
      int i=ileft,j=iright;
-
-    for(int k=ileft;k<iend;k++){
-
+  	 for(int k=ileft;k<iend;k++){
          if(i<iright&&(j>=iend||A[i]<=A[j])){
             B[k]=A[i++];
          }
@@ -364,11 +360,19 @@ void  Qsort( ElementType A[ ], int Left, int Right )
 
 ### Sorting Large Structures
 Swapping large structures can be very much expensive.
+
+
+
 * Add a pointer field to the structure and swap pointers instead – indirect sorting.  
+
   ![9](9.png)
+
+
+
 * Physically rearrange the structures at last if it is really necessary.
-    In the worst case there are $[N/2]$(down) cycles and requires $[3N/2]$ (down) record moves.
-    $T = O( m N )$ where m is the **size of a structure**
+  In the worst case there are $[N/2]$(down) cycles and requires $[3N/2]$ (down) record moves.
+  $T = O( m N )$ where m is the **size of a structure**
+
 ### A General Lower Bound for Sorting
 Any algorithm that sorts by comparisons only must have a worst case computing time of $\Omega( N log N )$.
 
@@ -380,14 +384,16 @@ The relationship between the height of the decision tree $(k)$ and complete bina
 For a **complete binary tree** with $k$ levels, it can have at most $2^{k-1}$ leaves. Combining this with the earlier discussion, the inequality $N! ≤ 2^{k-1}$ is established, where k is the height of the decision tree.
 
 Expressing the relationship between height and N! using logarithms, we find that $k ≥ log(N!) + 1$.
+
+
+
 * Logarithms are preferred due to their intuitive representation of exponential growth in tree height.
 
 These insights delineate theoretical limits for comparison-based sorting algorithms and underscore the significance of N log N as the theoretical lower bound for their time complexity.
 ### Bucket Sort and Radix Sort
-#### Bucket Sort
+#### Bucket Sort $T(N,M)=O(M+N)$
 ```C
-Algorithm
-{
+Algorithm{
     initialize count[ ];
     while (read in a student’s record)
         insert to list count[stdnt.grade];
@@ -396,8 +402,12 @@ Algorithm
             output list count[i];
     }
 }
-T(N,M)=O(M+N)
 ```
 * What if $M >> N$ ?
 #### Radix Sort
 ![10](10.png)
+
+## Stableness
+
+- 稳定排序：冒泡、归并、插入、基数
+- 不稳定排序：快排、希尔、堆排、选择

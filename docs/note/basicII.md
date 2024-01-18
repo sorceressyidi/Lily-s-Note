@@ -71,13 +71,15 @@ B.Multilists
 
 #### Adjacency Multilist
 
+![14](14.png)
+
 ![2](2.png)
 
 ![4](4.png)
 
 
 
-* The space taken :$ (n+2e)$ ptrs + $2e$ ints  and “mark” is not counted.
+* The space taken :$(n+2e)$ ptrs + $2e$ ints  and “mark” is not counted.
 * Sometimes we need to mark the edge after examine it,and then find the next edge.This representation makesit easy to do so.
 
 ### Topological Sort
@@ -102,9 +104,8 @@ A topological order is a linear ordering of the vertices of a graph such that, f
 
 * Test an AOV for feasibility, and generate a topological order if possible.
 
-* Method One
+* Method One $T=O(|V|^2)$
 
-  $O(|V|^2)$
 
 ```C
 void Topsort( Graph G )
@@ -121,7 +122,7 @@ void Topsort( Graph G )
 }
 ```
 
-* Method Two
+* Method Two. $T = O( |V| + |E| )$
 
 ```C
 void Topsort( Graph G )
@@ -145,13 +146,14 @@ void Topsort( Graph G )
 
 ### Midterm Review
 
-* Which of the following statements is TRUE about topological sorting? (5分)
-  1. If a graph has a topological sequence, then its adjacency matrix must be triangular.
-  2. If the adjacency matrix is triangular, then the corresponding directed graph must have a unique topological sequence.
-  3. In a DAG, if for any pair of distinct vertices *Vi* and *Vj*, there is a path either from *Vi* to *Vj* or from *Vj* to *Vi*, then the DAG must have a unique topological sequence.
-  4. If *Vi* precedes *Vj* in a topological sequence, then there must be a path from *Vi* to *Vj*.
+Which of the following statements is TRUE about topological sorting? (5分)
 
-> 3 is true
+* If a graph has a topological sequence, then its adjacency matrix must be triangular.
+* If the adjacency matrix is triangular, then the corresponding directed graph must have a unique topological sequence.
+* In a DAG, if for any pair of distinct vertices *Vi* and *Vj*, there is a path either from *Vi* to *Vj* or from *Vj* to *Vi*, then the DAG must have a unique topological sequence.
+* If *Vi* precedes *Vj* in a topological sequence, then there must be a path from *Vi* to *Vj*.
+
+3 is true
 
 ### Shortest Path Problem
 
