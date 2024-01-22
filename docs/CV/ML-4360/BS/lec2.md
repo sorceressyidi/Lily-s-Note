@@ -6,10 +6,10 @@
 * points at infinity
 ![Alt text](<a.png>)
 * In homogeneous coordinates, the intersection of two lines is given by:
->$\tilde{x}$=$\tilde{l1}$ × $\tilde{l2}$ 
+$\tilde{x}$=$\tilde{l1}$ × $\tilde{l2}$ 
 ![Alt text](<b.png>)
 * the line joining two points can be compactly written as:
-> $\tilde{l}$=$\tilde{x1}$ × $\tilde{x2}$ 
+$\tilde{l}$=$\tilde{x1}$ × $\tilde{x2}$ 
 
 ### $Transformations$​​
 
@@ -32,8 +32,7 @@ $\begin{bmatrix}R&t\\0^{T}&1\end{bmatrix}$
 * $A^{-1}=A^T$
 * $\left|A\right|$ = $+-1$
 * A的行（列）向量组为n维单位正交向量组
-
-> 正交变换保持向量的长度与内积不变 $|\sigma\alpha|=|\alpha|$
+* 正交变换保持向量的长度与内积不变 $|\sigma\alpha|=|\alpha|$
 
 #### Similarity 4DOF
 

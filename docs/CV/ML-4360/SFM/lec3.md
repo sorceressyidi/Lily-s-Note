@@ -136,110 +136,117 @@ So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 
 ![9](9.png)
 
 - Let R and t denote the relative pose between **two perspective cameras** 
-
-- A 3D point x is projected to pixel $\bar{x}_1$in image 1 and to pixel $\bar{x_2}$ in image 2 
-
-- The 3D point x and the two cameracenters span the **epipolar plane** 
-
-- The correspondence of pixel $\bar{x}_1$ in image 2 must lie on the **epipolar line** $\widetilde{l2}$in image 2 
-
+- A 3D point x is projected to pixel $\bar{x}_1$in image 1 and to pixel $\bar{x}_2$ in image 2 
+- The 3D point $x$ and the two camera centers span the **epipolar plane** 
+- The correspondence of pixel $\bar{x}_1$ in image 2 must lie on the **epipolar line** $\widetilde{l}_2$in image 2 
 - All epipolar lines pass through the **epipole**
 
-- Equations:
+### Equations:
 
-- Let $Ki ∈ R_{3×3}$denote the **camera matrix** of camera i.
+Let $K_i ∈ R_{3×3}$denote the **camera matrix** of camera $i$.
 
-- Let $\widetilde{x}i$= $K^{-1} x ̄_i$denote the **local ray direction** of pixel $x ̄_i$ in camera i.
+Let $\widetilde{x}_i$= $K_i^{-1} x ̄_i$denote the **local ray direction** of pixel $x ̄_i$ in camera $i$.
 
-- We have: 
+We have:
 
-- $x~_2 ∝ x_2 = Rx_1+t ∝ Rx~_1+st$
+- $\tilde{x}_2 ∝ x_2 = Rx_1+t ∝ R\tilde{x}_1+st$
 
 - Taking the **cross product** of both sides with t we obtain:
 
-- $[t]×x~2 ∝ [t]×R x~1$
+  $[t]_×\tilde{x}_2 ∝ [t]_×R\tilde{x}_1$
 
-- Taking the **dotproduct** of both sides with$x~^⊤_2$yields (triple product):
+- Taking the **dotproduct** of both sides with$\tilde{x}^⊤_2$yields (triple product):
 
-- $x~^⊤_2 [t]×R x~1 ∝ x~^⊤_2 [t]×x~2 = 0 ⇒ x~^⊤_2 [t]×R x~1 = 0$
+  $\tilde{x}^⊤_2 [t]×R\tilde{x}_1 ∝ \tilde{x}^⊤_2 [t]×\tilde{x}2 = 0 $
+
+  $⇒ \tilde{x}^⊤_2 [t]×R \tilde{x}_1 = 0$
 
 - We arrive at the **epipolar constraint**with **essential matrix:**
 
-- $x~^⊤_2 E~ x~ _1 = 0 \ \ \widetilde{E} = [ t ] × R$
+  $\tilde{x}^⊤_2 \tilde{E}\tilde{x} _1 = 0$ 
 
-- $\widetilde{E}$ maps a point $x~_1$ in image 1 to the corresponding **epipolar line in image 2** $\widetilde{l}_2=\widetilde{E} x~ 1$
+  **$\widetilde{E} = [ t ] × R$​**
 
-- Similarly, by transposition, we obtain the **epipolar line in image 1:**$\widetilde{l}_1 = \widetilde{E}^⊤ x~ 2$
+- $\widetilde{E}$ maps a point $\tilde{x}_1$ in image $1$ to the corresponding **epipolar line in image 2** $\widetilde{l}_2=\widetilde{E} \tilde{x}_1$
 
-- For any point $x~1$in the first image, the corresponding **epipolar line** $\widetilde{l}_2 = \widetilde{E}x~_1$in the second image passes through the so-called **epipole** $\tilde{e}_2$ which therefore satisfies $\widetilde{e}^⊤_2 \ \widetilde{l}_2 = \widetilde{e}^⊤_2 \widetilde{E}x~_1 = 0$ for all $x~_1.$
+- Similarly, by transposition, we obtain the **epipolar line in image 1:**$\widetilde{l}_1 = \widetilde{E}^⊤\tilde{x}_2$
 
-- It follows that:$\widetilde{e}^⊤_2 \widetilde{E} = 0$Thus,$e~^⊤_2$is the **leftnull-space** (left singular vector with singular value 0)of$\widetilde{E}$.Further:$\widetilde{E}e~_1 = 0$ Thus,$e~^⊤_1$ is the **rightnull-space** (right singular vector with singular value 0)of  $\widetilde{E}.$
+- For **any point**  $\tilde{x}_1$in the first image, the corresponding **epipolar line** $\widetilde{l}_2 = \widetilde{E}\tilde{x}_1$ in the second image passes through the so-called **epipole** $\tilde{e}_2$ which therefore satisfies
 
-- Recover R & t
+   $\widetilde{e}^⊤_2 \ \widetilde{l}_2 = \widetilde{e}^⊤_2 \widetilde{E}\tilde{x}_1 = 0$ for all $\tilde{x}_1.$
 
-- Derivation
+  > It follows that:$\widetilde{e}^⊤_2 \widetilde{E} = 0$
+  >
+  > Thus,$e~^⊤_2$is the **leftnull-space** (left singular vector with singular value 0) of$\widetilde{E}$.
+  >
+  > Further:$\widetilde{E}\tilde{e}_1 = 0$ Thus,$\tilde{e}_1$ is the **rightnull-space** (right singular vector with singular value 0)of  $\widetilde{E}.$
 
-  $\widetilde{x_{2i}}^T \widetilde{E} \widetilde{x_{1i}}=0$
+### Recover $R\ \&\ t$
 
-- $\widetilde{E}=\begin{pmatrix} e_{11} & e_{12} & e_{13} \\ e_{21} & e_{22} & e_{23} \\ e_{31} & e_{32} & e_{33} \end{pmatrix} \ \ \ \ \ \ \ \ E = \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}$$\Rightarrow x_1x_2e_{11} + y_1x_2e_{12} + x_2e_{13}+ x_1y_2e_{21} + y_1y_2e_{22} + y_2e_{23}+ x_1e{31} + y_1e_{32} + e_{33 }= 0$
+Derivation
+
+$\tilde{x}_{2i}^T \widetilde{E} \tilde{x}_{1i}=0$
+
+$\widetilde{E}=\begin{pmatrix} e_{11} & e_{12} & e_{13} \\ e_{21} & e_{22} & e_{23} \\ e_{31} & e_{32} & e_{33} \end{pmatrix} \ \ \ \ \ \ \ \ E = \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}$$\Rightarrow x_1x_2e_{11} + y_1x_2e_{12} + x_2e_{13}+ x_1y_2e_{21} + y_1y_2e_{22} + y_2e_{23}+ x_1e{31} + y_1e_{32} + e_{33 }= 0$
 
 - As $\widetilde{E}$ is homogeneous we use **singular value decomposition** to constrain the scale.
+- Note that some terms are products of two image measurements and hence amplify measurement noise asymmetrically. Thus, the **normalized 8-point algorithm** whitens the observations to have zero-mean and unit variance before the calculation and back-transforms the matrix recovered by $SVD$ accordingly.
 
-- Note that some terms are products of two image measurements and hence amplify measurement noise asymmetrically. Thus, the **normalized 8-point algorithm** whitens the observations to have zero-mean and unit variance before the calculation and back-transforms the matrix recovered by SVD accordingly.
+#### SVD Method
 
-- SVD Method
-
-- Rearranging the product, so E is on the left hand side:$\widetilde{x_2}^T\widetilde{E}\widetilde{x_1} =\begin{pmatrix} x_{11}x_{12} & y_{11}x_{12} & x_{12}&x_{11}y_{12}&y_{11}y_{12}&y_{12}&x_{11}&y_{11}&1 \\ …… \\ x_{i1}x_{i2} & y_{i1}x_{i2} & x_{i2}&x_{i1}y_{i2}&y_{i1}y_{i2}&y_{i2}&x_{i1}&y_{i1}&1 \\…… \\x_{81}x_{82} & y_{81}x_{82} & x_{82}&x_{81}y_{82}&y_{81}y_{82}&y_{82}&x_{81}&y_{81}&1\end{pmatrix} \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix} =0$$\Rightarrow AE = 0$
+* Rearranging the product, so $E$ is on the left hand side:$\tilde{x}_2^T\tilde{E}\tilde{x}_1 =\begin{pmatrix} x_{11}x_{12} & y_{11}x_{12} & x_{12}&x_{11}y_{12}&y_{11}y_{12}&y_{12}&x_{11}&y_{11}&1 \\ …… \\ x_{i1}x_{i2} & y_{i1}x_{i2} & x_{i2}&x_{i1}y_{i2}&y_{i1}y_{i2}&y_{i2}&x_{i1}&y_{i1}&1 \\…… \\x_{81}x_{82} & y_{81}x_{82} & x_{82}&x_{81}y_{82}&y_{81}y_{82}&y_{82}&x_{81}&y_{81}&1\end{pmatrix} \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix} =0$$\Rightarrow AE = 0$
 
 - If there are more than 8 point correspondences, the system is usually over-determined and an exact solution is not possible. Instead, we solve a least squares problem for **AE**
+- $min(||AE||),||E||=1$​
 
-- $min(||AE||),||E||=1$
+> 我的理解：并不是说$E$ 的范数就是1 而是在计算 $min(||AE||)$时，等同于计算 minimize $||AE||$ subject to $||x||^2=1$​
+>
+> ![11](11.png)
 
 <iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.cs.cmu.edu/%7E16385/s17/Slides/11.5_SVD.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
 
-
+> 勘误 x is the last column of V
 
 Credits to Carnegie Mellon University and Kris Kitani, http://www.cs.cmu.edu/~16385/s17/Slides/11.5_SVD.pdf
 
-- Properties of the \(\widetilde{E}\)
+#### Properties of the $\tilde{E}$
 
-  - by readjustment:
+- by readjustment:
 
-  - $\widetilde{E} =\begin{bmatrix} u0&u1&u2 \end{bmatrix}\begin{bmatrix} s&0&0\\0&s&0\\0&0&s \end{bmatrix} \begin{bmatrix}v0^T\\v1^T\\v2^T \end{bmatrix} =U\sum V^T$
+- $\widetilde{E} =\begin{bmatrix} u_0&u_1&u_2 \end{bmatrix}\begin{bmatrix} s&0&0\\0&s&0\\0&0&0 \end{bmatrix} \begin{bmatrix}v_0^T\\v_1^T\\v_2^T \end{bmatrix} =U\sum V^T$
 
-  - $s=\frac{\lambda_1+\lambda_2}{2}$   $\lambda_1\ge \lambda_2\ge\lambda_3$
+- $s=\frac{\lambda_1+\lambda_2}{2}$   $\lambda_1\ge \lambda_2\ge\lambda_3$
 
 - Proof
 
-- 证明本质矩阵E EE奇异值具有$[σ,σ,0]^ T$的形式，只需证明矩阵$E^TE$的特征值具有\([\lambda, \lambda, 0]^T\)的形式。由于矩阵 $EE^T$与 $E^{T}E$有相同的非零特征值，所以证明内在性质也等价于证明矩阵\(EE^T\)的特征值具有$[\lambda, \lambda, 0]^T$的形式
-
-- 具体证明见https://blog.csdn.net/weixin_44387324/article/details/119182590
+   具体证明见https://blog.csdn.net/weixin_44387324/article/details/119182590
 
 - Thus we have
 
    $W=\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&1 \\ \end{bmatrix} \\ t_x=UW\sum U^T \\ R=UW^{-1}V^T \\E=U\sum V^T$
 
-- Fundamental matrix (if Ki unknown):
+#### Fundamental matrix (if $K_i$ unknown):
 
-- $\widetilde{x_2}^T\widetilde{E}\widetilde{x_1}=\bar{x_2}^T\widetilde{F}\bar{x_1}$
-
+- $\tilde{x}_2^T\tilde{E}\widetilde{x}_1=\bar{x_2}^T\tilde{F}\bar{x}_1$
 - $\widetilde{F} = K_2^{-1}\widetilde{E} K_1^{-1}$
 
 ## Triangulation
 
-- Let $x~^s_i = \widetilde{P}_ i x~_w$ denote the projection of a 3D world point $x~_w$ onto the image of the i’th camera $x~^s_i$.
+Let $\tilde{x}^s_i = \widetilde{P}_ i \tilde{x}_w$ denote the projection of a 3D world point $\tilde{x}_w$ onto the image of the i’th camera $\tilde{x}^s_i$.
 
-- Consider the cross product $x ̄^s_i × \widetilde{P}_ix~_w =0$.
+Consider the cross product $x ̄^s_i × \tilde{P}_i\tilde{x}_w =0$.
 
-- Using $p~^⊤_{ik}$ to denote the k’th row of the i’th camera’s projection matrix $\widetilde{P_i}$, we obtain:
+- Using $\tilde{p}^⊤_{ik}$ to denote the k’th row of the i’th camera’s projection matrix $\widetilde{P_i}$, we obtain:
 
-- $\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\widetilde{x}_w=0$
+  $\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\widetilde{x}_w=0$      $[\bar{x}_i^s=(x_i^s,y_i^s,1)]$  
 
-- $\bar{x}_i^s=(x_i^s,y_i^s,1)$
+- Stacking $N ≥ 2$ observations of a point, we obtain a linear system $A\tilde{x}_w = 0.$As $\tilde{x}_w$​ is homogeneous this leads to a constrained least squares problem. 
 
-- Stacking N ≥ 2 observations of a point, we obtain a linear system $Ax~_w = 0.$As $x~_w$ is homogeneous this leads to a constrained least squares problem. The solution to this problem is the **right singular vector** corresponding to the smallest singular value of A. This is the **Direct Linear Transformation** we are already familiar with from Lecture 2.
+  The solution to this problem is the **right singular vector** corresponding to the smallest singular value of A. This is the **Direct Linear Transformation** we are already familiar with from $Lecture 2$.
 
-- Proof https://blog.csdn.net/u011178262/article/details/86729887
+- Direcr Linear Transformation https://medium.com/@insight-in-plain-sight/estimating-the-homography-matrix-with-the-direct-linear-transform-dlt-ec6bbb82ee2b
+
+- Proof  https://blog.csdn.net/u011178262/article/details/86729887
 
 - **Reprojection Error Minimization:**
 
@@ -278,7 +285,7 @@ While DLT often works well, it is not invariant to perspective transformations.T
 
 5.Compute$R=\hat{R}Q$and$X=Q^{-1}\hat{X}$
 
-Remarks:
+**Remarks:**
 
 - Advantage: **closed form solution** (determined up to an arbitrary global rotation)
 - Disadvantage: **complete feature tracks** required (⇒ cannot handle occlusions)
