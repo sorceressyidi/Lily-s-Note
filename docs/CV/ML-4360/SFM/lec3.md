@@ -14,6 +14,7 @@
 ### Scale Invariant Feature Transform (SIFT)
 **Reference to https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40**
 https://www.qixinbo.info/2021/10/26/sift/
+
 - SIFT constructs a **scale space** by iteratively filtering the image with a Gaussian
 - Adjacent scales are subtracted, yielding **Difference of Gaussian (DoG)** images
 - **Interest points** (=blobs) are detected as **extrema** in the resulting scale space
@@ -135,7 +136,7 @@ So 4 X 4 descriptors over 16 X 16 sample array were used in practice. 4 X 4 X 8 
 
 ![9](9.png)
 
-- Let R and t denote the relative pose between **two perspective cameras** 
+- Let $R$ and $t$ denote the relative pose between **two perspective cameras** 
 - A 3D point x is projected to pixel $\bar{x}_1$in image 1 and to pixel $\bar{x}_2$ in image 2 
 - The 3D point $x$ and the two camera centers span the **epipolar plane** 
 - The correspondence of pixel $\bar{x}_1$ in image 2 must lie on the **epipolar line** $\widetilde{l}_2$in image 2 
@@ -177,17 +178,17 @@ We have:
 
   > It follows that:$\widetilde{e}^⊤_2 \widetilde{E} = 0$
   >
-  > Thus,$e~^⊤_2$is the **leftnull-space** (left singular vector with singular value 0) of$\widetilde{E}$.
+  > Thus,  $\tilde{e}^⊤_2$is the **leftnull-space** (left singular vector with singular value 0) of$\widetilde{E}$.
   >
   > Further:$\widetilde{E}\tilde{e}_1 = 0$ Thus,$\tilde{e}_1$ is the **rightnull-space** (right singular vector with singular value 0)of  $\widetilde{E}.$
 
 ### Recover $R\ \&\ t$
 
-Derivation
+> Derivation
 
 $\tilde{x}_{2i}^T \widetilde{E} \tilde{x}_{1i}=0$
 
-$\widetilde{E}=\begin{pmatrix} e_{11} & e_{12} & e_{13} \\ e_{21} & e_{22} & e_{23} \\ e_{31} & e_{32} & e_{33} \end{pmatrix} \ \ \ \ \ \ \ \ E = \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}$$\Rightarrow x_1x_2e_{11} + y_1x_2e_{12} + x_2e_{13}+ x_1y_2e_{21} + y_1y_2e_{22} + y_2e_{23}+ x_1e{31} + y_1e_{32} + e_{33 }= 0$
+$\widetilde{E}=\begin{pmatrix} e_{11} & e_{12} & e_{13} \\ e_{21} & e_{22} & e_{23} \\ e_{31} & e_{32} & e_{33} \end{pmatrix} \ \ \ \ \ \ \ \ E = \begin{pmatrix} e_{11} \\ e_{12} \\ e_{13} \\ e_{21} \\ e_{22} \\ e_{23} \\ e_{31} \\ e_{32} \\ e_{33} \end{pmatrix}$$\Rightarrow x_1x_2e_{11} + y_1x_2e_{12} + x_2e_{13}+ x_1y_2e_{21} + y_1y_2e_{22} + y_2e_{23}+ x_1e_{31} + y_1e_{32} + e_{33 }= 0$
 
 - As $\widetilde{E}$ is homogeneous we use **singular value decomposition** to constrain the scale.
 - Note that some terms are products of two image measurements and hence amplify measurement noise asymmetrically. Thus, the **normalized 8-point algorithm** whitens the observations to have zero-mean and unit variance before the calculation and back-transforms the matrix recovered by $SVD$ accordingly.
