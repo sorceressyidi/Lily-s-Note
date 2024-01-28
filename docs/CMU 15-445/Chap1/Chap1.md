@@ -61,9 +61,19 @@ Methods to store and retrieve information from a database.
 
 ### Extra Operators
 
+* Rename (**ρ**)
+* Assignment (R←S)
+* Duplicate Elimination (**δ**)
+* Aggregation (**γ**)
+* Sorting (**τ**)
+* Division (R÷S)
 
+### Insights
 
+A better approach is to state the high-level answer that you want the DBMS to compute.
 
+* Faced with different situation of data(say ,small amout vs large amout),if considered in a lower level,we have to implement different methods for different circumstances.
+* We expect that ,even the situation changes, we do not have to change our queries.
 
 
 
