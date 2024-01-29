@@ -220,7 +220,7 @@ Credits to Carnegie Mellon University and Kris Kitani, http://www.cs.cmu.edu/~16
 
 - Proof
 
-   具体证明见https://blog.csdn.net/weixin_44387324/article/details/119182590
+   具体证明见 https://blog.csdn.net/weixin_44387324/article/details/119182590
 
 - Thus we have
 
@@ -239,11 +239,15 @@ Consider the cross product $x ̄^s_i × \tilde{P}_i\tilde{x}_w =0$.
 
 - Using $\tilde{p}^⊤_{ik}$ to denote the k’th row of the i’th camera’s projection matrix $\widetilde{P_i}$, we obtain:
 
-  $\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1} \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2} \end{bmatrix}\widetilde{x}_w=0$      $[\bar{x}_i^s=(x_i^s,y_i^s,1)]$  
+  $\begin{bmatrix}x^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i1}^T \\ y^s_i\widetilde{p}_{i3}^T - \widetilde{p}_{i2}^T \end{bmatrix}\widetilde{x}_w=0$      $[\bar{x}_i^s=(x_i^s,y_i^s,1)]$  
 
-- Stacking $N ≥ 2$ observations of a point, we obtain a linear system $A\tilde{x}_w = 0.$As $\tilde{x}_w$​ is homogeneous this leads to a constrained least squares problem. 
+- Stacking $N ≥ 2$ observations of a point, we obtain a linear system $A\tilde{x}_w = 0.$
 
-  The solution to this problem is the **right singular vector** corresponding to the smallest singular value of A. This is the **Direct Linear Transformation** we are already familiar with from $Lecture 2$.
+- As $\tilde{x}_w$​ is homogeneous this leads to a constrained least squares problem. 
+
+  The solution to this problem is the **right singular vector** corresponding to the smallest singular value of A.
+
+  This is the **Direct Linear Transformation** we are already familiar with from $Lecture 2$.
 
 - Direcr Linear Transformation https://medium.com/@insight-in-plain-sight/estimating-the-homography-matrix-with-the-direct-linear-transform-dlt-ec6bbb82ee2b
 

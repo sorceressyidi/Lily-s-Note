@@ -1,8 +1,4 @@
-# Basic
-
-## Intro
-
-### In & Out
+## In & Out
 
 ```C++
 #include<iostream>
@@ -19,7 +15,7 @@ int main()
 
 * `cout` 为 `cout << "Hello World"` 的结果
 
-### String
+## String
 
 `#include<string>`
 
@@ -278,7 +274,7 @@ Position of 'World': 7
 Position of 'World' starting from position 7: 7
 ```
 
-### Dynamic memory allocation
+## Dynamic memory allocation
 
 `new` and `delete`
 
@@ -306,7 +302,7 @@ delete [] p;
 
   `new` just alert error.
 
-### Class
+## Class
 
 ### Declaring references
 
@@ -436,11 +432,208 @@ void S::f() {
 
 ### Object-Oriented
 
+#### Constructer
 
+* Constructer is to initialize , not to allocate memory.
+* Once there is a "constructer" ,you cannot initilize by `Point c = {10,20}`
 
-### Container
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+class Point{
+  public:
+  	Point(int deep);  //one argument
+    Point(int x,int y); //two arguments
+  	Point(){x = 13,y=31;}; // no argument
+    void move(int dx,int dy);
+    void print()const;
+  private:
+    int x;
+    int y;
+};
+Point::Point(int ix,int iy){
+  x=ix;
+  y=iy;
+}
+Point::Point(int deep){
+  x=y=deep;
+}
+void Point::move(int dx,int dy){
+  x+=dx;
+  y+=dy;
+}
+void Point::print()const{
+  cout<<"("<<x<<","<<y<<")"<<endl;
+}
+int main()
+{
+    Point a(10,20);
+  	Point c(10);//Point c = 10
+  	Point d;
+  	d.print();
+    a.print();
+}
+```
 
+* A default constructer is one that can be called with no arguments
+* If no default constructer is coded , the compiler will automatically implement one(in default version)
 
+#### Destructor「析构」
 
-### Function
+* Destructor is called automatically by the compiler when theobject goes out of scope
 
+* The order of destruction is the reverse of construction.
+
+* Scope is delimited by curly braces`{ }`.
+
+* Upon entering a function, space for all local variables is allocated,but constructors are not invoked until the specific constructor line is executed. 
+
+  Similarly, when entering a `switch case` statement, space for objects is generated but not constructed, which may lead to issues during destruction.
+
+```c++
+void f(int i){
+  if(i<10){
+    goto jump1; //Error: goto bypasses init
+  }
+  X x1;	//Constructor
+  jump1:
+  	switch(i){
+      case 1:
+        X x2;//Constructor
+      case 2 : //Error: case bypasses init
+        X x3;//Constructor
+        break;
+    }
+}
+```
+
+* Memory for x1(x2) is allocated , but not initialized , so **destruction** will fail
+
+#### Definitions of a class
+
+- In C++, separated `.h` and `.cpp` files are used to define one class.
+- Class declaration and prototypes in that class are in the header file ( `.h` ).
+- All the bodies of these functions are in the source file (`.cpp`)
+
+* Standard header file sturcture
+  ```C++
+  #ifnedf HEADER_FLAG
+  #define HEADER_FLAG
+  //Type declaration here...
+  #endif
+  ```
+`#include` is to insert the included file into the `.cpp` file at where the `#include` statement is.
+- `#include "xx.h"` : search in the *current directory firstly*, then the directories
+  declared somewhere
+- `#include <xx.h>` : search in the specified directories
+- `#include <xx>` : same as `#include <xx.h>`
+### Example
+`NumberDisplay.h`
+```C++
+#ifndef _NUMBER_DISPLAY_HEAD_
+#define _NUMBER_DISPLAY_HEAD_
+#include<string>
+class NumberDisplay{
+  private:
+    int limit;
+    int value;
+  public:
+  NumberDisplay(int limit);
+  int increase();
+  std::string toString();
+}
+#endif
+```
+`NumberDisplay.cpp`
+```C++
+#include "NumberDisplay.h"
+#include<string>
+#include<iostream>
+
+NumberDisplay::NumberDisplay(int limit){
+  value = 0;
+  this->limit = limit;
+}
+/**
+ * @return 1 for turn over
+*/
+int NumberDisplay::increase():{
+  value++;
+  if(value == limit){
+    value = 0;
+    return 1;
+  }
+  return 0;
+}
+std::string NumberDisplay::toString(){
+  if(value<10){
+    return "0"+value;
+  }
+  else{
+    return ""+value;
+  }
+}
+#ifdef _TEST_ND_
+#include<iostream>
+using namespace std;
+int main(){
+  NumberDisplay d(10);
+  for(int i=9;i<20;i++){
+    d.increase();
+    cout << d.tostring()<<endl;  
+  }
+
+}
+#endif
+```
+`clock.h`
+```C++
+#ifndef _CLOCK_HEAD_
+#define _CLOCK_HEAD_
+#include "NumberDisplay.h"
+class Clock{
+  private:
+    NumberDisplay hour;
+    NumberDisplay minute;
+  public:
+     Clock();
+     void dida();
+}
+```
+`clock.cpp`
+```C++
+#include "clock.h"
+#include<iostream>
+using namespace std;
+Clock::Clock():
+  hour(24),minute(60) //initialization list
+{
+
+}
+void Clock::dida(){
+  if(minute.increase()){
+    hour.increase
+  }
+  cout << hour.toString();
+  cout << ":";
+  cout << minute.toString();
+  cout << endl;
+}
+```
+* What if ?
+`clock.h`
+```C++
+#ifndef _CLOCK_HEAD_
+#define _CLOCK_HEAD_
+//#include"NumberDisplay.h"
+class NumberDisplay
+class Clock{
+  private:
+    NumberDisplay *hour;
+    NumberDisplay *minute;
+  public:
+     Clock();
+     void dida();
+}
+```

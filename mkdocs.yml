@@ -13,7 +13,6 @@ theme:
   features:
     - navigation.tracking
     - navigation.tabs
-    - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.footer
@@ -32,7 +31,7 @@ theme:
   palette:     #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
     - media: "(prefers-color-scheme: light)" 
       scheme: default  #配色方案：浅色模式
-      primary: brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      primary: deep pink  
       accent: brown  #强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
       toggle:
         icon: material/weather-sunny #图标，太阳
@@ -66,6 +65,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 4
+      
   - meta
   - def_list
   - attr_list
@@ -102,7 +102,9 @@ extra_css:
   - css/tasklist.css
   - css/flink.css
   - css/more_changelog.css
+  - css/extra.css
 extra_javascript:
+  - javascripts/extra.js
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -111,6 +113,8 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/sorceressyidi/
 plugins:
+  - tags:
+      tags_file: tags.md
   - search
   - git-revision-date-localized:
       type: datetime
@@ -169,7 +173,8 @@ nav:
       - Chapter 6 : NA/Chap6/Chap6.md
       - Chapter 7 : NA/Chap7/Chap7.md
     - OOP(C++):
-      - Basic: oop/Basic/Basic.md
+      - Itro & Class: oop/Basic/Basic.md
+      - Container & Function: oop/Container/Container.md
     - CMU 15-445: 
       - Chapter 1 : CMU 15-445/Chap1/Chap1.md
       - Chapter 2 : CMU 15-445/Chap2/Chap2.md
@@ -217,6 +222,13 @@ nav:
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
       - 数字特征与特征函数: PT/数字特征与特征函数.md
+  - AI :
+    - Deep Learning :
+      - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
+      - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
+      - Structuring Machine Learning Projects : DL/Structuring Machine Learning Projects/part3.md
+      - Convolutional Neural Networks : DL/Convolutional Neural Networks/part4.md
+      - Sequence Models : DL/Sequence Models/part5.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
@@ -229,10 +241,27 @@ nav:
       - Invisible : invisible.md
       - 大侠 : 大侠.md
       
-    
+analytics: 
+    provider: google
+    property: G-187-750-6946
+    feedback:
+      title: Is this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+    consent:
+      title: Cookie consent
+      description: >- 
+        We also use cookies to identify your repeated visits and preferences to measure the effectiveness of our documentation and whether users find what they're looking for. If you consent, you can help us make our website better.
     
  
-     
-   
-
 
