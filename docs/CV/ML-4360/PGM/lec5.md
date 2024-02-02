@@ -176,7 +176,7 @@ i.e. its density can be **factorized** over the (maximal) cliques of the graph.
 
 ![8](8.png)
 
-$p(X) = \frac{1}{Z}\prod_{k=1}^Kf_k(X_k)_{k=1}^K $​
+$p(X) = \frac{1}{Z}\prod_{k=1}^Kf_k(X_k)_{k=1}^K$​
 
 ### Example
 
@@ -253,15 +253,13 @@ $……$
 
 ### Summary
 
-![16](16.png)
-
-![17](17.png)
+* **REFER To PPT**
 
 ## Examples	
 
 #### Example 1: Vehicle Localization
 
-**#** **Max-Product Belief Propagation on chain structured Markov Random Fields for Vehicle Localization**
+**Max-Product Belief Propagation on chain structured Markov Random Fields for Vehicle Localization**
 
 Let's consider an autonomous vehicle driving on a highway and tracking a vehicle in front in order to initiate an overtaking maneuver. Let $x_t\in\{1,2,3\}$ denote the lane the vehicle in front is driving on at time $t\in\{1,\dots,10\}$. Unfortunately, the sensor readings are noisy as depicted below.
 
@@ -281,68 +279,9 @@ $$g_\theta(x_i,x_{i+1}) = \begin{bmatrix}0.8 & 0.2 & 0.0\\ 0.2 & 0.6 & 0.2 \\ 0.
 
 $$ p_\theta({\bf x}) \propto \prod_{1}^{10} f_i(x_i)\prod_{1}^{9}g_{\theta}(x_i, x_{i+1})$$
 
-* Coding
-
-```python
-# import modules
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import misc
-
-# plot function
-# input: Nx3 matrix of values & title string
-def plot(vals,title=''):
-    plt.close()
-    vals /= np.tile(np.sum(vals,1),(3,1)).transpose()
-    f, axarr = plt.subplots(1,10,figsize=(10,2))
-    plt.suptitle(title, fontsize=16, fontweight='bold')
-    for i in range(vals.shape[0]):
-        axarr[i].barh([0,1,2],np.array([1,1,1]),color='white',edgecolor='black',linewidth=2)
-        axarr[i].barh([0,1,2],vals[i],color='red')
-        axarr[i].axis('off')
-    plt.show()
-    
-# unary: Nx3 matrix specifying unary likelihood of each state
-unary = np.array([[0.7,0.1,0.2],[0.7,0.2,0.1],[0.2,0.1,0.7],[0.7,0.2,0.1],
-                  [0.2,0.6,0.2],[0.1,0.8,0.1],[0.4,0.3,0.3],[0.1,0.8,0.1],
-                  [0.1,0.1,0.8],[0.1,0.5,0.4]])
-# pairwise: 3x3 matrix specifying transition probabilities (rows=t -> columns=t+1)
-pairwise = np.array([[0.8,0.2,0.0],[0.2,0.6,0.2],[0.0,0.2,0.8]])
-
-# model parameters (number of variables/states)
-[num_vars,num_states] = unary.shape
-
-# compute messages
-msg = np.zeros([num_vars-1, num_states]) # (num_vars-1) x num_states matrix
-for i in range(num_vars-2, -1, -1):
-    if i == num_vars-2:
-        msg[i, :] = np.max(pairwise*unary[i+1, :], 1)
-    else:
-        msg[i, :] = np.max(pairwise*unary[i+1, :]*msg[i+1, :],1)
-# calculate max-marginals (num_vars x num_states matrix) and MAP estimates (num_vars x 1 matrix)
-max_marginals = np.zeros([num_vars,num_states])
-map = np.zeros(num_vars, dtype=int)
-for i in range(num_vars):
-    if i == 0:
-        max_marginals[i,:] = msg[i, :]
-    if i == num_vars-1:
-        max_marginals[i,:] = pairwise[map[i-1],:]*unary[i,:]
-    else:
-        max_marginals[i,:] = pairwise[map[i-1],:]*unary[i,:]*msg[i, :]
-    map[i] = np.argmax(max_marginals[i, :])
-# plot max-marginals
-plot(max_marginals,'Max Marginals')
-
-# print MAP state
-print("MAP Estimate:")
-print(np.argmax(max_marginals,axis=1))
-```
-
-
+* Coding (Refer to HW)
 
 #### Example 2: Image Denoising
-
-# Image Denoising
 
 You are given a noisy binary image ($10 \times 10$ pixels) which you want to denoise.
 
@@ -374,123 +313,200 @@ Because we have large number of variables in this exercise, we use logarithm fac
 
 ![18](18.png)
 
-> CODE
+* CODE  : Refer to HW
 
-```python
-# import modules
-import numpy as np
-import matplotlib.pyplot as plt
-import imageio
+## Applications of Graphical Models
 
-# load and plot input image
-img = imageio.imread('gfx/image.png')/255
-plt.imshow(img,interpolation='nearest');
-plt.gray()
-plt.show()
+### Stereo Reconstruction
 
-# model parameters
-[h,w] = img.shape # get width & height of image
-num_vars = w*h    # number of variables = width * height
-num_states = 2    # binary segmentation -> two states
+* Depth varies slowly except at object discontinuities which are sparse
 
-# initialize factors (list of dictionaries), each factor comprises:
-#   vars: array of variables involved
-#   vals: vector/matrix of factor values
-factors = []
-# add unary factors
-for u in range(w):
-  for v in range(h):
-    factors.append({'vars':np.array([v*w+u]), 'vals':np.array([1-img[v,u],img[v,u]])})
-    
-# add pairwise factors
-alpha = 0.4 # smoothness weight
-E = alpha*np.array([[1,0],[0,1]]) # energy matrix for pairwise factor
-for u in range(w):
-  for v in range(h):
-    if v<h-1:
-      factors.append({'vars':np.array([v*w+u,(v+1)*w+u]), 'vals':E})
-    if u<w-1:
-      factors.append({'vars':np.array([v*w+u,v*w+u+1]), 'vals':E})
-# initialize all messages
-msg_fv = {} # f->v messages (dictionary)
-msg_vf = {} # v->f messages (dictionary)
-ne_var = [[] for i in range(num_vars)] # neighboring factors of variables (list of list)
+![28](28.png)
 
-# set messages to zero; determine factors neighboring each variable
-for [f_idx,f] in enumerate(factors):
-    for v_idx in f['vars']:
-        msg_fv[(f_idx,v_idx)] = np.zeros(num_states) # factor->variable message
-        msg_vf[(v_idx,f_idx)] = np.zeros(num_states) # variable->factor message
-        ne_var[v_idx].append(f_idx) # factors neighboring variable v_idx
 
-# status message
-print("Messages initialized!")
 
-# run inference
-for it in range(30):
+* [Matching cost computed directly]$f_{data}(d_i)$  can be obtained by like: $Siamese Network$​​ (in ex02).
+* Adding Pairwise connections.
+
+
+
+![29](29.png)
+
+* To minimize the **ENERGY**
+
+* Add **Truncated penalty**
+
+* $\lambda$​ -- "tradeoff"
+
+#### Non-local Priors
+
+* Despite we have introduced the smoothness regularizaer.Due to Very Strong violation of matching assumptions.
+
+  Very **LOCAL** pairwise terms cannot deal with some cases (like reflections)
+
+![30](30.png)
+
+* Add Object Semantics & 3D Consistency
+
+#### Summary
+
+* Block matching suffers from **ambiguities**
+
+* Choosing window size is problematic (tradeoff)
+
+* Incorporating **smoothness constraints** can resolve some of the ambiguities and allows for choosing small windows (no bleeding artifacts)
+
+* Can be formulated as **MAP inference in a discrete MRF**
+* MAP solution can be obtained using belief propagation, graph cuts, etc. 
+* Integrating recognition cues can further regularize the problem
+
+### Multi-View Reconstruction
+
+**Representation**
+
+* Voxel
+
+![31](31.png)
+
+![32](32.png)
+
+**Voxel occupancy**: This concept describes whether a voxel is occupied by a solid entity. In many tasks such as 3D reconstruction, object detection, SLAM (Simultaneous Localization and Mapping), etc., voxel occupancy is crucial. Typically, a voxel is either occupied by a solid entity or empty (occupied by other objects or background in space). In representations of voxel occupancy, a common method is binary, where a voxel is considered occupied when it's 1 and empty otherwise.
+
+**Voxel appearance**: This concept describes the visual properties of a voxel, i.e., how it appears in images or voxel grids. It may include color, texture, brightness, etc. 
+
+**Image Formation Process**
+
+![33](33.png)
+
+* Actually quite simple --  **only the first occupied can appear**
+
+**Probabilistic Model**
+
+* Joint Distribution:   $p(\bold{O},\bold{A})=\frac{1}{Z}\Pi_{v\in\bold{V}}φ_v(o_v)\Pi_{r\in\bold{R}}ψ_r(o_r, a_r)$​
+
+  * Unary Potentails : $φ_v(o_v) = γ^{o_v} (1 − γ)^{(1−o_v)}$ 
+
+    Most voxels are empty ⇒ $γ$​ < 0.5
+
+  * Ray Potentials :
+
+     * We know $I_r$ ?
+     
+     ![34](34.png)
+
+* If first occupied voxel $a_i^r$ similar to the corresponding pixel , $ψ(o_r,a_r)$ will increase
+
+**Depth Distribution For Single Ray**
+
+* Let : $o_1=0\ ……o_{k-1}=0\ o_k=1$​​
+* Message from and to the unary factors $\mu_{φ_i\to o_i}$  $\mu_{o_i\to φ_i}$  and $\mu_{o_i\to ψ_i}$ can be easilly computed.
+
+* Occupancy message
+
+  ![35](35.png)
+
+​	Thus, resulting in **[DERIVATION SEE PAPER BELOW]**
+
+​	$\mu_{ψ\to o_1}(o_1=1)=\int_{a_1}v(a_1)\mu(a_1)da_1$​
+
+​	$\mu_{ψ\to o_1}(o_1=0)=\sum_{j=2}^N\mu(o_j=1)\Pi_{k=2}^{j-1}\mu(o_k=0)\rho_j$
+
+​	$\rho_j=\int _{a_j}v(a_j)u(a_j)da_j$		
+
+​	More General :**[see PAPER]**
+
+* Appearance messages **[see PAPER]**
+
+**Bayes Optimal Depth Estimation**
+
+* Consider a single ray r in space
+* Let $d_k$ be the distance from the camera to voxel $k$ along ray $r$
+* Depth $D∈\{d_1,...,d_N\}$:distance to closest occupied voxel
+
+*  **Optimal depth estimate:**
+
+  ![38](38.png)
+
   
-    # for all factor-to-variable messages do
-    for [key,msg] in msg_fv.items():
-        
-        # shortcuts to variables
-        f_idx = key[0] # factor (source)
-        v_idx = key[1] # variable (target)
-        f_vars = factors[f_idx]['vars'] # variables connected to factor
-        f_vals = factors[f_idx]['vals'] # vector/matrix of factor values 
 
-        # unary factor-to-variable message
-        if np.size(f_vars)==1:
-            msg_fv[(f_idx,v_idx)] = f_vals
+  * $p(D=d_i)∝\mu(o_i=1)\Pi_{j=1}^{i-1}\mu(o_j=0)\rho_i$ [Derivation see PPT & Paper]
 
-        # pairwise factor-to-variable-message
-        else:
+* Requires **marginal depth distribution** $p(D)$ along each ray
 
-            # if target variable is first variable of factor
-            if v_idx==f_vars[0]:
-                msg_in = np.tile(msg_vf[(f_vars[1],f_idx)],(num_states,1))
-                msg_fv[(f_idx,v_idx)] = (f_vals+msg_in).max(1) # max over columns
 
-            # if target variable is second variable of factor
-            else:
-                msg_in = np.tile(msg_vf[(f_vars[0],f_idx)],(num_states,1))
-                msg_fv[(f_idx,v_idx)] = (f_vals+msg_in.transpose()).max(0) # max over rows
-                
-        # normalize
-        msg_fv[(f_idx,v_idx)] = msg_fv[(f_idx,v_idx)] - np.mean(msg_fv[(f_idx,v_idx)])
 
-    # for all variable-to-factor messages do
-    for [key,msg] in msg_vf.items():
-        
-        # shortcuts to variables
-        v_idx = key[0] # variable (source)
-        f_idx = key[1] # factor (target)
+<iframe src="https://drive.google.com/viewerng/viewer?url=https://www.cvlibs.net/publications/Ulusoy2015THREEDV.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
 
-        # add messages from all factors send to this variable (except target factor)
-        # and send the result to the target factor
-        msg_vf[(v_idx,f_idx)] = np.zeros(num_states)
-        for f_idx2 in ne_var[v_idx]:
-            if f_idx2 != f_idx:
-                msg_vf[(v_idx,f_idx)] += msg_fv[(f_idx2,v_idx)]
-                
-        # normalize
-        msg_vf[(v_idx,f_idx)] = msg_vf[(v_idx,f_idx)] - np.mean(msg_vf[(v_idx,f_idx)])
-        
-# calculate max-marginals (num_vars x num_states matrix)
-max_marginals = np.zeros([num_vars,num_states])
-for v_idx in range(num_vars):
-    
-    # add messages from all factors sent to this variable
-    max_marginals[v_idx] = np.zeros(num_states)
-    for f_idx in ne_var[v_idx]:
-        max_marginals[v_idx] += msg_fv[(f_idx,v_idx)]
-    #print max_marginals[v_idx]
 
-# get MAP solution
-map_est = np.argmax(max_marginals,axis=1)
 
-# plot MAP estimate
-plt.imshow(map_est.reshape(h,w),interpolation='nearest');
-plt.gray()
-plt.show()
-```
+### Optical Flow
 
+* Motion Field Vs Optical Flow
+
+**Motion field:**
+
+* 2D motion field representing the **projection of the 3D motion** of points in the scene onto the image plane
+* Can be the result of camera motion or object motion (or both)
+
+**Optical flow:** 
+
+*  2D velocity field describing the **apparent motion** in the image(i.e., the displacement of pixels looking “similar”)  
+* Optical flow $\ne$ motion field! Why?
+
+#### Determining Optical Flow
+
+* A single observation is not enough to determine flow
+
+![44](44.png)
+
+* $\lambda$ positive
+
+Solution: **linearize** the brightness constancy assumption
+
+$f(x,y)≈f(a,b)+ \frac{\partial f(a,b)}{∂x} (x−a)+ \frac{\partial f(a,b)}{∂y} (y−b)$​
+
+Thus , we have
+$I(x + u(x, y), y + v(x, y), t + 1) \approx I(x,y,t)+I_x(x,y,t)u(x,y)+I_y(x,y,t)v(x,y)+I_t(x,y,t)$
+
+$E(u,v) \approx \iint [(I_x(x,y,t)u(x,y)+I_y(x,y,t)v(x,y)+I_t(x,y,t))^2+\lambda(||\triangledown u(x,y||)^2+||\triangledown v(x,y||)^2]dxdy$
+
+which leads to the following discretized objective:
+
+![45](45.png)
+
+* The HS results are quite plausible already
+* However, the flow is very smooth, i.e., to overcome ambituities we need to set $λ$ to
+a high value which oversmooths flow discontinuities. Why?
+* We use a quadratic penalty for penalizing changes in the flow
+* This does not allow for discontinuities in the flow field
+* In other words, **it penalizes large changes too much** and causes oversmoothing
+
+#### Robust Estimation of Optical Flow
+* Gibbs Energy
+$E(u,v) \approx \iint [(I_x(x,y,t)u(x,y)+I_y(x,y,t)v(x,y)+I_t(x,y,t))^2+\lambda(||\triangledown u(x,y||)^2+||\triangledown v(x,y||)^2]dxdy$
+
+![46](46.png)
+
+* Both assumptions are invalid (e.g., discontinuities at object boundaries). Why?
+>The text points out the invalidity of two assumptions. Firstly, the assumption of having a smooth probability distribution in the image at object boundaries is invalid because object boundaries typically exhibit discontinuities, whereas Gaussian distributions assume continuity.
+* Gaussian distributions correspond to squared loss functions
+> Gaussian distributions correspond to quadratic loss functions. This means that using Gaussian distributions to model smoothness is equivalent to using squared terms in the loss function, which is somewhat sensitive to outliers.
+* Squared loss functions are not robust to outliers!
+>Squared loss functions are not sufficiently robust to outliers. This means that in the presence of outliers, using squared loss functions may lead to larger errors, as they heavily influence the process of minimizing the error.
+* Outliers occur at object boundaries (violation of smoothness/regularizer)
+>Outliers typically occur at object boundaries, violating the assumptions of smoothness and regularization. Object boundaries usually have sharp transitions, so outliers may occur in these areas.
+* Outliers occur at specular highlights (violation of photoconsistency/data term)
+>Outliers may also occur at specular highlights, violating the assumptions of photoconsistency and data terms. Specular highlights often result in very high brightness or intensity in image regions, which may differ significantly from the surrounding areas, thus being considered outliers.
+
+![47](47.png)
+![48](48.png)
+## Learning in Graphical Models
+### Conditional Random Fields
+$p(x_1,...,x_{100})= \frac{1}{\bold{Z}}exp\{\sum_iψ_i(x_i)+λ\sum_{i\to j}ψ_{ij}(x_i,x_j)\}$
+* How to estimate the parameters , say $\lambda$
+![49](49.png)
+![50](50.png)
+### Parameter Estimation
+* Refer to PPT
+### Deep Structured Models
+* Refer to PPT
