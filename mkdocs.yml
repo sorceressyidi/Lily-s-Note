@@ -2,7 +2,6 @@ site_name: Lily's Notebook
 site_url: https://note.lilyarnold.cc/
 site_description: Lily's Notebook
 copyright: Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
-
 theme:
   name: material
   language: zh
@@ -43,88 +42,6 @@ theme:
         icon: material/weather-night  #图标，月亮
         name: Switch to light mode
 
-
-
-markdown_extensions:
-  - pymdownx.arithmatex:            # mathjax
-      generic: true
-  - pymdownx.highlight:             # syntax highlight
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.tabbed:                # Content tabs
-      alternate_style: true
-  - tables                          # table
-  - def_list                        # lists
-  - pymdownx.tasklist:
-      custom_checkbox: true
-
-  - toc:
-      permalink: true
-      toc_depth: 4
-      
-  - meta
-  - def_list
-  - attr_list
-  - md_in_html
-  - sane_lists
-  - admonition
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.snippets
-  - pymdownx.magiclink
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.smartsymbols  #智能符号
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true 
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.arithmatex:
-      generic: true
-extra_css:
-  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
-  - css/custom.css
-  - css/card.css
-  - css/tasklist.css
-  - css/flink.css
-  - css/more_changelog.css
-  - css/extra.css
-extra_javascript:
-  - javascripts/extra.js
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/sorceressyidi/
-plugins:
-  - tags:
-      tags_file: tags.md
-  - search
-  - git-revision-date-localized:
-      type: datetime
-      fallback_to_build_date: true
-      timezone: Asia/Shanghai
-      locale: zh
-      enable_creation_date: true
-      exclude:
-        - index.md
-  - git-authors 
 
 nav:
   - Home:
@@ -198,7 +115,6 @@ nav:
       - Chapter 20 : CMU 15-445/Chap20/Chap20.md
       - Chapter 21 : CMU 15-445/Chap21/Chap21.md
       - Chapter 22 : CMU 15-445/Chap22/Chap22.md
-      
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
@@ -222,13 +138,6 @@ nav:
       - 随机变量与分布函数: PT/PT.md
       - Order Statistics : PT/order_stats.pdf
       - 数字特征与特征函数: PT/数字特征与特征函数.md
-  - AI :
-    - Deep Learning :
-      - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
-      - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
-      - Structuring Machine Learning Projects : DL/Structuring Machine Learning Projects/part3.md
-      - Convolutional Neural Networks : DL/Convolutional Neural Networks/part4.md
-      - Sequence Models : DL/Sequence Models/part5.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
@@ -236,16 +145,91 @@ nav:
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
       - Shape-From-X : CV/ML-4360/SFX/lec8.md
-      - 
-      
+    - Deep Learning for Computer Vision(EECS 498.008 / 598.008):
+      -  Classification: CV/DL/Classification/lec.md
+  - AI :
+    - Deep Learning :
+      - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
+      - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
+      - Structuring Machine Learning Projects : DL/Structuring Machine Learning Projects/part3.md
+      - Convolutional Neural Networks : DL/Convolutional Neural Networks/part4.md
+      - Sequence Models : DL/Sequence Models/part5.md
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
       - 大侠 : 大侠.md
       
-analytics: 
+markdown_extensions:
+  - pymdownx.arithmatex:            # mathjax
+      generic: true
+  - pymdownx.highlight:             # syntax highlight
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:                # Content tabs
+      alternate_style: true
+  - tables                          # table
+  - def_list                        # lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  - toc:
+      permalink: true
+      toc_depth: 4
+      
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols  #智能符号
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/custom.css
+  - css/card.css
+  - css/tasklist.css
+  - css/flink.css
+  - css/more_changelog.css
+  - css/extra.css
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sorceressyidi/
+  analytics: 
     provider: google
-    property: G-187-750-6946
+    property: G-ES1C2PJ4CE
     feedback:
       title: Is this page helpful?
       ratings:
@@ -253,17 +237,26 @@ analytics:
           name: This page was helpful
           data: 1
           note: >-
-            Thanks for your feedback! Help us improve this page by
+            Thanks for your feedback! 
         - icon: material/thumb-down-outline
           name: This page could be improved
           data: 0
           note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback! 
     consent:
       title: Cookie consent
       description: >- 
         We also use cookies to identify your repeated visits and preferences to measure the effectiveness of our documentation and whether users find what they're looking for. If you consent, you can help us make our website better.
-    
- 
-
+plugins:
+  - tags:
+      tags_file: tags.md
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      fallback_to_build_date: true
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+  - git-authors 
