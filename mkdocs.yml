@@ -145,10 +145,13 @@ nav:
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
       - Shape-From-X : CV/ML-4360/SFX/lec8.md
-    - Deep Learning for Computer Vision(EECS 498.008 / 598.008):
-      -  Classification: CV/DL/Classification/lec.md
   - AI :
-    - Deep Learning :
+    - Deep Learning for Computer Vision(EECS 498.008 / 598.008):
+      - Classification: DL_CV/class/lec.md
+      - Neural Networks: DL_CV/neural/lec.md
+      - Convolutional Neural Networks: DL_CV/CNN/lec.md
+      - Pytorch: DL_CV/Pytorch/lec.md
+    - Deep Learning(Coursera) :
       - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
       - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
       - Structuring Machine Learning Projects : DL/Structuring Machine Learning Projects/part3.md
