@@ -141,6 +141,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://note.lilyarnold.cc/DL_CV/CNN/lec/</loc>
+         <lastmod>2024-02-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.lilyarnold.cc/DL_CV/Pytorch/lec/</loc>
+         <lastmod>2024-02-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://note.lilyarnold.cc/DL_CV/class/lec/</loc>
          <lastmod>2024-02-14</lastmod>
          <changefreq>daily</changefreq>
