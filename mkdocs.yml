@@ -150,7 +150,8 @@ nav:
       - Classification: DL_CV/class/lec.md
       - Neural Networks: DL_CV/neural/lec.md
       - Convolutional Neural Networks: DL_CV/CNN/lec.md
-      - Pytorch: DL_CV/Pytorch/lec.md
+      - Hardware & Software: DL_CV/Pytorch/lec.md
+      - Traning Neural Networks: DL_CV/TN/lec.md
     - Deep Learning(Coursera) :
       - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
       - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
