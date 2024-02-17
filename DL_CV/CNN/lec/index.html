@@ -3186,6 +3186,8 @@
       
         
       
+        
+      
     
     
     
@@ -3318,6 +3320,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-normalization" class="md-nav__link">
+    Batch Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-normalization" class="md-nav__link">
+    Layer Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-normalization" class="md-nav__link">
+    Instance Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-normalization" class="md-nav__link">
+    Group Normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3349,7 +3399,27 @@
         
   
   <span class="md-ellipsis">
-    Pytorch
+    Hardware & Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TN/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traning Neural Networks
   </span>
   
 
@@ -3709,6 +3779,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    Normalization
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-normalization" class="md-nav__link">
+    Batch Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-normalization" class="md-nav__link">
+    Layer Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-normalization" class="md-nav__link">
+    Instance Normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-normalization" class="md-nav__link">
+    Group Normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3743,10 +3861,53 @@
 <li>Refer to Slides</li>
 </ul>
 <h3 id="pytorch">Pytorch<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
-<h2 id="cnn-architectures">CNN Architectures<a class="headerlink" href="#cnn-architectures" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv1d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span><span class="n">out_channels</span><span class="p">,</span><span class="n">lernel_size</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dilation</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">grounps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">padding_mode</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv3d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span><span class="n">out_channels</span><span class="p">,</span><span class="n">kernel_size</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="mf">0.</span><span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">groups</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">padding_mode</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="1" src="../1.png" /></p>
+<p><img alt="2" src="../2.png" /></p>
+<p><strong>Problem: Deep Networks very hard to train!</strong></p>
+<h3 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h3>
+<p><a href="https://medium.com/techspace-usict/normalization-techniques-in-deep-neural-networks-9121bf100d8">https://medium.com/techspace-usict/normalization-techniques-in-deep-neural-networks-9121bf100d8</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/56542480">https://zhuanlan.zhihu.com/p/56542480</a></p>
+<h4 id="batch-normalization">Batch Normalization<a class="headerlink" href="#batch-normalization" title="Permanent link">&para;</a></h4>
 <ul>
-<li></li>
+<li>Idea: “Normalize” the outputs of a layer so they have zero mean and unit variance</li>
 </ul>
+<blockquote>
+<p>Why? Helps reduce “internal covariate shift”, improves optimization</p>
+</blockquote>
+<ul>
+<li>We can normalize a batch of activations like this:</li>
+</ul>
+<p><img alt="3" src="../3.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<ul>
+<li><strong>Problem: What if zero-mean, unit variance is too hard of a constraint?</strong></li>
+</ul>
+<blockquote>
+<p><strong>Learnable scale and shift parameters:</strong> <span class="arithmatex">\(\gamma\ \beta\)</span>​</p>
+</blockquote>
+<p><img alt="4" src="../4.png" /></p>
+<p><strong>problem : If in two pics,one has a batch of a cat and the other has a batch of dog, we donot expect them to be in different classes,but the batch normalization will cause such problems</strong></p>
+<blockquote>
+<p>Use constant <span class="arithmatex">\(\mu\)</span> and <span class="arithmatex">\(\sigma\)</span>​  !</p>
+<ul>
+<li>During testing batchnorm becomes a linear operator! Can be fused with the previous fully-connected or conv layer</li>
+</ul>
+</blockquote>
+<p><img alt="6" src="../6.png" /></p>
+<p><img alt="5" src="../5.png" /></p>
+<h4 id="layer-normalization">Layer Normalization<a class="headerlink" href="#layer-normalization" title="Permanent link">&para;</a></h4>
+<p><img alt="9" src="../9.png" /></p>
+<h4 id="instance-normalization">Instance Normalization<a class="headerlink" href="#instance-normalization" title="Permanent link">&para;</a></h4>
+<p><img alt="10" src="../10.png" /></p>
+<h4 id="group-normalization">Group Normalization<a class="headerlink" href="#group-normalization" title="Permanent link">&para;</a></h4>
+<p><img alt="11" src="../11.png" /></p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p><img alt="7" src="../7.png" /></p>
+<h2 id="cnn-architectures">CNN Architectures<a class="headerlink" href="#cnn-architectures" title="Permanent link">&para;</a></h2>
 
   <hr>
 <div class="md-source-file">
@@ -3848,13 +4009,13 @@
         
         
           
-          <a href="../../Pytorch/lec/" class="md-footer__link md-footer__link--next" aria-label="下一页: Pytorch">
+          <a href="../../Pytorch/lec/" class="md-footer__link md-footer__link--next" aria-label="下一页: Hardware &amp; Software">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Pytorch
+                Hardware & Software
               </div>
             </div>
             <div class="md-footer__button md-icon">
