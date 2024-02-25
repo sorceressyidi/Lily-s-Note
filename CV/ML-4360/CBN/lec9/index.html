@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/CV/DL/Classification/lec/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/CV/ML-4360/CBN/lec9/">
       
       
+        <link rel="prev" href="../../SFX/lec8/">
+      
+      
+        <link rel="next" href="../../Recognition/lec10/">
       
       
       <link rel="icon" href="../../../../log.ico">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Lec - Lily's Notebook</title>
+        <title>Coordinate-Based Networks - Lily's Notebook</title>
       
     
     
@@ -102,6 +106,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#implicit-neural-representations" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -131,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec
+              Coordinate-Based Networks
             
           </span>
         </div>
@@ -315,17 +324,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../ML-4360/BS/lec2/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../BS/lec2/" class="md-tabs__link">
           
   
     
@@ -2906,6 +2919,8 @@
       
   
   
+    
+  
   
     
     
@@ -2919,12 +2934,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -2938,7 +2953,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
@@ -2949,6 +2964,8 @@
                 
   
   
+    
+  
   
     
     
@@ -2963,16 +2980,20 @@
       
         
       
+        
+      
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -2986,7 +3007,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
@@ -2999,7 +3020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3019,7 +3040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3039,7 +3060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ML-4360/SR/lec4/" class="md-nav__link">
+      <a href="../../SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3059,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ML-4360/PGM/lec5/" class="md-nav__link">
+      <a href="../../PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3079,11 +3100,228 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ML-4360/SFX/lec8/" class="md-nav__link">
+      <a href="../../SFX/lec8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Shape-From-X
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Coordinate-Based Networks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Coordinate-Based Networks
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-neural-representations" class="md-nav__link">
+    Implicit Neural Representations
+  </a>
+  
+    <nav class="md-nav" aria-label="Implicit Neural Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-good-output-representation" class="md-nav__link">
+    What is a good output representation?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a good output representation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representing-materials-and-lighting" class="md-nav__link">
+    Representing Materials and Lighting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representing-motion" class="md-nav__link">
+    Representing Motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representing-scenes" class="md-nav__link">
+    Representing Scenes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differentiable-volumetric-rendering" class="md-nav__link">
+    Differentiable Volumetric Rendering
+  </a>
+  
+    <nav class="md-nav" aria-label="Differentiable Volumetric Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-from-images" class="md-nav__link">
+    Learning from Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning from Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-pass-rendering" class="md-nav__link">
+    Forward Pass (Rendering)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-passdifferentiation" class="md-nav__link">
+    Backward Pass(Differentiation)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-radiance-fields" class="md-nav__link">
+    Neural Radiance Fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Radiance Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nerf-training" class="md-nav__link">
+    NeRF Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-rendering-with-radiance-fields" class="md-nav__link">
+    Volume Rendering with Radiance Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-radiance-fields" class="md-nav__link">
+    Generative Radiance Fields
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Recognition/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recognition
   </span>
   
 
@@ -3630,6 +3868,155 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-neural-representations" class="md-nav__link">
+    Implicit Neural Representations
+  </a>
+  
+    <nav class="md-nav" aria-label="Implicit Neural Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-good-output-representation" class="md-nav__link">
+    What is a good output representation?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a good output representation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#representing-materials-and-lighting" class="md-nav__link">
+    Representing Materials and Lighting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representing-motion" class="md-nav__link">
+    Representing Motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representing-scenes" class="md-nav__link">
+    Representing Scenes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differentiable-volumetric-rendering" class="md-nav__link">
+    Differentiable Volumetric Rendering
+  </a>
+  
+    <nav class="md-nav" aria-label="Differentiable Volumetric Rendering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-from-images" class="md-nav__link">
+    Learning from Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning from Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-pass-rendering" class="md-nav__link">
+    Forward Pass (Rendering)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-passdifferentiation" class="md-nav__link">
+    Backward Pass(Differentiation)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-radiance-fields" class="md-nav__link">
+    Neural Radiance Fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Radiance Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nerf-training" class="md-nav__link">
+    NeRF Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-rendering-with-radiance-fields" class="md-nav__link">
+    Volume Rendering with Radiance Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-radiance-fields" class="md-nav__link">
+    Generative Radiance Fields
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3643,20 +4030,186 @@
                   
 
 
-  <h1>Lec</h1>
+  <h1>Coordinate-Based Networks</h1>
 
-<p>a</p>
+<h2 id="implicit-neural-representations">Implicit Neural Representations<a class="headerlink" href="#implicit-neural-representations" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-a-good-output-representation">What is a good <strong>output</strong> representation?<a class="headerlink" href="#what-is-a-good-output-representation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Voxels</li>
+</ul>
+<blockquote>
+<p>Flat surface only in the canonical directions</p>
+</blockquote>
+<p><img alt="1" src="../1.png" /></p>
+<ul>
+<li>Points</li>
+</ul>
+<blockquote>
+<p>No surface</p>
+</blockquote>
+<p><img alt="2" src="../2.png" /></p>
+<ul>
+<li>Meshes</li>
+</ul>
+<p><img alt="3" src="../3.png" /></p>
+<p>#### Occupancy Networks</p>
+<p><img alt="4" src="../4.png" /></p>
+<p><img alt="5" src="../5.png" /></p>
+<blockquote>
+<p>Also possible: <strong>signed distance field</strong> [Park et al., 2019]</p>
+</blockquote>
+<ul>
+<li>Equivalent to a neural network for <strong>binary classification</strong>, except that we are interested in the decision boundary which implicitly represents the object’s surface.</li>
+</ul>
+<p><img alt="6" src="../6.png" /></p>
+<p><span class="arithmatex">\(L(\theta,ψ) =  \sum_{j=1}^KBCE(f_θ(p_{ij},z_{i}),o_{ij})+KL[q_ψ(z|(p_{ij},o_{ij})_{j=1:K})∥p0(z)]\)</span>​</p>
+<ul>
+<li>BCD ： Binaray Cross-Entropy Loss</li>
+<li>K : Randomly sampled 3D points (K = 2048)</li>
+<li><span class="arithmatex">\(q_ψ\)</span>: Encoder</li>
+</ul>
+<p><img alt="7" src="../7.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<h4 id="representing-materials-and-lighting">Representing <strong>Materials</strong> and <strong>Lighting</strong><a class="headerlink" href="#representing-materials-and-lighting" title="Permanent link">&para;</a></h4>
+<p><strong>Conditional Surface Light Field</strong></p>
+<ul>
+<li>model <strong>p,v,l</strong> to a 3D colour value</li>
+</ul>
+<blockquote>
+<p>Given any light &amp; view direction, we want to know the color</p>
+</blockquote>
+<p><img alt="9" src="../9.png" /></p>
+<p><img alt="10" src="../10.png" /></p>
+<h4 id="representing-motion">Representing <strong>Motion</strong><a class="headerlink" href="#representing-motion" title="Permanent link">&para;</a></h4>
+<p><img alt="12" src="../12.png" /></p>
+<ul>
+<li>Extending Occupancy Networks to 4D is hard (curse of dimensionality)</li>
+<li>Represent <strong>shape</strong> at <span class="arithmatex">\(t = 0\)</span> using a 3D Occupancy Network</li>
+<li>Represent <strong>motion</strong> by <strong>temporally and spatially continuous</strong> vector field</li>
+<li>Relationship between 3D trajectorys and velocity <span class="arithmatex">\(v\)</span> given by (differentiable) ODE:  <span class="arithmatex">\(\frac{\partial s(t)}{\partial t} = v(s(t),t)\)</span>​</li>
+</ul>
+<p><img alt="11" src="../11.png" /></p>
+<h4 id="representing-scenes">Representing <strong>Scenes</strong><a class="headerlink" href="#representing-scenes" title="Permanent link">&para;</a></h4>
+<p>Problems for occupancy network </p>
+<ul>
+<li><strong>Global latent code</strong> ⇒ no local information, overly smooth geometry</li>
+<li><strong>Fully connected architecture</strong> ⇒ does not exploit translation equivariance</li>
+</ul>
+<p>Implicit models work well for simple objects but <strong>poorly on complex scenes</strong></p>
+<h5 id="convolutional-occupancy-networks">Convolutional Occupancy Networks<a class="headerlink" href="#convolutional-occupancy-networks" title="Permanent link">&para;</a></h5>
+<p><img alt="13" src="../13.png" /></p>
+<p><img alt="14" src="../14.png" /></p>
+<p><img alt="15" src="../15.png" /></p>
+<h2 id="differentiable-volumetric-rendering">Differentiable Volumetric Rendering<a class="headerlink" href="#differentiable-volumetric-rendering" title="Permanent link">&para;</a></h2>
+<h3 id="learning-from-images">Learning from <strong>Images</strong><a class="headerlink" href="#learning-from-images" title="Permanent link">&para;</a></h3>
+<p><img alt="16" src="../16.png" /></p>
+<ul>
+<li>Given only RGB images</li>
+</ul>
+<h4 id="forward-pass-rendering">Forward Pass (Rendering)<a class="headerlink" href="#forward-pass-rendering" title="Permanent link">&para;</a></h4>
+<p><img alt="17" src="../17.png" /></p>
+<p><strong>Secant Method</strong> : A finite-difference approximation of Newton’s method.</p>
+<h4 id="backward-passdifferentiation">Backward Pass(Differentiation)<a class="headerlink" href="#backward-passdifferentiation" title="Permanent link">&para;</a></h4>
+<p><img alt="19" src="../19.png" /></p>
+<p><img alt="18" src="../18.png" /></p>
+<blockquote>
+<p>Comes to Backward Pass</p>
+</blockquote>
+<ul>
+<li>
+<p>Image Observation I</p>
+</li>
+<li>
+<p>Loss <span class="arithmatex">\(L(\hat{I},I) = \sum_u||\hat{I}_u-I_u||\)</span>​</p>
+</li>
+<li>
+<p>Gradient of Loss Function</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\frac{\partial{L}}{\partial{\theta}} = \sum_u \frac{\partial L}{\partial\hat{I_u}}·\frac{\partial{\hat{I_u}}}{\partial\theta}\)</span>​</p>
+<p><span class="arithmatex">\(\frac{\partial{\hat{I_u}}}{\partial\theta}=\frac{\partial{t_{\theta}(\hat{p})}}{\partial\theta} +\frac{\partial{t_{\theta}(\hat{p})}}{\partial\hat{p}}·\frac{\partial{\hat{p}}}{\partial\theta}\)</span>​</p>
+<p><strong>Note</strong> : <span class="arithmatex">\(\hat{p}\)</span> (The Surface Intersection) also depends on <span class="arithmatex">\(\theta\)</span>​ !! </p>
+<ul>
+<li>
+<p>So we have to apply total derivative !!</p>
+</li>
+<li>
+<p>Differentiation of <span class="arithmatex">\(f_{\theta}(\hat{p}=\tau)\)</span> yields :</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\frac{\partial\hat{p}}{\partial\theta}=-w(\frac{\partial f_{\theta}(\hat{p})}{\partial\hat{p}}·w)^{-1}\frac{\partial f_{\theta}(\hat{p})}{\partial\theta}\)</span>​​</p>
+<p>Derivation :</p>
+<p><strong>Note</strong> <span class="arithmatex">\(\bold{w}\)</span> is a vector!</p>
+<p><img alt="20" src="../20.png" /></p>
+<h2 id="neural-radiance-fields">Neural Radiance Fields<a class="headerlink" href="#neural-radiance-fields" title="Permanent link">&para;</a></h2>
+<p><strong>Task:</strong> Given a set of images of a scene, render image from novel viewpoint</p>
+<p><img alt="21" src="../21.png" /></p>
+<ul>
+<li>A Nerual Network related to a singls scene ! <strong>Like "overfit" the nerual network to a single scene!</strong></li>
+</ul>
+<h3 id="nerf-training">NeRF Training<a class="headerlink" href="#nerf-training" title="Permanent link">&para;</a></h3>
+<p><img alt="23" src="../23.png" /></p>
+<p><span class="arithmatex">\(min_{\theta}=\sum_i||render_i(F_{\theta})-I_i||^2\)</span>​</p>
+<p>Shoot ray, render ray to pixel, minimize <strong>reconstruction error</strong> via backpropagation</p>
+<ul>
+<li>NeRF’s parameters are optimized on <strong>many different views</strong> of a single scene</li>
+</ul>
+<blockquote>
+<p>From the Paper :</p>
+</blockquote>
+<p>We encourage the representation to be multiview consistent by restricting the network to predict the volume density σ as a function of <strong>only the location x</strong>, while allowing the RGB color c to be predicted as a function of both location and viewing direction. </p>
+<blockquote>
+<p>To accomplish this, the <strong>MLP</strong> <span class="arithmatex">\(F_Θ\)</span> first processes the input 3D coordinate x with 8 fully-connected layers (using ReLU activations and 256 channels per layer), and outputs σ and a 256-dimensional feature vector.</p>
+<p>This feature vector is then concatenated with the camera ray’s viewing direction and passed to one additional fully-connected layer (using a ReLU activation and 128 channels) that output the view-dependent RGB color.</p>
+</blockquote>
+<h3 id="volume-rendering-with-radiance-fields">Volume Rendering with Radiance Fields<a class="headerlink" href="#volume-rendering-with-radiance-fields" title="Permanent link">&para;</a></h3>
+<p><img alt="22" src="../22.png" /></p>
+<blockquote>
+<p>From the Paper :</p>
+</blockquote>
+<ul>
+<li>
+<p>The volume density <span class="arithmatex">\(σ(x)\)</span> can be interpreted as the differential probability of a ray terminating at an infinitesimal particle at location <span class="arithmatex">\(x\)</span>​. </p>
+</li>
+<li>
+<p>The expected color <span class="arithmatex">\(C(r)\)</span> of camera ray <span class="arithmatex">\(r(t) = o + td\)</span> with near and far bounds <span class="arithmatex">\(t_n\)</span> and <span class="arithmatex">\(t_f\)</span> is:</p>
+</li>
+</ul>
+<p><img alt="25" src="../25.png" /></p>
+<ul>
+<li><span class="arithmatex">\(T(t)\)</span>​ probability that the ray doesn't hit anything</li>
+</ul>
+<p><img alt="26" src="../26.png" /></p>
+<h3 id="optimizing-a-neural-radiance-field">Optimizing a Neural Radiance Field<a class="headerlink" href="#optimizing-a-neural-radiance-field" title="Permanent link">&para;</a></h3>
+<h4 id="positional-encoding">Positional encoding<a class="headerlink" href="#positional-encoding" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Having the network <span class="arithmatex">\(F_Θ\)</span> directly operate on <span class="arithmatex">\(xyzθφ\)</span>​ input coordinates results in renderings that perform poorly at representing high-frequency variation in color and geometry</p>
+</li>
+<li>
+<p>(Recap Transformers)</p>
+</li>
+</ul>
+<p><img alt="27" src="../27.png" /></p>
+<ul>
+<li>Pass low-dimensional coordinates through fixed <strong>positional encoding</strong> or <strong>random Fourier features</strong> of varying frequencies controlled by L</li>
+<li>These features let networks <strong>learn high-freq. functions</strong> in low-dim. domains</li>
+</ul>
+<h2 id="generative-radiance-fields">Generative Radiance Fields<a class="headerlink" href="#generative-radiance-fields" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Refer to Slides</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月10日 09:46:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月25日 22:03:39</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月27日 18:58:21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月25日 22:03:39</span>
       
     
   </small>
@@ -3725,6 +4278,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../SFX/lec8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Shape-From-X">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Shape-From-X
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Recognition/lec10/" class="md-footer__link md-footer__link--next" aria-label="下一页: Recognition">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Recognition
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
