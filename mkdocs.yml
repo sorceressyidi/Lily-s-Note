@@ -145,6 +145,10 @@ nav:
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
       - Shape-From-X : CV/ML-4360/SFX/lec8.md
+      - Coordinate-Based Networks : CV/ML-4360/CBN/lec9.md
+      - Recognition : CV/ML-4360/Recognition/lec10.md
+      - Self-Supervised Learning : CV/ML-4360/Self/lec.md
+      - Diverse Topics in Computer Vision : CV/ML-4360/Diverse/lec.md
   - AI :
     - Deep Learning for Computer Vision(EECS 498.008 / 598.008):
       - Classification: DL_CV/class/lec.md

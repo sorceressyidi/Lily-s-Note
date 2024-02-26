@@ -31,7 +31,6 @@ SELECT column1, column2, ...
 * id 列是自动更新的，表中的每条记录都有一个唯一的数字。
 
 ```sql
-INSERT INTO table_name VALUES (value1,value2,value3,...);
 INSERT INTO table_name (column1,column2,column3,...)
 VALUES (value1,value2,value3,...);
 ```
@@ -121,28 +120,26 @@ SELECT AVG(s.gpa), e.cid
 * LIKE is used for string matching.
 
 * String-matching operators
-
->  `%` matches any sequence of characters, including zero characters. In other words, `%` can match any string of any length, including an empty string. For example, `'15%'` matches any string starting with "15", `'%15'` matches any string ending with "15", and `'%15%'` matches any string containing "15" anywhere.
+	>`%` matches any sequence of characters, including zero characters. 
+	In other words, `%` can match any string of any length, including an empty string. 
+	* For example, `'15%'` matches any string starting with "15", `'%15'` matches any string ending with "15", and `'%15%'` matches any string containing "15" anywhere.
 
 ```sql
 SELECT * FROM enrolled AS e
 	WHERE e.cid LIKE '15-%'
 ```
 
-> `_` matches any single character. It's used to specify that at a particular position, any character must match, but it doesn't matter which character. For example, `'15_'` matches "150", "151", "152", etc., but not "15" etc.
-
+> `_` matches any single character. 
+> It's used to specify that at a particular position, any character must match, but it doesn't matter which character. For example, `'15_'` matches "150", "151", "152", etc., but not "15" etc.
 ```sql
 SELECT * FROM student AS s
 	WHERE s.login LIKE '%@c_'
 ```
-
 #### SUBSTRING
-
 ```sql
 SELECT SUBSTRING(name,1,5) AS abbrv_name
 	FROM student WHERE sid = 53688
 ```
-
 #### UPPER
 
 ```sql
@@ -151,25 +148,21 @@ SELECT * FROM student AS s
 ```
 
 #### `||`
-
 * SQL standard says to use ||operator to concatenate two or more strings together.
 
 `SQL-92`
-
 ```sql
 SELECT name FROM student
 	WHERE login = LOWER(name) || '@cs'
 ```
 
 `MSSQL`
-
 ```sql
 SELECT name FROM student
 	WHERE login = LOWER(name) + '@cs'
 ```
 
 `MySQL`
-
 ```sql
 SELECT name FROM student
 	WHERE login = CONCAT(LOWER(name), '@cs')
@@ -178,11 +171,12 @@ SELECT name FROM student
 * Also like `'Li''ly'`  will automatically concatenate
 
 ### Date/Time Operations
-
 ![7](7.png)
 
 ## Output Control + Redirection
-
+Store query results in another table:
+→ Table must not already be defined.
+→ Table will have the same # of columns with the same types as the input.
 ## Nested Queries
 
 ## Common Table Expressions
