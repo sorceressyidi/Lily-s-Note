@@ -33,9 +33,49 @@
 
 ### Unsupervised Learning of Optical Flow
 
-
+* Refer to Slides and Paper.
 
 ## Pretext Tasks
 
+A **pretext** (adj: pretextual) is an excuse to do something or say something that is not accurate. **Pretexts** may be based on a half-truth or developed in the context of a misleading fabrication. **Pretexts** have been used to conceal the true purpose or rationale behind actions and words
+
+### Visual Representation Learning by Context Prediction
+
+![4](4.png)
+
+* Care has to be taken to **avoid trivial shortcuts** (e.g., **edge continuity**)
+
+*  A network can predict the **absolute image location** of randomly sampled patches In this case, the relative location can be inferred easily. Why is this happening?
+
+  > 
+
+* **Aberration:** Color channels shift with respect to the image location
+
+  > Solution: Random dropping of color channels or projection towards gray
+
+### Visual Representation Learning by Solving Jigsaw Puzzles
+
+* Refer to Slides and Paper
+
 ## Contrastive Learning
+
+Can we find a more general pretext task?
+
+* Pre-trained features should represent **how images relate** to each other
+* They should also be **invariant to nuisance factors** (location, lighting, color)
+* Augmentations generated from one reference image are called “views”
+
+I Given a chosen **score function** $s(·, ·)$, we want to learn an encoder f that yields **high score for positive pairs** $(x, x+)$ and **low score for negative pairs** $(x, x−)$:$s(f(x), f(x+)) ≫ s(f(x), f(x−))$
+
+![5](5.png)
+
+![6](6.png)
+
+* Remaining Refer To Slides and Paper
+
+
+
+### Barlow Twins
+
+
 

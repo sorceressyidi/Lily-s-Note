@@ -93,7 +93,7 @@ SELECT AVG(s.gpa), e.cid
 * To fix it -- Group By
 
 #### Group By
-
+![9](9.png)
 ```sql
 SELECT AVG(s.gpa), e.cid
 	FROM enrolled AS e JOIN student AS s
@@ -104,7 +104,6 @@ SELECT AVG(s.gpa), e.cid
 #### Having
 
 ![4](4.png)
-
 * We cannot use **Aggregations** to FILTER tuples because we have not computed it yet
 
 ![5](5.png)
@@ -174,10 +173,33 @@ SELECT name FROM student
 ![7](7.png)
 
 ## Output Control + Redirection
+### Output Redirection
 Store query results in another table:
 → Table must not already be defined.
 → Table will have the same # of columns with the same types as the input.
+```sql
+CREATE TABLE CourseIds (
+SELECT DISTINCT cid FROM enrolled);
+```
+### Output Control
+* ORDER BY <column*> [ASC|DESC]
+```sql
+SELECT sid FROM enrolled
+WHERE cid = '15-721'
+ORDER BY grade DESC, 1,sid ASC
+```
+* LIMIT <count> [offset]
+→ Limit the # of tuples returned in output.
+→ Can set an offset to return a “range”
 ## Nested Queries
+```sql
+select name from student
+	Where sid in(
+		select sid from enrolled
+			where cid = '14-445 '
+	)
+```
+![8](8.png)
 
 ## Common Table Expressions
 
