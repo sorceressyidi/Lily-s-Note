@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/ADS/lec/">
       
       
+        <link rel="prev" href="../../oop/Container/Container/">
+      
+      
+        <link rel="next" href="../../CMU%2015-445/Chap1/Chap1/">
       
       
       <link rel="icon" href="../../log.ico">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Lec - Lily's Notebook</title>
+        <title>AVL,Splay,Red-Black Tree - Lily's Notebook</title>
       
     
     
@@ -136,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec
+              AVL,Splay,Red-Black Tree
             
           </span>
         </div>
@@ -253,16 +257,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
           
   
@@ -497,6 +505,8 @@
       
   
   
+    
+  
   
     
     
@@ -517,6 +527,8 @@
       
         
       
+        
+      
     
     
     
@@ -524,12 +536,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -543,7 +555,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -1712,6 +1724,153 @@
                 
   
   
+    
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Anvanced Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Anvanced Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AVL,Splay,Red-Black Tree
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AVL,Splay,Red-Black Tree
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#avl-tree" class="md-nav__link">
+    AVL Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tree-rotation" class="md-nav__link">
+    Tree Rotation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-for-avl-tree" class="md-nav__link">
+    Rotation for AVL Tree
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splay-trees" class="md-nav__link">
+    Splay Trees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    Amortized Analysis
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
     
     
@@ -1769,10 +1928,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1783,8 +1942,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             CMU 15-445
           </label>
@@ -3785,7 +3944,7 @@
                   
 
 
-  <h1>Lec</h1>
+  <h1>AVL,Splay,Red-Black Tree</h1>
 
 <h2 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3900,6 +4059,44 @@ is defined to be –1</li>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../oop/Container/Container/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Container &amp; Function">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Container & Function
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../CMU%2015-445/Chap1/Chap1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 1">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Chapter 1
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
