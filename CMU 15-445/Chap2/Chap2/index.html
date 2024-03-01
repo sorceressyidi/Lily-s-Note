@@ -2030,6 +2030,26 @@
     Output Control + Redirection
   </a>
   
+    <nav class="md-nav" aria-label="Output Control + Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    Output Redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-control" class="md-nav__link">
+    Output Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3204,6 +3224,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3365,6 +3389,46 @@
   
   <span class="md-ellipsis">
     Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/Self/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Supervised Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diverse Topics in Computer Vision
   </span>
   
 
@@ -4078,6 +4142,26 @@
     Output Control + Redirection
   </a>
   
+    <nav class="md-nav" aria-label="Output Control + Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    Output Redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-control" class="md-nav__link">
+    Output Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4140,9 +4224,8 @@
 <ul>
 <li>id 列是自动更新的，表中的每条记录都有一个唯一的数字。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">,</span><span class="n">value3</span><span class="p">,...);</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">,...)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">,</span><span class="n">value3</span><span class="p">,...);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">,...)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">,</span><span class="n">value3</span><span class="p">,...);</span>
 </code></pre></div>
 <h4 id="sql-update">SQL Update<a class="headerlink" href="#sql-update" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
@@ -4187,16 +4270,15 @@
 <li>To fix it -- Group By</li>
 </ul>
 <h4 id="group-by">Group By<a class="headerlink" href="#group-by" title="Permanent link">&para;</a></h4>
+<p><img alt="9" src="../9.png" />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">gpa</span><span class="p">),</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">cid</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">enrolled</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">sid</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">cid</span>
-</code></pre></div>
+</code></pre></div></p>
 <h4 id="having">Having<a class="headerlink" href="#having" title="Permanent link">&para;</a></h4>
-<p><img alt="4" src="../4.png" /></p>
-<ul>
-<li>We cannot use <strong>Aggregations</strong> to FILTER tuples because we have not computed it yet</li>
-</ul>
+<p><img alt="4" src="../4.png" />
+* We cannot use <strong>Aggregations</strong> to FILTER tuples because we have not computed it yet</p>
 <p><img alt="5" src="../5.png" /></p>
 <h2 id="string-date-time-operations">String / Date / Time Operations<a class="headerlink" href="#string-date-time-operations" title="Permanent link">&para;</a></h2>
 <p><img alt="6" src="../6.png" /></p>
@@ -4207,21 +4289,24 @@
 <p>LIKE is used for string matching.</p>
 </li>
 <li>
-<p>String-matching operators</p>
+<p>String-matching operators
+    &gt;<code>%</code> matches any sequence of characters, including zero characters. 
+    In other words, <code>%</code> can match any string of any length, including an empty string. </p>
+<ul>
+<li>For example, <code>'15%'</code> matches any string starting with "15", <code>'%15'</code> matches any string ending with "15", and <code>'%15%'</code> matches any string containing "15" anywhere.</li>
+</ul>
 </li>
 </ul>
-<blockquote>
-<p><code>%</code> matches any sequence of characters, including zero characters. In other words, <code>%</code> can match any string of any length, including an empty string. For example, <code>'15%'</code> matches any string starting with "15", <code>'%15'</code> matches any string ending with "15", and <code>'%15%'</code> matches any string containing "15" anywhere.</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">enrolled</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">e</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">cid</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;15-%&#39;</span>
 </code></pre></div>
 <blockquote>
-<p><code>_</code> matches any single character. It's used to specify that at a particular position, any character must match, but it doesn't matter which character. For example, <code>'15_'</code> matches "150", "151", "152", etc., but not "15" etc.</p>
-</blockquote>
+<p><code>_</code> matches any single character. 
+It's used to specify that at a particular position, any character must match, but it doesn't matter which character. For example, <code>'15_'</code> matches "150", "151", "152", etc., but not "15" etc.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">s</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">login</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%@c_&#39;</span>
-</code></pre></div>
+</code></pre></div></p>
+</blockquote>
 <h4 id="substring">SUBSTRING<a class="headerlink" href="#substring" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">abbrv_name</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">53688</span>
@@ -4234,25 +4319,50 @@
 <ul>
 <li>SQL standard says to use ||operator to concatenate two or more strings together.</li>
 </ul>
-<p><code>SQL-92</code></p>
+<p><code>SQL-92</code>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;@cs&#39;</span>
-</code></pre></div>
-<p><code>MSSQL</code></p>
+</code></pre></div></p>
+<p><code>MSSQL</code>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;@cs&#39;</span>
-</code></pre></div>
-<p><code>MySQL</code></p>
+</code></pre></div></p>
+<p><code>MySQL</code>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="k">LOWER</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;@cs&#39;</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></p>
 <ul>
 <li>Also like <code>'Li''ly'</code>  will automatically concatenate</li>
 </ul>
 <h3 id="datetime-operations">Date/Time Operations<a class="headerlink" href="#datetime-operations" title="Permanent link">&para;</a></h3>
 <p><img alt="7" src="../7.png" /></p>
 <h2 id="output-control-redirection">Output Control + Redirection<a class="headerlink" href="#output-control-redirection" title="Permanent link">&para;</a></h2>
+<h3 id="output-redirection">Output Redirection<a class="headerlink" href="#output-redirection" title="Permanent link">&para;</a></h3>
+<p>Store query results in another table:
+→ Table must not already be defined.
+→ Table will have the same # of columns with the same types as the input.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">CourseIds</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">enrolled</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 id="output-control">Output Control<a class="headerlink" href="#output-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ORDER BY <column*> [ASC|DESC]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">enrolled</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;15-721&#39;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">sid</span><span class="w"> </span><span class="k">ASC</span>
+</code></pre></div></li>
+<li>LIMIT <count> [offset]
+→ Limit the # of tuples returned in output.
+→ Can set an offset to return a “range”</li>
+</ul>
 <h2 id="nested-queries">Nested Queries<a class="headerlink" href="#nested-queries" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="k">Where</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="k">in</span><span class="p">(</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">enrolled</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">            </span><span class="k">where</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;14-445 &#39;</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="p">)</span>
+</code></pre></div>
+<img alt="8" src="../8.png" /></p>
 <h2 id="common-table-expressions">Common Table Expressions<a class="headerlink" href="#common-table-expressions" title="Permanent link">&para;</a></h2>
 <h2 id="window-functions">Window Functions<a class="headerlink" href="#window-functions" title="Permanent link">&para;</a></h2>
 
@@ -4261,7 +4371,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月29日 23:37:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月28日 15:10:09</span>
       
         <br>
         创建日期:
