@@ -1848,6 +1848,26 @@
     Amortized Analysis
   </a>
   
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    Aggregate analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    Accounting method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3927,6 +3947,26 @@
     Amortized Analysis
   </a>
   
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    Aggregate analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    Accounting method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3976,10 +4016,26 @@ is defined to be –1</li>
 <p>Target :  Any <span class="arithmatex">\(M\)</span> consecutive tree operations starting from an empty tree take at most <span class="arithmatex">\(O(M log N)\)</span> time.
 * For any nonroot node <span class="arithmatex">\(X\)</span> , denote its parent by <span class="arithmatex">\(P\)</span> and grandparent by <span class="arithmatex">\(G\)</span>
 <img alt="2" src="../2.png" />
-* 其实不是Single rotation，也是要两次(Zig-Zig) : 先转 P再转X
-* Zig-Zag only rotate X
+* 其实不是Single rotation，也是要两次<span class="arithmatex">\((Zig-Zig)\)</span> : 先转 <span class="arithmatex">\(P\)</span>再转<span class="arithmatex">\(X\)</span>
+* <span class="arithmatex">\(Zig-Zag\)</span> only rotate X
 <img alt="4" src="../4.png" /></p>
 <h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Amotized bound :  Probability is not involved !</li>
+</ul>
+<blockquote>
+<p>worst case bound &gt; amortized bound &gt; average case bound</p>
+</blockquote>
+<h3 id="aggregate-analysis">Aggregate analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Show that for all n, a sequence of n operations takes worst-case time <span class="arithmatex">\(T(n)\)</span> in total.  </p>
+<p>In the worst case, the average cost, or amortized cost, per operation is therefore <span class="arithmatex">\(T(n)/n\)</span>.</p>
+</blockquote>
+<h3 id="accounting-method">Accounting method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>When an operation’s amortized cost  <span class="arithmatex">\(\hat{c}_i\)</span> exceeds its actual cost <span class="arithmatex">\(c_i\)</span> , we assign the difference to specific objects in the data structure as credit. Credit can help pay for later operations whose amortized cost is less than their actual cost.</p>
+</blockquote>
+<p><img alt="5" src="../5.png" /></p>
 
   <hr>
 <div class="md-source-file">
