@@ -22,7 +22,25 @@ is defined to be –1
 Target :  Any $M$ consecutive tree operations starting from an empty tree take at most $O(M log N)$ time.
 * For any nonroot node $X$ , denote its parent by $P$ and grandparent by $G$
 ![2](2.png)
-* 其实不是Single rotation，也是要两次(Zig-Zig) : 先转 P再转X
-* Zig-Zag only rotate X
+* 其实不是Single rotation，也是要两次$(Zig-Zig)$ : 先转 $P$再转$X$
+* $Zig-Zag$ only rotate X
 ![4](4.png)
+
 ## Amortized Analysis
+
+* Amotized bound :  Probability is not involved !
+
+  > worst case bound > amortized bound > average case bound
+
+### Aggregate analysis
+
+> Show that for all n, a sequence of n operations takes worst-case time $T(n)$ in total.  
+>
+> In the worst case, the average cost, or amortized cost, per operation is therefore $T(n)/n$.
+
+### Accounting method
+
+> When an operation’s amortized cost  $\hat{c}_i$ exceeds its actual cost $c_i$ , we assign the difference to specific objects in the data structure as credit. Credit can help pay for later operations whose amortized cost is less than their actual cost.
+
+![5](5.png)
+

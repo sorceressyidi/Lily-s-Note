@@ -172,7 +172,20 @@ SELECT name FROM student
 ### Date/Time Operations
 ![7](7.png)
 
+```mysql
+ SELECT NOW();
+ SELECT CURRENT_TIMESTAMP();
+ SELECT CURRENT_TIMESTAMP();
+ SELECT EXTRACT(DAY FROM DATE('2018-08-29'));
+ //SELECT DATE('2018-08-29')-DATE('2018-01-01');
+ SELECT ROUND((UNIX_TIMESTAMP(DATE('2018-08-29'))-UNIX_TIMESTAMP(DATE('2018-01-01')))/(60*60*24),0) AS days;
+ SELECT DATEDIFF(DATE('2018-08-29'),DATE('2018-01-01')) AS days;
+```
+
+
+
 ## Output Control + Redirection
+
 ### Output Redirection
 Store query results in another table:
 → Table must not already be defined.
@@ -181,16 +194,39 @@ Store query results in another table:
 CREATE TABLE CourseIds (
 SELECT DISTINCT cid FROM enrolled);
 ```
+Insert tuples from query into another table:
+
+→ Inner SELECTmust generate the same columns as the
+
+target table.
+
+→ DBMSs have different options/syntax on what to do with
+
+integrity violations (e.g., invalid duplicates).
+
+```mysql
+INSERT INTO CourseIds
+(SELECT DISTINCT cid FROM enrolled);
+```
+
 ### Output Control
-* ORDER BY <column*> [ASC|DESC]
+
+* ORDER BY $<column*> [ASC|DESC]$
 ```sql
 SELECT sid FROM enrolled
 WHERE cid = '15-721'
-ORDER BY grade DESC, 1,sid ASC
+ORDER BY grade DESC,1,sid ASC
 ```
-* LIMIT <count> [offset]
-→ Limit the # of tuples returned in output.
+* LIMIT $<count> [offset]$
+→ Limit the $\#$​​ of tuples returned in output.
 → Can set an offset to return a “range”
+* `offset -- skip` -- should combine with `oredered by` clause
+```mysql
+SELECT sid, name FROM student
+WHERE login LIKE '%@cs'
+LIMIT 20 OFFSET 10  
+```
+
 ## Nested Queries
 ```sql
 select name from student
@@ -201,6 +237,97 @@ select name from student
 ```
 ![8](8.png)
 
-## Common Table Expressions
+```mysql
+SELECT name FROM student
+WHERE sid = ANY(
+SELECT sid FROM enrolled
+WHERE cid = '15-445'
+)
+```
+
+```mysql
+SELECT (SELECT S.name from student as S where S.sid = E = sid) as sname
+FROM enrolled as E
+where cid = '15-445'
+```
+
+> Find student record with the highest id that is enrolled in at least one course.
+
+```mysql
+SELECT sid,name FROM student
+WHERE sid IN(
+SELECT MAX(sid)FROM enrolled
+)
+```
+
+```mysql
+SELECT sid, name FROM student
+WHERE sid IN (
+SELECT sid FROM enrolled
+ORDER BY sid DESC LIMIT 1
+)
+```
+
+```mysql
+SELECT student.sid, name
+	FROM student
+	JOIN (SELECT MAX(sid) AS sid
+	FROM enrolled) AS max_e
+		ON student.sid = max_e.sid;
+```
+
+>Find all courses that have no students enrolled in it.
+>
+>* Through outer quiries , we can access inner queries
+
+```mysql
+SELECT * FROM course
+	WHERE NOT EXISTS(
+  SELECT * FROM enrolled
+  	WHERE course.cid = enrolled.cid
+  )
+```
 
 ## Window Functions
+
+* **Still See the Original Tuples**
+
+![10](10.png)
+
+![11](11.png)
+
+![12](12.png)
+
+## Common Table Expressions
+
+Provides a way to write auxiliary statements for use in a larger query.
+
+> Think of it like a temp table just for one query.
+
+Alternative to nested queries and views.
+
+```mysql
+WITH cteName AS (
+SELECT 1
+)
+SELECT * FROM cteName
+```
+
+![13](13.png)
+
+```mysql
+WITH cteSource (maxId) AS (
+SELECT MAX(sid) FROM enrolled
+)
+SELECT name FROM student, cteSource
+WHERE student.sid = cteSource.maxId
+```
+
+* Recursion！
+
+  ![14](14.png)
+
+  > At each iteration, that SELECT produces a row with a new value one greater than the value of n from the previous row set. The first iteration operates on the initial row set (1) and produces 1+1=2; the second iteration operates on the first iteration’s row set (2) and produces 2+1=3; and so forth. This continues until recursion ends, which occurs when n is no longer less than 5.
+  >
+
+* https://blog.csdn.net/mjfppxx/article/details/124879326

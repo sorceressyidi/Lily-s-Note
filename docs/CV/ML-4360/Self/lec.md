@@ -77,5 +77,5 @@ I Given a chosen **score function** $s(·, ·)$, we want to learn an encoder f t
 
 ### Barlow Twins
 
-
+* Refer to Slides and Paper
 
