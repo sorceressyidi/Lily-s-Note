@@ -61,6 +61,8 @@ Methods to store and retrieve information from a database.
 
 ### Extra Operators
 
+> Example : Refer to ZJU course slides
+
 * Rename (**ρ**)
 * Assignment (R←S)
 * Duplicate Elimination (**δ**)
@@ -74,6 +76,10 @@ A better approach is to state the high-level answer that you want the DBMS to co
 
 * Faced with different situation of data(say ,small amout vs large amout),if considered in a lower level,we have to implement different methods for different circumstances.
 * We expect that ,even the situation changes, we do not have to change our queries.
+
+
+
+![11](11.png)
 
 
 

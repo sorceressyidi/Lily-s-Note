@@ -1,12 +1,11 @@
 ## AVL Tree
 * An empty binary tree is height balanced.
-* If T is nonempty binary tree with $T_L$ and $T_R$ as its left and right subtrees,then T is height balanced iff
+* If T is nonempty binary tree with $T_L$ and $T_R$ as its left and right subtrees,then $T$ is height balanced iff
   (1)$T_L$ and $T_R$ are height balanced
   (2)$|h_L-H_R|\le 1$ where $h_l$ and $h_R$ are the heights of $T_L$ and $T_R$
-* Balance Factor BF(node) = $h_L$-$h_r$
-  In an AVL Tree,$BF(node)$ = -1,0,or 1
-* The height of an empty tree 
-is defined to be –1
+* Balance Factor $BF(node)$ = $h_L$-$h_r$
+  In an AVL Tree,$BF(node)$ = $-1,0,or\ 1$
+* The height of an empty tree is defined to be $–1$
 ### Tree Rotation
 * Changes Sturcture without intefering 
   ![3](3.png)
@@ -23,7 +22,7 @@ Target :  Any $M$ consecutive tree operations starting from an empty tree take a
 * For any nonroot node $X$ , denote its parent by $P$ and grandparent by $G$
 ![2](2.png)
 * 其实不是Single rotation，也是要两次$(Zig-Zig)$ : 先转 $P$再转$X$
-* $Zig-Zag$ only rotate X
+* $Zig-Zag$ only rotate $X$
 ![4](4.png)
 
 ## Amortized Analysis
@@ -44,3 +43,78 @@ Target :  Any $M$ consecutive tree operations starting from an empty tree take a
 
 ![5](5.png)
 
+### Potential Method
+
+* Refer to Book **Potential Function**
+
+## Red-Black Tree
+
+* Technique : Create $"哨兵" \ \ \ "虚拟节点"$
+
+### Def:
+
+* Every node is either red or black.
+* The root is black.
+* Every leaf ($NIL..哨兵$) is black.
+* If a node is red both its children are black.
+* For each node,all simple paths from the node the descandent **leaves**(哨兵) contain the same number of black nodes.
+
+> Black-Height
+
+The number of black nodes from the node to its descandent leaves (without counting NIL & itself) 
+
+### Lemma
+
+A red-black tree with **N** internal nodes has **height** at most  $2ln(N +1)$​.
+
+![6](6.png)
+
+### Operations
+
+#### Insert
+
+Sketch : Insert & Colour red ; Pass Error to Root
+
+* Then Pass **Error** to the Root and turn it to black.
+
+![7](7.png)
+
+![8](8.png)
+
+* For case 2 -- **Ensure that the right child of 7 is not red !!**
+
+> Refer to 算法导论 !
+>
+> * Loop ends when z.p is black
+>
+> * Color the root black after the loop
+>
+>   ![9](9.png)
+>
+> ![10](10.png)
+>
+> ![11](11.png)
+>
+> ![12](12.png)
+
+#### Delete
+
+![13](13.png)
+
+![14](14.png)
+
+* Case 3 : To have a red far nephew.
+
+* Case 4 : (1) change colour of ? and w (2) far nephew change black (3) make brother new root
+
+  > Beacuse property 5 holds so descants of w have no black node
+
+![15](15.png)
+
+![16](16.png)
+
+![17](17.png)
+
+
+
+* See AVL Deletion
