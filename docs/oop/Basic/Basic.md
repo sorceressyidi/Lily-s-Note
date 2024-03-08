@@ -305,7 +305,7 @@ delete [] p;
 ## Class
 
 ### Declaring references
-
+* Must be initialized when defined
 ```C++
 char c;
 char& r=c;
@@ -478,6 +478,68 @@ int main()
 
 * A default constructer is one that can be called with no arguments
 * If no default constructer is coded , the compiler will automatically implement one(in default version)
+
+#### Initialization VS assignment
+```C++
+Student::Student(string s):name(s){} //initialization before constructor
+// Prefered
+```
+> 这意味着我们在构造函数的初始化列表中对 name 成员变量进行了初始化
+> 在构造函数体内，我们没有对 name 进行赋值操作，而是在构造函数的初始化列表中直接将传递给构造函数的参数 s 赋值给了 name,这样的操作是在构造函数体执行之前，即在构造函数被调用时，就对 name 进行了初始化
+> 因此，可以说这是“初始化（Initialization）在构造函数（Constructor）之前（Before）”执行的，即“initialization before constructor”
+```C++
+Student::Student(sring s){
+  name = s;
+} //assignment
+// For more constructors
+```
+```C++
+void func() {
+    int x; // 在函数内部声明的变量
+    // 空间在函数执行时分配
+}
+void func() {
+    static int x; // 静态变量
+    // 空间在程序启动时分配
+}
+```
+
+```C++
+#include <iostream>
+#include <string>
+
+class Student {
+private:
+    std::string name;
+
+public:
+    // 默认构造函数，使用成员初始化列表对 name 进行初始化
+    Student(std::string s) : name(s) {
+        std::cout << "Default constructor called with name: " << name << std::endl;
+    }
+    // 输出学生姓名的方法
+    void display() {
+        std::cout << "Student's name: " << name << std::endl;
+    }
+};
+int main() {
+    // 创建一个名为 "Alice" 的学生对象，并使用默认构造函数进行初始化
+    Student student1("Alice");
+    // 调用 display 方法显示学生的姓名
+    student1.display();
+    return 0;
+}
+```
+* const
+```C++
+class Point {
+private:
+    const float x, y;
+public:
+    Point(float xa = 0.0, float ya = 0.0) : y(ya), x(xa) {}
+};
+```
+* Here, const variables cannot be assigned values, they can only be initialized. The initialization of member const variables can be done using const float x = 1.0;, but in this case, all objects of the class will have the same value. Another place where const variables can be initialized within a class is in the constructor's initialization list.
 
 #### Destructor「析构」
 
