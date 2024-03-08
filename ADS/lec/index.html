@@ -1865,6 +1865,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    Potential Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    Red-Black Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="Red-Black Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def" class="md-nav__link">
+    Def:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemma" class="md-nav__link">
+    Lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3964,6 +4025,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    Potential Method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    Red-Black Tree
+  </a>
+  
+    <nav class="md-nav" aria-label="Red-Black Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def" class="md-nav__link">
+    Def:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemma" class="md-nav__link">
+    Lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert" class="md-nav__link">
+    Insert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3989,13 +4111,12 @@
 <h2 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">&para;</a></h2>
 <ul>
 <li>An empty binary tree is height balanced.</li>
-<li>If T is nonempty binary tree with <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> as its left and right subtrees,then T is height balanced iff
+<li>If T is nonempty binary tree with <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> as its left and right subtrees,then <span class="arithmatex">\(T\)</span> is height balanced iff
   (1)<span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> are height balanced
   (2)<span class="arithmatex">\(|h_L-H_R|\le 1\)</span> where <span class="arithmatex">\(h_l\)</span> and <span class="arithmatex">\(h_R\)</span> are the heights of <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span></li>
-<li>Balance Factor BF(node) = <span class="arithmatex">\(h_L\)</span>-<span class="arithmatex">\(h_r\)</span>
-  In an AVL Tree,<span class="arithmatex">\(BF(node)\)</span> = -1,0,or 1</li>
-<li>The height of an empty tree 
-is defined to be –1</li>
+<li>Balance Factor <span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(h_L\)</span>-<span class="arithmatex">\(h_r\)</span>
+  In an AVL Tree,<span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(-1,0,or\ 1\)</span></li>
+<li>The height of an empty tree is defined to be <span class="arithmatex">\(–1\)</span></li>
 </ul>
 <h3 id="tree-rotation">Tree Rotation<a class="headerlink" href="#tree-rotation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4017,7 +4138,7 @@ is defined to be –1</li>
 * For any nonroot node <span class="arithmatex">\(X\)</span> , denote its parent by <span class="arithmatex">\(P\)</span> and grandparent by <span class="arithmatex">\(G\)</span>
 <img alt="2" src="../2.png" />
 * 其实不是Single rotation，也是要两次<span class="arithmatex">\((Zig-Zig)\)</span> : 先转 <span class="arithmatex">\(P\)</span>再转<span class="arithmatex">\(X\)</span>
-* <span class="arithmatex">\(Zig-Zag\)</span> only rotate X
+* <span class="arithmatex">\(Zig-Zag\)</span> only rotate <span class="arithmatex">\(X\)</span>
 <img alt="4" src="../4.png" /></p>
 <h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4036,13 +4157,82 @@ is defined to be –1</li>
 <p>When an operation’s amortized cost  <span class="arithmatex">\(\hat{c}_i\)</span> exceeds its actual cost <span class="arithmatex">\(c_i\)</span> , we assign the difference to specific objects in the data structure as credit. Credit can help pay for later operations whose amortized cost is less than their actual cost.</p>
 </blockquote>
 <p><img alt="5" src="../5.png" /></p>
+<h3 id="potential-method">Potential Method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Refer to Book <strong>Potential Function</strong></li>
+</ul>
+<h2 id="red-black-tree">Red-Black Tree<a class="headerlink" href="#red-black-tree" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Technique : Create <span class="arithmatex">\("哨兵" \ \ \ "虚拟节点"\)</span></li>
+</ul>
+<h3 id="def">Def:<a class="headerlink" href="#def" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Every node is either red or black.</li>
+<li>The root is black.</li>
+<li>Every leaf (<span class="arithmatex">\(NIL..哨兵\)</span>) is black.</li>
+<li>If a node is red both its children are black.</li>
+<li>For each node,all simple paths from the node the descandent <strong>leaves</strong>(哨兵) contain the same number of black nodes.</li>
+</ul>
+<blockquote>
+<p>Black-Height</p>
+</blockquote>
+<p>The number of black nodes from the node to its descandent leaves (without counting NIL &amp; itself) </p>
+<h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">&para;</a></h3>
+<p>A red-black tree with <strong>N</strong> internal nodes has <strong>height</strong> at most  <span class="arithmatex">\(2ln(N +1)\)</span>​.</p>
+<p><img alt="6" src="../6.png" /></p>
+<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
+<h4 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
+<p>Sketch : Insert &amp; Colour red ; Pass Error to Root</p>
+<ul>
+<li>Then Pass <strong>Error</strong> to the Root and turn it to black.</li>
+</ul>
+<p><img alt="7" src="../7.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<ul>
+<li>For case 2 -- <strong>Ensure that the right child of 7 is not red !!</strong></li>
+</ul>
+<blockquote>
+<p>Refer to 算法导论 !</p>
+<ul>
+<li>
+<p>Loop ends when z.p is black</p>
+</li>
+<li>
+<p>Color the root black after the loop</p>
+</li>
+</ul>
+<p><img alt="9" src="../9.png" /></p>
+<p><img alt="10" src="../10.png" /></p>
+<p><img alt="11" src="../11.png" /></p>
+<p><img alt="12" src="../12.png" /></p>
+</blockquote>
+<h4 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
+<p><img alt="13" src="../13.png" /></p>
+<p><img alt="14" src="../14.png" /></p>
+<ul>
+<li>
+<p>Case 3 : To have a red far nephew.</p>
+</li>
+<li>
+<p>Case 4 : (1) change colour of ? and w (2) far nephew change black (3) make brother new root</p>
+</li>
+</ul>
+<blockquote>
+<p>Beacuse property 5 holds so descants of w have no black node</p>
+</blockquote>
+<p><img alt="15" src="../15.png" /></p>
+<p><img alt="16" src="../16.png" /></p>
+<p><img alt="17" src="../17.png" /></p>
+<ul>
+<li>See AVL Deletion</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月28日 15:10:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月5日 16:48:37</span>
       
         <br>
         创建日期:
