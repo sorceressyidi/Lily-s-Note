@@ -236,11 +236,128 @@ inline void Point::print(string & msg = ""){
 * Better for 宏macro  ：check
 * Compiler will automatically do inline or undo inline
 
-```C++
+#### Tradeoff
 
+* 将成员函数的定义写在声明内，就会自动 inline. 也可以在 body 的地方加上 inline.
+  ```C++
+  class Cup {
+      int color;
+  public:
+      int getColor() { return color; }
+      void setColor(int color) {
+          this->color = color;
+      }
+  };
+  ```
+
+### Const
+
+`const int a = 6`  -- `not changable variable`
+
+* value must be initialized. `const int bufsize = 1024;`
+* Unless you make an explicit extern declaration , like `extern const int bufsize;`
+
+* **Compiler** to make sure that it will not be changed.
+
+  > Connot be optimized : （remain variables）
+  >
+  > * Global variables.
+  > * 函数参数
+  > * 成员变量
+
+```C++
+const int x = 123;  // const, literal
+x = 27;     // illegal!
+x++;    // illegal!
+int y = x;  // ok, copy const to non-const
+y = x;  // ok, same thing
+const int z = y;    // ok, const is safer
 ```
 
-#### Tradeoff of inline functions
+```C++
+const int i[] = { 1, 2, 3, 4 };
+float f[i[3]]; // Illegal(in C++98)
+struct S { int i, j; };
+const S s[] = { { 1, 2 }, { 3, 4 } };
+double d[s[1].j]; // Illegal
+```
 
+* It is possible to use `const` for aggregates, but storage will be allocated. In these situations,`const` means "a piece of storage that cannot be changed." 
 
+  However,the value **cannot** be used at compile time because the compiler is not required to know the contents of the storage at compile time.
+
+### Pointer
+
+```C++
+char * const q = "abc"; // q is const
+*q = 'c'; // ERROR
+// char a[] = "abc"; *q = 'c' is ok.
+q++; // ERROR
+const char *p = "ABCD"; // (*p) is a const char
+*p = 'b'; // ERROR! (*p) is the const
+```
+
+* Quiz
+
+  ```C++
+  string p1("Fred");
+  const string* p = &p1; // p1 cannot be changed through p.
+  string const* p = &p1; // like the first one.
+  string *const p = &p1; // p cannot be changed.only point to p1.
+  ```
+
+![5](5.png)
+
+#### String Literals
+
+```C++
+char *s = "Hello"; //can be compile but bus error because actually const char *s
+// Add const compile will not pass.
+s[0] = 'K';
+printf("%s\n",s);
+
+// Write in an array
+char s[] = "Hello, world!";
+```
+
+#### Const Object
+
+```C++
+const Currency the_raise(42, 38);
+```
+
+Compiler Will ERROR:
+
+* Public member variable
+* its member function will change the variable
+
+**Thus,when we write all  the member functions,SPECIFY CONST! For Compiler to know if it will change the value of member variables!**
+
+```C++
+int Date::set_day(int d) {
+    //...error check d here...
+    day = d; // ok, non-const so can modify
+}
+int Date::get_day() const {
+    day++; // ERROR modifies data member
+    set_day(12); // ERROR calls non-const member
+    return day; // ok
+}
+```
+
+* `const` 定义的对象，只能调用带 `const` 属性的成员函数。
+* `const` 必须保证成员变量有初始值！默认构造函数.
+
+* Overload (const can distinguish the two functions.)，会根据对象调用时是否 `const` 来决定调用哪个成员函数
+
+  事实上 `const` 后的成员函数参数，相当于 `const A *this`, 而不加 const 就只是 `A *this`.
+
+  `const` 作用在隐藏参数 `A* this`
+
+  ```C++
+  void f() const;
+  void f();
+  ```
+
+## Static
 

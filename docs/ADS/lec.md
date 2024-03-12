@@ -118,3 +118,38 @@ Sketch : Insert & Colour red ; Pass Error to Root
 
 
 * See AVL Deletion
+
+## B+ Tree
+
+### 【Definition】
+
+A B+ tree of order M is a tree with the following structural properties:
+
+* The root is either a leaf or has between 2 and M children.
+* All nonleaf nodes (except the root) have between $「M/2$(上取整) and $M$ children.
+* All leaves are at the same depth.
+* Assume each nonroot leaf also has between $「M/2$（上取整） and M children.
+
+> Root can have less children like when constructing.
+
+```C
+Btree  Insert ( ElementType X,  Btree T ) 
+{ 
+	Search from root to leaf for X and find the proper leaf node;
+	Insert X;
+	while ( this node has M+1 keys ) {
+    		split it into 2 nodes with 「(M+1)/2 and 「(M+1)/2 keys, respectively;
+    		if (this node is the root)
+        		create a new root with two children;
+    		check its parent;
+    // Every iteration O(M)
+	}
+} 
+```
+
+$Depth = O(log_{M/2}N)$​
+
+$T_{insert} = O(M* Depth)=O(logN*M/logM)$​ 
+
+$Y_{find} = O(logN)$​
+
