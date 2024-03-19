@@ -16,7 +16,7 @@
         <link rel="prev" href="../../Basic/Basic/">
       
       
-        <link rel="next" href="../../../ADS/lec/">
+        <link rel="next" href="../../../ADS/Tree/lec/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -1901,15 +1901,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#static" class="md-nav__link">
     Static
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    Namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1937,6 +1944,8 @@
   
     
     
+      
+        
       
         
       
@@ -1976,11 +1985,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ADS/lec/" class="md-nav__link">
+      <a href="../../../ADS/Tree/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    AVL,Splay,Red-Black Tree
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/Heap/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
   </span>
   
 
@@ -4289,15 +4318,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#static" class="md-nav__link">
     Static
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    Namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4591,9 +4627,8 @@
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">// Add const compile will not pass.</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;K&#39;</span><span class="p">;</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1">// Write in an array</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1">// Write in an array</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">;</span>
 </code></pre></div>
 <h4 id="const-object">Const Object<a class="headerlink" href="#const-object" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">const</span><span class="w"> </span><span class="n">Currency</span><span class="w"> </span><span class="nf">the_raise</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">38</span><span class="p">);</span>
@@ -4628,14 +4663,61 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">();</span>
 </code></pre></div>
-<h2 id="static">Static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
+<ul>
+<li>member of class is <strong>constant</strong> : must be initialized by the constructor(const) or the C++11 way</li>
+</ul>
+<h3 id="static">Static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<ul>
+<li>静态本地变量实际上是全局变量，被存储在静态内存中</li>
+</ul>
+<p>只在第一次访问<strong>[只在第一次被执行到的时候]</strong>时被构造</p>
+<p>出现在全局变量/函数前，表示访问限制，只有当前文件可以访问</p>
+<p>在程序结束后析构</p>
+<ul>
+<li>Global Objects</li>
+</ul>
+<p>全局变量的构造发生在 <code>main()</code> 之前，在 <code>main()</code> 或者 <code>exit()</code> 之后析构
+  但是不同编译单元的全局变量，如果存在依赖关系，但这是无法保证的</p>
+<p><strong>最好不在C++使用global variable</strong></p>
+<ul>
+<li>静态成员变量和静态本地变量是一样的</li>
+</ul>
+<p>访问受限，限于类内部，实际上是全局变量。</p>
+<p><strong>在这个类内所有的对象都维持相同的值，对象 A 修改了那么对象 B 的这个变量的值也会改变</strong></p>
+<ul>
+<li><strong>静态成员函数</strong>没有 this, 不能调用<strong>非静态成员变量</strong>，也不能访问非静态函数</li>
+</ul>
+<p>可以在没有<strong>创建类的对象</strong>的时候就能调用静态成员函数</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#ifndef _STAT_MEM_</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#define _STAT_MEM_</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">StatMem</span><span class="p">{</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">getHeight</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">m_h</span><span class="p">;}</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">setHeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span><span class="n">m_h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">}</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">getWeight</span><span class="p">(){</span><span class="k">return</span><span class="w"> </span><span class="n">m_w</span><span class="p">;}</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">setWeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span><span class="n">m_w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;}</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m_h</span><span class="p">;</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">m_w</span><span class="p">;</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="p">}</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="cp">#endif </span>
+</code></pre></div>
+<ul>
+<li>一个静态的全局变量，必须在头文件对应的.cpp中重新</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">#include</span><span class="cpf">&quot;StatMem.h&quot;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">StatMem</span><span class="o">::</span><span class="n">m_h</span>
+</code></pre></div>
+<p>​   且不能再加<code>static</code></p>
+<h3 id="namespace">Namespace<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h3>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月12日 10:05:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
       
         <br>
         创建日期:
@@ -4730,13 +4812,13 @@
         
         
           
-          <a href="../../../ADS/lec/" class="md-footer__link md-footer__link--next" aria-label="下一页: AVL,Splay,Red-Black Tree">
+          <a href="../../../ADS/Tree/lec/" class="md-footer__link md-footer__link--next" aria-label="下一页: Trees">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                AVL,Splay,Red-Black Tree
+                Trees
               </div>
             </div>
             <div class="md-footer__button md-icon">

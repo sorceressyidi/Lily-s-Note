@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/ADS/lec/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/ADS/Heap/lec/">
       
       
-        <link rel="prev" href="../../oop/Container/Container/">
+        <link rel="prev" href="../../Tree/lec/">
       
       
-        <link rel="next" href="../../CMU%2015-445/Chap1/Chap1/">
+        <link rel="next" href="../../../CMU%2015-445/Chap1/Chap1/">
       
       
-      <link rel="icon" href="../../log.ico">
+      <link rel="icon" href="../../../log.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>AVL,Splay,Red-Black Tree - Lily's Notebook</title>
+        <title>Heap - Lily's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -56,19 +56,19 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../css/card.css">
+      <link rel="stylesheet" href="../../../css/card.css">
     
-      <link rel="stylesheet" href="../../css/tasklist.css">
+      <link rel="stylesheet" href="../../../css/tasklist.css">
     
-      <link rel="stylesheet" href="../../css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
-      <link rel="stylesheet" href="../../css/more_changelog.css">
+      <link rel="stylesheet" href="../../../css/more_changelog.css">
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avl-tree" class="md-skip">
+        <a href="#leftist-heaps" class="md-skip">
           跳转至
         </a>
       
@@ -121,9 +121,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../log.ico" alt="logo">
+  <img src="../../../log.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AVL,Splay,Red-Black Tree
+              Heap
             
           </span>
         </div>
@@ -241,7 +241,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -271,7 +271,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
+        <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-tabs__link">
           
   
     
@@ -306,7 +306,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../GP/lec1-3/lec1/" class="md-tabs__link">
+        <a href="../../../GP/lec1-3/lec1/" class="md-tabs__link">
           
   
     
@@ -338,7 +338,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
           
   
     
@@ -367,7 +367,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../DL_CV/class/lec/" class="md-tabs__link">
+        <a href="../../../DL_CV/class/lec/" class="md-tabs__link">
           
   
     
@@ -396,7 +396,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../invisible/" class="md-tabs__link">
+        <a href="../../../invisible/" class="md-tabs__link">
           
   
     
@@ -434,9 +434,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../log.ico" alt="logo">
+  <img src="../../../log.ico" alt="logo">
 
     </a>
     Lily's Notebook
@@ -473,7 +473,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -618,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/basicII/" class="md-nav__link">
+      <a href="../../../note/basicII/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/sort/" class="md-nav__link">
+      <a href="../../../note/sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -698,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/hash/" class="md-nav__link">
+      <a href="../../../note/hash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -780,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/Basic/DIP/" class="md-nav__link">
+      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/chap2/chap2/" class="md-nav__link">
+      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -820,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/chap3/chap3/" class="md-nav__link">
+      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/morph/morph/" class="md-nav__link">
+      <a href="../../../DIP/morph/morph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/filter/filter/" class="md-nav__link">
+      <a href="../../../DIP/filter/filter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -880,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/Fourier/Fourier/" class="md-nav__link">
+      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -900,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/feature/feature/" class="md-nav__link">
+      <a href="../../../DIP/feature/feature/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -920,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/DL/DL/" class="md-nav__link">
+      <a href="../../../DIP/DL/DL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1000,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1080,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1100,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1190,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/pca/" class="md-nav__link">
+      <a href="../../../AI/pca/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/net/" class="md-nav__link">
+      <a href="../../../AI/net/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1370,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1490,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap1/Chap1/" class="md-nav__link">
+      <a href="../../../NA/Chap1/Chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1510,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap2/Chap2/" class="md-nav__link">
+      <a href="../../../NA/Chap2/Chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1530,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap3/Chap3/" class="md-nav__link">
+      <a href="../../../NA/Chap3/Chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1550,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap4/Chap4/" class="md-nav__link">
+      <a href="../../../NA/Chap4/Chap4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1570,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap5/Chap5/" class="md-nav__link">
+      <a href="../../../NA/Chap5/Chap5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1590,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap6/Chap6/" class="md-nav__link">
+      <a href="../../../NA/Chap6/Chap6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NA/Chap7/Chap7/" class="md-nav__link">
+      <a href="../../../NA/Chap7/Chap7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1680,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Basic/Basic/" class="md-nav__link">
+      <a href="../../../oop/Basic/Basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1700,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Container/Container/" class="md-nav__link">
+      <a href="../../../oop/Container/Container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1731,6 +1731,8 @@
   
     
     
+      
+        
       
         
       
@@ -1768,6 +1770,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../Tree/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1781,7 +1803,7 @@
           
   
   <span class="md-ellipsis">
-    AVL,Splay,Red-Black Tree
+    Heap
   </span>
   
 
@@ -1792,7 +1814,7 @@
         
   
   <span class="md-ellipsis">
-    AVL,Splay,Red-Black Tree
+    Heap
   </span>
   
 
@@ -1812,92 +1834,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avl-tree" class="md-nav__link">
-    AVL Tree
+  <a href="#leftist-heaps" class="md-nav__link">
+    Leftist Heaps
   </a>
   
-    <nav class="md-nav" aria-label="AVL Tree">
+    <nav class="md-nav" aria-label="Leftist Heaps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tree-rotation" class="md-nav__link">
-    Tree Rotation
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def1" class="md-nav__link">
+    Def.1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rotation-for-avl-tree" class="md-nav__link">
-    Rotation for AVL Tree
+  <a href="#def2" class="md-nav__link">
+    Def.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem1" class="md-nav__link">
+    Theorem.1
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#splay-trees" class="md-nav__link">
-    Splay Trees
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#amortized-analysis" class="md-nav__link">
-    Amortized Analysis
-  </a>
-  
-    <nav class="md-nav" aria-label="Amortized Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aggregate-analysis" class="md-nav__link">
-    Aggregate analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accounting-method" class="md-nav__link">
-    Accounting method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#potential-method" class="md-nav__link">
-    Potential Method
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#red-black-tree" class="md-nav__link">
-    Red-Black Tree
-  </a>
-  
-    <nav class="md-nav" aria-label="Red-Black Tree">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#def" class="md-nav__link">
-    Def:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lemma" class="md-nav__link">
-    Lemma
-  </a>
   
 </li>
         
@@ -1910,15 +1884,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#insert" class="md-nav__link">
-    Insert
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    Delete
+  <a href="#merge" class="md-nav__link">
+    Merge
   </a>
   
 </li>
@@ -1934,16 +1901,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b-tree" class="md-nav__link">
-    B+ Tree
+  <a href="#skew-heaps" class="md-nav__link">
+    Skew Heaps
   </a>
   
-    <nav class="md-nav" aria-label="B+ Tree">
+    <nav class="md-nav" aria-label="Skew Heaps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    【Definition】
+  <a href="#amortized-analysis-for-skew-heaps" class="md-nav__link">
+    Amortized Analysis for Skew Heaps
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis for Skew Heaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def" class="md-nav__link">
+    Def:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    Amortized Analysis
   </a>
   
 </li>
@@ -2058,7 +2045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap1/Chap1/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap1/Chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2078,7 +2065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap2/Chap2/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap2/Chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2098,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap3/Chap3/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap3/Chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2118,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap4/Chap4.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap4/Chap4.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2138,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap5/Chap5.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap5/Chap5.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2158,7 +2145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap6/Chap6.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap6/Chap6.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2178,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap7/Chap7.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap7/Chap7.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2198,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap8/Chap8.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap8/Chap8.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2218,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap9/Chap9.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap9/Chap9.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2238,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap10/Chap10.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap10/Chap10.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2258,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap11/Chap11.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap11/Chap11.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2278,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap12/Chap12.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap12/Chap12.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2298,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap13/Chap13.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap13/Chap13.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2318,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap14/Chap14.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap14/Chap14.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2338,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap15/Chap15.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap15/Chap15.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2358,7 +2345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap16/Chap16.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap16/Chap16.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2378,7 +2365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap17/Chap17.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap17/Chap17.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2398,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap18/Chap18.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap18/Chap18.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2418,7 +2405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap19/Chap19.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap19/Chap19.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2438,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap20/Chap20.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap20/Chap20.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2458,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap21/Chap21.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap21/Chap21.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2478,7 +2465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU 15-445/Chap22/Chap22.md" class="md-nav__link">
+      <a href="../../../CMU 15-445/Chap22/Chap22.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2548,7 +2535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%BB%84/Intro/intro/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%BB%84/Intro/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2568,7 +2555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%BB%84/Chap3/lec/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%BB%84/Chap3/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2738,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/lec1-3/lec1/" class="md-nav__link">
+      <a href="../../../GP/lec1-3/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2758,7 +2745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/current/current/" class="md-nav__link">
+      <a href="../../../GP/current/current/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2778,7 +2765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/mag/mag/" class="md-nav__link">
+      <a href="../../../GP/mag/mag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2798,7 +2785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/com/com/" class="md-nav__link">
+      <a href="../../../GP/com/com/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2874,7 +2861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/light/" class="md-nav__link">
+      <a href="../../../GP/light/light/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2894,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/inteference/" class="md-nav__link">
+      <a href="../../../GP/light/inteference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2914,7 +2901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/df/diffraction/" class="md-nav__link">
+      <a href="../../../GP/light/df/diffraction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2934,7 +2921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/Polar/Polarization/" class="md-nav__link">
+      <a href="../../../GP/Polar/Polarization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2954,7 +2941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/quantum%20light/quantum/" class="md-nav__link">
+      <a href="../../../GP/light/quantum%20light/quantum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3030,7 +3017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/matter%20wave/matter/" class="md-nav__link">
+      <a href="../../../GP/matter%20wave/matter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3050,7 +3037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/sch/sch/" class="md-nav__link">
+      <a href="../../../GP/sch/sch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3070,7 +3057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/QW/QW/" class="md-nav__link">
+      <a href="../../../GP/QW/QW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3090,7 +3077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/HA/HA/" class="md-nav__link">
+      <a href="../../../GP/HA/HA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3110,7 +3097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/AMAS/AMAS/" class="md-nav__link">
+      <a href="../../../GP/AMAS/AMAS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3190,7 +3177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/PT/" class="md-nav__link">
+      <a href="../../../PT/PT/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3210,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/order_stats.pdf" class="md-nav__link">
+      <a href="../../../PT/order_stats.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3230,7 +3217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3364,7 +3351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3384,7 +3371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3404,7 +3391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3424,7 +3411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3444,7 +3431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3464,7 +3451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/CBN/lec9/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/CBN/lec9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3484,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3504,7 +3491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Self/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Self/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3524,7 +3511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3654,7 +3641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/class/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/class/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3674,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/neural/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/neural/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3694,7 +3681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/CNN/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/CNN/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3714,7 +3701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/Pytorch/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/Pytorch/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3734,7 +3721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/TN/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/TN/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3754,7 +3741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/Recognition/lec10/" class="md-nav__link">
+      <a href="../../../DL_CV/Recognition/lec10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3830,7 +3817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL/Neural%20Networks%20and%20Deep%20Learning/part1/" class="md-nav__link">
+      <a href="../../../DL/Neural%20Networks%20and%20Deep%20Learning/part1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3850,7 +3837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL/Improving%20Deep%20Neural%20Networks/part2/" class="md-nav__link">
+      <a href="../../../DL/Improving%20Deep%20Neural%20Networks/part2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3870,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL/Structuring%20Machine%20Learning%20Projects/part3/" class="md-nav__link">
+      <a href="../../../DL/Structuring%20Machine%20Learning%20Projects/part3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3890,7 +3877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL/Convolutional%20Neural%20Networks/part4/" class="md-nav__link">
+      <a href="../../../DL/Convolutional%20Neural%20Networks/part4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3910,7 +3897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL/Sequence%20Models/part5/" class="md-nav__link">
+      <a href="../../../DL/Sequence%20Models/part5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4030,7 +4017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../invisible/" class="md-nav__link">
+      <a href="../../../invisible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4050,7 +4037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+      <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4104,92 +4091,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avl-tree" class="md-nav__link">
-    AVL Tree
+  <a href="#leftist-heaps" class="md-nav__link">
+    Leftist Heaps
   </a>
   
-    <nav class="md-nav" aria-label="AVL Tree">
+    <nav class="md-nav" aria-label="Leftist Heaps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tree-rotation" class="md-nav__link">
-    Tree Rotation
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def1" class="md-nav__link">
+    Def.1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rotation-for-avl-tree" class="md-nav__link">
-    Rotation for AVL Tree
+  <a href="#def2" class="md-nav__link">
+    Def.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem1" class="md-nav__link">
+    Theorem.1
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#splay-trees" class="md-nav__link">
-    Splay Trees
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#amortized-analysis" class="md-nav__link">
-    Amortized Analysis
-  </a>
-  
-    <nav class="md-nav" aria-label="Amortized Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aggregate-analysis" class="md-nav__link">
-    Aggregate analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accounting-method" class="md-nav__link">
-    Accounting method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#potential-method" class="md-nav__link">
-    Potential Method
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#red-black-tree" class="md-nav__link">
-    Red-Black Tree
-  </a>
-  
-    <nav class="md-nav" aria-label="Red-Black Tree">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#def" class="md-nav__link">
-    Def:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lemma" class="md-nav__link">
-    Lemma
-  </a>
   
 </li>
         
@@ -4202,15 +4141,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#insert" class="md-nav__link">
-    Insert
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    Delete
+  <a href="#merge" class="md-nav__link">
+    Merge
   </a>
   
 </li>
@@ -4226,16 +4158,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b-tree" class="md-nav__link">
-    B+ Tree
+  <a href="#skew-heaps" class="md-nav__link">
+    Skew Heaps
   </a>
   
-    <nav class="md-nav" aria-label="B+ Tree">
+    <nav class="md-nav" aria-label="Skew Heaps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    【Definition】
+  <a href="#amortized-analysis-for-skew-heaps" class="md-nav__link">
+    Amortized Analysis for Skew Heaps
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis for Skew Heaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#def" class="md-nav__link">
+    Def:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    Amortized Analysis
   </a>
   
 </li>
@@ -4260,165 +4212,159 @@
                   
 
 
-  <h1>AVL,Splay,Red-Black Tree</h1>
+  <h1>Heap</h1>
 
-<h2 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">&para;</a></h2>
+<h2 id="leftist-heaps">Leftist Heaps<a class="headerlink" href="#leftist-heaps" title="Permanent link">&para;</a></h2>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<h4 id="def1">Def.1<a class="headerlink" href="#def1" title="Permanent link">&para;</a></h4>
+<p>The null path length, <span class="arithmatex">\(Npl(X)\)</span>, of any node <span class="arithmatex">\(X\)</span> is the length of the shortest path from <span class="arithmatex">\(X\)</span> to a node without two children.  Define <span class="arithmatex">\(Npl(NULL) = –1\)</span>.</p>
+<h4 id="def2">Def.2<a class="headerlink" href="#def2" title="Permanent link">&para;</a></h4>
+<p>The leftist heap property is that for every node <span class="arithmatex">\(X\)</span>​ in the heap, the null path length of the left child is at least <strong>as large as</strong> that of the right child.</p>
+<h4 id="theorem1">Theorem.1<a class="headerlink" href="#theorem1" title="Permanent link">&para;</a></h4>
+<p>A leftist tree with <span class="arithmatex">\(r\)</span> nodes on the right path must have at least <span class="arithmatex">\(2^r – 1\)</span>​ nodes.</p>
 <ul>
-<li>An empty binary tree is height balanced.</li>
-<li>If T is nonempty binary tree with <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> as its left and right subtrees,then <span class="arithmatex">\(T\)</span> is height balanced iff
-  (1)<span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> are height balanced
-  (2)<span class="arithmatex">\(|h_L-H_R|\le 1\)</span> where <span class="arithmatex">\(h_l\)</span> and <span class="arithmatex">\(h_R\)</span> are the heights of <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span></li>
-<li>Balance Factor <span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(h_L\)</span>-<span class="arithmatex">\(h_r\)</span>
-  In an AVL Tree,<span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(-1,0,or\ 1\)</span></li>
-<li>The height of an empty tree is defined to be <span class="arithmatex">\(–1\)</span></li>
+<li>For right subtree</li>
 </ul>
-<h3 id="tree-rotation">Tree Rotation<a class="headerlink" href="#tree-rotation" title="Permanent link">&para;</a></h3>
+<p><strong>For the tree,left path actually all equals to its roots' NPL</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(r=1\)</span> clearly holds</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(NLP(X)=r\le k\)</span> holds then if <span class="arithmatex">\(NLP(X)=r=k+1:\)</span>​ </p>
+<p>Its right subtree must have <span class="arithmatex">\(NLP(X)=k\)</span></p>
+<p><span class="arithmatex">\(\because when\ NLP(X)= k \ right \ path \ has \ at\ least\  2^k-1\ nodes\)</span>​</p>
+<p>So all the right part at least <span class="arithmatex">\(2^k-1\)</span></p>
+</li>
+</ol>
 <ul>
-<li>Changes Sturcture without intefering 
-  <img alt="3" src="../3.png" /></li>
-<li>Time complexity: <span class="arithmatex">\(O(1)\)</span></li>
+<li>For left subtree</li>
 </ul>
-<h3 id="rotation-for-avl-tree">Rotation for AVL Tree<a class="headerlink" href="#rotation-for-avl-tree" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><span class="arithmatex">\(r=1\)</span> clearly holds</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(NLP(X)\le k\)</span> holds then if <span class="arithmatex">\(NLP(X)=k+1:\)</span> </p>
+<p>Its left subtree's right path must be <span class="arithmatex">\(\ge k\)</span>​</p>
+<p>So at least right path is k, so at least <span class="arithmatex">\(2^k-1\)</span> for the left part</p>
+</li>
+</ol>
 <ul>
-<li>RR Rotation</li>
-<li>LL Rotation</li>
-<li>RL Rotation</li>
-<li>LR ROtation
-<img alt="1" src="../1.png" />
-勘误 ： <span class="arithmatex">\(n_h \approx \frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^{h+3}\)</span></li>
+<li>
+<p>Thus <span class="arithmatex">\(2^k-1+2^k-1+1=2^{k+1}-1\)</span>​</p>
+</li>
+<li>
+<p>Induction concludes.</p>
+</li>
 </ul>
-<h2 id="splay-trees">Splay Trees<a class="headerlink" href="#splay-trees" title="Permanent link">&para;</a></h2>
-<p>Target :  Any <span class="arithmatex">\(M\)</span> consecutive tree operations starting from an empty tree take at most <span class="arithmatex">\(O(M log N)\)</span> time.
-* For any nonroot node <span class="arithmatex">\(X\)</span> , denote its parent by <span class="arithmatex">\(P\)</span> and grandparent by <span class="arithmatex">\(G\)</span>
-<img alt="2" src="../2.png" />
-* 其实不是Single rotation，也是要两次<span class="arithmatex">\((Zig-Zig)\)</span> : 先转 <span class="arithmatex">\(P\)</span>再转<span class="arithmatex">\(X\)</span>
-* <span class="arithmatex">\(Zig-Zag\)</span> only rotate <span class="arithmatex">\(X\)</span>
-<img alt="4" src="../4.png" /></p>
-<h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Amotized bound :  Probability is not involved !</li>
-</ul>
-<blockquote>
-<p>worst case bound &gt; amortized bound &gt; average case bound</p>
-</blockquote>
-<h3 id="aggregate-analysis">Aggregate analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Show that for all n, a sequence of n operations takes worst-case time <span class="arithmatex">\(T(n)\)</span> in total.  </p>
-<p>In the worst case, the average cost, or amortized cost, per operation is therefore <span class="arithmatex">\(T(n)/n\)</span>.</p>
-</blockquote>
-<h3 id="accounting-method">Accounting method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>When an operation’s amortized cost  <span class="arithmatex">\(\hat{c}_i\)</span> exceeds its actual cost <span class="arithmatex">\(c_i\)</span> , we assign the difference to specific objects in the data structure as credit. Credit can help pay for later operations whose amortized cost is less than their actual cost.</p>
-</blockquote>
-<p><img alt="5" src="../5.png" /></p>
-<h3 id="potential-method">Potential Method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Refer to Book <strong>Potential Function</strong></li>
-</ul>
-<h2 id="red-black-tree">Red-Black Tree<a class="headerlink" href="#red-black-tree" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Technique : Create <span class="arithmatex">\("哨兵" \ \ \ "虚拟节点"\)</span></li>
-</ul>
-<h3 id="def">Def:<a class="headerlink" href="#def" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Every node is either red or black.</li>
-<li>The root is black.</li>
-<li>Every leaf (<span class="arithmatex">\(NIL..哨兵\)</span>) is black.</li>
-<li>If a node is red both its children are black.</li>
-<li>For each node,all simple paths from the node the descandent <strong>leaves</strong>(哨兵) contain the same number of black nodes.</li>
-</ul>
-<blockquote>
-<p>Black-Height</p>
-</blockquote>
-<p>The number of black nodes from the node to its descandent leaves (without counting NIL &amp; itself) </p>
-<h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">&para;</a></h3>
-<p>A red-black tree with <strong>N</strong> internal nodes has <strong>height</strong> at most  <span class="arithmatex">\(2ln(N +1)\)</span>​.</p>
-<p><img alt="6" src="../6.png" /></p>
 <h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
-<h4 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
-<p>Sketch : Insert &amp; Colour red ; Pass Error to Root</p>
+<h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
+<p><img alt="1" src="../1.png" /></p>
 <ul>
-<li>Then Pass <strong>Error</strong> to the Root and turn it to black.</li>
+<li>Recursive Version.</li>
 </ul>
-<p><img alt="7" src="../7.png" /></p>
-<p><img alt="8" src="../8.png" /></p>
-<ul>
-<li>For case 2 -- <strong>Ensure that the right child of 7 is not red !!</strong></li>
-</ul>
-<blockquote>
-<p>Refer to 算法导论 !</p>
-<ul>
-<li>
-<p>Loop ends when z.p is black</p>
-</li>
-<li>
-<p>Color the root black after the loop</p>
-</li>
-</ul>
-<p><img alt="9" src="../9.png" /></p>
-<p><img alt="10" src="../10.png" /></p>
-<p><img alt="11" src="../11.png" /></p>
-<p><img alt="12" src="../12.png" /></p>
-</blockquote>
-<h4 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
-<p><img alt="13" src="../13.png" /></p>
-<p><img alt="14" src="../14.png" /></p>
-<ul>
-<li>
-<p>Case 3 : To have a red far nephew.</p>
-</li>
-<li>
-<p>Case 4 : (1) change colour of ? and w (2) far nephew change black (3) make brother new root</p>
-</li>
-</ul>
-<blockquote>
-<p>Beacuse property 5 holds so descants of w have no black node</p>
-</blockquote>
-<p><img alt="15" src="../15.png" /></p>
-<p><img alt="16" src="../16.png" /></p>
-<p><img alt="17" src="../17.png" /></p>
-<ul>
-<li>See AVL Deletion</li>
-</ul>
-<h2 id="b-tree">B+ Tree<a class="headerlink" href="#b-tree" title="Permanent link">&para;</a></h2>
-<h3 id="definition">【Definition】<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>A B+ tree of order M is a tree with the following structural properties:</p>
-<ul>
-<li>The root is either a leaf or has between 2 and M children.</li>
-<li>All nonleaf nodes (except the root) have between <span class="arithmatex">\(「M/2\)</span>(上取整) and <span class="arithmatex">\(M\)</span> children.</li>
-<li>All leaves are at the same depth.</li>
-<li>Assume each nonroot leaf also has between <span class="arithmatex">\(「M/2\)</span>（上取整） and M children.</li>
-</ul>
-<blockquote>
-<p>Root can have less children like when constructing.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Btree</span><span class="w">  </span><span class="nf">Insert</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w">  </span><span class="n">Btree</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">Search</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">leaf</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">proper</span><span class="w"> </span><span class="n">leaf</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Insert</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="n">split</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="err">「</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="err">「</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">keys</span><span class="p">,</span><span class="w"> </span><span class="n">respectively</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">children</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="n">check</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="c1">// Every iteration O(M)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">PriorityQueue</span><span class="w">  </span><span class="nf">Merge</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">){</span><span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">);}</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="p">,</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="p">);}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">static</span><span class="w"> </span><span class="n">PriorityQueue</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nf">Merge1</span><span class="p">(</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="p">){</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">){</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="p">;}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="p">,</span><span class="n">H2</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="o">&lt;</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="p">){</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">swapChildren</span><span class="p">(</span><span class="n">H1</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
 </code></pre></div>
-<p><span class="arithmatex">\(Depth = O(log_{M/2}N)\)</span>​</p>
-<p><span class="arithmatex">\(T_{insert} = O(M* Depth)=O(logN*M/logM)\)</span>​ </p>
-<p><span class="arithmatex">\(Y_{find} = O(logN)\)</span>​</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(T_p=O(logN)\)</span>​</p>
+</li>
+<li>
+<p>Iterative Version</p>
+</li>
+</ul>
+<p><img alt="2" src="../2.png" /></p>
+<ul>
+<li>
+<p>For <strong>SORTING</strong> <span class="arithmatex">\(loglogN\)</span> &rarr; <span class="arithmatex">\(logN * loglogN\)</span></p>
+</li>
+<li>
+<p>Only have to maintain two pointers.</p>
+</li>
+</ul>
+<h2 id="skew-heaps">Skew Heaps<a class="headerlink" href="#skew-heaps" title="Permanent link">&para;</a></h2>
+<p>Any <span class="arithmatex">\(M\)</span> consecutive operations take at most <span class="arithmatex">\(O(M log N)\)</span> time.</p>
+<ul>
+<li><strong>Merge</strong>:</li>
+</ul>
+<p>Always swap the left and right children except that the largest of all the nodes on the right paths <strong>does not have its children swapped</strong>.  <span class="arithmatex">\(No Npl.\)</span></p>
+<p><img alt="3" src="../3.png" /></p>
+<p>Skew heaps have the advantage that no extra space is required to maintain path lengths and no tests are required to determine when to swap children.</p>
+<p>It is an open problem to determine precisely the expected right path length of both leftist and skew heaps.</p>
+<h3 id="amortized-analysis-for-skew-heaps">Amortized Analysis for Skew Heaps<a class="headerlink" href="#amortized-analysis-for-skew-heaps" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(D_i =\)</span>  the root of the resulting tree.</p>
+<p><span class="arithmatex">\(\Phi(D_i)=\)</span>​​​  <strong>number of heavy nodes.</strong></p>
+<blockquote>
+<p><span class="arithmatex">\(\Phi(D_i) =\)</span>number of  right nodes?</p>
+<p>No! Think of only operation where num of right nodes will decrease: will not happen because  the largest of all the nodes on the right paths <strong>does not have its children swapped</strong></p>
+<p>So this <span class="arithmatex">\(\Phi(D_i)\)</span> will always be increasing.</p>
+</blockquote>
+<h4 id="def">Def:<a class="headerlink" href="#def" title="Permanent link">&para;</a></h4>
+<p>A node <span class="arithmatex">\(p\)</span> is heavy if the number of descendants of <span class="arithmatex">\(p\)</span>’s right subtree is at least half of the number of descendants of <span class="arithmatex">\(p\)</span>, and light otherwise.  </p>
+<p><strong>Note that the number of descendants of a node includes the node itself.</strong></p>
+<p><img alt="4" src="../4.png" /></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(T_{worst}=\)</span>all right nodes <span class="arithmatex">\(=l_1+h_1+l_2+h_2\)</span></p>
+</li>
+<li>
+<p>All heavy points at the right path will <strong>ALWAYS</strong> turn into light points.</p>
+</li>
+<li>
+<p>Original light points <strong>at most</strong> can <strong>ALL turn into heavy nodes</strong>.</p>
+</li>
+</ol>
+<p>Remember: also need to insert into left subtrees.</p>
+<ol start="4">
+<li>
+<p>h is heavy nodes on the left paths,<strong>will note change</strong>,cause its descandents will never <strong>exchange</strong>! .</p>
+</li>
+<li>
+<p>Therefore Credits = <span class="arithmatex">\(l_1+l_2-h_1-h_2\)</span>​​​.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(T_{amotized}= T_{worst}+credits \le2(l_1+l_2)\)</span>​</p>
+</li>
+<li>
+<p><span class="arithmatex">\(l_{right}=O(logN)\)</span>​​ ? -- Actually if we want <span class="arithmatex">\(l_{right}\)</span> to be large ,best almost balanced.</p>
+</li>
+</ol>
+<blockquote>
+<p>假如root的左subtree 很多，把多出来的给右边来增加右链长，这样左右node一样，且右node的heavy nodes至少不会少.</p>
+</blockquote>
+<h3 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Introduction to Algorithms</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月12日 10:05:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月28日 15:10:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
       
     
   </small>
@@ -4492,7 +4438,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../oop/Container/Container/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Container &amp; Function">
+          <a href="../../Tree/lec/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Trees">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -4502,14 +4448,14 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Container & Function
+                Trees
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../CMU%2015-445/Chap1/Chap1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 1">
+          <a href="../../../CMU%2015-445/Chap1/Chap1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 1">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -4568,14 +4514,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

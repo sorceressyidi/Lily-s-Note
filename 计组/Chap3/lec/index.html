@@ -1732,6 +1732,8 @@
       
         
       
+        
+      
     
     
     
@@ -1768,11 +1770,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ADS/lec/" class="md-nav__link">
+      <a href="../../../ADS/Tree/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    AVL,Splay,Red-Black Tree
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/Heap/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
   </span>
   
 
@@ -2548,6 +2570,53 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#division" class="md-nav__link">
+    Division
+  </a>
+  
+    <nav class="md-nav" aria-label="Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-division" class="md-nav__link">
+    Signed division
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-numbers" class="md-nav__link">
+    Floating point numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating point numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-addition" class="md-nav__link">
+    Floating Point Addition
+  </a>
   
 </li>
         
@@ -4204,6 +4273,53 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#division" class="md-nav__link">
+    Division
+  </a>
+  
+    <nav class="md-nav" aria-label="Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-division" class="md-nav__link">
+    Signed division
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-numbers" class="md-nav__link">
+    Floating point numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating point numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-addition" class="md-nav__link">
+    Floating Point Addition
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4432,13 +4548,82 @@
 <li>注意signed shift right</li>
 <li>least significant bit初始加个零</li>
 </ul>
+<h3 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Division V1</summary>
+<p><div align=center><img alt="40" src="../40.png" /><img alt="41" src="../41.png" /><img alt="42" src="../42.png" /> </div>  </p>
+</details>
+<ul>
+<li>Reduction of Divisor and ALU width by half</li>
+<li>Shifting of the remainderSaving 1 iteration</li>
+</ul>
+<details>
+<summary>Division V2</summary>
+<p><div align=center><img alt="43" src="../43.png" /> </div>  </p>
+</details>
+<details>
+<summary>Division V3</summary>
+<p><div align=center><img alt="44" src="../44.png" /><img alt="45" src="../45.png" /><img alt="46" src="../46.png" /></p>
+<p>4.1 已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响
+</div>  </p>
+</details>
+<h4 id="signed-division">Signed division<a class="headerlink" href="#signed-division" title="Permanent link">&para;</a></h4>
+<p><img alt="47" src="../47.png" /></p>
+<ul>
+<li>除零会产生溢出，由软件检测</li>
+</ul>
+<h2 id="floating-point-numbers">Floating point numbers<a class="headerlink" href="#floating-point-numbers" title="Permanent link">&para;</a></h2>
+<p>Standardized format  <strong>IEEE 754</strong></p>
+<ul>
+<li>Single precision <code>8 bit exp, 23 bit significant</code></li>
+<li>Double precision <code>11 bit exp, 52 bit significant</code></li>
+<li>Both formats are supported by MIPS</li>
+</ul>
+<p><img alt="48" src="../48.png" /></p>
+<ul>
+<li>
+<p>Leading '1' bit of significand  is implicit</p>
+</li>
+<li>
+<p>M: 尾数. 即默认<code>.xxx</code>是<code>1.xxx</code>(因为科学计数法，没有<code>0.xxx</code>)</p>
+</li>
+<li>
+<p>Exponent is biased(移码)</p>
+</li>
+</ul>
+<p>Bias 127 for single precision</p>
+<p>Bias 1023 for double precision</p>
+<p>Have to be transfered back,but treated like unsigned inside</p>
+<p><strong>NOTE</strong> :<span class="arithmatex">\((-1)^{sign} • (1 + significand) • 2^{exponent - bias}\)</span>​</p>
+<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h4>
+<p><strong>Overflow:</strong>  &amp;. <strong>Underflow</strong></p>
+<p><img alt="49" src="../49.png" /></p>
+<p><img alt="50" src="../50.png" /></p>
+<details>
+<summary>EXAMPLE</summary>
+<p><div align=center><img alt="51" src="../51.png" /> </div>  </p>
+</details>
+<h4 id="floating-point-addition">Floating Point Addition<a class="headerlink" href="#floating-point-addition" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Alignment</li>
+<li>The proper digits have to be added</li>
+<li>Addition of significant</li>
+<li>Normalization of the result  [重新规格化]</li>
+<li>Rounding</li>
+</ul>
+<p><img alt="52" src="../52.png" /></p>
+<details>
+<summary>EXAMPLE</summary>
+<p><div align=center><img alt="53" src="../53.png" /> </div>  </p>
+</details>
+<p><img alt="54" src="../54.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月12日 23:24:38</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
       
         <br>
         创建日期:
