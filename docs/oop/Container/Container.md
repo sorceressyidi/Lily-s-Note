@@ -315,7 +315,6 @@ char *s = "Hello"; //can be compile but bus error because actually const char *s
 // Add const compile will not pass.
 s[0] = 'K';
 printf("%s\n",s);
-
 // Write in an array
 char s[] = "Hello, world!";
 ```
@@ -359,5 +358,60 @@ int Date::get_day() const {
   void f();
   ```
 
-## Static
+* member of class is **constant** : must be initialized by the constructor(const) or the C++11 way
+
+### Static
+
+* 静态本地变量实际上是全局变量，被存储在静态内存中
+
+  只在第一次访问**[只在第一次被执行到的时候]**时被构造
+
+  出现在全局变量/函数前，表示访问限制，只有当前文件可以访问
+
+  在程序结束后析构
+
+* Global Objects
+
+  全局变量的构造发生在 `main()` 之前，在 `main()` 或者 `exit()` 之后析构
+  但是不同编译单元的全局变量，如果存在依赖关系，但这是无法保证的
+
+  **最好不在C++使用global variable**
+
+* 静态成员变量和静态本地变量是一样的
+
+  访问受限，限于类内部，实际上是全局变量。
+
+  **在这个类内所有的对象都维持相同的值，对象 A 修改了那么对象 B 的这个变量的值也会改变**
+  
+* **静态成员函数**没有 this, 不能调用**非静态成员变量**，也不能访问非静态函数
+
+  可以在没有**创建类的对象**的时候就能调用静态成员函数
+
+```C++
+#ifndef _STAT_MEM_
+#define _STAT_MEM_
+
+class StatMem{
+public:
+  int getHeight(){return m_h;}
+  void setHeight(int i){m_h = i}
+  int getWeight(){return m_w;}
+  void setWeight(int i){m_w = i;}
+  
+  static int m_h;
+  int m_w;
+}
+#endif 
+```
+
+* 一个静态的全局变量，必须在头文件对应的.cpp中重新
+
+  ```C++
+  #include"StatMem.h"
+  int StatMem::m_h
+  ```
+
+​	且不能再加`static`
+
+### Namespace
 

@@ -93,7 +93,8 @@ nav:
       - Itro & Class: oop/Basic/Basic.md
       - Container & Function: oop/Container/Container.md
     - Anvanced Data Structure:
-      - AVL,Splay,Red-Black Tree: ADS/lec.md
+      - Trees: ADS/Tree/lec.md
+      - Heap : ADS/Heap/lec.md
     - CMU 15-445: 
       - Chapter 1 : CMU 15-445/Chap1/Chap1.md
       - Chapter 2 : CMU 15-445/Chap2/Chap2.md

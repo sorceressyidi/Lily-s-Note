@@ -255,3 +255,84 @@ $Bit_{-1} = 0$
 * 仍然是放在左边一路右移
 * 注意signed shift right
 * least significant bit初始加个零
+
+### Division
+
+??? "Division V1"
+
+    <div align=center>![40](40.png)![41](41.png)![42](42.png) </div>  
+
+* Reduction of Divisor and ALU width by half
+* Shifting of the remainderSaving 1 iteration
+
+??? "Division V2"
+
+    <div align=center>![43](43.png) </div>  
+
+??? "Division V3"
+
+    <div align=center>![44](44.png)![45](45.png)![46](46.png)
+    
+    4.1 已经结束了除法操作，此时的高位就是我们的余数，但是这最后一次的结果还没有放回到 Reminder 中，因此我们需要再往左移一位为商留出空间，放入后，再把高位余数往右移动以抵消影响
+    </div>  
+
+#### Signed division
+
+![47](47.png)
+
+* 除零会产生溢出，由软件检测
+
+## Floating point numbers
+
+Standardized format  **IEEE 754**
+
+* Single precision `8 bit exp, 23 bit significant`
+* Double precision `11 bit exp, 52 bit significant`
+* Both formats are supported by MIPS
+
+![48](48.png)
+
+* Leading '1' bit of significand  is implicit
+
+- M: 尾数. 即默认`.xxx`是`1.xxx`(因为科学计数法，没有`0.xxx`)
+
+- Exponent is biased(移码)
+
+  Bias 127 for single precision
+
+  Bias 1023 for double precision
+
+  Have to be transfered back,but treated like unsigned inside
+
+
+
+**NOTE** :$(-1)^{sign} • (1 + significand) • 2^{exponent - bias}$​
+
+#### Limitations
+
+**Overflow:**  &. **Underflow**
+
+![49](49.png)
+
+![50](50.png)
+
+??? "EXAMPLE"
+
+    <div align=center>![51](51.png) </div>  
+
+#### Floating Point Addition
+
+* Alignment
+* The proper digits have to be added
+* Addition of significant
+* Normalization of the result  [重新规格化]
+* Rounding
+
+![52](52.png)
+
+??? "EXAMPLE"
+
+    <div align=center>![53](53.png) </div>  
+
+![54](54.png)
+
