@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 Many mathematicians tried to find a way to approximate a complex function by some simple functions for many years. Apart from the theoretical concern, this technique is invaluable for many practical applications.
 
 Before the invention of differential calculus, this problem kept open. 
@@ -143,3 +145,5 @@ Hint: use inverse DFT to reconstruct the image by magnitude or phase only inform
 * **phase** determines which components are present!
 
 * **PHASE** is more important!
+
+</font>

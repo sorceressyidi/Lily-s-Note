@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## PreKnowledge
 
 * consider $cos(kx+wt)$ and $cos(kx-wt)$
@@ -204,3 +206,4 @@ One finds experimentally that at the incident angle $θ_B$, the reflected and re
 >
 > If the incident and reflected rays travel in air, we can approximate $n_i$ as unity, so $n_r$=$tan\theta_B$
 
+</font>

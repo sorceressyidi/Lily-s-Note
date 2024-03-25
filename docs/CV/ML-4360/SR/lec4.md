@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Stereo Reconstruction
 
 ## Preliminaries
@@ -156,3 +158,5 @@ https://www.jmlr.org/papers/volume17/15-535/15-535.pdf
 ##### GCNET
 
 ##### STEREO MIXTURE DENSITY NETWORKS (SMD-NETS)
+
+</font>

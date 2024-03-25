@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Graphs
 
 ### Some defs
@@ -477,5 +479,5 @@ int main() {
 
 
 
-
+</font>
 

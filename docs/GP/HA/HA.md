@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 #  The Hydrogen Atom
 
 https://www.youtube.com/watch?v=-Y0XL-K0jy0
@@ -141,3 +143,5 @@ The probability that the electron can be detected in any given (infinitesimal) v
 ### Bohr’s Correspondence Principle
 
 ![13](13.png)
+
+</font>

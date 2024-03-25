@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Simple Sort
 
 ### Algorithm
@@ -411,3 +413,5 @@ Algorithm{
 
 - 稳定排序：冒泡、归并、插入、基数
 - 不稳定排序：快排、希尔、堆排、选择
+
+</font>

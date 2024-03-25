@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Image Classifications
 
 **Challenges : **
@@ -541,3 +543,5 @@ $w^* = w_0 -H_wL(w_0)^{-1}\triangledown_wL(w_0)$
 
 - \-  **Adam** is a good default choice in many cases **SGD+Momentum** can outperform Adam but may require more tuning
 - \-  If you can afford to do full batch updates then try out **L-BFGS** (and don’t forget to disable all sources of noise)
+
+</font>

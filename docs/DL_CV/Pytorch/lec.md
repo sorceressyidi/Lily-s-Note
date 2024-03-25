@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Deep Learning Hardware
 
 * Refer to Slides
@@ -570,3 +572,5 @@
 
 
 ![3](3.png)
+
+</font>

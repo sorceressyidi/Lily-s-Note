@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Motivation
 
 A classical **wave** $ψ(x, y, z, t)$ satisfies the wave equation $\frac{1}{v^2}\frac{\partial^2ψ}{\partial^2t}=\triangledown^2ψ$  $v \ is\ speed$
@@ -323,3 +325,4 @@ https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Introductory_Quantum_M
 
 $i\bar{h}\frac{\partial}{\partial t}ψ(x_1,x_2,t)=[-\frac{\bar{h}^2}{2m_1}\frac{\partial^2}{\partial x_1^2}-\frac{\bar{h}^2}{2m_2}\frac{\partial^2}{\partial x_2^2}+V(x_1,x_2)]ψ(x_1,x_2,t)$
 
+</font>

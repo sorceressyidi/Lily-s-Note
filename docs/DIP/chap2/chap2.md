@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Binary Image and Morphological Operation
 
 ## Binary image
@@ -155,3 +157,4 @@ $$
 ![7](7.png)
 ![6](6.png)
 
+</font>

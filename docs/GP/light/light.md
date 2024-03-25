@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Light
 
 ## Light as Electromagnetic Waves
@@ -218,3 +220,4 @@ To see better, we want to generate an magnified image of an object at the near p
 
 ![22](22.png)
 
+</font>

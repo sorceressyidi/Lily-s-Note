@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## The Magnetic Field
 
 * $\vec{F}=q\vec{v}\times \vec{B}$
@@ -178,3 +180,4 @@ The interaction keeps the dipole moments of atoms aligned even when the magnetic
 
 ![19](19.png)
 
+</font>

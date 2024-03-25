@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Relational
 
 ## Relational Model
@@ -85,3 +87,4 @@ A better approach is to state the high-level answer that you want the DBMS to co
 
 
 
+</font>

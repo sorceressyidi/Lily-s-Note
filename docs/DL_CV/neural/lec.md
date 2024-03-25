@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Neural Networks
 
 **Problem: Linear Classifiers aren’t that powerful**
@@ -181,3 +183,4 @@ $\frac{dL}{dx_{2,3}}=(\frac{dy}{dx_{2,3}})·(\frac{dL}{dy})=(w3,;)·(\frac{dL}{d
 
 ![32](32.png)
 
+</font>

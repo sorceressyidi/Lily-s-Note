@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 * CNNs have won several competitions
   * ImageNet, Kaggle Facial Expression, Kaggle Multimodal Learning, German Traffic Signs, Handwriting, ….
 
@@ -85,7 +87,7 @@ https://zhuanlan.zhihu.com/p/78760534
 
 * Minimize Loss - Gradient Descent.
 
-
+</font>
 
 
 

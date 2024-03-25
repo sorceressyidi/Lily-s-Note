@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Morph
 
 Morph is not warp (geometric transformation)Morph is a kind of morphological changing, which makes an image change to another image gradually. Morph handles both the location and the intensity of a pixel.The beginning image and end image are two key frames. Other frames between the two key frames are generated automatically. 
@@ -68,3 +70,5 @@ $S_i=\left\{\begin{array}{ll}0 & \text{if the point cannot be seen from light i 
 ### Image alignment
 
 * Use image wraping to obtain pixel correspondence
+
+</font>

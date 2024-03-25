@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Electromagnetic Integration
 
 ## Faraday’s Law of Induction
@@ -264,3 +266,5 @@ $\lambda=\frac{2\pi}{k}\\ v=\lambda f=\lambda/T \\w=\frac{2\pi}{T}$
 When spherical wavefronts spread from an isotropic point source S with power Ps, the energy of the waves is conserved.
 
 The intensity I at the sphere must decrease with r as $I=\frac{P_S}{4\pi r^2}$
+
+</font>

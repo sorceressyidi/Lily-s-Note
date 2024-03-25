@@ -1,4 +1,7 @@
+<font face = 'Times New Roman'>
+
 ## AVL Tree
+
 * An empty binary tree is height balanced.
 * If T is nonempty binary tree with $T_L$ and $T_R$ as its left and right subtrees,then $T$ is height balanced iff
   (1)$T_L$ and $T_R$ are height balanced
@@ -153,3 +156,8 @@ $T_{insert} = O(M* Depth)=O(logN*M/logM)$​
 
 $Y_{find} = O(logN)$​
 
+
+
+
+
+</font>

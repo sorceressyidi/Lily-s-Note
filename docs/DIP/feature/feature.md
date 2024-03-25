@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Feature detection
 
 ## Feature detection:  the math
@@ -336,5 +338,5 @@ This type of pyramid is constructed by **subtracting** a downsampled version of 
 
 
 
-
+</font>
 

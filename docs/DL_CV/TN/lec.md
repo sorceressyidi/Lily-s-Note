@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Training Neural Networks
 
 ## One time setup
@@ -237,3 +239,5 @@ def predict(x):
 ###  transfer learning
 
 ### large-batch training
+
+</font>

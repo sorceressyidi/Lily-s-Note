@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Probability Theory
 
 ## 随机变量与分布函数
@@ -222,3 +224,4 @@ $F(x)=\left\{\begin{array}{**lr**}1-e^{-\lambda x}\ x\ge 0 \\0  \ \ \ \ \ \ \ \ 
 
 **8.柯西分布**
 
+</font>

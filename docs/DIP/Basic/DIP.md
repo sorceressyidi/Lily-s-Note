@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Image Format
 
 Digital image can be represented as a **2D** array or matrix.
@@ -555,3 +557,4 @@ RLE is run-length encoding. It is used to encode the location of foreground obje
 
 ![14](14.png)
 
+</font>

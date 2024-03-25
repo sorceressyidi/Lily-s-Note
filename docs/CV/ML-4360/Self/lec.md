@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Preliminaries
 
 * Refer to Slides
@@ -79,3 +81,4 @@ I Given a chosen **score function** $s(·, ·)$, we want to learn an encoder f t
 
 * Refer to Slides and Paper
 
+</font>

@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Convolutional Networks
 
 * Refer to Slides
@@ -70,3 +72,4 @@ https://zhuanlan.zhihu.com/p/56542480
 
 ## CNN Architectures
 
+</font>

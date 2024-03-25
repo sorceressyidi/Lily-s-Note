@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Visibility enhancement
 
 ### logarithmic operation
@@ -279,4 +281,6 @@ $$\begin{bmatrix}x^{'}\\y^{'}\\1\end{bmatrix}=\begin{bmatrix}a&b&c\\d&e&f\\g&h&1
 
 * 插值函数
   $\hat{f}(x)=\sum_{i=1}^Nw_i\phi(||x-x_i||)$ where $w_i=\frac{\phi(|x-c_i|)}{\sum_{i=1}^n\phi(|x-c_i|)}$
-![18](18.png)
+  ![18](18.png)
+
+</font>

@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Object Detection
 
 **Input**: Single RGB Image
@@ -257,3 +259,4 @@
 
 ![29](29.png)
 
+</font>

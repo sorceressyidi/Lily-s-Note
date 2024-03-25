@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 * Question $p_x=i\bar{h}\frac{\partial}{\partial x}$
 
 ?(12-17课程结束)
@@ -193,3 +195,4 @@ The second simplest atom is the heliuxim atom, which has two 1s electrons (spin 
 
 ### Shells and Subshells
 
+</font>

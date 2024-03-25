@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Current
 
 ## Resistance and Capacitance
@@ -127,5 +129,5 @@ $U=\frac{1}{2}CV^2=\frac{1}{2}\epsilon_0E^2(Ad)$
 
 
 
-
+</font>
 

@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Probabilistic Graphical Models
 
 ## Structured Prediction
@@ -510,3 +512,5 @@ $p(x_1,...,x_{100})= \frac{1}{\bold{Z}}exp\{\sum_iψ_i(x_i)+λ\sum_{i\to j}ψ_{i
 * Refer to PPT
 ### Deep Structured Models
 * Refer to PPT
+
+</font>

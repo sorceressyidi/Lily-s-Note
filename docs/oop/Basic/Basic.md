@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## In & Out
 
 ```C++
@@ -585,7 +587,7 @@ void f(int i){
   //Type declaration here...
   #endif
   ```
-`#include` is to insert the included file into the `.cpp` file at where the `#include` statement is.
+  `#include` is to insert the included file into the `.cpp` file at where the `#include` statement is.
 - `#include "xx.h"` : search in the *current directory firstly*, then the directories
   declared somewhere
 - `#include <xx.h>` : search in the specified directories
@@ -699,3 +701,5 @@ class Clock{
      void dida();
 }
 ```
+
+</font>

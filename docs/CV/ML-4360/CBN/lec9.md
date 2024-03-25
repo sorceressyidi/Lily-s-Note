@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Implicit Neural Representations
 
 ### What is a good **output** representation?
@@ -187,3 +189,4 @@ We encourage the representation to be multiview consistent by restricting the ne
 
 * Refer to Slides
 
+</font>

@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # HASHING
 
 ### Interpolation Search
@@ -218,3 +220,4 @@ $f ( i ) = i * hash_2( x )$
 
 ### Rehashing
 
+</font>

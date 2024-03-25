@@ -322,6 +322,11 @@ ElementType  DeleteMin( BinQueue H ){
 
   ![9](9.png)
 
+  * $1/2$ no merge
+  * $1/4$ one merge
+  * $1/8$ two merges..
+  * $1/16$ three merges...
+
   ![10](10.png)
 
 </font>

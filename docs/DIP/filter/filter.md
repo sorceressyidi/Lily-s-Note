@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # 滤波
 
 ## 卷积
@@ -354,3 +356,4 @@ $l^1$ norm filter is the **median filter**(中值滤波)
 
 $l^2$ norm mean filter(均值滤波)
 
+</font>

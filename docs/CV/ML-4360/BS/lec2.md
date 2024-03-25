@@ -1,4 +1,7 @@
+<font face = 'Times New Roman'>
+
 # Lec2 for ML-4360
+
 ## 2.1 Primitives & Transformations
 ### $Homogeneous$ 
 * homogeneous coordinates & inhomogeneous coordinates
@@ -112,3 +115,4 @@ $L_r(p,w_r)=\int_{H^2}f_r(p,w_i\rightarrow w_r)L_i(p,w_i)cos\theta_id_{w_i}$
 
 ![5](5.png)
 
+</font>

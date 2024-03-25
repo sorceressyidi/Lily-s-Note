@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Quantum Wells
 
 On a stretched string, we can set up both traveling waves and standing waves.
@@ -155,3 +157,5 @@ We can solve the $ODEs$ for $X(x)$ and $Y(y)$. The wave function for the origina
 ### Dirac Delta Function Potential Well
 ![9](10.jpg)
 ![10](11.jpg)
+
+</font>

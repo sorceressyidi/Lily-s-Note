@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Matter Waves
 
 ### Two Versions of Interference
@@ -189,3 +191,5 @@ Now, where is the electron? Why complex?
 https://www.youtube.com/watch?v=spUNpyF58BY&list=RDCMUCYO_jab_esuFRV4b17AJtAw&index=3
 
 https://youtube.com/watch?v=MBnnXbOM5S4
+
+</font>

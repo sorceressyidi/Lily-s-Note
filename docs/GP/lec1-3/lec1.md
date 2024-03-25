@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 # Coulomb's Law and the Electric Field
 
 ### Coulomb‘s Law
@@ -257,5 +259,5 @@ $Solid \ Angle\  d\Omega = \frac{dA}{r^2}=sin\theta d\theta d\Phi$
 
 $dV=r^2sin\theta d\theta d\Phi dr$
 
-
+</font>
 

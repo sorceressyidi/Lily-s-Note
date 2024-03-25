@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Shape-from-Shading
 
 ### Recap: Rendering Equation
@@ -201,3 +203,4 @@ This approximation is good only in the vincinity of the surface (often suffices)
 
 #### Deep Marching Cubes
 
+</font>

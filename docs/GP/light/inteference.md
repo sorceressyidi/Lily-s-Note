@@ -1,3 +1,5 @@
+<font face = 'Times New Roman'>
+
 ## Interference
 
 ### The Superposition of Waves
@@ -165,3 +167,4 @@ Similarly, if they are exactly out of phase $2L=m\frac{\lambda}{n_2}$ they produ
 
 Newton’s rings are interference patterns formed by light incident on the thin film of air between a convex lens and a flat (or between two suitable lenses).
 
+</font>
