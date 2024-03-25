@@ -128,7 +128,7 @@ Integrity constraints guard against accidental damage to the database, by ensuri
 
 * Cascading Actions
 
-  ```mysql
+  ```sql
   create table course (
   course_id   char(5) primary key,
   title       varchar(20),
@@ -145,7 +145,7 @@ Integrity constraints guard against accidental damage to the database, by ensuri
 
 * Integrity Constraint Violation During Transactions
 
-```mysql
+```sql
 create table person (
   ID  char(10),
   name char(40),
@@ -168,7 +168,7 @@ How to insert a tuple without causing constraint violation ?
 
 **Assertion**
 
-```mysql
+```sql
 create assertion <assertion-name> check <predicate>;
 create assertion credits_earned_constraint check
 (not exists 
@@ -179,7 +179,7 @@ create assertion credits_earned_constraint check
               from takes natural join course
               where student.ID=takes.ID
                          and grade is not null 
-                         and grade<>’F’))
+                         and grade<>’F’)))
 ```
 
 ### View
@@ -187,26 +187,26 @@ create assertion credits_earned_constraint check
 * A view provides a mechanism to hide certain data from the view of certain users. 
 * Consider a person who needs to know an instructors name and department, but not the salary.  This person should see a relation described, in SQL, by 
 
-```mysql
+```sql
 create view faculty as 
 select ID, name, dept_name
 from instructor
 ```
 
-```mysql
+```sql
 select name
 from faculty
 where dept_name = ‘Biology’
 ```
 
-```mysql
+```sql
 create view departments_total_salary(dept_name, total_salary) as
 select dept_name, sum (salary)
 from instructor
 group by dept_name;
 ```
 
-```mysql
+```sql
 create view physics_fall_2009 as
 select course.course_id, sec_id, building, room_number
 from course, section
@@ -216,7 +216,7 @@ and section.semester = ’Fall’
 and section.year = ’2009’;
 ```
 
-```mysql
+```sql
 create view physics_fall_2009_watson as
 select course_id, room_number
 from physics_fall_2009
@@ -269,7 +269,7 @@ If relations used in the query are updated, the materialized view result becomes
 
 * Need to **maintain** the view, by updating the view whenever the underlying relations are updated.
 
-```mysql
+```sql
 create materialized view departments_total_salary(dept_name, total_salary) as
 	select dept_name, sum (salary)
 	from instructor
@@ -283,7 +283,7 @@ where total_salary > (select avg(total_salary) from departments_total_salary );
 
 If  relation $S(a, b, c)$ is split into two sub relations $S_1(a,b)$ and $S_2(a,c)$​. How to realize the logical data independence? 
 
-```mysql
+```sql
 create table S1...;
 create table S2...;
 insert into S1 select a,b from S;
@@ -298,7 +298,7 @@ create view S(a,b,c)as select a,b,c from Sq natural join S2;
 
 ### Indexes
 
-```mysql
+```sql
 create table student
 (	ID varchar (5),
  name varchar (20) not null,
@@ -311,7 +311,7 @@ create index studentID_index on student(ID)
 
 * Indices are data structures used to speed up access to records with specified values for index attributes
 
-```mysql
+```sql
  select *
  from  student
  where  ID = ‘12345’
@@ -323,19 +323,19 @@ create index studentID_index on student(ID)
 
 * `AUTOCOMMIT=1;` -- Everytime auto commit
 
-```mysql
+```sql
 SET AUTOCOMMIT=0;
 UPDATE account SET balance=balance -100 WHERE ano=‘1001’;
 UPDATE account SET balance=balance+100 WHERE ano=‘1002’;
 COMMIT;
 ```
 
-```mysql
+```sql
 UPDATE account SET balance=balance -200 WHERE ano=‘1003’;
 UPDATE account SET balance=balance+200 WHERE ano=‘1004’;     COMMIT;
 ```
 
-```mysql
+```sql
 UPDATE account SET balance=balance+balance*2.5%;
 COMMIT;
 ```
@@ -364,7 +364,7 @@ on <relation name or view name> to <user list>
 * Granting a privilege on a view does not imply granting any privileges on the underlying relations.
 * The grantor of the privilege must already hold the privilege on the specified item (or be the database administrator).
 
-```mysql
+```sql
 grant select on instructor  to U1, U2, U3
 grant select on department  to public
 grant update (budget) on department  to U1,U2
@@ -373,7 +373,7 @@ grant all privileges on department   to U1
 
 #### Revoking Authorization in SQL
 
-```mysql
+```sql
 revoke <privilege list>
 on <relation name or view name> 
 from <user list>
@@ -385,3 +385,301 @@ revoke select on branch  from U1, U2, U3
 * If the same privilege was granted twice to the same user by different grantees, the user may retain the privilege **after the revocation**.
 * All privileges that depend on the privilege being revoked are also revoked.
 
+## Advanced sql
+API (application-program interface) for a program to interact with a database server
+* ODBC (Open Database Connectivity) works with C, C++, C#
+* JDBC (Java Database Connectivity) works with Java
+* Embedded SQL in C
+* SQLJ - embedded SQL in Java
+* JPA(Java Persistence API)  - OR mapping of Java
+
+### JDBC Code
+
+```java
+public static void JDBCexample(String dbid, String userid, String passwd){ 
+     try { 
+   Connection conn = DriverManager.getConnection(     
+       "jdbc:oracle:thin:@db.yale.edu:2000:univdb", userid, passwd); 
+          Statement stmt = conn.createStatement(); 
+              ... Do Actual Work ....
+          stmt.close();
+          conn.close();
+     }
+     catch (SQLException sqle) { 
+          System.out.println("SQLException : " + sqle);
+     }
+        }
+```
+* Update to database
+
+```java
+try {
+     stmt.executeUpdate(
+          "insert into instructor values(’77987’, ’Kim’, ’Physics’, 98000)");
+} catch (SQLException sqle)
+{
+    System.out.println("Could not insert tuple. " + sqle);
+}
+```
+* Execute query and fetch and print results
+```java
+ResultSet rset = stmt.executeQuery(
+                                "select dept_name, avg (salary)
+                                 from instructor
+                                 group by dept_name");
+while (rset.next()){
+       System.out.println(rset.getString("dept_name") + " " +
+                                              rset.getFloat(2));
+}
+```
+
+* Prepared Statement
+```java
+PreparedStatement pStmt = conn.prepareStatement( 
+                                "insert into instructor values(?,?,?,?)");
+pStmt.setString(1, "88877");      pStmt.setString(2, "Perry");
+pStmt.setString(3, "Finance");   pStmt.setInt(4, 125000);
+pStmt.executeUpdate();    
+pStmt.setString(1, "88878");
+pStmt.executeUpdate();
+```
+**WARNING: always use prepared statements when taking an input from the user and adding it to a query**
+* NEVER create a query by concatenating strings which you get as inputs
+```java
+"insert into instructor values(’ " + ID + " ’, ’ " + name + " ’, " + 
+                                            " ’ " + dept name + " ’, " + salary + ")"
+```                                           
+* What if name is “D’Souza”?
+
+#### SQL Injection  
+![13](13.png)
+
+#### Metadata
+```java
+ResultSetMetaData rsmd = rs.getMetaData();
+     for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+           System.out.println(rsmd.getColumnName(i));
+                  System.out.println(rsmd.getColumnTypeName(i));
+       }
+```
+### ODBC
+```C
+int ODBCexample()
+{
+  RETCODE error;
+  HENV    env;     /* environment */ 
+  HDBC    conn;  /* database connection */ 
+  SQLAllocEnv(&env);
+  SQLAllocConnect(env, &conn);
+  SQLConnect(conn, 'db.yale.edu', SQL_NTS, 'avi', SQL_NTS,'avipasswd',SQL_NTS); 
+  { .... Do actual work ... }
+  SQLDisconnect(conn); 
+  SQLFreeConnect(conn); 
+  SQLFreeEnv(env); 
+}
+```
+
+
+### Procedural Constructs in SQL
+#### SQL Functions
+```sql
+ create function dept_count (dept_name varchar(20))
+ returns integer
+ begin
+    declare d_count integer;
+    select count (* ) into d_count
+    from instructor
+    where instructor.dept_name = dept_name
+
+    return d_count;
+ end
+```
+```sql
+select dept_name, budget
+from department
+where dept_count (dept_name ) > 1
+```
+#### Table Functions
+```sql
+create function instructors_of (dept_name char(20) )
+returns table ( ID varchar(5),
+                name varchar(20),
+                dept_name varchar(20),
+                salary numeric(8,2))
+return table
+(select ID, name, dept_name, salary
+ from instructor
+ where instructor.dept_name = instructors_of.dept_name)
+```
+```sql
+select *
+from table (instructors_of (‘Music’))
+```
+#### SQL Procedures
+* The dept_count function could instead be written as procedure:
+```sql
+create procedure dept_count_proc (in dept_name varchar(20), 
+                                  out d_count integer)
+begin
+  select count(*) into d_count
+  from instructor
+  where instructor.dept_name = dept_count_proc.dept_name
+     end
+```
+* Procedures can be invoked either from an SQL procedure or from embedded SQL, using the call statement
+```sql
+declare d_count integer;
+call dept_count_proc( ‘Physics’, d_count)
+```
+* Procedures and functions can be invoked also from dynamic SQL
+* While and repeat statements 
+```sql
+declare n integer default 0;
+while n < 10 do
+  set n = n + 1
+end while              
+repeat
+  set n = n  – 1
+  until n = 0
+end repeat
+```
+* For loop
+```sql
+declare n  integer default 0;
+   for r  as
+          select budget from department
+          where dept_name = ‘Music’
+    do
+       set n = n - r.budget
+    end for
+```
+* Conditional statements  (if-then-else)
+```sql
+if boolean  expression 
+    then statement or compound statement 
+elseif boolean  expression 
+    then statement or compound statement 
+    else statement or compound statement 
+end if
+```
+* SQL:1999 also supports a case statement similar to C case statement
+* EXAMPLE
+```sql
+CREATE FUNCTION registerStudent(
+  IN s_id VARCHAR(5),
+  IN s_courseid VARCHAR(8),
+  IN s_secud VARCHAR(8),
+  IN s_semester VARCHAR(6),
+  in s_year NUMERIC(4.0),
+  OUT errorMsg VARCHAR(100)
+)
+RETURNS INTEGER
+BEGIN
+  DECLARE currEnrol INT;
+  SELECT COUNT(*) INTO currEnrol
+    FROM takes
+    WHERE course_id = s_courseid AND sec_id = s_secid AND semester = s_semester AND year = s_year;
+  DECLARE LIMIT INT;
+  SELECT capacity INTO limit
+    FROM classroom NATURAL JOIN section
+    WHERE course_id = s_courseid AND sec_id = s_secid AND semester = s_semester AND year = s_year;
+  IF(currEnrol<limit)
+    BEGIN
+      INSET INTO takes VALUES
+        (s_id,s_course,s_secid,s_semester,s_year,null);
+      RETURN(0);
+    END
+  SET errorMsg = 'Enrollment limit reached for course'||'s_course_id'||'section'||s_secid;
+  RETURN(-1);
+END;
+```
+#### External Language Functions/Procedures
+```sql
+create procedure dept_count_proc(in dept_name varchar(20),out count integer)
+language C
+external name '/usr/avi/bin/dept_count_proc'
+create function dept_count(dept_name varchar(20))
+returns integer
+language C
+external name '/usr/avi/bin/dept_count'
+```
+* Benefits of external language functions/procedures:  
+more efficient for many operations, and more expressive power.
+* Drawbacks
+Code to implement function may need to be loaded into 
+database system and executed in the database system’s 
+address space.
+  * risk of accidental corruption of database structures
+  * security risk, allowing users access to unauthorized data
+There are alternatives, which give good security at the cost of potentially worse performance.
+Direct execution in the database system’s space is used when 
+efficiency is more important than security.
+### Triggers
+```sql
+CREATE TRIGGER account_trigger AFTER UPDATE of account ON balance 
+referencing NEW ROW AS nrow                                                                       
+referencing OLD ROW AS orow 
+FOR EACH ROW
+  WHEN nrow.balance - orow.balance > =200000 OR
+       orow.balance - nrow.balance >=50000 
+  BEGIN
+  INSERT INTO account_log VALUES (nrow.account-number, nrow.balance-orow.balance , current_time() )
+END
+```
+```sql
+create trigger timeslot_check1 after insert on section
+referencing new row as nrow
+for each row
+when (nrow.time_slot_id not in (
+                 select time_slot_id
+                 from time_slot)) /* time_slot_id not present in time_slot */
+begin
+     rollback
+end;
+```
+```sql
+create trigger timeslot_check2 after delete on timeslot
+referencing old row as orow
+for each row
+when (orow.time_slot_id not in (
+               select time_slot_id
+               from time_slot) 
+                         /* last tuple for time slot id deleted from time slot */
+          and orow.time_slot_id in (
+               select time_slot_id
+               from section))
+                 /* and time_slot_id still referenced from section*/
+begin
+    rollback
+end;
+```
+```sql
+create trigger credits_earned after update of takes on grade
+referencing new row as nrow
+referencing old row as orow
+for each row
+when nrow.grade <> ’F’ and nrow.grade is not null
+    and (orow.grade = ’F’ or orow.grade is null)
+begin atomic
+     update student
+     set tot_cred= tot_cred + 
+           (select credits
+            from course
+            where course.course_id= nrow.course_id)
+     where student.id = nrow.id;
+end;
+```
+#### Statement Level Triggers
+```sql
+create trigger grade_trigger after update of takes on grade
+      referencing new table as new_table                                                                          
+      for each statement
+      when  exists( select avg(grade)
+                             from new_table
+                             group by course_id, sec_id, semester, year
+                             having avg(grade)< 60 )
+      begin 
+ rollback
+      end
+
+```

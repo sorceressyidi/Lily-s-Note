@@ -1,5 +1,6 @@
 <font face = 'Times New Roman'>
-
+  
+* We can build heap by $T_a=O(n)/n=O(1)$ , Therefore , we try to delete/insert the heap with time complexity less. say $T_a=O(1)$
 ## Leftist Heaps
 
 ### Definition
@@ -329,4 +330,105 @@ ElementType  DeleteMin( BinQueue H ){
 
   ![10](10.png)
 
+## $Appendix: Amotized\ Analysis$​​
+* Reference: https://walkccc.me/CLRS/Chap17/17.2/
+* Introduction To Algorithms.
+### Aggregate Analysis
+
+In aggregate analysis, we show that for **all** n, a sequence of n operations takes worst-case time $T(n)$ in total. In the worst case, the average cost, or **amortized cost**, per operation is therefore $T(n)/n$. Note that this amortized cost applies to each operation, even when there are several types of operations in the sequence.
+
+**Stack operations**
+
+* $MULTIPOP(S,k)$​
+
+Let us analyze a sequence of n $PUSH, POP$, and $MULTIPOP$​ operations on an initially empty stack
+
+*  The worst-case cost of a MULTIPOP operation in the sequence is $O(n)$​, since the stack size is at most n.
+
+  The worst-case time of any stack operation is therefore $O(n)$, and hence a sequence of n operations costs $O(n^2)$
+
+* Any sequence of n $PUSH, POP$, and $MULTIPOP$ operations on an initially empty stack can cost at most $O(n)$
+
+  We can pop each object from the stack **at most once** for each time we have pushed it onto the stack. 
+
+  Therefore, the number of times that $POP$ can be called on a nonempty stack, including calls within $MULTIPOP$, is at most **the number of PUSH operations**, which is at most **n**. 
+
+  For any value of n, any sequence of n $PUSH, POP$, and $MULTIPOP$ operations takes a total of $O(n)$ time. The average cost of an operation is $O(n)/n = O(1)$​
+
+* We emphasize again that although we have just shown that the average cost, and hence the running time, of a stack operation is $O(1)$, we did not use probabilistic reasoning. 
+
+  We actually showed a worst-case bound of $O(n)$ on a sequence of $n$ operations. Dividing this total cost by $n$​ yielded the average cost per operation, or the amortized cost.
+
+**Incrementing a binary counter**
+
+consider the problem of implementing a k-bit binary counter that counts upward from 0. We use an array $A[0..k-1]$ of bits, where $A.length=k$, as the counter. 
+
+A binary number x that is stored in the counter has its lowest-order bit in $A[0]$ and its highest-order bit in $A[k-1]$so that $x = \sum_{i=0}^{k-1}A[i]·2^i$ Initially, $x=0$ and thus $A[i]=0$ for $i=0,1,... k-1$
+
+To add $1$(modulo $2^k$​) to the value in the counter, we use the following procedure.
+
+![11](11.png)
+
+* As with the stack example, a cursory analysis yields a bound that is correct but not tight. A single execution of INCREMENT takes time $\Theta(k)$ in the worst case, in which array A contains all 1s. 
+
+  Thus, a sequence of n INCREMENT operations on an initially zero counter takes time $O(nk)$ in the worst case.
+
+* As Figure below shows, $A[0]$ does flip each time INCREMENT is called. The next bit up, $A[1]$ flips only every other time: a sequence of n INCREMENT operations on an initially zero counter causes $A[1]$ to flip $n/2」times.
+
+  Similarly, bit $A[2]$ flibs only every fourth time or $n/4』$ times in a sequence.
+
+  $\sum_{i=0}^{k-1}\frac{n}{2^i}」<n\sum_{i=0}^{\infty}\frac{1}{2^i}=2n$
+
+* The worst-case time for a sequence of n INCREMENT operations on an **initially zero** counter is therefore $O(n)$. The average cost of each operation, and therefore the amortized cost per operation, is $O(n)/n=O(1)$​
+
+![12](12.png)
+
+#### Exercises
+
+If the set of stack operations included a MULTIPUSH operation, which pushes $k$ items onto the stack, would the $O(1)$​ bound on the amortized cost of stack operations continue to hold?
+
+* No. The time complexity of such a series of operations depends on the number of pushes (pops vice versa) could be made. 
+
+  Since one MULTIPUSH needs $\Theta(k)$ time, performing n MULTIPUSH operations, each with k elements, would take$Θ(kn)$ time, leading to amortized cost of $\Theta(k)$​.
+
+Show that if a DECREMENT operation were included in the k-bit counter example, n operations could cost as much as $\Theta(nk)$​ time.
+
+* The logarithmic bit flipping predicate does not hold, and indeed a sequence of events could consist of the incrementation of all $1s$ and decrementation of all $0s$ , yielding $Θ(nk)$.
+
+Suppose we perform a sequence of $n$ operations on a data structure in which the i th operation costs i if i is an exact power of 2, and 1 otherwise. 
+
+Use aggregate analysis to determine the amortized cost per operation.
+  ![13](13.png)
+### The accounting method
+In the accounting method of amortized analysis, we assign differing charges to different operations, with some operations charged more or less than they actu- ally cost. We call the amount we charge an operation its amortized cost. 
+When an operation’s amortized cost exceeds its actual cost, we assign the difference to specific objects in the data structure as credit. 
+* Credit can help pay for later oper- ations whose amortized cost is less than their actual cost. 
+* If we want to show that in the worst case the average cost per operation is small by analyzing with amortized costs, we must ensure that the total amortized cost of a sequence of operations provides an upper bound on the total actual cost of the sequence.
+* this relationship must hold for all sequences of operations.
+  Which means $\sum \hat{c}_i\ge\sum c_i$ for all sequences of n operations. 
+* The total credit stored in the data structure is the difference between the total amortized cost and the total actual cost, or $\sum \hat{c}_i-\sum c_i$ which must be **non negative** ay **all times**
+**Stack operations**
+![14](14.png)
+![15](15.png)
+**Incrementing a binary counter**
+![16](16.png)
+### The potential method
+Instead of representing prepaid work as credit stored with specific objects in the data structure, the potential method of amortized analysis represents the prepaid work as “potential energy,” or just “potential,” which can be released to pay for future operations. We associate the potential with the data structure as a whole rather than with specific objects within the data structure.
+* We will perform n operations, starting with an initial data structure $D_0$
+* For each $i=1,2,...n$, we let $c_i$ be the actual cost of the ith operation and $D_i$ be the data structure that results after applying the ith operation to data structure $D_{i-1}$.
+* A potential function $\Phi$ maps each data
+structure $D_i$ to a real number $\Phi(D_i)$, which is the potential associated with data
+structure $D_i$ . 
+* The amortized cost $\hat{c}_i$ of the ith operation with respect to potential function $\Phi$ is defined by $\hat{c}_i=c_i+\Phi(D_i)=\Phi(D_{i-1})$
+* the total amortized cost of the n operations is $\sum\hat{c}_i=\sum c_i+\Phi(D_n)-\Phi(D_0)$
+* Define a potential function so that $\Phi(D_i)\ge \Phi(D_0)$ for all i!
+**Stack operations**
+* See Previous Part.
+**Incrementing a binary counter**
+we define the potential of the counter after the ith INCREMENT operation to be $b_i$ , the number of 1s in the counter after the i th operation.
+![17](17.png)
+If the counter starts at zero, then $\Phi(D_0)=0$ Since $\Phi(D_i)\ge 0$ for all i , the total amortized cost of a sequence of n INCREMENT operations is an upper bound on the total actual cost, and so the worst-case cost of n INCREMENT operations is $O(n)$.
+* The potential method gives us an easy way to analyze the counter even when it does not start at zero. 
+The counter starts with b0 1s, and after n INCREMENT operations it has $b_n$ 1s, where $0<b_0, b_n <k$. (Recall that k is the number of bits in the counter.)
+![18](18.png)
 </font>

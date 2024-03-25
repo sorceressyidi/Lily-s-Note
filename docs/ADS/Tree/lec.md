@@ -86,18 +86,18 @@ Sketch : Insert & Colour red ; Pass Error to Root
 
 * For case 2 -- **Ensure that the right child of 7 is not red !!**
 
-> Refer to 算法导论 !
->
-> * Loop ends when z.p is black
->
-> * Color the root black after the loop
->
->   ![9](9.png)
->
-> ![10](10.png)
->
-> ![11](11.png)
->
+Refer to 算法导论 !
+
+* Loop ends when z.p is black
+
+* Color the root black after the loop
+
+![9](9.png)
+
+![10](10.png)
+
+![11](11.png)
+
 > ![12](12.png)
 
 #### Delete
