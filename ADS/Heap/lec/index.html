@@ -2001,6 +2001,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#appendix-amotized-analysis" class="md-nav__link">
+    \(Appendix: Amotized\ Analysis\)​​
+  </a>
+  
+    <nav class="md-nav" aria-label="\(Appendix: Amotized\ Analysis\)​​">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    Aggregate Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-accounting-method" class="md-nav__link">
+    The accounting method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-potential-method" class="md-nav__link">
+    The potential method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4319,6 +4366,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#appendix-amotized-analysis" class="md-nav__link">
+    \(Appendix: Amotized\ Analysis\)​​
+  </a>
+  
+    <nav class="md-nav" aria-label="\(Appendix: Amotized\ Analysis\)​​">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    Aggregate Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-accounting-method" class="md-nav__link">
+    The accounting method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-potential-method" class="md-nav__link">
+    The potential method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4337,6 +4431,9 @@
   <h1>Heap</h1>
 
 <p><font face = 'Times New Roman'></p>
+<ul>
+<li>We can build heap by <span class="arithmatex">\(T_a=O(n)/n=O(1)\)</span> , Therefore , we try to delete/insert the heap with time complexity less. say <span class="arithmatex">\(T_a=O(1)\)</span></li>
+</ul>
 <h2 id="leftist-heaps">Leftist Heaps<a class="headerlink" href="#leftist-heaps" title="Permanent link">&para;</a></h2>
 <h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
 <h4 id="def1">Def.1<a class="headerlink" href="#def1" title="Permanent link">&para;</a></h4>
@@ -4647,14 +4744,103 @@
 <li><span class="arithmatex">\(1/16\)</span> three merges...</li>
 </ul>
 <p><img alt="10" src="../10.png" /></p>
-<p></font></p>
+<h2 id="appendix-amotized-analysis"><span class="arithmatex">\(Appendix: Amotized\ Analysis\)</span>​​<a class="headerlink" href="#appendix-amotized-analysis" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reference: <a href="https://walkccc.me/CLRS/Chap17/17.2/">https://walkccc.me/CLRS/Chap17/17.2/</a></li>
+<li>Introduction To Algorithms.</li>
+</ul>
+<h3 id="aggregate-analysis">Aggregate Analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
+<p>In aggregate analysis, we show that for <strong>all</strong> n, a sequence of n operations takes worst-case time <span class="arithmatex">\(T(n)\)</span> in total. In the worst case, the average cost, or <strong>amortized cost</strong>, per operation is therefore <span class="arithmatex">\(T(n)/n\)</span>. Note that this amortized cost applies to each operation, even when there are several types of operations in the sequence.</p>
+<p><strong>Stack operations</strong></p>
+<ul>
+<li><span class="arithmatex">\(MULTIPOP(S,k)\)</span>​</li>
+</ul>
+<p>Let us analyze a sequence of n <span class="arithmatex">\(PUSH, POP\)</span>, and <span class="arithmatex">\(MULTIPOP\)</span>​ operations on an initially empty stack</p>
+<ul>
+<li>The worst-case cost of a MULTIPOP operation in the sequence is <span class="arithmatex">\(O(n)\)</span>​, since the stack size is at most n.</li>
+</ul>
+<p>The worst-case time of any stack operation is therefore <span class="arithmatex">\(O(n)\)</span>, and hence a sequence of n operations costs <span class="arithmatex">\(O(n^2)\)</span></p>
+<ul>
+<li>Any sequence of n <span class="arithmatex">\(PUSH, POP\)</span>, and <span class="arithmatex">\(MULTIPOP\)</span> operations on an initially empty stack can cost at most <span class="arithmatex">\(O(n)\)</span></li>
+</ul>
+<p>We can pop each object from the stack <strong>at most once</strong> for each time we have pushed it onto the stack. </p>
+<p>Therefore, the number of times that <span class="arithmatex">\(POP\)</span> can be called on a nonempty stack, including calls within <span class="arithmatex">\(MULTIPOP\)</span>, is at most <strong>the number of PUSH operations</strong>, which is at most <strong>n</strong>. </p>
+<p>For any value of n, any sequence of n <span class="arithmatex">\(PUSH, POP\)</span>, and <span class="arithmatex">\(MULTIPOP\)</span> operations takes a total of <span class="arithmatex">\(O(n)\)</span> time. The average cost of an operation is <span class="arithmatex">\(O(n)/n = O(1)\)</span>​</p>
+<ul>
+<li>We emphasize again that although we have just shown that the average cost, and hence the running time, of a stack operation is <span class="arithmatex">\(O(1)\)</span>, we did not use probabilistic reasoning. </li>
+</ul>
+<p>We actually showed a worst-case bound of <span class="arithmatex">\(O(n)\)</span> on a sequence of <span class="arithmatex">\(n\)</span> operations. Dividing this total cost by <span class="arithmatex">\(n\)</span>​ yielded the average cost per operation, or the amortized cost.</p>
+<p><strong>Incrementing a binary counter</strong></p>
+<p>consider the problem of implementing a k-bit binary counter that counts upward from 0. We use an array <span class="arithmatex">\(A[0..k-1]\)</span> of bits, where <span class="arithmatex">\(A.length=k\)</span>, as the counter. </p>
+<p>A binary number x that is stored in the counter has its lowest-order bit in <span class="arithmatex">\(A[0]\)</span> and its highest-order bit in <span class="arithmatex">\(A[k-1]\)</span>so that <span class="arithmatex">\(x = \sum_{i=0}^{k-1}A[i]·2^i\)</span> Initially, <span class="arithmatex">\(x=0\)</span> and thus <span class="arithmatex">\(A[i]=0\)</span> for <span class="arithmatex">\(i=0,1,... k-1\)</span></p>
+<p>To add <span class="arithmatex">\(1\)</span>(modulo <span class="arithmatex">\(2^k\)</span>​) to the value in the counter, we use the following procedure.</p>
+<p><img alt="11" src="../11.png" /></p>
+<ul>
+<li>As with the stack example, a cursory analysis yields a bound that is correct but not tight. A single execution of INCREMENT takes time <span class="arithmatex">\(\Theta(k)\)</span> in the worst case, in which array A contains all 1s. </li>
+</ul>
+<p>Thus, a sequence of n INCREMENT operations on an initially zero counter takes time <span class="arithmatex">\(O(nk)\)</span> in the worst case.</p>
+<ul>
+<li>As Figure below shows, <span class="arithmatex">\(A[0]\)</span> does flip each time INCREMENT is called. The next bit up, <span class="arithmatex">\(A[1]\)</span> flips only every other time: a sequence of n INCREMENT operations on an initially zero counter causes <span class="arithmatex">\(A[1]\)</span> to flip $n/2」times.</li>
+</ul>
+<p>Similarly, bit <span class="arithmatex">\(A[2]\)</span> flibs only every fourth time or <span class="arithmatex">\(n/4』\)</span> times in a sequence.</p>
+<p><span class="arithmatex">\(\sum_{i=0}^{k-1}\frac{n}{2^i}」&lt;n\sum_{i=0}^{\infty}\frac{1}{2^i}=2n\)</span></p>
+<ul>
+<li>The worst-case time for a sequence of n INCREMENT operations on an <strong>initially zero</strong> counter is therefore <span class="arithmatex">\(O(n)\)</span>. The average cost of each operation, and therefore the amortized cost per operation, is <span class="arithmatex">\(O(n)/n=O(1)\)</span>​</li>
+</ul>
+<p><img alt="12" src="../12.png" /></p>
+<h4 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h4>
+<p>If the set of stack operations included a MULTIPUSH operation, which pushes <span class="arithmatex">\(k\)</span> items onto the stack, would the <span class="arithmatex">\(O(1)\)</span>​ bound on the amortized cost of stack operations continue to hold?</p>
+<ul>
+<li>No. The time complexity of such a series of operations depends on the number of pushes (pops vice versa) could be made. </li>
+</ul>
+<p>Since one MULTIPUSH needs <span class="arithmatex">\(\Theta(k)\)</span> time, performing n MULTIPUSH operations, each with k elements, would take<span class="arithmatex">\(Θ(kn)\)</span> time, leading to amortized cost of <span class="arithmatex">\(\Theta(k)\)</span>​.</p>
+<p>Show that if a DECREMENT operation were included in the k-bit counter example, n operations could cost as much as <span class="arithmatex">\(\Theta(nk)\)</span>​ time.</p>
+<ul>
+<li>The logarithmic bit flipping predicate does not hold, and indeed a sequence of events could consist of the incrementation of all <span class="arithmatex">\(1s\)</span> and decrementation of all <span class="arithmatex">\(0s\)</span> , yielding <span class="arithmatex">\(Θ(nk)\)</span>.</li>
+</ul>
+<p>Suppose we perform a sequence of <span class="arithmatex">\(n\)</span> operations on a data structure in which the i th operation costs i if i is an exact power of 2, and 1 otherwise. </p>
+<p>Use aggregate analysis to determine the amortized cost per operation.
+  <img alt="13" src="../13.png" /></p>
+<h3 id="the-accounting-method">The accounting method<a class="headerlink" href="#the-accounting-method" title="Permanent link">&para;</a></h3>
+<p>In the accounting method of amortized analysis, we assign differing charges to different operations, with some operations charged more or less than they actu- ally cost. We call the amount we charge an operation its amortized cost. 
+When an operation’s amortized cost exceeds its actual cost, we assign the difference to specific objects in the data structure as credit. 
+* Credit can help pay for later oper- ations whose amortized cost is less than their actual cost. 
+* If we want to show that in the worst case the average cost per operation is small by analyzing with amortized costs, we must ensure that the total amortized cost of a sequence of operations provides an upper bound on the total actual cost of the sequence.
+* this relationship must hold for all sequences of operations.
+  Which means <span class="arithmatex">\(\sum \hat{c}_i\ge\sum c_i\)</span> for all sequences of n operations. 
+* The total credit stored in the data structure is the difference between the total amortized cost and the total actual cost, or <span class="arithmatex">\(\sum \hat{c}_i-\sum c_i\)</span> which must be <strong>non negative</strong> ay <strong>all times</strong>
+<strong>Stack operations</strong>
+<img alt="14" src="../14.png" />
+<img alt="15" src="../15.png" />
+<strong>Incrementing a binary counter</strong>
+<img alt="16" src="../16.png" /></p>
+<h3 id="the-potential-method">The potential method<a class="headerlink" href="#the-potential-method" title="Permanent link">&para;</a></h3>
+<p>Instead of representing prepaid work as credit stored with specific objects in the data structure, the potential method of amortized analysis represents the prepaid work as “potential energy,” or just “potential,” which can be released to pay for future operations. We associate the potential with the data structure as a whole rather than with specific objects within the data structure.
+* We will perform n operations, starting with an initial data structure <span class="arithmatex">\(D_0\)</span>
+* For each <span class="arithmatex">\(i=1,2,...n\)</span>, we let <span class="arithmatex">\(c_i\)</span> be the actual cost of the ith operation and <span class="arithmatex">\(D_i\)</span> be the data structure that results after applying the ith operation to data structure <span class="arithmatex">\(D_{i-1}\)</span>.
+* A potential function <span class="arithmatex">\(\Phi\)</span> maps each data
+structure <span class="arithmatex">\(D_i\)</span> to a real number <span class="arithmatex">\(\Phi(D_i)\)</span>, which is the potential associated with data
+structure <span class="arithmatex">\(D_i\)</span> . 
+* The amortized cost <span class="arithmatex">\(\hat{c}_i\)</span> of the ith operation with respect to potential function <span class="arithmatex">\(\Phi\)</span> is defined by <span class="arithmatex">\(\hat{c}_i=c_i+\Phi(D_i)=\Phi(D_{i-1})\)</span>
+* the total amortized cost of the n operations is <span class="arithmatex">\(\sum\hat{c}_i=\sum c_i+\Phi(D_n)-\Phi(D_0)\)</span>
+* Define a potential function so that <span class="arithmatex">\(\Phi(D_i)\ge \Phi(D_0)\)</span> for all i!
+<strong>Stack operations</strong>
+* See Previous Part.
+<strong>Incrementing a binary counter</strong>
+we define the potential of the counter after the ith INCREMENT operation to be <span class="arithmatex">\(b_i\)</span> , the number of 1s in the counter after the i th operation.
+<img alt="17" src="../17.png" />
+If the counter starts at zero, then <span class="arithmatex">\(\Phi(D_0)=0\)</span> Since <span class="arithmatex">\(\Phi(D_i)\ge 0\)</span> for all i , the total amortized cost of a sequence of n INCREMENT operations is an upper bound on the total actual cost, and so the worst-case cost of n INCREMENT operations is <span class="arithmatex">\(O(n)\)</span>.
+* The potential method gives us an easy way to analyze the counter even when it does not start at zero. 
+The counter starts with b0 1s, and after n INCREMENT operations it has <span class="arithmatex">\(b_n\)</span> 1s, where <span class="arithmatex">\(0&lt;b_0, b_n &lt;k\)</span>. (Recall that k is the number of bits in the counter.)
+<img alt="18" src="../18.png" />
+</font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月25日 12:53:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月25日 20:49:13</span>
       
         <br>
         创建日期:

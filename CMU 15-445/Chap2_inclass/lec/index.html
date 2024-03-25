@@ -4091,6 +4091,114 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#advanced-sql" class="md-nav__link">
+    Advanced sql
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced sql">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jdbc-code" class="md-nav__link">
+    JDBC Code
+  </a>
+  
+    <nav class="md-nav" aria-label="JDBC Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    Metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odbc" class="md-nav__link">
+    ODBC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedural-constructs-in-sql" class="md-nav__link">
+    Procedural Constructs in SQL
+  </a>
+  
+    <nav class="md-nav" aria-label="Procedural Constructs in SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-functions" class="md-nav__link">
+    SQL Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-functions" class="md-nav__link">
+    Table Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-procedures" class="md-nav__link">
+    SQL Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-language-functionsprocedures" class="md-nav__link">
+    External Language Functions/Procedures
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    Triggers
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statement-level-triggers" class="md-nav__link">
+    Statement Level Triggers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4220,13 +4328,13 @@
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">course_id</span><span class="w">   </span><span class="kt">char</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">title</span><span class="w">       </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">dept_name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">course_id</span><span class="w">   </span><span class="nb">char</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">title</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">)</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p">...</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">dept_name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="k">on</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">cascade</span><span class="p">,</span>
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">cascade</span><span class="p">,</span>
@@ -4236,10 +4344,10 @@
 <li>Integrity Constraint Violation During Transactions</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="n">ID</span><span class="w">  </span><span class="kt">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">name</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="n">mother</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="n">father</span><span class="w">  </span><span class="kt">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="n">ID</span><span class="w">  </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="n">mother</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="n">father</span><span class="w">  </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">),</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">father</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">person</span><span class="p">,</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">mother</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w">  </span><span class="n">person</span><span class="p">);</span>
@@ -4255,17 +4363,17 @@
 <li>Unfortunately:  subquery in check clause not supported by pretty much any databaseAlternative: <strong>triggers</strong></li>
 </ul>
 <p><strong>Assertion</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">create</span><span class="w"> </span><span class="n">assertion</span><span class="w"> </span><span class="o">&lt;</span><span class="n">assertion</span><span class="o">-</span><span class="k">name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="o">&lt;</span><span class="n">predicate</span><span class="o">&gt;</span><span class="p">;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">create</span><span class="w"> </span><span class="n">assertion</span><span class="w"> </span><span class="n">credits_earned_constraint</span><span class="w"> </span><span class="k">check</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">create</span><span class="w"> </span><span class="k">assertion</span><span class="w"> </span><span class="o">&lt;</span><span class="k">assertion</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="o">&lt;</span><span class="n">predicate</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">create</span><span class="w"> </span><span class="k">assertion</span><span class="w"> </span><span class="n">credits_earned_constraint</span><span class="w"> </span><span class="k">check</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="k">from</span><span class="w"> </span><span class="n">student</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="k">where</span><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">              </span><span class="k">select</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">credits</span><span class="p">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">              </span><span class="k">select</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">credits</span><span class="p">)</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">              </span><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">course</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">              </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">takes</span><span class="p">.</span><span class="n">ID</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">                         </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">                         </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="o">&lt;&gt;</span><span class="n">’F’</span><span class="p">))</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">                         </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">                         </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="o">&lt;&gt;</span><span class="err">’</span><span class="n">F</span><span class="err">’</span><span class="p">)))</span>
 </code></pre></div>
 <h3 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4273,15 +4381,15 @@
 <li>Consider a person who needs to know an instructors name and department, but not the salary.  This person should see a relation described, in SQL, by </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">faculty</span><span class="w"> </span><span class="k">as</span><span class="w"> </span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="k">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">select</span><span class="w"> </span><span class="k">name</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">from</span><span class="w"> </span><span class="n">faculty</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">‘Biology’</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Biology</span><span class="err">’</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">departments_total_salary</span><span class="p">(</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">total_salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="nf">sum</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
 </code></pre></div>
@@ -4289,14 +4397,14 @@
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">select</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">sec_id</span><span class="p">,</span><span class="w"> </span><span class="n">building</span><span class="p">,</span><span class="w"> </span><span class="n">room_number</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">from</span><span class="w"> </span><span class="n">course</span><span class="p">,</span><span class="w"> </span><span class="n">section</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">where</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">course_id</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">and</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">’Physics’</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">’Fall’</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="kt">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">’2009’</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">and</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Physics</span><span class="err">’</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Fall</span><span class="err">’</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="mi">2009</span><span class="err">’</span><span class="p">;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">physics_fall_2009_watson</span><span class="w"> </span><span class="k">as</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">select</span><span class="w"> </span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">room_number</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">from</span><span class="w"> </span><span class="n">physics_fall_2009</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">where</span><span class="w"> </span><span class="n">building</span><span class="o">=</span><span class="w"> </span><span class="n">’Watson’</span><span class="p">;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">where</span><span class="w"> </span><span class="n">building</span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Watson</span><span class="err">’</span><span class="p">;</span>
 </code></pre></div>
 <ul>
 <li>直接对view的定义进行嵌入</li>
@@ -4344,7 +4452,7 @@
 <li>Need to <strong>maintain</strong> the view, by updating the view whenever the underlying relations are updated.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">create</span><span class="w"> </span><span class="n">materialized</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">departments_total_salary</span><span class="p">(</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">total_salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="nf">sum</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span>
@@ -4356,9 +4464,9 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">S1</span><span class="p">...;</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">S2</span><span class="p">...;</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">S1</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">S2</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">S2</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="k">c</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">S</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Sq</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">S2</span><span class="p">;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">S</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">c</span><span class="p">)</span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="k">c</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Sq</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">S2</span><span class="p">;</span>
 </code></pre></div>
 <ul>
 <li><code>create view S(a,b,c)as select a,b,c from Sq natural join S2;</code>实现对原表的查询，对用户来说无区别.</li>
@@ -4366,10 +4474,10 @@
 <p><img alt="9" src="../9.png" /></p>
 <h3 id="indexes">Indexes<a class="headerlink" href="#indexes" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">(</span><span class="w">   </span><span class="n">ID</span><span class="w"> </span><span class="kt">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="kt">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="kt">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="kt">numeric</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">(</span><span class="w">   </span><span class="n">ID</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="nb">numeric</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">)</span><span class="w"> </span>
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">)</span>
 <a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">studentID_index</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">student</span><span class="p">(</span><span class="n">ID</span><span class="p">)</span>
@@ -4379,7 +4487,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="n">student</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w"> </span><span class="k">where</span><span class="w">  </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">‘12345’</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w"> </span><span class="k">where</span><span class="w">  </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="mi">12345</span><span class="err">’</span>
 </code></pre></div>
 <ul>
 <li>can be executed by <strong>using the index</strong> to find the required record, without looking at all records of student</li>
@@ -4389,14 +4497,14 @@
 <li><code>AUTOCOMMIT=1;</code> -- Everytime auto commit</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">SET</span><span class="w"> </span><span class="n">AUTOCOMMIT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="n">‘1001’</span><span class="p">;</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="n">‘1002’</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="err">‘</span><span class="mi">1001</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="err">‘</span><span class="mi">1002</span><span class="err">’</span><span class="p">;</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="n">‘1003’</span><span class="p">;</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="n">‘1004’</span><span class="p">;</span><span class="w">     </span><span class="k">COMMIT</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="err">‘</span><span class="mi">1003</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ano</span><span class="o">=</span><span class="err">‘</span><span class="mi">1004</span><span class="err">’</span><span class="p">;</span><span class="w">     </span><span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="n">balance</span><span class="o">*</span><span class="mf">2.5</span><span class="o">%</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="o">=</span><span class="n">balance</span><span class="o">+</span><span class="n">balance</span><span class="o">*</span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="o">%</span><span class="p">;</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div>
 <h4 id="acid-properties">ACID Properties<a class="headerlink" href="#acid-properties" title="Permanent link">&para;</a></h4>
@@ -4417,14 +4525,14 @@
 <li>The grantor of the privilege must already hold the privilege on the specified item (or be the database administrator).</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">instructor</span><span class="w">  </span><span class="k">to</span><span class="w"> </span><span class="n">U1</span><span class="p">,</span><span class="w"> </span><span class="n">U2</span><span class="p">,</span><span class="w"> </span><span class="n">U3</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">department</span><span class="w">  </span><span class="k">to</span><span class="w"> </span><span class="n">public</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">department</span><span class="w">  </span><span class="k">to</span><span class="w"> </span><span class="k">public</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">grant</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="p">(</span><span class="n">budget</span><span class="p">)</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">department</span><span class="w">  </span><span class="k">to</span><span class="w"> </span><span class="n">U1</span><span class="p">,</span><span class="n">U2</span>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">privileges</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">department</span><span class="w">   </span><span class="k">to</span><span class="w"> </span><span class="n">U1</span>
 </code></pre></div>
 <h4 id="revoking-authorization-in-sql">Revoking Authorization in SQL<a class="headerlink" href="#revoking-authorization-in-sql" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">revoke</span><span class="w"> </span><span class="o">&lt;</span><span class="n">privilege</span><span class="w"> </span><span class="k">list</span><span class="o">&gt;</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">on</span><span class="w"> </span><span class="o">&lt;</span><span class="n">relation</span><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="k">name</span><span class="o">&gt;</span><span class="w"> </span>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">from</span><span class="w"> </span><span class="o">&lt;</span><span class="k">user</span><span class="w"> </span><span class="k">list</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">revoke</span><span class="w"> </span><span class="o">&lt;</span><span class="n">privilege</span><span class="w"> </span><span class="n">list</span><span class="o">&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">on</span><span class="w"> </span><span class="o">&lt;</span><span class="n">relation</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">from</span><span class="w"> </span><span class="o">&lt;</span><span class="k">user</span><span class="w"> </span><span class="n">list</span><span class="o">&gt;</span>
 <a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">revoke</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">branch</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">U1</span><span class="p">,</span><span class="w"> </span><span class="n">U2</span><span class="p">,</span><span class="w"> </span><span class="n">U3</span>
 </code></pre></div>
 <ul>
@@ -4433,13 +4541,283 @@
 <li>If the same privilege was granted twice to the same user by different grantees, the user may retain the privilege <strong>after the revocation</strong>.</li>
 <li>All privileges that depend on the privilege being revoked are also revoked.</li>
 </ul>
+<h2 id="advanced-sql">Advanced sql<a class="headerlink" href="#advanced-sql" title="Permanent link">&para;</a></h2>
+<p>API (application-program interface) for a program to interact with a database server
+* ODBC (Open Database Connectivity) works with C, C++, C#
+* JDBC (Java Database Connectivity) works with Java
+* Embedded SQL in C
+* SQLJ - embedded SQL in Java
+* JPA(Java Persistence API)  - OR mapping of Java</p>
+<h3 id="jdbc-code">JDBC Code<a class="headerlink" href="#jdbc-code" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">JDBCexample</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dbid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">passwd</span><span class="p">){</span><span class="w"> </span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">     </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">   </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="w">     </span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">       </span><span class="s">&quot;jdbc:oracle:thin:@db.yale.edu:2000:univdb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">userid</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">          </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">              </span><span class="p">...</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">Actual</span><span class="w"> </span><span class="n">Work</span><span class="w"> </span><span class="p">....</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">          </span><span class="n">stmt</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">          </span><span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">     </span><span class="p">}</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">     </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">          </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;SQLException : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sqle</span><span class="p">);</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">     </span><span class="p">}</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+* Update to database</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">     </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">          </span><span class="s">&quot;insert into instructor values(’77987’, ’Kim’, ’Physics’, 98000)&quot;</span><span class="p">);</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">)</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">{</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Could not insert tuple. &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sqle</span><span class="p">);</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="p">}</span>
+</code></pre></div>
+* Execute query and fetch and print results
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">                                </span><span class="s">&quot;select dept_name, avg (salary)</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="s">                                 from instructor</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="s">                                 group by dept_name&quot;</span><span class="p">);</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rset</span><span class="p">.</span><span class="na">next</span><span class="p">()){</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rset</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;dept_name&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">                                              </span><span class="n">rset</span><span class="p">.</span><span class="na">getFloat</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="p">}</span>
+</code></pre></div></p>
+<ul>
+<li>Prepared Statement
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pStmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="w"> </span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">                                </span><span class="s">&quot;insert into instructor values(?,?,?,?)&quot;</span><span class="p">);</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;88877&quot;</span><span class="p">);</span><span class="w">      </span><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Perry&quot;</span><span class="p">);</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Finance&quot;</span><span class="p">);</span><span class="w">   </span><span class="n">pStmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">125000</span><span class="p">);</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span><span class="w">    </span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;88878&quot;</span><span class="p">);</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+</code></pre></div>
+<strong>WARNING: always use prepared statements when taking an input from the user and adding it to a query</strong></li>
+<li>NEVER create a query by concatenating strings which you get as inputs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="s">&quot;insert into instructor values(’ &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; ’, ’ &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; ’, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">                                            </span><span class="s">&quot; ’ &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; ’, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;)&quot;</span>
+</code></pre></div></li>
+<li>What if name is “D’Souza”?</li>
+</ul>
+<h4 id="sql-injection">SQL Injection<a class="headerlink" href="#sql-injection" title="Permanent link">&para;</a></h4>
+<p><img alt="13" src="../13.png" /></p>
+<h4 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">ResultSetMetaData</span><span class="w"> </span><span class="n">rsmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">     </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">           </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">                  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnTypeName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">       </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="odbc">ODBC<a class="headerlink" href="#odbc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">ODBCexample</span><span class="p">()</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="p">{</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span><span class="n">RETCODE</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span><span class="n">HENV</span><span class="w">    </span><span class="n">env</span><span class="p">;</span><span class="w">     </span><span class="cm">/* environment */</span><span class="w"> </span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span><span class="n">HDBC</span><span class="w">    </span><span class="n">conn</span><span class="p">;</span><span class="w">  </span><span class="cm">/* database connection */</span><span class="w"> </span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span><span class="n">SQLAllocEnv</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">  </span><span class="n">SQLAllocConnect</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">  </span><span class="n">SQLConnect</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">db</span><span class="p">.</span><span class="n">yale</span><span class="p">.</span><span class="n">edu</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="n">avi</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">,</span><span class="err">&#39;</span><span class="n">avipasswd</span><span class="err">&#39;</span><span class="p">,</span><span class="n">SQL_NTS</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="p">....</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">  </span><span class="n">SQLDisconnect</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">  </span><span class="n">SQLFreeConnect</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">  </span><span class="n">SQLFreeEnv</span><span class="p">(</span><span class="n">env</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="procedural-constructs-in-sql">Procedural Constructs in SQL<a class="headerlink" href="#procedural-constructs-in-sql" title="Permanent link">&para;</a></h3>
+<h4 id="sql-functions">SQL Functions<a class="headerlink" href="#sql-functions" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">dept_count</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="nb">integer</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w"> </span><span class="k">begin</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="k">declare</span><span class="w"> </span><span class="n">d_count</span><span class="w"> </span><span class="nb">integer</span><span class="p">;</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">d_count</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">instructor</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dept_name</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">d_count</span><span class="p">;</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w"> </span><span class="k">end</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">budget</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">from</span><span class="w"> </span><span class="n">department</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_count</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div></p>
+<h4 id="table-functions">Table Functions<a class="headerlink" href="#table-functions" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">create</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">instructors_of</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">returns</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">                </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">                </span><span class="n">salary</span><span class="w"> </span><span class="nb">numeric</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">return</span><span class="w"> </span><span class="k">table</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">instructor</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instructors_of</span><span class="p">.</span><span class="n">dept_name</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="k">from</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="p">(</span><span class="n">instructors_of</span><span class="w"> </span><span class="p">(</span><span class="err">‘</span><span class="n">Music</span><span class="err">’</span><span class="p">))</span>
+</code></pre></div></p>
+<h4 id="sql-procedures">SQL Procedures<a class="headerlink" href="#sql-procedures" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The dept_count function could instead be written as procedure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="n">dept_count_proc</span><span class="w"> </span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w"> </span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">                                  </span><span class="k">out</span><span class="w"> </span><span class="n">d_count</span><span class="w"> </span><span class="nb">integer</span><span class="p">)</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="k">begin</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">  </span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">d_count</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">instructor</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dept_count_proc</span><span class="p">.</span><span class="n">dept_name</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">     </span><span class="k">end</span>
+</code></pre></div></li>
+<li>Procedures can be invoked either from an SQL procedure or from embedded SQL, using the call statement
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">declare</span><span class="w"> </span><span class="n">d_count</span><span class="w"> </span><span class="nb">integer</span><span class="p">;</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="k">call</span><span class="w"> </span><span class="n">dept_count_proc</span><span class="p">(</span><span class="w"> </span><span class="err">‘</span><span class="n">Physics</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="n">d_count</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Procedures and functions can be invoked also from dynamic SQL</li>
+<li>While and repeat statements 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">declare</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">while</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">  </span><span class="k">set</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="k">end</span><span class="w"> </span><span class="n">while</span><span class="w">              </span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="n">repeat</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">  </span><span class="k">set</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w">  </span><span class="err">–</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">  </span><span class="k">until</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="k">end</span><span class="w"> </span><span class="n">repeat</span>
+</code></pre></div></li>
+<li>For loop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">declare</span><span class="w"> </span><span class="n">n</span><span class="w">  </span><span class="nb">integer</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="n">r</span><span class="w">  </span><span class="k">as</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">          </span><span class="k">select</span><span class="w"> </span><span class="n">budget</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">department</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">          </span><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Music</span><span class="err">’</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">    </span><span class="k">do</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">       </span><span class="k">set</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">budget</span>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="k">for</span>
+</code></pre></div></li>
+<li>Conditional statements  (if-then-else)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">if</span><span class="w"> </span><span class="nb">boolean</span><span class="w">  </span><span class="n">expression</span><span class="w"> </span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">compound</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="n">elseif</span><span class="w"> </span><span class="nb">boolean</span><span class="w">  </span><span class="n">expression</span><span class="w"> </span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">compound</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">compound</span><span class="w"> </span><span class="k">statement</span><span class="w"> </span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="k">end</span><span class="w"> </span><span class="k">if</span>
+</code></pre></div></li>
+<li>SQL:1999 also supports a case statement similar to C case statement</li>
+<li>EXAMPLE
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">registerStudent</span><span class="p">(</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">  </span><span class="k">IN</span><span class="w"> </span><span class="n">s_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">  </span><span class="k">IN</span><span class="w"> </span><span class="n">s_courseid</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">  </span><span class="k">IN</span><span class="w"> </span><span class="n">s_secud</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">  </span><span class="k">IN</span><span class="w"> </span><span class="n">s_semester</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">  </span><span class="k">in</span><span class="w"> </span><span class="n">s_year</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">4</span><span class="p">.</span><span class="mi">0</span><span class="p">),</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">  </span><span class="k">OUT</span><span class="w"> </span><span class="n">errorMsg</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="p">)</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="k">RETURNS</span><span class="w"> </span><span class="nb">INTEGER</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="k">BEGIN</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="w">  </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">currEnrol</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">currEnrol</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">takes</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_courseid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sec_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_secid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_semester</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_year</span><span class="p">;</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="w">  </span><span class="k">DECLARE</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">capacity</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">limit</span>
+<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">classroom</span><span class="w"> </span><span class="k">NATURAL</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">section</span>
+<a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_courseid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sec_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_secid</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_semester</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s_year</span><span class="p">;</span>
+<a id="__codelineno-42-19" name="__codelineno-42-19" href="#__codelineno-42-19"></a><span class="w">  </span><span class="k">IF</span><span class="p">(</span><span class="n">currEnrol</span><span class="o">&lt;</span><span class="k">limit</span><span class="p">)</span>
+<a id="__codelineno-42-20" name="__codelineno-42-20" href="#__codelineno-42-20"></a><span class="w">    </span><span class="k">BEGIN</span>
+<a id="__codelineno-42-21" name="__codelineno-42-21" href="#__codelineno-42-21"></a><span class="w">      </span><span class="n">INSET</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">VALUES</span>
+<a id="__codelineno-42-22" name="__codelineno-42-22" href="#__codelineno-42-22"></a><span class="w">        </span><span class="p">(</span><span class="n">s_id</span><span class="p">,</span><span class="n">s_course</span><span class="p">,</span><span class="n">s_secid</span><span class="p">,</span><span class="n">s_semester</span><span class="p">,</span><span class="n">s_year</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+<a id="__codelineno-42-23" name="__codelineno-42-23" href="#__codelineno-42-23"></a><span class="w">      </span><span class="k">RETURN</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-42-24" name="__codelineno-42-24" href="#__codelineno-42-24"></a><span class="w">    </span><span class="k">END</span>
+<a id="__codelineno-42-25" name="__codelineno-42-25" href="#__codelineno-42-25"></a><span class="w">  </span><span class="k">SET</span><span class="w"> </span><span class="n">errorMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Enrollment limit reached for course&#39;</span><span class="o">||</span><span class="s1">&#39;s_course_id&#39;</span><span class="o">||</span><span class="s1">&#39;section&#39;</span><span class="o">||</span><span class="n">s_secid</span><span class="p">;</span>
+<a id="__codelineno-42-26" name="__codelineno-42-26" href="#__codelineno-42-26"></a><span class="w">  </span><span class="k">RETURN</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-42-27" name="__codelineno-42-27" href="#__codelineno-42-27"></a><span class="k">END</span><span class="p">;</span>
+</code></pre></div></li>
+</ul>
+<h4 id="external-language-functionsprocedures">External Language Functions/Procedures<a class="headerlink" href="#external-language-functionsprocedures" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="n">dept_count_proc</span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="k">out</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="nb">integer</span><span class="p">)</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="k">language</span><span class="w"> </span><span class="k">C</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">external</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;/usr/avi/bin/dept_count_proc&#39;</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="k">create</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">dept_count</span><span class="p">(</span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="k">returns</span><span class="w"> </span><span class="nb">integer</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="k">language</span><span class="w"> </span><span class="k">C</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="k">external</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;/usr/avi/bin/dept_count&#39;</span>
+</code></pre></div>
+* Benefits of external language functions/procedures:<br />
+more efficient for many operations, and more expressive power.
+* Drawbacks
+Code to implement function may need to be loaded into 
+database system and executed in the database system’s 
+address space.
+  * risk of accidental corruption of database structures
+  * security risk, allowing users access to unauthorized data
+There are alternatives, which give good security at the cost of potentially worse performance.
+Direct execution in the database system’s space is used when 
+efficiency is more important than security.</p>
+<h3 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">account_trigger</span><span class="w"> </span><span class="k">AFTER</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">NEW</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nrow</span><span class="w">                                                                       </span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">referencing</span><span class="w"> </span><span class="k">OLD</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">orow</span><span class="w"> </span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="mi">200000</span><span class="w"> </span><span class="k">OR</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">       </span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">50000</span><span class="w"> </span>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="w">  </span><span class="k">BEGIN</span>
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="w">  </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">account_log</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">nrow</span><span class="p">.</span><span class="n">account</span><span class="o">-</span><span class="nb">number</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="o">-</span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">current_time</span><span class="p">()</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="k">END</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">timeslot_check1</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">section</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">nrow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">                 </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="w">                 </span><span class="k">from</span><span class="w"> </span><span class="n">time_slot</span><span class="p">))</span><span class="w"> </span><span class="cm">/* time_slot_id not present in time_slot */</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="k">begin</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="w">     </span><span class="k">rollback</span>
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="k">end</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">timeslot_check2</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">timeslot</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">old</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">orow</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">orow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="w">               </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="w">               </span><span class="k">from</span><span class="w"> </span><span class="n">time_slot</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="w">                         </span><span class="cm">/* last tuple for time slot id deleted from time slot */</span>
+<a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="w">          </span><span class="k">and</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a><span class="w">               </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+<a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="w">               </span><span class="k">from</span><span class="w"> </span><span class="n">section</span><span class="p">))</span>
+<a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="w">                 </span><span class="cm">/* and time_slot_id still referenced from section*/</span>
+<a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="k">begin</span>
+<a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a><span class="w">    </span><span class="k">rollback</span>
+<a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a><span class="k">end</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">credits_earned</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">grade</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="k">referencing</span><span class="w"> </span><span class="k">old</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">orow</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="k">when</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="err">’</span><span class="n">F</span><span class="err">’</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">orow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">F</span><span class="err">’</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="k">begin</span><span class="w"> </span><span class="k">atomic</span>
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="w">     </span><span class="k">update</span><span class="w"> </span><span class="n">student</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="w">     </span><span class="k">set</span><span class="w"> </span><span class="n">tot_cred</span><span class="o">=</span><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="w">           </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">credits</span>
+<a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a><span class="w">            </span><span class="k">from</span><span class="w"> </span><span class="n">course</span>
+<a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a><span class="w">            </span><span class="k">where</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">course_id</span><span class="p">)</span>
+<a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a><span class="w">     </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+<a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a><span class="k">end</span><span class="p">;</span>
+</code></pre></div></p>
+<h4 id="statement-level-triggers">Statement Level Triggers<a class="headerlink" href="#statement-level-triggers" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">grade_trigger</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">grade</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">      </span><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">new_table</span><span class="w">                                                                          </span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">statement</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="w">      </span><span class="k">when</span><span class="w">  </span><span class="k">exists</span><span class="p">(</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a><span class="w">                             </span><span class="k">from</span><span class="w"> </span><span class="n">new_table</span>
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a><span class="w">                             </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">sec_id</span><span class="p">,</span><span class="w"> </span><span class="n">semester</span><span class="p">,</span><span class="w"> </span><span class="k">year</span>
+<a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a><span class="w">                             </span><span class="k">having</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="o">&lt;</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a><span class="w">      </span><span class="k">begin</span><span class="w"> </span>
+<a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a><span class="w"> </span><span class="k">rollback</span>
+<a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="w">      </span><span class="k">end</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月25日 20:49:13</span>
       
         <br>
         创建日期:
