@@ -336,3 +336,35 @@ Standardized format  **IEEE 754**
 
 ![54](54.png)
 
+#### Floating Point multiplication
+
+![55](55.png)
+
+> Algorithm
+
+* Add exponents - bias
+
+* Multiply the significands
+
+  
+
+* Normalize
+
+* Over- underflow
+
+* Rounding
+
+* Sign
+
+![56](56.png)
+
+![57](57.png)
+
+#### float devision
+
+* Subtraction of exponents
+* Division of the significants
+* Normalisation
+* Rounding
+* Sign
+
