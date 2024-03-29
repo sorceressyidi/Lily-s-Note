@@ -62,17 +62,6 @@ nav:
       - Fourier transform : DIP/Fourier/Fourier.md
       - Image feature : DIP/feature/feature.md
       - Deep Learning : DIP/DL/DL.md
-    - x86-Assembly: 
-      - 基础指令: assembly/基础指令.md
-      - 显卡输出: assembly/显卡输出.md
-      - 端口: assembly/端口.md
-      - 寄存器: assembly/寄存器.md
-      - 堆栈 : assembly/堆栈.md
-      - 中断: assembly/中断.md
-      - 函数: assembly/函数.md
-    - Ai导 : 
-      - 数据降维: AI/pca.md
-      - Neural Networks and Deep Learning : AI/net.md
     - 计算机逻辑设计基础:
       - Chapter 1 Digital Systems and Information : 计算机逻辑设计基础/Chap1/chap1.md
       - Chapter 2 Combinational Logic : 计算机逻辑设计基础/Chap2/chap2.md
@@ -92,6 +81,7 @@ nav:
     - OOP(C++):
       - Itro & Class: oop/Basic/Basic.md
       - Container & Function: oop/Container/Container.md
+      - Inheritance : oop/inheritance/lec.md
     - Anvanced Data Structure:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
@@ -120,6 +110,7 @@ nav:
       - Chapter 22 : CMU 15-445/Chap22/Chap22.md
     - Computer Organization : 
       - Introduction : 计组/Intro/intro.md
+      - Chapter2 : 计组/Chap2/lec.md
       - Chapter3 : 计组/Chap3/lec.md
   - Math & Physics:
     - General physics II : 
@@ -163,12 +154,6 @@ nav:
       - Hardware & Software: DL_CV/Pytorch/lec.md
       - Traning Neural Networks: DL_CV/TN/lec.md
       - Recognision : DL_CV/Recognition/lec10.md
-    - Deep Learning(Coursera) :
-      - Neural Networks and Deep Learning : DL/Neural Networks and Deep Learning/part1.md
-      - Improving Deep Neural Networks : DL/Improving Deep Neural Networks/part2.md
-      - Structuring Machine Learning Projects : DL/Structuring Machine Learning Projects/part3.md
-      - Convolutional Neural Networks : DL/Convolutional Neural Networks/part4.md
-      - Sequence Models : DL/Sequence Models/part5.md
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md

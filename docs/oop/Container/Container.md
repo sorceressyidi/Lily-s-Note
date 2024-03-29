@@ -46,9 +46,55 @@ int main(){
 
   Have to specify two types
 
-![1](1.png)
+**It is able to increase its internal capacity as required: as more items are added, it simply makes enough room for them**
 
-![2](2.png)
+**It keeps its own private count of how many items it is currently storing. Its size method returns the number of objects currently stored in it**
+
+**It maintains the order of items you insert into it.You can later retrieve them in the same order.**
+
+#### Basic Vector Operations
+
+* Constructors
+
+  ```c++
+  vector<Elem>c
+  vector<Elem>c1(c2)
+  ```
+
+* Simple Methods
+
+  ```c++
+  V.size()
+  V.empty()
+  V.swap(v2)
+  ```
+
+* Iterators
+
+  ```c++
+  I.begin()
+  I.end()
+  ```
+
+* Element access
+
+  ```c++
+  V.at(index)
+  V[index]
+  V.front()
+  V.back()
+  ```
+
+* Add/Remove/Find
+
+  ```c++
+  V.push_back(e)
+  V.pop_back(e)
+  V.insert(pos,e)
+  V.erase(pos)
+  V.clear()
+  V.find(first,last,item)
+  ```
 
 * Insert & erase -- use iterator
 
@@ -416,5 +462,117 @@ public:
 ​	且不能再加`static`
 
 ### Namespace
+
+**Example**
+
+```c++
+void main() {
+    using MyLib::foo;
+    using MyLib::Cat;
+    foo();
+    Cat c;
+    c.Meow();
+}
+```
+
+```c++
+// Mylib.h
+namespace XLib {
+    void x();
+    void y();
+}
+namespace YLib {
+    void y();
+    void z();
+}
+
+//Main
+void main() {
+    using namespace XLib;
+    using namespace YLib;
+    x(); // OK
+    y(); // Error: ambiguous
+    XLib::y(); // OK, resolves to XLib
+    z(); // OK
+}
+
+```
+
+#### Namespace aliase
+
+```c++
+namespace supercalifragilistic{
+  void f();
+}
+namespace short1 = supercalifragilistic;
+short1::f();
+```
+
+#### Namespace composition
+
+- Compose new namespaces using names from other ones.
+- Using-declarations can resolve potential clashes.
+- Explicitly defined functions take precedence.
+
+```c++
+namespace first {
+    void x();
+    void y();
+}
+namespace second {
+    void y();
+    void z();
+}
+namespace mine {
+    using namespace first;
+    using namespace second;
+    using first::y(); // resolve clashes to first::x()
+    void mystuff();
+    // ...
+}
+```
+
+#### Namespaces are open
+
+```c++
+//header1.h
+namespace X {
+    void f();
+}
+// header2.h
+namespace X {
+    void g(); // X how has f() and g();
+}
+```
+
+#### Namespace selection 
+
+- Compose namespaces by **selecting a few features** from other namespaces.
+- Choose **only the names you want** rather than all.
+- Changes to "orig" declaration become reflected in "mine".
+
+```c++
+namespace mine {
+    using orig::Cat; // use Cat class from orig
+    void x();
+    void y();
+}
+```
+
+### Appendix
+
+* `C++` 链接器不去做参数类型的判断，那么怎么做overload , namespace？
+
+  `f(int a,float b)` will turn into `_f_int_double_()`
+
+  `namespace func(void f();) _func_f_()`
+
+* 老版本`C`编译产生的是不带下划线的 solution：
+
+  ```c++
+  exetern "C"{
+    #include "oldc.h"
+  }
+  ```
 
 </font>

@@ -1,6 +1,7 @@
 <font face = 'Times New Roman'>
-  
-* We can build heap by $T_a=O(n)/n=O(1)$ , Therefore , we try to delete/insert the heap with time complexity less. say $T_a=O(1)$
+
+* We can build heap by $T_a=O(n)/n=O(1)$ , Therefore , we try to delete/insert the heap with time complexity less. say $T_a=O(1)$​
+* HW 4: https://blog.csdn.net/ZJU_fish1996/article/details/50992928
 ## Leftist Heaps
 
 ### Definition

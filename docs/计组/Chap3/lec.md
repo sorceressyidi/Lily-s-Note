@@ -1,3 +1,5 @@
+<font face = "Times New Roman">
+
 # Chap3.Arithmetic for computer
 
 ??? "Introduction"
@@ -8,7 +10,11 @@
 
 #### Signed and Unsigned Numbers  Possible Representations
 
-![2](2.png)
+??? "Example"
+
+    <div align=center> ![2](2.png) </div>  
+
+
 
 * Sign Magnitude. Positive & Negative Zero **(Problem !)**
 * One's Complement : 取反. Positive & Negative Zero **(Problem !)**
@@ -210,7 +216,9 @@ Look at current bit position
 * If multiplier is $1$ then add multiplicand Else add 0
 * shift multiplicand left by 1 bit
 
-![22](22.png)
+??? "Example"
+
+    <div align=center> ![22](22.png) </div>  
 
 ??? "Multiplexter V1"
 
@@ -342,23 +350,23 @@ Standardized format  **IEEE 754**
 
 > Algorithm
 
-* Add exponents - bias
+* Add exponents **- bias**.
 
-* Multiply the significands
+* Multiply the significands.
 
-  
+* Normalize.
 
-* Normalize
+* Over- underflow.
 
-* Over- underflow
+* Rounding.
 
-* Rounding
-
-* Sign
+* Sign.
 
 ![56](56.png)
 
-![57](57.png)
+??? "EXAMPLE"
+
+    <div align=center>![57](57.png) </div>  
 
 #### float devision
 
@@ -368,3 +376,95 @@ Standardized format  **IEEE 754**
 * Rounding
 * Sign
 
+### Accurate Arithmetic
+
+* **IEEE 754** always keeps two extra bits on the right during intermediate additions, called **guard** and **round**
+
+  > 为了保证四舍五入的精度,结果没有,只在运算的过程中保留
+
+??? "EXAMPLE"
+
+    <div align=center>![58](58.png) </div>  
+
+* sticky bit
+
+A bit used in rounding in addition to guard and round that is set whenever there are nonzero bits **to the right of the round bit**. 
+
+* allows the computer to see the difference between $0.50 ... 00_{ten}$ and $0.50 ... 01_{ten}$​ when rounding.
+
+??? "EXAMPLE for guard,round and sticky bit."
+
+    <div align=center>![60](60.png) </div>  
+
+#### Round Modes
+
+??? "EXAMPLE"
+
+    <div align=center>![59](59.png) </div>  
+
+#### Parallelism and Computer Arithmetic: Associativity 
+
+if   $x + (y+ z) = (x + y) + z  ?$
+
+* $x = -1.5_{ten} \times 10^{38},y= 1.5_{ten} \times 10^{38}, and\ z = 1.0$
+* $x + (y + z) = 0.0$
+* $(x+y) + z = 1.0$
+
+### Exercise
+
+已知$F(n) = Σ2^i = 2^{n+1} -1 = 111…1B$
+
+* n+1个1计算F(n)的C语言函数f1如下
+
+   ```C
+   int  f1（ unsigned n){   
+       int  sum = 1, power = 1;
+       for ( unsigned i=0;  i<=n-1;  i++ ){    
+         	power * = 2;
+           sum += power;
+      }
+      return sum;
+   }
+   ```
+
+* 将f1中的int都改为float，可得到计算f(n)的另一个函数f2.
+
+  假设unsigned和int型数据都占32位，float采用**IEEE 754**单精度标准(IEEE 754采用的是最近舍入`round to nearest`的方式) , 回答一下问题：
+
+  * 当n=0时，$f1$会出现死循环，为什么？若将$f1$中变量$i$和$n$都定义为int型，则$f1$​是否还会出现死循环？为什么？
+
+    * `unsigned 0 -1` -- 大数，`i<=n-1` 永真，所以死循环.
+
+    * 若i和n改为int类型，不会死循环:`n=0`时，`n-1`的值为`-1`，故`i<=n-1` 不成立，退出循环
+
+  * f1(23)和f2(23) 的返回值是否相等？机器数各是什么（用十六进制表示)
+
+    Signle presion `bias = 127`
+
+    $f1(23)=00FFFFFFh$
+
+    $f2(23)=0_{sign}10010110_{exponent(bias)}....=0100\ 1011\ 0111\ 1111\ 1111\ 1111\ 1111\ 1111=47BFFFFFH$
+
+  * $f1(24)$和$f2(24)$的返回值分别为$33554431$和$33554432.0$，为什么不相等？
+
+    当$n=24$时，$f(24)=11….1B$,float只有24位有效位，舍入后数值增大，所以$f2(24)$比$f1(24)$大$1$.
+
+  * $f(31) = 2^{32} -1$, 而$f1(31)$的返回值却为$-1$，为什么？若使$f1(n)$的返回值与$f(n)$​相等，最大的n是多少？
+
+    $F(31)$超出int数据的表示范围，用$f1(31)$实现时得到机器数为32个1，作为int解释时其值为`-1`
+
+    因为`int`最大可表示数为0后跟31个1，所以$f1(n)$的返回值与$f(n)$相等的最大$n$值是30。
+
+  * $f2(127)$的机器数为$7F80 0000H$，对应的值是什么？若使$f2(n)$的结果不溢出，则最大的n是多少？若使$f2(n)$的结果精确（无舍入），则最大的$n$​是多少？
+
+    * IEEE用`阶码全1,尾数为0`表示无穷大
+
+      F2返回值为float，机器数为$7F80 0000H$对应的值是$+∞$
+
+    * `n=126`时，对应阶码为253，尾数部分舍入后阶码加1，最终阶码为254，不溢出的最大n值为`126`.
+
+      `N=23`时，f(23)为24位1，float有24位有效位，所以不需舍入，结果精确
+
+      故使f2获精确结果的最大n值为 **23**.
+
+</font>

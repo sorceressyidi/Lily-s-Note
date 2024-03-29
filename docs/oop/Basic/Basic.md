@@ -482,6 +482,7 @@ int main()
 * If no default constructer is coded , the compiler will automatically implement one(in default version)
 
 #### Initialization VS assignment
+
 ```C++
 Student::Student(string s):name(s){} //initialization before constructor
 // Prefered
@@ -489,6 +490,16 @@ Student::Student(string s):name(s){} //initialization before constructor
 > 这意味着我们在构造函数的初始化列表中对 name 成员变量进行了初始化
 > 在构造函数体内，我们没有对 name 进行赋值操作，而是在构造函数的初始化列表中直接将传递给构造函数的参数 s 赋值给了 name,这样的操作是在构造函数体执行之前，即在构造函数被调用时，就对 name 进行了初始化
 > 因此，可以说这是“初始化（Initialization）在构造函数（Constructor）之前（Before）”执行的，即“initialization before constructor”
+
+
+**Assignment**
+
+```cpp
+Student::Student(string s) {name=s;}
+```
+
+* string must have a default constructor  : (先构造出 string 的对象 name, 再赋值)
+
 ```C++
 Student::Student(sring s){
   name = s;
@@ -497,12 +508,12 @@ Student::Student(sring s){
 ```
 ```C++
 void func() {
-    int x; // 在函数内部声明的变量
-    // 空间在函数执行时分配
+    int x;  // 在函数内部声明的变量
+    				// 空间在函数执行时分配
 }
 void func() {
     static int x; // 静态变量
-    // 空间在程序启动时分配
+    						  // 空间在程序启动时分配
 }
 ```
 
@@ -572,7 +583,7 @@ void f(int i){
 }
 ```
 
-* Memory for x1(x2) is allocated , but not initialized , so **destruction** will fail
+* Memory for $x_1$($x_2$) is allocated , but not initialized , so **destruction** will fail
 
 #### Definitions of a class
 
@@ -685,8 +696,8 @@ void Clock::dida(){
   cout << endl;
 }
 ```
-* What if ?
-`clock.h`
+* What if ?  `clock.h`
+
 ```C++
 #ifndef _CLOCK_HEAD_
 #define _CLOCK_HEAD_
