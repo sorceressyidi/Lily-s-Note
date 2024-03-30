@@ -386,7 +386,18 @@ revoke select on branch  from U1, U2, U3
 * All privileges that depend on the privilege being revoked are also revoked.
 
 ## Advanced sql
-API (application-program interface) for a program to interact with a database server
+
+There are two approaches to accessing  database from a general-purpose programming language.
+
+**API (application-program interface) for a program to interact with a database server**
+
+**Embedded SQL -- provides a means by which a program can interact with a database server.  **
+
+* The  SQL statements are translated at compile time  into function calls.  
+* At runtime,  these function calls connect to the database  using an API  that provides dynamic  SQL facilities.
+
+
+
 * ODBC (Open Database Connectivity) works with C, C++, C#
 * JDBC (Java Database Connectivity) works with Java
 * Embedded SQL in C
@@ -415,9 +426,10 @@ public static void JDBCexample(String dbid, String userid, String passwd){
 ```java
 try {
      stmt.executeUpdate(
-          "insert into instructor values(’77987’, ’Kim’, ’Physics’, 98000)");
-} catch (SQLException sqle)
-{
+          "insert into instructor values(’77987’, ’Kim’, ’Physics’, 98000)"
+     );
+} 
+catch (SQLException sqle){
     System.out.println("Could not insert tuple. " + sqle);
 }
 ```
@@ -428,18 +440,28 @@ ResultSet rset = stmt.executeQuery(
                                  from instructor
                                  group by dept_name");
 while (rset.next()){
-       System.out.println(rset.getString("dept_name") + " " +
-                                              rset.getFloat(2));
+       System.out.println(rset.getString("dept_name") + " " +rset.getFloat(2));
 }
 ```
 
+* Getting result fields:
+
+  `rset.getString(“dept_name”)` and `rset.getString(1)` equivalent if dept_name is the first argument of select result.
+
+* Dealing with Null values
+
+  `int a = rset.getInt(“a”);  if (rset.wasNull()) Systems.out.println(“Got null value”);`
+
 * Prepared Statement
 ```java
-PreparedStatement pStmt = conn.prepareStatement( 
-                                "insert into instructor values(?,?,?,?)");
-pStmt.setString(1, "88877");      pStmt.setString(2, "Perry");
-pStmt.setString(3, "Finance");   pStmt.setInt(4, 125000);
-pStmt.executeUpdate();    
+PreparedStatement pStmt = conn.prepareStatement( "insert into instructor values(?,?,?,?)");
+pStmt.setString(1, "88877");      
+pStmt.setString(2, "Perry");
+pStmt.setString(3, "Finance");   
+pStmt.setInt(4, 125000);
+
+pStmt.executeUpdate();   
+
 pStmt.setString(1, "88878");
 pStmt.executeUpdate();
 ```
@@ -448,9 +470,7 @@ pStmt.executeUpdate();
 ```java
 "insert into instructor values(’ " + ID + " ’, ’ " + name + " ’, " + 
                                             " ’ " + dept name + " ’, " + salary + ")"
-```                                           
-* What if name is “D’Souza”?
-
+```
 #### SQL Injection  
 ![13](13.png)
 
@@ -460,9 +480,64 @@ ResultSetMetaData rsmd = rs.getMetaData();
      for(int i = 1; i <= rsmd.getColumnCount(); i++) {
            System.out.println(rsmd.getColumnName(i));
                   System.out.println(rsmd.getColumnTypeName(i));
-       }
+}
 ```
+#### Transaction Control in JDBC
+
+* By default, each SQL statement is treated as a separate transaction that is committed automatically
+
+  **bad idea for transactions with multiple updates**
+
+* Can turn off automatic commit on a connection
+
+  ```java
+  conn.setAutoCommit(false);
+  ```
+
+* Transactions must then be committed or rolled back explicitly
+
+  ```java
+  conn.commit();    
+  conn.rollback();
+  ```
+
+* `conn.setAutoCommit(true)` turns on automatic commit.
+
+![14](14.png)
+
+### SQLJ: embedded SQL in Java
+
+```java
+#sql iterator deptInfoIter ( String dept name, int avgSal);
+	deptInfoIter iter = null;
+	#sql iter = { select dept_name, avg(salary) as avgSal from instructor group by dept name };
+	while (iter.next()) {
+		   String deptName = iter.dept_name();
+	      int avgSal = iter.avgSal();
+	      System.out.println(deptName + " " + avgSal);
+	}
+	iter.close();
+```
+
 ### ODBC
+
+Each database system supporting ODBC provides a **"driver"** library that must be linked with the client program.
+
+When client program makes an ODBC API call, the code in the library communicates with the server to carry out the requested action, and fetch results.
+
+ODBC program first allocates an **SQL environment**, then a database connection handle.
+
+Opens database connection using SQLConnect( ).  Parameters for SQLConnect:
+
+* connection handle
+* the server to which to connectthe 
+* user identifier,
+* password 
+
+Must also specify types of arguments:
+
+* SQL_NTS denotes previous argument is a null-terminated string.
+
 ```C
 int ODBCexample()
 {
@@ -479,8 +554,158 @@ int ODBCexample()
 }
 ```
 
+* Program sends SQL commands to database by using `SQLExecDirect`
+
+* **Result tuples** are fetched using `SQLFetch()`
+
+* `SQLBindCol()` binds C language variables to attributes of the query result When a tuple is fetched, its attribute values are automatically stored in corresponding C variables.
+
+* Arguments to `SQLBindCol()`
+
+  ODBC stmt variable, attribute position in query result
+
+  The type conversion from SQL to C.  
+
+  The address of the variable. 
+
+  For variable-length types like character arrays, 
+
+  * The maximum length of the variable
+  *  Location to store actual length when a tuple is fetched.
+  * Note: A negative value returned for the length field indicates null value
+
+**Good programming requires checking results of every function call for errors; we have omitted most checks for brevity.**
+
+```C
+char deptname[80];
+float salary;
+int lenOut1, lenOut2;
+
+HSTMT stmt;
+char * sqlquery = "select dept_name, sum (salary) from instructor group by dept_name";
+SQLAllocStmt(conn, &stmt);
+error = SQLExecDirect(stmt, sqlquery, SQL_NTS);
+
+if (error == SQL SUCCESS) {
+    SQLBindCol(stmt, 1, SQL_C_CHAR, deptname , 80, &lenOut1);
+    SQLBindCol(stmt, 2, SQL_C_FLOAT, &salary, 0 , &lenOut2);
+    while (SQLFetch(stmt) == SQL_SUCCESS) {
+        printf (" %s %g\n", deptname, salary);
+    }
+}
+SQLFreeStmt(stmt, SQL_DROP);
+//定义数组需要多一个，否则会有截断。如 char deptname[11]; 才能定义十个元组。
+//如果结果为空，则 lenOut 为 -1.
+```
+
+#### ODBC Prepared Statements
+
+```C
+SQLPrepare(stmt, <SQL String>);
+SQLBindParameter(stmt, <parameter#>,
+                 … type information and value omitted for simplicity..)
+ retcode = SQLExecute( stmt); 
+```
+
+![15](15.png)
+
+### Embedded SQL
+
+* Before executing any SQL statements, the program must first connect to the database.  This is done using:
+
+  ```sql
+  EXEC-SQL connect to  server  user user-name using password;
+  ```
+
+* Variables of the **host language** can be used **within embedded SQL** statements.  
+
+  They are preceded  by a colon  (:) to distinguish from SQL variables (e.g.,  :credit_amount )
+
+* Host Variables used as above must be declared within DECLARE section, as illustrated below. The syntax for declaring the variables, however, follows the usual host language syntax.
+
+  ```sql
+  EXEC-SQL BEGIN DECLARE SECTION
+     int  credit-amount ;
+  EXEC-SQL END DECLARE SECTION;
+  ```
+
+* To write an embedded SQL query, we use the 
+
+  ```sql
+  declare c cursor for  <SQL query> 
+  ```
+
+  ```sql
+  EXEC SQL
+  	 declare c cursor for
+  	 select ID, name
+  	 from student
+  	 where tot_cred > :credit_amount;
+  ```
+
+```sql
+main( )
+{   EXEC SQL INCLUDE SQLCA; //声明段开始
+    EXEC SQL BEGIN DECLARE SECTION;
+    char account_no [11];    //host variables(宿主变量)声明
+    char branch_name [16];
+    int  balance;  
+		EXEC SQL END DECLARE SECTION;//声明段结束
+		EXEC SQL CONNECT  TO  bank_db  USER Adam Using Eve; 
+		scanf (“%s  %s  %d”, account_no, branch_name, balance);
+		EXEC SQL insert into account values (:account_no, :branch_name, :balance);
+		If (SQLCA.sqlcode ! = 0){printf ( “Error!\n”);}
+		else {printf (“Success!\n”);}å
+```
+
+* **the open statement**
+
+   This statement causes the database system to execute the query and  to save the results within a temporary relation.  
+
+  The query uses the value of the **host-language variable credit-amount at the time the open statement is executed**.
+
+  ```sql
+  EXEC SQL open c ;
+  ```
+
+* The fetch statement causes the values of one tuple in the query result to be placed on host language variables.
+
+  ```sql
+  EXEC SQL fetch c into :si, :sn；
+  ```
+
+* A variable called SQLSTATE in the SQL communication area (SQLCA) gets set to '02000' to indicate no more data is available
+
+* The close statement causes the database system to delete the temporary relation that holds the result of the query.
+
+  ```sql
+  EXEC SQL close c ;
+  ```
+
+#### Updates Through Embedded SQL
+
+* Can update tuples fetched by cursor by declaring that the cursor is for update
+
+  ```sql
+   EXEC SQL 
+  declare c cursor for
+  select *
+  from instructor
+  where dept_name = 'Music'
+  for update
+  
+  ```
+
+  We then iterate through the tuples by performing  fetch operations on the cursor , and after fetching each tuple we execute the following code:
+
+  ```sql
+   update instructor
+   set salary = salary + 1000
+   where current of c
+  ```
 
 ### Procedural Constructs in SQL
+
 #### SQL Functions
 ```sql
  create function dept_count (dept_name varchar(20))
@@ -518,13 +743,12 @@ from table (instructors_of (‘Music’))
 #### SQL Procedures
 * The dept_count function could instead be written as procedure:
 ```sql
-create procedure dept_count_proc (in dept_name varchar(20), 
-                                  out d_count integer)
+create procedure dept_count_proc (in dept_name varchar(20), out d_count integer)
 begin
   select count(*) into d_count
   from instructor
   where instructor.dept_name = dept_count_proc.dept_name
-     end
+end
 ```
 * Procedures can be invoked either from an SQL procedure or from embedded SQL, using the call statement
 ```sql
@@ -537,21 +761,25 @@ call dept_count_proc( ‘Physics’, d_count)
 declare n integer default 0;
 while n < 10 do
   set n = n + 1
-end while              
+end while   
+```
+```sql
 repeat
   set n = n  – 1
   until n = 0
 end repeat
 ```
+
 * For loop
+
 ```sql
-declare n  integer default 0;
-   for r  as
-          select budget from department
-          where dept_name = ‘Music’
+declare n integer default 0;
+   for r as
+      select budget from department
+      where dept_name = ‘Music’
     do
-       set n = n - r.budget
-    end for
+      set n = n - r.budget
+   end for
 ```
 * Conditional statements  (if-then-else)
 ```sql
@@ -641,14 +869,8 @@ end;
 create trigger timeslot_check2 after delete on timeslot
 referencing old row as orow
 for each row
-when (orow.time_slot_id not in (
-               select time_slot_id
-               from time_slot) 
-                         /* last tuple for time slot id deleted from time slot */
-          and orow.time_slot_id in (
-               select time_slot_id
-               from section))
-                 /* and time_slot_id still referenced from section*/
+when (orow.time_slot_id not in (select time_slot_id from time_slot) /* last tuple for time slot id deleted from time slot */
+and orow.time_slot_id in (select time_slot_id from section))/* and time_slot_id still referenced from section*/
 begin
     rollback
 end;
@@ -670,16 +892,38 @@ begin atomic
 end;
 ```
 #### Statement Level Triggers
+
+Instead of executing a separate action for each affected row, a single action can be executed for all rows affected by a transaction.
+
+* Use  `for each statement`    instead of  `for each row`
+
 ```sql
 create trigger grade_trigger after update of takes on grade
-      referencing new table as new_table                                                                          
+      referencing new table as new_table                                                                 
       for each statement
-      when  exists( select avg(grade)
-                             from new_table
-                             group by course_id, sec_id, semester, year
-                             having avg(grade)< 60 )
+      when exists(select avg(grade)
+                    from new_table
+                    group by course_id, sec_id, semester, year
+                    having avg(grade)< 60 )
       begin 
  rollback
       end
-
 ```
+
+### Recursive Queries
+
+```sql
+with recursive rec_prereq(course_id, prereq_id) as (
+  select course_id, prereq_id
+  from prereq
+  union
+  select rec_prereq.course_id, prereq.prereq_id
+  from rec_prereq, prereq
+  where rec_prereq.prereq_id = prereq.course_id)
+select ∗from rec_prereq;
+```
+
+* This example view, rec_prereq, is called the transitive closure of the prereq relation
+
+![16](16.png)
+
