@@ -1,3 +1,4 @@
+<font face = "Times New Roman">
 ## Backtracking
 
 The basic idea is that suppose we have a partial solution $( x_1, ... , x_i )$ where each $x_k \in S_k$ for  $1 \le k \le i < n$.   First we add  $x_{i+1} \in S_{i+1}$ and check if $( x_1, ... , x_i, x_{i+1} )$ satisfies the constrains.  If the answer is $“yes”$ we continue to add the next $x$, else we delete $x_i$ and backtrack to the previous partial solution $( x_1, ... , x_{i-1} )$​.
@@ -122,3 +123,4 @@ Idea:
 * More: Refer to Monte Carlo Tree Search
 * https://aistudio.baidu.com/projectdetail/3773997?channelType=0&channel=0
 
+</font>

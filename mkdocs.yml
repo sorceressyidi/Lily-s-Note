@@ -92,6 +92,7 @@ nav:
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md
+        - E-R Model : CMU 15-445/ER/lec.md
       - CMU 15-445:
         - Chapter 1 : CMU 15-445/Chap1/Chap1.md
         - Chapter 2 : CMU 15-445/Chap2/Chap2.md
@@ -162,14 +163,14 @@ nav:
       - Traning Neural Networks: DL_CV/TN/lec.md
       - Recognision : DL_CV/Recognition/lec10.md
     - CS231n:
-      - Lecture 8: Recurrent Neural Networks: CS231n/RNN/lec.md
-      - Lecture 9: Attention & Transformers: CS231n/lec9/lec.md
-      - Lecture 10: Video Understanding: CS231n/lec10/lec.md
-      - Lecture 12: Visualizing and Understanding: CS231n/lec12/lec.md
-      - Lecture 13: Self-Supervised Learning: CS231n/lec13/lec.md
-      - Lecture 14: Robot Learning: CS231n/lec14/lec.md
-      - Lecture 15: Generative Models: CS231n/lec15/lec.md
-      - Lecture 16: 3D Vision: CS231n/lec16/lec.md
+      - Lecture 8 Recurrent Neural Networks: CS231n/RNN/lec.md
+      - Lecture 9 Attention & Transformers: CS231n/lec9/lec.md
+      - Lecture 10 Video Understanding: CS231n/lec10/lec.md
+      - Lecture 12 Visualizing and Understanding: CS231n/lec12/lec.md
+      - Lecture 13 Self-Supervised Learning: CS231n/lec13/lec.md
+      - Lecture 14 Robot Learning: CS231n/lec14/lec.md
+      - Lecture 15 Generative Models: CS231n/lec15/lec.md
+      - Lecture 16 3D Vision: CS231n/lec16/lec.md
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
