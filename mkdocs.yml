@@ -161,6 +161,15 @@ nav:
       - Hardware & Software: DL_CV/Pytorch/lec.md
       - Traning Neural Networks: DL_CV/TN/lec.md
       - Recognision : DL_CV/Recognition/lec10.md
+    - CS231n:
+      - Lecture 8: Recurrent Neural Networks: CS231n/RNN/lec.md
+      - Lecture 9: Attention & Transformers: CS231n/lec9/lec.md
+      - Lecture 10: Video Understanding: CS231n/lec10/lec.md
+      - Lecture 12: Visualizing and Understanding: CS231n/lec12/lec.md
+      - Lecture 13: Self-Supervised Learning: CS231n/lec13/lec.md
+      - Lecture 14: Robot Learning: CS231n/lec14/lec.md
+      - Lecture 15: Generative Models: CS231n/lec15/lec.md
+      - Lecture 16: 3D Vision: CS231n/lec16/lec.md
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
