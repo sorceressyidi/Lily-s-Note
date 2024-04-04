@@ -89,6 +89,8 @@ nav:
     - Anvanced Data Structure:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
+      - Analysis:
+        - backtracking: ADS/analysis/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md
