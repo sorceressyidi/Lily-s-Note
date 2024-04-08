@@ -90,11 +90,13 @@ nav:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
       - Analysis:
-        - backtracking: ADS/analysis/lec.md
+        - backtracking: ADS/back/lec.md
+        - Divide and Conquer: ADS/D&C/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md
         - E-R Model : CMU 15-445/ER/lec.md
+        - Relational Database Design : CMU 15-445/Relational/lec.md
       - CMU 15-445:
         - Chapter 1 : CMU 15-445/Chap1/Chap1.md
         - Chapter 2 : CMU 15-445/Chap2/Chap2.md
