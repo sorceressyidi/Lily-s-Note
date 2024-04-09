@@ -1,6 +1,9 @@
 <font face = 'Times New Roman'>
 
 # Chap2:Language of the Computer(RISC V)
+??? "Summary"
+
+    <div align=center> ![a](a.png) ![b](b.png)![c](c.png)![d](d.png)![e](e.png)![f](f.png)![j](j.png)</div>  
 
 #### Instruction Characteristics
 ![1](1.png)
@@ -496,7 +499,180 @@ Jave使用自动内存分配和垃圾回收机制来避免这类错误
 ![27](27.png)
 
 ## communication with people
+### Byte/Halfword/Word Operations
+Load byte/halfword/word: Sign extend to 64 bits in rd
+• lb rd, offset(rs1)
+• lh rd, offset(rs1)
+• lw rd, offset(rs1)
+Load byte/halfword/word unsigned: Zero extend to 64 bits in rd
+• lbu rd, offset(rs1)
+• lhu rd, offset(rs1)
+• lwu rd, offset(rs1)
+Store byte/halfword/word: Store rightmost 8/16/32 bits
+• sb rs2, offset(rs1)
+• sh rs2, offset(rs1)
+• sw rs2, offset(rs1)
 
+### String
+Three choices for representing a string
+*  Place the length of the string in the first position
+*  An accompanying variable has the length
+*  A character in the  last position to mark the end of a string
+```C
+void    strcpy ( char    x[  ] ,    char    y[  ] )
+      {
+              size_t    i ;
+              i  =  0 ;
+              while ( ( x[ i ]  =  y[ i ] )  != ‘\ 0’ )       /* copy and test byte  */
+                          i  +=  1 ;
+      }
+```
+Assume : i--x19, x's base--x10, y's base--x11
+```assembly
+strcpy :
+      addi sp,sp,-8
+      sd   x19,0(sp)
+      add  x19,x0,x0
+L1:
+      add x5,x11,x19  ;x5 = &y[i]
+      lbu x6,0(x5)    ;x6 = y[i]
+      add x7,x10,x19  ;x7 = &x[i]
+      sb  x6,0(x7)    ;x[i] = y[i]
+      beq x6,x0,Exit  ;if y[i] == 0, exit
+      addi x19,x19,1  ;i += 1
+      jal  x0,L1
+Exit:
+      ld   x19,0(sp)
+      addi sp,sp,8
+      jalr x0,0(x1)
+```
+**For a leaf procedure**
+* The compiler exhausts all temporary registers 
+* Then use the registers it must save
+> x5 – x7, x28 – x31:  temporary registers : Not preserved by the callee
 
+## RISC-V Addressing for Wide Immediate & Addresses
+For occasional 32-bit constant `lui rd,constant` 
+* copy the 20-bit constant to the upper 20 bits of rd
+* Extends the constant to 64 bits by setting the lower 12 bits to 0
+![29](29.png)
+![30](30.png)
+Better:
+* `lui rd,constant[31:12]`
+* `ori rd,rd,constant[11:0]`
+### Branch Addressing
+* Use offset addressing for branches
+* The lowest bit of the offset is always 0! Not stored.
+![31](31.png)
+![32](32.png)
+> More specifically
+>  `beq x0,x0 Loop`
+>  OP + func3 --> beq
+>  rs1 --> x0
+>  rs2 --> x0
+>  offset = -20 = 111111101100
+> 截断最后一位，得到 11111110110
+> im[12] + im[10:5] + im[4:1] + im[11] + 0
+> rd/offset -> im[4:1]+im[11]
+> im[12] : sign bit
+* Offset > 12 bits ?
+Rewrite it to offer a much greater branching distance:
+```assembly
+bne    x10, x0, L2
+jal     x0,   L1
+L2:...
+```
+`JAL` instruction: 20-bit offset
+![33](33.png)
+**How to know the offset?**
+
+* Label Table
+
+### Decoding Machine Language
+![34](34.png)
+## Parallelism and Instructions : Synchronizatio
+![35](35.png)
+
+### Translating and Starting a Program
+* Compiler translates high-level language to assembly
+* Assembler translates assembly to machine language
+  * pseudo-instructions
+  * symbol table:a table that mathches labels to addresses
+* Producing an object file of UNIX
+
+**Object File:**
+![36](36.png)
+**Linking Object modules**
+![37](37.png)
+**Dynamic Linking**
+Only link/load the needed library routines when it is called
+* Requires procedure code to be relocatable
+* Avoids image bloat caused by static linking of all (transitively) referenced libraries
+* Automatically picks up new library versions
+
+**Lazy Linkage**
+![38](38.png)
+Second time the link is called,much faster.
+
+执行文件
+* 在硬盘上，非执行态：如病毒样本
+进程
+* 转载到内存
+* 可以细分为多个可以并发执行的线程：如激活态病毒
+* 如何看线程: 任务管理器
+
+### Example
+```C
+void   swap ( long  long    v[  ] ,    size_t  k )
+     {
+            long  lon   temp ;
+            temp  =  v[ k ] ;
+            v[ k ] =  v[ k + 1 ] ;
+            v[ k + 1 ]  =  temp ;
+     }
+```
+```assembly
+swap:
+    slli x6,x11,3     //x6 = k*8
+    add  x6,x10,x6    //x6 = &v[k]
+    ld   x5,0(x6)     //x5 = v[k]
+    ld   x7,8(x6)     //x7 = v[k+1]
+    sd   x7,0(x6)     //v[k] = v[k+1]
+    sd   x5,8(x6)     //v[k+1] = v[k]
+    jalr x0,0(x1)     //return
+```
+```C
+void  sort (long  long    v[  ] ,    size_t    n )
+     {
+             size_t    i ,  j ;
+             for ( i  =  0 ; i  <  n ; i + =  1 ) {
+                    for ( j  =  i  -  1 ; j  >=  0  &&  v[j]  >  v[j+1] ; j -=  1 )
+                             swap ( v ,  j ) ;
+             }
+     }
+```
+```assembly
+sort:
+  addi sp,sp,-40
+  sd x1 ,32(sp)
+  sd x22,24(sp)
+  sd x21,16(sp)
+  sd x20,8(sp)
+  sd x19,0(sp)
+for1tst:
+  bge x19,x20,exit1
+  ....
+exit2:
+  addi x19,x19,1
+  j for1tst
+exit1:
+  ld x19,0(sp)
+  ld x20,8(sp)
+  ld x21,16(sp)
+  ld x22,24(sp)
+  ld x1,32(sp)
+  addi sp,sp,40
+  jalr x0,0(x1)
+```
 
 </font>
