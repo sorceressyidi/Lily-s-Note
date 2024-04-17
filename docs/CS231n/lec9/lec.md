@@ -75,3 +75,63 @@ Each timestep of decoder uses a different context vector that looks at different
 
 #### Attention Layer
 
+![14](14.png)
+Attention operation is permutation invariant.
+- Doesn't care about ordering of the features
+- Stretch H x W = N into N vectors
+
+Change $f_{att}$ to a simple dot product
+- only works well with key & value transformation trick (will mention in a few slides)
+
+Change $f_{att}(.)$ to a scaled simple dot product
+- Larger dimensions means more terms in the dot product sum.
+- So, the variance of the logits is higher. Large magnitude vectors will produce much higher logits.
+- So, the post-softmax distribution has lower-entropy, assuming logits are IID.
+- Ultimately, these large magnitude vectors will cause softmax to peak and assign very little weight to all others
+- Divide by √D to reduce effect of large magnitude vectors
+
+Notice that the input vectors are used for both the alignment as well as the attention calculations.
+- We can add more expressivity to the layer by adding a different FC layer before each of the two steps.
+![15](15.png)
+![16](16.png)
+* Self Attention Layer does not **CARE** about the order of the input vectors!
+* Use positional encoding to give the model some notion of order.
+![17](17.png) 
+
+![31](31.png)
+
+**Desiderata of pos(.) :**
+
+1. It should output a unique encoding for each time-step (word’s position in a sentence)
+2. Distance between any two time-steps should be **consistent** across sentences with different lengths.
+3. Our model should generalize to longer sentences without any efforts. Its values should be bounded.
+4. It must be **deterministic**.
+![18](18.png)
+
+#### Masked Self Attention
+- Prevent vectors from looking at future vectors.
+- Manually set alignment scores to infinity
+![19](19.png)
+* Commonly used for language modeling tasks
+
+#### Multi-Head Attention
+
+![21](21.png)
+![20](20.png)
+![22](22.png)
+
+### Transformers
+![23](23.png)
+![24](24.png)
+
+#### Image Captioning with Transformers
+![25](25.png)
+![26](26.png)
+
+![27](27.png)
+![28](28.png)
+
+
+
+![30](30.png)
+

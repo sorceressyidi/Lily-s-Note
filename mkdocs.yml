@@ -92,6 +92,7 @@ nav:
       - Analysis:
         - backtracking: ADS/back/lec.md
         - Divide and Conquer: ADS/D&C/lec.md
+        - Dynamic Programming: ADS/dy/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md
@@ -121,7 +122,7 @@ nav:
         - Chapter 21 : CMU 15-445/Chap21/Chap21.md
         - Chapter 22 : CMU 15-445/Chap22/Chap22.md
     - Computer Organization : 
-      - Introduction : 计组/Intro/intro.md
+      - Chapter1 : 计组/Intro/intro.md
       - Chapter2 : 计组/Chap2/lec.md
       - Chapter3 : 计组/Chap3/lec.md
   - Math & Physics:

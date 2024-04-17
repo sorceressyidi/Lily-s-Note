@@ -193,12 +193,12 @@ dependency preserving
 * It is always possible to get a 3NF decomposition that is dependency preserving
 ![20](20.png)
 ### 7.4 Third Normal Form (3NF)
-* A relation schema R is in 3NF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form $\alpha$ $\to$ $\beta, at least one of the following holds:
-  * $\alpha$ $\to$ $\beta$ is a trivial functional dependency
+* A relation schema R is in 3NF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form $\alpha$ $\to$ $\beta$, at least one of the following holds:
+  * $\alpha$ $\to \beta$ is a trivial functional dependency
   * $\alpha$ is a superkey for schema R
-  * Each attribute A in $\beta$ - $\alpha$ is contained in a candidate key for R
+  * **Each attribute A in $\beta$ - $\alpha$ is contained in a candidate key for R**
 * If a relation is in BCNF it is in 3NF (since in BCNF one of the first two conditions above must hold).
-* Third condition is a minimal relaxation of BCNF to ensure dependency preservation.
+* **Third condition is a minimal relaxation of BCNF to ensure dependency preservation.**
 ![21](21.png)
 ![22](22.png)
 * It is always possible to decompose a relation into a set of relations that are in 3NF such that:
@@ -210,5 +210,25 @@ dependency preserving
 
 ### 7.5 Modeling and Normal Forms
 ![23](23.png)
+
+### 7.6 Multivalued Dependencies
+![24](24.png)
+![25](25.png)
+
+Let R be a relation schemma with a set of attributes that are partitioned into 3 nonempty subsets Y,Z,W.
+
+We say that Y->->Z if and only if for all possible relations r(R)
+<y1,z1,w1>$\in$ r and <y1,z2,w2>$\in$ r then we have <y1,z1,w2>$\in$ r and <y1,z2,w1>$\in$ r 
+* Note:we can also get Y->->W
+
+![26](26.png)
+
+#### Fourth Normal Forth
+
+![27](27.png)
+![28](28.png)
+
+**Example**
+![29](29.png)
 
 

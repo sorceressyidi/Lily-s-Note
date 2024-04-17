@@ -7,9 +7,13 @@
 
 #### Instruction Characteristics
 ![1](1.png)
+
 * 操作数位宽可以不同，可以是立即数/寄存器/内存
+
 * Load/Store 结构
+  
   * 指令分类：Load/Store结构将指令分为两类：加载（Load）指令和存储（Store）指令。这两类指令分别用于从内存中加载数据到寄存器或将寄存器中的数据存储到内存中
+  
   * 数据传输：在Load/Store结构中，**只有**Load和Store指令能够直接访问内存。其他指令，如算术运算指令或逻辑指令，必须首先将数据加载到寄存器中，然后执行操作，最后再将结果存回内存
 ## Operations of the Computer Hardware
 
@@ -197,13 +201,14 @@ address  `将 rs2, funct7 合并了，得到 12 位立即数`
 
 <div align=center> <img src="http://cdn.hobbitqia.cc/202303212304867.png" width = 50%/> </div>  
 
+
 * I 型指令
 * 为什么还有 `funct6` : 移位不需要这么多立即数，只要六位 ($2^6=64$) 即可。
 * 左移 i 位相当于乘 $2^i$, 右移 i 位相当于除 $2^i$.  
 
 ### AND
 
-<div align=center> <img src="http://cdn.hobbitqia.cc/202303212308207.png" width = 50%/> </div>  
+<div align=center> <img src="http://cdn.hobbitqia.cc/202303212308207.png"width = 50%/> </div>  
 
 ### OR
 
