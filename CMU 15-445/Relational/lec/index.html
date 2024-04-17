@@ -1715,6 +1715,8 @@
       
         
       
+        
+      
     
     
     
@@ -1776,6 +1778,26 @@
   
   <span class="md-ellipsis">
     Divide and Conquer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/dy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming
   </span>
   
 
@@ -2116,6 +2138,26 @@
   <a href="#75-modeling-and-normal-forms" class="md-nav__link">
     7.5 Modeling and Normal Forms
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-multivalued-dependencies" class="md-nav__link">
+    7.6 Multivalued Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 Multivalued Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourth-normal-forth" class="md-nav__link">
+    Fourth Normal Forth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2733,7 +2775,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Chapter1
   </span>
   
 
@@ -4509,6 +4551,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#76-multivalued-dependencies" class="md-nav__link">
+    7.6 Multivalued Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 Multivalued Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourth-normal-forth" class="md-nav__link">
+    Fourth Normal Forth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4744,12 +4806,12 @@ dependency preserving</li>
 </ul>
 <h3 id="74-third-normal-form-3nf">7.4 Third Normal Form (3NF)<a class="headerlink" href="#74-third-normal-form-3nf" title="Permanent link">&para;</a></h3>
 <ul>
-<li>A relation schema R is in 3NF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form <span class="arithmatex">\(\alpha\)</span> <span class="arithmatex">\(\to\)</span> $\beta, at least one of the following holds:</li>
-<li><span class="arithmatex">\(\alpha\)</span> <span class="arithmatex">\(\to\)</span> <span class="arithmatex">\(\beta\)</span> is a trivial functional dependency</li>
+<li>A relation schema R is in 3NF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form <span class="arithmatex">\(\alpha\)</span> <span class="arithmatex">\(\to\)</span> <span class="arithmatex">\(\beta\)</span>, at least one of the following holds:</li>
+<li><span class="arithmatex">\(\alpha\)</span> <span class="arithmatex">\(\to \beta\)</span> is a trivial functional dependency</li>
 <li><span class="arithmatex">\(\alpha\)</span> is a superkey for schema R</li>
-<li>Each attribute A in <span class="arithmatex">\(\beta\)</span> - <span class="arithmatex">\(\alpha\)</span> is contained in a candidate key for R</li>
+<li><strong>Each attribute A in <span class="arithmatex">\(\beta\)</span> - <span class="arithmatex">\(\alpha\)</span> is contained in a candidate key for R</strong></li>
 <li>If a relation is in BCNF it is in 3NF (since in BCNF one of the first two conditions above must hold).</li>
-<li>Third condition is a minimal relaxation of BCNF to ensure dependency preservation.
+<li><strong>Third condition is a minimal relaxation of BCNF to ensure dependency preservation.</strong>
 <img alt="21" src="../21.png" />
 <img alt="22" src="../22.png" /></li>
 <li>It is always possible to decompose a relation into a set of relations that are in 3NF such that:</li>
@@ -4761,13 +4823,26 @@ dependency preserving</li>
 </ul>
 <h3 id="75-modeling-and-normal-forms">7.5 Modeling and Normal Forms<a class="headerlink" href="#75-modeling-and-normal-forms" title="Permanent link">&para;</a></h3>
 <p><img alt="23" src="../23.png" /></p>
+<h3 id="76-multivalued-dependencies">7.6 Multivalued Dependencies<a class="headerlink" href="#76-multivalued-dependencies" title="Permanent link">&para;</a></h3>
+<p><img alt="24" src="../24.png" />
+<img alt="25" src="../25.png" /></p>
+<p>Let R be a relation schemma with a set of attributes that are partitioned into 3 nonempty subsets Y,Z,W.</p>
+<p>We say that Y-&gt;-&gt;Z if and only if for all possible relations r(R)
+<y1,z1,w1><span class="arithmatex">\(\in\)</span> r and <y1,z2,w2><span class="arithmatex">\(\in\)</span> r then we have <y1,z1,w2><span class="arithmatex">\(\in\)</span> r and <y1,z2,w1><span class="arithmatex">\(\in\)</span> r 
+* Note:we can also get Y-&gt;-&gt;W</p>
+<p><img alt="26" src="../26.png" /></p>
+<h4 id="fourth-normal-forth">Fourth Normal Forth<a class="headerlink" href="#fourth-normal-forth" title="Permanent link">&para;</a></h4>
+<p><img alt="27" src="../27.png" />
+<img alt="28" src="../28.png" /></p>
+<p><strong>Example</strong>
+<img alt="29" src="../29.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月8日 20:53:11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月17日 10:15:44</span>
       
         <br>
         创建日期:

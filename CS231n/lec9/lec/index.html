@@ -1713,6 +1713,8 @@
       
         
       
+        
+      
     
     
     
@@ -1774,6 +1776,26 @@
   
   <span class="md-ellipsis">
     Divide and Conquer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/dy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming
   </span>
   
 
@@ -2545,7 +2567,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Chapter1
   </span>
   
 
@@ -3995,6 +4017,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#masked-self-attention" class="md-nav__link">
+    Masked Self Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    Multi-Head Attention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    Transformers
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-captioning-with-transformers" class="md-nav__link">
+    Image Captioning with Transformers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4392,6 +4448,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#masked-self-attention" class="md-nav__link">
+    Masked Self Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    Multi-Head Attention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    Transformers
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-captioning-with-transformers" class="md-nav__link">
+    Image Captioning with Transformers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4469,13 +4559,61 @@
 </ul>
 <p>Each timestep of decoder uses a different context vector that looks at different parts of the input image.</p>
 <h4 id="attention-layer">Attention Layer<a class="headerlink" href="#attention-layer" title="Permanent link">&para;</a></h4>
+<p><img alt="14" src="../14.png" />
+Attention operation is permutation invariant.
+- Doesn't care about ordering of the features
+- Stretch H x W = N into N vectors</p>
+<p>Change <span class="arithmatex">\(f_{att}\)</span> to a simple dot product
+- only works well with key &amp; value transformation trick (will mention in a few slides)</p>
+<p>Change <span class="arithmatex">\(f_{att}(.)\)</span> to a scaled simple dot product
+- Larger dimensions means more terms in the dot product sum.
+- So, the variance of the logits is higher. Large magnitude vectors will produce much higher logits.
+- So, the post-softmax distribution has lower-entropy, assuming logits are IID.
+- Ultimately, these large magnitude vectors will cause softmax to peak and assign very little weight to all others
+- Divide by √D to reduce effect of large magnitude vectors</p>
+<p>Notice that the input vectors are used for both the alignment as well as the attention calculations.
+- We can add more expressivity to the layer by adding a different FC layer before each of the two steps.
+<img alt="15" src="../15.png" />
+<img alt="16" src="../16.png" />
+* Self Attention Layer does not <strong>CARE</strong> about the order of the input vectors!
+* Use positional encoding to give the model some notion of order.
+<img alt="17" src="../17.png" /> </p>
+<p><img alt="31" src="../31.png" /></p>
+<p><strong>Desiderata of pos(.) :</strong></p>
+<ol>
+<li>It should output a unique encoding for each time-step (word’s position in a sentence)</li>
+<li>Distance between any two time-steps should be <strong>consistent</strong> across sentences with different lengths.</li>
+<li>Our model should generalize to longer sentences without any efforts. Its values should be bounded.</li>
+<li>It must be <strong>deterministic</strong>.
+<img alt="18" src="../18.png" /></li>
+</ol>
+<h4 id="masked-self-attention">Masked Self Attention<a class="headerlink" href="#masked-self-attention" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Prevent vectors from looking at future vectors.</li>
+<li>Manually set alignment scores to infinity
+<img alt="19" src="../19.png" /></li>
+<li>Commonly used for language modeling tasks</li>
+</ul>
+<h4 id="multi-head-attention">Multi-Head Attention<a class="headerlink" href="#multi-head-attention" title="Permanent link">&para;</a></h4>
+<p><img alt="21" src="../21.png" />
+<img alt="20" src="../20.png" />
+<img alt="22" src="../22.png" /></p>
+<h3 id="transformers">Transformers<a class="headerlink" href="#transformers" title="Permanent link">&para;</a></h3>
+<p><img alt="23" src="../23.png" />
+<img alt="24" src="../24.png" /></p>
+<h4 id="image-captioning-with-transformers">Image Captioning with Transformers<a class="headerlink" href="#image-captioning-with-transformers" title="Permanent link">&para;</a></h4>
+<p><img alt="25" src="../25.png" />
+<img alt="26" src="../26.png" /></p>
+<p><img alt="27" src="../27.png" />
+<img alt="28" src="../28.png" /></p>
+<p><img alt="30" src="../30.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月4日 09:09:34</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月17日 10:15:44</span>
       
         <br>
         创建日期:
