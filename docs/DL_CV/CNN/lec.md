@@ -1,7 +1,8 @@
 <font face = 'Times New Roman'>
 
 ## Convolutional Networks
-
+* Fully connected layers.
+  https://zhuanlan.zhihu.com/p/33841176
 * Refer to Slides
 
 ### Pytorch
