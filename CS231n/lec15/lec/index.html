@@ -106,6 +106,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#generative-models" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3996,6 +4001,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 15 Generative Models
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -4006,6 +4024,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discriminative-vs-generative-models" class="md-nav__link">
+    Discriminative vs Generative Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoregressive-models" class="md-nav__link">
+    Autoregressive models
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoregressive models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixel-rnn" class="md-nav__link">
+    Pixel RNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-cnn" class="md-nav__link">
+    Pixel CNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-autoencoders" class="md-nav__link">
+    Variational Autoencoders
+  </a>
+  
+    <nav class="md-nav" aria-label="Variational Autoencoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-non-variational-autoencoders" class="md-nav__link">
+    (Regular, non-variational) Autoencoders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variational-autoencoders_1" class="md-nav__link">
+    Variational Autoencoders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4204,6 +4302,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discriminative-vs-generative-models" class="md-nav__link">
+    Discriminative vs Generative Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoregressive-models" class="md-nav__link">
+    Autoregressive models
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoregressive models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixel-rnn" class="md-nav__link">
+    Pixel RNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-cnn" class="md-nav__link">
+    Pixel CNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-autoencoders" class="md-nav__link">
+    Variational Autoencoders
+  </a>
+  
+    <nav class="md-nav" aria-label="Variational Autoencoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-non-variational-autoencoders" class="md-nav__link">
+    (Regular, non-variational) Autoencoders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variational-autoencoders_1" class="md-nav__link">
+    Variational Autoencoders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4218,16 +4387,158 @@
                   
 
 
-  <h1>Lecture 15 Generative Models</h1>
-
-<p>a</p>
+<h1 id="generative-models">Generative Models<a class="headerlink" href="#generative-models" title="Permanent link">&para;</a></h1>
+<p><strong>Supervised vs Unsupervised Learning</strong></p>
+<p>Refer to Slides.</p>
+<h4 id="discriminative-vs-generative-models"><strong>Discriminative vs Generative Models</strong><a class="headerlink" href="#discriminative-vs-generative-models" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Details see slides.</p>
+</blockquote>
+<p><strong>Discriminative Model:</strong> Learn a probability distribution <span class="arithmatex">\(p(y|x)\)</span></p>
+<ul>
+<li>Only competitions among different labels.</li>
+<li>No competitions between images.</li>
+</ul>
+<blockquote>
+<p>Assign labels to data</p>
+<p>Feature learning (with labels)</p>
+</blockquote>
+<p><strong>Shortcomes</strong></p>
+<ul>
+<li>No way for the model to handle unreasonable inputs : it must give label distributions for all images</li>
+</ul>
+<p><strong>Generative Model</strong>: Learn a probability distribution <span class="arithmatex">\(p(x)\)</span>​</p>
+<ul>
+<li>All possible images compete with each other for probability mass.</li>
+<li>Evaluation should consider samples which may not appear in training process.</li>
+</ul>
+<blockquote>
+<p>Detect outliers</p>
+<p>Feature learning (without labels) </p>
+<p>Sample to <strong>generate</strong> new data</p>
+</blockquote>
+<p><strong>Conditional Generative Model:</strong> Learn <span class="arithmatex">\(p(x|y)\)</span></p>
+<ul>
+<li>Each possible label induces a competition among all images</li>
+</ul>
+<blockquote>
+<p>Assign labels, while rejecting outliers! </p>
+<p>Generate new data conditioned on input labels</p>
+</blockquote>
+<p><img alt="1" src="../1.png" /></p>
+<ul>
+<li>Bayes's Rule</li>
+</ul>
+<p><span class="arithmatex">\(p(x|y)=\frac{p(y|x)}{p(y)}p(x)\)</span></p>
+<p>We can build a conditional generative model from other components!</p>
+<ul>
+<li>Build conditional Generative Model from <strong>Discriminative Model</strong> &amp; <strong>Generative Model</strong></li>
+</ul>
+<p><img alt="2" src="../2.png" /></p>
+<h3 id="autoregressive-models">Autoregressive models<a class="headerlink" href="#autoregressive-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Refer to <code>《统计学习方法》</code>,就是优化极大似然函数.</li>
+</ul>
+<p><img alt="3" src="../3.png" /></p>
+<p><span class="arithmatex">\(\begin{align*}p(x) &amp;= p(x_1,x_2,x_3,...x_T)\\ &amp;=p(x_1)p(x_2|x_1)p(x_3|x_1,x_2)....\\&amp;=\Pi_{t=1}^Tp(x_t|x_1,...x_{t-1})\end{align*}\)</span></p>
+<ul>
+<li>We’ve already seen this! Language modeling with an RNN!</li>
+</ul>
+<h4 id="pixel-rnn">Pixel RNN<a class="headerlink" href="#pixel-rnn" title="Permanent link">&para;</a></h4>
+<p><a href="https://arxiv.org/pdf/1601.06759.pdf">https://arxiv.org/pdf/1601.06759.pdf</a></p>
+<p><img alt="4" src="../4.png" /></p>
+<ul>
+<li>How to get <span class="arithmatex">\(2N-1\)</span> ? ---- <code>Diagnal Order</code>.</li>
+</ul>
+<h4 id="pixel-cnn">Pixel CNN<a class="headerlink" href="#pixel-cnn" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Training: maximize likelihood of training images <span class="arithmatex">\(p(x) = \Pi_{i=1}^np(x_i|x_1,...x_{i-1})\)</span></li>
+</ul>
+<p><img alt="5" src="../5.png" /></p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>
+<p>Can explicitly compute likelihood <span class="arithmatex">\(p(x)\)</span></p>
+</li>
+<li>
+<p>Explicit likelihood of training data gives good evaluation metric</p>
+</li>
+<li>
+<p>Good samples </p>
+</li>
+</ul>
+<p><strong>Con:</strong></p>
+<ul>
+<li>Sequential generation <span class="arithmatex">\(\to\)</span>​ slow</li>
+</ul>
+<p><strong>Improving PixelCNN performance</strong></p>
+<ul>
+<li>Gated convolutional layers</li>
+<li>Short-cut connections</li>
+<li>Discretized logistic loss</li>
+<li>Multi-scale</li>
+<li>Training tricks - Etc...</li>
+</ul>
+<h3 id="variational-autoencoders">Variational Autoencoders<a class="headerlink" href="#variational-autoencoders" title="Permanent link">&para;</a></h3>
+<p>Variational Autoencoders (VAE) define an <strong>intractable density</strong> that we cannot explicitly compute or optimize.</p>
+<p>But we will be able to directly optimize a <strong>lower bound</strong> on the density !</p>
+<h4 id="regular-non-variational-autoencoders">(Regular, non-variational) Autoencoders<a class="headerlink" href="#regular-non-variational-autoencoders" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Unsupervised method for learning feature vectors from raw data x, without any labels</p>
+</blockquote>
+<p><img alt="6" src="../6.png" /></p>
+<blockquote>
+<p><strong>Problem</strong>: How can we learn this feature transform from raw data?</p>
+<p><strong>Idea</strong>: Use the features to reconstruct the input data with a <strong>decoder</strong> “Autoencoding” = encoding itself</p>
+</blockquote>
+<p><img alt="7" src="../7.png" /></p>
+<ul>
+<li>
+<p>Somehow <strong>Compress</strong> the input data.</p>
+</li>
+<li>
+<p>After training, throw away decoder.</p>
+</li>
+<li>
+<p>Encoder can be used to <strong>initialize</strong> a <strong>supervised</strong> model.</p>
+</li>
+</ul>
+<p><img alt="8" src="../8.png" /></p>
+<p>Autoencoders learn <strong>latent features</strong> for data without any labels! Can use features to initialize a <strong>supervised</strong> model</p>
+<ul>
+<li>Not probabilistic: No way to sample new data from learned model</li>
+</ul>
+<h4 id="variational-autoencoders_1">Variational Autoencoders<a class="headerlink" href="#variational-autoencoders_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Learn latent features z from raw data.</li>
+<li>Sample from the model to generate new data.</li>
+</ul>
+<p><img alt="9" src="../9.png" /></p>
+<ul>
+<li>Assume simple prior <span class="arithmatex">\(p(z)\)</span> eg. Unit , Gaussian.</li>
+<li>If we could observe the <code>z for each x</code>, then could train a <strong>conditional generative model</strong> <code>p(x|z)</code></li>
+</ul>
+<p>Basic idea: <strong>maximize likelihood of data</strong></p>
+<ul>
+<li>We don’t observe <strong>z</strong>, so need to marginalize: <span class="arithmatex">\(p_{\theta}(x) = \int p_{\theta}(x,z)dz = \int p_{\theta}(x|z)p_{\theta}(z)dz\)</span>​</li>
+</ul>
+<p><strong>Problem: Impossible to integrate over all z!</strong></p>
+<ul>
+<li>Another idea: Try Bayes’ Rule: <span class="arithmatex">\(\frac{p_{\theta}(x|z)p_{\theta}(z)}{p_{\theta}(z|x)}\)</span></li>
+</ul>
+<p><strong>Problem</strong>: No way to compute this! <span class="arithmatex">\(p_{\theta}(z|x)\)</span></p>
+<p><strong>Solution:</strong> Train another network <strong>(encoder)</strong> that learns <span class="arithmatex">\(q_{\Phi}(z|x)\approx p_{\theta}(z|x)\)</span></p>
+<blockquote>
+<p>Use <strong>encoder</strong> to compute <span class="arithmatex">\(q_{\Phi}(z|x)\approx p_{\theta}(z|x)\)</span></p>
+</blockquote>
+<p><img alt="10" src="../10.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月1日 14:06:38</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月21日 10:20:14</span>
       
         <br>
         创建日期:
