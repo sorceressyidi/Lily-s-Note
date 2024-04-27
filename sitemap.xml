@@ -2,537 +2,547 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://note.lilyarnold.cc/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/invisible/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/tags/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E5%A4%A7%E4%BE%A0/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/ADS/D%26C/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/ADS/Heap/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/ADS/Tree/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/ADS/back/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/ADS/dy/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.lilyarnold.cc/ADS/greedy/lec/</loc>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/AI/net/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/AI/pca/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/Chap1/Chap1/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/Chap2/Chap2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/Chap2_inclass/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/Chap3/Chap3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.lilyarnold.cc/CMU%2015-445/Chap6/lec/</loc>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/ER/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CMU%2015-445/Relational/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/RNN/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec10/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec12/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec13/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec14/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec15/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CS231n/lec9/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/BS/lec2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/CBN/lec9/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/Diverse/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/PGM/lec5/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/Recognition/lec10/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/SFM/lec3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/SFX/lec8/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/SR/lec4/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/CV/ML-4360/Self/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/Basic/DIP/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/DL/DL/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/Fourier/Fourier/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/chap2/chap2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/chap3/chap3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/feature/feature/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/filter/filter/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DIP/morph/morph/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL/Convolutional%20Neural%20Networks/part4/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL/Improving%20Deep%20Neural%20Networks/part2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL/Neural%20Networks%20and%20Deep%20Learning/part1/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL/Sequence%20Models/part5/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL/Structuring%20Machine%20Learning%20Projects/part3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/CNN/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/Pytorch/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/Recognition/lec10/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/TN/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/class/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/DL_CV/neural/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/AMAS/AMAS/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/HA/HA/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/Polar/Polarization/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/QW/QW/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/com/com/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/current/current/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/lec1-3/lec1/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/light/inteference/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/light/light/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/light/df/diffraction/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/light/quantum%20light/quantum/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/mag/mag/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/matter%20wave/matter/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/GP/sch/sch/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap1/Chap1/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap2/Chap2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap3/Chap3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap4/Chap4/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap5/Chap5/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap6/Chap6/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap7/Chap7/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/NA/Chap8/Chap8/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/PT/PT/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/PT/%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/Papers/NeRF/Theory/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E4%B8%AD%E6%96%AD/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E5%87%BD%E6%95%B0/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E5%A0%86%E6%A0%88/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E5%AF%84%E5%AD%98%E5%99%A8/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/assembly/%E7%AB%AF%E5%8F%A3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/basicII/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/hash/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/list/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/sort/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/oop/Basic/Basic/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/oop/Container/Container/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/oop/inheritance/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register_%E5%89%AF%E6%9C%AC/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%BB%84/Chap2/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%BB%84/Chap3/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%BB%84/Chap4/lec/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/%E8%AE%A1%E7%BB%84/Intro/intro/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://note.lilyarnold.cc/tags/</loc>
-         <lastmod>2024-04-21</lastmod>
+         <lastmod>2024-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

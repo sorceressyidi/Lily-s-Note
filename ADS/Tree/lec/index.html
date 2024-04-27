@@ -1897,6 +1897,8 @@
       
         
       
+        
+      
     
     
     
@@ -1978,6 +1980,26 @@
   
   <span class="md-ellipsis">
     Dynamic Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greedy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
   </span>
   
 
@@ -2205,10 +2227,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -2289,7 +2307,7 @@
         
   
   <span class="md-ellipsis">
-    Chapter 3
+    Chapter 3-5:Storage
   </span>
   
 
@@ -2305,47 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap4/Chap4.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 4
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap5/Chap5.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap6/Chap6.md" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap6/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4548,12 +4526,20 @@
 <p><font face = 'Times New Roman'></p>
 <h2 id="avl-tree">AVL Tree<a class="headerlink" href="#avl-tree" title="Permanent link">&para;</a></h2>
 <ul>
-<li>An empty binary tree is height balanced.</li>
-<li>If T is nonempty binary tree with <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> as its left and right subtrees,then <span class="arithmatex">\(T\)</span> is height balanced iff
-  (1)<span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> are height balanced
-  (2)<span class="arithmatex">\(|h_L-H_R|\le 1\)</span> where <span class="arithmatex">\(h_l\)</span> and <span class="arithmatex">\(h_R\)</span> are the heights of <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span></li>
-<li>Balance Factor <span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(h_L\)</span>-<span class="arithmatex">\(h_r\)</span>
-  In an AVL Tree,<span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(-1,0,or\ 1\)</span></li>
+<li>
+<p>An empty binary tree is height balanced.</p>
+</li>
+<li>
+<p>If T is nonempty binary tree with <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> as its left and right subtrees,then <span class="arithmatex">\(T\)</span> is height balanced iff</p>
+</li>
+</ul>
+<p>(1)<span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span> are height balanced</p>
+<p>(2)<span class="arithmatex">\(|h_L-h_R|\le 1\)</span> where <span class="arithmatex">\(h_l\)</span> and <span class="arithmatex">\(h_R\)</span> are the heights of <span class="arithmatex">\(T_L\)</span> and <span class="arithmatex">\(T_R\)</span>​​</p>
+<ul>
+<li>Balance Factor <span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(h_L\)</span>-<span class="arithmatex">\(h_r\)</span></li>
+</ul>
+<p>In an <code>AVL Tree</code>  ,  <span class="arithmatex">\(BF(node)\)</span> = <span class="arithmatex">\(-1,0,or\ 1\)</span></p>
+<ul>
 <li>The height of an empty tree is defined to be <span class="arithmatex">\(–1\)</span></li>
 </ul>
 <h3 id="tree-rotation">Tree Rotation<a class="headerlink" href="#tree-rotation" title="Permanent link">&para;</a></h3>
@@ -4564,19 +4550,30 @@
 </ul>
 <h3 id="rotation-for-avl-tree">Rotation for AVL Tree<a class="headerlink" href="#rotation-for-avl-tree" title="Permanent link">&para;</a></h3>
 <ul>
-<li>RR Rotation</li>
-<li>LL Rotation</li>
-<li>RL Rotation</li>
-<li>LR ROtation
-<img alt="1" src="../1.png" />
-勘误 ： <span class="arithmatex">\(n_h \approx \frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^{h+3}\)</span></li>
+<li>
+<p>RR Rotation</p>
+</li>
+<li>
+<p>LL Rotation</p>
+</li>
+<li>
+<p>RL Rotation</p>
+</li>
+<li>
+<p>LR Rotation</p>
+</li>
 </ul>
+<blockquote>
+<p>Details refer to slides.</p>
+</blockquote>
+<p><img alt="1" src="../1.png" /></p>
+<p>勘误 ： <span class="arithmatex">\(n_h \approx \frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^{h+3} - 1\)</span>​ </p>
 <h2 id="splay-trees">Splay Trees<a class="headerlink" href="#splay-trees" title="Permanent link">&para;</a></h2>
 <p>Target :  Any <span class="arithmatex">\(M\)</span> consecutive tree operations starting from an empty tree take at most <span class="arithmatex">\(O(M log N)\)</span> time.
-* For any nonroot node <span class="arithmatex">\(X\)</span> , denote its parent by <span class="arithmatex">\(P\)</span> and grandparent by <span class="arithmatex">\(G\)</span>
+* For any nonroot node <span class="arithmatex">\(X\)</span> , denote its <strong>parent</strong> by <span class="arithmatex">\(P\)</span> and <strong>grandparent</strong> by <span class="arithmatex">\(G\)</span>
 <img alt="2" src="../2.png" />
-* 其实不是Single rotation，也是要两次<span class="arithmatex">\((Zig-Zig)\)</span> : 先转 <span class="arithmatex">\(P\)</span>再转<span class="arithmatex">\(X\)</span>
-* <span class="arithmatex">\(Zig-Zag\)</span> only rotate <span class="arithmatex">\(X\)</span>
+* 其实不是  <strong>Single rotation</strong>，也是要两次<span class="arithmatex">\((Zig-Zig)\)</span> : 先转 <span class="arithmatex">\(P\)</span>再转<span class="arithmatex">\(X\)</span>
+* <span class="arithmatex">\(Zig-Zag\)</span>  only rotate <span class="arithmatex">\(X\)</span>
 <img alt="4" src="../4.png" /></p>
 <h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4614,7 +4611,7 @@
 <blockquote>
 <p>Black-Height</p>
 </blockquote>
-<p>The number of black nodes from the node to its descandent leaves (without counting NIL &amp; itself) </p>
+<p>The number of black nodes from the node to its descandent leaves (without counting <strong>NIL</strong> &amp; <strong>itself</strong>) </p>
 <h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">&para;</a></h3>
 <p>A red-black tree with <strong>N</strong> internal nodes has <strong>height</strong> at most  <span class="arithmatex">\(2ln(N +1)\)</span>​.</p>
 <p><img alt="6" src="../6.png" /></p>
@@ -4624,7 +4621,6 @@
 <ul>
 <li>Then Pass <strong>Error</strong> to the Root and turn it to black.</li>
 </ul>
-<p><img alt="7" src="../7.png" /></p>
 <p><img alt="8" src="../8.png" /></p>
 <ul>
 <li>For case 2 -- <strong>Ensure that the right child of 7 is not red !!</strong></li>
@@ -4699,7 +4695,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月25日 20:49:13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月27日 14:34:39</span>
       
         <br>
         创建日期:

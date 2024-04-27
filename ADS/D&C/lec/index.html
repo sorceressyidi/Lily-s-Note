@@ -1721,6 +1721,8 @@
       
         
       
+        
+      
     
     
     
@@ -1952,6 +1954,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greedy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2170,10 +2192,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -2254,7 +2272,7 @@
         
   
   <span class="md-ellipsis">
-    Chapter 3
+    Chapter 3-5:Storage
   </span>
   
 
@@ -2270,47 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap4/Chap4.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 4
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap5/Chap5.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap6/Chap6.md" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap6/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4546,9 +4524,9 @@
 <p><strong>Input:</strong> An array of n points <code>P[ ]</code></p>
 <p><strong>Output:</strong> The smallest distance between two points in the given array.</p>
 <p>As a pre-processing step, the input array is <strong>sorted</strong> according to <strong>x coordinates</strong>.</p>
-<p><strong>1)</strong> Find the middle point in the sorted array, we can take <code>P[n/2]</code> as middle point. 
-<strong>2)</strong> Divide the given array in two halves. The first subarray contains points from <code>P[0]</code> to <code>P[n/2]</code>. The second subarray contains points from <code>P[n/2+1]</code> to <code>P[n-1]</code>.
-<strong>3)</strong> Recursively find the smallest distances in both subarrays. Let the distances be <span class="arithmatex">\(d_l\)</span> and <span class="arithmatex">\(d_r\)</span>. Find the minimum of <span class="arithmatex">\(d_l\)</span> and <span class="arithmatex">\(d_r\)</span>. Let the minimum be <span class="arithmatex">\(d\)</span>​.</p>
+<p><strong>1)</strong> Find the middle point in the sorted array, we can take <code>P[n/2]</code> as middle point. </p>
+<p><strong>2)</strong> Divide the given array in two halves. The first subarray contains points from <code>P[0]</code> to <code>P[n/2]</code>. The second subarray contains points from <code>P[n/2+1]</code> to <code>P[n-1]</code>.</p>
+<p><strong>3)</strong> Recursively find the smallest distances in both subarrays. Let the distances be <span class="arithmatex">\(d_l\)</span> and <span class="arithmatex">\(d_r\)</span>. Find the minimum of <span class="arithmatex">\(d_l\)</span> and <span class="arithmatex">\(d_r\)</span>. Let the minimum be <span class="arithmatex">\(d\)</span>​​.</p>
 <p><strong>4)</strong> From the above 3 steps, we have an <strong>upper bound</strong> <span class="arithmatex">\(d\)</span> of minimum distance. Now we need to consider the pairs such that one point in pair is from the left half and the other is from the right half. Consider the <strong>vertical line</strong> passing through <code>P[n/2]</code> and find all points whose <strong>x coordinate</strong> is closer than <span class="arithmatex">\(d\)</span>​ to the middle vertical line. Build an array <code>strip[ ]</code> of all such points. </p>
 <p><img alt="4" src="../4.png" /></p>
 <p><strong>5)</strong> Sort the array <code>strip[ ]</code> according to <span class="arithmatex">\(y\)</span> coordinates. </p>
@@ -4726,7 +4704,7 @@ If <span class="arithmatex">\(f(N) = \Omega(N^{\log_ba+\epsilon})\)</span> for s
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月8日 20:53:11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月27日 14:34:39</span>
       
         <br>
         创建日期:

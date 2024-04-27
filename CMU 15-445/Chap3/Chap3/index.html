@@ -16,7 +16,7 @@
         <link rel="prev" href="../../Chap2/Chap2/">
       
       
-        <link rel="next" href="../../../%E8%AE%A1%E7%BB%84/Intro/intro/">
+        <link rel="next" href="../../Chap6/lec/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chapter 3 - Lily's Notebook</title>
+        <title>Chapter 3-5:Storage - Lily's Notebook</title>
       
     
     
@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database-storage-i" class="md-skip">
+        <a href="#database-storage" class="md-skip">
           跳转至
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 3
+              Chapter 3-5:Storage
             
           </span>
         </div>
@@ -1717,6 +1717,8 @@
       
         
       
+        
+      
     
     
     
@@ -1798,6 +1800,26 @@
   
   <span class="md-ellipsis">
     Dynamic Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/greedy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
   </span>
   
 
@@ -2029,10 +2051,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -2120,7 +2138,7 @@
           
   
   <span class="md-ellipsis">
-    Chapter 3
+    Chapter 3-5:Storage
   </span>
   
 
@@ -2131,7 +2149,7 @@
         
   
   <span class="md-ellipsis">
-    Chapter 3
+    Chapter 3-5:Storage
   </span>
   
 
@@ -2151,16 +2169,150 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#database-storage-i" class="md-nav__link">
-    Database Storage I
+  <a href="#database-storage" class="md-nav__link">
+    Database Storage
   </a>
+  
+    <nav class="md-nav" aria-label="Database Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-use-os" class="md-nav__link">
+    Why not use OS?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-storage-ii" class="md-nav__link">
-    Database Storage II
+  <a href="#how-the-dbms-represents-the-database-in-files-on-disk" class="md-nav__link">
+    How the DBMS represents the database in files on disk?
   </a>
+  
+    <nav class="md-nav" aria-label="How the DBMS represents the database in files on disk?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-storage" class="md-nav__link">
+    File Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="File Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-file-organization" class="md-nav__link">
+    Heap File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree-file-organization" class="md-nav__link">
+    Tree File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequentialsorted-file-organization" class="md-nav__link">
+    Sequential/Sorted File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashing-file-organization" class="md-nav__link">
+    Hashing File Organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-layout" class="md-nav__link">
+    Page Layout
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple-oriented-layout" class="md-nav__link">
+    Tuple-oriented Layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-structured-layout" class="md-nav__link">
+    Log-structured Layout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-layout" class="md-nav__link">
+    Tuple Layout
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#denormalized-tuple-data" class="md-nav__link">
+    Denormalized Tuple Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-storage" class="md-nav__link">
+    Tuple Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-representation" class="md-nav__link">
+    Data Representation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-catalog" class="md-nav__link">
+    System Catalog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2179,47 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap4/Chap4.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 4
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap5/Chap5.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap6/Chap6.md" class="md-nav__link">
+      <a href="../../Chap6/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4261,16 +4373,150 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#database-storage-i" class="md-nav__link">
-    Database Storage I
+  <a href="#database-storage" class="md-nav__link">
+    Database Storage
   </a>
+  
+    <nav class="md-nav" aria-label="Database Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-use-os" class="md-nav__link">
+    Why not use OS?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-storage-ii" class="md-nav__link">
-    Database Storage II
+  <a href="#how-the-dbms-represents-the-database-in-files-on-disk" class="md-nav__link">
+    How the DBMS represents the database in files on disk?
   </a>
+  
+    <nav class="md-nav" aria-label="How the DBMS represents the database in files on disk?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-storage" class="md-nav__link">
+    File Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="File Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heap-file-organization" class="md-nav__link">
+    Heap File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree-file-organization" class="md-nav__link">
+    Tree File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequentialsorted-file-organization" class="md-nav__link">
+    Sequential/Sorted File Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashing-file-organization" class="md-nav__link">
+    Hashing File Organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-layout" class="md-nav__link">
+    Page Layout
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuple-oriented-layout" class="md-nav__link">
+    Tuple-oriented Layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-structured-layout" class="md-nav__link">
+    Log-structured Layout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-layout" class="md-nav__link">
+    Tuple Layout
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#denormalized-tuple-data" class="md-nav__link">
+    Denormalized Tuple Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuple-storage" class="md-nav__link">
+    Tuple Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Tuple Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-representation" class="md-nav__link">
+    Data Representation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-catalog" class="md-nav__link">
+    System Catalog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4289,17 +4535,166 @@
                   
 
 
-  <h1>Chapter 3</h1>
+  <h1>Chapter 3-5:Storage</h1>
 
-<h2 id="database-storage-i">Database Storage I<a class="headerlink" href="#database-storage-i" title="Permanent link">&para;</a></h2>
-<h2 id="database-storage-ii">Database Storage II<a class="headerlink" href="#database-storage-ii" title="Permanent link">&para;</a></h2>
+<p><font face = "Times New Roman"></p>
+<h2 id="database-storage">Database Storage<a class="headerlink" href="#database-storage" title="Permanent link">&para;</a></h2>
+<p><img alt="2" src="../2.png" />
+<img alt="1" src="../1.png" /></p>
+<ul>
+<li>Volatile : Not persistent when loose power.
+  Random Access Byte Addressable Memory.</li>
+<li>
+<p>Non-Volatile : Persistent when loose power.
+  Sequential Access Block Addressable Memory.</p>
+<blockquote>
+<p>In the course, we will focus on the DRAM</p>
+</blockquote>
+</li>
+<li>
+<p>Goal : Allow the DBMS to manage databases that exceed 
+the amount of memory available</p>
+</li>
+<li>Reading/writing to disk is expensive, so it must be managed carefully to avoid large stalls and performance degradation.</li>
+<li>Random access on disk is usually much slower than sequential access, so the DBMS will want to maximize sequential access.
+<img alt="3" src="../3.png" /><blockquote>
+<p>Virtual Memory : A technique that allows an operating system to provide more memory to a process than is physically available.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="why-not-use-os">Why not use OS?<a class="headerlink" href="#why-not-use-os" title="Permanent link">&para;</a></h4>
+<p><img alt="4" src="../4.png" /></p>
+<ul>
+<li>At this point, no more free memory is available, so the <strong>OS</strong> must swap some memory to disk to make room for the new memory. </li>
+<li>When we start writing to disk, problematic.</li>
+<li><strong>OS</strong> is not aware of the DBMS's needs, so it may swap out pages that are important to the DBMS!
+<img alt="5" src="../5.png" /></li>
+</ul>
+<h2 id="how-the-dbms-represents-the-database-in-files-on-disk">How the DBMS represents the database in files on disk?<a class="headerlink" href="#how-the-dbms-represents-the-database-in-files-on-disk" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Commonly, we store different parts of the database in different files. </li>
+<li>
+<p>But also multitable clustering file organization.
+<img alt="10" src="../10.png" /></p>
+</li>
+<li>
+<p>Self-contained file : A file that contains all the information needed to manage the data it contains.</p>
+<blockquote>
+<p>While not entirely true, as the DBMS may store some information to manage the data in other files.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="file-storage">File Storage<a class="headerlink" href="#file-storage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Different DBMSs manage pages in files on disk in different ways.
+<img alt="6" src="../6.png" /></p>
+</li>
+<li>
+<p>like for SQLite,Only 4KB is atomatic read/write!--Hardware can only guarantee atomicity at 4KB.</p>
+</li>
+</ul>
+<h4 id="heap-file-organization">Heap File Organization<a class="headerlink" href="#heap-file-organization" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A heap file is an unordered collection of pages with tuples that are stored in random order<blockquote>
+<p>If store tuples one by one , do not guarantee that the tuples are stored in that order.</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="naive-approach-linked-list">Naive Approach : Linked List.<a class="headerlink" href="#naive-approach-linked-list" title="Permanent link">&para;</a></h5>
+<p><img alt="7" src="../7.png" /> </p>
+<ul>
+<li>If you want to read a tuple, you must search through the entire file to find it.</li>
+<li>While if stored sequentially, search maybe easy, but the tradeoff is when insertion:we have to cannot insert at a random free space, but have to insert at the right place.
+<img alt="8" src="../8.png" /></li>
+</ul>
+<h5 id="improved-approach-page-directory">Improved Approach : Page Directory.<a class="headerlink" href="#improved-approach-page-directory" title="Permanent link">&para;</a></h5>
+<p><img alt="9" src="../9.png" /></p>
+<ul>
+<li>Hash Table.[Page Size : Different DBMSs use different page sizes, but 4KB is common.]</li>
+</ul>
+<h4 id="tree-file-organization">Tree File Organization<a class="headerlink" href="#tree-file-organization" title="Permanent link">&para;</a></h4>
+<ul>
+<li>B+ Tree (See later chapters)</li>
+</ul>
+<h4 id="sequentialsorted-file-organization">Sequential/Sorted File Organization<a class="headerlink" href="#sequentialsorted-file-organization" title="Permanent link">&para;</a></h4>
+<p>As demonstrated in <code>Heap File Organization</code>, the tradeoff between read and write is a common problem in database storage.</p>
+<h4 id="hashing-file-organization">Hashing File Organization<a class="headerlink" href="#hashing-file-organization" title="Permanent link">&para;</a></h4>
+<ul>
+<li>See later chapters.</li>
+</ul>
+<h3 id="page-layout">Page Layout<a class="headerlink" href="#page-layout" title="Permanent link">&para;</a></h3>
+<p>Every page contains a header of metadata about the page's contents.
+→ Page Size
+→ Checksum
+→ DBMS Version
+→ Transaction Visibility
+→ Compression Information
+* Some systems require pages to be self-contained (e.g., Oracle)</p>
+<h4 id="tuple-oriented-layout">Tuple-oriented Layout<a class="headerlink" href="#tuple-oriented-layout" title="Permanent link">&para;</a></h4>
+<p><img alt="11" src="../11.png" /></p>
+<ul>
+<li>We cannot just fit another tuple in the space left by the deleted tuple, as the tuples are of different sizes!
+<strong>Slotted Pages</strong>
+<img alt="12" src="../12.png" /></li>
+</ul>
+<details>
+<summary>Details</summary>
+<p><div align=center> <img alt="13" src="../13.png" /> </div>  </p>
+</details>
+<ul>
+<li>How to track Tuples ?
+<img alt="14" src="../14.png" /></li>
+</ul>
+<h4 id="log-structured-layout">Log-structured Layout<a class="headerlink" href="#log-structured-layout" title="Permanent link">&para;</a></h4>
+<p><img alt="18" src="../18.png" />
+When the page gets full, the DBMS writes it out disk and starts filling up the next page with records.</p>
+<ul>
+<li>→ All disk writes are sequential.</li>
+<li>→ On-disk pages are immutable.
+While difficult to read tuples.</li>
+</ul>
+<details>
+<summary>Details</summary>
+<p><div align=center> <img alt="19" src="../19.png" /><img alt="20" src="../20.png" /> </div>  </p>
+</details>
+<h5 id="log-structured-compaction">Log-Structured Compaction<a class="headerlink" href="#log-structured-compaction" title="Permanent link">&para;</a></h5>
+<p>Compaction coalesces larger log files into smaller files by removing unnecessary records.
+<img alt="21" src="../21.png" />
+Log-structured storage managers are more common today. This is partly due to the proliferation of RocksDB.
+Downsides:
+* Write - Amplification
+* Compaction is expensive</p>
+<h3 id="tuple-layout">Tuple Layout<a class="headerlink" href="#tuple-layout" title="Permanent link">&para;</a></h3>
+<p><img alt="15" src="../15.png" /></p>
+<h4 id="denormalized-tuple-data">Denormalized Tuple Data<a class="headerlink" href="#denormalized-tuple-data" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Details</summary>
+<p><div align=center> <img alt="16" src="../16.png" /><img alt="17" src="../17.png" /> </div>  </p>
+</details>
+<h3 id="tuple-storage">Tuple Storage<a class="headerlink" href="#tuple-storage" title="Permanent link">&para;</a></h3>
+<h4 id="data-representation">Data Representation<a class="headerlink" href="#data-representation" title="Permanent link">&para;</a></h4>
+<h5 id="variable-precision-numbers-fixed-precision-numbers">Variable Precision Numbers &amp; Fixed Precision Numbers<a class="headerlink" href="#variable-precision-numbers-fixed-precision-numbers" title="Permanent link">&para;</a></h5>
+<blockquote>
+<p>Variable Precision Numbers : Typically faster than arbitrary precision numbers but can have rounding errors...</p>
+</blockquote>
+<p><img alt="22" src="../22.png" /></p>
+<h5 id="large-values">Large Values<a class="headerlink" href="#large-values" title="Permanent link">&para;</a></h5>
+<p><img alt="23" src="../23.png" /></p>
+<h5 id="external-value-storage">External Value Storage<a class="headerlink" href="#external-value-storage" title="Permanent link">&para;</a></h5>
+<p><img alt="24" src="../24.png" /></p>
+<h3 id="system-catalog">System Catalog<a class="headerlink" href="#system-catalog" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>See Slides.</p>
+</blockquote>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月19日 20:38:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月27日 14:34:39</span>
       
         <br>
         创建日期:
@@ -4394,13 +4789,13 @@
         
         
           
-          <a href="../../../%E8%AE%A1%E7%BB%84/Intro/intro/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter1">
+          <a href="../../Chap6/lec/" class="md-footer__link md-footer__link--next" aria-label="下一页: Chapter 6">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Chapter1
+                Chapter 6
               </div>
             </div>
             <div class="md-footer__button md-icon">
