@@ -91,8 +91,10 @@ The Brute force solution is $O(n^2)$ , compute the distance between each pair an
 As a pre-processing step, the input array is **sorted** according to **x coordinates**.
 
 **1)** Find the middle point in the sorted array, we can take `P[n/2]` as middle point. 
+
 **2)** Divide the given array in two halves. The first subarray contains points from `P[0]` to `P[n/2]`. The second subarray contains points from `P[n/2+1]` to `P[n-1]`.
-**3)** Recursively find the smallest distances in both subarrays. Let the distances be $d_l$ and $d_r$. Find the minimum of $d_l$ and $d_r$. Let the minimum be $d$​.
+
+**3)** Recursively find the smallest distances in both subarrays. Let the distances be $d_l$ and $d_r$. Find the minimum of $d_l$ and $d_r$. Let the minimum be $d$​​.
 
 **4)** From the above 3 steps, we have an **upper bound** $d$ of minimum distance. Now we need to consider the pairs such that one point in pair is from the left half and the other is from the right half. Consider the **vertical line** passing through `P[n/2]` and find all points whose **x coordinate** is closer than $d$​ to the middle vertical line. Build an array `strip[ ]` of all such points. 
 

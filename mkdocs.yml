@@ -93,6 +93,7 @@ nav:
         - backtracking: ADS/back/lec.md
         - Divide and Conquer: ADS/D&C/lec.md
         - Dynamic Programming: ADS/dy/lec.md
+        - Greedy Algorithm : ADS/greedy/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md
@@ -101,10 +102,8 @@ nav:
       - CMU 15-445:
         - Chapter 1 : CMU 15-445/Chap1/Chap1.md
         - Chapter 2 : CMU 15-445/Chap2/Chap2.md
-        - Chapter 3 : CMU 15-445/Chap3/Chap3.md
-        - Chapter 4 : CMU 15-445/Chap4/Chap4.md
-        - Chapter 5 : CMU 15-445/Chap5/Chap5.md
-        - Chapter 6 : CMU 15-445/Chap6/Chap6.md
+        - Chapter 3-5:Storage : CMU 15-445/Chap3/Chap3.md
+        - Chapter 6 : CMU 15-445/Chap6/lec.md
         - Chapter 7 : CMU 15-445/Chap7/Chap7.md
         - Chapter 8 : CMU 15-445/Chap8/Chap8.md
         - Chapter 9 : CMU 15-445/Chap9/Chap9.md

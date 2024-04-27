@@ -117,9 +117,7 @@ $T(N) = O(N^3)$, but faster in a dense graph.
 * Different technology (time) for each stage
 * One can change lines between stages
 * Minimize the total assembly time
-
-![7](7.png)
-![9](9.png)
-![8](8.png)
+  ![9](9.png)
+  ![8](8.png)
 
 </font>
