@@ -106,6 +106,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -626,6 +631,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Theory
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -636,6 +654,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parts" class="md-nav__link">
+    Detailed Parts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-radiance-field-scene-representation" class="md-nav__link">
+    Neural Radiance Field Scene Representation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-volume-sampling" class="md-nav__link">
+    Hierarchical volume sampling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4182,6 +4287,84 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parts" class="md-nav__link">
+    Detailed Parts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-radiance-field-scene-representation" class="md-nav__link">
+    Neural Radiance Field Scene Representation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-volume-sampling" class="md-nav__link">
+    Hierarchical volume sampling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4196,16 +4379,85 @@
                   
 
 
-  <h1>Theory</h1>
-
-<p>a</p>
+<p><font face = "Times New Roman"></p>
+<h1 id="nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis<a class="headerlink" href="#nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p><img src="1.png" alt="1" style="zoom:50%;" /></p>
+<p><strong>Overfit a single neural network for a particular scene to train an overfitted nerual network which represents the scene.</strong></p>
+<p><strong>Input : <span class="arithmatex">\((x,y,z,\theta,\phi)\)</span>: <span class="arithmatex">\((x,y,z)\)</span> is the space location and <span class="arithmatex">\((\theta,\phi)\)</span> is the viewing direction</strong>  </p>
+<p><strong>Output : (colour, density)</strong></p>
+<p>Therefore, when the network is well-overfitted, it can give you results depending on the given viewing directions -- Catch Transparency and Colour.</p>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p><strong>a.</strong> Sample 5D coordinates along camera rays.</p>
+<p><strong>b.</strong> Feed those locations into an <strong>MLP</strong> to produce a color and volume density.</p>
+<p><img alt="2" src="../2.png" /></p>
+<blockquote>
+<p><span class="arithmatex">\(F_{\Theta}\)</span> : </p>
+<ol>
+<li>
+<p>Process the input 3D coordinate with <strong>8 fully-connected layers</strong> (with <strong>ReLU</strong> activations and <strong>256</strong> channels per layer)</p>
+</li>
+<li>
+<p>Output <span class="arithmatex">\(\sigma\)</span> and a <strong>256-dimensional feature vector</strong>.</p>
+</li>
+<li>
+<p>Concatenate the feature vector with the camera ray's viewing direction and passed to one additional <strong>fully-connected layer</strong> (using <strong>ReLU activation</strong> and <strong>128 channels</strong>.)</p>
+</li>
+<li>It outputs the <strong>view-dependent</strong> RGB colour.</li>
+</ol>
+</blockquote>
+<p>From above we can see that, NeRF encourages the representation to be multivies consistent by restricting the network to predict the volume density <span class="arithmatex">\(\sigma\)</span> as a function of <strong>ONLY</strong> the location, while we allow the RGB colour to be predicted as a fucntion of <strong>both</strong> location and viewing direction.</p>
+<p><strong>c.</strong> Use volume rendering techniques to composite these values into an image</p>
+<p><strong>d.</strong> The rendering function is differentiable, we optimize the scene representation by minimizing the residual between synthesized and ground truth observed images.</p>
+<p><strong>The weight is the scene</strong></p>
+<h3 id="detailed-parts">Detailed Parts<a class="headerlink" href="#detailed-parts" title="Permanent link">&para;</a></h3>
+<h3 id="neural-radiance-field-scene-representation">Neural Radiance Field Scene Representation<a class="headerlink" href="#neural-radiance-field-scene-representation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Volume density <span class="arithmatex">\(\sigma(x)\)</span> : differential probability of a ray terminating at an infinitesimal particle at location <strong>x</strong> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(C(\bold{r})\)</span> : The expected color of ray <span class="arithmatex">\(\bold{r}(t) = \bold{o}+t\bold{d}\)</span>  with near and far bound <span class="arithmatex">\(t_n\)</span> and <span class="arithmatex">\(t_f\)</span>​</p>
+</li>
+<li>
+<p><span class="arithmatex">\(T(t)\)</span> : accumulated transmittance along the ray from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> ,i.e., the <strong>probability</strong> that the ray travels from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> without hitting any other particle. And therefore <span class="arithmatex">\(T(t)=exp(-\int_{t_n}^{t}\sigma(\bold{r}(s))ds)\)</span>​</p>
+</li>
+</ul>
+<p><img alt="4" src="../4.png" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p>Thus , <span class="arithmatex">\(C(\bold{r}) = \int_{t_n}^{t_f} T(t) \sigma(\bold{r}(t))\bold{c}(\bold{r}(t),\bold{d})dt\)</span>​  : Clearly color depends on both position and direction.</p>
+<p><img alt="5" src="../5.png" /></p>
+<p>Numerically estimate this continuous integral using <strong>quadrature</strong> and finally we get:</p>
+<p><img alt="7" src="../7.png" /></p>
+<h3 id="optimizing-a-neural-radiance-field">Optimizing a Neural Radiance Field<a class="headerlink" href="#optimizing-a-neural-radiance-field" title="Permanent link">&para;</a></h3>
+<h4 id="positional-encoding">Positional Encoding<a class="headerlink" href="#positional-encoding" title="Permanent link">&para;</a></h4>
+<p><strong>Better Performace at representing high-frequency variation</strong></p>
+<p>Reform <span class="arithmatex">\(F_{\theta}\)</span> as a composition of two functions <span class="arithmatex">\(F_{\theta}=F_{\theta}'*\gamma\)</span> one learned and one not.</p>
+<ul>
+<li><span class="arithmatex">\(\gamma\)</span> is a mapping from <span class="arithmatex">\(\R\)</span> into a higher dimensional space <span class="arithmatex">\(\R^{2L}\)</span> and <span class="arithmatex">\(F_{\theta}'\)</span> is still simply a regular MLP.</li>
+</ul>
+<p><img alt="8" src="../8.png" /></p>
+<p><img alt="9" src="../9.png" /></p>
+<h4 id="hierarchical-volume-sampling">Hierarchical volume sampling<a class="headerlink" href="#hierarchical-volume-sampling" title="Permanent link">&para;</a></h4>
+<p>Implement two networks: Use the result of the coarse network to determine where to sample in the fine network. </p>
+<ul>
+<li>one "coarse"</li>
+<li>one "fine"</li>
+</ul>
+<p>To do this, we rewrite the <strong>alpha composited color</strong> from thecoarse network <span class="arithmatex">\(\hat{C}_c(\bold{r})\)</span> as a weighted sum of all sampled colors <span class="arithmatex">\(c_i\)</span>​ along the ray.</p>
+<p><img alt="10" src="../10.png" /></p>
+<p>Normalize the wights as <span class="arithmatex">\(\hat{w}_i=\frac{w_i}{\sum_{j=1}^{N_c}w_j}\)</span> , we sample a second set of <span class="arithmatex">\(N_f\)</span> locations from the distribution using <strong>inverse transform sampling</strong> (<a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling">https://en.wikipedia.org/wiki/Inverse_transform_sampling</a>)</p>
+<p>Compute the final result using all <span class="arithmatex">\(N_c + N_f\)</span>​ samples(Training Time), at test time use <strong>ONLY</strong> fine network.</p>
+<h3 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h3>
+<p><img alt="11" src="../11.png" /></p>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月31日 09:39:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月28日 11:23:55</span>
       
         <br>
         创建日期:
