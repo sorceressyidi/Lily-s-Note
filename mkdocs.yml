@@ -85,7 +85,8 @@ nav:
     - OOP(C++):
       - Itro & Class: oop/Basic/Basic.md
       - Container & Function: oop/Container/Container.md
-      - Inheritance : oop/inheritance/lec.md
+      - Inheritance & Polymorphism: oop/inheritance/lec.md
+      - Copy Constructor & Overloading: oop/copy/lec.md
     - Anvanced Data Structure:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
@@ -94,6 +95,7 @@ nav:
         - Divide and Conquer: ADS/D&C/lec.md
         - Dynamic Programming: ADS/dy/lec.md
         - Greedy Algorithm : ADS/greedy/lec.md
+        - NP-Completeness: ADS/NP/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md

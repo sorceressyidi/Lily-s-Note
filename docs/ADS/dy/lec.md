@@ -11,6 +11,7 @@ int fib(int n) {
     return fib(n-1) + fib(n-2);
 }
 ```
+
 * Time complexity: $O(2^n)$
 
 If we use dynamic programming, we can reduce the time complexity to $O(n)$.
@@ -60,6 +61,7 @@ void OptMatrix( const long r[ ], int N, TwoDimArray M )
         }  /* end for-Left */
 }
 ```
+
 * More suitable way : Find a order that is increasing.
 > $F[N][i] = min_{k}(F[k-i][i]+F[N-k-i][k+1]+r_{k-i-1} \times r_i \times r_{N-i})$ ?
 
@@ -103,6 +105,7 @@ void AllPairs( TwoDimArray A, TwoDimArray D, int N )
 		 D[ i ][ j ] = D[ i ][ k ] + D[ k ][ j ]; 
 }
 ```
+
 $T(N) = O(N^3)$, but faster in a dense graph.
 
 **How to design a DP method?**
