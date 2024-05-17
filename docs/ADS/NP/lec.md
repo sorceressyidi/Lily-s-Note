@@ -1,3 +1,5 @@
+<font face = "Times New Roman" >
+
 # NP - Completeness
 ![1](1.png)
 
@@ -69,3 +71,12 @@ An abstract problem $Q$ is a binary relation on a set $I$ of problem instances a
 
 ![10](10.png)
 ![11](11.png)
+
+
+**0-1 backpack problem**
+
+https://zhuanlan.zhihu.com/p/93857890
+
+* Not Polynomial Time
+
+</font>

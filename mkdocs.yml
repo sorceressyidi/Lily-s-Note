@@ -96,6 +96,7 @@ nav:
         - Dynamic Programming: ADS/dy/lec.md
         - Greedy Algorithm : ADS/greedy/lec.md
         - NP-Completeness: ADS/NP/lec.md
+        - Approximation : ADS/approx/lec.md
     - Database System: 
       - Inclass:
         - SQL : CMU 15-445/Chap2_inclass/lec.md

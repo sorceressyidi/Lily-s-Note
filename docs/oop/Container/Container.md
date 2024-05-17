@@ -1,8 +1,13 @@
 <font face = 'Times New Roman'>
 
+Reference : https://note.hobbitqia.cc/OOP/oop3/#for-each-loop
+
 ## Container	
 
 Collection objects are objects that can store an arbitrary number of other objects.
+* 在 C++ 中，容器在 STL 中
+* STL = Standard Template Library
+
 
 ### Vector
 
