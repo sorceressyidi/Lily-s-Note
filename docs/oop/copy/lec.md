@@ -730,4 +730,25 @@ explicit PathName(const string&);
 * 所以此时，不能把 string 对象赋值给 PathName.这样编译时就会出错。
 * **制止不小心的隐式类型转换**
 
+### Conversion Operators
+* Operator name is **any type descriptor**
+* No **explicit arguments**
+* No **return type**
+* Compiler will use it as a type conversion from 
+```c++
+class Rational {
+public:
+ ...
+ operator double() const; // Rational to double
+}
+Rational::operator double() const { 
+ return numerator_/(double)denominator_;
+}
+Rational r(1,3); 
+double d = r; // r=>double
+```
+* 不需要写返回类型。 如果我们在重载的运算符前面加上 explicit, 那么我们就必须写作 `double d = (double)r;`
+* 注意：类型转换符和构造函数的重载只能有一个存在！
+
+
 
