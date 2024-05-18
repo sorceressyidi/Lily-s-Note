@@ -721,7 +721,7 @@ PathName xyz(abc); // OK!
 xyz = abc; // OK abc => PathName Type Conversion
 ``` 
 * 先利用 abc 构造一个 PathName 的对象，随后赋值给 xyz.
-* **以其他变量为参数的构造函数可以帮助我们做赋值！！！！**
+* **以其他变量为参数的构造函数可以帮助我们做这个赋值也就是类型转换！！！！**
 * 在构造函数前面加上 `explicit` 关键字: 
 ```c++
 explicit PathName(const string&);
@@ -749,6 +749,12 @@ double d = r; // r=>double
 ```
 * 不需要写返回类型。 如果我们在重载的运算符前面加上 explicit, 那么我们就必须写作 `double d = (double)r;`
 * 注意：类型转换符和构造函数的重载只能有一个存在！
+* 想将 T 转化为 C, 那么需要一个 C(T) 的不加 explicit的构造函数，或者 operator C() 的重载。如果两个都有，编译器会出错。
+
+![1](1.png)
+
+* Better prevent implicit type conversion?
+* `&&`,`||`,`,`最好不要重载
 
 
 

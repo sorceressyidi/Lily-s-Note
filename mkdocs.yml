@@ -86,7 +86,8 @@ nav:
       - Itro & Class: oop/Basic/Basic.md
       - Container & Function: oop/Container/Container.md
       - Inheritance & Polymorphism: oop/inheritance/lec.md
-      - Copy Constructor & Overloading: oop/copy/lec.md
+      - (Copy & Move )Constructor & Overloading: oop/copy/lec.md
+      - Template & STL: oop/template/lec.md
     - Anvanced Data Structure:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
