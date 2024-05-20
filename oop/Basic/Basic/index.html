@@ -1525,6 +1525,8 @@
       
         
       
+        
+      
     
     
     
@@ -1720,6 +1722,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区别一：语法和声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    区别二：空值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    区别三：操作符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    区别四：空间占用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1784,7 +1821,27 @@
         
   
   <span class="md-ellipsis">
-    Copy Constructor & Overloading
+    (Copy & Move )Constructor & Overloading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../template/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template & STL
   </span>
   
 
@@ -1893,6 +1950,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2025,6 +2086,46 @@
   
   <span class="md-ellipsis">
     NP-Completeness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/approx/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approximation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/rand/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Randomized Algorithm
   </span>
   
 
@@ -2448,7 +2549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CMU 15-445/Chap11/Chap11.md" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap11/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4507,6 +4608,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区别一：语法和声明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    区别二：空值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    区别三：操作符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    区别四：空间占用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5188,6 +5324,62 @@
 <a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">     </span><span class="kt">void</span><span class="w"> </span><span class="nf">dida</span><span class="p">();</span>
 <a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="p">}</span>
 </code></pre></div>
+<blockquote>
+<p>Reference</p>
+</blockquote>
+<p>引用和指针是C++中两种不同的概念，它们有着相似的功能，但在语义和使用方式上有一些重要的区别。</p>
+<h3 id="_1">区别一：语法和声明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>引用</strong>：使用 <code>&amp;</code> 符号来声明，必须在初始化时绑定到一个已存在的变量或对象。一旦初始化，引用将一直指向该变量或对象，并且不能重新绑定到其他对象。</p>
+</li>
+<li>
+<p><strong>指针</strong>：使用 <code>*</code> 符号来声明，可以在任何时候指向一个对象，也可以指向空值（nullptr）。指针可以在运行时被重新赋值，指向不同的对象或空值。</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// 引用</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// 指针</span>
+</code></pre></div>
+<h3 id="_2">区别二：空值<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>引用</strong>：引用不能指向空值，必须在初始化时绑定到一个已存在的对象。</p>
+</li>
+<li>
+<p><strong>指针</strong>：指针可以指向空值（nullptr），表示不指向任何对象。</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// 错误，引用不能指向空值</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// 指针指向空值</span>
+</code></pre></div>
+<h3 id="_3">区别三：操作符<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>引用</strong>：使用引用时，不需要使用解引用操作符（<code>*</code>），直接使用引用本身即可访问目标对象。</p>
+</li>
+<li>
+<p><strong>指针</strong>：需要使用解引用操作符（<code>*</code>）来访问指针指向的对象。</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// 引用</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// 指针</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">;</span><span class="w"> </span><span class="c1">// 直接使用引用</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// 使用指针需要解引用</span>
+</code></pre></div>
+<h3 id="_4">区别四：空间占用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>引用</strong>：在内存中不会分配额外的空间，它只是原变量的别名。</p>
+</li>
+<li>
+<p><strong>指针</strong>：在内存中占用额外的空间来存储指针变量本身的地址。</p>
+</li>
+</ul>
+<h3 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>引用和指针在C++中都有其独特的用途和优势。引用更安全、更直观，适用于简单的别名和传递参数。指针更灵活，可以指向多个对象，可以进行空值检查，适用于需要动态分配内存或跟踪对象地址的情况。选择使用引用还是指针取决于具体的需求和设计考虑。</p>
 <p></font></p>
 
   <hr>
@@ -5195,7 +5387,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年3月29日 14:37:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月17日 15:36:16</span>
       
         <br>
         创建日期:
