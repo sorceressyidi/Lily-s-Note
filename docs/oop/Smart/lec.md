@@ -226,3 +226,12 @@ int main(){
     cout(a==b)<<endl;
 }
 ```
+
+* UCPointer maintains reference counts
+* UCObject hides the details of the count
+* String is very clean
+* StringRep deals only with string storage and manipulation
+* UCObject and UCPointer are reusable
+* 代码是可复用的。
+* Objects with cycles of UCPointer will never be deleted
+* UCP 指向的对象永远不被删除。
