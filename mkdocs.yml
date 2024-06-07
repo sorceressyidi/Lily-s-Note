@@ -88,6 +88,8 @@ nav:
       - Inheritance & Polymorphism: oop/inheritance/lec.md
       - (Copy & Move )Constructor & Overloading: oop/copy/lec.md
       - Template & STL: oop/template/lec.md
+      - Exception & File: oop/Exceptions/lec.md
+      - Smart Pointer : oop/Smart/lec.md
     - Anvanced Data Structure:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md

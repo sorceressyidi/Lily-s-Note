@@ -166,3 +166,66 @@ int result = ptr(2, 3);  // 也等价于 int result = add(2, 3);
 
 这样，函数指针就可以用来动态地指向不同的函数，并调用相应的函数。在示例中，`Vector<int (*)(Vector<double>&, int)>` 就是一个向量，其元素是指向接受 `Vector<double>` 和 `int` 参数的函数的指针，并返回 `int` 类型值。
 ### Expression parameters
+```c++
+template <class T, int bound=100>
+class FixedVector {
+public:
+    FixedVector();
+    FixedVector(int);
+    FixedVector(const FixedVector&);
+    FixedVector& operator=(const FixedVector&);
+    T& operator[](int);
+private:
+    T m_elements[bound];
+    int m_size;
+};
+```
+* Usage:
+```c++
+FixedVector<int, 200> v1;
+FixedVector<int> v2; // bound=100
+```
+### Template and Inheritance
+* Template can inherit from a non-template class
+```c++
+template <class T>
+class Derived : public Base<T> {
+public:
+    Derived();
+    Derived(const Derived&);
+    Derived& operator=(const Derived&);
+    T& operator[](int);
+};
+```
+* Template can inherit from a template class
+```c++
+template <class T>
+class Derived : public Base<T> {
+public:
+    Derived();
+    Derived(const Derived&);
+    Derived& operator=(const Derived&);
+    T& operator[](int);
+};
+```
+* Non-template class can inherit from a template class
+```c++
+template <class T>
+class Base {
+public:
+    Base();
+    Base(const Base&);
+    Base& operator=(const Base&);
+    T& operator[](int);
+};
+class Derived : public Base<int> {
+public:
+    Derived();
+    Derived(const Derived&);
+    Derived& operator=(const Derived&);
+    int& operator[](int);
+};
+```
+* 模板的所有东西都需要在头文件中定义，因为编译器需要看到模板的定义才能生成对应的函数。
+* 静态成员变量必须在类外定义，因为静态成员变量是类的一个属性，而不是对象的属性。也就是放在.cpp文件中定义。
+* 不同编译单元如果出现同一个模板的实例化，会出现重复定义的问题，用`weak`关键字解决?
