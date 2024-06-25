@@ -5,6 +5,7 @@ Reference : https://note.hobbitqia.cc/OOP/oop3/#for-each-loop
 ## Container	
 
 Collection objects are objects that can store an arbitrary number of other objects.
+
 * 在 C++ 中，容器在 STL 中
 * STL = Standard Template Library
 
@@ -137,12 +138,14 @@ int main(){
 #include <iostream>
 using namespace std;
 #include<list>
-list <int> L;
-for(int i=0;i<5;i++){
-  L.push_back(i)
+int main(){
+    list <int> L;
+    for(int i=0;i<5;i++){
+        L.push_back(i);
+    }
+    L.erase(++L.begin());
+    copy(L.begin(),L.end(),ostream_iterator<int>(cout,","));
 }
-L.erase(++L.begin())
-copy(L.begin(),L.end(),ostream_iterator<int>(cout,","));
 ```
 
 ![4](4.png)

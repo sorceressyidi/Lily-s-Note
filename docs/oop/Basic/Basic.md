@@ -308,6 +308,7 @@ delete [] p;
 
 ### Declaring references
 * Must be initialized when defined
+
 ```C++
 char c;
 char& r=c;
@@ -498,7 +499,7 @@ Student::Student(string s):name(s){} //initialization before constructor
 Student::Student(string s) {name=s;}
 ```
 
-* string must have a default constructor  : (先构造出 string 的对象 name, 再赋值)
+* string must have a **default constructor**  : (先构造出 string 的对象 name, 再赋值)
 
 ```C++
 Student::Student(sring s){
@@ -543,28 +544,60 @@ int main() {
     return 0;
 }
 ```
-* const
-```C++
-class Point {
-private:
-    const float x, y;
-public:
-    Point(float xa = 0.0, float ya = 0.0) : y(ya), x(xa) {}
-};
-```
-* Here, const variables cannot be assigned values, they can only be initialized. The initialization of member const variables can be done using const float x = 1.0;, but in this case, all objects of the class will have the same value. Another place where const variables can be initialized within a class is in the constructor's initialization list.
+
+* 在 C++ 中，`const` 成员变量不能被赋值，只能在初始化时赋值。这里详细解释一下关于 `const` 成员变量初始化的两种方式：
+
+1. **类内直接初始化：**
+   - 可以在声明 `const` 成员变量时直接进行初始化，例如 `const float x = 1.0`。但是，这样做的结果是所有对象的该 `const` 成员变量都将拥有相同的值，无法针对每个对象单独初始化。
+   - 示例：
+     ```cpp
+     class Point {
+     private:
+         const float x = 1.0;
+         const float y = 1.0;
+     public:
+         Point() {}
+     };
+     ```
+     这种方式的限制是所有 `Point` 对象的 `x` 和 `y` 都是 1.0，无法在创建对象时赋予不同的值。
+
+2. **构造函数初始化列表：**
+   - 另一种初始化 `const` 成员变量的方式是使用构造函数的初始化列表。这种方式允许在创建对象时为 `const` 成员变量赋予不同的值。
+   - 示例：
+     ```cpp
+     class Point {
+     private:
+         const float x, y;
+     public:
+         Point(float xa = 0.0, float ya = 0.0) : x(xa), y(ya) {}
+     };
+     ```
+     在这个例子中，`Point` 类有两个 `const` 成员变量 `x` 和 `y`。构造函数使用初始化列表来初始化这两个 `const` 变量。这样，创建对象时可以为每个对象的 `x` 和 `y` 赋予不同的值。
+     ```cpp
+     Point p1(1.0, 2.0);  // p1 的 x 是 1.0，y 是 2.0
+     Point p2(3.0, 4.0);  // p2 的 x 是 3.0，y 是 4.0
+     ```
+
+**详细解释：**
+
+在上述 `Point` 类中，定义了两个 `const` 成员变量 `x` 和 `y`。由于它们是 `const` 的，所以一旦被初始化后，就不能再修改其值。为了能够灵活地为每个对象的 `x` 和 `y` 赋值，我们使用了构造函数的初始化列表：
+
+- 构造函数 `Point(float xa = 0.0, float ya = 0.0)` 定义了两个参数 `xa` 和 `ya`，并且给它们提供了默认值 `0.0`。
+- 初始化列表 `: x(xa), y(ya)` 在构造函数体执行之前将参数 `xa` 和 `ya` 的值分别赋给 `const` 成员变量 `x` 和 `y`。
+- 这种方法确保了每个对象在创建时都可以有不同的 `x` 和 `y` 值，而不是所有对象都具有相同的 `const` 成员值。
+
 
 #### Destructor「析构」
 
-* Destructor is called automatically by the compiler when theobject goes out of scope
+* Destructor is called automatically by the compiler when the object goes out of scope
 
-* The order of destruction is the reverse of construction.
+* The order of destruction is the **reverse** of construction.
 
 * Scope is delimited by curly braces`{ }`.
 
-* Upon entering a function, space for all local variables is allocated,but constructors are not invoked until the specific constructor line is executed. 
+* Upon entering a function, space for all local variables is **allocated**,but constructors are not invoked until the specific constructor line is executed. 
 
-  Similarly, when entering a `switch case` statement, space for objects is generated but not constructed, which may lead to issues during destruction.
+  Similarly, when entering a `switch case` statement, space for objects is generated **but not constructed**, which may lead to issues during destruction.
 
 ```c++
 void f(int i){
@@ -583,7 +616,7 @@ void f(int i){
 }
 ```
 
-* Memory for $x_1$($x_2$) is allocated , but not initialized , so **destruction** will fail
+* Memory for `x1`(`x2`) is allocated , but not initialized , so **destruction** will fail
 
 #### Definitions of a class
 

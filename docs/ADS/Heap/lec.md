@@ -405,8 +405,11 @@ Use aggregate analysis to determine the amortized cost per operation.
 ### The accounting method
 In the accounting method of amortized analysis, we assign differing charges to different operations, with some operations charged more or less than they actually cost. We call the amount we charge an operation its amortized cost. 
 When an operation’s amortized cost exceeds its actual cost, we assign the difference to specific objects in the data structure as credit. 
+
 * Credit can help pay for later operations whose amortized cost is less than their actual cost. 
+
 * If we want to show that in the worst case the average cost per operation is small by analyzing with amortized costs, we must ensure that **the total amortized cost of a sequence of operations provides an upper bound on the total actual cost of the sequence**.
+
 * this relationship must hold for all sequences of operations.
   Which means $\sum \hat{c}_i\ge\sum c_i$ for all sequences of n operations. 
 * The total credit stored in the data structure is the difference between the total amortized cost and the total actual cost, or $\sum \hat{c}_i-\sum c_i$ which must be **non negative** ay **all times**
@@ -417,20 +420,27 @@ When an operation’s amortized cost exceeds its actual cost, we assign the diff
 ![16](16.png)
 ### The potential method
 Instead of representing prepaid work as credit stored with specific objects in the data structure, the potential method of amortized analysis represents the prepaid work as “potential energy,” or just “potential,” which can be released to pay for future operations. We associate the potential with the data structure as a whole rather than with specific objects within the data structure.
+
 * We will perform n operations, starting with an initial data structure $D_0$
+
 * For each $i=1,2,...n$, we let $c_i$ be the actual cost of the ith operation and $D_i$ be the data structure that results after applying the ith operation to data structure $D_{i-1}$.
-* A potential function $\Phi$ maps each data structure $D_i$ to a real number $\Phi(D_i)$, which is the potential associated with data
-structure $D_i$ . 
+
+* A potential function $\Phi$ maps each data structure $D_i$ to a real number $\Phi(D_i)$, which is the potential associated with data structure $D_i$ . 
+
 * The amortized cost $\hat{c}_i$ of the ith operation with respect to potential function $\Phi$ is defined by $\hat{c}_i=c_i+\Phi(D_i)-\Phi(D_{i-1})$
+
 * the total amortized cost of the n operations is $\sum\hat{c}_i=\sum c_i+\Phi(D_n)-\Phi(D_0)$
+
 * Define a potential function so that $\Phi(D_i)\ge \Phi(D_0)$ for all i!
 
 **Stack operations**
 * See Previous Part.
+
 **Incrementing a binary counter**
 we define the potential of the counter after the ith INCREMENT operation to be $b_i$ , **the number of 1s in the counter** after the i th operation.
 ![17](17.png)
-If the counter starts at zero, then $\Phi(D_0)=0$ Since $\Phi(D_i)\ge 0$ for all i , the total amortized cost of a sequence of n INCREMENT operations is an upper bound on the total actual cost, and so the worst-case cost of n INCREMENT operations is $O(n)$.
+* If the counter starts at zero, then $\Phi(D_0)=0$ Since $\Phi(D_i)\ge 0$ for all i , the total amortized cost of a sequence of n INCREMENT operations is an upper bound on the total actual cost, and so the worst-case cost of n INCREMENT operations is $O(n)$.
+
 * The potential method gives us an easy way to analyze the counter even when it does not start at zero. 
 The counter starts with $b_0$ 1s, and after n INCREMENT operations it has $b_n$ 1s, where $0<b_0, b_n <k$. (Recall that k is the number of bits in the counter.)
 ![18](18.png)

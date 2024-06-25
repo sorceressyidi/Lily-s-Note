@@ -36,16 +36,20 @@
 ## Splay Trees
 Target :  Any $M$ consecutive tree operations starting from an empty tree take at most $O(M log N)$ time.
 * For any nonroot node $X$ , denote its **parent** by $P$ and **grandparent** by $G$
+
 ![2](2.png)
+
 * 其实不是  **Single rotation**，也是要两次$(Zig-Zig)$ : 先转 $P$再转$X$
 * $Zig-Zag$  only rotate $X$
+
 ![4](4.png)
 
 ## Amortized Analysis
 
 * Amotized bound :  Probability is not involved !
 
-  > worst case bound > amortized bound > average case bound
+
+> worst case bound > amortized bound > average case bound
 
 ### Aggregate analysis
 
