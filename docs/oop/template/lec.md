@@ -1,6 +1,7 @@
 ## Template
 ### Function Template
 函数模板：用于制造函数的模板!也就是说它不是一个函数，而是一个函数的模板，编译器会根据参数类型生成对应的函数。
+
 * 我们不需要告诉编译器去制造函数，调用的时候自然会根据参数类型生成对应的函数。
 * 如果这个时候已经有了某一个函数，那么编译器会优先调用已有的函数。
 ```c++
@@ -18,6 +19,7 @@ void swap( T& x, T& y ) {
     y = temp; 
 }
 ```
+
 * The class `T` specifies a parameterized type name 
 * class means any built-in type or user-defined type
 * Inside the template, use T as a type name
@@ -40,6 +42,7 @@ std::string s("Hello");
 std::string t("World"); 
 swap(s, t); // std::string swap 
 ```
+
 * 这里 `swap(k,m)` 会调用函数模板，随后生成 `float swap`, 编译器会插入函数，调用。
 * 在 C++ 中编译后重载函数的名字不再是 f, 而是 _f_int/_f_double/_f_void..., 把函数的参数类型编入函数的名字
 * Only exact match on types is used
@@ -50,6 +53,7 @@ swap(int, int); // ok
 swap(double, double); // ok 
 swap(int, double); // error!
 ```
+
 * Even implicit conversions are ignored!
 * Template functions and regular functions coexist
 ```c++
@@ -86,6 +90,7 @@ private:
  int m_size; 
 };
 ```
+
 * 类模板一定是显式的(如 STL 模板)
 * 类模板里的所有函数都是类模板，所以如果在外面定义的时候，也要加上模板!!!
 ```c++
@@ -180,6 +185,7 @@ private:
     int m_size;
 };
 ```
+
 * Usage:
 ```c++
 FixedVector<int, 200> v1;

@@ -265,6 +265,9 @@ struct X{
 * 当调用函数时，编译器把函数替换到实际位置
 * 整个inline函数放入头文件
 * 如果放在cpp里，那么只能local使用
+* 内联函数应在头文件中定义，以确保在所有使用它的翻译单元（编译单元）中都能看到函数体。
+* 递归函数一般不适合内联，因为编译器无法预测递归深度。
+* 内联函数不应过大，否则会导致代码膨胀，失去内联带来的性能提升。
 
 ```C++
 inline int f(int i) {
@@ -549,7 +552,7 @@ namespace X {
 }
 // header2.h
 namespace X {
-    void g(); // X how has f() and g();
+    void g(); // X now has f() and g();
 }
 ```
 

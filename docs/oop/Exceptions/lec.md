@@ -2,34 +2,46 @@
 
 ## Exceptions
 Exceptions are a mechanism for handling errors in C++ programs. They are used to signal that an error has occurred and to specify what should be done to handle the error.
+
 * The significant benefit of exceptions is that they clean up error handling code.
+
 * It separates the code that describes what you want to do from the code that is executed.
 
 可以预见的错误：
+
 * 找不到文件
 * 文件虽然存在但是打不开（没有权限、被别的进程打开）
 * 文件大小判断失败（可能是一个串口，不是磁盘上的文件，串口是没有结束的）
+
 >可以 fseek 到文件末尾，再 ftell 末尾的值。
 
 
 ```c++
 errorCodeType readFile { initialize errorCode = 0;
     open the file;
-    if ( theFilesOpen ) { determine its size;
-    if ( gotTheFileLength ) { allocate that much memory;
-    if ( gotEnoughMemory ) { read the file into memory;
-    if ( readFailed ) { errorCode = -1;
-    } } else {
-    errorCode = -2;
-    } } else {
-    errorCode = -3;
-    }
-    close the file;
-    if ( theFILEDidntClose && errorCode == 0 ) { errorCode = -4;
+    if ( theFilesOpen ) { 
+        determine its size;
+        if ( gotTheFileLength ) { 
+            allocate that much memory;
+            if ( gotEnoughMemory ) { 
+                read the file into memory;
+                if ( readFailed ) { 
+                    errorCode = -1;
+                }
+             }else {
+                errorCode = -2;
+                } 
+        } else {
+            errorCode = -3;
+        }
+        close the file;
+        if ( theFILEDidntClose && errorCode == 0 ) { 
+            errorCode = -4;
+    }else {
+        errorCode = errorCode and -4;
+        } 
     } else {
-    errorCode = errorCode and -4;
-    } } else {
-    errorCode = -5;
+        errorCode = -5;
     }
     return errorCode;
 }
@@ -67,8 +79,9 @@ public:
 * 问题：当用户试图访问一个不存在的元素时，应该怎么处理？
 ```c++
 T& Vector::operator[](int index) { 
-    if (index < 0 || index >= m_size) 
+    if (index < 0 || index >= m_size){
         throw "Index out of range"; 
+    }
     return m_elements[index]; 
 }
 ```
@@ -79,17 +92,17 @@ T& Vector::operator[](int index) {
 * 上面这里 throw 之后，如果大括号是语句就离开语句，如果是函数就离开函数，如果是 try{}, 我们就判断匹配一个异常类
 ```c++
 class VectorIndexError { 
-public: 
-VectorIndexError(int v) : m_badValue(v) { } 
-~VectorIndexError() { } 
-void diagnostic() { cerr << "index " << m_ badValue << "out of range!"; } 
-private: 
-int m_badValue; 
-};
-template <class T> T& Vector::operator[](int index) { 
-    if (index < 0 || index >= m_size) 
-        throw VectorIndexError(index); 
-    return m_elements[index]; 
+    public: 
+    VectorIndexError(int v) : m_badValue(v) { } 
+    ~VectorIndexError() { } 
+    void diagnostic() { cerr << "index " << m_ badValue << "out of range!"; } 
+    private: 
+    int m_badValue; 
+    };
+    template <class T> T& Vector::operator[](int index) { 
+        if (index < 0 || index >= m_size) 
+            throw VectorIndexError(index); 
+        return m_elements[index]; 
 }
 ```
 ```c++
@@ -101,7 +114,7 @@ try {
 } catch (VectorIndexError) { 
     cout << err; 
     throw; // propagate the exception 
-    } 
+} 
 }
 ```
 * try 后面可以跟任意数量的 catch.
@@ -121,12 +134,9 @@ catch (...) { // handler code }
 ### `void abc():throw (MathErr);`
 * 如果有这个声明，那么这个函数里面就不能抛出其他异常，只能抛出 MathErr 异常。抛出了其他异常，编译器会报错，终止程序。
 ```c++
-Printer::print(Document&) : 
- throw(PrinterOffLine, BadDocument) { ... }
-PrintManager::print(Document&) : throw (BadDocument) { ... }
- // raises or doesn’t handle BadDocument 
-void goodguy() : throw () { }
- // handles all exceptions 
+Printer::print(Document&) : throw(PrinterOffLine, BadDocument) { ... }
+PrintManager::print(Document&) : throw (BadDocument) { ... }// raises or doesn’t handle BadDocument 
+void goodguy() : throw () { }// handles all exceptions 
 void average() { } // no spec, no checking,
 ```
 * 1.表示会抛 PrinterOffLine, BadDocument 异常。（不一定抛，但可能）
@@ -157,8 +167,8 @@ f() {
     }
     ```
     * 如果是全局的error类，等堆栈清空的时候，会自动析构。
-  3. Altimate: 两阶段构造:构造函数不做任何事情(打开网络，读取文件等)，只是分配内存，然后用explicit的init函数（第二阶段构：需要主动调用）来初始化。
-   也就是说构造函数不允许抛异常，只有init函数可以抛异常。
+  3. Altimate: 两阶段构造:构造函数不做任何事情(打开网络，读取文件等)，只是分配内存，然后用explicit的init函数（第二阶段构：需要主动调用）来初始化
+   * 也就是说构造函数不允许抛异常，只有init函数可以抛异常。
 
 ## Complement : stream
 ```c++

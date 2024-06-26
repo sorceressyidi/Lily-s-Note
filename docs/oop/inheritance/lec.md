@@ -87,13 +87,13 @@ Manager::Manager(const string& _name, const string& _ssn, const string& _title =
 
 Better to initialize the parent class by calling its constructor instead of 
 
-> ```c++
->Manager(const std::string& name, const std::string& ssn, const std::string&title):name(_name),ssn(_ssn)mtitle)_title){}
-> ```
+```c++
+Manager(const std::string& name, const std::string& ssn, const std::string&title):name(_name),ssn(_ssn)mtitle(_title){}
+```
 
 ```c++
 void Manager::print()const{
- 	Employee::print();
+  Employee::print();
   cout << title << endl;
 }
 ```
@@ -156,20 +156,21 @@ class A private B{
 };
 ```
 
-
-* `public` : A isa B
+* `public` : A is a B
+* `protected` : A is a B and A's member is protected(for A's descandent)
+* `private` : A is a B and A's member is private(for A's descandent)
 
 >Public Inheritance should imply substitution
 
-If B isa A, you can use a B any where an A can be used.
-if B isa A, then everything that is true for A is also true of B.
-  Be careful if the substitution is not valid!
+If B is a A, you can use a B any where an A can be used.
+if B is a A, then everything that is true for A is also true of B.
+>Be careful if the substitution is not valid!
 
 
 
 * $A \rightarrow B$
 * $A^* \rightarrow B^*$ 
-* $A\& \rightarrow B\& $
+* $A\& \rightarrow B\&$
 
 ### Upcasting
 ```c++
@@ -188,24 +189,37 @@ class B:public A{
     B(){i=20;cout<<"B()"<<i<<endl;}
 };
 int main(){
-  B b;
-  A *p=&b;
-  b.f();
-  p->f();   // A::f()
-  cout<< sizeof(*p)<<endl;
-  int *pi = (int*)p;
-  cout<< pi[0] <<","<<pi[1]<<endl;
-  cout << p->i <<endl;
-  cout << b.i<<endl;
+    B b;
+    cout << "finished creating b"<<endl;
+    cout << endl;
+
+    A *p=&b;
+    b.f();
+    cout << endl;
+    cout << "which f() is called by A* p=&b; ?"<<endl;
+    p->f();   // A::f()
+    cout << endl;
+    cout<< sizeof(*p)<<endl;
+    int *pi = (int*)p;
+    cout << endl;
+    
+    cout<< pi[0] <<","<<pi[1]<<endl;
+    cout << p->i <<endl;
+    cout << b.i<<endl;
 }
 ```
-
 ```
 A()10
 B()20
+finished creating b
+
 B::f()
+
+which f() is called by A* p=&b; ?
 A::f()
+
 4
+
 10,20
 10
 20
@@ -229,18 +243,27 @@ class B:public A{
     B(){i=20;cout<<"B()"<<i<<endl;}
 };
 int main(){ 
-  B b;
-  A *p=&b;
-  cout << sizeof(b)<<endl; 
-  cout << sizeof(A)<<endl; 
-  b.f();
-  p->f();
-  cout<< sizeof(*p)<<endl;
-  int *pi = (int*)p;
-  cout<< pi[0] <<","<<pi[1]<<endl;
-  cout << p->i <<endl;
-  cout << b.i<<endl;
+    B b;
+    A *p=&b;
+    B *q=&b;
+    cout << sizeof(b)<<endl; 
+    cout << sizeof(A)<<endl; 
+    
+    b.f();
+    cout << "When virtual is added it will call the derived class function f() else it will call the base class function f()"<<endl;
+    p->f();
+    cout<< sizeof(*p)<<endl;
+    cout<< sizeof(*q)<<endl;
+    int *pi = (int*)p;
+    int *qi = (int*)q;
+    cout<< pi[0] <<","<<pi[1]<<','<<pi[2]<<','<<pi[3]<<endl;
+    cout<< qi[0] <<","<<qi[1]<<','<<qi[2]<<','<<qi[3]<<endl;
+
+    cout << "p->i is still A's i"<<endl;
+    cout << p->i <<endl;
+    cout << b.i<<endl;
 }
+
 ```
 
 
@@ -252,9 +275,13 @@ B()20
 16
 16
 B::f()
+When virtual is added it will call the derived class function f() else it will call the base class function f()
 B::f()
 16
-73269440,1
+16
+12550336,1,10,20
+12550336,1,10,20
+p->i is still A's i
 10
 20
 ```
@@ -336,7 +363,7 @@ The V table is a table of the addresses of the virtual functions for that class.
 
 * **Note : Pointer size is 8 bytes in 64-bit system. And We have to consider alignment.**
 
-* Vtable is created at compile time.SO it is static.
+* Vtable is created at compile time. SO it is static.
 
 ![6](6.png)
 
@@ -464,15 +491,18 @@ class B:public A{
     B(){i=20;cout<<"B()"<<i<<endl;}
 };
 int main(){ 
+  cout << "Creating B object"<<endl;
   B b;
+  cout << "Creating A object"<<endl;
   A a;
 
   A *p=&b;
   cout << "----------"<<endl;
+
   p->f();
   cout << sizeof(b)<<endl; 
   cout << sizeof(A)<<endl; 
-  
+
   int *pi = (int*)p;
   cout<< long(pi[0]) <<","<<pi[2]<<","<<pi[3]<<endl;
 
@@ -484,6 +514,7 @@ int main(){
   cout << "-------------"<<endl;
   a = b;
   p = &a;
+  cout << "This time p is pointing to A object and a=b is sliced from b to a(meaning that the B part of b is copied to a and original A is preserved)"<<endl;
 
   pi = (int*)p;
   cout<< long(pi[0]) <<","<<pi[2]<<endl;
@@ -491,15 +522,18 @@ int main(){
   long long **vp1 = (long long**)(p);
   void (*pf1) () = (void (*)())(*(*vp1));
   pf1();
+
   cout<<"-----------"<<endl;
   b.f();
   a.f();
   p -> f();
   cout <<"----------"<<endl;
+
   A *x1 = new A();
   B *x2 = new B();
-  
-  x1 = x2;
+
+  x1 = x2; 
+  cout << "x1 = x2 and x1 is pointing to B object now"<<endl;
   cout << "-----------"<<endl;
   x1->f(); 
 }
@@ -586,9 +620,11 @@ int main() {
 
 ### Abstract Classes
 ![7](7.png)
+
 * 我们不应该制造 Shape 的对象，他的作用只在于**提供一个抽象的概念和公共接口!!**
 * 一个类中有一个或多个纯虚函数，这个类就是抽象类
 * 纯虚函数：
+
   ```c++
   virtual void render() = 0;
   ```

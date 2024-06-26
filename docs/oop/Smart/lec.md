@@ -2,8 +2,10 @@
 - Smart pointers are objects that store pointers to dynamically allocated (heap) memory.
 ### Example
 `String abc("abcdefg");`
+
 * 要做的是String类内部存储的自动回收的指针，而不是String类的指针。
 * Whenever a pointer is assigned: p = q; Have to do the following
+
 ```c++
 p->decrement(); // p's count will decrease 
 p = q; 
@@ -12,6 +14,7 @@ q->increment(); // q/p's count will increase
 ![1](1.png)
 
 #### UCObject
+
 * delete this; 是合法的，但之后不应该再使用 this 指针(之后不涉及成员变量)
 ```c++
 #ifndef UCObject_H_

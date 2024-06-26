@@ -190,16 +190,18 @@ aa: 0x16dd97010
   * 那么编译器会做浅拷贝，也就是拷贝指针，而不是指针指向的内容，不同指针指向同一块内存，一个析构了，另一个就是野指针了。
 #### types of function parameters and return value
 **way in**
+
 * a new object is to be created in f `void f(Student i)`;
-* better with const if no intend to modify the object `void f(Student *p);`
-* better with const if no intend to modify the object `void f(Student& i);`
+* **better with const** if no intend to modify the object `void f(Student *p);`
+* **better with const** if no intend to modify the object `void f(Student& i);`
 
 
 **way out**
 
 * a new object is to be created at returning `Student f()`;
-* what should it points to? `Student* f()`;
-* what should it refers to? `Student& f()`;
+* what should it points to?  `Student* f()`;
+* what should it refers to?  `Student& f()`;
+
 ```c++
 char *foo() {
     char *p;    
@@ -230,7 +232,7 @@ while(){
 ```
 * Pass in a **const** pointer or reference if you want to **get the values**
 * Pass in a pointer or reference if you want **to do something to it**
-* Pass out an object if you create it in the function:如果创建了新的对象，就要传对象出去(新的对象是本地变量)
+* Pass out an object if you create it in the function:如果创建了新的对象，就要传对象出去(**新的对象是本地变量**)
 * Pass out pointer or reference of the passed in only : 传出去的指针/引用只能是传入的指针/引用
 * **Never new something and return the pointer!!!!**
   * 在哪里 new 就在哪里 delete!!
@@ -248,16 +250,16 @@ while(){
 - 只能出现在赋值号右边的都是右值
   - 字⾯量
   - 表达式
-* 饮用只能接受左值!!—>引用是左值的别名
+* 引用只能接受左值!!—>引用是左值的别名
 * 调用函数时的传参**相当于参数变量在调用时的初始化**
 * `&&` 成为右值引用
 ```c++
-int x=20; // 左值
-int&& rx = x * 2; // x*2的结果是一个右值，rx延长其⽣命周期
-int y = rx + 2; // 因此你可以重用它:42
-rx = 100; // 一旦你初始化一个右值引用变量，该变量就成为了一个左值，可以被赋值
-int&& rrx1 = x; // 非法:右值引用无法被左值初始化
-const int&& rrx2 = x; // 非法:右值引用无法被左值初始化
+int x=20;               // 左值
+int&& rx = x * 2;       // x*2的结果是一个右值，rx延长其⽣命周期
+int y = rx + 2;         // 因此你可以重用它:42
+rx = 100;               // 一旦你初始化一个右值引用变量，该变量就成为了一个左值，可以被赋值
+int&& rrx1 = x;         // 非法:右值引用无法被左值初始化
+const int&& rrx2 = x;   // 非法:右值引用无法被左值初始化
 ```
 * `x` 不存在了，右值引用依然可以使用
 * 右值引用本身是个左值!
@@ -304,7 +306,9 @@ DynamicArray(DynamicArray&& rhs) : m_size{rhs.m_size}, m_array{rhs.m_array}
     cout << "Move constructor: dynamic array is moved!\n";
 }
 ```
+
 * Move ctor is called when an object is constructed from an rvalue,avoid unnecessary deep copy.
+
 #### When is move ctor called?
 * 类内**有指针**，而且**对象会在函数内传进传出** (原来的不要了)
 * 如果类内没有指针，根本不会有“移动“一说
@@ -320,6 +324,7 @@ vector<int> v1{1, 2, 3, 4};
 vector<int> v2 = v1;
 vector<int> v3 = std::move(v1);// 此时调用用移动构造函数
 ```
+
 * 此时调用复制构造函数，v2是v1的副本 
 * 通过 `std::move` 将 v1 转化为右值，从⽽激发 v3 的移动构造函数，实现移动语义
 #### c++11 new features
@@ -332,8 +337,8 @@ string str("hello");
 string str = "hello";
 //大括号初始化
 struct Studnet{
-char *name;
-int age;
+    char *name;
+    int age;
 };
 Studnet s = {"dablelv", 18};//Plain of Data类型对象
 Studnet sArr[] = {{"dablelv", 18}, {"tommy", 19}}; //POD数组
@@ -341,10 +346,10 @@ Studnet sArr[] = {{"dablelv", 18}, {"tommy", 19}}; //POD数组
 ##### 列表初始化
 ```c++
 class Test{
-int a;
-int b;
-public:
-Test(int i, int j);
+    int a;
+    int b;
+    public:
+    Test(int i, int j);
 };
 Test t{0, 0}; //C++11 only，相当于 Test t(0,0);
 Test *pT = new Test{1, 2}; //C++11 only，相当于 Test* pT=new Test(1,2);
@@ -374,7 +379,7 @@ int main(){
 ```
 ## Overloaded Operators
 * Types that cannot be overloaded:
-    * `::` `.*` `.` `?:`
+    * `::` `.` `*` `?` `:`
     * `sizeof` `typeid`
     * `new` `delete` `new[]` `delete[]`
     * `static_cast` `dynamic_cast` `const_cast` `reinterpret_cast`
@@ -396,8 +401,9 @@ public:
         A c(this->i+that.i);        /* 这里可以访问 that. 私有是针对类的，不是针对对象的。 */
         return c;
     }
-private:
-    int i;
+    //!返回的应该是右值，所以const！
+    private:
+        int i;
 }
 int main() {
     A a = 6;
@@ -449,7 +455,8 @@ A()30
 
 * `A c = a+b;` is equivalent to `A c = a.operator+(b);`
 * `A c = a+3;` is equivalent to `A c = a.operator+(3);`
-* And when using '3' as the second operand,we construct a temporary object of A(3) and pass it to the operator+ function.
+* And when using '3' as the second operand：
+  we construct a temporary object of A(3) and pass it to the operator+ function.
 ```c++
 #include<iostream>
 using namespace std;
@@ -531,7 +538,7 @@ A()13
 * Assignment operators `=`,`()`,`[]` ,`->` and `->*` must be members.
 * All other binary operators as non-members!
 
-**Note : What if A class don't have getVal() function?**
+**Note : What if A class don't have `getVal()` function?**
 * We can use `friend` to access private members of class A.
 ```c++
 friend const A operator+(const A& r,const A&l); 
@@ -720,12 +727,14 @@ string abc("abc");
 PathName xyz(abc); // OK!
 xyz = abc; // OK abc => PathName Type Conversion
 ``` 
+
 * 先利用 abc 构造一个 PathName 的对象，随后赋值给 xyz.
 * **以其他变量为参数的构造函数可以帮助我们做这个赋值也就是类型转换！！！！**
 * 在构造函数前面加上 `explicit` 关键字: 
 ```c++
 explicit PathName(const string&);
 ``` 
+
 * 这时我们的构造函数**只能用来做构造！！！** 
 * 所以此时，不能把 string 对象赋值给 PathName.这样编译时就会出错。
 * **制止不小心的隐式类型转换**
@@ -747,9 +756,10 @@ Rational::operator double() const {
 Rational r(1,3); 
 double d = r; // r=>double
 ```
+
 * 不需要写返回类型。 如果我们在重载的运算符前面加上 explicit, 那么我们就必须写作 `double d = (double)r;`
 * 注意：类型转换符和构造函数的重载只能有一个存在！
-* 想将 T 转化为 C, 那么需要一个 C(T) 的不加 explicit的构造函数，或者 operator C() 的重载。如果两个都有，编译器会出错。
+* 想将 T 转化为 C, 那么需要一个 C(T) 的不加 explicit的构造函数，或者 `operator C()` 的重载。如果两个都有，编译器会出错。
 
 ![1](1.png)
 
