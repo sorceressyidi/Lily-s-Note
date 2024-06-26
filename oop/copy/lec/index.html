@@ -4500,16 +4500,19 @@
 <li>那么编译器会做浅拷贝，也就是拷贝指针，而不是指针指向的内容，不同指针指向同一块内存，一个析构了，另一个就是野指针了。</li>
 </ul>
 <h4 id="types-of-function-parameters-and-return-value">types of function parameters and return value<a class="headerlink" href="#types-of-function-parameters-and-return-value" title="Permanent link">&para;</a></h4>
-<p><strong>way in</strong>
-* a new object is to be created in f <code>void f(Student i)</code>;
-* better with const if no intend to modify the object <code>void f(Student *p);</code>
-* better with const if no intend to modify the object <code>void f(Student&amp; i);</code></p>
+<p><strong>way in</strong></p>
+<ul>
+<li>a new object is to be created in f <code>void f(Student i)</code>;</li>
+<li><strong>better with const</strong> if no intend to modify the object <code>void f(Student *p);</code></li>
+<li><strong>better with const</strong> if no intend to modify the object <code>void f(Student&amp; i);</code></li>
+</ul>
 <p><strong>way out</strong></p>
 <ul>
 <li>a new object is to be created at returning <code>Student f()</code>;</li>
-<li>what should it points to? <code>Student* f()</code>;</li>
-<li>what should it refers to? <code>Student&amp; f()</code>;
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<li>what should it points to?  <code>Student* f()</code>;</li>
+<li>what should it refers to?  <code>Student&amp; f()</code>;</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">    </span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;something&quot;</span><span class="p">);</span>
@@ -4520,13 +4523,12 @@
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
-</code></pre></div></li>
-<li>p 本身是本地变量，但指向的地方是<strong>全局的空间</strong></li>
-<li>要不要做<code>delete p</code>?
+</code></pre></div>
+* p 本身是本地变量，但指向的地方是<strong>全局的空间</strong>
+* 要不要做<code>delete p</code>?
   1. 如果不做，出了函数就找不到这个空间了，内存泄漏:如果一个一直在运行的程序中有内存泄漏，那么这个程序会越来越慢，因为内存越来越少！
-  2. 那我怎么知道我应该delete呢？如果是new出来的，那么就要delete，如果是指向全局的，那么就不用delete</li>
-<li>也就是说这样传出指针不是一个好的方法，因为不知道是不是要delete！</li>
-</ul>
+  2. 那我怎么知道我应该delete呢？如果是new出来的，那么就要delete，如果是指向全局的，那么就不用delete
+* 也就是说这样传出指针不是一个好的方法，因为不知道是不是要delete！</p>
 <h4 id="tips_1">Tips:<a class="headerlink" href="#tips_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Pass in an object if you want to store it : 函数要存一个对象，<strong>不用用指针或者引用传入</strong>，而是直接传入</li>
@@ -4539,7 +4541,7 @@
 </code></pre></div></li>
 <li>Pass in a <strong>const</strong> pointer or reference if you want to <strong>get the values</strong></li>
 <li>Pass in a pointer or reference if you want <strong>to do something to it</strong></li>
-<li>Pass out an object if you create it in the function:如果创建了新的对象，就要传对象出去(新的对象是本地变量)</li>
+<li>Pass out an object if you create it in the function:如果创建了新的对象，就要传对象出去(<strong>新的对象是本地变量</strong>)</li>
 <li>Pass out pointer or reference of the passed in only : 传出去的指针/引用只能是传入的指针/引用</li>
 <li><strong>Never new something and return the pointer!!!!</strong></li>
 <li>在哪里 new 就在哪里 delete!!</li>
@@ -4560,15 +4562,15 @@
 <li>只能出现在赋值号右边的都是右值</li>
 <li>字⾯量</li>
 <li>表达式</li>
-<li>饮用只能接受左值!!—&gt;引用是左值的别名</li>
+<li>引用只能接受左值!!—&gt;引用是左值的别名</li>
 <li>调用函数时的传参<strong>相当于参数变量在调用时的初始化</strong></li>
 <li><code>&amp;&amp;</code> 成为右值引用
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// 左值</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// x*2的结果是一个右值，rx延长其⽣命周期</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 因此你可以重用它:42</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// 一旦你初始化一个右值引用变量，该变量就成为了一个左值，可以被赋值</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rrx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// 非法:右值引用无法被左值初始化</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rrx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// 非法:右值引用无法被左值初始化</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span><span class="w">               </span><span class="c1">// 左值</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">       </span><span class="c1">// x*2的结果是一个右值，rx延长其⽣命周期</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">         </span><span class="c1">// 因此你可以重用它:42</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">               </span><span class="c1">// 一旦你初始化一个右值引用变量，该变量就成为了一个左值，可以被赋值</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rrx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">         </span><span class="c1">// 非法:右值引用无法被左值初始化</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rrx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">   </span><span class="c1">// 非法:右值引用无法被左值初始化</span>
 </code></pre></div></li>
 <li><code>x</code> 不存在了，右值引用依然可以使用</li>
 <li>右值引用本身是个左值!
@@ -4609,14 +4611,16 @@
 <li>拷贝构造就是重新申请一块内存并将原内存的数据拷贝过来</li>
 <li>移动构造就是让新对象的指针指向内存，但原指针不再指向这个内存<code>(nullptr)</code>.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">DynamicArray</span><span class="p">(</span><span class="n">DynamicArray</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_size</span><span class="p">{</span><span class="n">rhs</span><span class="p">.</span><span class="n">m_size</span><span class="p">},</span><span class="w"> </span><span class="n">m_array</span><span class="p">{</span><span class="n">rhs</span><span class="p">.</span><span class="n">m_array</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">DynamicArray</span><span class="p">(</span><span class="n">DynamicArray</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_size</span><span class="p">{</span><span class="n">rhs</span><span class="p">.</span><span class="n">m_size</span><span class="p">},</span><span class="w"> </span><span class="n">m_array</span><span class="p">{</span><span class="n">rhs</span><span class="p">.</span><span class="n">m_array</span><span class="p">}</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="n">rhs</span><span class="p">.</span><span class="n">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="n">rhs</span><span class="p">.</span><span class="n">m_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Move constructor: dynamic array is moved!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
 </code></pre></div>
-* Move ctor is called when an object is constructed from an rvalue,avoid unnecessary deep copy.</p>
+<ul>
+<li>Move ctor is called when an object is constructed from an rvalue,avoid unnecessary deep copy.</li>
+</ul>
 <h4 id="when-is-move-ctor-called">When is move ctor called?<a class="headerlink" href="#when-is-move-ctor-called" title="Permanent link">&para;</a></h4>
 <ul>
 <li>类内<strong>有指针</strong>，而且<strong>对象会在函数内传进传出</strong> (原来的不要了)</li>
@@ -4629,12 +4633,14 @@
 <li>因为一般来说，我们不能传出去本地变量，但是右值是可以的，只能传出去传进来的东西</li>
 </ul>
 <h4 id="stdmove"><code>std::move</code><a class="headerlink" href="#stdmove" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v1</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span><span class="c1">// 此时调用用移动构造函数</span>
 </code></pre></div>
-* 此时调用复制构造函数，v2是v1的副本 
-* 通过 <code>std::move</code> 将 v1 转化为右值，从⽽激发 v3 的移动构造函数，实现移动语义</p>
+<ul>
+<li>此时调用复制构造函数，v2是v1的副本 </li>
+<li>通过 <code>std::move</code> 将 v1 转化为右值，从⽽激发 v3 的移动构造函数，实现移动语义</li>
+</ul>
 <h4 id="c11-new-features">c++11 new features<a class="headerlink" href="#c11-new-features" title="Permanent link">&para;</a></h4>
 <h5 id="_1">对象初始化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">//小括号初始化</span>
@@ -4643,18 +4649,18 @@
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">string</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span>
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1">//大括号初始化</span>
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Studnet</span><span class="p">{</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 <a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">};</span>
 <a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="n">Studnet</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;dablelv&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">};</span><span class="c1">//Plain of Data类型对象</span>
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">Studnet</span><span class="w"> </span><span class="n">sArr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;dablelv&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;tommy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">}};</span><span class="w"> </span><span class="c1">//POD数组</span>
 </code></pre></div>
 <h5 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="p">{</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">Test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">};</span>
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">Test</span><span class="w"> </span><span class="n">t</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">//C++11 only，相当于 Test t(0,0);</span>
 <a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="n">Test</span><span class="w"> </span><span class="o">*</span><span class="n">pT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Test</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w"> </span><span class="c1">//C++11 only，相当于 Test* pT=new Test(1,2);</span>
@@ -4685,7 +4691,7 @@
 <li>
 <p>Types that cannot be overloaded:</p>
 <ul>
-<li><code>::</code> <code>.*</code> <code>.</code> <code>?:</code></li>
+<li><code>::</code> <code>.</code> <code>*</code> <code>?</code> <code>:</code></li>
 <li><code>sizeof</code> <code>typeid</code></li>
 <li><code>new</code> <code>delete</code> <code>new[]</code> <code>delete[]</code></li>
 <li><code>static_cast</code> <code>dynamic_cast</code> <code>const_cast</code> <code>reinterpret_cast</code></li>
@@ -4711,15 +4717,16 @@
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="n">A</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">i</span><span class="o">+</span><span class="n">that</span><span class="p">.</span><span class="n">i</span><span class="p">);</span><span class="w">        </span><span class="cm">/* 这里可以访问 that. 私有是针对类的，不是针对对象的。 */</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">private</span><span class="o">:</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="cm">/* a + 9 也是可以的；但 9 + a 不行 */</span>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 输出 13 */</span>
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="p">}</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="c1">//!返回的应该是右值，所以const！</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="p">}</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">    </span><span class="cm">/* a + 9 也是可以的；但 9 + a 不行 */</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 输出 13 */</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li>Why use <code>const</code>?<ul>
@@ -4766,7 +4773,8 @@
 <li><code>A c = a+b;</code> is equivalent to <code>A c = a.operator+(b);</code></li>
 <li><code>A c = a+3;</code> is equivalent to <code>A c = a.operator+(3);</code></li>
 <li>
-<p>And when using '3' as the second operand,we construct a temporary object of A(3) and pass it to the operator+ function.
+<p>And when using '3' as the second operand：
+  we construct a temporary object of A(3) and pass it to the operator+ function.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">{</span>
@@ -4851,7 +4859,7 @@
 <li>Assignment operators <code>=</code>,<code>()</code>,<code>[]</code> ,<code>-&gt;</code> and <code>-&gt;*</code> must be members.</li>
 <li>All other binary operators as non-members!</li>
 </ul>
-<p><strong>Note : What if A class don't have getVal() function?</strong>
+<p><strong>Note : What if A class don't have <code>getVal()</code> function?</strong>
 * We can use <code>friend</code> to access private members of class A.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">friend</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="n">l</span><span class="p">);</span><span class="w"> </span>
 </code></pre></div></p>
@@ -5039,7 +5047,7 @@
 <li><strong>When we have pointers in the class!</strong></li>
 </ul>
 <h3 id="type-conversion">Type Conversion<a class="headerlink" href="#type-conversion" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PathName</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PathName</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="k">public</span><span class="o">:</span>
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w"> </span><span class="c1">// or could be multi-argument with defaults</span>
@@ -5052,20 +5060,27 @@
 <a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="n">PathName</span><span class="w"> </span><span class="nf">xyz</span><span class="p">(</span><span class="n">abc</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK!</span>
 <a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="n">xyz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abc</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK abc =&gt; PathName Type Conversion</span>
 </code></pre></div>
-* 先利用 abc 构造一个 PathName 的对象，随后赋值给 xyz.
-* <strong>以其他变量为参数的构造函数可以帮助我们做这个赋值也就是类型转换！！！！</strong>
-* 在构造函数前面加上 <code>explicit</code> 关键字: 
+<ul>
+<li>先利用 abc 构造一个 PathName 的对象，随后赋值给 xyz.</li>
+<li><strong>以其他变量为参数的构造函数可以帮助我们做这个赋值也就是类型转换！！！！</strong></li>
+<li>
+<p>在构造函数前面加上 <code>explicit</code> 关键字: 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">explicit</span><span class="w"> </span><span class="n">PathName</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
-</code></pre></div>
-* 这时我们的构造函数<strong>只能用来做构造！！！</strong> 
-* 所以此时，不能把 string 对象赋值给 PathName.这样编译时就会出错。
-* <strong>制止不小心的隐式类型转换</strong></p>
+</code></pre></div></p>
+</li>
+<li>
+<p>这时我们的构造函数<strong>只能用来做构造！！！</strong> </p>
+</li>
+<li>所以此时，不能把 string 对象赋值给 PathName.这样编译时就会出错。</li>
+<li><strong>制止不小心的隐式类型转换</strong></li>
+</ul>
 <h3 id="conversion-operators">Conversion Operators<a class="headerlink" href="#conversion-operators" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Operator name is <strong>any type descriptor</strong></li>
 <li>No <strong>explicit arguments</strong></li>
 <li>No <strong>return type</strong></li>
-<li>Compiler will use it as a type conversion from 
+<li>
+<p>Compiler will use it as a type conversion from 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Rational</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">public</span><span class="o">:</span>
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w"> </span><span class="p">...</span>
@@ -5076,10 +5091,13 @@
 <a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="p">}</span>
 <a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="n">Rational</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span>
 <a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="c1">// r=&gt;double</span>
-</code></pre></div></li>
-<li>不需要写返回类型。 如果我们在重载的运算符前面加上 explicit, 那么我们就必须写作 <code>double d = (double)r;</code></li>
+</code></pre></div></p>
+</li>
+<li>
+<p>不需要写返回类型。 如果我们在重载的运算符前面加上 explicit, 那么我们就必须写作 <code>double d = (double)r;</code></p>
+</li>
 <li>注意：类型转换符和构造函数的重载只能有一个存在！</li>
-<li>想将 T 转化为 C, 那么需要一个 C(T) 的不加 explicit的构造函数，或者 operator C() 的重载。如果两个都有，编译器会出错。</li>
+<li>想将 T 转化为 C, 那么需要一个 C(T) 的不加 explicit的构造函数，或者 <code>operator C()</code> 的重载。如果两个都有，编译器会出错。</li>
 </ul>
 <p><img alt="1" src="../1.png" /></p>
 <ul>
@@ -5092,7 +5110,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月19日 00:01:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年6月26日 14:36:15</span>
       
         <br>
         创建日期:

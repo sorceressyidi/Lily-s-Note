@@ -4010,10 +4010,12 @@
 <li>Smart pointers are objects that store pointers to dynamically allocated (heap) memory.</li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<p><code>String abc("abcdefg");</code>
-* 要做的是String类内部存储的自动回收的指针，而不是String类的指针。
-* Whenever a pointer is assigned: p = q; Have to do the following
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">p</span><span class="o">-&gt;</span><span class="n">decrement</span><span class="p">();</span><span class="w"> </span><span class="c1">// p&#39;s count will decrease </span>
+<p><code>String abc("abcdefg");</code></p>
+<ul>
+<li>要做的是String类内部存储的自动回收的指针，而不是String类的指针。</li>
+<li>Whenever a pointer is assigned: p = q; Have to do the following</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">p</span><span class="o">-&gt;</span><span class="n">decrement</span><span class="p">();</span><span class="w"> </span><span class="c1">// p&#39;s count will decrease </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"> </span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">q</span><span class="o">-&gt;</span><span class="n">increment</span><span class="p">();</span><span class="w"> </span><span class="c1">// q/p&#39;s count will increase</span>
 </code></pre></div>
@@ -4246,7 +4248,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年6月7日 19:13:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年6月26日 14:36:15</span>
       
         <br>
         创建日期:
