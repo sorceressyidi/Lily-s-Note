@@ -4435,10 +4435,12 @@ if B is a A, then everything that is true for A is also true of B.</p>
 <ol>
 <li>if<code>.render()</code> : static binding</li>
 <li>if<code>-&gt;render()</code> : dynamic binding</li>
-<li>if <code>&amp;引用访问</code> : dynamic binding
-* <strong>Only C++ default to static binding!</strong>
-* static binding is faster than dynamic binding.</li>
+<li>if <code>&amp;引用访问</code> : dynamic binding</li>
 </ol>
+<ul>
+<li><strong>Only C++ default to static binding!</strong></li>
+<li>static binding is faster than dynamic binding.</li>
+</ul>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="n">Shape</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">render</span><span class="p">();</span><span class="w"> </span><span class="c1">// calls correct render function</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">}</span><span class="w"> </span><span class="c1">// for given Shape! void func() {</span>
@@ -4760,7 +4762,7 @@ p 的静态类型是 Shape, 如果不定义虚函数，那么 p 只会发生静�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年6月26日 14:36:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年6月27日 20:29:40</span>
       
         <br>
         创建日期:
