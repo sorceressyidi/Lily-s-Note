@@ -153,9 +153,11 @@ public:
     void setVal(int i){this->i=i;}
 };
 A f(A aa){
+   cout << "------------"<<endl;
     A bb(20);
     cout << "aa: "<<&aa << endl;
     cout << aa.getVal() << endl;
+    cout << "Destructor for aa"<<endl;
     return bb;
 }
 int main(){
@@ -168,15 +170,18 @@ int main(){
     d.setVal(30);
     return 0;
 }
+
 ```
 ```
 10
-a: 0x16dd97070
+a: 0x16b247190
 -------------------
 A(const A&)
+------------
 20
-aa: 0x16dd97010
+aa: 0x16b247130
 10
+Destructor for aa
 ~A()
 -------------------
 ~A()
@@ -215,6 +220,7 @@ void bar() {
     delete p;
 }
 ```
+
 * p 本身是本地变量，但指向的地方是**全局的空间**
 * 要不要做`delete p`?
   1. 如果不做，出了函数就找不到这个空间了，内存泄漏:如果一个一直在运行的程序中有内存泄漏，那么这个程序会越来越慢，因为内存越来越少！
@@ -545,10 +551,10 @@ friend const A operator+(const A& r,const A&l);
 ```
 
 ### The Prototype of operators
-* `+` `-` `*` `/` `%` `^` `&` `|` `~` :
+##### `+` `-` `*` `/` `%` `^` `&` `|` `~` :
   - `const T operatorX(const T& l, const T& r);`
   - 希望传reference，因为不想拷贝，但是又不想改变原来的对象,所以必须是const 
-* `!` `&&` `||` `==` `!=` `<` `>` `<=` `>=` :
+##### `!` `&&` `||` `==` `!=` `<` `>` `<=` `>=` :
   - `bool operatorX(const T& l);`
   * Relational Operators : `==` `!=` `<` `>` `<=` `>=`
     - implement `!=` in terms of `==`
@@ -587,7 +593,7 @@ bool Integer::operator>=( const Integer& rhs ) const {
     return !(*this < rhs); 
 }
 ```
-* `[ ]`
+##### `[ ]`
   - 不能是const，因为可能作为左值 : `a[6]=7`
   - 不能返回新对象，新对象可能被丢掉，返回reference
   - `E& T::operator[](int index);`
@@ -629,7 +635,7 @@ private:
 }
 ```
 
-* `++` and `--`
+##### `++` and `--`
   - Distinction between prefix and postfix
   - `const Integer& operator++(); // prefix `
     -  1. 引用表示返回的是原来的对象，而不是新的对象
@@ -662,7 +668,7 @@ int main(){
 
 }
 ```
-* stream extractor/inserter
+##### stream extractor/inserter
   * 返回类型必须是ostream&，因为要支持连续输出
   * 需要在类的内部声明为友元函数 `friend ostream& operator<<(ostream& os, const A& a);`
 ```c++
@@ -683,6 +689,95 @@ ostream& tab ( ostream& out ) {
 } 
 cout << "Hello" << tab << "World!" << endl;
 ```
+##### 在C++中，重载赋值运算符（`operator=`）时通常返回一个对当前对象的引用。这种做法有几个重要的原因：
+
+1. **支持链式赋值**：
+   通过返回当前对象的引用，可以支持链式赋值操作。例如：
+   ```cpp
+   a = b = c;
+   ```
+   如果赋值运算符返回的是当前对象的引用，`b = c` 会返回 `b`，然后 `a = b` 就可以正常进行。
+
+2. **效率考虑**：
+   返回引用避免了返回对象时的拷贝开销。返回对象本身会导致对象的复制，从而增加不必要的开销。而返回引用只需返回一个地址，没有额外的性能损耗。
+
+3. **与内置类型的行为一致**：
+   内置类型的赋值运算符也返回左值（即当前对象本身），通过让自定义类型的赋值运算符行为一致，代码的行为和预期一致。
+
+下面是一个示例，展示了如何正确地重载赋值运算符：
+
+```cpp
+#include <iostream>
+#include <cstring>
+
+class STRING {
+    char *m_pStr;
+    int m_len;
+public:
+    // 构造函数
+    STRING(char *str = NULL) {
+        if (str != NULL) {
+            m_len = strlen(str) + 1;
+            m_pStr = new char[m_len];
+            strcpy(m_pStr, str);
+        } else {
+            m_len = 0;
+            m_pStr = NULL;
+        }
+    }
+
+    // 拷贝构造函数
+    STRING(const STRING& other) {
+        m_len = other.m_len;
+        if (m_len > 0) {
+            m_pStr = new char[m_len];
+            strcpy(m_pStr, other.m_pStr);
+        } else {
+            m_pStr = NULL;
+        }
+    }
+
+    // 析构函数
+    ~STRING() {
+        delete[] m_pStr;
+    }
+
+    // 赋值运算符重载
+    STRING& operator=(const STRING& other) {
+        if (this != &other) {  // 防止自我赋值
+            delete[] m_pStr;
+            m_len = other.m_len;
+            if (m_len > 0) {
+                m_pStr = new char[m_len];
+                strcpy(m_pStr, other.m_pStr);
+            } else {
+                m_pStr = NULL;
+            }
+        }
+        return *this;  // 返回当前对象的引用
+    }
+
+    // 友元函数，用于输出字符串
+    friend std::ostream& operator<<(std::ostream& out, const STRING& s);
+};
+
+std::ostream& operator<<(std::ostream& out, const STRING& s) {
+    if (s.m_pStr != NULL) {
+        out << s.m_pStr;
+    }
+    return out;
+}
+
+int main() {
+    STRING s1((char *)"Hello"), s2, s3;
+    s3 = s2 = s1;  // 链式赋值
+    std::cout << "s1: " << s1 << std::endl;
+    std::cout << "s2: " << s2 << std::endl;
+    std::cout << "s3: " << s3 << std::endl;
+    return 0;
+}
+```
+
 
 ### Copying vs Initialization
 

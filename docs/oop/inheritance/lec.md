@@ -325,6 +325,7 @@ public:
 1. if` .render()` : static binding
 2. if`->render()` : dynamic binding
 3. if `&引用访问` : dynamic binding
+
 * **Only C++ default to static binding!**
 * static binding is faster than dynamic binding.
 

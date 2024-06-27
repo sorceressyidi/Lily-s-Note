@@ -74,13 +74,12 @@ UCPointer<T>::UCPointer(const UCPointer<T> & p){
     increment(); 
 }
 template <class T> 
-UCPointer<T>& 
-UCPointer<T>::operator=(const UCPointer<T>& p){ 
-    if (m_pObj != p.m_pObj) { 
-    decrement(); 
-    m_pObj = p.m_pObj; 
-    increment(); 
-} 
+UCPointer<T>& UCPointer<T>::operator=(const UCPointer<T>& p){ 
+    if (m_pObj != p.m_pObj){ 
+        decrement(); 
+        m_pObj = p.m_pObj; 
+        increment(); 
+    } 
     return *this; 
 }
 template<class T> 
@@ -131,13 +130,13 @@ private:
  */
 StringRep::StringRep(const char *s) { 
     if (s) { 
-    int len = strlen(s) + 1; 
-    m_pChars = new char[len]; 
-    strcpy(m_pChars , s); 
+        int len = strlen(s) + 1; 
+        m_pChars = new char[len]; 
+        strcpy(m_pChars , s); 
     } 
     else { 
-    m_pChars = new char[1]; 
-    *m_pChars = '\0'; 
+        m_pChars = new char[1]; 
+        *m_pChars = '\0'; 
     } 
 } 
 StringRep::~StringRep() { 
@@ -230,11 +229,127 @@ int main(){
 }
 ```
 
-* UCPointer maintains reference counts
-* UCObject hides the details of the count
+* **UCPointer** maintains reference counts
+* **UCObject** hides the details of the count
 * String is very clean
 * StringRep deals only with string storage and manipulation
 * UCObject and UCPointer are reusable
-* 代码是可复用的。
 * Objects with cycles of UCPointer will never be deleted
-* UCP 指向的对象永远不被删除。
+* **UCP 指向的对象永远不被删除**
+
+在UCPointer做`increase`和`decrease`在UCObject判断是否`ref=0`之后删除
+
+### Cast
+
+在 C++ 中，有四种类型转换运算符：`static_cast`、`dynamic_cast`、`const_cast` 和 `reinterpret_cast`。它们各自有不同的用途和限制。以下是对它们的详细解释：
+
+### 1. `static_cast`
+
+`static_cast` 用于在相关类型之间进行显式转换。它主要用于以下几种情况：
+
+- 基本数据类型之间的转换，例如 `int` 到 `float`。
+- 类层次结构中向上转换（从派生类到基类）和向下转换（从基类到派生类）。
+- 将 `void*` 指针转换回原类型。
+- 在用户定义的转换操作符中进行转换。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Base {};
+class Derived : public Base {};
+
+int main() {
+    int a = 10;
+    double b = static_cast<double>(a); // 基本数据类型转换
+    cout << b << endl;
+
+    Derived d;
+    Base* basePtr = static_cast<Base*>(&d); // 向上转换
+    Derived* derivedPtr = static_cast<Derived*>(basePtr); // 向下转换
+
+    void* voidPtr = static_cast<void*>(&d); // 转换为 void*
+    Derived* derivedPtr2 = static_cast<Derived*>(voidPtr); // 转换回原类型
+}
+```
+
+### 2. `dynamic_cast`
+
+`dynamic_cast` 用于在类层次结构中进行安全的向下转换（从基类到派生类），并且只能用于有虚函数的多态类型。如果转换失败，指针类型会返回 `nullptr`，引用类型会抛出 `std::bad_cast` 异常。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual ~Base() {}
+};
+
+class Derived : public Base {};
+
+int main() {
+    Base* basePtr = new Derived();
+    Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
+    if (derivedPtr) {
+        cout << "dynamic_cast 成功" << endl;
+    } else {
+        cout << "dynamic_cast 失败" << endl;
+    }
+
+    delete basePtr;
+}
+```
+
+### 3. `const_cast`
+
+`const_cast` 用于在相同类型之间去掉或添加 `const` 或 `volatile` 属性。它通常用于去掉 `const` 属性，以便修改原本是 `const` 的数据。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void modify(const int* p) {
+    int* modifiable = const_cast<int*>(p);
+    *modifiable = 20;
+}
+
+int main() {
+    const int a = 10;
+    cout << "修改前: " << a << endl;
+    modify(&a);
+    cout << "修改后: " << a << endl; // 未定义行为
+}
+```
+
+### 4. `reinterpret_cast`
+
+`reinterpret_cast` 用于在不同类型之间进行低级别的、可能不安全的转换。它主要用于指针类型之间的转换。它不会执行任何实际的数据转换，只是简单地重新解释位模式。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 42;
+    void* ptr = &a;
+    int* intPtr = reinterpret_cast<int*>(ptr);
+    cout << *intPtr << endl;
+
+    // 将整数转换为指针
+    intptr_t intVal = 0x12345678;
+    void* voidPtr = reinterpret_cast<void*>(intVal);
+    cout << voidPtr << endl;
+
+    // 将指针转换为整数
+    intVal = reinterpret_cast<intptr_t>(voidPtr);
+    cout << std::hex << intVal << endl;
+}
+```
+
+### 总结
+
+- `static_cast`：用于相关类型之间的显式转换，编译时检查，不适用于所有类型之间的转换。
+- `dynamic_cast`：用于安全的向下转换，多态类型中使用，运行时检查，转换失败时返回 `nullptr` 或抛出异常。
+- `const_cast`：用于添加或去掉 `const` 或 `volatile` 属性，不改变底层数据。
+- `reinterpret_cast`：用于在不同类型之间进行低级别的转换，不安全，只是重新解释位模式。

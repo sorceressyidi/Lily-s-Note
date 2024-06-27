@@ -185,7 +185,7 @@ private:
     int m_size;
 };
 ```
-
+ 
 * Usage:
 ```c++
 FixedVector<int, 200> v1;

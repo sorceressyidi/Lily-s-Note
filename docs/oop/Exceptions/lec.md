@@ -46,6 +46,7 @@ errorCodeType readFile { initialize errorCode = 0;
     return errorCode;
 }
 ```
+
 * 代码中的错误码是什么意思？--可读性差
 ```c++
 try {
@@ -76,6 +77,7 @@ public:
     T& operator[](int); 
 };
 ```
+
 * 问题：当用户试图访问一个不存在的元素时，应该怎么处理？
 ```c++
 T& Vector::operator[](int index) { 
@@ -85,11 +87,13 @@ T& Vector::operator[](int index) {
     return m_elements[index]; 
 }
 ```
+
 * Assertion vs. Exception
   * Assertion is used to check for bugs in the program.
   * Exception is used to check for errors in the program.
 * 抛异常之后，后续的代码都不会执行（没遇到的 try{} 的大括号都可以看作异常），然后往外走。
-* 上面这里 throw 之后，如果大括号是语句就离开语句，如果是函数就离开函数，如果是 try{}, 我们就判断匹配一个异常类
+* 上面这里 throw 之后，如果大括号是语句就离开语句，如果是函数就离开函数，如果是 `try{}`, 我们就判断匹配一个异常类
+
 ```c++
 class VectorIndexError { 
     public: 
@@ -98,11 +102,12 @@ class VectorIndexError {
     void diagnostic() { cerr << "index " << m_ badValue << "out of range!"; } 
     private: 
     int m_badValue; 
-    };
-    template <class T> T& Vector::operator[](int index) { 
-        if (index < 0 || index >= m_size) 
-            throw VectorIndexError(index); 
-        return m_elements[index]; 
+};
+template <class T> 
+T& Vector::operator[](int index) { 
+    if (index < 0 || index >= m_size) 
+        throw VectorIndexError(index); 
+    return m_elements[index]; 
 }
 ```
 ```c++
@@ -117,9 +122,11 @@ try {
 } 
 }
 ```
+
 * try 后面可以跟任意数量的 catch.
->Two forms
-catch (SomeType v) { // handler code }
+
+**Two forms**
+>catch (SomeType v) { // handler code }
 catch (...) { // handler code }
 
 * throw 可以抛的任意类型, int/double/... 也是可以的。一般不会抛原始数据类型，因为表达的信息有限。通常会做一个类，抛类的对象。
@@ -129,7 +136,8 @@ catch (...) { // handler code }
   Apply base class conversions Reference and pointer types, only
 * 对象会进行基类转换。一般把子类放在前面。
 * Ellipses (...) match all
-* `new` does NOT returned 0 on failure. new raises a bad_alloc() exception.
+* `new` does NOT returned 0 on failure. 
+* `new` raises a bad_alloc() exception.
 
 ### `void abc():throw (MathErr);`
 * 如果有这个声明，那么这个函数里面就不能抛出其他异常，只能抛出 MathErr 异常。抛出了其他异常，编译器会报错，终止程序。
@@ -154,10 +162,11 @@ f() {
 }
 ```
 * 如果构造的时候出异常, p 无法得到分配的地址，但是内存却没有被析构。内存泄漏！
-* Solve:
+**Solve:**
+
   1. Never New？
-  2. Catch error and `delete this`:必须是一个局部对象，不能是一个全局对象。
-    * 如果是 new error类,需要记得同时delete error类.
+  2. Catch error and `delete this`:必须是一个**局部对象**，不能是一个全局对象。
+    * 如果是new error类,需要记得同时**delete error类**.
    ```c++
    Error *p = new Error();
    ...
