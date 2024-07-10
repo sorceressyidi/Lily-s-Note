@@ -4,7 +4,7 @@
 
 ## Introduction
 
-<img src="1.png" alt="1" style="zoom:50%;" />
+![1](1.png)
 
 **Overfit a single neural network for a particular scene to train an overfitted nerual network which represents the scene.**
 
@@ -45,15 +45,15 @@ From above we can see that, NeRF encourages the representation to be multivies c
 
 * Volume density $\sigma(x)$ : differential probability of a ray terminating at an infinitesimal particle at location **x** 
 
-* $C(\bold{r})$ : The expected color of ray $\bold{r}(t) = \bold{o}+t\bold{d}$  with near and far bound $t_n$ and $t_f$​
+* $C(r)$ : The expected color of ray $r(t) = o+td$  with near and far bound $t_n$ and $t_f$​
 
-* $T(t)$ : accumulated transmittance along the ray from $t_n$ to $t$ ,i.e., the **probability** that the ray travels from $t_n$ to $t$ without hitting any other particle. And therefore $T(t)=exp(-\int_{t_n}^{t}\sigma(\bold{r}(s))ds)$​
+* $T(t)$ : accumulated transmittance along the ray from $t_n$ to $t$ ,i.e., the **probability** that the ray travels from $t_n$ to $t$ without hitting any other particle. And therefore $T(t)=exp(-\int_{t_n}^{t}\sigma(r(s))ds)$​
 
   ![4](4.png)
 
   ![6](6.png)
 
-Thus , $C(\bold{r}) = \int_{t_n}^{t_f} T(t) \sigma(\bold{r}(t))\bold{c}(\bold{r}(t),\bold{d})dt$​  : Clearly color depends on both position and direction.
+Thus , $C(r) = \int_{t_n}^{t_f} T(t) \sigma(r(t))c(r(t),d)dt$​  : Clearly color depends on both position and direction.
 
 ![5](5.png)
 
@@ -69,7 +69,7 @@ Numerically estimate this continuous integral using **quadrature** and finally w
 
 Reform $F_{\theta}$ as a composition of two functions $F_{\theta}=F_{\theta}'*\gamma$ one learned and one not.
 
-* $\gamma$ is a mapping from $\R$ into a higher dimensional space $\R^{2L}$ and $F_{\theta}'$ is still simply a regular MLP.
+* $\gamma$ is a mapping from $R$ into a higher dimensional space $R^{2L}$ and $F_{\theta}'$ is still simply a regular MLP.
 
 ![8](8.png)
 
@@ -82,7 +82,7 @@ Implement two networks: Use the result of the coarse network to determine where 
 * one "coarse"
 * one "fine"
 
-To do this, we rewrite the **alpha composited color** from thecoarse network $\hat{C}_c(\bold{r})$ as a weighted sum of all sampled colors $c_i$​ along the ray.
+To do this, we rewrite the **alpha composited color** from thecoarse network $\hat{C}_c(r)$ as a weighted sum of all sampled colors $c_i$​ along the ray.
 
 ![10](10.png)
 

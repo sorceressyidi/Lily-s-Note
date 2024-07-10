@@ -47,9 +47,9 @@ nav:
   - Home:
     - index.md
   - Papers:
-    - NeRF: 
-      - Theory: Papers/NeRF/Theory.md
-      - Implementation: Papers/NeRF/Implementation.md
+    - NeRF: Papers/NeRF/Theory.md
+    - 3DGS: Papers/3DGS/paper.md
+      
   - Computer Science(ZJU):
     - Fundamentals of Data Structure:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
