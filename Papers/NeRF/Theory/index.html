@@ -16,7 +16,7 @@
         <link rel="prev" href="../../..">
       
       
-        <link rel="next" href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/">
+        <link rel="next" href="../../3DGS/paper/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Theory - Lily's Notebook</title>
+        <title>NeRF - Lily's Notebook</title>
       
     
     
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Theory
+              NeRF
             
           </span>
         </div>
@@ -262,14 +262,6 @@
   
     
     
-      
-  
-  
-    
-  
-  
-    
-    
       <li class="md-tabs__item md-tabs__item--active">
         <a href="./" class="md-tabs__link">
           
@@ -280,9 +272,6 @@
 
         </a>
       </li>
-    
-  
-
     
   
 
@@ -542,6 +531,8 @@
       
         
       
+        
+      
     
     
     
@@ -582,50 +573,6 @@
     
   
   
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    NeRF
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            NeRF
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -638,7 +585,7 @@
           
   
   <span class="md-ellipsis">
-    Theory
+    NeRF
   </span>
   
 
@@ -649,7 +596,7 @@
         
   
   <span class="md-ellipsis">
-    Theory
+    NeRF
   </span>
   
 
@@ -753,23 +700,15 @@
   
   
     <li class="md-nav__item">
-      <a href="../Implementation.md" class="md-nav__link">
+      <a href="../../3DGS/paper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Implementation
+    3DGS
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -4026,7 +3965,7 @@
 <p><font face = "Times New Roman"></p>
 <h1 id="nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis<a class="headerlink" href="#nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p><img src="1.png" alt="1" style="zoom:50%;" /></p>
+<p><img alt="1" src="../1.png" /></p>
 <p><strong>Overfit a single neural network for a particular scene to train an overfitted nerual network which represents the scene.</strong></p>
 <p><strong>Input : <span class="arithmatex">\((x,y,z,\theta,\phi)\)</span>: <span class="arithmatex">\((x,y,z)\)</span> is the space location and <span class="arithmatex">\((\theta,\phi)\)</span> is the viewing direction</strong>  </p>
 <p><strong>Output : (colour, density)</strong></p>
@@ -4061,15 +4000,15 @@
 <p>Volume density <span class="arithmatex">\(\sigma(x)\)</span> : differential probability of a ray terminating at an infinitesimal particle at location <strong>x</strong> </p>
 </li>
 <li>
-<p><span class="arithmatex">\(C(\bold{r})\)</span> : The expected color of ray <span class="arithmatex">\(\bold{r}(t) = \bold{o}+t\bold{d}\)</span>  with near and far bound <span class="arithmatex">\(t_n\)</span> and <span class="arithmatex">\(t_f\)</span>​</p>
+<p><span class="arithmatex">\(C(r)\)</span> : The expected color of ray <span class="arithmatex">\(r(t) = o+td\)</span>  with near and far bound <span class="arithmatex">\(t_n\)</span> and <span class="arithmatex">\(t_f\)</span>​</p>
 </li>
 <li>
-<p><span class="arithmatex">\(T(t)\)</span> : accumulated transmittance along the ray from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> ,i.e., the <strong>probability</strong> that the ray travels from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> without hitting any other particle. And therefore <span class="arithmatex">\(T(t)=exp(-\int_{t_n}^{t}\sigma(\bold{r}(s))ds)\)</span>​</p>
+<p><span class="arithmatex">\(T(t)\)</span> : accumulated transmittance along the ray from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> ,i.e., the <strong>probability</strong> that the ray travels from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> without hitting any other particle. And therefore <span class="arithmatex">\(T(t)=exp(-\int_{t_n}^{t}\sigma(r(s))ds)\)</span>​</p>
 </li>
 </ul>
 <p><img alt="4" src="../4.png" /></p>
 <p><img alt="6" src="../6.png" /></p>
-<p>Thus , <span class="arithmatex">\(C(\bold{r}) = \int_{t_n}^{t_f} T(t) \sigma(\bold{r}(t))\bold{c}(\bold{r}(t),\bold{d})dt\)</span>​  : Clearly color depends on both position and direction.</p>
+<p>Thus , <span class="arithmatex">\(C(r) = \int_{t_n}^{t_f} T(t) \sigma(r(t))c(r(t),d)dt\)</span>​  : Clearly color depends on both position and direction.</p>
 <p><img alt="5" src="../5.png" /></p>
 <p>Numerically estimate this continuous integral using <strong>quadrature</strong> and finally we get:</p>
 <p><img alt="7" src="../7.png" /></p>
@@ -4078,7 +4017,7 @@
 <p><strong>Better Performace at representing high-frequency variation</strong></p>
 <p>Reform <span class="arithmatex">\(F_{\theta}\)</span> as a composition of two functions <span class="arithmatex">\(F_{\theta}=F_{\theta}'*\gamma\)</span> one learned and one not.</p>
 <ul>
-<li><span class="arithmatex">\(\gamma\)</span> is a mapping from <span class="arithmatex">\(\R\)</span> into a higher dimensional space <span class="arithmatex">\(\R^{2L}\)</span> and <span class="arithmatex">\(F_{\theta}'\)</span> is still simply a regular MLP.</li>
+<li><span class="arithmatex">\(\gamma\)</span> is a mapping from <span class="arithmatex">\(R\)</span> into a higher dimensional space <span class="arithmatex">\(R^{2L}\)</span> and <span class="arithmatex">\(F_{\theta}'\)</span> is still simply a regular MLP.</li>
 </ul>
 <p><img alt="8" src="../8.png" /></p>
 <p><img alt="9" src="../9.png" /></p>
@@ -4088,7 +4027,7 @@
 <li>one "coarse"</li>
 <li>one "fine"</li>
 </ul>
-<p>To do this, we rewrite the <strong>alpha composited color</strong> from thecoarse network <span class="arithmatex">\(\hat{C}_c(\bold{r})\)</span> as a weighted sum of all sampled colors <span class="arithmatex">\(c_i\)</span>​ along the ray.</p>
+<p>To do this, we rewrite the <strong>alpha composited color</strong> from thecoarse network <span class="arithmatex">\(\hat{C}_c(r)\)</span> as a weighted sum of all sampled colors <span class="arithmatex">\(c_i\)</span>​ along the ray.</p>
 <p><img alt="10" src="../10.png" /></p>
 <p>Normalize the wights as <span class="arithmatex">\(\hat{w}_i=\frac{w_i}{\sum_{j=1}^{N_c}w_j}\)</span> , we sample a second set of <span class="arithmatex">\(N_f\)</span> locations from the distribution using <strong>inverse transform sampling</strong> (<a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling">https://en.wikipedia.org/wiki/Inverse_transform_sampling</a>)</p>
 <p>Compute the final result using all <span class="arithmatex">\(N_c + N_f\)</span>​ samples(Training Time), at test time use <strong>ONLY</strong> fine network.</p>
@@ -4101,7 +4040,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月28日 11:23:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月11日 00:14:41</span>
       
         <br>
         创建日期:
@@ -4196,13 +4135,13 @@
         
         
           
-          <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-footer__link md-footer__link--next" aria-label="下一页: Maximum Subsequence Sum Problem">
+          <a href="../../3DGS/paper/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3DGS">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Maximum Subsequence Sum Problem
+                3DGS
               </div>
             </div>
             <div class="md-footer__button md-icon">
