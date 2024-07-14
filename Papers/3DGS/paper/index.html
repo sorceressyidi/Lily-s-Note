@@ -16,7 +16,7 @@
         <link rel="prev" href="../../NeRF/Theory/">
       
       
-        <link rel="next" href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/">
+        <link rel="next" href="../../4DGS/paper/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -533,6 +533,8 @@
       
         
       
+        
+      
     
     
     
@@ -667,24 +669,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-projective-transformation" class="md-nav__link">
-    The Projective Transformation
-  </a>
-  
-    <nav class="md-nav" aria-label="The Projective Transformation">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#rasterizer" class="md-nav__link">
     Rasterizer
@@ -696,6 +680,11 @@
   <a href="#representing-colour" class="md-nav__link">
     Representing Colour
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -736,11 +725,99 @@
     Fast Differentiable Rasterization For Gaussians
   </a>
   
+    <nav class="md-nav" aria-label="Fast Differentiable Rasterization For Gaussians">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4DGS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            4DGS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4DGS/paper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.10-ICLR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -3942,24 +4019,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-projective-transformation" class="md-nav__link">
-    The Projective Transformation
-  </a>
-  
-    <nav class="md-nav" aria-label="The Projective Transformation">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#rasterizer" class="md-nav__link">
     Rasterizer
@@ -3971,6 +4030,11 @@
   <a href="#representing-colour" class="md-nav__link">
     Representing Colour
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4011,6 +4075,26 @@
     Fast Differentiable Rasterization For Gaussians
   </a>
   
+    <nav class="md-nav" aria-label="Fast Differentiable Rasterization For Gaussians">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    Pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
 </li>
       
     </ul>
@@ -4039,7 +4123,7 @@
 <p><strong>3D Gaussian</strong> : <span class="arithmatex">\(G(x) = \frac{1}{(2\pi)^{3/2}\sigma^3}e^{-\frac{||x-\mu||^2}{2\sigma^2}}\)</span></p>
 </li>
 <li>
-<p><a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3DGaussianSplatting.html#_3d-gaussians-3d-gaussian%E7%82%B9">http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3DGaussianSplatting.html#_3d-gaussians-3d-gaussian%E7%82%B9</a></p>
+<p>reference : <a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3DGaussianSplatting.html#_3d-gaussians-3d-gaussian%E7%82%B9">3D高斯</a></p>
 </li>
 </ul>
 <p><img alt="2" src="../2.png" />
@@ -4048,23 +4132,26 @@
 <li><strong>note</strong>: Because the covariance matrix is semi-definite, so we represent it as <span class="arithmatex">\(\Sigma = R\Lambda R^T\)</span> where <span class="arithmatex">\(\Lambda\)</span> is a diagonal matrix and <span class="arithmatex">\(U\)</span> is an orthogonal matrix. Also if we use <span class="arithmatex">\(S = (\Lambda)^{1/2}\)</span>, then <span class="arithmatex">\(\Sigma = RSS^TR\)</span></li>
 </ul>
 <h3 id="3d-gaussian-rendering">3D Gaussian Rendering<a class="headerlink" href="#3d-gaussian-rendering" title="Permanent link">&para;</a></h3>
-<p><a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-transformation">http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-transformation</a></p>
+<ul>
+<li>reference : <a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-transformation">3D高斯渲染</a></li>
+</ul>
 <p><img alt="4" src="../4.png" /></p>
 <p>Project the 3D Gaussian to 2D Gaussian and then render it.</p>
 <h4 id="projection"><strong>Projection</strong> :<a class="headerlink" href="#projection" title="Permanent link">&para;</a></h4>
 <p><img alt="8" src="../8.png" /></p>
+<p><strong>Conclusion</strong></p>
 <p><span class="arithmatex">\(\Sigma^{'} = JW\Sigma W^TJ^T\)</span> where W is a view transformation and J is the Jacobian of the <strong>affine approximation of the projective transformation</strong></p>
 <p><strong>Derivation</strong>
 <img alt="5" src="../5.png" />
 <img alt="6" src="../6.png" />
 <img alt="7" src="../7.png" /></p>
-<p><strong>The viewing transformation:</strong></p>
+<h5 id="the-viewing-transformation">The viewing transformation:<a class="headerlink" href="#the-viewing-transformation" title="Permanent link">&para;</a></h5>
 <p>Denote the Gaussian reconstruction kernels in <em>object space</em> by <span class="arithmatex">\(r_{k}''(\mathbf{t})=\mathcal{G}_{\mathbf{V''}}(\mathbf{t}-\mathbf{t_k})\)</span>, where <span class="arithmatex">\(\mathbf{t_k}\)</span> are the voxel positions of center of kernel.</p>
 <p>Denote camera coordinates by a vector <span class="arithmatex">\(\mathbf{u}=(u_0,u_1,u_2)^{T}\)</span>. Object coordinates are transformed to camera coordinates using an afﬁne mapping <span class="arithmatex">\(\mathbf{u}=\varphi(\mathbf{t})=\mathbf{Wt+d}\)</span>, called <em>viewing tranformation</em>.</p>
 <p>Now we can transform the reconstruction kernels <span class="arithmatex">\(\mathcal{G}_{\mathbf{V''}}(\mathbf{t}-\mathbf{t_k})\)</span> to camera space: </p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(\mathcal{G}_{\mathbf{V''}}(\varphi^{-1}(\mathbf{u})-\mathbf{t_k})=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(\mathbf{u}-\mathbf{u_k})=r_{k}'(\mathbf{u})\)</span>\)</span>
-where <span class="arithmatex">\(\mathbf{u_k}=\varphi(\mathbf{t_k})\)</span> is the center of the Gaussian in camera coordinates and <span class="arithmatex">\(\mathbf{V'}_{k}=\mathbf{W}\mathbf{V''}_{k}\mathbf{W}^{T}\)</span> is the variance matrix in camera coordinates.</p>
-<h2 id="the-projective-transformation">The Projective Transformation<a class="headerlink" href="#the-projective-transformation" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\mathcal{G}_{\mathbf{V''}}(\varphi^{-1}(\mathbf{u})-\mathbf{t_k})=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(\mathbf{u}-\mathbf{u_k})=r_{k}'(\mathbf{u})\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{u_k}=\varphi(\mathbf{t_k})\)</span> is the center of the Gaussian in camera coordinates and <span class="arithmatex">\(\mathbf{V'}_{k}=\mathbf{W}\mathbf{V''}_{k}\mathbf{W}^{T}\)</span> is the variance matrix in camera coordinates.</p>
+<h5 id="the-projective-transformation">The Projective Transformation<a class="headerlink" href="#the-projective-transformation" title="Permanent link">&para;</a></h5>
 <p>In camera space, The ray intersecting the center of projection and the point <span class="arithmatex">\((x_0, x_1)\)</span> on the projection plane is called a viewing ray.</p>
 <p>To facilitate analiytical integration of volumn function, we need to transform the camera space to ray space such that the viewing rays are parallel to a coordinate axis. The projective transformation converts camera coordinates to ray coordinates.</p>
 <p>Camera space is deﬁned such that the origin of the camera coordinate system is at the center of projection and the projection plane is the plane <span class="arithmatex">\(u_{2}=1\)</span>. Camera space and ray space are related by the mapping <span class="arithmatex">\(\mathbf{x=m(u)}\)</span>. </p>
@@ -4123,9 +4210,13 @@ r_{k}(\mathbf{x})&amp;=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(
 <p><a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E7%90%83%E8%B0%90%E7%B3%BB%E6%95%B0.html#%E7%90%83%E9%9D%A2%E9%AB%98%E6%96%AF%EF%BC%88spherical-gaussian%EF%BC%89">http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E7%90%83%E8%B0%90%E7%B3%BB%E6%95%B0.html#%E7%90%83%E9%9D%A2%E9%AB%98%E6%96%AF%EF%BC%88spherical-gaussian%EF%BC%89</a></p>
 <h2 id="optimization-with-adaptive-density-control-of-3d-gaussians">Optimization With Adaptive Density Control of 3D Gaussians<a class="headerlink" href="#optimization-with-adaptive-density-control-of-3d-gaussians" title="Permanent link">&para;</a></h2>
 <h3 id="gradient-caculation">Gradient Caculation<a class="headerlink" href="#gradient-caculation" title="Permanent link">&para;</a></h3>
-<p><a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-gradient">http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-gradient</a></p>
 <ul>
-<li>四元数 : <a href="https://www.bilibili.com/video/BV1SW411y7W1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=770437002a403fccdaf0ff2a150cee20">https://www.bilibili.com/video/BV1SW411y7W1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=770437002a403fccdaf0ff2a150cee20</a></li>
+<li>
+<p>Reference : <a href="http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3D%E9%AB%98%E6%96%AF%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC.html#derivation-of-gradient">grads推导</a></p>
+</li>
+<li>
+<p>四元数 : <a href="https://www.bilibili.com/video/BV1SW411y7W1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=770437002a403fccdaf0ff2a150cee20">四元数</a></p>
+</li>
 </ul>
 <p><img alt="9" src="../9.png" />
 <img alt="10" src="../10.png" />
@@ -4138,25 +4229,55 @@ r_{k}(\mathbf{x})&amp;=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(
 <p><img alt="13" src="../13.png" /></p>
 <h3 id="adaptive-control-of-gaussians">Adaptive Control of Gaussians<a class="headerlink" href="#adaptive-control-of-gaussians" title="Permanent link">&para;</a></h3>
 <ul>
-<li>“欠重构区”(under-reconstruction)：位置梯度很大但值很小的Gaussian点 -- 缺少Gaussian点的区域</li>
+<li>
+<p>“欠重构区”(under-reconstruction)：位置梯度很大但值很小的Gaussian点 -- 缺少Gaussian点的区域
+  复制这个Gaussian点，再沿位置梯度进行移动</p>
+</li>
+<li>
+<p>“过重构区”(over-reconstruction)：位置梯度很大且值很大的Gaussian点 -- 每个Gaussian点覆盖很大范围的区域</p>
+</li>
 </ul>
-<p>复制这个Gaussian点，再沿位置梯度进行移动
-* “过重构区”(over-reconstruction)：位置梯度很大且值很大的Gaussian点 -- 每个Gaussian点覆盖很大范围的区域</p>
 <p>减小这个Gaussian点的值，再复制这个Gaussian点，再沿位置梯度进行移动</p>
 <p><img alt="14" src="../14.png" /></p>
 <h2 id="fast-differentiable-rasterization-for-gaussians">Fast Differentiable Rasterization For Gaussians<a class="headerlink" href="#fast-differentiable-rasterization-for-gaussians" title="Permanent link">&para;</a></h2>
-<p></font></p>
+<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<ol>
+<li>屏幕分割 : Split the screen into 16x16 tiles</li>
+<li>视锥体裁剪 : 假设我们有一组3D高斯splat，每个splat代表一个体积数据点。首先，我们需要检查这些splat是否与视锥体相交: </li>
+</ol>
+<p>Only keep the splats that have 99% confidence of intersecting the view frustum.</p>
+<blockquote>
+<p>例如，如果有一个splat的中心位于视锥体之外，我们就不会考虑它。</p>
+</blockquote>
+<ol start="3">
+<li>Use guard band to trivially reject splats that are at extreme positions : computing their 2D variance would be unstable.</li>
+<li>实例化和排序
+   * 假设一个splat与5个瓦片相交，我们为这个splat创建5个实例
+   * 每个实例根据其在视空间中的深度和瓦片ID获得一个唯一的键
+   * 使用GPU Radix排序算法，我们根据这些键对所有实例进行排序</li>
+<li>Rasterization
+   * 对于每个瓦片，我们确定排序后第一个和最后一个影响该瓦片的splat实例
+   * 假设瓦片(5,5)首先加载了影响它的splat实例列表到共享内存
+   * 对于瓦片(5,5)中的像素(5,5)，我们从列表的开始到结束遍历splat实例，累积颜色和α值
+   * 当像素(5,5)的α值达到1时，我们知道它已经饱和，不再需要更多的splat实例来影响它的颜色 </li>
+</ol>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p>Compared to the state-of-the-art NeRF, 3DGS achieves much faster rendering speed with comparable visual quality (But the memory consumption is higher).</p>
+<blockquote>
+<p>Details see the paper
+</font></p>
+</blockquote>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月11日 00:16:01</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月14日 15:32:26</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月11日 00:16:01</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月14日 15:32:26</span>
       
     
   </small>
@@ -4247,13 +4368,13 @@ r_{k}(\mathbf{x})&amp;=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(
         
         
           
-          <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-footer__link md-footer__link--next" aria-label="下一页: Maximum Subsequence Sum Problem">
+          <a href="../../4DGS/paper/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2023.10-ICLR">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Maximum Subsequence Sum Problem
+                2023.10-ICLR
               </div>
             </div>
             <div class="md-footer__button md-icon">
