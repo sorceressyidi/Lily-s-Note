@@ -49,6 +49,9 @@ nav:
   - Papers:
     - NeRF: Papers/NeRF/Theory.md
     - 3DGS: Papers/3DGS/paper.md
+    - 4DGS: 
+      - 2023.10-ICLR: Papers/4DGS/paper.md
+  
       
   - Computer Science(ZJU):
     - Fundamentals of Data Structure:
