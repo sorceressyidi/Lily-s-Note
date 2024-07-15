@@ -4251,16 +4251,32 @@ r_{k}(\mathbf{x})&amp;=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(
 </blockquote>
 <ol start="3">
 <li>Use guard band to trivially reject splats that are at extreme positions : computing their 2D variance would be unstable.</li>
-<li>实例化和排序
-   * 假设一个splat与5个瓦片相交，我们为这个splat创建5个实例
-   * 每个实例根据其在视空间中的深度和瓦片ID获得一个唯一的键
-   * 使用GPU Radix排序算法，我们根据这些键对所有实例进行排序</li>
-<li>Rasterization
-   * 对于每个瓦片，我们确定排序后第一个和最后一个影响该瓦片的splat实例
-   * 假设瓦片(5,5)首先加载了影响它的splat实例列表到共享内存
-   * 对于瓦片(5,5)中的像素(5,5)，我们从列表的开始到结束遍历splat实例，累积颜色和α值
-   * 当像素(5,5)的α值达到1时，我们知道它已经饱和，不再需要更多的splat实例来影响它的颜色 </li>
+<li>实例化和排序</li>
 </ol>
+<ul>
+<li>
+<p>假设一个splat与5个瓦片相交，我们为这个splat创建5个实例</p>
+</li>
+<li>
+<p>每个实例根据其在视空间中的深度和瓦片ID获得一个唯一的键</p>
+</li>
+<li>
+<p>使用GPU Radix排序算法，我们根据这些键对所有实例进行排序
+5. Rasterization</p>
+</li>
+<li>
+<p>对于每个瓦片，我们确定排序后第一个和最后一个影响该瓦片的splat实例</p>
+</li>
+<li>
+<p>假设瓦片(5,5)首先加载了影响它的splat实例列表到共享内存</p>
+</li>
+<li>
+<p>对于瓦片(5,5)中的像素(5,5)，我们从列表的开始到结束遍历splat实例，累积颜色和α值</p>
+</li>
+<li>
+<p>当像素(5,5)的α值达到1时，我们知道它已经饱和，不再需要更多的splat实例来影响它的颜色 </p>
+</li>
+</ul>
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
 <p>Compared to the state-of-the-art NeRF, 3DGS achieves much faster rendering speed with comparable visual quality (But the memory consumption is higher).</p>
 <blockquote>
@@ -4273,11 +4289,11 @@ r_{k}(\mathbf{x})&amp;=\frac{1}{|\mathbf{W}^{-1}|}\mathcal{G}_{\mathbf{V'}_{k}}(
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月14日 15:32:26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月15日 18:16:28</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月14日 15:32:26</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月15日 18:16:28</span>
       
     
   </small>
