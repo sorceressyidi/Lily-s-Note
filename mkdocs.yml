@@ -136,6 +136,8 @@ nav:
       - Order Statistics : PT/order_stats.pdf
       - 数字特征与特征函数: PT/数字特征与特征函数.md
   - Computer Vision :
+    - Diffusion Models:
+      - Basics: CV/DM/Basics.md
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
       - structure from motion : CV/ML-4360/SFM/lec3.md
