@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/CV/DM/Basics/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/Papers/DM/DDPM/">
       
       
-        <link rel="prev" href="../../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/">
-      
-      
-        <link rel="next" href="../../ML-4360/BS/lec2/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Basics - Lily's Notebook</title>
+        <title>DDPM - Lily's Notebook</title>
       
     
     
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diffusion-model-basics" class="md-skip">
+        <a href="#ddpm-denoising-diffusion-probabilistic-models" class="md-skip">
           跳转至
         </a>
       
@@ -140,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Basics
+              DDPM
             
           </span>
         </div>
@@ -260,8 +256,14 @@
   
     
     
+      
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="../../../Papers/NeRF/Theory/" class="md-tabs__link">
+        <a href="../../../CV/DM/DDPM.md" class="md-tabs__link">
           
   
     
@@ -270,6 +272,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -344,21 +349,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
           
   
     
@@ -535,6 +536,8 @@
       
         
       
+        
+      
     
     
     
@@ -573,8 +576,120 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../Papers/NeRF/Theory/" class="md-nav__link">
+      <a href="../../../CV/DM/DDPM.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DDPM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/DM/DDIM.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/DM/SD.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stable Diffusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NeRF/Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Papers/3DGS/paper/" class="md-nav__link">
+      <a href="../../3DGS/paper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -627,10 +742,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -641,8 +756,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             4DGS
           </label>
@@ -654,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Papers/4DGS/paper/" class="md-nav__link">
+      <a href="../../4DGS/paper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2933,16 +3048,12 @@
       
   
   
-    
-  
   
     
     
       
         
       
-        
-      
     
     
     
@@ -2950,12 +3061,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -2969,156 +3080,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Diffusion Models
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            Diffusion Models
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Basics
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mathematical-formulation" class="md-nav__link">
-    Mathematical Formulation
-  </a>
-  
-    <nav class="md-nav" aria-label="Mathematical Formulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#forward-diffusion-process" class="md-nav__link">
-    Forward Diffusion Process
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverse-diffusion-process" class="md-nav__link">
-    Reverse Diffusion Process
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
             
               
                 
@@ -3155,10 +3122,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3169,8 +3136,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -3182,7 +3149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3202,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3222,7 +3189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/SR/lec4/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3242,7 +3209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/PGM/lec5/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3262,7 +3229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/SFX/lec8/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3282,7 +3249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/CBN/lec9/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/CBN/lec9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3302,7 +3269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/Recognition/lec10/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3322,7 +3289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/Self/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Self/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3342,7 +3309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML-4360/Diverse/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4017,6 +3984,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noise-scheduling" class="md-nav__link">
+    Noise Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -4039,12 +4039,14 @@
 
 
 <p><font face="Times New Roman"></p>
-<h1 id="diffusion-model-basics">Diffusion Model Basics<a class="headerlink" href="#diffusion-model-basics" title="Permanent link">&para;</a></h1>
+<h1 id="ddpm-denoising-diffusion-probabilistic-models">DDPM: Denoising Diffusion Probabilistic Models<a class="headerlink" href="#ddpm-denoising-diffusion-probabilistic-models" title="Permanent link">&para;</a></h1>
 <h2 id="mathematical-formulation">Mathematical Formulation<a class="headerlink" href="#mathematical-formulation" title="Permanent link">&para;</a></h2>
 <h3 id="forward-diffusion-process">Forward Diffusion Process<a class="headerlink" href="#forward-diffusion-process" title="Permanent link">&para;</a></h3>
 <p>The distribution <span class="arithmatex">\(q\)</span> in the forward diffusion process is defined as Markov Chain given by
 $$
-q(x_1,...x_T|x_0) = \Pi_{t=1}^T q(x_t|x_{t-1})  (1)\
+q(x_1,...x_T|x_0) = \Pi_{t=1}^T q(x_t|x_{t-1})  (1)
+$$
+$$
 q(x_t|x_{t-1}) = \mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t I)  (2)
 $$</p>
 <ul>
@@ -4053,19 +4055,41 @@ $$
 x_t = \sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t}z_t  (3)
 $$ where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span>.</li>
 </ul>
-<p>We want to sample at any time <span class="arithmatex">\(t\)</span> from the distribution <span class="arithmatex">\(q(x_t|x_0)\)</span> without knowing the previous samples <span class="arithmatex">\(x_{t-1},...,x_1\)</span>. 
+<p>We want to sample at any time <span class="arithmatex">\(t\)</span> from the distribution <span class="arithmatex">\(q(x_t|x_0)\)</span> without knowing the previous samples <span class="arithmatex">\(x_{t-1},...,x_1\)</span>. </p>
+<div class="arithmatex">\[
+\alpha_t = 1-\beta_t\ \ (4)
 $$
-\alpha_t = 1-\beta_t  (4)\
-\bar{\alpha}<em i="1">t = \Pi</em>^t \alpha_i  (5)\
-q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)  (6)
-$$</p>
+$$
+\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i\ \ (5)
+$$
+$$
+q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (6)
+\]</div>
 <ul>
-<li>Therefore, we can sample <span class="arithmatex">\(x_t\)</span> from <span class="arithmatex">\(q(x_t|x_0)\)</span> by
-  <span class="arithmatex">\(x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1-\bar{\alpha}_t}z_t\)</span> where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span>.</li>
+<li>Therefore, we can sample <span class="arithmatex">\(x_t\)</span> from <span class="arithmatex">\(q(x_t|x_0)\)</span> by <span class="arithmatex">\(x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1-\bar{\alpha}_t}z_t\)</span> 
+  where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span> and <span class="arithmatex">\(\bar{\alpha}_t\)</span> is the <strong>cumulative product</strong> of <span class="arithmatex">\(\alpha_i\)</span>,which means <span class="arithmatex">\(\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i\)</span>.</li>
 </ul>
 <h3 id="reverse-diffusion-process">Reverse Diffusion Process<a class="headerlink" href="#reverse-diffusion-process" title="Permanent link">&para;</a></h3>
 <p><img alt="1" src="../1.png" /></p>
 <p>The reverse process is a Markov chain where a <strong>neural network</strong> predicts the <strong>parameters for the reverse diffusion kernel</strong> at each timestep. </p>
+<ul>
+<li>
+<p>maximum likelihood estimation (MLE) is used to train the neural network.
+  <img alt="2" src="../2.png" /></p>
+</li>
+<li>
+<p>Maximize the lower bound of the log-likelihood of the data given the model.</p>
+</li>
+<li>
+<p>After some math -- our goal is to minimize the noise difference between the predicted noise and the true noise.
+  <span class="arithmatex">\(<span class="arithmatex">\(||(\epsilon_{\theta}-\epsilon)^2_2||\)</span>\)</span>
+  <img alt="3" src="../3.png" /></p>
+</li>
+</ul>
+<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
+<p><img alt="4" src="../4.png" /></p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<h4 id="noise-scheduling">Noise Scheduling<a class="headerlink" href="#noise-scheduling" title="Permanent link">&para;</a></h4>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -4074,15 +4098,18 @@ $$</p>
 <li>
 <p><a href="https://learnopencv.com/denoising-diffusion-probabilistic-models/#forward-diffusion-equation">An In-Depth Guide to Denoising Diffusion Probabilistic Models DDPM – Theory to Implementation</a></p>
 </li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=H45lF4sUgiE">Youtube: Denoising Diffusion Probabilistic Models | DDPM Explained</a>
+</font></p>
+</li>
 </ol>
-<p></font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年8月28日 16:21:40</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月3日 10:43:35</span>
       
         <br>
         创建日期:
@@ -4155,44 +4182,6 @@ $$</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数字特征与特征函数">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                数字特征与特征函数
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../ML-4360/BS/lec2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Basic Transformations">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                Basic Transformations
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
