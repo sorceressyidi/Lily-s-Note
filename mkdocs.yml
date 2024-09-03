@@ -48,9 +48,9 @@ nav:
     - index.md
   - Papers:
     - Diffusion Models:
-      - DDPM: CV/DM/DDPM.md
-      - DDIM: CV/DM/DDIM.md
-      - Stable Diffusion: CV/DM/SD.md
+      - DDPM: Papers/DM/DDPM.md
+      - DDIM: Papers/DM/DDIM.md
+      - Stable Diffusion: Papers/DM/SD.md
     - NeRF: Papers/NeRF/Theory.md
     - 3DGS: Papers/3DGS/paper.md
     - 4DGS: 

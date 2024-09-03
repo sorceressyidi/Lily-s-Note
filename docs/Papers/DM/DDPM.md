@@ -19,17 +19,11 @@ $$
 x_t = \sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t}z_t\ \ (3)
 $$ where $z_t \sim \mathcal{N}(0,I)$.
 
-We want to sample at any time $t$ from the distribution $q(x_t|x_0)$ without knowing the previous samples $x_{t-1},...,x_1$. 
-
-$$
-\alpha_t = 1-\beta_t\ \ (4)
-$$
-$$
-\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i\ \ (5)
-$$
-$$
-q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (6)
-$$
+* We want to sample at any time $t$ from the distribution $q(x_t|x_0)$ without knowing the previous samples $x_{t-1},...,x_1$. 
+  
+  $$\alpha_t = 1-\beta_t\ \ (4)\\ $$
+  $$\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i \ \ (5)\\$$
+  $$ q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (6)$$
 
 * Therefore, we can sample $x_t$ from $q(x_t|x_0)$ by $x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1-\bar{\alpha}_t}z_t$ 
   where $z_t \sim \mathcal{N}(0,I)$ and $\bar{\alpha}_t$ is the **cumulative product** of $\alpha_i$,which means $\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i$.
