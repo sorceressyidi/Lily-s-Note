@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/Papers/DM/DDPM/">
       
       
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../DDIM/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -253,17 +257,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../CV/DM/DDPM.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -526,6 +534,8 @@
       
   
   
+    
+  
   
     
     
@@ -545,12 +555,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -564,7 +574,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Papers
@@ -575,6 +585,8 @@
                 
   
   
+    
+  
   
     
     
@@ -589,12 +601,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -608,7 +620,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Diffusion Models
@@ -619,9 +631,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../CV/DM/DDPM.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DDPM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -630,6 +662,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    Mathematical Formulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Formulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-diffusion-process" class="md-nav__link">
+    Forward Diffusion Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-diffusion-process" class="md-nav__link">
+    Reverse Diffusion Process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noise-scheduling" class="md-nav__link">
+    Noise Scheduling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -641,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/DM/DDIM.md" class="md-nav__link">
+      <a href="../DDIM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CV/DM/SD.md" class="md-nav__link">
+      <a href="../SD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4050,21 +4169,19 @@ $$
 q(x_t|x_{t-1}) = \mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t I)  (2)
 $$</p>
 <ul>
-<li>From (2) we can sample <span class="arithmatex">\(x_t\)</span> from <span class="arithmatex">\(q(x_t|x_{t-1})\)</span> by
+<li>
+<p>From (2) we can sample <span class="arithmatex">\(x_t\)</span> from <span class="arithmatex">\(q(x_t|x_{t-1})\)</span> by
 $$
 x_t = \sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t}z_t  (3)
-$$ where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span>.</li>
-</ul>
+$$ where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span>.</p>
+</li>
+<li>
 <p>We want to sample at any time <span class="arithmatex">\(t\)</span> from the distribution <span class="arithmatex">\(q(x_t|x_0)\)</span> without knowing the previous samples <span class="arithmatex">\(x_{t-1},...,x_1\)</span>. </p>
-<div class="arithmatex">\[
-\alpha_t = 1-\beta_t\ \ (4)
-$$
-$$
-\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i\ \ (5)
-$$
-$$
-q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (6)
-\]</div>
+</li>
+</ul>
+<p>$$\alpha_t = 1-\beta_t  (4)\ $$
+  <span class="arithmatex">\(<span class="arithmatex">\(\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i \ \ (5)\\\)</span>\)</span>
+  $$ q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)  (6)$$</p>
 <ul>
 <li>Therefore, we can sample <span class="arithmatex">\(x_t\)</span> from <span class="arithmatex">\(q(x_t|x_0)\)</span> by <span class="arithmatex">\(x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1-\bar{\alpha}_t}z_t\)</span> 
   where <span class="arithmatex">\(z_t \sim \mathcal{N}(0,I)\)</span> and <span class="arithmatex">\(\bar{\alpha}_t\)</span> is the <strong>cumulative product</strong> of <span class="arithmatex">\(\alpha_i\)</span>,which means <span class="arithmatex">\(\bar{\alpha}_t = \Pi_{i=1}^t \alpha_i\)</span>.</li>
@@ -4109,7 +4226,7 @@ q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月3日 10:43:35</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月3日 11:00:52</span>
       
         <br>
         创建日期:
@@ -4182,6 +4299,44 @@ q(x_t|x_0) = \mathcal{N}(x_t;\sqrt{\bar{\alpha}_t}x_0,(1-\bar{\alpha}_t) I)\ \ (
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: Welcome to Lily&#39;s Notebook!">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Welcome to Lily's Notebook!
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../DDIM/" class="md-footer__link md-footer__link--next" aria-label="下一页: DDIM">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                DDIM
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
