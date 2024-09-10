@@ -92,12 +92,7 @@ Proof:
 
 **Proof**:
 
-* Assume that there exists a one-to-one function $f:\mathbb{N}\rightarrow\mathbb{R}$
-  
-![1](1.png)
-![2](2.png)
-![3](3.png)
-![4](4.png)
+* See Book page 94
 
 ### Boolean functions are uncountable
 
@@ -121,3 +116,23 @@ The set of all boolean functions(mapping $\{0,1\}^*\rightarrow\{0,1\}$) is uncou
 Suppose that $E: O \rightarrow \{0,1\}^*$ is a one-to-one function. Then there exists a function $D:\{0,1\}^*\rightarrow O$ such that $D(E(o)) = o$ for all $o\in O$.
 > Proof:
 > Let $o_0$ be an arbitrary object in O. Let $w_0 = E(o_0)$. Let $w_0 = w_1w_2\cdots w_n$ be the string representation of $w_0$. Let $o_1 = D(w_1)$, $o_2 = D(w_1w_2)$, $\cdots$, $o_n = D(w_1w_2\cdots w_n)$. Then $D(w_0) = o_n$.
+
+#### Finite Representations 
+if $O$ is finite, then we can represent every object in $O$ as a string of length at most some number $n$ if and only if $|O|\leq 2^{n+1}-1$.
+
+**Lemma**:
+For every two finite sets S and T, there exists a one-to-one function $E:S\rightarrow T$ if and only if $|S|\leq|T|$.
+
+* Proof see book page 101
+
+#### Prefix-Free encoding
+
+![6](6.png)
+
+* Proof see book page 103
+
+#### Making Representations prefix-free
+
+> ![7](7.png)
+
+* Proof see book page 104
