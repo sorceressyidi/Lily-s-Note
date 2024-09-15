@@ -102,6 +102,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lecture-1-introduction-to-operating-systems" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -287,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/Lecture1/" class="md-tabs__link">
+        <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec1/Lecture1/" class="md-tabs__link">
           
   
     
@@ -860,6 +865,8 @@
       
         
       
+        
+      
     
     
     
@@ -896,11 +903,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/Lecture1/" class="md-nav__link">
+      <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec1/Lecture1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Lecture 1
+    Lecture 1 - Finite Automata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec2/Lecture2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2 - Regular Language
   </span>
   
 
@@ -4012,6 +4039,91 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-bit-of-history" class="md-nav__link">
+    1.0 A bit of history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-what-is-an-operating-system" class="md-nav__link">
+    1.1 What is an Operating System?
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 What is an Operating System?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-an-os" class="md-nav__link">
+    Starting an OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-programming" class="md-nav__link">
+    Multi-programming
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-sharing" class="md-nav__link">
+    Time-sharing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-running-os" class="md-nav__link">
+    The running OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designing-an-os" class="md-nav__link">
+    Designing an OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-events" class="md-nav__link">
+    OS Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-calls" class="md-nav__link">
+    System Calls
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4026,16 +4138,75 @@
                   
 
 
-  <h1>Lec1</h1>
-
-
+<p><font face = "Times New Roman" size = 4></p>
+<h1 id="lecture-1-introduction-to-operating-systems">Lecture 1 - Introduction to Operating Systems<a class="headerlink" href="#lecture-1-introduction-to-operating-systems" title="Permanent link">&para;</a></h1>
+<h2 id="10-a-bit-of-history">1.0 A bit of history<a class="headerlink" href="#10-a-bit-of-history" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Father of Linux - Linus Torvalds (at age 21)</li>
+<li>LLVM - Low Level Virtual Machine by Chris Lattner</li>
+<li>Ubuntu - Linux Core Plus GNU</li>
+<li>Unix - Multitasking, multi-user OS</li>
+</ul>
+<h2 id="11-what-is-an-operating-system">1.1 What is an Operating System?<a class="headerlink" href="#11-what-is-an-operating-system" title="Permanent link">&para;</a></h2>
+<p>An operating system is a software that acts as an intermediary between the computer hardware and the user. It provides an environment in which a user can execute programs conveniently and efficiently.
+* Resource Manager and Allocator</p>
+<h3 id="starting-an-os">Starting an OS<a class="headerlink" href="#starting-an-os" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The first program that runs when a computer starts up is the bootloader -- the  bootstrap program initializes the computer.</li>
+<li>Locates and loads the OS kernel into memory</li>
+<li>Wait for 'event' to occur</li>
+</ul>
+<h3 id="multi-programming">Multi-programming<a class="headerlink" href="#multi-programming" title="Permanent link">&para;</a></h3>
+<h4 id="time-sharing">Time-sharing<a class="headerlink" href="#time-sharing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Multi-programming with <strong>rapid context switching</strong> -- Actually not working all the same time.</li>
+<li>jobs are called processes</li>
+</ul>
+<h3 id="the-running-os">The running OS<a class="headerlink" href="#the-running-os" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The kernel is not a running job -- It's code that resides in memory and is ready to be executed at any moment</li>
+<li>OS be executed on behalf of a job whenever requested</li>
+<li>OS do special/dangerous things that user programs can't do</li>
+<li>When designing a kernel : Lean and Mean</li>
+<li>Lean - Only the necessary features</li>
+<li>Mean - single minded, focused on the job</li>
+<li>Size of Linux Kernel when loaded in memory is about x MBs to xx MBs</li>
+<li>No memory protection with the kernel</li>
+<li>The kernel's the one saying to a process "segmentation fault"</li>
+<li>Nobody's watching over the kernel</li>
+</ul>
+<h3 id="designing-an-os">Designing an OS<a class="headerlink" href="#designing-an-os" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Design CPU to support OS</li>
+<li>User / Kernel mode -- add a 'mode bit'</li>
+<li>User mode - restricted mode</li>
+<li>Kernel mode - unrestricted mode</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>------------------------------------
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>| APP --&gt; Unprivileged instructions |
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>------------------------------------
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>| OS --&gt; Privileged instructions    |
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>------------------------------------
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|  Hardware                         |
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>------------------------------------
+</code></pre></div>
+<h3 id="os-events">OS Events<a class="headerlink" href="#os-events" title="Permanent link">&para;</a></h3>
+<p>An event stops execution, changes mode, and changes context
+* System Call - Request to the OS</p>
+<h3 id="system-calls">System Calls<a class="headerlink" href="#system-calls" title="Permanent link">&para;</a></h3>
+<p>When a user program need sto do something privileged, it makes a system call
+* A special kind of <strong>trap</strong>
+* Every ISA provides a system call instruction that 
+  * Causes a trap,which maps to a kernel handler
+  * Passes a
+</font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 20:37:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月15日 15:48:04</span>
       
         <br>
         创建日期:
