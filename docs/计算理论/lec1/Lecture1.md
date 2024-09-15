@@ -1,6 +1,6 @@
 <font face = "Times New Roman">
 
-# Lecture 1
+# Lecture 1 - Finite Automata
 ## Example :
 
 Given a weighted graph G :
@@ -83,6 +83,64 @@ Proof:
 
 * Let $M_A$ and $M_B$ be FAs that accept A and B respectively.
 
+#### Non-deterministic Finite Automata
+
+* next state is not uniquely determined by the current state and the input symbol
+* e-transitions: $\delta(q,e)$
+
+A NFA is a 5-tuple $(K,\Sigma,\Delta,s,F)$ where:
+
+
+* K is a finite set of states
+* $\Sigma$ is an alphabet
+* $\Delta:K\times(\Sigma\cup\{e\})\times K$ is the transition relation
+* $s\in K$ is the start state
+* $F\subseteq K$ is the set of accept states
+
+**Acceptance of a string by a NFA**:
+
+* M on input w accepts if $(s,w)\vdash_M^*(q,e)$ for some $q\in F$
+* M accepts a language L if M accepts every string w in L
+
+**Example**:
+Construct a NFA that accepts the language $\{w | w \in \{a,b\}^*$,the second symbol from the end of w is b$\}$
+
+![8](8.png)
+##### Theorem
+
+* Given a NFA M, there exists a DFA M' such that $L(M) = L(M')$.
+* Given a DFA M, there exists a NFA M' such that $L(M) = L(M')$.
+
+* DFA M simulates "tree-like" computation of NFA M.
+>A NFA $M = (K,\Sigma,\Delta,s,F)$ can be simulated by a DFA $M' = (K',\Sigma,\delta,s',F')$ where:
+>  * $K' = 2^K$ 
+>    * $2^K = \{q_1,q_2,\cdots,q_n,\{q_1\},\{q_2\},\cdots,\{q_n\},\{q_1,q_2\},\cdots,\{q_1,q_2,\cdots,q_n\}\}$
+>  * $F' = \{q\in K' | q\cap F \neq \emptyset\}$
+>  * $\delta(q,a) = \bigcup_{p\in q}\Delta(p,a)$ for any $q\in K'$ and $a\in\Sigma$
+>  * $s' = E(s)$ where $\forall q \in K, E(q)=\{p \in K:(q,e)\vdash_M^*(p,e)\}$
+>  * $\delta(Q,a) = \bigcup_{q\in Q}\bigcup_{p:(p,a,q)\in\Delta}E(p)$ for any $Q\subseteq K'$ and $a\in\Sigma$
+  
+* A language is regular if and only if it is accepted by a NFA.
+
+##### Proof
+* If A and B are regular languages, so is $AB$.
+  
+  ![9](9.png)
+> Let $M_A$ and $M_B$ be FAs that accept A and B respectively.
+> $M_A = (K_A,\Sigma,\delta_A,s_A,F_A)$
+> $M_B = (K_B,\Sigma,\delta_B,s_B,F_B)$
+> Construct a new FA $M$ that accepts $A\cdot B$:
+> $M = (K,\Sigma,\delta,s,F)$ where
+> * $K = K_A\bigcup K_B$
+> * $s = s_A$
+> * $F = F_B$
+> * $\delta(q,a) = \delta_A(q,a)\bigcup\delta_B(q,a)\bigcup\{(q,e,s_B):q\in F_A\}$
+* If A is a regular language, so is $A^+$.
+  
+  ![10](10.png)
+* If A is a regular language, so is $A^*$.
+  
+  ![11](11.png)
 ## Complemetary Material
 ### Cantor's Theorem, Countable Sets, and String Representations of the Real Numbers
 #### Cantor's Theorem
@@ -100,6 +158,7 @@ The set of all boolean functions(mapping $\{0,1\}^*\rightarrow\{0,1\}$) is uncou
 * Proof see book page 99
   
 #### Equivalent conditions for countability
+
 * The set S is countable
 * There exits a one-to-one map from  $\mathbb{N}$ to S
 * There exits an onto map from $\{0,1\}^*$ to S

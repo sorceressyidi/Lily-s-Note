@@ -59,7 +59,8 @@ nav:
       
   - Computer Science(ZJU):
     - Theoretical Computer Science:
-      - Lecture 1: 计算理论/Lecture1.md
+      - Lecture 1 - Finite Automata : 计算理论/lec1/Lecture1.md
+      - Lecture 2 - Regular Language : 计算理论/lec2/Lecture2.md
     - Fundamentals of Data Structure:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
       - Basic data Structures I: note/基础数据结构.md
