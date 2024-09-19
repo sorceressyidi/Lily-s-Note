@@ -113,11 +113,16 @@ Construct a NFA that accepts the language $\{w | w \in \{a,b\}^*$,the second sym
 
 * DFA M simulates "tree-like" computation of NFA M.
 >A NFA $M = (K,\Sigma,\Delta,s,F)$ can be simulated by a DFA $M' = (K',\Sigma,\delta,s',F')$ where:
+>
 >  * $K' = 2^K$ 
 >    * $2^K = \{q_1,q_2,\cdots,q_n,\{q_1\},\{q_2\},\cdots,\{q_n\},\{q_1,q_2\},\cdots,\{q_1,q_2,\cdots,q_n\}\}$
+> 
 >  * $F' = \{q\in K' | q\cap F \neq \emptyset\}$
+> 
 >  * $\delta(q,a) = \bigcup_{p\in q}\Delta(p,a)$ for any $q\in K'$ and $a\in\Sigma$
+> 
 >  * $s' = E(s)$ where $\forall q \in K, E(q)=\{p \in K:(q,e)\vdash_M^*(p,e)\}$
+> 
 >  * $\delta(Q,a) = \bigcup_{q\in Q}\bigcup_{p:(p,a,q)\in\Delta}E(p)$ for any $Q\subseteq K'$ and $a\in\Sigma$
   
 * A language is regular if and only if it is accepted by a NFA.
@@ -127,17 +132,27 @@ Construct a NFA that accepts the language $\{w | w \in \{a,b\}^*$,the second sym
   
   ![9](9.png)
 > Let $M_A$ and $M_B$ be FAs that accept A and B respectively.
+> 
 > $M_A = (K_A,\Sigma,\delta_A,s_A,F_A)$
+> 
 > $M_B = (K_B,\Sigma,\delta_B,s_B,F_B)$
+> 
 > Construct a new FA $M$ that accepts $A\cdot B$:
+> 
 > $M = (K,\Sigma,\delta,s,F)$ where
+> 
 > * $K = K_A\bigcup K_B$
+> 
 > * $s = s_A$
+> 
 > * $F = F_B$
+> 
 > * $\delta(q,a) = \delta_A(q,a)\bigcup\delta_B(q,a)\bigcup\{(q,e,s_B):q\in F_A\}$
+> 
 * If A is a regular language, so is $A^+$.
   
   ![10](10.png)
+  
 * If A is a regular language, so is $A^*$.
   
   ![11](11.png)
