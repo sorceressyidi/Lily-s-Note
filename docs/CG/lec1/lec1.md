@@ -32,6 +32,7 @@ $$
 & d_2 = y_i +1 - y \ (3)\\
 \end{aligned}
 $$
+
 * if $d_1 - d_2 < 0$, then $y_{i+1} = y_i$, else $y_{i+1} = y_i + 1$.
 * Substitute (1), (2) & (3) into $d_1−d_2$
 * we get $d_1 - d_2 = 2y-2y_i-1 = 2\frac{dy}{dx}x_i + 2\frac{dy}{dx} - 2y_i - 1 + 2b$
@@ -70,6 +71,7 @@ void Bresenham(int x1, int y1, int x2, int y2) {
 ```
 
 #### Scan converting a circle
+
 * A circle is defined by its center $(x_c, y_c)$ and radius $r$.
   $(x-x_c)^2 + (y-y_c)^2 = r^2$
 * $y = y_c + \sqrt{r^2 - (x-x_c)^2}$
@@ -81,6 +83,7 @@ void Bresenham(int x1, int y1, int x2, int y2) {
 ### Polygon Filling
 #### Text every pixel to see if it is inside the polygon.
 **Method 1: Even-Odd Test**
+
 * Draw a horizontal line from the point to the right.
 * Count the number of intersections with the polygon.   
   1. If the number is odd, the point is inside the polygon.
@@ -101,14 +104,19 @@ void Bresenham(int x1, int y1, int x2, int y2) {
 3. For each scan line, do the following:
     1. Add edges that intersect the scan line to the edge table.
     2. Sort the edge table by x-coordinate.
-    3. Fill the polygon between pairs of edges in the edge table.
+    3. Fill the polygon between **pairs of edges** in the edge table.
+#### Efficiency in Scan-line Method
 
-* How to speed up the algorithm? -- We don't what to calculate the intersection of the scan line with all edges. 
+![6](6.png)
+![7](7.png)
 
 ### Seed Fill Algorithm
 
+* Assumes that at least one pixel inside the polygon is known
+* The algorithm fills the polygon by starting from the known pixel and moving outwards.
 
 ## Clipping
-
-
+* Removal of content that is not going to be displayed
+* Usually done before scan converting primitives
+  
 </font>

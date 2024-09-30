@@ -7,8 +7,11 @@
 * Ubuntu - Linux Core Plus GNU
 * Unix - Multitasking, multi-user OS
 ## 1.1 What is an Operating System?
-An operating system is a software that acts as an intermediary between the computer hardware and the user. It provides an environment in which a user can execute programs conveniently and efficiently.
-* Resource Manager and Allocator
+
+An operating system is a software that acts as an intermediary between the computer hardware and the user. 
+It provides an environment in which a user can execute programs conveniently and efficiently.
+
+* Resource **Abstractor and Allocator**
 
 ### Starting an OS
 * The first program that runs when a computer starts up is the bootloader -- the  bootstrap program initializes the computer.
@@ -49,13 +52,31 @@ An operating system is a software that acts as an intermediary between the compu
 ```
 
 ### OS Events
+
 An event stops execution, changes mode, and changes context
+
 * System Call - Request to the OS
 
 ### System Calls
 When a user program need sto do something privileged, it makes a system call
+
 * A special kind of **trap**
 * Every ISA provides a system call instruction that 
   * Causes a trap,which maps to a kernel handler
-  * Passes a
+
+### Timers
+The timer interrupts the computer regularly
+
+* The OS always makes sure the timer is set before turning over control to user code
+### A process is a program in execution
+* Program: passive entity
+* Process: active entity
+
+The OS is responsible for :
+
+* Creating and deleting processes
+* Suspending and resuming processes
+* Providing mechanisms for process synchronization
+* Providing mechanisms for process communication
+* Providing mechanisms for deadlock handling
 </font>
