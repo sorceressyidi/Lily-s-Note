@@ -10,24 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.lilyarnold.cc/OS/lec1/">
+        <link rel="canonical" href="https://note.lilyarnold.cc/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec3/Lecture3/">
       
       
+        <link rel="prev" href="../../lec2/Lecture2/">
       
       
-      <link rel="icon" href="../../log.ico">
+        <link rel="next" href="../../../OS/lec1/lec1/">
+      
+      
+      <link rel="icon" href="../../../log.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Lec1 - Lily's Notebook</title>
+        <title>Lecture 3 - Context-Free Language - Lily's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -52,19 +56,19 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../css/card.css">
+      <link rel="stylesheet" href="../../../css/card.css">
     
-      <link rel="stylesheet" href="../../css/tasklist.css">
+      <link rel="stylesheet" href="../../../css/tasklist.css">
     
-      <link rel="stylesheet" href="../../css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
-      <link rel="stylesheet" href="../../css/more_changelog.css">
+      <link rel="stylesheet" href="../../../css/more_changelog.css">
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -103,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-1-introduction-to-operating-systems" class="md-skip">
+        <a href="#lecture-3-context-free-grammar-cfg" class="md-skip">
           跳转至
         </a>
       
@@ -117,9 +121,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../log.ico" alt="logo">
+  <img src="../../../log.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -136,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec1
+              Lecture 3 - Context-Free Language
             
           </span>
         </div>
@@ -237,7 +241,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -263,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Papers/DM/DDPM/" class="md-tabs__link">
+        <a href="../../../Papers/DM/DDPM/" class="md-tabs__link">
           
   
     
@@ -282,17 +286,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec1/Lecture1/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../lec1/Lecture1/" class="md-tabs__link">
           
   
     
@@ -327,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../GP/lec1-3/lec1/" class="md-tabs__link">
+        <a href="../../../GP/lec1-3/lec1/" class="md-tabs__link">
           
   
     
@@ -359,7 +367,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
           
   
     
@@ -388,7 +396,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../DL_CV/class/lec/" class="md-tabs__link">
+        <a href="../../../DL_CV/class/lec/" class="md-tabs__link">
           
   
     
@@ -417,7 +425,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../invisible/" class="md-tabs__link">
+        <a href="../../../invisible/" class="md-tabs__link">
           
   
     
@@ -455,9 +463,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
       
-  <img src="../../log.ico" alt="logo">
+  <img src="../../../log.ico" alt="logo">
 
     </a>
     Lily's Notebook
@@ -494,7 +502,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -621,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/DM/DDPM/" class="md-nav__link">
+      <a href="../../../Papers/DM/DDPM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/DM/DDIM/" class="md-nav__link">
+      <a href="../../../Papers/DM/DDIM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/DM/SD/" class="md-nav__link">
+      <a href="../../../Papers/DM/SD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/NeRF/Theory/" class="md-nav__link">
+      <a href="../../../Papers/NeRF/Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -709,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/3DGS/paper/" class="md-nav__link">
+      <a href="../../../Papers/3DGS/paper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Papers/4DGS/paper/" class="md-nav__link">
+      <a href="../../../Papers/4DGS/paper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,6 +810,8 @@
       
   
   
+    
+  
   
     
     
@@ -824,6 +834,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -831,12 +845,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -850,7 +864,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science(ZJU)
@@ -861,6 +875,8 @@
                 
   
   
+    
+  
   
     
     
@@ -869,16 +885,18 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -892,7 +910,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
@@ -905,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec1/Lecture1/" class="md-nav__link">
+      <a href="../../lec1/Lecture1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -925,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/lec2/Lecture2/" class="md-nav__link">
+      <a href="../../lec2/Lecture2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -934,6 +952,36 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3 - Context-Free Language
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -975,7 +1023,7 @@
             
   
   <span class="md-ellipsis">
-    PPL
+    Operating System
   </span>
   
 
@@ -984,6 +1032,96 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operating System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec1/lec1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1 - Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec2/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2 - OS Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PPL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             PPL
           </label>
@@ -995,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PPL/lec1/lec1/" class="md-nav__link">
+      <a href="../../../PPL/lec1/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1015,11 +1153,79 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PPL/lec2/lec2/" class="md-nav__link">
+      <a href="../../../PPL/lec2/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Lecture 2 - Abstract Syntax Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Graphic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Graphic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CG/lec1/lec1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1 - 2D Graphics
   </span>
   
 
@@ -1064,10 +1270,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1078,8 +1284,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals of Data Structure
           </label>
@@ -1091,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
+      <a href="../../../note/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../note/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/basicII/" class="md-nav__link">
+      <a href="../../../note/basicII/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/sort/" class="md-nav__link">
+      <a href="../../../note/sort/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note/hash/" class="md-nav__link">
+      <a href="../../../note/hash/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1226,10 +1432,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1240,8 +1446,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             DIP
           </label>
@@ -1253,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/Basic/DIP/" class="md-nav__link">
+      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1273,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/chap2/chap2/" class="md-nav__link">
+      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1293,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/chap3/chap3/" class="md-nav__link">
+      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1313,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/morph/morph/" class="md-nav__link">
+      <a href="../../../DIP/morph/morph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1333,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/filter/filter/" class="md-nav__link">
+      <a href="../../../DIP/filter/filter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/Fourier/Fourier/" class="md-nav__link">
+      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1373,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/feature/feature/" class="md-nav__link">
+      <a href="../../../DIP/feature/feature/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1393,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DIP/DL/DL/" class="md-nav__link">
+      <a href="../../../DIP/DL/DL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1446,10 +1652,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1460,8 +1666,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             OOP(C++)
           </label>
@@ -1473,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Basic/Basic/" class="md-nav__link">
+      <a href="../../../oop/Basic/Basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1493,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Container/Container/" class="md-nav__link">
+      <a href="../../../oop/Container/Container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1513,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/inheritance/lec/" class="md-nav__link">
+      <a href="../../../oop/inheritance/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1533,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/copy/lec/" class="md-nav__link">
+      <a href="../../../oop/copy/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/template/lec/" class="md-nav__link">
+      <a href="../../../oop/template/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1573,7 +1779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Exceptions/lec/" class="md-nav__link">
+      <a href="../../../oop/Exceptions/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1593,7 +1799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oop/Smart/lec/" class="md-nav__link">
+      <a href="../../../oop/Smart/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,10 +1844,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1652,8 +1858,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Anvanced Data Structure
           </label>
@@ -1665,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Tree/lec/" class="md-nav__link">
+      <a href="../../../ADS/Tree/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1685,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Heap/lec/" class="md-nav__link">
+      <a href="../../../ADS/Heap/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1730,10 +1936,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1744,8 +1950,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8_3">
             <span class="md-nav__icon md-icon"></span>
             Analysis
           </label>
@@ -1757,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/back/lec/" class="md-nav__link">
+      <a href="../../../ADS/back/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1777,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/D%26C/lec/" class="md-nav__link">
+      <a href="../../../ADS/D%26C/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +2003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/dy/lec/" class="md-nav__link">
+      <a href="../../../ADS/dy/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/greedy/lec/" class="md-nav__link">
+      <a href="../../../ADS/greedy/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1837,7 +2043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/NP/lec/" class="md-nav__link">
+      <a href="../../../ADS/NP/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/approx/lec/" class="md-nav__link">
+      <a href="../../../ADS/approx/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1877,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/rand/lec/" class="md-nav__link">
+      <a href="../../../ADS/rand/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1928,10 +2134,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1942,8 +2148,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             Database System
           </label>
@@ -1972,10 +2178,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_7_1" id="__nav_3_7_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9_1" id="__nav_3_9_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1986,8 +2192,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_1">
             <span class="md-nav__icon md-icon"></span>
             Inclass
           </label>
@@ -1999,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap2_inclass/lec/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap2_inclass/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2019,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/ER/lec/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/ER/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2039,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Relational/lec/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Relational/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2090,10 +2296,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2104,8 +2310,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_2">
             <span class="md-nav__icon md-icon"></span>
             CMU 15-445
           </label>
@@ -2117,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap1/Chap1/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap1/Chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2137,7 +2343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap2/Chap2/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap2/Chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2157,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap3/Chap3/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap3/Chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2177,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap6/lec/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap6/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2197,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap8/Chap8/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap8/Chap8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2217,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CMU%2015-445/Chap11/lec/" class="md-nav__link">
+      <a href="../../../CMU%2015-445/Chap11/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2270,10 +2476,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2284,8 +2490,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Computer Organization
           </label>
@@ -2297,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%BB%84/Intro/intro/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%BB%84/Intro/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2317,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%BB%84/Chap2/lec/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%BB%84/Chap2/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2337,7 +2543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%BB%84/Chap3/lec/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%BB%84/Chap3/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2390,10 +2596,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2404,8 +2610,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             计算机逻辑设计基础
           </label>
@@ -2417,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap1/chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2437,7 +2643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap2/chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2457,7 +2663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap3/chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2477,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Chap4/chap4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2497,7 +2703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/DHI/Digital%20Hardware%20Implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/Register/register/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2537,7 +2743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/MB/MB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2707,7 +2913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/lec1-3/lec1/" class="md-nav__link">
+      <a href="../../../GP/lec1-3/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2727,7 +2933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/current/current/" class="md-nav__link">
+      <a href="../../../GP/current/current/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2747,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/mag/mag/" class="md-nav__link">
+      <a href="../../../GP/mag/mag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2767,7 +2973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/com/com/" class="md-nav__link">
+      <a href="../../../GP/com/com/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2843,7 +3049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/light/" class="md-nav__link">
+      <a href="../../../GP/light/light/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2863,7 +3069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/inteference/" class="md-nav__link">
+      <a href="../../../GP/light/inteference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2883,7 +3089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/df/diffraction/" class="md-nav__link">
+      <a href="../../../GP/light/df/diffraction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2903,7 +3109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/Polar/Polarization/" class="md-nav__link">
+      <a href="../../../GP/Polar/Polarization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2923,7 +3129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/light/quantum%20light/quantum/" class="md-nav__link">
+      <a href="../../../GP/light/quantum%20light/quantum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2999,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/matter%20wave/matter/" class="md-nav__link">
+      <a href="../../../GP/matter%20wave/matter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3019,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/sch/sch/" class="md-nav__link">
+      <a href="../../../GP/sch/sch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3039,7 +3245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/QW/QW/" class="md-nav__link">
+      <a href="../../../GP/QW/QW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3059,7 +3265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/HA/HA/" class="md-nav__link">
+      <a href="../../../GP/HA/HA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3079,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GP/AMAS/AMAS/" class="md-nav__link">
+      <a href="../../../GP/AMAS/AMAS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3159,7 +3365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/PT/" class="md-nav__link">
+      <a href="../../../PT/PT/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3179,7 +3385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/order_stats.pdf" class="md-nav__link">
+      <a href="../../../PT/order_stats.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3199,7 +3405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../PT/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3333,7 +3539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3353,7 +3559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3373,7 +3579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3393,7 +3599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3413,7 +3619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3433,7 +3639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/CBN/lec9/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/CBN/lec9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3453,7 +3659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Self/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Self/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3493,7 +3699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
+      <a href="../../../CV/ML-4360/Diverse/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3623,7 +3829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/class/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/class/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3643,7 +3849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/neural/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/neural/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3663,7 +3869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/CNN/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/CNN/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3683,7 +3889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/Pytorch/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/Pytorch/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3703,7 +3909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/TN/lec/" class="md-nav__link">
+      <a href="../../../DL_CV/TN/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3723,7 +3929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DL_CV/Recognition/lec10/" class="md-nav__link">
+      <a href="../../../DL_CV/Recognition/lec10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3805,7 +4011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/RNN/lec/" class="md-nav__link">
+      <a href="../../../CS231n/RNN/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3825,7 +4031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec9/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec9/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3845,7 +4051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec10/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec10/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3865,7 +4071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec12/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec12/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3885,7 +4091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec13/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec13/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3905,7 +4111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec14/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec14/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3925,7 +4131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec15/lec/" class="md-nav__link">
+      <a href="../../../CS231n/lec15/lec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3945,7 +4151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS231n/lec16/lec.md" class="md-nav__link">
+      <a href="../../../CS231n/lec16/lec.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4065,7 +4271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../invisible/" class="md-nav__link">
+      <a href="../../../invisible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4085,7 +4291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+      <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4134,89 +4340,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#10-a-bit-of-history" class="md-nav__link">
-    1.0 A bit of history
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-what-is-an-operating-system" class="md-nav__link">
-    1.1 What is an Operating System?
-  </a>
-  
-    <nav class="md-nav" aria-label="1.1 What is an Operating System?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-an-os" class="md-nav__link">
-    Starting an OS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-programming" class="md-nav__link">
-    Multi-programming
-  </a>
-  
-    <nav class="md-nav" aria-label="Multi-programming">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#time-sharing" class="md-nav__link">
-    Time-sharing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-running-os" class="md-nav__link">
-    The running OS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#designing-an-os" class="md-nav__link">
-    Designing an OS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#os-events" class="md-nav__link">
-    OS Events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#system-calls" class="md-nav__link">
-    System Calls
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4230,79 +4353,43 @@
                   
 
 
-<p><font face = "Times New Roman" size = 4></p>
-<h1 id="lecture-1-introduction-to-operating-systems">Lecture 1 - Introduction to Operating Systems<a class="headerlink" href="#lecture-1-introduction-to-operating-systems" title="Permanent link">&para;</a></h1>
-<h2 id="10-a-bit-of-history">1.0 A bit of history<a class="headerlink" href="#10-a-bit-of-history" title="Permanent link">&para;</a></h2>
+<p><font face = "Times New Roman"></p>
+<h1 id="lecture-3-context-free-grammar-cfg">Lecture 3 - Context-Free Grammar CFG<a class="headerlink" href="#lecture-3-context-free-grammar-cfg" title="Permanent link">&para;</a></h1>
+<p>A context-free grammar (CFG) is a set of recursive rules used to generate patterns of strings. 
+A CFG <span class="arithmatex">\(G = (V, \Sigma, R, S)\)</span> consists of:</p>
 <ul>
-<li>Father of Linux - Linus Torvalds (at age 21)</li>
-<li>LLVM - Low Level Virtual Machine by Chris Lattner</li>
-<li>Ubuntu - Linux Core Plus GNU</li>
-<li>Unix - Multitasking, multi-user OS</li>
+<li>A finite set of variables (non-terminal symbols) <span class="arithmatex">\(V\)</span>.</li>
+<li>A finite set of terminal symbols <span class="arithmatex">\(\Sigma\)</span>.</li>
+<li>S <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\(V-\Sigma\)</span> is the start symbol.</li>
+<li>
+<p>R <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\((V-\Sigma) \times (U)^*\)</span> is a finite set of rules.</p>
+</li>
+<li>
+<p>Define in one step: </p>
+</li>
+<li>derivation</li>
+<li>G generates <span class="arithmatex">\(w\in \Sigma^*\)</span> if <span class="arithmatex">\(S \Rightarrow^* w\)</span>.</li>
+<li>L(G) = {w <span class="arithmatex">\(\in \Sigma ^*\)</span>| G generates w} is a context-free language.</li>
 </ul>
-<h2 id="11-what-is-an-operating-system">1.1 What is an Operating System?<a class="headerlink" href="#11-what-is-an-operating-system" title="Permanent link">&para;</a></h2>
-<p>An operating system is a software that acts as an intermediary between the computer hardware and the user. It provides an environment in which a user can execute programs conveniently and efficiently.
-* Resource Manager and Allocator</p>
-<h3 id="starting-an-os">Starting an OS<a class="headerlink" href="#starting-an-os" title="Permanent link">&para;</a></h3>
+<p><strong>Example:</strong></p>
 <ul>
-<li>The first program that runs when a computer starts up is the bootloader -- the  bootstrap program initializes the computer.</li>
-<li>Locates and loads the OS kernel into memory</li>
-<li>Wait for 'event' to occur</li>
+<li><span class="arithmatex">\(\{a^nb^n|n\geq 0\}\)</span> is a context-free language.</li>
+<li>Rule: <span class="arithmatex">\(S \rightarrow aSb | e\)</span>.</li>
+<li><span class="arithmatex">\(\{w\in {a,b}^*|w = w^R\}\)</span> is a context-free language.</li>
+<li>Rule: <span class="arithmatex">\(S \rightarrow aSa | bSb | e | a | b\)</span>.
+</font></li>
 </ul>
-<h3 id="multi-programming">Multi-programming<a class="headerlink" href="#multi-programming" title="Permanent link">&para;</a></h3>
-<h4 id="time-sharing">Time-sharing<a class="headerlink" href="#time-sharing" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Multi-programming with <strong>rapid context switching</strong> -- Actually not working all the same time.</li>
-<li>jobs are called processes</li>
-</ul>
-<h3 id="the-running-os">The running OS<a class="headerlink" href="#the-running-os" title="Permanent link">&para;</a></h3>
-<ul>
-<li>The kernel is not a running job -- It's code that resides in memory and is ready to be executed at any moment</li>
-<li>OS be executed on behalf of a job whenever requested</li>
-<li>OS do special/dangerous things that user programs can't do</li>
-<li>When designing a kernel : Lean and Mean</li>
-<li>Lean - Only the necessary features</li>
-<li>Mean - single minded, focused on the job</li>
-<li>Size of Linux Kernel when loaded in memory is about x MBs to xx MBs</li>
-<li>No memory protection with the kernel</li>
-<li>The kernel's the one saying to a process "segmentation fault"</li>
-<li>Nobody's watching over the kernel</li>
-</ul>
-<h3 id="designing-an-os">Designing an OS<a class="headerlink" href="#designing-an-os" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Design CPU to support OS</li>
-<li>User / Kernel mode -- add a 'mode bit'</li>
-<li>User mode - restricted mode</li>
-<li>Kernel mode - unrestricted mode</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>------------------------------------
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>| APP --&gt; Unprivileged instructions |
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>------------------------------------
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>| OS --&gt; Privileged instructions    |
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>------------------------------------
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|  Hardware                         |
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>------------------------------------
-</code></pre></div>
-<h3 id="os-events">OS Events<a class="headerlink" href="#os-events" title="Permanent link">&para;</a></h3>
-<p>An event stops execution, changes mode, and changes context
-* System Call - Request to the OS</p>
-<h3 id="system-calls">System Calls<a class="headerlink" href="#system-calls" title="Permanent link">&para;</a></h3>
-<p>When a user program need sto do something privileged, it makes a system call
-* A special kind of <strong>trap</strong>
-* Every ISA provides a system call instruction that 
-  * Causes a trap,which maps to a kernel handler
-  * Passes a
-</font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月15日 15:48:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月30日 11:27:07</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年11月11日 10:26:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月30日 11:27:07</span>
       
     
   </small>
@@ -4372,6 +4459,44 @@
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../lec2/Lecture2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 2 - Regular Language">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Lecture 2 - Regular Language
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../OS/lec1/lec1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 1 - Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Lecture 1 - Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4414,14 +4539,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
