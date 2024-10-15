@@ -21,6 +21,9 @@ $L(R) = \{w \in \{a,b\}^* | w\ is\ a\ string\ that\ starts\ with\ a\ and\ ends\ 
 #### Precedence of Regular Expression
 * $* >  \cdot > \cup$
 
+### State Elimination
+
+![2](2.jpg)
 ### Proof
 #### Theorem 1: 
 
