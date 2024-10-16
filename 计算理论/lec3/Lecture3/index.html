@@ -16,7 +16,7 @@
         <link rel="prev" href="../../lec2/Lecture2/">
       
       
-        <link rel="next" href="../../../OS/lec1/lec1/">
+        <link rel="next" href="../../lec4/Lecture4/">
       
       
       <link rel="icon" href="../../../log.ico">
@@ -887,6 +887,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -972,6 +976,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 3 - Context-Free Language
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -982,6 +997,99 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leftmost-derivation" class="md-nav__link">
+    Leftmost Derivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pumping-theorem-for-cfl" class="md-nav__link">
+    Pumping Theorem for CFL
+  </a>
+  
+    <nav class="md-nav" aria-label="Pumping Theorem for CFL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lec4/Lecture4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4 - Push-Down-Automata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lec5/Lecture5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5 - Turing Machine
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1002,6 +1110,8 @@
   
     
     
+      
+        
       
         
       
@@ -1068,6 +1178,26 @@
   
   <span class="md-ellipsis">
     Lecture 2 - OS Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec3/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3 - Process
   </span>
   
 
@@ -4340,6 +4470,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leftmost-derivation" class="md-nav__link">
+    Leftmost Derivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pumping-theorem-for-cfl" class="md-nav__link">
+    Pumping Theorem for CFL
+  </a>
+  
+    <nav class="md-nav" aria-label="Pumping Theorem for CFL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4361,31 +4533,58 @@ A CFG <span class="arithmatex">\(G = (V, \Sigma, R, S)\)</span> consists of:</p>
 <li>A finite set of variables (non-terminal symbols) <span class="arithmatex">\(V\)</span>.</li>
 <li>A finite set of terminal symbols <span class="arithmatex">\(\Sigma\)</span>.</li>
 <li>S <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\(V-\Sigma\)</span> is the start symbol.</li>
-<li>
-<p>R <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\((V-\Sigma) \times (U)^*\)</span> is a finite set of rules.</p>
-</li>
-<li>
-<p>Define in one step: </p>
-</li>
-<li>derivation</li>
-<li>G generates <span class="arithmatex">\(w\in \Sigma^*\)</span> if <span class="arithmatex">\(S \Rightarrow^* w\)</span>.</li>
-<li>L(G) = {w <span class="arithmatex">\(\in \Sigma ^*\)</span>| G generates w} is a context-free language.</li>
+<li>R <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\((V-\Sigma) \times (U)^*\)</span> is a finite set of rules.</li>
 </ul>
+<p><strong>Define in one step</strong> <span class="arithmatex">\(\Rightarrow\)</span>.</p>
+<p>For any <span class="arithmatex">\(x,y,u \in V^*\)</span>, for any <span class="arithmatex">\(A \in V - \Sigma\)</span>,  <span class="arithmatex">\(xAy \Rightarrow xuy\)</span> if <span class="arithmatex">\((A,u) \in R\)</span>.</p>
+<p><strong>Define in multiple steps</strong> <span class="arithmatex">\(\Rightarrow^*\)</span>.</p>
+<p>For any <span class="arithmatex">\(x,y,u \in V^*\)</span>, for any <span class="arithmatex">\(A \in V - \Sigma\)</span>,  <span class="arithmatex">\(w \Rightarrow^* u\)</span> if <span class="arithmatex">\(w=u\)</span> or <span class="arithmatex">\(w \Rightarrow u_1 \Rightarrow u_2 \Rightarrow \cdots \Rightarrow u_k \Rightarrow u\)</span>.</p>
+<p>G generates <span class="arithmatex">\(w\in \Sigma^*\)</span> if <span class="arithmatex">\(S \Rightarrow^* w\)</span>.
+  * L(G) = {w <span class="arithmatex">\(\in \Sigma ^*\)</span>| G generates w} is a context-free language.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li><span class="arithmatex">\(\{a^nb^n|n\geq 0\}\)</span> is a context-free language.</li>
 <li>Rule: <span class="arithmatex">\(S \rightarrow aSb | e\)</span>.</li>
 <li><span class="arithmatex">\(\{w\in {a,b}^*|w = w^R\}\)</span> is a context-free language.</li>
-<li>Rule: <span class="arithmatex">\(S \rightarrow aSa | bSb | e | a | b\)</span>.
-</font></li>
+<li>Rule: <span class="arithmatex">\(S \rightarrow aSa | bSb | e | a | b\)</span>.</li>
 </ul>
+<h3 id="leftmost-derivation">Leftmost Derivation<a class="headerlink" href="#leftmost-derivation" title="Permanent link">&para;</a></h3>
+<p><img alt="1" src="../1.jpg" /></p>
+<h2 id="pumping-theorem-for-cfl">Pumping Theorem for CFL<a class="headerlink" href="#pumping-theorem-for-cfl" title="Permanent link">&para;</a></h2>
+<p>If L is a context-free language, then there exists a positive integer p such that any string <span class="arithmatex">\(s \in L\)</span> with <span class="arithmatex">\(|s| \geq p\)</span> can be written as <span class="arithmatex">\(s = uvxyz\)</span> such that:</p>
+<ol>
+<li><span class="arithmatex">\(|vxy| \leq p\)</span>.</li>
+<li><span class="arithmatex">\(|v|+|y| \geq 1\)</span>.</li>
+<li><span class="arithmatex">\(uv^ixy^iz \in L\)</span> for all <span class="arithmatex">\(i \geq 0\)</span>.</li>
+</ol>
+<h3 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">&para;</a></h3>
+<ul>
+<li>See <a href="https://www2.lawrence.edu/fast/GREGGJ/CMSC515/chapt02/Pumping.html">link</a></li>
+<li>See <a href="https://courses.grainger.illinois.edu/cs373/fa2012/">link</a> </li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="arithmatex">\(\{a^nb^nc^n|n\geq 0\}\)</span> is not a context-free language.</li>
+</ul>
+<p>If L is a context-free language, then there exists a positive integer p such that any string <span class="arithmatex">\(s \in L\)</span> with <span class="arithmatex">\(|s| \geq p\)</span> can be written as <span class="arithmatex">\(s = uvxyz\)</span> such that:</p>
+<ol>
+<li><span class="arithmatex">\(|vxy| \leq p\)</span>.</li>
+<li><span class="arithmatex">\(|v|+|y| \geq 1\)</span>.</li>
+<li><span class="arithmatex">\(uv^ixy^iz \in L\)</span> for all <span class="arithmatex">\(i \geq 0\)</span>.</li>
+</ol>
+<p>From 2. and 1., we have <span class="arithmatex">\(vxy\)</span> contains at most two types of symbols from <span class="arithmatex">\(\{a,b,c\}\)</span>.</p>
+<ul>
+<li>Suppose <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(y\)</span> contain only one type of symbols or two types of symbols.</li>
+<li><span class="arithmatex">\(uv^2xy^2z\)</span> will not have the same number of <span class="arithmatex">\(a,b,c\)</span>.</li>
+</ul>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月30日 11:27:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月16日 00:17:47</span>
       
         <br>
         创建日期:
@@ -4480,13 +4679,13 @@ A CFG <span class="arithmatex">\(G = (V, \Sigma, R, S)\)</span> consists of:</p>
         
         
           
-          <a href="../../../OS/lec1/lec1/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 1 - Introduction">
+          <a href="../../lec4/Lecture4/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 4 - Push-Down-Automata">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 1 - Introduction
+                Lecture 4 - Push-Down-Automata
               </div>
             </div>
             <div class="md-footer__button md-icon">
