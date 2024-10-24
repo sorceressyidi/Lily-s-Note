@@ -7,6 +7,7 @@
 * Pushdown automata (PDA) is a non-deterministic finite automaton with a stack.
 
 A PDA is a 6-tuple $P = (K, \Sigma, \Gamma, \Delta, s, F)$, where 
+
 * $K$ is a finite set of states.
 * $\Sigma$ is tape alphabet.
 * $\Gamma$ is stack alphabet.
@@ -17,6 +18,7 @@ A PDA is a 6-tuple $P = (K, \Sigma, \Gamma, \Delta, s, F)$, where
 ### $\Delta$ Transition Rules
 
 $\Delta$ is a "finite" subset of $K \times ((\Sigma \cup \{\epsilon\}) \times \Gamma^*) \times (K \times \Gamma^*)$. where
+
 * $K$ is the current state.
 * $\Sigma \cup \{\epsilon\}$ is the current input symbol.
 * $\Gamma^*$ is the current stack top symbol.
@@ -82,6 +84,7 @@ The idea is to first convert the PDA to a **simple PDA**, then convert the simpl
 ### Theorem 1
 
 Every Regular Language is a Context-Free Language.
+
 * NFA $\Rightarrow$ PDA. [simple]
 * DFA $\Rightarrow$ CFG. 
 

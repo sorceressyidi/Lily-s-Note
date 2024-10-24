@@ -63,11 +63,11 @@ The conditional 3D Gaussian is the Gaussian distribution of the first 3 dimensio
 $$
 \begin{aligned}
 \Sigma_{3|1} &= \Sigma_{1,2,3} - \Sigma_{1,2,4}\Sigma_{4}^{-1}\Sigma_{1,2,4}^T\\
-\mu_{3|1} &= \mu_{1,2,3} - \Sigma_{1,2,3}\Sigma_{4}^{-1}(\mu_{4} - \mu_{4})
+\mu_{3|1} &= \mu_{1,2,3} - \Sigma_{1,2,3}\Sigma_{4}^{-1}(r - \mu_{4})
 \end{aligned}
 $$
 
->
+
 $$
 \Sigma = \begin{pmatrix}
 \Sigma_{1,2,3} & \Sigma_{1,2,4} \\
