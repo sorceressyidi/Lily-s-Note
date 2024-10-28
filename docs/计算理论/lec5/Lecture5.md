@@ -96,7 +96,7 @@ A multi-head Turing machine is a Turing machine with multiple heads on a single 
 * Nondeterministic TM: At each step, there are finitely many possibilities. 
 * So formally, $M = (Q,\Sigma,\Gamma,\delta,q_0,q_{acc},q_{rej})$, where
   * $Q,\Sigma,\Gamma,q_0,q_{acc},q_{rej}$ are as before for 1-tape machine
-  * $\delta : (Q- \{q_{acc},q_{rej}\}) \times \Gamma \rightarrow P(Q \times \Gamma \times \{L,R\})$
+  * $\delta : (Q- \{q_{acc},q_{rej}\}) \times \Gamma \rightarrow P(Q \times \Gamma \times \{L,R\})$ 
 
 ### Decides
 
@@ -242,4 +242,69 @@ $M_{R_5}$ = on input $\langle B_1,B_2 \rangle$:
 2. Run $M_{R_4}$ on input $\langle B \rangle$.
 
 
-</font>
+#### $A_{CFG}$
+
+Input: $\langle G,w \rangle$, where $G$ is a CFG and $w$ is a string.
+
+Output: Accept if $G$ generates $w$; reject otherwise.
+
+$A_{CFG} = \{ \langle G,w \rangle | G \text{ is a CFG and G generates w}\}$
+
+##### Chonsky Normal Form
+
+A CFG $G$ is in Chonsky Normal Form if every rule is of the form:
+
+* $S \rightarrow e$
+* $A \rightarrow BC$  B and C are non-terminal symbols. BC $\in V-\Sigma-{S}$
+* $A \rightarrow a$.
+
+So if final $w$ has length $n$, the number of steps of subtitution is $2n-1$.
+
+$M_{C1}$ = on input $\langle G,w \rangle$:
+1. Convert CFG $G$ to Chonsky Normal Form $G'$.
+2. Enumerate all derivations of length at most $|R'|^{2n-1}$.
+3. Acscept if any derivation generates $w$; otherwise, reject.
+
+#### $A_{PDA}$
+
+Input: $\langle P,w \rangle$, where $P$ is a PDA and $w$ is a string.
+
+Output: Accept if $P$ accepts $w$; reject otherwise.
+
+$A_{PDA} = \{ \langle P,w \rangle | P \text{ is a PDA and P accepts w}\}$
+
+$M_{C_2}$ = on input $\langle P,w \rangle$:
+1. Convert PDA $P$ to a CFG $G$.
+2. Run $M_{C_1}$ on input $\langle G,w \rangle$.
+3. If $M_{C_1}$ accepts, accept; otherwise, reject.
+
+#### $E_{CFG}$
+
+Input: $\langle G \rangle$, where $G$ is a CFG.
+
+Output: Accept if $L(G) = \emptyset$; reject otherwise.
+
+$E_{CFG} = \{ \langle G \rangle | L(G) = \emptyset\}$
+
+$M_{C_3}$ = on input $\langle G \rangle$:
+1. Mark all terminals and $e$.
+2. Look through all rules and if there is a rule that all symbols on the right side are marked , mark the left side.
+3. Repeat step 2 until no new symbols are marked.
+4. If $S$ is marked, reject; otherwise, accept.
+
+#### $E_{PDA}$
+
+Input: $\langle P \rangle$, where $P$ is a PDA.
+
+Output: Accept if $L(P) = \emptyset$; reject otherwise.
+
+$E_{PDA} = \{ \langle P \rangle | L(P) = \emptyset\}$
+
+$M_{C_4}$ = on input $\langle P \rangle$:
+1. Convert PDA $P$ to a CFG $G$.
+2. Run $M_{C_3}$ on input $\langle G \rangle$.
+3. If $M_{C_3}$ accepts, accept; otherwise, reject.
+
+
+$A_{DFA}$ is recursive  $\rightarrow$ $L(D)$ is recursive.
+

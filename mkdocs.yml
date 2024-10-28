@@ -64,6 +64,7 @@ nav:
       - Lecture 3 - Context-Free Language : 计算理论/lec3/Lecture3.md
       - Lecture 4 - Push-Down-Automata : 计算理论/lec4/Lecture4.md
       - Lecture 5 - Turing Machine : 计算理论/lec5/Lecture5.md
+      - Lecture 6 - Containments properties of languages : 计算理论/lec6/Lecture6.md
     - Operating System:
       - Lecture 1 - Introduction : OS/lec1/lec1.md
       - Lecture 2 - OS Structure : OS/lec2/lec2.md
