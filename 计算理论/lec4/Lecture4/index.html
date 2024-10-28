@@ -891,6 +891,8 @@
       
         
       
+        
+      
     
     
     
@@ -1227,6 +1229,26 @@
   
   <span class="md-ellipsis">
     Lecture 5 - Turing Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lec6/Lecture6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6 - Containments properties of languages
   </span>
   
 
@@ -4813,20 +4835,24 @@
 <ul>
 <li>Pushdown automata (PDA) is a non-deterministic finite automaton with a stack.</li>
 </ul>
-<p>A PDA is a 6-tuple <span class="arithmatex">\(P = (K, \Sigma, \Gamma, \Delta, s, F)\)</span>, where 
-* <span class="arithmatex">\(K\)</span> is a finite set of states.
-* <span class="arithmatex">\(\Sigma\)</span> is tape alphabet.
-* <span class="arithmatex">\(\Gamma\)</span> is stack alphabet.
-* <span class="arithmatex">\(\Delta\)</span> is a set of transition rules.
-* <span class="arithmatex">\(s\)</span> is the initial state.
-* <span class="arithmatex">\(F\)</span> is the set of final states.</p>
+<p>A PDA is a 6-tuple <span class="arithmatex">\(P = (K, \Sigma, \Gamma, \Delta, s, F)\)</span>, where </p>
+<ul>
+<li><span class="arithmatex">\(K\)</span> is a finite set of states.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is tape alphabet.</li>
+<li><span class="arithmatex">\(\Gamma\)</span> is stack alphabet.</li>
+<li><span class="arithmatex">\(\Delta\)</span> is a set of transition rules.</li>
+<li><span class="arithmatex">\(s\)</span> is the initial state.</li>
+<li><span class="arithmatex">\(F\)</span> is the set of final states.</li>
+</ul>
 <h3 id="delta-transition-rules"><span class="arithmatex">\(\Delta\)</span> Transition Rules<a class="headerlink" href="#delta-transition-rules" title="Permanent link">&para;</a></h3>
-<p><span class="arithmatex">\(\Delta\)</span> is a "finite" subset of <span class="arithmatex">\(K \times ((\Sigma \cup \{\epsilon\}) \times \Gamma^*) \times (K \times \Gamma^*)\)</span>. where
-* <span class="arithmatex">\(K\)</span> is the current state.
-* <span class="arithmatex">\(\Sigma \cup \{\epsilon\}\)</span> is the current input symbol.
-* <span class="arithmatex">\(\Gamma^*\)</span> is the current stack top symbol.
-* <span class="arithmatex">\(K\)</span> is the next state.
-* <span class="arithmatex">\(\Gamma^*\)</span> is the stack top symbol to be pushed.</p>
+<p><span class="arithmatex">\(\Delta\)</span> is a "finite" subset of <span class="arithmatex">\(K \times ((\Sigma \cup \{\epsilon\}) \times \Gamma^*) \times (K \times \Gamma^*)\)</span>. where</p>
+<ul>
+<li><span class="arithmatex">\(K\)</span> is the current state.</li>
+<li><span class="arithmatex">\(\Sigma \cup \{\epsilon\}\)</span> is the current input symbol.</li>
+<li><span class="arithmatex">\(\Gamma^*\)</span> is the current stack top symbol.</li>
+<li><span class="arithmatex">\(K\)</span> is the next state.</li>
+<li><span class="arithmatex">\(\Gamma^*\)</span> is the stack top symbol to be pushed.</li>
+</ul>
 <h3 id="configuration-of-pda">Configuration of PDA<a class="headerlink" href="#configuration-of-pda" title="Permanent link">&para;</a></h3>
 <p>A configuration of PDA is a member of <span class="arithmatex">\(K \times \Sigma^* \times \Gamma^*\)</span>.</p>
 <h4 id="yeild-in-one-step">yeild in one step<a class="headerlink" href="#yeild-in-one-step" title="Permanent link">&para;</a></h4>
@@ -4867,9 +4893,11 @@
 <img alt="4" src="../4.jpg" /></p>
 <h2 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h2>
 <h3 id="theorem-1">Theorem 1<a class="headerlink" href="#theorem-1" title="Permanent link">&para;</a></h3>
-<p>Every Regular Language is a Context-Free Language.
-* NFA <span class="arithmatex">\(\Rightarrow\)</span> PDA. [simple]
-* DFA <span class="arithmatex">\(\Rightarrow\)</span> CFG. </p>
+<p>Every Regular Language is a Context-Free Language.</p>
+<ul>
+<li>NFA <span class="arithmatex">\(\Rightarrow\)</span> PDA. [simple]</li>
+<li>DFA <span class="arithmatex">\(\Rightarrow\)</span> CFG. </li>
+</ul>
 <p><img alt="5" src="../5.jpg" /></p>
 <h3 id="theorem-2">Theorem 2<a class="headerlink" href="#theorem-2" title="Permanent link">&para;</a></h3>
 <p>The family of context-free languages is closed under <span class="arithmatex">\(\cup, \cdot, *\)</span>. but not closed under <span class="arithmatex">\(\cap, -\)</span>.</p>
@@ -4912,7 +4940,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月16日 00:17:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月24日 16:37:16</span>
       
         <br>
         创建日期:
