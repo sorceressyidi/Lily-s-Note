@@ -166,5 +166,48 @@ $All_{PDA} = \{<M>|M\text{ is a PDA and }L(M) = \Sigma^*\}$
 
 * Turn into proving $NOTAll_{PDA} = \{<M>|M\text{ is a PDA and }L(M) \neq \Sigma^*\}$ is not recursive
 
+Construct a TM $M$ to solve $NOTAll_{PDA}$:
+* M halts on w if and only if $L(P) \neq \Sigma^*$
+
+![2](2.png)
+
+* Turn the computing history of M that halts on w to a **string**
+
+Construct **P** accepts all strings that are not computing history of M **that halts on w**.
+
+* Given a string $C_1\#C_2\#...\#C_k$, where $C_i$ is a configuration.
+* The string is not a computing history of M if:
+  1. $C_1$ is not the start configuration of M
+  2. $C_k$ is not the accept configuration of M
+  3. There exists $C_i$ and $C_{i+1}$ such that $C_i$ does not lead to $C_{i+1}$
+
+![3](3.png)
+
+If $NOTAll_{PDA}$ is recursive, then $H_{TM}$ is recursive, which is not true.
+
+### Reduction
+
+Let A, B be two languages, A reduces to B if there is a computable function f $\Sigma^* \to \Sigma^*$ such that:
+
+$x \in A \Leftrightarrow f(x) \in B$
+
+#### Lemma 1
+
+Suppose $\exist f$ that reduces A to B:
+
+1. If B is recursive, then A is recursive
+
+* B is recursive, then we can construct a TM $M_B$ to decide B
+* $\exist f$ that reduces A to B
+* $M_A$ = On input x:
+  1. Compute f(x)
+  2. Run $M_B$ on f(x)
+  3. If $M_B$ accepts, accept
+  4. If $M_B$ rejects, reject
+
+2. If A is not recursive, then B is not recursive
+
+* If B is recursive, then A is recursive, which is not true(Clearly)
+
 
 </font>
