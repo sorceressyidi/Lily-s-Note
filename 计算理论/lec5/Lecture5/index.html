@@ -1129,6 +1129,19 @@
     Example
   </a>
   
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turing-machine-construction" class="md-nav__link">
+    Turing Machine Construction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4785,6 +4798,19 @@
     Example
   </a>
   
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turing-machine-construction" class="md-nav__link">
+    Turing Machine Construction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4986,21 +5012,21 @@
 <p>The transition function <span class="arithmatex">\(\delta\)</span> satisfies the following properties:</p>
 <ul>
 <li><span class="arithmatex">\(\forall q \in K - H, \delta(q,\triangleright) = (p,L)\)</span> for some <span class="arithmatex">\(p \in K\)</span>.</li>
-<li><span class="arithmatex">\(\forall q \in K - H, \forall a \in \Sigma, if\ \delta(q,a) = (p,b,D)\)</span>, then <span class="arithmatex">\(b \neq \triangleright\)</span>.</li>
+<li><span class="arithmatex">\(\forall q \in K - H, \forall a \in \Sigma, if\ \delta(q,a) = (p,b)\)</span>, then <span class="arithmatex">\(|b| \neq 0\)</span>. -- Do something.</li>
 </ul>
 <p>leftend <span class="arithmatex">\(\triangleright\)</span> is a special symbol that is used to indicate the left end of the tape.</p>
 <p>blank symbol <span class="arithmatex">\(\cup\)</span> is a special symbol that is used to indicate the blank symbol.</p>
 <h3 id="configuration">configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p>A configuration of a Turing machine is a member of </p>
-<div class="arithmatex">\[(K \times \triangle(\Sigma-\{\triangleright\})^*) \times ((\Sigma-\{\triangleright\})^* (\Sigma - \{\triangleright,\cup\})\cup \{e\}).\]</div>
+<div class="arithmatex">\[(K \times \triangle(\Sigma-\{\triangleright\})^*) \times ((\Sigma-\{\triangleright\})^* (\Sigma - \{\triangleright,\cup\})\cup \{e\})\]</div>
 <ul>
 <li><span class="arithmatex">\(\Sigma - \{\triangleright,\cup\}\)</span> is the last symbol that is not <span class="arithmatex">\(\cup\)</span></li>
 <li>{e} represents the following all symbols are <span class="arithmatex">\(\cup\)</span>.</li>
 </ul>
-<p>We say <span class="arithmatex">\((q,\triangleright w_1au_1) \vdash_M (q_2,\triangleright w_2a_2u_2)\)</span> if </p>
+<p>We say <span class="arithmatex">\((q_1,\triangleright w_1a_1u_1) \vdash_M (q_2,\triangleright w_2a_2u_2)\)</span> if </p>
 <ul>
 <li>
-<p>writing : <span class="arithmatex">\(\delta(q_1,a_1) = (q_2,a_2) and a_2 \in \Sigma - \{\triangleright\}\)</span> and <span class="arithmatex">\(w_2 = w_1\)</span> and <span class="arithmatex">\(u_2 = u_1\)</span>.</p>
+<p>writing : <span class="arithmatex">\(\delta(q_1,a_1) = (q_2,a_2) and\ a_2 \in \Sigma - \{\triangleright\}\)</span> and <span class="arithmatex">\(w_2 = w_1\)</span> and <span class="arithmatex">\(u_2 = u_1\)</span>.</p>
 </li>
 <li>
 <p>moving left : <span class="arithmatex">\(\delta(q_1,u_1) = (q_2,L)\)</span> and <span class="arithmatex">\(w_1=w_2a_2\)</span> and <span class="arithmatex">\(u_2 = a_1u_1\)</span>.</p>
@@ -5016,7 +5042,7 @@
 <li>But M does not decide L</li>
 <li>Adding a condition: If M <strong>halts</strong> on all inputs, then M decides L.</li>
 </ul>
-<p>M decides a language <span class="arithmatex">\(L\)</span> if M accepts all strings in L and rejects all strings not in L.</p>
+<p>M <strong>decides</strong> a language <span class="arithmatex">\(L\)</span> if M accepts all strings in L and rejects all strings not in L.</p>
 <p>M <strong>semi-decides</strong> a language <span class="arithmatex">\(L\)</span> if M accepts all strings in L and may loop (or reject) on strings not in L.</p>
 <h4 id="reccursive-language">Reccursive Language<a class="headerlink" href="#reccursive-language" title="Permanent link">&para;</a></h4>
 <p>A language <span class="arithmatex">\(L\)</span> is recursive if there exists a Turing machine that decides <span class="arithmatex">\(L\)</span>.</p>
@@ -5047,13 +5073,43 @@
 <ul>
 <li><span class="arithmatex">\(L = \{a^nb^nc^n|n\geq 0\}\)</span> can be decided by a Turing machine.</li>
 </ul>
+<h4 id="turing-machine-construction">Turing Machine Construction<a class="headerlink" href="#turing-machine-construction" title="Permanent link">&para;</a></h4>
+<p>Here is a high-level description of a Turing machine that can decide <span class="arithmatex">\( L \)</span>:</p>
+<ol>
+<li>
+<p><strong>Check if the string consists of only <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, and <span class="arithmatex">\( c \)</span>'s:</strong>
+   - The TM scans the input tape to ensure that it only contains <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, and <span class="arithmatex">\( c \)</span>'s in that order. If any other character is found, the machine rejects the string.</p>
+</li>
+<li>
+<p><strong>Match <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, and <span class="arithmatex">\( c \)</span>'s:</strong>
+   - Start by marking the leftmost <span class="arithmatex">\( a \)</span> and replace it with a special symbol (say <span class="arithmatex">\( X \)</span>).
+   - Then, scan the tape to find the leftmost <span class="arithmatex">\( b \)</span>. If one is found, mark it with a different special symbol (say <span class="arithmatex">\( Y \)</span>).
+   - Next, scan to find the leftmost <span class="arithmatex">\( c \)</span>, and mark it with another symbol (say <span class="arithmatex">\( Z \)</span>).
+   - Now, go back to the left end of the tape and repeat the process, continuing to match one <span class="arithmatex">\( a \)</span>, one <span class="arithmatex">\( b \)</span>, and one <span class="arithmatex">\( c \)</span> at a time, until either:</p>
+<ul>
+<li>All <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, and <span class="arithmatex">\( c \)</span>'s are matched, or</li>
+<li>A mismatch is found (i.e., a character cannot be found when needed).</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the end condition:</strong>
+   - Once all the symbols have been marked, check the tape:</p>
+<ul>
+<li>If all symbols are marked and the tape only contains <span class="arithmatex">\( X \)</span>'s, <span class="arithmatex">\( Y \)</span>'s, and <span class="arithmatex">\( Z \)</span>'s, then the string is in the language <span class="arithmatex">\( L \)</span>.</li>
+<li>If there are any unmarked <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, or <span class="arithmatex">\( c \)</span>'s remaining, or if the order of <span class="arithmatex">\( a \)</span>'s, <span class="arithmatex">\( b \)</span>'s, and <span class="arithmatex">\( c \)</span>'s is incorrect, the string is rejected.</li>
+</ul>
+</li>
+<li>
+<p><strong>Empty string check:</strong>
+   - The empty string <span class="arithmatex">\( \epsilon \)</span> is trivially in <span class="arithmatex">\( L \)</span>, as it satisfies the condition <span class="arithmatex">\( a^n b^n c^n \)</span> where <span class="arithmatex">\( n = 0 \)</span>.</p>
+</li>
+</ol>
 <h2 id="non-deterministic-turing-machine-ntm">Non-deterministic Turing Machine (NTM)<a class="headerlink" href="#non-deterministic-turing-machine-ntm" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Deterministic TM: At each step, there is one possible next state, symbols to be written and direction to move the head, or the TM may halt. </li>
 <li>Nondeterministic TM: At each step, there are finitely many possibilities. </li>
-<li>So formally, <span class="arithmatex">\(M = (Q,\Sigma,\Gamma,\delta,q_0,q_{acc},q_{rej})\)</span>, where</li>
-<li><span class="arithmatex">\(Q,\Sigma,\Gamma,q_0,q_{acc},q_{rej}\)</span> are as before for 1-tape machine</li>
-<li><span class="arithmatex">\(\delta : (Q- \{q_{acc},q_{rej}\}) \times \Gamma \rightarrow P(Q \times \Gamma \times \{L,R\})\)</span> </li>
+<li>So formally, <span class="arithmatex">\(M = (K,\Sigma,\Delta \delta,s,H)\)</span>, where</li>
+<li><span class="arithmatex">\(K, \Sigma, s, H\)</span> are the same as in a deterministic TM.</li>
 </ul>
 <h3 id="decides">Decides<a class="headerlink" href="#decides" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5064,7 +5120,7 @@
 <ul>
 <li>Fir all <span class="arithmatex">\(w \in L\)</span>, there is a integer <span class="arithmatex">\(N\)</span>, depending on <span class="arithmatex">\(w\)</span> and <span class="arithmatex">\(M\)</span> such that every branch <strong>halts in at most N steps</strong>.</li>
 <li>If <span class="arithmatex">\(w \in L\)</span>, then there exists a branch that <strong>halts in an accepting state</strong>.</li>
-<li>If <span class="arithmatex">\(w \notin L\)</span>, then every branch <strong>halts in a rejecting state</strong>.</li>
+<li>If <span class="arithmatex">\(w \notin L\)</span>, then <strong>every branch</strong> halts in a <strong>rejecting state</strong>.</li>
 </ul>
 <h3 id="semi-decides">Semi-decides<a class="headerlink" href="#semi-decides" title="Permanent link">&para;</a></h3>
 <p>M semi-decides a language <span class="arithmatex">\(L\)</span> if for any <span class="arithmatex">\(w \in L\)</span>:</p>
@@ -5092,6 +5148,10 @@
 <p><img alt="6" src="../6.png" />
 <img alt="5" src="../5.png" />
 <img alt="7" src="../7.png" /></p>
+<ul>
+<li>see <a href="https://people.iith.ac.in/subruk/4510/simulate.pdf">link</a></li>
+<li>see <a href="https://web.stanford.edu/class/archive/cs/cs103/cs103.1142/lectures/20/Small20.pdf">link</a></li>
+</ul>
 <h2 id="church-turing-thesis">Church-Turing Thesis<a class="headerlink" href="#church-turing-thesis" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Every algorithm can be simulated by a Turing machine.</li>
@@ -5119,12 +5179,12 @@
 </ol>
 <h3 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h3>
 <h4 id="a_dfa"><span class="arithmatex">\(A_{DFA}\)</span><a class="headerlink" href="#a_dfa" title="Permanent link">&para;</a></h4>
-<p>Input: <span class="arithmatex">\(\langle B,w \rangle\)</span>, where <span class="arithmatex">\(B\)</span> is a DFA and <span class="arithmatex">\(w\)</span> is a string.</p>
-<p>Output: Accept if <span class="arithmatex">\(B\)</span> accepts <span class="arithmatex">\(w\)</span>; reject otherwise.</p>
+<p>Input: <span class="arithmatex">\(\langle D,w \rangle\)</span>, where <span class="arithmatex">\(D\)</span> is a DFA and <span class="arithmatex">\(w\)</span> is a string.</p>
+<p>Output: Accept if <span class="arithmatex">\(D\)</span> accepts <span class="arithmatex">\(w\)</span>; reject otherwise.</p>
 <blockquote>
-<p>Solution:Construct a Turing machine that simulates the DFA <span class="arithmatex">\(B\)</span> on input <span class="arithmatex">\(w\)</span>.</p>
+<p>Solution:Construct a Turing machine that simulates the DFA <span class="arithmatex">\(D\)</span> on input <span class="arithmatex">\(w\)</span>.</p>
 </blockquote>
-<p><span class="arithmatex">\(M_{R_1}\)</span> = on input <span class="arithmatex">\(\langle B,w \rangle\)</span>:</p>
+<p><span class="arithmatex">\(M_{R_1}\)</span> = on input <span class="arithmatex">\(\langle D,w \rangle\)</span>:</p>
 <ol>
 <li>run D on input <span class="arithmatex">\(w\)</span>.</li>
 <li>If D accepts <span class="arithmatex">\(w\)</span>, accept; otherwise, reject.</li>
@@ -5199,7 +5259,7 @@
 <p>So if final <span class="arithmatex">\(w\)</span> has length <span class="arithmatex">\(n\)</span>, the number of steps of subtitution is <span class="arithmatex">\(2n-1\)</span>.</p>
 <p><span class="arithmatex">\(M_{C1}\)</span> = on input <span class="arithmatex">\(\langle G,w \rangle\)</span>:
 1. Convert CFG <span class="arithmatex">\(G\)</span> to Chonsky Normal Form <span class="arithmatex">\(G'\)</span>.
-2. Enumerate all derivations of length at most <span class="arithmatex">\(|R'|^{2n-1}\)</span>.
+2. <strong>Enumerate all derivations</strong> of length at most <em><span class="arithmatex">\(|R'|^{2n-1}\)</span></em>.
 3. Acscept if any derivation generates <span class="arithmatex">\(w\)</span>; otherwise, reject.</p>
 <h4 id="a_pda"><span class="arithmatex">\(A_{PDA}\)</span><a class="headerlink" href="#a_pda" title="Permanent link">&para;</a></h4>
 <p>Input: <span class="arithmatex">\(\langle P,w \rangle\)</span>, where <span class="arithmatex">\(P\)</span> is a PDA and <span class="arithmatex">\(w\)</span> is a string.</p>
@@ -5233,7 +5293,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月28日 20:54:30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月11日 23:05:25</span>
       
         <br>
         创建日期:
