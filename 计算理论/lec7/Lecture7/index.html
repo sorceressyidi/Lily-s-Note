@@ -1168,15 +1168,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" class="md-nav__link">
-    5. \(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\) is not recursive
+  <a href="#41-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" class="md-nav__link">
+    4.1. \(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\) is not recursive
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" class="md-nav__link">
-    6. \(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\) is not recursive
+  <a href="#42-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" class="md-nav__link">
+    4.2. \(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\) is not recursive
   </a>
   
 </li>
@@ -4687,15 +4687,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" class="md-nav__link">
-    5. \(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\) is not recursive
+  <a href="#41-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" class="md-nav__link">
+    4.1. \(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\) is not recursive
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" class="md-nav__link">
-    6. \(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\) is not recursive
+  <a href="#42-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" class="md-nav__link">
+    4.2. \(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\) is not recursive
   </a>
   
 </li>
@@ -4759,53 +4759,67 @@
                   
 
 
-<p><font face = "Timies New Roman"></p>
+<p><font face = "Times New Roman"></p>
 <h1 id="problems-that-are-not-recursive">Problems That Are Not Recursive<a class="headerlink" href="#problems-that-are-not-recursive" title="Permanent link">&para;</a></h1>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="1-the-halting-problem">1. The Halting Problem<a class="headerlink" href="#1-the-halting-problem" title="Permanent link">&para;</a></h3>
 <h4 id="proof-1">Proof 1<a class="headerlink" href="#proof-1" title="Permanent link">&para;</a></h4>
 <p><img alt="1" src="../1.png" /></p>
 <h4 id="proof-2">Proof 2<a class="headerlink" href="#proof-2" title="Permanent link">&para;</a></h4>
-<p><span class="arithmatex">\(A_{TM} = \{&lt;M, w&gt;|M\text{ is a TM and M accepts w}\}\)</span>
-* <span class="arithmatex">\(A_{TM}\)</span> is not recursive</p>
+<p><span class="arithmatex">\(A_{TM} = \{&lt;M, w&gt;|M\text{ is a TM and M accepts w}\}\)</span></p>
+<ul>
+<li><span class="arithmatex">\(A_{TM}\)</span> is not recursive</li>
+</ul>
 <p>Construct a TM <span class="arithmatex">\(M^*\  H_{TM}\)</span> to solve <span class="arithmatex">\(A_{TM}\)</span>:</p>
 <p><span class="arithmatex">\(H_{TM} = {&lt;M, w&gt;|M\text{ is a TM and M halts on w}}\)</span></p>
-<p>$M^* = $ On input x:
-1. run M on w
-2. If M accepts w, accept
-3. If M rejects w, reject
-4. If M loops on w, <span class="arithmatex">\(M^*\)</span> is looping on w</p>
+<p><span class="arithmatex">\(M^* =\)</span> On input x:</p>
+<ol>
+<li>run M on w</li>
+<li>If M accepts w, accept</li>
+<li>If M rejects w, reject</li>
+<li>If M loops on w, <span class="arithmatex">\(M^*\)</span> is looping on w</li>
+</ol>
 <p>Suppose <span class="arithmatex">\(M^*\)</span> is a recursive TM, then we can construct a TM <span class="arithmatex">\(M_{H}\)</span> to decide <span class="arithmatex">\(H_{TM}\)</span>:</p>
-<p>$M_{A} = $ On input <M, w>:
-1. Construct a TM <span class="arithmatex">\(M^*\)</span> as above using M 
-2. Run <span class="arithmatex">\(M_{H}\)</span> on <span class="arithmatex">\(M^*\)</span>, w
-   1. If <span class="arithmatex">\(M_{H}\)</span> accepts, accept
-   2. If <span class="arithmatex">\(M_{H}\)</span> rejects, reject</p>
-<p>If all this is true, then <span class="arithmatex">\(M_A\)</span> can decide <span class="arithmatex">\(A_{TM}\)</span> 
-* But <span class="arithmatex">\(A_{TM}\)</span> is not recursive
-* So <span class="arithmatex">\(M^*\)</span> is not recursive
-* So the halting problem is not recursive</p>
+<p><span class="arithmatex">\(M_{A} =\)</span> On input <M, w>:</p>
+<ol>
+<li>Construct a TM <span class="arithmatex">\(M^*\)</span> as above using M </li>
+<li>Run <span class="arithmatex">\(M_{H}\)</span> on <span class="arithmatex">\(M^*\)</span>, w</li>
+<li>If <span class="arithmatex">\(M_{H}\)</span> accepts, accept</li>
+<li>If <span class="arithmatex">\(M_{H}\)</span> rejects, reject</li>
+</ol>
+<p>If all this is true, then <span class="arithmatex">\(M_A\)</span> can decide <span class="arithmatex">\(A_{TM}\)</span> </p>
+<ul>
+<li>But <span class="arithmatex">\(A_{TM}\)</span> is not recursive</li>
+<li>So <span class="arithmatex">\(M^*\)</span> is not recursive</li>
+<li>So the halting problem is not recursive</li>
+</ul>
 <h3 id="1-l-mtextm-is-a-tm-that-accepts-e-is-not-recursive">1. <span class="arithmatex">\(L = \{"M"|\text{M is a TM that accepts e}\}\)</span> is not recursive<a class="headerlink" href="#1-l-mtextm-is-a-tm-that-accepts-e-is-not-recursive" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use <span class="arithmatex">\(A_{TM}\)</span> to prove this</li>
 </ul>
 <p>A Turing machine <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(w\)</span> if and only if <span class="arithmatex">\(M^*\)</span> accepts <span class="arithmatex">\(e\)</span></p>
-<p>$M^* = $ On input x:
-1. Run M on w
-2. If M accepts w, accept
-3. If M rejects w, reject</p>
+<p><span class="arithmatex">\(M^* =\)</span> On input x:</p>
+<ol>
+<li>Run M on w</li>
+<li>If M accepts w, accept</li>
+<li>If M rejects w, reject</li>
+</ol>
 <p>If M accepts w, then <span class="arithmatex">\(M^*\)</span> accepts all inputs, including e</p>
 <p>If M rejects or loops on w, then <span class="arithmatex">\(M^*\)</span> rejects all inputs, including e</p>
 <p>Suppose <span class="arithmatex">\(L\)</span> is recursive, then we can construct a TM <span class="arithmatex">\(M_{L}\)</span> to decide <span class="arithmatex">\(L\)</span>:</p>
-<p>$M_{A} = $ On input <M, w>:
-1. Construct a TM <span class="arithmatex">\(M^*\)</span> as above using M 
-2. Run <span class="arithmatex">\(M_{L}\)</span> on <span class="arithmatex">\(M^*\)</span>, w
-   1. If <span class="arithmatex">\(M_{L}\)</span> accepts, accept
-   2. If <span class="arithmatex">\(M_{L}\)</span> rejects, reject</p>
-<p>If all this is true, then <span class="arithmatex">\(M_A\)</span> can decide <span class="arithmatex">\(A_{TM}\)</span> 
-* But <span class="arithmatex">\(A_{TM}\)</span> is not recursive
-* So <span class="arithmatex">\(M_L\)</span> is not recursive
-* So <span class="arithmatex">\(L\)</span> is not recursive</p>
+<p><span class="arithmatex">\(M_{A} =\)</span> On input <M, w>:</p>
+<ol>
+<li>Construct a TM <span class="arithmatex">\(M^*\)</span> as above using M </li>
+<li>Run <span class="arithmatex">\(M_{L}\)</span> on <span class="arithmatex">\(M^*\)</span>, w</li>
+<li>If <span class="arithmatex">\(M_{L}\)</span> accepts, accept</li>
+<li>If <span class="arithmatex">\(M_{L}\)</span> rejects, reject</li>
+</ol>
+<p>If all this is true, then <span class="arithmatex">\(M_A\)</span> can decide <span class="arithmatex">\(A_{TM}\)</span> </p>
+<ul>
+<li>But <span class="arithmatex">\(A_{TM}\)</span> is not recursive</li>
+<li>So <span class="arithmatex">\(M_L\)</span> is not recursive</li>
+<li>So <span class="arithmatex">\(L\)</span> is not recursive</li>
+</ul>
 <h3 id="2-l_2-mtextm-is-a-tm-that-accepts-all-strings-is-not-recursive">2. <span class="arithmatex">\(L_2 = \{"M"|\text{M is a TM that accepts all strings}\}\)</span> is not recursive<a class="headerlink" href="#2-l_2-mtextm-is-a-tm-that-accepts-all-strings-is-not-recursive" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Same as above</li>
@@ -4814,13 +4828,17 @@
 <h3 id="3-l_3-m1-m2textm1-and-m2-accept-the-same-set-of-strings-is-not-recursive">3. <span class="arithmatex">\(L_3 = \{"M1, M2"|\text{M1 and M2 accept the same set of strings}\}\)</span> is not recursive<a class="headerlink" href="#3-l_3-m1-m2textm1-and-m2-accept-the-same-set-of-strings-is-not-recursive" title="Permanent link">&para;</a></h3>
 <p>Suppose that <span class="arithmatex">\(L_3\)</span> is recursive, <span class="arithmatex">\(\exist M_3\)</span> that decides <span class="arithmatex">\(L_3\)</span></p>
 <p><strong>Use <span class="arithmatex">\(M_3\)</span> to construct <span class="arithmatex">\(M_2\)</span> that deides <span class="arithmatex">\(L_2\)</span></strong></p>
-<p><span class="arithmatex">\(M_2\)</span> = on input "M"
-1. construct <span class="arithmatex">\(M_E\)</span> as follows:
-   <span class="arithmatex">\(M_E\)</span> = on input x
-      1. Accept
-2. Run <span class="arithmatex">\(M_3\)</span> on "<span class="arithmatex">\(M\)</span>","<span class="arithmatex">\(M_E\)</span>" -- check whether <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M_E\)</span> accepts the same set of strings
-3. If <span class="arithmatex">\(M_3\)</span> accepts, accepts <span class="arithmatex">\(M\)</span>
-4. If <span class="arithmatex">\(M_3\)</span> rejects, rejects <span class="arithmatex">\(M\)</span></p>
+<p><span class="arithmatex">\(M_2\)</span> = on input "M"</p>
+<ol>
+<li>construct <span class="arithmatex">\(M_E\)</span> as follows:
+   <span class="arithmatex">\(M_E\)</span> = on input x<ol>
+<li>Accept</li>
+</ol>
+</li>
+<li>Run <span class="arithmatex">\(M_3\)</span> on "<span class="arithmatex">\(M\)</span>","<span class="arithmatex">\(M_E\)</span>" -- check whether <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M_E\)</span> accepts the same set of strings</li>
+<li>If <span class="arithmatex">\(M_3\)</span> accepts, accepts <span class="arithmatex">\(M\)</span></li>
+<li>If <span class="arithmatex">\(M_3\)</span> rejects, rejects <span class="arithmatex">\(M\)</span></li>
+</ol>
 <p>So <span class="arithmatex">\(M_2\)</span> decides <span class="arithmatex">\(L_2\)</span> but <span class="arithmatex">\(L_2\)</span> is not recursive</p>
 <h3 id="4-l_4-mtextm-is-a-tm-with-lm-is-regular-is-not-recursive">4. <span class="arithmatex">\(L_4 = \{"M"|\text{M is a TM with L(M) is regular}\}\)</span> is not recursive<a class="headerlink" href="#4-l_4-mtextm-is-a-tm-with-lm-is-regular-is-not-recursive" title="Permanent link">&para;</a></h3>
 <p>Proof: <span class="arithmatex">\(L_4\)</span> is not recursive</p>
@@ -4847,19 +4865,22 @@ U : On input <M, w>:
 3. else reject</p>
 </blockquote>
 <ol start="2">
-<li>
-<p><strong>Language of <span class="arithmatex">\( M^* \)</span></strong>: The language <span class="arithmatex">\( L(M^*) \)</span> is constructed so that:
-   - <span class="arithmatex">\( L(M^*) \)</span> is non-empty if <span class="arithmatex">\( M \)</span> accepts <span class="arithmatex">\( w \)</span>.
-   - <span class="arithmatex">\( L(M^*) \)</span> = <span class="arithmatex">\(L(U)\)</span> = <span class="arithmatex">\(A_{TM}\)</span> Not regular/Not Context-Free /Not Recursive
-   - <span class="arithmatex">\( L(M^*) = \emptyset \)</span> if <span class="arithmatex">\( M \)</span> does not accept <span class="arithmatex">\( w \)</span>. -- Regular/Contex-Free/Recursive</p>
-</li>
-<li>
-<p><strong>Conclusion</strong>:
-   - If <span class="arithmatex">\( L(M^*) \)</span> is non-regular, it implies that <span class="arithmatex">\( M \)</span> accepts <span class="arithmatex">\( w \)</span>.
-   - If <span class="arithmatex">\( L(M^*) \)</span> is regular, then <span class="arithmatex">\( M \)</span> does not accept <span class="arithmatex">\( w \)</span>.
-   - Since determining whether <span class="arithmatex">\( L(M^*) \)</span> is regular would solve the <strong>Halting Problem</strong>, it follows that <span class="arithmatex">\( R_{TM} \)</span> is undecidable.</p>
-</li>
+<li><strong>Language of <span class="arithmatex">\( M^* \)</span></strong>: 
+   The language <span class="arithmatex">\( L(M^*) \)</span> is constructed so that:</li>
 </ol>
+<ul>
+<li><span class="arithmatex">\( L(M^*) \)</span> is non-empty if <span class="arithmatex">\( M \)</span> accepts <span class="arithmatex">\( w \)</span>.</li>
+<li><span class="arithmatex">\( L(M^*) \)</span> = <span class="arithmatex">\(L(U)\)</span> = <span class="arithmatex">\(A_{TM}\)</span> Not regular/Not Context-Free /Not Recursive</li>
+<li><span class="arithmatex">\( L(M^*) = \emptyset \)</span> if <span class="arithmatex">\( M \)</span> does not accept <span class="arithmatex">\( w \)</span>. -- Regular/Contex-Free/Recursive</li>
+</ul>
+<ol start="3">
+<li><strong>Conclusion</strong>:</li>
+</ol>
+<ul>
+<li>If <span class="arithmatex">\( L(M^*) \)</span> is non-regular, it implies that <span class="arithmatex">\( M \)</span> accepts <span class="arithmatex">\( w \)</span>.</li>
+<li>If <span class="arithmatex">\( L(M^*) \)</span> is regular, then <span class="arithmatex">\( M \)</span> does not accept <span class="arithmatex">\( w \)</span>.</li>
+<li>Since determining whether <span class="arithmatex">\( L(M^*) \)</span> is regular would solve the <strong>Halting Problem</strong>, it follows that <span class="arithmatex">\( R_{TM} \)</span> is undecidable.</li>
+</ul>
 <p>The undecidability of <span class="arithmatex">\( R_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine with } L(M) \text{ regular} \} \)</span> (i.e., determining if a Turing machine <span class="arithmatex">\( M \)</span> has a regular language <span class="arithmatex">\( L(M) \)</span>) stems from the fact that if we could decide <span class="arithmatex">\( R_{TM} \)</span>, we could also decide the Halting Problem, which is known to be undecidable.</p>
 <h4 id="heres-a-step-by-step-explanation-of-why-this-leads-to-undecidability">Here’s a step-by-step explanation of why this leads to undecidability:<a class="headerlink" href="#heres-a-step-by-step-explanation-of-why-this-leads-to-undecidability" title="Permanent link">&para;</a></h4>
 <ol>
@@ -4895,8 +4916,8 @@ U : On input <M, w>:
 </li>
 </ol>
 <p>In short, if we could decide whether <span class="arithmatex">\( L(M) \)</span> is regular for any Turing machine <span class="arithmatex">\( M \)</span>, we could also solve the Halting Problem by constructing <span class="arithmatex">\( M^* \)</span> as described. This leads to a contradiction, proving that <span class="arithmatex">\( R_{TM} \)</span> is undecidable.</p>
-<h4 id="5-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive">5. <span class="arithmatex">\(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\)</span> is <strong>not recursive</strong><a class="headerlink" href="#5-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" title="Permanent link">&para;</a></h4>
-<h4 id="6-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive">6. <span class="arithmatex">\(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\)</span> is <strong>not recursive</strong><a class="headerlink" href="#6-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" title="Permanent link">&para;</a></h4>
+<h4 id="41-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive">4.1. <span class="arithmatex">\(L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}\)</span> is <strong>not recursive</strong><a class="headerlink" href="#41-l_5-mtextm-is-a-tm-with-lm-is-context-free-is-not-recursive" title="Permanent link">&para;</a></h4>
+<h4 id="42-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive">4.2. <span class="arithmatex">\(L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}\)</span> is <strong>not recursive</strong><a class="headerlink" href="#42-l_6-mtextm-is-a-tm-with-lm-is-recursive-is-not-recursive" title="Permanent link">&para;</a></h4>
 <h3 id="rices-theorem">Rice's Theorem<a class="headerlink" href="#rices-theorem" title="Permanent link">&para;</a></h3>
 <ul>
 <li>See <a href="https://courses.grainger.illinois.edu/cs373/sp2013/Lectures/lec25.pdf">Link</a></li>
@@ -4952,7 +4973,7 @@ U : On input <M, w>:
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月11日 23:30:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月11日 23:37:39</span>
       
         <br>
         创建日期:
