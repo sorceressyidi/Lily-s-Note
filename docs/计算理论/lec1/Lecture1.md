@@ -43,13 +43,13 @@ Given a string w, is $w\in L=\{encode(G,k) | G\ is\ a\ graph,that\ has\ a\ ST\ w
   
 ### Computable Model
 #### Finite Automata
-A finite automaton is a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ where:
+A finite automaton is a 5-tuple $(K,\Sigma,\delta,s,F)$ where:
 
-* $Q$ is a finite set of states
+* $K$ is a finite set of states
 * $\Sigma$ is an alphabet
-* $\delta:Q\times\Sigma\rightarrow Q$ is the transition function
-* $q_0\in Q$ is the start state
-* $F\subseteq Q$ is the set of accept states
+* $\delta:K\times\Sigma\rightarrow K$ is the transition function
+* $s \in K$ is the start state
+* $F\subseteq K$ is the set of accept states
 
 A configuration of an FA is a pair $(q,w)$ where $q\in Q$ and $w\in\Sigma^*$ where $q$ is the current state and $w$ is the remaining input.
 
@@ -77,11 +77,6 @@ Proof:
   * $s_v = (s_A,s_B)$
   * $F_v =(F_A\times K_B)\cup(K_A\times F_B)$
   * $\delta_v((q_A,q_B),a) = (\delta_A(q_A,a),\delta_B(q_B,a))$ for any $(q_A,q_B)\in K_A\times K_B$ and $a\in\Sigma$
-
-If A and B are regular languages, so is $A\cdot B$.
-Proof:
-
-* Let $M_A$ and $M_B$ be FAs that accept A and B respectively.
 
 #### Non-deterministic Finite Automata
 
@@ -124,7 +119,7 @@ Construct a NFA that accepts the language $\{w | w \in \{a,b\}^*$,the second sym
 >  * $s' = E(s)$ where $\forall q \in K, E(q)=\{p \in K:(q,e)\vdash_M^*(p,e)\}$
 > 
 >  * $\delta(Q,a) = \bigcup_{q\in Q}\bigcup_{p:(p,a,q)\in\Delta}E(p)$ for any $Q\subseteq K'$ and $a\in\Sigma$
-  
+
 * A language is regular if and only if it is accepted by a NFA.
 
 ##### Proof
@@ -148,7 +143,8 @@ Construct a NFA that accepts the language $\{w | w \in \{a,b\}^*$,the second sym
 > * $F = F_B$
 > 
 > * $\delta(q,a) = \delta_A(q,a)\bigcup\delta_B(q,a)\bigcup\{(q,e,s_B):q\in F_A\}$
-> 
+
+
 * If A is a regular language, so is $A^+$.
   
   ![10](10.png)

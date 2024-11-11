@@ -17,7 +17,7 @@ A Turing machine is a 5-tuple $(K, \Sigma, \delta, s, H)$, where:
 The transition function $\delta$ satisfies the following properties:
 
 * $\forall q \in K - H, \delta(q,\triangleright) = (p,L)$ for some $p \in K$.
-* $\forall q \in K - H, \forall a \in \Sigma, if\ \delta(q,a) = (p,b,D)$, then $b \neq \triangleright$.
+* $\forall q \in K - H, \forall a \in \Sigma, if\ \delta(q,a) = (p,b)$, then $|b| \neq 0$. -- Do something.
 
 leftend $\triangleright$ is a special symbol that is used to indicate the left end of the tape.
 
@@ -26,14 +26,14 @@ blank symbol $\cup$ is a special symbol that is used to indicate the blank symbo
 
 A configuration of a Turing machine is a member of 
 
-$$(K \times \triangle(\Sigma-\{\triangleright\})^*) \times ((\Sigma-\{\triangleright\})^* (\Sigma - \{\triangleright,\cup\})\cup \{e\}).$$
+$$(K \times \triangle(\Sigma-\{\triangleright\})^*) \times ((\Sigma-\{\triangleright\})^* (\Sigma - \{\triangleright,\cup\})\cup \{e\})$$
 
 * $\Sigma - \{\triangleright,\cup\}$ is the last symbol that is not $\cup$
 * {e} represents the following all symbols are $\cup$.
 
-We say $(q,\triangleright w_1au_1) \vdash_M (q_2,\triangleright w_2a_2u_2)$ if 
+We say $(q_1,\triangleright w_1a_1u_1) \vdash_M (q_2,\triangleright w_2a_2u_2)$ if 
 
-* writing : $\delta(q_1,a_1) = (q_2,a_2) and a_2 \in \Sigma - \{\triangleright\}$ and $w_2 = w_1$ and $u_2 = u_1$.
+* writing : $\delta(q_1,a_1) = (q_2,a_2) and\ a_2 \in \Sigma - \{\triangleright\}$ and $w_2 = w_1$ and $u_2 = u_1$.
 
 * moving left : $\delta(q_1,u_1) = (q_2,L)$ and $w_1=w_2a_2$ and $u_2 = a_1u_1$.
 
@@ -52,7 +52,7 @@ Given a Turing machine M, we can define the language accepted by M as $L(M) = \{
 * Adding a condition: If M **halts** on all inputs, then M decides L.
 
 
-M decides a language $L$ if M accepts all strings in L and rejects all strings not in L.
+M **decides** a language $L$ if M accepts all strings in L and rejects all strings not in L.
 
 M **semi-decides** a language $L$ if M accepts all strings in L and may loop (or reject) on strings not in L.
 
@@ -90,13 +90,35 @@ A multi-head Turing machine is a Turing machine with multiple heads on a single 
 
 * $L = \{a^nb^nc^n|n\geq 0\}$ can be decided by a Turing machine.
 
+#### Turing Machine Construction
+Here is a high-level description of a Turing machine that can decide \( L \):
+
+1. **Check if the string consists of only \( a \)'s, \( b \)'s, and \( c \)'s:**
+   - The TM scans the input tape to ensure that it only contains \( a \)'s, \( b \)'s, and \( c \)'s in that order. If any other character is found, the machine rejects the string.
+
+2. **Match \( a \)'s, \( b \)'s, and \( c \)'s:**
+   - Start by marking the leftmost \( a \) and replace it with a special symbol (say \( X \)).
+   - Then, scan the tape to find the leftmost \( b \). If one is found, mark it with a different special symbol (say \( Y \)).
+   - Next, scan to find the leftmost \( c \), and mark it with another symbol (say \( Z \)).
+   - Now, go back to the left end of the tape and repeat the process, continuing to match one \( a \), one \( b \), and one \( c \) at a time, until either:
+     - All \( a \)'s, \( b \)'s, and \( c \)'s are matched, or
+     - A mismatch is found (i.e., a character cannot be found when needed).
+   
+3. **Verify the end condition:**
+   - Once all the symbols have been marked, check the tape:
+     - If all symbols are marked and the tape only contains \( X \)'s, \( Y \)'s, and \( Z \)'s, then the string is in the language \( L \).
+     - If there are any unmarked \( a \)'s, \( b \)'s, or \( c \)'s remaining, or if the order of \( a \)'s, \( b \)'s, and \( c \)'s is incorrect, the string is rejected.
+
+4. **Empty string check:**
+   - The empty string \( \epsilon \) is trivially in \( L \), as it satisfies the condition \( a^n b^n c^n \) where \( n = 0 \).
+
 ## Non-deterministic Turing Machine (NTM)
 
 * Deterministic TM: At each step, there is one possible next state, symbols to be written and direction to move the head, or the TM may halt. 
 * Nondeterministic TM: At each step, there are finitely many possibilities. 
-* So formally, $M = (Q,\Sigma,\Gamma,\delta,q_0,q_{acc},q_{rej})$, where
-  * $Q,\Sigma,\Gamma,q_0,q_{acc},q_{rej}$ are as before for 1-tape machine
-  * $\delta : (Q- \{q_{acc},q_{rej}\}) \times \Gamma \rightarrow P(Q \times \Gamma \times \{L,R\})$ 
+* So formally, $M = (K,\Sigma,\Delta \delta,s,H)$, where
+  * $K, \Sigma, s, H$ are the same as in a deterministic TM.
+
 
 ### Decides
 
@@ -107,7 +129,7 @@ M decides a language $L$ if
 
 * Fir all $w \in L$, there is a integer $N$, depending on $w$ and $M$ such that every branch **halts in at most N steps**.
 * If $w \in L$, then there exists a branch that **halts in an accepting state**.
-* If $w \notin L$, then every branch **halts in a rejecting state**.
+* If $w \notin L$, then **every branch** halts in a **rejecting state**.
 
 
 ### Semi-decides
@@ -138,6 +160,8 @@ Every NTM can be simulated by a DTM.
 ![5](5.png)
 ![7](7.png)
 
+* see [link](https://people.iith.ac.in/subruk/4510/simulate.pdf)
+* see [link](https://web.stanford.edu/class/archive/cs/cs103/cs103.1142/lectures/20/Small20.pdf)
 ## Church-Turing Thesis
 
 * Every algorithm can be simulated by a Turing machine.
@@ -168,13 +192,13 @@ M on input $G$:
 ### Exercise
 
 #### $A_{DFA}$
-Input: $\langle B,w \rangle$, where $B$ is a DFA and $w$ is a string.
+Input: $\langle D,w \rangle$, where $D$ is a DFA and $w$ is a string.
 
-Output: Accept if $B$ accepts $w$; reject otherwise.
+Output: Accept if $D$ accepts $w$; reject otherwise.
 
->Solution:Construct a Turing machine that simulates the DFA $B$ on input $w$.
+>Solution:Construct a Turing machine that simulates the DFA $D$ on input $w$.
 
-$M_{R_1}$ = on input $\langle B,w \rangle$:
+$M_{R_1}$ = on input $\langle D,w \rangle$:
 
 1. run D on input $w$.
 2. If D accepts $w$, accept; otherwise, reject.
@@ -262,7 +286,7 @@ So if final $w$ has length $n$, the number of steps of subtitution is $2n-1$.
 
 $M_{C1}$ = on input $\langle G,w \rangle$:
 1. Convert CFG $G$ to Chonsky Normal Form $G'$.
-2. Enumerate all derivations of length at most $|R'|^{2n-1}$.
+2. **Enumerate all derivations** of length at most *$|R'|^{2n-1}$*.
 3. Acscept if any derivation generates $w$; otherwise, reject.
 
 #### $A_{PDA}$

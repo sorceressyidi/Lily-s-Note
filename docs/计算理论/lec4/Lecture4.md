@@ -68,7 +68,7 @@ Given a CFG with $R = \{S \rightarrow aSb | \epsilon\}$, construct a PDA $P$ tha
 * $F = \{f\}$.
 * $\Gamma =V$.
   
-$$\begin{align*} \Delta = \{ &((s, e, e), (f, S)), \\ &((f,e,A),(f,u)) \text{ for all } (A,u) \in R \  (\text{generate step}) \\ &((f, a, a), (f, \epsilon)) for all a \in \Sigma   \  (\text{Matching step}) \}\end{align*}$$
+$$\begin{align*} \Delta = \{ &((s, e, e), (f, S)), \\ &((f,e,A),(f,u)) \text{ for all } (A,u) \in R \  (\text{generate step}) \\ &((f, a, a), (f, \epsilon)) \text{for all a} \in \Sigma   \  (\text{Matching step}) \}\end{align*}$$
 
 ### PDA $\Rightarrow$ CFG
 
@@ -102,10 +102,10 @@ The family of context-free languages is closed under $\cup, \cdot, *$. but not c
 #### $*$
 * Add $S \rightarrow SS_A | \epsilon$.
 
-#### $\cap$
+#### $\cap$ and $-$
 
 * $A = \{a^ib^jc^k:i = j\}$ is a context-free language.
-* $B = \{a^ib^jc^k:i = j = k\}$ is a context-free language.
+* $B = \{a^ib^jc^k:j = k\}$ is a context-free language.
 * $A \cap B = \{a^ib^jc^k:i = j = k\}$ is not a context-free language.
 
 **Proof:**
