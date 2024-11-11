@@ -1,4 +1,4 @@
-<font face = "Timies New Roman">
+<font face = "Times New Roman">
 
 # Problems That Are Not Recursive 
 
@@ -8,14 +8,17 @@
 #### Proof 1
 ![1](1.png)
 #### Proof 2
+
 $A_{TM} = \{<M, w>|M\text{ is a TM and M accepts w}\}$
+
 * $A_{TM}$ is not recursive
 
 Construct a TM $M^*\  H_{TM}$ to solve $A_{TM}$:
 
 $H_{TM} = {<M, w>|M\text{ is a TM and M halts on w}}$
 
-$M^* = $ On input x:
+$M^* =$ On input x:
+
 1. run M on w
 2. If M accepts w, accept
 3. If M rejects w, reject
@@ -23,13 +26,15 @@ $M^* = $ On input x:
 
 Suppose $M^*$ is a recursive TM, then we can construct a TM $M_{H}$ to decide $H_{TM}$:
 
-$M_{A} = $ On input <M, w>:
+$M_{A} =$ On input <M, w>:
+
 1. Construct a TM $M^*$ as above using M 
 2. Run $M_{H}$ on $M^*$, w
    1. If $M_{H}$ accepts, accept
    2. If $M_{H}$ rejects, reject
 
 If all this is true, then $M_A$ can decide $A_{TM}$ 
+
 * But $A_{TM}$ is not recursive
 * So $M^*$ is not recursive
 * So the halting problem is not recursive
@@ -40,7 +45,8 @@ If all this is true, then $M_A$ can decide $A_{TM}$
 
 A Turing machine $M$ accepts $w$ if and only if $M^*$ accepts $e$
 
-$M^* = $ On input x:
+$M^* =$ On input x:
+
 1. Run M on w
 2. If M accepts w, accept
 3. If M rejects w, reject
@@ -51,13 +57,15 @@ If M rejects or loops on w, then $M^*$ rejects all inputs, including e
 
 Suppose $L$ is recursive, then we can construct a TM $M_{L}$ to decide $L$:
 
-$M_{A} = $ On input <M, w>:
+$M_{A} =$ On input <M, w>:
+
 1. Construct a TM $M^*$ as above using M 
 2. Run $M_{L}$ on $M^*$, w
    1. If $M_{L}$ accepts, accept
    2. If $M_{L}$ rejects, reject
 
 If all this is true, then $M_A$ can decide $A_{TM}$ 
+
 * But $A_{TM}$ is not recursive
 * So $M_L$ is not recursive
 * So $L$ is not recursive
@@ -76,6 +84,7 @@ Suppose that $L_3$ is recursive, $\exist M_3$ that decides $L_3$
 **Use $M_3$ to construct $M_2$ that deides $L_2$**
 
 $M_2$ = on input "M"
+
 1. construct $M_E$ as follows:
    $M_E$ = on input x
       1. Accept
@@ -107,17 +116,19 @@ Suppose that $L_4$ is recursive, $\exist M_4$ that decides $L_4$
 > 2. If M accepts w, accept
 > 3. else reject
 
-2. **Language of \( M^* \)**: The language \( L(M^*) \) is constructed so that:
+2. **Language of \( M^* \)**: 
+   The language \( L(M^*) \) is constructed so that:
+
    - \( L(M^*) \) is non-empty if \( M \) accepts \( w \).
    - \( L(M^*) \) = $L(U)$ = $A_{TM}$ Not regular/Not Context-Free /Not Recursive
    - \( L(M^*) = \emptyset \) if \( M \) does not accept \( w \). -- Regular/Contex-Free/Recursive
 
 
-5. **Conclusion**:
+3. **Conclusion**:
+   
    - If \( L(M^*) \) is non-regular, it implies that \( M \) accepts \( w \).
    - If \( L(M^*) \) is regular, then \( M \) does not accept \( w \).
    - Since determining whether \( L(M^*) \) is regular would solve the **Halting Problem**, it follows that \( R_{TM} \) is undecidable.
-
 
 
 
@@ -151,9 +162,9 @@ The undecidability of \( R_{TM} = \{ \langle M \rangle : M \text{ is a Turing ma
 
 
 In short, if we could decide whether \( L(M) \) is regular for any Turing machine \( M \), we could also solve the Halting Problem by constructing \( M^* \) as described. This leads to a contradiction, proving that \( R_{TM} \) is undecidable.
-#### 5. $L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}$ is **not recursive**
+#### 4.1. $L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}$ is **not recursive**
 
-#### 6. $L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}$ is **not recursive**
+#### 4.2. $L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}$ is **not recursive**
 
 ### Rice's Theorem
 
