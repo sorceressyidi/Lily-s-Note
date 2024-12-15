@@ -52,7 +52,6 @@ nav:
       - DDIM: Papers/DM/DDIM.md
       - Stable Diffusion: Papers/DM/SD.md
     - NeRF: Papers/NeRF/Theory.md
-    - 3DGS: Papers/3DGS/paper.md
     - 4DGS: 
       - 2023.10-ICLR: Papers/4DGS/paper.md
   
@@ -66,6 +65,9 @@ nav:
       - Lecture 5 - Turing Machine : 计算理论/lec5/Lecture5.md
       - Lecture 6 - Containments properties of languages : 计算理论/lec6/Lecture6.md
       - Lecture 7 - Decidability : 计算理论/lec7/Lecture7.md
+      - Lecture 8 - Gödel's Incompleteness Theorems : 计算理论/lec8/Lecture8.md
+      - Lecture 9 - Complexity - Time : 计算理论/lec9/Lecture9.md
+      - Lecture 10 - Complexity - Space : 计算理论/lec10/Lecture10.md
     - Operating System:
       - Lecture 1 - Introduction : OS/lec1/lec1.md
       - Lecture 2 - OS Structure : OS/lec2/lec2.md
@@ -109,30 +111,30 @@ nav:
         - NP-Completeness: ADS/NP/lec.md
         - Approximation : ADS/approx/lec.md
         - Randomized Algorithm : ADS/rand/lec.md
-    - Database System: 
-      - Inclass:
-        - SQL : CMU 15-445/Chap2_inclass/lec.md
-        - E-R Model : CMU 15-445/ER/lec.md
-        - Relational Database Design : CMU 15-445/Relational/lec.md
-      - CMU 15-445:
-        - Chapter 1 : CMU 15-445/Chap1/Chap1.md
-        - Chapter 2 : CMU 15-445/Chap2/Chap2.md
-        - Chapter 3-5:Storage : CMU 15-445/Chap3/Chap3.md
-        - Chapter 6 : CMU 15-445/Chap6/lec.md
-        - Chapter 8 : CMU 15-445/Chap8/Chap8.md
-        - Chapter 11 : CMU 15-445/Chap11/lec.md
+    # - Database System: 
+    #   - Inclass:
+    #     - SQL : CMU 15-445/Chap2_inclass/lec.md
+    #     - E-R Model : CMU 15-445/ER/lec.md
+    #     - Relational Database Design : CMU 15-445/Relational/lec.md
+    #   - CMU 15-445:
+    #     - Chapter 1 : CMU 15-445/Chap1/Chap1.md
+    #     - Chapter 2 : CMU 15-445/Chap2/Chap2.md
+    #     - Chapter 3-5:Storage : CMU 15-445/Chap3/Chap3.md
+    #     - Chapter 6 : CMU 15-445/Chap6/lec.md
+    #     - Chapter 8 : CMU 15-445/Chap8/Chap8.md
+    #     - Chapter 11 : CMU 15-445/Chap11/lec.md
     - Computer Organization : 
       - Chapter1 : 计组/Intro/intro.md
       - Chapter2 : 计组/Chap2/lec.md
       - Chapter3 : 计组/Chap3/lec.md
-    - 计算机逻辑设计基础:
-      - Chapter 1 Digital Systems and Information : 计算机逻辑设计基础/Chap1/chap1.md
-      - Chapter 2 Combinational Logic : 计算机逻辑设计基础/Chap2/chap2.md
-      - Chapter 3 Combinational Logic Design : 计算机逻辑设计基础/Chap3/chap3.md
-      - Chapter 4 Sequential Logic : 计算机逻辑设计基础/Chap4/chap4.md
-      - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
-      - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
-      - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
+    # - Computer Logic Design:
+    #   - Chapter 1 Digital Systems and Information : 计算机逻辑设计基础/Chap1/chap1.md
+    #   - Chapter 2 Combinational Logic : 计算机逻辑设计基础/Chap2/chap2.md
+    #   - Chapter 3 Combinational Logic Design : 计算机逻辑设计基础/Chap3/chap3.md
+    #   - Chapter 4 Sequential Logic : 计算机逻辑设计基础/Chap4/chap4.md
+    #   - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
+    #   - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
+    #   - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
@@ -167,8 +169,8 @@ nav:
       - Recognition : CV/ML-4360/Recognition/lec10.md
       - Self-Supervised Learning : CV/ML-4360/Self/lec.md
       - Diverse Topics in Computer Vision : CV/ML-4360/Diverse/lec.md
-  - AI :
-    - Deep Learning for Computer Vision(EECS 498.008 / 598.008):
+  # - AI :
+    - EECS 498.008 / 598.008:
       - Classification: DL_CV/class/lec.md
       - Neural Networks: DL_CV/neural/lec.md
       - Convolutional Neural Networks: DL_CV/CNN/lec.md
@@ -180,10 +182,10 @@ nav:
       - Lecture 9 Attention & Transformers: CS231n/lec9/lec.md
       - Lecture 10 Video Understanding: CS231n/lec10/lec.md
       - Lecture 12 Visualizing and Understanding: CS231n/lec12/lec.md
-      - Lecture 13 Self-Supervised Learning: CS231n/lec13/lec.md
-      - Lecture 14 Robot Learning: CS231n/lec14/lec.md
+      # - Lecture 13 Self-Supervised Learning: CS231n/lec13/lec.md
+      # - Lecture 14 Robot Learning: CS231n/lec14/lec.md
       - Lecture 15 Generative Models: CS231n/lec15/lec.md
-      - Lecture 16 3D Vision: CS231n/lec16/lec.md
+      # - Lecture 16 3D Vision: CS231n/lec16/lec.md
   - Miscellaneous : 
     - 随笔:
       - Invisible : invisible.md
