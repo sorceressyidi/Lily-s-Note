@@ -33,7 +33,15 @@ Process = code (also called the text)
 |                 Code                       |
 ----------------------------------------------
 ```
-![1](1.png)
+![1](0.png)
+
+* Stack pointer & Frame pointer
+  * Stack pointer: points to the top of the stack
+  * Frame pointer: points to the top of the current function's stack frame
+
+
+* Why stack is quicker than heap?
+  * Much contents in stack are in the cache
 
 ### Runtime Stack
 
@@ -134,7 +142,7 @@ printf("Hello\n");
 
 #### UNIX examples
 * `fork()` system call creates new process
-* `execve()` system call used after a `fork()` to replace the process’memory space with a new program
+* `execve()` system call used after a `fork()` to **replace the process’memory space with a new program**
 * Parent process calls `wait()` for the child to terminate
 
 ![12](12.png)
@@ -158,7 +166,7 @@ printf("Hello\n");
 #### DEMO
 ![14](14.png)
 
-* Originally, highlighted part is in the parent process,so the parent process will print "Will I be executed?"
+* Originally, highlighted part is in the parent process [in the third `else`],so the parent process will print "Will I be executed?"
 * After `fork()`, the child process do `execve()`, so the child process will not print "Will I be executed?"; it will call another program
 ### Process Termination
 
@@ -166,19 +174,23 @@ printf("Hello\n");
 #### Wait and Waitpid
 
 * A parent can wait for a child to complete 
-* The `wait()` call 
-  1. blocks until any child completes
+* The `wait()` syscall 
+  1. blocks until **any** child completes
   2. returns the pidof the completed child and the child’s exit code
 * The `waitpid()` call
-  1. blocks until a specific child completes
-  2. can be made non-blocking with WNOHANG optionsRead the man pages (“man 2waitpid”)
+  1. blocks until a **specific** child completes
+  2. can be made non-blocking with WNOHANG options
+   > Read the man pages (`man 2waitpid`)
 ### Process and Signal
+
+> Like Ctrl+C -- SIGINT
 
 ![16](16.png)
 
 #### Zombie Process
 Question: what resources cannot be deallocated by the child process?
-* PCB (Process Control Block)
+
+* PCB (Process Control Block) is deallocated by the parent process
 
 ![18](18.png)
 
@@ -276,4 +288,11 @@ if(pid!=0){
   * Because `fork()` , then, two set of context values.
 
 * see https://note.hobbitqia.cc/OS/chap02/#context-switch
+
+
+### Lab
+
+注：在我们的实验里，`do_timer` trap 切换到**kernel space！**，然后调用 `schedule()` 函数，然后调用 `switch_to()` 函数，最后切换到下一个进程。
+
+
 </font>

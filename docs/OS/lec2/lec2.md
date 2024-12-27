@@ -4,17 +4,24 @@
 
 ## System Calls
 
-* An interface which kernel provides to the user space to interact with the kernel. 
+* An interface which kernel provides to the user space to interact with the kernel to do **privileged operations**
 * Syscall : proviledged instruction 
 
 ![3](3.png)
+
+### Syscall Number
+
+* Each syscall has a unique number
+* Syscall Number is the **INDEX** in the syscall table
+* In Different OS, the syscall number is different
+
 
 ### Example Ilustration -- Write()
 ![0](0.png)
 ![1](1.png)
 ![2](2.png)
 
-* First `printf()` function is called, then `write()` function is called. In the `write()` function, there is a **system call** to the kernel. [with syscall number $0x1]
+* First `printf()` function is called, then `write()` function is called. In the `write()` function, there is a **system call** to the kernel. [with syscall number `$0x1`]
 * Then, go into **kernel space**, and the kernel will do the actual writing to the file descriptor.
   1) `kernel_entry code` will be called -- Saved all user space registers
   2) calls `write syscall handler` -- Get from syscall_table, which is an array
@@ -76,7 +83,7 @@ Three general methods used to pass parameters to the OS
 * Simplest: pass the parameters in registers
   * In some cases, may be more parameters than registers
 * Parameters stored in a block, or table, in memory, and address of block passed as a parameter in a register 
-  * This approach taken by Linux and Solaris
+  * This approach taken by **Linux and Solaris**
 * Parameters placed, or pushed, onto the stack by the program and popped off the stack by the operating system
 * Block and stack methods do not limit the number or length of parameters being passed
 
@@ -85,6 +92,10 @@ Three general methods used to pass parameters to the OS
 ![11](11.png)
 
 ## Linkers and Loaders
+
+* Linkers are for static linking
+* Loaders are for dynamic linking
+
 ![12](12.png)
 ![13](13.png)
 
@@ -127,23 +138,35 @@ readelf -p .interp main
 #### Running a Binary
 ![18](18.png)
 
+1. `text` section is r-xp, so it is readable and executable, but not writable
+2. `rodata` section is r--p, so it is readable, but not writable or executable
+3. `data` section is rw-p, so it is readable and writable, but not executable
+4. `.bss`: uninitialized variables. 
+> 给一个全局变量不给值，早期编译器记录它在 
+> .bss 段里，但没有实际空间，映射到内存时就初始化为 0
+
+5. `stack` and `heap` are rw-p, so they are readable and writable, but not executable -- Anonmous Mapping
+
+
 ![19](19.png)
 
 * While for static linking, the mapping is much less.
 
 ![20](20.png)
 
+> 上面的Layout 在用户空间，而不是内核空间
+
 * Memory layout is in user space ?
-  * User space: stack, heap, data, text
+  * User space: stack, heap, data, text 
   * Kernel space: kernel code, kernel data, kernel stack
 
 #### Questions
-* Who setups ELF file mapping? -- kernel: execve() system call
+* Who setups ELF file mapping? -- kernel: `execve()` system call
 
 ![23](23.png)
 
-* Who setups stack and heap?
-* Who setups libraries?
+* Who setups stack and heap? -- `execve()` system call
+* Who setups libraries? -- loader
 
 ![24](24.png)
 
@@ -206,8 +229,5 @@ Various ways to structure ones
 * Microkernel –Mach
 
 * [Good Helper Website](https://makelinux.github.io/kernel/map/)
-## Building and Booting an Operating System
-## Operating System Debugging
-
 
 </font>

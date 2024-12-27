@@ -72,6 +72,19 @@ nav:
       - Lecture 1 - Introduction : OS/lec1/lec1.md
       - Lecture 2 - OS Structure : OS/lec2/lec2.md
       - Lecture 3 - Process : OS/lec3/lec3.md
+      - Lecture 4 - Schedule : OS/lec4/lec4.md
+      - Lecture 5 - IPC : OS/lec5/lec5.md
+      - Lecture 6 - Thread : OS/lec6/lec6.md
+      - Lecture 7 - Synchronization : OS/lec7/lec7.md
+      - Lecture 8 - Synchronization II : OS/lec8/lec8.md
+      - Lecture 9 - Deadlock : OS/lec9/lec9.md
+      - Lecture 10 - Main Memory : OS/lec10/lec10.md
+      - Lecture 11 - Virtual Memory : OS/lec11/lec11.md
+      - Lecture 12 - Mass Storage : OS/lec12/lec12.md
+      - Lecture 13 -I/O System : OS/lec13/lec13.md
+      - Lecture 14 - File System : OS/lec14/lec14.md
+      - Lecture 15 - OS Security : OS/lec15/lec15.md
+
     - PPL:
       - Lecture 1 - lambda calculus : PPL/lec1/lec1.md
       - Lecture 2 - Abstract Syntax Trees : PPL/lec2/lec2.md
