@@ -68,7 +68,7 @@ Let $\Sigma$ be an alphabet. Let $L$ be a language over $\Sigma$. Then, $L$ is *
 * Another Proof: ![12](12.png)
   
 
-#### From Lemma 3 and Collary2, we can conclude that some languages are not recursively enumerable.
+**From Lemma 3 and Collary2, we can conclude that some languages are not recursively enumerable.**
 
 
 ### ATM

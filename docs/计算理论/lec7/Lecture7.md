@@ -134,34 +134,7 @@ Suppose that $L_4$ is recursive, $\exist M_4$ that decides $L_4$
 
 The undecidability of \( R_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine with } L(M) \text{ regular} \} \) (i.e., determining if a Turing machine \( M \) has a regular language \( L(M) \)) stems from the fact that if we could decide \( R_{TM} \), we could also decide the Halting Problem, which is known to be undecidable.
 
-#### Here’s a step-by-step explanation of why this leads to undecidability:
 
-1. **Assume \( R_{TM} \) is Decidable**:
-   Suppose there exists a Turing machine \( D \) that decides \( R_{TM} \), meaning that \( D \) can take as input any Turing machine \( M \) and decide if \( L(M) \) is regular.
-
-2. **Reduction from the Halting Problem**:
-   We know that the Halting Problem (determining whether a Turing machine \( M \) halts on an input \( w \)) is undecidable. To show that \( R_{TM} \) is also undecidable, we construct a new Turing machine \( M^* \) based on \( M \) and \( w \) and show that if we could decide whether \( L(M^*) \) is regular, we could solve the Halting Problem.
-
-3. **Construction of \( M^* \)**:
-   Define \( M^* \) as a Turing machine that:
-   - First simulates \( M \) on \( w \).
-   - If \( M \) halts on \( w \), \( M^* \) then simulates a universal Turing machine \( U \) on any additional input \( x \).
-   - If \( M \) does not halt on \( w \), \( M^* \) simply rejects all inputs or does not accept any string beyond a certain structure.
-
-4. **Behavior of \( L(M^*) \)**:
-   - If \( M \) halts on \( w \), then \( L(M^*) \) becomes non-regular (since it depends on \( L(U) \), the language of a universal Turing machine, which is non-regular).
-   - If \( M \) does not halt on \( w \), \( L(M^*) \) is regular (e.g., it could be empty or finite, depending on the construction).
-
-5. **Implication**:
-   If we had a way to determine whether \( L(M^*) \) is regular using the hypothetical decider \( D \) for \( R_{TM} \), we could answer whether \( M \) halts on \( w \):
-   - If \( D \) tells us that \( L(M^*) \) is regular, then \( M \) does not halt on \( w \).
-   - If \( D \) tells us that \( L(M^*) \) is non-regular, then \( M \) halts on \( w \).
-
-6. **Contradiction**:
-   Since this method would solve the Halting Problem (which is known to be undecidable), the assumption that \( R_{TM} \) is decidable must be incorrect. Therefore, \( R_{TM} \) is undecidable.
-
-
-In short, if we could decide whether \( L(M) \) is regular for any Turing machine \( M \), we could also solve the Halting Problem by constructing \( M^* \) as described. This leads to a contradiction, proving that \( R_{TM} \) is undecidable.
 #### 4.1. $L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}$ is **not recursive**
 
 #### 4.2. $L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}$ is **not recursive**

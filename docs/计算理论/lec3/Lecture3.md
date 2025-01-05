@@ -8,7 +8,7 @@ A CFG $G = (V, \Sigma, R, S)$ consists of:
 - A finite set of variables (non-terminal symbols) $V$.
 - A finite set of terminal symbols $\Sigma$.
 - S $\in$ $V-\Sigma$ is the start symbol.
-- R $\in$ $(V-\Sigma) \times (U)^*$ is a finite set of rules.
+- R $\in$ $(V-\Sigma) \times (V)^*$ is a finite set of rules.
 
 **Define in one step** $\Rightarrow$.
 

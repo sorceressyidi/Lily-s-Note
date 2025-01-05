@@ -394,5 +394,9 @@ Total working sets: D = $\Sigma WSS_i$
 
 * every user process has its **own page table**
 * user don't have access to "kernel frame" -- kernel has its own page table
+* 同一个进程的多个线程 **共享同一个page table**
+* mm_struct 里的 page table是 **user space的page table**
+* kernel space 的 page table在context switch的时候**切换**
+
 
 </font>
