@@ -62,6 +62,7 @@ Implemented in one of three ways
 >Note that this is really contrary to the memory protection idea central to multi-programming!
 
 * Processes communicate by reading/writing to the shared memory region
+  
   1. They are responsible for not stepping on each other’s toes
   2. The OS is not involved at all
 
@@ -127,6 +128,7 @@ Cannot be accessed from outside the process that created it.
 	•	关闭管道的写端和读端（父进程不直接参与管道的读写）。
 	
 	•	等待两个子进程结束。
+
 7.	ls 写入管道 - ls 命令的输出通过管道写入。
 8.	grep 从管道读取 - grep foo 从管道的读端接收数据，进行匹配。
 9.	ls 完成 - ls 命令完成执行并退出。

@@ -23,7 +23,9 @@
 
 * First `printf()` function is called, then `write()` function is called. In the `write()` function, there is a **system call** to the kernel. [with syscall number `$0x1`]
 * Then, go into **kernel space**, and the kernel will do the actual writing to the file descriptor.
+
   1) `kernel_entry code` will be called -- Saved all user space registers
+  
   2) calls `write syscall handler` -- Get from syscall_table, which is an array
    
 ```C
@@ -207,6 +209,7 @@ readelf -p .interp main
 System calls are different -- name / number
 
 Apps can be **multi-operating system**
+
 * Written in interpreted language like Python, Ruby, and interpreter available on multiple operating systems
 * App written in language that includes a VM containing the running app (like Java)
 * Use standard language (like C), compile separately on each operating system to run on each

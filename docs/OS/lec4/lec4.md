@@ -9,10 +9,12 @@
 ![1](1.png)
 
 Preemptive scheduling is good
+
 * No need to have processes willingly give up the CPU
 * The OS remains in control
 
 Preemptive scheduling is complex
+
 * Opens up many thorny issues having to do with process synchronization
   * Consider access to shared data
   * Consider preemption while in kernel mode
@@ -59,6 +61,7 @@ Preemptive scheduling is complex
 * Use these lengths to schedule the process with the shortest time
 
 Two schemes:
+
 * Non-preemptive: once a process starts running, it will continue to run until it completes or blocks itself
 
 ![3](3.png)
@@ -131,6 +134,7 @@ Simple idea: use one ready queue per class of processes
 > Example
 
 A new process arrives and is placed in the highest-priority queue Q0 with RR quatum = 8
+
    1. If it doesn’t use it all, it’s likely a **I/O-bound** process and should be kept in the high-priority queue so that it is assured to get the CPU on the rare occasions **that it needs it**
    2. If it does use it all, then it gets demoted to Q1 and, at some points, is given a quantum of 16
    3. If it does use it all, then it’s likely a CPU-bound process and it gets demoted to Q2
@@ -149,9 +153,11 @@ A new process arrives and is placed in the highest-priority queue Q0 with RR qua
 1. Priority-based, time quantum-based, multi-queue, preemptive scheduling
 2. 32-level priority scheme: high number, high priority
 3. When a thread “wakes up”, its priority is boosted
+   
    * It’s likely an IO-bound thread
 
 4. The idle thread:
+   
    * Win XP maintains a “bogus” idle thread
    * “runs” (and does nothing) if nobody else can run
    * Simplifies OS design to avoid the “no process is running” case

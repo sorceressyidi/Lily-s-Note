@@ -32,6 +32,7 @@
 #### Fixed partitions
 
 • All processes must fit into partition space
+
 • Find any free partition and load process
 
 > What is the “right” partition size?
@@ -360,3 +361,4 @@ b. What is the virtual address format for 64-bit?
 > 39-bit VA
 > 48-bit VA
 </font>
+

@@ -23,16 +23,19 @@
 #### Resource Sharing: 
 
 * Threads **naturally share memory**
+  
   1. With processes you have to use possibly complicated IPC (e.g., Shared Memory Segments)
   2. IPC is not needed
 
 > NOTE: Threads DO NOT share the following:
+> 
 > 1. Registers
 > 2. Stack
 > 3. Program Counter
 > 4. thread ID
 
 > It shares the following with other threads within the same process
+> 
 > 1. code section
 > 2. data section
 > 3. the heap (dynamically allocated memory)
@@ -45,8 +48,10 @@
 #### Responsiveness
 
 * A program that has concurrent activities is more responsive
+  
   1. While one thread blocks waiting for some event, another can do something
   2. e.g. Spawn a thread to answer a client request in a client-server
+  
 * This is true of processes as well, but with threads we have better sharing and economy
 
 ![3](3.png)
@@ -72,6 +77,7 @@
 
 * Removes both drawbacks of the Many-to-One Model
 * Creating a new threads requires work by the kernel
+  
   1. Not as fast as in the Many-to-One Model
 
 * Example: Linux Windows Solaris 9 and later
@@ -87,6 +93,7 @@
 ## Threading Issues
 
 1. `fork()` and `exec()` 
+   
    1. `fork()` fork which thread or **all threads**?
    > Linux will fork the caller thread only
    2. `exec()` exec which thread or **all threads**?

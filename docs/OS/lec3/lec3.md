@@ -55,6 +55,7 @@ Process = code (also called the text)
 
 ## Process Control Block
 Each process has and only has a PCB
+
 * Allocate a PCB on new process creation
 * Free the PCB on process termination
 
@@ -66,11 +67,14 @@ Represented by the C structure **task_struct**
 ![5](5.png)
 
 * process 0 is the idle process
+  
   1. Process 0 run when no other process is running
   2. Process 0 -> process 1
 * process 1 is the init process
+  
   1. Process 1 is the parent of all other processes
 * systemd is the init process in modern Linux
+  
   1. systemd is the parent of all other processes
   2. systemd is the first process to run after the kernel is loaded
   3. when systemd terminates -- user space ternimated, the system will reboot
@@ -81,6 +85,7 @@ Represented by the C structure **task_struct**
 
 * `fork()` creates a new process
 * The child is is a copy of the parent, but...
+  
   1. It has a different pid(and thus ppid)
   2. Its resource utilization (so far) is set to 0
   
@@ -102,6 +107,7 @@ if(pid!=0) {
 ```
 
 * Further Explian:
+  
   1. Child prcess is a copy of the parent process!
   2. Next line for child is also `if(pid!=0)`, but for child, `pid` is 0, so the child will not enter the `if` block
 
@@ -119,6 +125,7 @@ else{//CHILD
 ``` 
 
 * What is the output of the above code?
+  
   1. The parent process will print `a = 12`
   2. The child process **cannot** modify the parent's memory space
 
@@ -141,6 +148,7 @@ printf("Hello\n");
 ![11](11.png)
 
 #### UNIX examples
+
 * `fork()` system call creates new process
 * `execve()` system call used after a `fork()` to **replace the process’memory space with a new program**
 * Parent process calls `wait()` for the child to terminate
@@ -155,10 +163,12 @@ printf("Hello\n");
 
 #### pros and cons of `fork()`
 * Pros
+  
   1. 简洁：WindowsCreateProcess需提供10个参数
   2. 分工：fork搭起骨架，exec赋予灵魂
   3. 联系：保持进程与进程之间的关系
 * Cons
+  
   1. 复杂：两个系统调用
   2. 性能差
   3. 安全性问题
