@@ -46,16 +46,7 @@ theme:
 nav:
   - Home:
     - index.md
-  - Papers:
-    - Diffusion Models:
-      - DDPM: Papers/DM/DDPM.md
-      - DDIM: Papers/DM/DDIM.md
-      - Stable Diffusion: Papers/DM/SD.md
-    - NeRF: Papers/NeRF/Theory.md
-    - 4DGS: 
-      - 2023.10-ICLR: Papers/4DGS/paper.md
-  
-      
+
   - Computer Science(ZJU):
     - Theoretical Computer Science:
       - Lecture 1 - Finite Automata : 计算理论/lec1/Lecture1.md
@@ -84,12 +75,6 @@ nav:
       - Lecture 13 -I/O System : OS/lec13/lec13.md
       - Lecture 14 - File System : OS/lec14/lec14.md
       - Lecture 15 - OS Security : OS/lec15/lec15.md
-
-    - PPL:
-      - Lecture 1 - lambda calculus : PPL/lec1/lec1.md
-      - Lecture 2 - Abstract Syntax Trees : PPL/lec2/lec2.md
-    - Computer Graphic:
-      - Lecture 1 - 2D Graphics : CG/lec1/lec1.md
     - Fundamentals of Data Structure:
       - Maximum Subsequence Sum Problem: note/最大子列和.md
       - Basic data Structures I: note/基础数据结构.md
@@ -148,6 +133,14 @@ nav:
     #   - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
     #   - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
     #   - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
+  - Papers:
+    - Diffusion Models:
+      - DDPM: Papers/DM/DDPM.md
+      - DDIM: Papers/DM/DDIM.md
+      - Stable Diffusion: Papers/DM/SD.md
+    - NeRF: Papers/NeRF/Theory.md
+    - 4DGS: 
+      - 2023.10-ICLR: Papers/4DGS/paper.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:
