@@ -192,10 +192,6 @@ nav:
       # - Lecture 14 Robot Learning: CS231n/lec14/lec.md
       - Lecture 15 Generative Models: CS231n/lec15/lec.md
       # - Lecture 16 3D Vision: CS231n/lec16/lec.md
-  - Miscellaneous : 
-    - 随笔:
-      - Invisible : invisible.md
-      - 大侠 : 大侠.md
       
 markdown_extensions:
   - pymdownx.arithmatex:            # mathjax
