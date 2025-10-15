@@ -26,7 +26,7 @@ EXP = $\{A | A$ is decided by some DTM using within 2<sup>p(n)</sup> time $\}$
 >
 > 2. Simulate every branch of N : Polynomial space
 >
-> 3. Mark 分支的选择情况(每个结点一个)：Polynomial space()
+> 3. Mark the choice of each branch (one for each node): Polynomial space (since the depth of the tree is polynomial)
 
 
 ### Theorem 1

@@ -46,19 +46,29 @@ theme:
 nav:
   - Home:
     - index.md
-
+  
+  - Misc CS Notes/Paper Reading:
+    - Diffusion Models:
+      - DDPM: Papers/DM/DDPM.md
+      - DDIM: Papers/DM/DDIM.md
+      - Stable Diffusion: Papers/DM/SD.md
+    - NeRF: Papers/NeRF/Theory.md
+    - 4DGS: 
+      - 2023.10-ICLR: Papers/4DGS/paper.md
+    - RL:
+      - Policy Gradient Methods: RL/PG/PG.md
   - Computer Science(ZJU):
     - Theoretical Computer Science:
-      - Lecture 1 - Finite Automata : 计算理论/lec1/Lecture1.md
-      - Lecture 2 - Regular Language : 计算理论/lec2/Lecture2.md
-      - Lecture 3 - Context-Free Language : 计算理论/lec3/Lecture3.md
-      - Lecture 4 - Push-Down-Automata : 计算理论/lec4/Lecture4.md
-      - Lecture 5 - Turing Machine : 计算理论/lec5/Lecture5.md
-      - Lecture 6 - Containments properties of languages : 计算理论/lec6/Lecture6.md
-      - Lecture 7 - Decidability : 计算理论/lec7/Lecture7.md
-      - Lecture 8 - Gödel's Incompleteness Theorems : 计算理论/lec8/Lecture8.md
-      - Lecture 9 - Complexity - Time : 计算理论/lec9/Lecture9.md
-      - Lecture 10 - Complexity - Space : 计算理论/lec10/Lecture10.md
+      - Lecture 1 - Finite Automata : TCS/lec1/Lecture1.md
+      - Lecture 2 - Regular Language : TCS/lec2/Lecture2.md
+      - Lecture 3 - Context-Free Language : TCS/lec3/Lecture3.md
+      - Lecture 4 - Push-Down-Automata : TCS/lec4/Lecture4.md
+      - Lecture 5 - Turing Machine : TCS/lec5/Lecture5.md
+      - Lecture 6 - Containments properties of languages : TCS/lec6/Lecture6.md
+      - Lecture 7 - Decidability : TCS/lec7/Lecture7.md
+      - Lecture 8 - Gödel's Incompleteness Theorems : TCS/lec8/Lecture8.md
+      - Lecture 9 - Complexity - Time : TCS/lec9/Lecture9.md
+      - Lecture 10 - Complexity - Space : TCS/lec10/Lecture10.md
     - Operating System:
       - Lecture 1 - Introduction : OS/lec1/lec1.md
       - Lecture 2 - OS Structure : OS/lec2/lec2.md
@@ -133,14 +143,6 @@ nav:
     #   - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
     #   - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
     #   - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
-  - Papers:
-    - Diffusion Models:
-      - DDPM: Papers/DM/DDPM.md
-      - DDIM: Papers/DM/DDIM.md
-      - Stable Diffusion: Papers/DM/SD.md
-    - NeRF: Papers/NeRF/Theory.md
-    - 4DGS: 
-      - 2023.10-ICLR: Papers/4DGS/paper.md
   - Math & Physics:
     - General physics II : 
       - Electromagnetics:

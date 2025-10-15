@@ -9,7 +9,7 @@ Let M be a standard DTM that halts on all inputs.
 
 ## Theorm
 
-#### $DTIME(f(n)) = \{L | L$ is decided by some standard DTM with running time $O(t(n))\}$
+$DTIME(f(n)) = \{L | L$ is decided by some standard DTM with running time $O(t(n))\}$
 
 1. $\{0^k1^k | k \geq 0\}$ $\in$ $DTIME(nlogn)$
 2. $\{0^k1^k | k \geq 0\}$ $\in$ $DTIME(n)$
@@ -34,7 +34,7 @@ Given a string $x = x_1x_2...x_n$, we want to know whether $x \in L(G)$.
 
 * Enumerate all derivations of length $\leq 2|w|-1$.
 * We can determine in $|R|^{2|w|-1}$ steps.
-> 这可以用二叉树的性质证明
+> This is because a parse tree for a string of length n has exactly n leaves (each corresponding to a terminal symbol) and at most n-1 internal nodes (each corresponding to a non-terminal symbol). Therefore, the total number of nodes in the parse tree is at most 2n - 1.
 
 * But we cannot determine whether $x \in L(G)$ in polynomial time.
 
@@ -42,12 +42,13 @@ Given a string $x = x_1x_2...x_n$, we want to know whether $x \in L(G)$.
 
 Subproblem: For $1 \leq i \leq j \leq n$ Define, $T[i,j] = \{A \in V-\Sigma | A \to^* a_{i}...a_j\}$
 
-> 这是可以生成子串的非终结符的集合
+> This is the set of non-terminals that can generate the substring from position i to j.
 
 * Base Case: $T[i,i] = \{A \in V-\Sigma | A \to a_i\}$
 * Recurrence: $T[i,j] = \cup_{i \leq k < j} \{A \in V-\Sigma | A \to BC, B \in T[i,k], C \in T[k+1,j]\}$
 
 Subproblem: $O(n^2)$ subproblems, 
+
 * each subproblem can be solved :
   * Enumerate k from i to j-1: $O(n)$
   * $A \to BC$ can be checked in $O(|R|)$

@@ -35,7 +35,8 @@ For any TM **T**, there exists a TM **R** such that for any input w, the computa
 
 ![1](1.png)
 
-#### Another Proof of $A_{TM}$ not recursive
+**Another Proof of $A_{TM}$ not recursive**
+
 ![2](2.png)
 ![3](3.png)
 
@@ -43,15 +44,15 @@ For any TM **T**, there exists a TM **R** such that for any input w, the computa
 
 $V(x,t) = \begin{cases} 1 & \text{if t is a valid for x} \\ 0 & \text{otherwise} \end{cases}$
 
-Let $\Tau$ be a language (the set of statements) A proof system for $\Tau$ is a TM V such that
+Let $\tau$ be a language (the set of statements) A proof system for $\tau$ is a TM V such that
 
 * 1. Effectiveness : For x,y $\in \Sigma^*$, V either accepts or rejects $V(x,y)$
-* 2. Soundness : For x $\notin \Tau$, $\forall y, V(x,y) = 0$
+* 2. Soundness : For x $\notin \tau$, $\forall y, V(x,y) = 0$
 
-V is a complete proof system for $\Tau$ if for x $\in \Tau$, $\exists y, V(x,y) = 1$
+V is a complete proof system for $\tau$ if for x $\in \tau$, $\exists y, V(x,y) = 1$
 ### Theorem 1
 
-Some language $\Tau$ does not have a complete proof system.
+Some language $\tau$ does not have a complete proof system.
 
 #### Lemma 1
 

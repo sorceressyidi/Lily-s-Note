@@ -1,4 +1,4 @@
-<font face = "Times New Roman">
+<font face = 'Times New Roman'>
 
 # Problems That Are Not Recursive 
 
@@ -39,7 +39,7 @@ If all this is true, then $M_A$ can decide $A_{TM}$
 * So $M^*$ is not recursive
 * So the halting problem is not recursive
 
-### 1. $L = \{"M"|\text{M is a TM that accepts e}\}$ is not recursive
+### 1. $L = \{'M'|\text{M is a TM that accepts e}\}$ is not recursive
 
 * Use $A_{TM}$ to prove this
 
@@ -70,35 +70,35 @@ If all this is true, then $M_A$ can decide $A_{TM}$
 * So $M_L$ is not recursive
 * So $L$ is not recursive
 
-### 2. $L_2 = \{"M"|\text{M is a TM that accepts all strings}\}$ is not recursive
+### 2. $L_2 = \{'M'|\text{M is a TM that accepts all strings}\}$ is not recursive
 
 * Same as above
 
 A Turing Machine accepts w if and only if $M^*$ **accepts all strings**
 
-### 3. $L_3 = \{"M1, M2"|\text{M1 and M2 accept the same set of strings}\}$ is not recursive
+### 3. $L_3 = \{'M1, M2'|\text{M1 and M2 accept the same set of strings}\}$ is not recursive
 
 
-Suppose that $L_3$ is recursive, $\exist M_3$ that decides $L_3$
+Suppose that $L_3$ is recursive, $\exists M_3$ that decides $L_3$
 
 **Use $M_3$ to construct $M_2$ that deides $L_2$**
 
-$M_2$ = on input "M"
+$M_2$ = on input 'M'
 
 1. construct $M_E$ as follows:
    $M_E$ = on input x
       1. Accept
-2. Run $M_3$ on "$M$","$M_E$" -- check whether $M$ and $M_E$ accepts the same set of strings
+2. Run $M_3$ on '$M$','$M_E$' -- check whether $M$ and $M_E$ accepts the same set of strings
 3. If $M_3$ accepts, accepts $M$
 4. If $M_3$ rejects, rejects $M$
 
 So $M_2$ decides $L_2$ but $L_2$ is not recursive
 
-### 4. $L_4 = \{"M"|\text{M is a TM with L(M) is regular}\}$ is not recursive
+### 4. $L_4 = \{'M'|\text{M is a TM with L(M) is regular}\}$ is not recursive
 
 Proof: $L_4$ is not recursive
 
-Suppose that $L_4$ is recursive, $\exist M_4$ that decides $L_4$
+Suppose that $L_4$ is recursive, $\exists M_4$ that decides $L_4$
 
 
 1. **Construction of \( M^* \)**:
@@ -135,9 +135,9 @@ Suppose that $L_4$ is recursive, $\exist M_4$ that decides $L_4$
 The undecidability of \( R_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine with } L(M) \text{ regular} \} \) (i.e., determining if a Turing machine \( M \) has a regular language \( L(M) \)) stems from the fact that if we could decide \( R_{TM} \), we could also decide the Halting Problem, which is known to be undecidable.
 
 
-#### 4.1. $L_5 = \{"M"|\text{M is a TM with L(M) is context-free}\}$ is **not recursive**
+#### 4.1. $L_5 = \{'M'|\text{M is a TM with L(M) is context-free}\}$ is **not recursive**
 
-#### 4.2. $L_6 = \{"M"|\text{M is a TM with L(M) is recursive}\}$ is **not recursive**
+#### 4.2. $L_6 = \{'M'|\text{M is a TM with L(M) is recursive}\}$ is **not recursive**
 
 ### Rice's Theorem
 
@@ -177,12 +177,12 @@ $x \in A \Leftrightarrow f(x) \in B$
 
 #### Lemma 1
 
-Suppose $\exist f$ that reduces A to B:
+Suppose $\exists f$ that reduces A to B:
 
 1. If B is recursive, then A is recursive
 
 * B is recursive, then we can construct a TM $M_B$ to decide B
-* $\exist f$ that reduces A to B
+* $\exists f$ that reduces A to B
 * $M_A$ = On input x:
   1. Compute f(x)
   2. Run $M_B$ on f(x)
