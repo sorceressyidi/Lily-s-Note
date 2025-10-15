@@ -14,8 +14,6 @@
 - Plain RGB/intensity patches will not have this property, we need something better
 
 ### Scale Invariant Feature Transform (SIFT)
-**Reference to https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40**
-https://www.qixinbo.info/2021/10/26/sift/
 
 - SIFT constructs a **scale space** by iteratively filtering the image with a Gaussian
 - Adjacent scales are subtracted, yielding **Difference of Gaussian (DoG)** images
@@ -24,44 +22,6 @@ https://www.qixinbo.info/2021/10/26/sift/
 #### (1) Scale
 
 $L(x,y,σ)=G(x,y,σ)∗I(x,y)$
-
-> Note ：卷积
->
-> 连续形式：
->
-> $(f∗g)(n)=\int_{-\infty }^{\infty}f(\tau )g(n-\tau)d\tau$
->
-> 离散形式：
->
-> $(f∗g)(n)=\sum_{\tau=-\infty }^{\infty}f(\tau)g(n-\tau)$
->
-> 对图像的处理函数（如平滑，或者边缘提取），也可以用一个g矩阵来表示，如：
->
-> $g=\begin{bmatrix} &b_{-1,-1} &b_{-1,0} &b_{-1,1}\\ &b_{0,-1} &b_{0,0} &b_{0,1} \\ &b_{1,-1} &b_{1,0} &b_{1,1} \end{bmatrix}$
->
-> $f(x,y)=a_{x,y}$
->
-> $g(x,y)=b_{x,y}$
->
-> 按卷积的定义，二维离散形式的卷积公式应该是：
->
-> $(f∗g)(u,v)=∑_i∑_jf(i,j)g(u-i,v-j)=\sum_{i} \sum_{j} a_{i,j} b_{u-i,v-j}$
->
-> ![img](https://picx.zhimg.com/80/v2-29b46dc4d83fb10239888227fceac1a3_1440w.webp?source=1940ef5c)
->
-> 首先我们在原始图像矩阵中取出（u,v)处的矩阵：
->
-> $f=\begin{bmatrix} &a_{u-1,v-1} &a_{u-1,v} &a_{u-1,v+1}\\ &a_{u,v-1} &a_{u,v} &a_{u,v+1} \\ &a_{u+1,v-1} &a_{u+1,v} &a_{u+1,v+1} \end{bmatrix}$
->
-> 然后将图像处理矩阵翻转
->
-> - 原始矩阵：
->
-> ![img](https://pic1.zhimg.com/80/v2-6904fa21bf262e735a41159796534dfd_1440w.webp?source=1940ef5c)
->
-> - 翻转后的矩阵：
->
-> $(g^{'}=\begin{bmatrix} &b_{1,1} &b_{1,0} &b_{1,-1}\\ &b_{0,1} &b_{0,0} &b_{0,-1} \\ &b_{-1,1} &b_{-1,0} &b_{-1,-1} \end{bmatrix}$
 
 #### (2)Construct the Gaussian Pyramid
 
@@ -202,9 +162,9 @@ $\widetilde{E}=\begin{pmatrix} e_{11} & e_{12} & e_{13} \\ e_{21} & e_{22} & e_{
 - If there are more than 8 point correspondences, the system is usually over-determined and an exact solution is not possible. Instead, we solve a least squares problem for **AE**
 - $min(||AE||),||E||=1$​
 
-> 我的理解：并不是说$E$ 的范数就是1 而是在计算 $min(||AE||)$时，等同于计算 minimize $||AE||$ subject to $||x||^2=1$​
->
-> ![11](11.png)
+> My understanding: It is not that the norm of $E$ is 1, but when calculating $min(||AE||)$, it is equivalent to calculating minimize $||AE||$ subject to $||x||^2=1$​
+
+ ![11](11.png)
 
 <iframe src="https://drive.google.com/viewerng/viewer?url=https%3A//www.cs.cmu.edu/%7E16385/s17/Slides/11.5_SVD.pdf&amp;embedded=true" allowfullscreen="" frameborder="0" height="780" width="600" title="" class="eo n ff dy bg" scrolling="no" style="box-sizing: inherit; top: 0px; width: 680px; height: 884px; left: 0px;"></iframe>
 

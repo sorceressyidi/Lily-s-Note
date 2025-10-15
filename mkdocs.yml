@@ -57,7 +57,7 @@ nav:
       - 2023.10-ICLR: Papers/4DGS/paper.md
     - RL:
       - Policy Gradient Methods: RL/PG/PG.md
-  - Computer Science(ZJU):
+  - Computer Science and Related Courses(ZJU):
     - Theoretical Computer Science:
       - Lecture 1 - Finite Automata : TCS/lec1/Lecture1.md
       - Lecture 2 - Regular Language : TCS/lec2/Lecture2.md
@@ -85,30 +85,30 @@ nav:
       - Lecture 13 -I/O System : OS/lec13/lec13.md
       - Lecture 14 - File System : OS/lec14/lec14.md
       - Lecture 15 - OS Security : OS/lec15/lec15.md
-    - Fundamentals of Data Structure:
-      - Maximum Subsequence Sum Problem: note/最大子列和.md
-      - Basic data Structures I: note/基础数据结构.md
-      - Basic data Structures II: note/basicII.md
-      - Sort : note/sort.md
-      - HASH : note/hash.md
-    - DIP:
-      - Basic concept and programming introduction  : DIP/Basic/DIP.md
-      - Binary image and morphology : DIP/chap2/chap2.md
-      - Basic Operation : DIP/chap3/chap3.md
-      - Image morphing: DIP/morph/morph.md
-      - image filter: DIP/filter/filter.md
-      - Fourier transform : DIP/Fourier/Fourier.md
-      - Image feature : DIP/feature/feature.md
-      - Deep Learning : DIP/DL/DL.md
-    - OOP(C++):
-      - Itro & Class: oop/Basic/Basic.md
-      - Container & Function: oop/Container/Container.md
-      - Inheritance & Polymorphism: oop/inheritance/lec.md
-      - (Copy & Move )Constructor & Overloading: oop/copy/lec.md
-      - Template & STL: oop/template/lec.md
-      - Exception & File: oop/Exceptions/lec.md
-      - Smart Pointer : oop/Smart/lec.md
-    - Anvanced Data Structure:
+    # - Fundamentals of Data Structure:
+    #   - Maximum Subsequence Sum Problem: note/最大子列和.md
+    #   - Basic data Structures I: note/基础数据结构.md
+    #   - Basic data Structures II: note/basicII.md
+    #   - Sort : note/sort.md
+    #   - HASH : note/hash.md
+    # - DIP:
+    #   - Basic concept and programming introduction  : DIP/Basic/DIP.md
+    #   - Binary image and morphology : DIP/chap2/chap2.md
+    #   - Basic Operation : DIP/chap3/chap3.md
+    #   - Image morphing: DIP/morph/morph.md
+    #   - image filter: DIP/filter/filter.md
+    #   - Fourier transform : DIP/Fourier/Fourier.md
+    #   - Image feature : DIP/feature/feature.md
+    #   - Deep Learning : DIP/DL/DL.md
+    # - OOP(C++):
+    #   - Itro & Class: oop/Basic/Basic.md
+    #   - Container & Function: oop/Container/Container.md
+    #   - Inheritance & Polymorphism: oop/inheritance/lec.md
+    #   - (Copy & Move )Constructor & Overloading: oop/copy/lec.md
+    #   - Template & STL: oop/template/lec.md
+    #   - Exception & File: oop/Exceptions/lec.md
+    #   - Smart Pointer : oop/Smart/lec.md
+    - Anvanced Data Structure and Algorithm Analysis:
       - Trees: ADS/Tree/lec.md
       - Heap : ADS/Heap/lec.md
       - Analysis:
@@ -131,10 +131,10 @@ nav:
     #     - Chapter 6 : CMU 15-445/Chap6/lec.md
     #     - Chapter 8 : CMU 15-445/Chap8/Chap8.md
     #     - Chapter 11 : CMU 15-445/Chap11/lec.md
-    - Computer Organization : 
-      - Chapter1 : 计组/Intro/intro.md
-      - Chapter2 : 计组/Chap2/lec.md
-      - Chapter3 : 计组/Chap3/lec.md
+    # - Computer Organization : 
+    #   - Chapter1 : 计组/Intro/intro.md
+    #   - Chapter2 : 计组/Chap2/lec.md
+    #   - Chapter3 : 计组/Chap3/lec.md
     # - Computer Logic Design:
     #   - Chapter 1 Digital Systems and Information : 计算机逻辑设计基础/Chap1/chap1.md
     #   - Chapter 2 Combinational Logic : 计算机逻辑设计基础/Chap2/chap2.md
@@ -143,7 +143,7 @@ nav:
     #   - Chapter 5 Digital Hardware Implementation : 计算机逻辑设计基础/DHI/Digital Hardware Implementation.md
     #   - Chapter 6 Register : 计算机逻辑设计基础/Register/register.md
     #   - Chapter 7 Memory Basics : 计算机逻辑设计基础/MB/MB.md
-  - Math & Physics:
+  # - Math & Physics:
     - General physics II : 
       - Electromagnetics:
         - Electrci Charge & Field & Potential: GP/lec1-3/lec1.md
@@ -162,10 +162,10 @@ nav:
         - Quantum Wells: GP/QW/QW.md
         - The Hydrogen Atom : GP/HA/HA.md
         - Angular Momentum and Spin: GP/AMAS/AMAS.md
-    - Probability Theory :
-      - 随机变量与分布函数: PT/PT.md
-      - Order Statistics : PT/order_stats.pdf
-      - 数字特征与特征函数: PT/数字特征与特征函数.md
+    # - Probability Theory :
+    #   - 随机变量与分布函数: PT/PT.md
+    #   - Order Statistics : PT/order_stats.pdf
+    #   - 数字特征与特征函数: PT/数字特征与特征函数.md
   - Computer Vision :
     - ML-4360:
       - Basic Transformations : CV/ML-4360/BS/lec2.md
@@ -173,10 +173,8 @@ nav:
       - Stereo Reconstruction : CV/ML-4360/SR/lec4.md
       - Probabilistic Graphical Models: CV/ML-4360/PGM/lec5.md
       - Shape-From-X : CV/ML-4360/SFX/lec8.md
-      - Coordinate-Based Networks : CV/ML-4360/CBN/lec9.md
       - Recognition : CV/ML-4360/Recognition/lec10.md
       - Self-Supervised Learning : CV/ML-4360/Self/lec.md
-      - Diverse Topics in Computer Vision : CV/ML-4360/Diverse/lec.md
   # - AI :
     - EECS 498.008 / 598.008:
       - Classification: DL_CV/class/lec.md
@@ -185,16 +183,23 @@ nav:
       - Hardware & Software: DL_CV/Pytorch/lec.md
       - Traning Neural Networks: DL_CV/TN/lec.md
       - Recognision : DL_CV/Recognition/lec10.md
-    - CS231n:
-      - Lecture 8 Recurrent Neural Networks: CS231n/RNN/lec.md
-      - Lecture 9 Attention & Transformers: CS231n/lec9/lec.md
-      - Lecture 10 Video Understanding: CS231n/lec10/lec.md
-      - Lecture 12 Visualizing and Understanding: CS231n/lec12/lec.md
-      # - Lecture 13 Self-Supervised Learning: CS231n/lec13/lec.md
-      # - Lecture 14 Robot Learning: CS231n/lec14/lec.md
-      - Lecture 15 Generative Models: CS231n/lec15/lec.md
-      # - Lecture 16 3D Vision: CS231n/lec16/lec.md
-      
+    # - CS231n:
+    #   - Lecture 8 Recurrent Neural Networks: CS231n/RNN/lec.md
+    #   - Lecture 9 Attention & Transformers: CS231n/lec9/lec.md
+    #   - Lecture 10 Video Understanding: CS231n/lec10/lec.md
+    #   - Lecture 12 Visualizing and Understanding: CS231n/lec12/lec.md
+    #   # - Lecture 13 Self-Supervised Learning: CS231n/lec13/lec.md
+    #   # - Lecture 14 Robot Learning: CS231n/lec14/lec.md
+    #   - Lecture 15 Generative Models: CS231n/lec15/lec.md
+    #   # - Lecture 16 3D Vision: CS231n/lec16/lec.md
+  - My Writings:
+    - High-School Writings:
+      - 大侠: 大侠.md
+      - Invisible: writing/invisible.pdf
+      - Pandora: writing/Pandora.pdf
+      - 一个噩梦: writing/nightmare.pdf
+      - 青鸟: writing/青鸟.pdf
+
 markdown_extensions:
   - pymdownx.arithmatex:            # mathjax
       generic: true
