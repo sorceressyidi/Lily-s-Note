@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://note.lilyarnold.cc/TCS/lec1/Lecture1/">
       
       
-        <link rel="prev" href="../../../RL/PG/PG/">
+        <link rel="prev" href="../../../RL/Eras/">
       
       
         <link rel="next" href="../../lec2/Lecture2/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lecture 1 - Finite Automata - Lily's Notebook</title>
+        <title>Finite Automata - Lily's Notebook</title>
       
     
     
@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,6 +55,8 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -65,8 +67,6 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
-    
-      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-1-finite-automata" class="md-skip">
+        <a href="#finite-automata" class="md-skip">
           跳转至
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 1 - Finite Automata
+              Finite Automata
             
           </span>
         </div>
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -286,6 +286,26 @@
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../RL/Eras/" class="md-tabs__link">
+          
+  
+    
+  
+  RL Learning Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
     
   
   
@@ -305,7 +325,7 @@
   
     
   
-  Computer Science and Related Courses(ZJU)
+  CS Courses (ZJU)
 
         </a>
       </li>
@@ -791,11 +811,72 @@
       
   
   
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../RL/Eras/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RL Learning Notes
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            RL Learning Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
     
     
+      
+        
+      
+        
       
         
       
@@ -817,24 +898,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Computer Science and Related Courses(ZJU)
+    CS Courses (ZJU)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Computer Science and Related Courses(ZJU)
+            CS Courses (ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -877,10 +958,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -891,8 +972,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -917,7 +998,7 @@
           
   
   <span class="md-ellipsis">
-    Lecture 1 - Finite Automata
+    Finite Automata
   </span>
   
 
@@ -928,7 +1009,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Finite Automata
+    Finite Automata
   </span>
   
 
@@ -950,18 +1031,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example :
+  <a href="#motivation-example" class="md-nav__link">
+    Motivation Example
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition :
+  <a href="#formal-definitions" class="md-nav__link">
+    Formal Definitions
   </a>
   
-    <nav class="md-nav" aria-label="Definition :">
+    <nav class="md-nav" aria-label="Formal Definitions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -985,30 +1066,131 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#computable-model" class="md-nav__link">
-    Computable Model
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-finite-automata-dfa" class="md-nav__link">
+    Deterministic Finite Automata (DFA)
   </a>
   
-    <nav class="md-nav" aria-label="Computable Model">
+    <nav class="md-nav" aria-label="Deterministic Finite Automata (DFA)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#finite-automata" class="md-nav__link">
-    Finite Automata
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#non-deterministic-finite-automata" class="md-nav__link">
-    Non-deterministic Finite Automata
+  <a href="#language-acceptance" class="md-nav__link">
+    Language Acceptance
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-properties" class="md-nav__link">
+    Closure Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Closure Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem-closure-under-union" class="md-nav__link">
+    Theorem: Closure under Union
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-deterministic-finite-automata-nfa" class="md-nav__link">
+    Non-deterministic Finite Automata (NFA)
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-deterministic Finite Automata (NFA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance" class="md-nav__link">
+    Acceptance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfa-dfa-equivalence" class="md-nav__link">
+    NFA ↔ DFA Equivalence
+  </a>
+  
+    <nav class="md-nav" aria-label="NFA ↔ DFA Equivalence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subset-construction-nfa-dfa" class="md-nav__link">
+    Subset Construction (NFA → DFA)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-closure-properties" class="md-nav__link">
+    More Closure Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="More Closure Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closure-under-concatenation" class="md-nav__link">
+    Closure under Concatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-under-kleene-star" class="md-nav__link">
+    Closure under Kleene Star
+  </a>
   
 </li>
         
@@ -1036,7 +1218,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - Regular Language
+    Regular Language
   </span>
   
 
@@ -1056,7 +1238,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Context-Free Language
+    Context-Free Language
   </span>
   
 
@@ -1076,7 +1258,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Push-Down-Automata
+    Push-Down Automata
   </span>
   
 
@@ -1096,7 +1278,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - Turing Machine
+    Turing Machine
   </span>
   
 
@@ -1116,7 +1298,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Containments properties of languages
+    Language Properties
   </span>
   
 
@@ -1136,7 +1318,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Decidability
+    Decidability
   </span>
   
 
@@ -1156,7 +1338,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Gödel's Incompleteness Theorems
+    Gödel's Theorems
   </span>
   
 
@@ -1176,7 +1358,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Complexity - Time
+    Time Complexity
   </span>
   
 
@@ -1196,7 +1378,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Complexity - Space
+    Space Complexity
   </span>
   
 
@@ -1261,10 +1443,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1275,8 +1457,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1292,7 +1474,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Introduction
+    Introduction
   </span>
   
 
@@ -1312,7 +1494,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - OS Structure
+    OS Structure
   </span>
   
 
@@ -1332,7 +1514,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Process
+    Process
   </span>
   
 
@@ -1352,7 +1534,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Schedule
+    Scheduling
   </span>
   
 
@@ -1372,7 +1554,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - IPC
+    IPC
   </span>
   
 
@@ -1392,7 +1574,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Thread
+    Thread
   </span>
   
 
@@ -1412,7 +1594,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Synchronization
+    Synchronization
   </span>
   
 
@@ -1432,7 +1614,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Synchronization II
+    Synchronization II
   </span>
   
 
@@ -1452,7 +1634,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Deadlock
+    Deadlock
   </span>
   
 
@@ -1472,7 +1654,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Main Memory
+    Main Memory
   </span>
   
 
@@ -1492,7 +1674,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 11 - Virtual Memory
+    Virtual Memory
   </span>
   
 
@@ -1512,7 +1694,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 12 - Mass Storage
+    Mass Storage
   </span>
   
 
@@ -1532,7 +1714,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 13 -I/O System
+    I/O System
   </span>
   
 
@@ -1552,7 +1734,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 14 - File System
+    File System
   </span>
   
 
@@ -1572,7 +1754,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 15 - OS Security
+    OS Security
   </span>
   
 
@@ -1613,24 +1795,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Anvanced Data Structure and Algorithm Analysis
+    Advanced Data Structures
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Anvanced Data Structure and Algorithm Analysis
+            Advanced Data Structures
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1705,24 +1887,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Analysis
+    Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Analysis
+            Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1736,7 +1918,7 @@
         
   
   <span class="md-ellipsis">
-    backtracking
+    Backtracking
   </span>
   
 
@@ -1756,7 +1938,7 @@
         
   
   <span class="md-ellipsis">
-    Divide and Conquer
+    Divide & Conquer
   </span>
   
 
@@ -1891,6 +2073,18 @@
     
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1905,24 +2099,426 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../assembly/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    x86 Assembly
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            x86 Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数调用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断服务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    General physics II
+    Digital Image Processing
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            General physics II
+            Digital Image Processing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Image & Morphology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/morph/morph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Morphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/filter/filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Transform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/feature/feature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General Physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            General Physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1951,10 +2547,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1965,8 +2561,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2087,10 +2683,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2101,8 +2697,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2243,10 +2839,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2257,8 +2853,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2411,10 +3007,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2425,8 +3021,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -2463,10 +3059,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2477,8 +3073,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -2661,10 +3257,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2675,8 +3271,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -2839,10 +3435,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2853,8 +3449,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -2887,10 +3483,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2901,8 +3497,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3050,18 +3646,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example :
+  <a href="#motivation-example" class="md-nav__link">
+    Motivation Example
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition :
+  <a href="#formal-definitions" class="md-nav__link">
+    Formal Definitions
   </a>
   
-    <nav class="md-nav" aria-label="Definition :">
+    <nav class="md-nav" aria-label="Formal Definitions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3085,30 +3681,131 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#computable-model" class="md-nav__link">
-    Computable Model
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-finite-automata-dfa" class="md-nav__link">
+    Deterministic Finite Automata (DFA)
   </a>
   
-    <nav class="md-nav" aria-label="Computable Model">
+    <nav class="md-nav" aria-label="Deterministic Finite Automata (DFA)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#finite-automata" class="md-nav__link">
-    Finite Automata
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#non-deterministic-finite-automata" class="md-nav__link">
-    Non-deterministic Finite Automata
+  <a href="#language-acceptance" class="md-nav__link">
+    Language Acceptance
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closure-properties" class="md-nav__link">
+    Closure Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Closure Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem-closure-under-union" class="md-nav__link">
+    Theorem: Closure under Union
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-deterministic-finite-automata-nfa" class="md-nav__link">
+    Non-deterministic Finite Automata (NFA)
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-deterministic Finite Automata (NFA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance" class="md-nav__link">
+    Acceptance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfa-dfa-equivalence" class="md-nav__link">
+    NFA ↔ DFA Equivalence
+  </a>
+  
+    <nav class="md-nav" aria-label="NFA ↔ DFA Equivalence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subset-construction-nfa-dfa" class="md-nav__link">
+    Subset Construction (NFA → DFA)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-closure-properties" class="md-nav__link">
+    More Closure Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="More Closure Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closure-under-concatenation" class="md-nav__link">
+    Closure under Concatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closure-under-kleene-star" class="md-nav__link">
+    Closure under Kleene Star
+  </a>
   
 </li>
         
@@ -3132,173 +3829,355 @@
                   
 
 
-<p><font face = "Times New Roman"></p>
-<h1 id="lecture-1-finite-automata">Lecture 1 - Finite Automata<a class="headerlink" href="#lecture-1-finite-automata" title="Permanent link">&para;</a></h1>
-<h2 id="example">Example :<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>Given a weighted graph G :</p>
+<h1 id="finite-automata">Finite Automata<a class="headerlink" href="#finite-automata" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>This lecture introduces the fundamental concepts of <strong>Finite Automata</strong> and <strong>Regular Languages</strong>, which form the foundation of computational theory.</p>
+</div>
+<h2 id="motivation-example">Motivation Example<a class="headerlink" href="#motivation-example" title="Permanent link">&para;</a></h2>
+<p>Given a weighted graph <span class="arithmatex">\(G\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Problem Type</th>
+<th style="text-align: left;">Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Optimization</strong></td>
+<td style="text-align: left;">What's the MST? What's the weight of the MST?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Decision</strong></td>
+<td style="text-align: left;">Does <span class="arithmatex">\(G\)</span> have a spanning tree with weight at most <span class="arithmatex">\(k\)</span>?</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Key Insight: Decision Problems ↔ Languages</p>
 <ul>
-<li>What's the MST?</li>
-<li>What's the weight of the MST?</li>
-<li>Does G have a ST with wieght at most k(k is a given integer)? -- <strong>Decision Problem</strong></li>
+<li><strong>Decision Problem</strong> <span class="arithmatex">\(\Rightarrow\)</span> <strong>A Language</strong></li>
+<li>Given a string <span class="arithmatex">\(w\)</span>, is <span class="arithmatex">\(w \in L = \{\text{encode}(G,k) \mid G \text{ is a graph with ST weight} \leq k\}\)</span>?</li>
+<li>Therefore: <strong>Decision Problem</strong> <span class="arithmatex">\(\Leftrightarrow\)</span> <strong>Language</strong></li>
 </ul>
-<p>Given a string w, is <span class="arithmatex">\(w\in L=\{encode(G,k) | G\ is\ a\ graph,that\ has\ a\ ST\ with\ weight\ at\ most\ k\}\)</span>? </p>
-<ul>
-<li><strong>Decision Problem</strong> <span class="arithmatex">\(\Rightarrow\)</span> <strong>A Laguanage</strong></li>
-<li><strong>A Laguanage</strong> <span class="arithmatex">\(\Rightarrow\)</span> <strong>A Formal Language</strong></li>
-<li>Therefore, a <strong>Decision Problem P</strong>  <span class="arithmatex">\(\Leftrightarrow\)</span> <strong>A Language L</strong></li>
-</ul>
-<h2 id="definition">Definition :<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+</div>
+<hr />
+<h2 id="formal-definitions">Formal Definitions<a class="headerlink" href="#formal-definitions" title="Permanent link">&para;</a></h2>
 <h3 id="alphabet">Alphabet<a class="headerlink" href="#alphabet" title="Permanent link">&para;</a></h3>
-<ul>
-<li>A finite set of symbols</li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Definition</p>
+<p>An <strong>alphabet</strong> <span class="arithmatex">\(\Sigma\)</span> is a finite set of symbols.</p>
+</div>
 <h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<ul>
-<li>A finite sequence of symbols from an alphabet <span class="arithmatex">\(\Sigma\)</span></li>
-<li>concatenation: <span class="arithmatex">\(w_1w_2\)</span></li>
-<li>exponentiation: <span class="arithmatex">\(w^n\)</span></li>
-<li>empty string: <span class="arithmatex">\(e\)</span></li>
-<li>reverse: <span class="arithmatex">\(w^R\)</span></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Definition</p>
+<p>A <strong>string</strong> is a finite sequence of symbols from an alphabet <span class="arithmatex">\(\Sigma\)</span>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Concatenation</td>
+<td style="text-align: left;"><span class="arithmatex">\(w_1 w_2\)</span></td>
+<td style="text-align: left;">Join two strings</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponentiation</td>
+<td style="text-align: left;"><span class="arithmatex">\(w^n\)</span></td>
+<td style="text-align: left;">Repeat string <span class="arithmatex">\(n\)</span> times</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empty string</td>
+<td style="text-align: left;"><span class="arithmatex">\(\varepsilon\)</span></td>
+<td style="text-align: left;">String of length 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reverse</td>
+<td style="text-align: left;"><span class="arithmatex">\(w^R\)</span></td>
+<td style="text-align: left;">Reverse the string</td>
+</tr>
+</tbody>
+</table>
 <h3 id="language">Language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Definition</p>
+<p>A <strong>language</strong> is a set of strings over an alphabet <span class="arithmatex">\(\Sigma\)</span>.</p>
+</div>
+<p><strong>Operations on Languages:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Concatenation</td>
+<td style="text-align: left;"><span class="arithmatex">\(L_1 L_2 = \{w_1 w_2 \mid w_1 \in L_1, w_2 \in L_2\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponentiation</td>
+<td style="text-align: left;"><span class="arithmatex">\(L^n = \{w^n \mid w \in L\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Kleene Star</td>
+<td style="text-align: left;"><span class="arithmatex">\(A^* = \bigcup_{i=0}^{\infty} A^i\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Kleene Plus</td>
+<td style="text-align: left;"><span class="arithmatex">\(A^+ = \bigcup_{i=1}^{\infty} A^i\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Important Distinction</p>
 <ul>
-<li>A set of strings over an alphabet <span class="arithmatex">\(\Sigma\)</span></li>
-<li>concatenation: <span class="arithmatex">\(L_1L_2 = \{w_1w_2 | w_1\in L_1,w_2\in L_2\}\)</span></li>
-<li>exponentiation: <span class="arithmatex">\(L^n = \{w^n | w\in L\}\)</span></li>
-<li><span class="arithmatex">\(A^0 = \{e\}\)</span></li>
-<li><span class="arithmatex">\(A^* = \bigcup_{i=0}^{\infty}A^i\)</span></li>
-<li><span class="arithmatex">\(A^+ = \bigcup_{i=1}^{\infty}A^i\)</span></li>
-<li><span class="arithmatex">\(\Sigma^* = \bigcup_{i=0}^{\infty}\Sigma^i\)</span></li>
-<li><span class="arithmatex">\(\Sigma^+ = \bigcup_{i=1}^{\infty}\Sigma^i\)</span></li>
-<li><span class="arithmatex">\(\Sigma^i = \{w | w\ is\ a\ string\ of\ length\ i\}\)</span></li>
-<li>Language Reverse: <span class="arithmatex">\(L^R = \{w^R | w\in L\}\)</span></li>
-<li><span class="arithmatex">\(\{\}\)</span> vs <span class="arithmatex">\(\{e \}\)</span> : size of <span class="arithmatex">\(\{\}\)</span> is 0, size of <span class="arithmatex">\(\{e\}\)</span> is 1</li>
+<li><span class="arithmatex">\(\{\}\)</span> has size <strong>0</strong> (empty set)</li>
+<li><span class="arithmatex">\(\{\varepsilon\}\)</span> has size <strong>1</strong> (set containing empty string)</li>
 </ul>
-<h3 id="computable-model">Computable Model<a class="headerlink" href="#computable-model" title="Permanent link">&para;</a></h3>
-<h4 id="finite-automata">Finite Automata<a class="headerlink" href="#finite-automata" title="Permanent link">&para;</a></h4>
-<p>A finite automaton is a 5-tuple <span class="arithmatex">\((K,\Sigma,\delta,s,F)\)</span> where:</p>
+</div>
+<hr />
+<h2 id="deterministic-finite-automata-dfa">Deterministic Finite Automata (DFA)<a class="headerlink" href="#deterministic-finite-automata-dfa" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Definition</p>
+<p>A <strong>Deterministic Finite Automaton</strong> is a 5-tuple <span class="arithmatex">\((K, \Sigma, \delta, s, F)\)</span> where:</p>
 <ul>
-<li><span class="arithmatex">\(K\)</span> is a finite set of states</li>
-<li><span class="arithmatex">\(\Sigma\)</span> is an alphabet</li>
-<li><span class="arithmatex">\(\delta:K\times\Sigma\rightarrow K\)</span> is the transition function</li>
-<li><span class="arithmatex">\(s \in K\)</span> is the start state</li>
-<li><span class="arithmatex">\(F\subseteq K\)</span> is the set of accept states</li>
+<li><span class="arithmatex">\(K\)</span> — finite set of <strong>states</strong></li>
+<li><span class="arithmatex">\(\Sigma\)</span> — <strong>alphabet</strong></li>
+<li><span class="arithmatex">\(\delta: K \times \Sigma \rightarrow K\)</span> — <strong>transition function</strong></li>
+<li><span class="arithmatex">\(s \in K\)</span> — <strong>start state</strong></li>
+<li><span class="arithmatex">\(F \subseteq K\)</span> — set of <strong>accept states</strong></li>
 </ul>
-<p>A configuration of an FA is a pair <span class="arithmatex">\((q,w)\)</span> where <span class="arithmatex">\(q\in Q\)</span> and <span class="arithmatex">\(w\in\Sigma^*\)</span> where <span class="arithmatex">\(q\)</span> is the current state and <span class="arithmatex">\(w\)</span> is the remaining input.</p>
+</div>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>A <strong>configuration</strong> of an FA is a pair <span class="arithmatex">\((q, w)\)</span> where:</p>
 <ul>
-<li>yeild in one step: <span class="arithmatex">\((q,w)\vdash_M(q',w')\)</span> if <span class="arithmatex">\(w = aw'\)</span> and <span class="arithmatex">\(\delta(q,a) = q'\)</span></li>
-<li>yeild in zero or more steps: <span class="arithmatex">\((q,w)\vdash_M^*(q',w')\)</span> if <span class="arithmatex">\((q,w)\vdash_M(q_1,w_1)\vdash_M(q_2,w_2)\vdash_M\cdots\vdash_M(q',w')\)</span></li>
+<li><span class="arithmatex">\(q \in K\)</span> is the current state</li>
+<li><span class="arithmatex">\(w \in \Sigma^*\)</span> is the remaining input</li>
 </ul>
-<p>M accepts a language L if (two conditions):</p>
+<p><strong>Transition Relations:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\((q, w) \vdash_M (q', w')\)</span></td>
+<td style="text-align: left;">Yield in <strong>one step</strong>: <span class="arithmatex">\(w = aw'\)</span> and <span class="arithmatex">\(\delta(q, a) = q'\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\((q, w) \vdash_M^* (q', w')\)</span></td>
+<td style="text-align: left;">Yield in <strong>zero or more steps</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="language-acceptance">Language Acceptance<a class="headerlink" href="#language-acceptance" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Definition: M accepts language L</p>
+<p>A DFA <span class="arithmatex">\(M\)</span> <strong>accepts</strong> a language <span class="arithmatex">\(L\)</span> if:</p>
+<ol>
+<li><span class="arithmatex">\(M\)</span> accepts <strong>all</strong> strings in <span class="arithmatex">\(L\)</span></li>
+<li><span class="arithmatex">\(M\)</span> rejects <strong>all</strong> strings not in <span class="arithmatex">\(L\)</span></li>
+</ol>
+<div class="arithmatex">\[L(M) = \{w \mid M \text{ accepts } w\}\]</div>
+<p><strong>Important:</strong> <span class="arithmatex">\(M\)</span> accepts a <strong>unique</strong> language!</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Regular Language</p>
+<p>A language is <strong>regular</strong> if it is accepted by some finite automaton.</p>
+</div>
+<hr />
+<h2 id="closure-properties">Closure Properties<a class="headerlink" href="#closure-properties" title="Permanent link">&para;</a></h2>
+<h3 id="theorem-closure-under-union">Theorem: Closure under Union<a class="headerlink" href="#theorem-closure-under-union" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are regular languages, so is <span class="arithmatex">\(A \cup B\)</span>.</p>
+</div>
+<details class="abstract">
+<summary>Proof (Product Construction)</summary>
+<p>Let <span class="arithmatex">\(M_A = (K_A, \Sigma, \delta_A, s_A, F_A)\)</span> and <span class="arithmatex">\(M_B = (K_B, \Sigma, \delta_B, s_B, F_B)\)</span> be DFAs accepting <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>.</p>
+<p>Construct <span class="arithmatex">\(M\)</span> for <span class="arithmatex">\(A \cup B\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">States</td>
+<td style="text-align: left;"><span class="arithmatex">\(K = K_A \times K_B\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Start</td>
+<td style="text-align: left;"><span class="arithmatex">\(s = (s_A, s_B)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Accept</td>
+<td style="text-align: left;"><span class="arithmatex">\(F = (F_A \times K_B) \cup (K_A \times F_B)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transition</td>
+<td style="text-align: left;"><span class="arithmatex">\(\delta((q_A, q_B), a) = (\delta_A(q_A, a), \delta_B(q_B, a))\)</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<hr />
+<h2 id="non-deterministic-finite-automata-nfa">Non-deterministic Finite Automata (NFA)<a class="headerlink" href="#non-deterministic-finite-automata-nfa" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Key Differences from DFA</p>
 <ul>
-<li>M accepts all strings in L</li>
-<li>And M rejects all strings not in L</li>
-<li>M accepts a <strong>UNIQUE</strong> Language</li>
-<li><span class="arithmatex">\(L(M) = \{w | M \ accepts\ w\}\)</span></li>
+<li>Next state is <strong>not uniquely determined</strong></li>
+<li>Allows <strong><span class="arithmatex">\(\varepsilon\)</span>-transitions</strong>: <span class="arithmatex">\(\delta(q, \varepsilon)\)</span></li>
 </ul>
-<p>A language is regular if it is accepted by a finite automaton.</p>
-<h5 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h5>
-<p>If A and B are regular languages, so is <span class="arithmatex">\(A\cup B\)</span>.
-Proof:</p>
+</div>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p>A <strong>Non-deterministic Finite Automaton</strong> is a 5-tuple <span class="arithmatex">\((K, \Sigma, \Delta, s, F)\)</span> where:</p>
 <ul>
-<li>Let <span class="arithmatex">\(M_A\)</span> and <span class="arithmatex">\(M_B\)</span> be FAs that accept A and B respectively.</li>
-<li><span class="arithmatex">\(M_A = (K_A,\Sigma,\delta_A,s_A,F_A)\)</span></li>
-<li><span class="arithmatex">\(M_B = (K_B,\Sigma,\delta_B,s_B,F_B)\)</span></li>
-<li>Construct a new FA <span class="arithmatex">\(M\)</span> that accepts <span class="arithmatex">\(A\cup B\)</span>:</li>
-<li><span class="arithmatex">\(K_v = K_A\times K_B\)</span></li>
-<li><span class="arithmatex">\(s_v = (s_A,s_B)\)</span></li>
-<li><span class="arithmatex">\(F_v =(F_A\times K_B)\cup(K_A\times F_B)\)</span></li>
-<li><span class="arithmatex">\(\delta_v((q_A,q_B),a) = (\delta_A(q_A,a),\delta_B(q_B,a))\)</span> for any <span class="arithmatex">\((q_A,q_B)\in K_A\times K_B\)</span> and <span class="arithmatex">\(a\in\Sigma\)</span></li>
+<li><span class="arithmatex">\(K\)</span> — finite set of states</li>
+<li><span class="arithmatex">\(\Sigma\)</span> — alphabet  </li>
+<li><span class="arithmatex">\(\Delta \subseteq K \times (\Sigma \cup \{\varepsilon\}) \times K\)</span> — <strong>transition relation</strong></li>
+<li><span class="arithmatex">\(s \in K\)</span> — start state</li>
+<li><span class="arithmatex">\(F \subseteq K\)</span> — accept states</li>
 </ul>
-<h4 id="non-deterministic-finite-automata">Non-deterministic Finite Automata<a class="headerlink" href="#non-deterministic-finite-automata" title="Permanent link">&para;</a></h4>
+<h3 id="acceptance">Acceptance<a class="headerlink" href="#acceptance" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">NFA Acceptance</p>
+<p><span class="arithmatex">\(M\)</span> on input <span class="arithmatex">\(w\)</span> <strong>accepts</strong> if <span class="arithmatex">\((s, w) \vdash_M^* (q, \varepsilon)\)</span> for some <span class="arithmatex">\(q \in F\)</span>.</p>
+</div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Construct NFA</p>
+<p>Language: <span class="arithmatex">\(\{w \mid w \in \{a,b\}^*, \text{the second symbol from the end is } b\}\)</span></p>
+<p><img alt="NFA Example" src="../8.png" /></p>
+</div>
+<hr />
+<h2 id="nfa-dfa-equivalence">NFA ↔ DFA Equivalence<a class="headerlink" href="#nfa-dfa-equivalence" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Theorem</p>
 <ul>
-<li>next state is not uniquely determined by the current state and the input symbol</li>
-<li>e-transitions: <span class="arithmatex">\(\delta(q,e)\)</span></li>
+<li>Given a NFA <span class="arithmatex">\(M\)</span>, there exists a DFA <span class="arithmatex">\(M'\)</span> such that <span class="arithmatex">\(L(M) = L(M')\)</span></li>
+<li>Given a DFA <span class="arithmatex">\(M\)</span>, there exists a NFA <span class="arithmatex">\(M'\)</span> such that <span class="arithmatex">\(L(M) = L(M')\)</span></li>
 </ul>
-<p>A NFA is a 5-tuple <span class="arithmatex">\((K,\Sigma,\Delta,s,F)\)</span> where:</p>
+</div>
+<h3 id="subset-construction-nfa-dfa">Subset Construction (NFA → DFA)<a class="headerlink" href="#subset-construction-nfa-dfa" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Construction</p>
+<p>Given NFA <span class="arithmatex">\(M = (K, \Sigma, \Delta, s, F)\)</span>, construct DFA <span class="arithmatex">\(M' = (K', \Sigma, \delta, s', F')\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(K'\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2^K\)</span> (power set of <span class="arithmatex">\(K\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(s'\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(E(s)\)</span> where <span class="arithmatex">\(E(q) = \{p \in K : (q, \varepsilon) \vdash_M^* (p, \varepsilon)\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(F'\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\{Q \in K' \mid Q \cap F \neq \emptyset\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\delta(Q, a)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\bigcup_{q \in Q} \bigcup_{p: (q,a,p) \in \Delta} E(p)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<h2 id="more-closure-properties">More Closure Properties<a class="headerlink" href="#more-closure-properties" title="Permanent link">&para;</a></h2>
+<h3 id="closure-under-concatenation">Closure under Concatenation<a class="headerlink" href="#closure-under-concatenation" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are regular languages, so is <span class="arithmatex">\(AB\)</span>.</p>
+</div>
+<p><img alt="Concatenation Construction" src="../9.png" /></p>
+<details class="abstract">
+<summary>Construction Details</summary>
 <ul>
-<li>K is a finite set of states</li>
-<li><span class="arithmatex">\(\Sigma\)</span> is an alphabet</li>
-<li><span class="arithmatex">\(\Delta:K\times(\Sigma\cup\{e\})\times K\)</span> is the transition relation</li>
-<li><span class="arithmatex">\(s\in K\)</span> is the start state</li>
-<li><span class="arithmatex">\(F\subseteq K\)</span> is the set of accept states</li>
+<li><span class="arithmatex">\(K = K_A \cup K_B\)</span></li>
+<li><span class="arithmatex">\(s = s_A\)</span></li>
+<li><span class="arithmatex">\(F = F_B\)</span></li>
+<li>Add <span class="arithmatex">\(\varepsilon\)</span>-transitions from <span class="arithmatex">\(F_A\)</span> to <span class="arithmatex">\(s_B\)</span></li>
 </ul>
-<p><strong>Acceptance of a string by a NFA</strong>:</p>
-<ul>
-<li>M on input w accepts if <span class="arithmatex">\((s,w)\vdash_M^*(q,e)\)</span> for some <span class="arithmatex">\(q\in F\)</span></li>
-<li>M accepts a language L if M accepts every string w in L</li>
-</ul>
-<p><strong>Example</strong>:
-Construct a NFA that accepts the language <span class="arithmatex">\(\{w | w \in \{a,b\}^*\)</span>,the second symbol from the end of w is b<span class="arithmatex">\(\}\)</span></p>
-<p><img alt="8" src="../8.png" /></p>
-<h5 id="theorem_1">Theorem<a class="headerlink" href="#theorem_1" title="Permanent link">&para;</a></h5>
-<ul>
-<li>Given a NFA M, there exists a DFA M' such that <span class="arithmatex">\(L(M) = L(M')\)</span>.</li>
-<li>
-<p>Given a DFA M, there exists a NFA M' such that <span class="arithmatex">\(L(M) = L(M')\)</span>.</p>
-</li>
-<li>
-<p>DFA M simulates "tree-like" computation of NFA M.</p>
-</li>
-</ul>
-<blockquote>
-<p>A NFA <span class="arithmatex">\(M = (K,\Sigma,\Delta,s,F)\)</span> can be simulated by a DFA <span class="arithmatex">\(M' = (K',\Sigma,\delta,s',F')\)</span> where:</p>
-<ul>
-<li><span class="arithmatex">\(K' = 2^K\)</span> </li>
-<li>
-<p><span class="arithmatex">\(2^K = \{q_1,q_2,\cdots,q_n,\{q_1\},\{q_2\},\cdots,\{q_n\},\{q_1,q_2\},\cdots,\{q_1,q_2,\cdots,q_n\}\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(F' = \{q\in K' | q\cap F \neq \emptyset\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta(q,a) = \bigcup_{p\in q}\Delta(p,a)\)</span> for any <span class="arithmatex">\(q\in K'\)</span> and <span class="arithmatex">\(a\in\Sigma\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(s' = E(s)\)</span> where <span class="arithmatex">\(\forall q \in K, E(q)=\{p \in K:(q,e)\vdash_M^*(p,e)\}\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta(Q,a) = \bigcup_{q\in Q}\bigcup_{p:(q,a,p)\in\Delta}E(p)\)</span> for any <span class="arithmatex">\(Q\subseteq K'\)</span> and <span class="arithmatex">\(a\in\Sigma\)</span></p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>A language is regular if and only if it is accepted by a NFA.</li>
-</ul>
-<h5 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">&para;</a></h5>
-<ul>
-<li>If A and B are regular languages, so is <span class="arithmatex">\(AB\)</span>.</li>
-</ul>
-<p><img alt="9" src="../9.png" /></p>
-<blockquote>
-<p>Let <span class="arithmatex">\(M_A\)</span> and <span class="arithmatex">\(M_B\)</span> be FAs that accept A and B respectively.</p>
-<p><span class="arithmatex">\(M_A = (K_A,\Sigma,\delta_A,s_A,F_A)\)</span></p>
-<p><span class="arithmatex">\(M_B = (K_B,\Sigma,\delta_B,s_B,F_B)\)</span></p>
-<p>Construct a new FA <span class="arithmatex">\(M\)</span> that accepts <span class="arithmatex">\(A\cdot B\)</span>:</p>
-<p><span class="arithmatex">\(M = (K,\Sigma,\delta,s,F)\)</span> where</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(K = K_A\bigcup K_B\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(s = s_A\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(F = F_B\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\delta(q,a) = \delta_A(q,a)\bigcup\delta_B(q,a)\bigcup\{(q,e,s_B):q\in F_A\}\)</span></p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>If A is a regular language, so is <span class="arithmatex">\(A^+\)</span>.</li>
-</ul>
-<p><img alt="10" src="../10.png" /></p>
-<ul>
-<li>If A is a regular language, so is <span class="arithmatex">\(A^*\)</span>.</li>
-</ul>
-<p><img alt="11" src="../11.png" /></p>
+</details>
+<h3 id="closure-under-kleene-star">Closure under Kleene Star<a class="headerlink" href="#closure-under-kleene-star" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(A\)</span> is a regular language, so is <span class="arithmatex">\(A^*\)</span>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Construction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A^+\)</span></td>
+<td style="text-align: left;"><img alt="Kleene Plus" src="../10.png" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A^*\)</span></td>
+<td style="text-align: left;"><img alt="Kleene Star" src="../11.png" /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Summary</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DFA</td>
+<td style="text-align: left;">Deterministic, unique next state</td>
+</tr>
+<tr>
+<td style="text-align: left;">NFA</td>
+<td style="text-align: left;">Non-deterministic, multiple possible paths</td>
+</tr>
+<tr>
+<td style="text-align: left;">Regular Language</td>
+<td style="text-align: left;">Accepted by some FA</td>
+</tr>
+<tr>
+<td style="text-align: left;">NFA = DFA</td>
+<td style="text-align: left;">Same expressive power</td>
+</tr>
+<tr>
+<td style="text-align: left;">Closure</td>
+<td style="text-align: left;">Union, Concatenation, Kleene Star</td>
+</tr>
+</tbody>
+</table>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -3383,7 +4262,7 @@ Construct a NFA that accepts the language <span class="arithmatex">\(\{w | w \in
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../../RL/PG/PG/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Policy Gradient Methods">
+          <a href="../../../RL/Eras/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 🧠 RL Learning Notes: A Math-Focused Journey">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3393,20 +4272,20 @@ Construct a NFA that accepts the language <span class="arithmatex">\(\{w | w \in
                 上一页
               </span>
               <div class="md-ellipsis">
-                Policy Gradient Methods
+                🧠 RL Learning Notes: A Math-Focused Journey
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../lec2/Lecture2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 2 - Regular Language">
+          <a href="../../lec2/Lecture2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Regular Language">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 2 - Regular Language
+                Regular Language
               </div>
             </div>
             <div class="md-footer__button md-icon">

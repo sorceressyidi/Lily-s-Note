@@ -24,7 +24,7 @@
     
     
       
-        <title>Lecture 5 - IPC - Lily's Notebook</title>
+        <title>IPC - Lily's Notebook</title>
       
     
     
@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,6 +55,8 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -65,8 +67,6 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
-    
-      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-5-inter-process-communication" class="md-skip">
+        <a href="#inter-process-communication" class="md-skip">
           跳转至
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 5 - IPC
+              IPC
             
           </span>
         </div>
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -286,6 +286,26 @@
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../RL/Eras/" class="md-tabs__link">
+          
+  
+    
+  
+  RL Learning Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
     
   
   
@@ -305,7 +325,7 @@
   
     
   
-  Computer Science and Related Courses(ZJU)
+  CS Courses (ZJU)
 
         </a>
       </li>
@@ -791,11 +811,72 @@
       
   
   
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../RL/Eras/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RL Learning Notes
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            RL Learning Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
     
     
+      
+        
+      
+        
       
         
       
@@ -817,24 +898,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Computer Science and Related Courses(ZJU)
+    CS Courses (ZJU)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Computer Science and Related Courses(ZJU)
+            CS Courses (ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -875,10 +956,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -889,8 +970,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -906,7 +987,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Finite Automata
+    Finite Automata
   </span>
   
 
@@ -926,7 +1007,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - Regular Language
+    Regular Language
   </span>
   
 
@@ -946,7 +1027,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Context-Free Language
+    Context-Free Language
   </span>
   
 
@@ -966,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Push-Down-Automata
+    Push-Down Automata
   </span>
   
 
@@ -986,7 +1067,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - Turing Machine
+    Turing Machine
   </span>
   
 
@@ -1006,7 +1087,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Containments properties of languages
+    Language Properties
   </span>
   
 
@@ -1026,7 +1107,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Decidability
+    Decidability
   </span>
   
 
@@ -1046,7 +1127,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Gödel's Incompleteness Theorems
+    Gödel's Theorems
   </span>
   
 
@@ -1066,7 +1147,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Complexity - Time
+    Time Complexity
   </span>
   
 
@@ -1086,7 +1167,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Complexity - Space
+    Space Complexity
   </span>
   
 
@@ -1153,10 +1234,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1167,8 +1248,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1184,7 +1265,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Introduction
+    Introduction
   </span>
   
 
@@ -1204,7 +1285,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - OS Structure
+    OS Structure
   </span>
   
 
@@ -1224,7 +1305,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Process
+    Process
   </span>
   
 
@@ -1244,7 +1325,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Schedule
+    Scheduling
   </span>
   
 
@@ -1273,7 +1354,7 @@
           
   
   <span class="md-ellipsis">
-    Lecture 5 - IPC
+    IPC
   </span>
   
 
@@ -1284,7 +1365,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - IPC
+    IPC
   </span>
   
 
@@ -1307,36 +1388,36 @@
       
         <li class="md-nav__item">
   <a href="#message-passing" class="md-nav__link">
-    Message Passing
+    消息传递（Message Passing）
   </a>
   
-    <nav class="md-nav" aria-label="Message Passing">
+    <nav class="md-nav" aria-label="消息传递（Message Passing）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#direct-communication" class="md-nav__link">
-    Direct Communication
+    直接通信（Direct Communication）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#indirect-communication" class="md-nav__link">
-    Indirect Communication
+    间接通信（Indirect Communication）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#synchronization" class="md-nav__link">
-    Synchronization
+    同步（Synchronization）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#buffering" class="md-nav__link">
-    Buffering
+    缓冲（Buffering）
   </a>
   
 </li>
@@ -1348,36 +1429,15 @@
       
         <li class="md-nav__item">
   <a href="#shared-memory" class="md-nav__link">
-    Shared Memory
+    共享内存（Shared Memory）
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signals" class="md-nav__link">
-    Signals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipes" class="md-nav__link">
-    Pipes
-  </a>
-  
-    <nav class="md-nav" aria-label="Pipes">
+    <nav class="md-nav" aria-label="共享内存（Shared Memory）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordinary-pipes" class="md-nav__link">
-    Ordinary pipes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#named-pipes" class="md-nav__link">
-    Named pipes
+  <a href="#_1" class="md-nav__link">
+    相关系统调用
   </a>
   
 </li>
@@ -1388,23 +1448,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#client-server-communication" class="md-nav__link">
-    Client-Server Communication
+  <a href="#signals" class="md-nav__link">
+    信号（Signals）
   </a>
   
-    <nav class="md-nav" aria-label="Client-Server Communication">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    管道（Pipes）
+  </a>
+  
+    <nav class="md-nav" aria-label="管道（Pipes）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sockets" class="md-nav__link">
-    Sockets
+  <a href="#ordinary-pipes" class="md-nav__link">
+    普通管道（Ordinary Pipes）
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rpc-rmi" class="md-nav__link">
-    RPC, RMI......
+  <a href="#named-pipes" class="md-nav__link">
+    命名管道（Named Pipes）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-grep-foo" class="md-nav__link">
+    管道示例：ls | grep foo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-client-server-communication" class="md-nav__link">
+    客户端-服务器通信（Client-Server Communication）
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端-服务器通信（Client-Server Communication）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    套接字（Sockets）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcrmi" class="md-nav__link">
+    RPC、RMI 等
   </a>
   
 </li>
@@ -1433,7 +1534,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Thread
+    Thread
   </span>
   
 
@@ -1453,7 +1554,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Synchronization
+    Synchronization
   </span>
   
 
@@ -1473,7 +1574,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Synchronization II
+    Synchronization II
   </span>
   
 
@@ -1493,7 +1594,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Deadlock
+    Deadlock
   </span>
   
 
@@ -1513,7 +1614,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Main Memory
+    Main Memory
   </span>
   
 
@@ -1533,7 +1634,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 11 - Virtual Memory
+    Virtual Memory
   </span>
   
 
@@ -1553,7 +1654,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 12 - Mass Storage
+    Mass Storage
   </span>
   
 
@@ -1573,7 +1674,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 13 -I/O System
+    I/O System
   </span>
   
 
@@ -1593,7 +1694,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 14 - File System
+    File System
   </span>
   
 
@@ -1613,7 +1714,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 15 - OS Security
+    OS Security
   </span>
   
 
@@ -1654,24 +1755,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Anvanced Data Structure and Algorithm Analysis
+    Advanced Data Structures
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Anvanced Data Structure and Algorithm Analysis
+            Advanced Data Structures
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1746,24 +1847,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Analysis
+    Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Analysis
+            Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1777,7 +1878,7 @@
         
   
   <span class="md-ellipsis">
-    backtracking
+    Backtracking
   </span>
   
 
@@ -1797,7 +1898,7 @@
         
   
   <span class="md-ellipsis">
-    Divide and Conquer
+    Divide & Conquer
   </span>
   
 
@@ -1932,6 +2033,18 @@
     
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1946,24 +2059,426 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../assembly/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    x86 Assembly
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            x86 Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数调用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断服务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    General physics II
+    Digital Image Processing
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            General physics II
+            Digital Image Processing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Image & Morphology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/morph/morph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Morphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/filter/filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Transform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/feature/feature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General Physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            General Physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1992,10 +2507,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2006,8 +2521,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2128,10 +2643,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2142,8 +2657,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2284,10 +2799,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2298,8 +2813,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2452,10 +2967,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2466,8 +2981,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -2504,10 +3019,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2518,8 +3033,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -2702,10 +3217,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2716,8 +3231,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -2880,10 +3395,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2894,8 +3409,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -2928,10 +3443,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2942,8 +3457,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3092,36 +3607,36 @@
       
         <li class="md-nav__item">
   <a href="#message-passing" class="md-nav__link">
-    Message Passing
+    消息传递（Message Passing）
   </a>
   
-    <nav class="md-nav" aria-label="Message Passing">
+    <nav class="md-nav" aria-label="消息传递（Message Passing）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#direct-communication" class="md-nav__link">
-    Direct Communication
+    直接通信（Direct Communication）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#indirect-communication" class="md-nav__link">
-    Indirect Communication
+    间接通信（Indirect Communication）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#synchronization" class="md-nav__link">
-    Synchronization
+    同步（Synchronization）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#buffering" class="md-nav__link">
-    Buffering
+    缓冲（Buffering）
   </a>
   
 </li>
@@ -3133,36 +3648,15 @@
       
         <li class="md-nav__item">
   <a href="#shared-memory" class="md-nav__link">
-    Shared Memory
+    共享内存（Shared Memory）
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signals" class="md-nav__link">
-    Signals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipes" class="md-nav__link">
-    Pipes
-  </a>
-  
-    <nav class="md-nav" aria-label="Pipes">
+    <nav class="md-nav" aria-label="共享内存（Shared Memory）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordinary-pipes" class="md-nav__link">
-    Ordinary pipes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#named-pipes" class="md-nav__link">
-    Named pipes
+  <a href="#_1" class="md-nav__link">
+    相关系统调用
   </a>
   
 </li>
@@ -3173,23 +3667,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#client-server-communication" class="md-nav__link">
-    Client-Server Communication
+  <a href="#signals" class="md-nav__link">
+    信号（Signals）
   </a>
   
-    <nav class="md-nav" aria-label="Client-Server Communication">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    管道（Pipes）
+  </a>
+  
+    <nav class="md-nav" aria-label="管道（Pipes）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sockets" class="md-nav__link">
-    Sockets
+  <a href="#ordinary-pipes" class="md-nav__link">
+    普通管道（Ordinary Pipes）
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rpc-rmi" class="md-nav__link">
-    RPC, RMI......
+  <a href="#named-pipes" class="md-nav__link">
+    命名管道（Named Pipes）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-grep-foo" class="md-nav__link">
+    管道示例：ls | grep foo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-client-server-communication" class="md-nav__link">
+    客户端-服务器通信（Client-Server Communication）
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端-服务器通信（Client-Server Communication）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    套接字（Sockets）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpcrmi" class="md-nav__link">
+    RPC、RMI 等
   </a>
   
 </li>
@@ -3214,142 +3749,272 @@
                   
 
 
-<p><font face = "Times New Roman"></p>
-<h1 id="lecture-5-inter-process-communication">Lecture 5 - Inter-Process Communication<a class="headerlink" href="#lecture-5-inter-process-communication" title="Permanent link">&para;</a></h1>
+<h1 id="inter-process-communication">进程间通信（Inter-Process Communication）<a class="headerlink" href="#inter-process-communication" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">概述</p>
+<p>本讲介绍进程间通信（IPC）的主要机制，包括消息传递、共享内存、信号、管道和客户端-服务器通信。</p>
+</div>
 <p><img alt="1" src="../1.png" /></p>
-<h2 id="message-passing">Message Passing<a class="headerlink" href="#message-passing" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="message-passing">消息传递（Message Passing）<a class="headerlink" href="#message-passing" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">性能开销</p>
+<p>消息传递的开销较高：<strong>每次通信操作都需要一次系统调用</strong>。</p>
+<p>为什么需要系统调用？因为需要从用户态切换到内核态来访问内核的数据结构。</p>
+</div>
+<p>需要实现两个基本操作：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">操作</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>send(Q, message)</code></td>
+<td style="text-align: left;">向进程 Q 发送消息</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recv(Q, message)</code></td>
+<td style="text-align: left;">从进程 Q 接收消息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="direct-communication">直接通信（Direct Communication）<a class="headerlink" href="#direct-communication" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">特点</p>
+<p>进程必须<strong>显式命名</strong>对方：</p>
 <ul>
-<li>high-overhead: one syscall per communication operation</li>
+<li><code>send(P, message)</code> – 向进程 P 发送消息</li>
+<li><code>receive(Q, message)</code> – 从进程 Q 接收消息</li>
+<li>每对进程之间<strong>恰好存在一条链接</strong></li>
 </ul>
-<blockquote>
-<p>Why syscall? Because we need to switch from user mode to kernel mode to access the kernel's data structures.</p>
-</blockquote>
-<p>We have to implement two calls</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">缺点</p>
+<p>需要建立大量链接，扩展性差。</p>
+</div>
+<h3 id="indirect-communication">间接通信（Indirect Communication）<a class="headerlink" href="#indirect-communication" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">邮箱机制</p>
+<p>消息通过<strong>邮箱（mailbox）</strong>或<strong>端口（port）</strong> 进行收发：</p>
 <ul>
-<li>send(Q, message): send a message to process Q</li>
-<li>recv(Q, message): recv a message from process Q</li>
+<li>每个邮箱有唯一标识符</li>
+<li>进程只有<strong>共享同一邮箱</strong>时才能通信</li>
 </ul>
-<h3 id="direct-communication">Direct Communication<a class="headerlink" href="#direct-communication" title="Permanent link">&para;</a></h3>
-<p>Processes must name each other explicitly:</p>
-<ul>
-<li>send (P, message) – send a message to process P</li>
-<li>receive(Q, message) – receive a message from process Q</li>
-<li>Between each pair there exists exactly one link</li>
-</ul>
-<p>Drawbacks:</p>
-<ul>
-<li>Need so many links</li>
-</ul>
-<h3 id="indirect-communication">Indirect Communication<a class="headerlink" href="#indirect-communication" title="Permanent link">&para;</a></h3>
-<p>Messages are directed and received from mailboxes (also referred to as ports)</p>
-<ul>
-<li>Each mailbox has a unique id</li>
-<li>
-<p>Processes can communicate only if they <strong>share a mailbox</strong></p>
-</li>
-<li>
-<p>Link established only if processes share a common mailbox</p>
-</li>
-<li>A link may be associated with many processes</li>
-<li>Each pair of processes may share several communication links</li>
-<li>Link may be unidirectional or bi-directional</li>
-</ul>
-<h3 id="synchronization">Synchronization<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h3>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">链接建立</td>
+<td style="text-align: left;">仅当进程共享公共邮箱时建立</td>
+</tr>
+<tr>
+<td style="text-align: left;">关联性</td>
+<td style="text-align: left;">一条链接可关联多个进程</td>
+</tr>
+<tr>
+<td style="text-align: left;">多链接</td>
+<td style="text-align: left;">每对进程可共享多条通信链接</td>
+</tr>
+<tr>
+<td style="text-align: left;">方向性</td>
+<td style="text-align: left;">链接可以是单向或双向的</td>
+</tr>
+</tbody>
+</table>
+<h3 id="synchronization">同步（Synchronization）<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h3>
 <p><img alt="2" src="../2.png" /></p>
-<h3 id="buffering">Buffering<a class="headerlink" href="#buffering" title="Permanent link">&para;</a></h3>
-<p>Queue of messages attached to the link.</p>
-<p>Implemented in one of three ways</p>
+<div class="admonition note">
+<p class="admonition-title">同步方式</p>
+<p>消息传递可以是<strong>阻塞（同步）</strong> 或<strong>非阻塞（异步）</strong> 的。</p>
+</div>
+<h3 id="buffering">缓冲（Buffering）<a class="headerlink" href="#buffering" title="Permanent link">&para;</a></h3>
+<p>消息队列附加在链接上，有三种实现方式：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">容量类型</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">发送者行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>零容量</strong></td>
+<td style="text-align: left;">链接上不排队任何消息</td>
+<td style="text-align: left;">必须等待接收者</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>有界容量</strong></td>
+<td style="text-align: left;">有限长度，最多 n 条消息</td>
+<td style="text-align: left;">链接满时必须等待</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>无界容量</strong></td>
+<td style="text-align: left;">无限长度</td>
+<td style="text-align: left;">永不等待</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="shared-memory">共享内存（Shared Memory）<a class="headerlink" href="#shared-memory" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">工作原理</p>
 <ol>
-<li>Zero capacity – no messages are queued on a link. Sender must wait for receiver</li>
-<li>Bounded capacity – finite length of n messages. Sender must wait if link full</li>
-<li>Unbounded capacity – infinite length. Sender never waits</li>
+<li>一个进程创建共享内存段</li>
+<li>其他进程将其"附加"到自己的地址空间</li>
+<li>进程通过读写共享内存区域进行通信</li>
 </ol>
-<h2 id="shared-memory">Shared Memory<a class="headerlink" href="#shared-memory" title="Permanent link">&para;</a></h2>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">安全注意</p>
+<p>这实际上与多道程序设计的核心思想——<strong>内存保护</strong>相违背！</p>
 <ul>
-<li>One process creates a shared memory segment</li>
-<li>Processes can then “attach” it to their address spaces</li>
+<li>进程自行负责协调，不互相干扰</li>
+<li><strong>操作系统完全不参与</strong></li>
 </ul>
-<blockquote>
-<p>Note that this is really contrary to the memory protection idea central to multi-programming!</p>
-</blockquote>
-<ul>
-<li>Processes communicate by reading/writing to the shared memory region</li>
-</ul>
+</div>
+<h3 id="_1">相关系统调用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">shmget</span><span class="p">()</span><span class="w">   </span><span class="c1">// 创建/获取共享内存段</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">shmat</span><span class="p">()</span><span class="w">    </span><span class="c1">// 附加共享内存到进程地址空间</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">shmdt</span><span class="p">()</span><span class="w">    </span><span class="c1">// 分离共享内存</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">shmctl</span><span class="p">()</span><span class="w">   </span><span class="c1">// 控制共享内存段</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">缺点</p>
 <ol>
-<li>They are responsible for not stepping on each other’s toes</li>
-<li>The OS is not involved at all</li>
+<li>进程必须<strong>自行协调</strong>对共享内存的访问</li>
+<li><strong>无法防护其他进程</strong>：一旦其他进程获得共享内存段的 ID，就可以附加并读写它</li>
 </ol>
-<p><code>shmget()</code>, <code>shmat()</code>, <code>shmdt()</code>, <code>shmctl()</code></p>
-<ul>
-<li>Disadvantages
-  1. Processes must coordinate access to shared memory
-  2. No protection <strong>from other processes</strong>: Once another process has the <strong>id of the shared memory segment</strong>, it can attach to it and read/write to it</li>
-</ul>
-<h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>In Lecture 4, we discussed how a process can be terminated by another process. Signals are a way to do this.</p>
-</blockquote>
-<h2 id="pipes">Pipes<a class="headerlink" href="#pipes" title="Permanent link">&para;</a></h2>
-<h3 id="ordinary-pipes">Ordinary pipes<a class="headerlink" href="#ordinary-pipes" title="Permanent link">&para;</a></h3>
-<p>Cannot be accessed from outside the process that created it. </p>
-<blockquote>
-<p>Typically, a parent process creates a pipe and uses it to communicate with a child process that it created.</p>
-</blockquote>
+</div>
+<hr />
+<h2 id="signals">信号（Signals）<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">回顾</p>
+<p>在 Lecture 4 中，我们讨论了一个进程如何被另一个进程终止。信号就是实现这一功能的机制。</p>
+</div>
+<hr />
+<h2 id="pipes">管道（Pipes）<a class="headerlink" href="#pipes" title="Permanent link">&para;</a></h2>
+<h3 id="ordinary-pipes">普通管道（Ordinary Pipes）<a class="headerlink" href="#ordinary-pipes" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">特点</p>
+<p>普通管道<strong>无法从创建它的进程外部访问</strong>。</p>
+<p>通常，父进程创建管道，用于与其创建的子进程通信。</p>
+</div>
 <p><img alt="3" src="../3.png" /></p>
-<h3 id="named-pipes">Named pipes<a class="headerlink" href="#named-pipes" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Named Pipes are more powerful than ordinary pipes</li>
-<li>Communication is bidirectional</li>
-<li>No parent-child relationship is necessary between the communicating processes</li>
-<li>Several processes can use the named pipe for communication</li>
-<li>Provided on both UNIX and Windows systems</li>
-</ul>
+<h3 id="named-pipes">命名管道（Named Pipes）<a class="headerlink" href="#named-pipes" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">命名管道的优势</p>
+<p>命名管道比普通管道更强大：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">双向通信</td>
+<td style="text-align: left;">支持双向数据传输</td>
+</tr>
+<tr>
+<td style="text-align: left;">无亲缘关系要求</td>
+<td style="text-align: left;">通信进程之间不需要父子关系</td>
+</tr>
+<tr>
+<td style="text-align: left;">多进程支持</td>
+<td style="text-align: left;">多个进程可使用同一命名管道通信</td>
+</tr>
+<tr>
+<td style="text-align: left;">跨平台</td>
+<td style="text-align: left;">UNIX 和 Windows 系统都提供支持</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><img alt="4" src="../4.png" /></p>
-<p><code>ls | grep foo</code></p>
-<blockquote>
-<p>What will shell do ?</p>
-</blockquote>
-<ol>
-<li><code>fork()</code> - Shell 首先创建一个子进程来执行 ls 命令。</li>
-<li>
-<p>创建管道（pipe） - 在 <code>fork()</code> 之后，shell 创建一个管道，管道有两个文件描述符：</p>
-<p>•   写端（供 ls 使用）</p>
-<p>•   读端（供 grep 使用）</p>
-</li>
-<li>
-<p>子进程1（ls） - 在子进程中：</p>
-<p>•   关闭标准输出（stdout），将其重定向到管道的写端。</p>
-<p>•   关闭管道的读端（子进程不需要读）。</p>
-<p>•   使用 <code>exec()</code> 替换进程镜像，执行 ls 命令。</p>
-</li>
-<li>
-<p><code>fork()</code> - Shell 创建第二个子进程来运行 grep foo。</p>
-</li>
-<li>
-<p>子进程2（grep） - 在第二个子进程中：</p>
-<p>•   关闭标准输入（stdin），将其重定向到管道的读端。</p>
-<p>•   关闭管道的写端（子进程不需要写）。</p>
-<p>•   使用 <code>exec()</code> 替换进程镜像，执行 grep foo 命令。
-6.  父进程（Shell）：</p>
-<p>•   关闭管道的写端和读端（父进程不直接参与管道的读写）。</p>
-<p>•   等待两个子进程结束。</p>
-</li>
-<li>
-<p>ls 写入管道 - ls 命令的输出通过管道写入。</p>
-</li>
-<li>grep 从管道读取 - grep foo 从管道的读端接收数据，进行匹配。</li>
-<li>ls 完成 - ls 命令完成执行并退出。</li>
-<li>grep 完成 - grep foo 完成过滤操作，输出匹配结果后退出。</li>
-</ol>
-<h2 id="client-server-communication">Client-Server Communication<a class="headerlink" href="#client-server-communication" title="Permanent link">&para;</a></h2>
-<h3 id="sockets">Sockets<a class="headerlink" href="#sockets" title="Permanent link">&para;</a></h3>
-<p>Sockets are the most widely used communication mechanism for client-server communication.</p>
+<h3 id="ls-grep-foo">管道示例：<code>ls | grep foo</code><a class="headerlink" href="#ls-grep-foo" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Shell 如何执行这条命令？</p>
+</div>
+<details class="abstract">
+<summary>详细执行流程</summary>
+<p><strong>步骤 1：<code>fork()</code> 创建第一个子进程</strong></p>
+<p>Shell 首先创建一个子进程来执行 <code>ls</code> 命令。</p>
+<p><strong>步骤 2：创建管道（pipe）</strong></p>
+<p>在 <code>fork()</code> 之后，shell 创建一个管道，管道有两个文件描述符：</p>
 <ul>
-<li>A socket is an endpoint for communication</li>
-<li>A socket is identified by an IP address concatenated with a port number</li>
+<li>写端（供 <code>ls</code> 使用）</li>
+<li>读端（供 <code>grep</code> 使用）</li>
 </ul>
-<h3 id="rpc-rmi">RPC, RMI......<a class="headerlink" href="#rpc-rmi" title="Permanent link">&para;</a></h3>
-<p></font></p>
+<p><strong>步骤 3：子进程 1（ls）</strong></p>
+<p>在子进程中：</p>
+<ul>
+<li>关闭标准输出（stdout），将其重定向到管道的写端</li>
+<li>关闭管道的读端（子进程不需要读）</li>
+<li>使用 <code>exec()</code> 替换进程镜像，执行 <code>ls</code> 命令</li>
+</ul>
+<p><strong>步骤 4：<code>fork()</code> 创建第二个子进程</strong></p>
+<p>Shell 创建第二个子进程来运行 <code>grep foo</code>。</p>
+<p><strong>步骤 5：子进程 2（grep）</strong></p>
+<p>在第二个子进程中：</p>
+<ul>
+<li>关闭标准输入（stdin），将其重定向到管道的读端</li>
+<li>关闭管道的写端（子进程不需要写）</li>
+<li>使用 <code>exec()</code> 替换进程镜像，执行 <code>grep foo</code> 命令</li>
+</ul>
+<p><strong>步骤 6：父进程（Shell）</strong></p>
+<ul>
+<li>关闭管道的写端和读端（父进程不直接参与管道的读写）</li>
+<li>等待两个子进程结束</li>
+</ul>
+<p><strong>步骤 7-10：执行与完成</strong></p>
+<ul>
+<li><code>ls</code> 写入管道 → <code>grep</code> 从管道读取 → <code>ls</code> 完成 → <code>grep</code> 完成</li>
+</ul>
+</details>
+<hr />
+<h2 id="-client-server-communication">客户端-服务器通信（Client-Server Communication）<a class="headerlink" href="#-client-server-communication" title="Permanent link">&para;</a></h2>
+<h3 id="sockets">套接字（Sockets）<a class="headerlink" href="#sockets" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">最广泛使用的通信机制</p>
+<p>套接字是客户端-服务器通信中最广泛使用的通信机制。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">概念</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>套接字</strong></td>
+<td style="text-align: left;">通信的端点</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>标识方式</strong></td>
+<td style="text-align: left;">由 <strong>IP 地址</strong> 和 <strong>端口号</strong> 组合标识</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rpcrmi">RPC、RMI 等<a class="headerlink" href="#rpcrmi" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">远程调用机制</p>
+<ul>
+<li><strong>RPC（Remote Procedure Call）</strong>：远程过程调用</li>
+<li><strong>RMI（Remote Method Invocation）</strong>：远程方法调用</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -3434,7 +4099,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../lec4/lec4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 4 - Schedule">
+          <a href="../../lec4/lec4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Scheduling">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3444,20 +4109,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Lecture 4 - Schedule
+                Scheduling
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../lec6/lec6/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 6 - Thread">
+          <a href="../../lec6/lec6/" class="md-footer__link md-footer__link--next" aria-label="下一页: Thread">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 6 - Thread
+                Thread
               </div>
             </div>
             <div class="md-footer__button md-icon">

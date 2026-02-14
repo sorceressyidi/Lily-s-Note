@@ -24,7 +24,7 @@
     
     
       
-        <title>Lecture 7 - Synchronization - Lily's Notebook</title>
+        <title>Synchronization - Lily's Notebook</title>
       
     
     
@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,6 +55,8 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -65,8 +67,6 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
-    
-      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-7-synchronization" class="md-skip">
+        <a href="#synchronization" class="md-skip">
           跳转至
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 7 - Synchronization
+              Synchronization
             
           </span>
         </div>
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -286,6 +286,26 @@
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../RL/Eras/" class="md-tabs__link">
+          
+  
+    
+  
+  RL Learning Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
     
   
   
@@ -305,7 +325,7 @@
   
     
   
-  Computer Science and Related Courses(ZJU)
+  CS Courses (ZJU)
 
         </a>
       </li>
@@ -791,11 +811,72 @@
       
   
   
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../RL/Eras/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RL Learning Notes
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            RL Learning Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
     
     
+      
+        
+      
+        
       
         
       
@@ -817,24 +898,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Computer Science and Related Courses(ZJU)
+    CS Courses (ZJU)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Computer Science and Related Courses(ZJU)
+            CS Courses (ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -875,10 +956,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -889,8 +970,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -906,7 +987,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Finite Automata
+    Finite Automata
   </span>
   
 
@@ -926,7 +1007,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - Regular Language
+    Regular Language
   </span>
   
 
@@ -946,7 +1027,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Context-Free Language
+    Context-Free Language
   </span>
   
 
@@ -966,7 +1047,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Push-Down-Automata
+    Push-Down Automata
   </span>
   
 
@@ -986,7 +1067,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - Turing Machine
+    Turing Machine
   </span>
   
 
@@ -1006,7 +1087,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Containments properties of languages
+    Language Properties
   </span>
   
 
@@ -1026,7 +1107,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Decidability
+    Decidability
   </span>
   
 
@@ -1046,7 +1127,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Gödel's Incompleteness Theorems
+    Gödel's Theorems
   </span>
   
 
@@ -1066,7 +1147,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Complexity - Time
+    Time Complexity
   </span>
   
 
@@ -1086,7 +1167,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Complexity - Space
+    Space Complexity
   </span>
   
 
@@ -1153,10 +1234,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1167,8 +1248,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1184,7 +1265,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 1 - Introduction
+    Introduction
   </span>
   
 
@@ -1204,7 +1285,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 2 - OS Structure
+    OS Structure
   </span>
   
 
@@ -1224,7 +1305,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 3 - Process
+    Process
   </span>
   
 
@@ -1244,7 +1325,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 4 - Schedule
+    Scheduling
   </span>
   
 
@@ -1264,7 +1345,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 5 - IPC
+    IPC
   </span>
   
 
@@ -1284,7 +1365,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 6 - Thread
+    Thread
   </span>
   
 
@@ -1313,7 +1394,7 @@
           
   
   <span class="md-ellipsis">
-    Lecture 7 - Synchronization
+    Synchronization
   </span>
   
 
@@ -1324,7 +1405,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 7 - Synchronization
+    Synchronization
   </span>
   
 
@@ -1347,29 +1428,29 @@
       
         <li class="md-nav__item">
   <a href="#race-condition" class="md-nav__link">
-    Race Condition
+    竞态条件（Race Condition）
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#critical-section" class="md-nav__link">
-    Critical Section
+    临界区（Critical Section）
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solutions" class="md-nav__link">
-    Solutions
-  </a>
-  
-    <nav class="md-nav" aria-label="Solutions">
+    <nav class="md-nav" aria-label="临界区（Critical Section）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#petersons-solution" class="md-nav__link">
-    Peterson's Solution
+  <a href="#_1" class="md-nav__link">
+    单核系统中如何保护临界区？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    临界区问题的三个要求 [重要！]
   </a>
   
 </li>
@@ -1380,45 +1461,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-support-synchronization" class="md-nav__link">
-    Hardware Support Synchronization
+  <a href="#_3" class="md-nav__link">
+    解决方案
   </a>
   
-    <nav class="md-nav" aria-label="Hardware Support Synchronization">
+    <nav class="md-nav" aria-label="解决方案">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#memory-barriers" class="md-nav__link">
-    Memory Barriers [不考]
+  <a href="#peterson" class="md-nav__link">
+    Peterson 算法
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hardware-instructions" class="md-nav__link">
-    Hardware instructions
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    硬件同步支持
   </a>
   
-    <nav class="md-nav" aria-label="Hardware instructions">
+    <nav class="md-nav" aria-label="硬件同步支持">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#test-and-set-either-test-memory-word-and-set-value" class="md-nav__link">
-    test-and-set: either test memory word and set value
+  <a href="#_5" class="md-nav__link">
+    内存屏障 [不考]
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#compare-and-swap-compare-and-swap-contents-of-two-memory-words" class="md-nav__link">
-    compare-and-swap: compare and swap contents of two memory words
+  <a href="#_6" class="md-nav__link">
+    硬件指令
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-and-set" class="md-nav__link">
+    Test-and-Set
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-practice" class="md-nav__link">
-    In Practice
+  <a href="#compare-and-swap" class="md-nav__link">
+    Compare-and-Swap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    实践中的实现
   </a>
   
 </li>
@@ -1428,31 +1529,49 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atomic-variables" class="md-nav__link">
-    Atomic variables
+    原子变量（Atomic Variables）
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#mutex-locks" class="md-nav__link">
-    Mutex Locks
+    互斥锁（Mutex Locks）
+  </a>
+  
+    <nav class="md-nav" aria-label="互斥锁（Mutex Locks）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    改进方案
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#semaphores" class="md-nav__link">
-    Semaphores
+    信号量（Semaphores）
   </a>
   
-    <nav class="md-nav" aria-label="Semaphores">
+    <nav class="md-nav" aria-label="信号量（Semaphores）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#waiting-queue" class="md-nav__link">
-    Waiting Queue
+  <a href="#_9" class="md-nav__link">
+    等待队列实现
   </a>
   
 </li>
@@ -1461,31 +1580,26 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#comparison-between-mutex-and-semaphore" class="md-nav__link">
-    Comparison between mutex and semaphore
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    互斥锁 vs 信号量
   </a>
   
-    <nav class="md-nav" aria-label="Comparison between mutex and semaphore">
+    <nav class="md-nav" aria-label="互斥锁 vs 信号量">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mutex-or-spinlock" class="md-nav__link">
-    Mutex or spinlock
+  <a href="#_10" class="md-nav__link">
+    互斥锁或自旋锁
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#semaphore" class="md-nav__link">
-    Semaphore
+  <a href="#_11" class="md-nav__link">
+    信号量
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1496,43 +1610,36 @@
       
         <li class="md-nav__item">
   <a href="#priority-inversion" class="md-nav__link">
-    Priority Inversion
+    优先级反转（Priority Inversion）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux-implementation" class="md-nav__link">
-    Linux Implementation
+  <a href="#posix" class="md-nav__link">
+    POSIX 同步
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#posix-synchronization" class="md-nav__link">
-    POSIX Synchronization
-  </a>
-  
-    <nav class="md-nav" aria-label="POSIX Synchronization">
+    <nav class="md-nav" aria-label="POSIX 同步">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mutex-locks_1" class="md-nav__link">
-    mutex locks
+  <a href="#_12" class="md-nav__link">
+    互斥锁
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#semaphores_1" class="md-nav__link">
-    semaphores
+  <a href="#_13" class="md-nav__link">
+    信号量
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#condition-variable" class="md-nav__link">
-    condition variable
+  <a href="#_14" class="md-nav__link">
+    条件变量
   </a>
   
 </li>
@@ -1561,7 +1668,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 8 - Synchronization II
+    Synchronization II
   </span>
   
 
@@ -1581,7 +1688,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 9 - Deadlock
+    Deadlock
   </span>
   
 
@@ -1601,7 +1708,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 10 - Main Memory
+    Main Memory
   </span>
   
 
@@ -1621,7 +1728,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 11 - Virtual Memory
+    Virtual Memory
   </span>
   
 
@@ -1641,7 +1748,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 12 - Mass Storage
+    Mass Storage
   </span>
   
 
@@ -1661,7 +1768,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 13 -I/O System
+    I/O System
   </span>
   
 
@@ -1681,7 +1788,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 14 - File System
+    File System
   </span>
   
 
@@ -1701,7 +1808,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture 15 - OS Security
+    OS Security
   </span>
   
 
@@ -1742,24 +1849,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Anvanced Data Structure and Algorithm Analysis
+    Advanced Data Structures
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Anvanced Data Structure and Algorithm Analysis
+            Advanced Data Structures
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1834,24 +1941,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Analysis
+    Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Analysis
+            Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1865,7 +1972,7 @@
         
   
   <span class="md-ellipsis">
-    backtracking
+    Backtracking
   </span>
   
 
@@ -1885,7 +1992,7 @@
         
   
   <span class="md-ellipsis">
-    Divide and Conquer
+    Divide & Conquer
   </span>
   
 
@@ -2020,6 +2127,18 @@
     
       
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2034,24 +2153,426 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../assembly/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    x86 Assembly
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            x86 Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    寄存器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    堆栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数调用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中断服务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    显卡输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    端口
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    General physics II
+    Digital Image Processing
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            General physics II
+            Digital Image Processing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Image & Morphology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/morph/morph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Morphing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/filter/filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Transform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DIP/feature/feature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General Physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            General Physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2080,10 +2601,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2094,8 +2615,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2216,10 +2737,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2230,8 +2751,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2372,10 +2893,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2386,8 +2907,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2540,10 +3061,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2554,8 +3075,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -2592,10 +3113,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2606,8 +3127,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -2790,10 +3311,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2804,8 +3325,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -2968,10 +3489,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2982,8 +3503,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -3016,10 +3537,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3030,8 +3551,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3180,29 +3701,29 @@
       
         <li class="md-nav__item">
   <a href="#race-condition" class="md-nav__link">
-    Race Condition
+    竞态条件（Race Condition）
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#critical-section" class="md-nav__link">
-    Critical Section
+    临界区（Critical Section）
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solutions" class="md-nav__link">
-    Solutions
-  </a>
-  
-    <nav class="md-nav" aria-label="Solutions">
+    <nav class="md-nav" aria-label="临界区（Critical Section）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#petersons-solution" class="md-nav__link">
-    Peterson's Solution
+  <a href="#_1" class="md-nav__link">
+    单核系统中如何保护临界区？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    临界区问题的三个要求 [重要！]
   </a>
   
 </li>
@@ -3213,45 +3734,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-support-synchronization" class="md-nav__link">
-    Hardware Support Synchronization
+  <a href="#_3" class="md-nav__link">
+    解决方案
   </a>
   
-    <nav class="md-nav" aria-label="Hardware Support Synchronization">
+    <nav class="md-nav" aria-label="解决方案">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#memory-barriers" class="md-nav__link">
-    Memory Barriers [不考]
+  <a href="#peterson" class="md-nav__link">
+    Peterson 算法
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#hardware-instructions" class="md-nav__link">
-    Hardware instructions
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    硬件同步支持
   </a>
   
-    <nav class="md-nav" aria-label="Hardware instructions">
+    <nav class="md-nav" aria-label="硬件同步支持">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#test-and-set-either-test-memory-word-and-set-value" class="md-nav__link">
-    test-and-set: either test memory word and set value
+  <a href="#_5" class="md-nav__link">
+    内存屏障 [不考]
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#compare-and-swap-compare-and-swap-contents-of-two-memory-words" class="md-nav__link">
-    compare-and-swap: compare and swap contents of two memory words
+  <a href="#_6" class="md-nav__link">
+    硬件指令
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-and-set" class="md-nav__link">
+    Test-and-Set
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-practice" class="md-nav__link">
-    In Practice
+  <a href="#compare-and-swap" class="md-nav__link">
+    Compare-and-Swap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    实践中的实现
   </a>
   
 </li>
@@ -3261,31 +3802,49 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atomic-variables" class="md-nav__link">
-    Atomic variables
+    原子变量（Atomic Variables）
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#mutex-locks" class="md-nav__link">
-    Mutex Locks
+    互斥锁（Mutex Locks）
+  </a>
+  
+    <nav class="md-nav" aria-label="互斥锁（Mutex Locks）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    改进方案
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#semaphores" class="md-nav__link">
-    Semaphores
+    信号量（Semaphores）
   </a>
   
-    <nav class="md-nav" aria-label="Semaphores">
+    <nav class="md-nav" aria-label="信号量（Semaphores）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#waiting-queue" class="md-nav__link">
-    Waiting Queue
+  <a href="#_9" class="md-nav__link">
+    等待队列实现
   </a>
   
 </li>
@@ -3294,31 +3853,26 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#comparison-between-mutex-and-semaphore" class="md-nav__link">
-    Comparison between mutex and semaphore
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    互斥锁 vs 信号量
   </a>
   
-    <nav class="md-nav" aria-label="Comparison between mutex and semaphore">
+    <nav class="md-nav" aria-label="互斥锁 vs 信号量">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mutex-or-spinlock" class="md-nav__link">
-    Mutex or spinlock
+  <a href="#_10" class="md-nav__link">
+    互斥锁或自旋锁
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#semaphore" class="md-nav__link">
-    Semaphore
+  <a href="#_11" class="md-nav__link">
+    信号量
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3329,43 +3883,36 @@
       
         <li class="md-nav__item">
   <a href="#priority-inversion" class="md-nav__link">
-    Priority Inversion
+    优先级反转（Priority Inversion）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux-implementation" class="md-nav__link">
-    Linux Implementation
+  <a href="#posix" class="md-nav__link">
+    POSIX 同步
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#posix-synchronization" class="md-nav__link">
-    POSIX Synchronization
-  </a>
-  
-    <nav class="md-nav" aria-label="POSIX Synchronization">
+    <nav class="md-nav" aria-label="POSIX 同步">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mutex-locks_1" class="md-nav__link">
-    mutex locks
+  <a href="#_12" class="md-nav__link">
+    互斥锁
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#semaphores_1" class="md-nav__link">
-    semaphores
+  <a href="#_13" class="md-nav__link">
+    信号量
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#condition-variable" class="md-nav__link">
-    condition variable
+  <a href="#_14" class="md-nav__link">
+    条件变量
   </a>
   
 </li>
@@ -3390,245 +3937,305 @@
                   
 
 
-<p><font face = "Times New Roman"></p>
-<h1 id="lecture-7-synchronization">Lecture 7 - Synchronization<a class="headerlink" href="#lecture-7-synchronization" title="Permanent link">&para;</a></h1>
-<h2 id="race-condition">Race Condition<a class="headerlink" href="#race-condition" title="Permanent link">&para;</a></h2>
-<p>Several processes (or threads) access and manipulate the <strong>same</strong> data <strong>concurrently</strong> and the outcome of the execution depends on the particular order in which the access takes place, <strong>is called a race-condition</strong>.</p>
+<h1 id="synchronization">同步（Synchronization）<a class="headerlink" href="#synchronization" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>本讲涵盖<strong>竞态条件</strong>、<strong>临界区问题</strong>、<strong>硬件同步支持</strong>以及各种同步原语（互斥锁、信号量等）。</p>
+</div>
+<hr />
+<h2 id="race-condition">竞态条件（Race Condition）<a class="headerlink" href="#race-condition" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">定义</p>
+<p>当多个进程（或线程）<strong>并发</strong>访问和操作<strong>同一数据</strong>，且执行结果取决于访问的特定顺序时，称为<strong>竞态条件</strong>。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">单核也会有竞态条件</p>
+<p>由于<strong>中断</strong>的存在！</p>
+</div>
+<hr />
+<h2 id="critical-section">临界区（Critical Section）<a class="headerlink" href="#critical-section" title="Permanent link">&para;</a></h2>
+<p><img alt="临界区" src="../1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">核心规则</p>
+<p><strong>只有一个进程可以在临界区中</strong></p>
+</div>
 <ul>
-<li>Single Core <strong>will have race condition</strong> -- Interupts</li>
+<li>当一个进程在临界区时，其他进程不能进入它的临界区</li>
+<li>每个进程必须在<strong>入口区（entry section）</strong>请求进入临界区的许可</li>
+<li>许可<strong>应该在出口区（exit section）</strong>释放</li>
+<li>剩余区（Remainder section）</li>
 </ul>
-<h2 id="critical-section">Critical Section<a class="headerlink" href="#critical-section" title="Permanent link">&para;</a></h2>
-<p><img alt="1" src="../1.png" /></p>
-<p><strong>Only one process can be in the critical section</strong></p>
+<h3 id="_1">单核系统中如何保护临界区？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">停止中断？</p>
+<p>在单核系统中可以通过禁用中断来实现保护。</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">多核系统</p>
+<p>在多核系统中，临界区保护只能通过<strong>同步</strong>来实现。</p>
+</div>
+<p><img alt="临界区保护" src="../2.png" /></p>
+<h3 id="_2">临界区问题的三个要求 [重要！]<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">1. 互斥（Mutual Exclusion）</p>
+<p>只有一个进程可以在<strong>临界区</strong>中执行。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">2. 前进（Progress）</p>
+<p>如果没有进程在其临界区中执行，并且有些进程希望进入它们的临界区，那么只有那些<strong>不在剩余区执行</strong>的进程可以参与决定下一个进入的进程，且这个选择不能无限期推迟。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">3. 有界等待（Bounded Waiting）</p>
+<p>在一个进程请求进入其临界区之后，在该请求被批准之前，<strong>其他进程进入其临界区的次数存在上限</strong>。</p>
+<p>这防止了<strong>饥饿（starvation）</strong>。</p>
+</div>
+<hr />
+<h2 id="_3">解决方案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="peterson">Peterson 算法<a class="headerlink" href="#peterson" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">限制</p>
 <ul>
-<li>when one process in critical section, no other may be in its critical section</li>
-<li>each process must <strong>ask permission</strong> to enter critical section in entry section</li>
-<li>the permission <strong>should be released in exit section</strong></li>
-<li>Remainder section</li>
+<li>只适用于<strong>两个进程</strong>！</li>
+<li>假设 <strong>LOAD</strong> 和 <strong>STORE</strong> 是原子操作</li>
 </ul>
-<p>How to achieve protection of critical section in single core system? </p>
-<blockquote>
-<p>Stop the Interrupts?</p>
-</blockquote>
-<p>Protection of critical section can only be achieved by <strong>Synchornization</strong> in multi-core system.</p>
-<p><img alt="2" src="../2.png" /></p>
-<blockquote>
-<p>Solution to Critical-Section: Three Requirements [Important]!</p>
-</blockquote>
-<p><strong>1. Mutual Exclusion</strong></p>
+</div>
+<p>两个进程共享两个变量：</p>
 <ul>
-<li>only one process can execute in the <strong>critical section</strong></li>
+<li><code>boolean flag[2]</code>：进程是否准备进入临界区</li>
+<li><code>int turn</code>：轮到谁进入临界区</li>
 </ul>
-<p><strong>2. Progress</strong></p>
-<ul>
-<li>if no process is executing in its critical section and some processes wish to enter their critical section, then only those processes <strong>that are not executing in their remainder sections</strong> can participate in deciding which will enter its critical section next, and this selection cannot be postponed indefinitely</li>
-<li>线程没有在执行critical section时，必须在申请进入critical section的线程中选择一个进入，允许其执行，不能无限期地推迟</li>
-</ul>
-<p><strong>3. Bounded waiting</strong></p>
-<ul>
-<li>There exists a bound, or limit, on the number of times that <strong>other processes are allowed to enter their critical sections after a process has made a request to enter its critical section and before that request is granted</strong></li>
-<li>It prevents starvation</li>
-</ul>
-<h2 id="solutions">Solutions<a class="headerlink" href="#solutions" title="Permanent link">&para;</a></h2>
-<h3 id="petersons-solution">Peterson's Solution<a class="headerlink" href="#petersons-solution" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Only works for two processes!
-It assumes that <strong>LOAD</strong> and <strong>STORE</strong> are atomic</p>
-</blockquote>
-<p>Two processes share two variables</p>
-<ul>
-<li><code>boolean flag[2]</code>: whether a process is ready to enter the critical section</li>
-<li><code>int turn</code>: whose turn it is to enter the critical section</li>
-</ul>
-<p><img alt="3" src="../3.png" /></p>
-<blockquote>
-<p>Mutual exclusion is preserved</p>
-</blockquote>
-<p><img alt="4" src="../4.png" /></p>
-<blockquote>
-<p>Progress is preserved</p>
-</blockquote>
-<p><img alt="5" src="../5.png" /></p>
-<blockquote>
-<p>Bounded waiting is preserved</p>
-</blockquote>
-<p><img alt="6" src="../6.png" /></p>
-<ul>
-<li>不能调整代码顺序，否则可能会出现问题</li>
-</ul>
-<h2 id="hardware-support-synchronization">Hardware Support Synchronization<a class="headerlink" href="#hardware-support-synchronization" title="Permanent link">&para;</a></h2>
-<h3 id="memory-barriers">Memory Barriers [不考]<a class="headerlink" href="#memory-barriers" title="Permanent link">&para;</a></h3>
-<p><img alt="7" src="../7.png" /></p>
-<h3 id="hardware-instructions">Hardware instructions<a class="headerlink" href="#hardware-instructions" title="Permanent link">&para;</a></h3>
-<h4 id="test-and-set-either-test-memory-word-and-set-value">test-and-set: either test memory word and set value<a class="headerlink" href="#test-and-set-either-test-memory-word-and-set-value" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">test_set</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="o">*</span><span class="n">target</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">rv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">target</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="o">*</span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rv</span><span class="o">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+<p><img alt="Peterson算法" src="../3.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">证明</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">性质</th>
+<th style="text-align: left;">证明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">互斥性</td>
+<td style="text-align: left;"><img alt="互斥证明" src="../4.png" /></td>
+</tr>
+<tr>
+<td style="text-align: left;">前进性</td>
+<td style="text-align: left;"><img alt="前进证明" src="../5.png" /></td>
+</tr>
+<tr>
+<td style="text-align: left;">有界等待</td>
+<td style="text-align: left;"><img alt="有界等待证明" src="../6.png" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">注意</p>
+<p>不能调整代码顺序，否则可能会出现问题。</p>
+</div>
+<hr />
+<h2 id="_4">硬件同步支持<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">内存屏障 [不考]<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="内存屏障" src="../7.png" /></p>
+<h3 id="_6">硬件指令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="test-and-set">Test-and-Set<a class="headerlink" href="#test-and-set" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">test_set</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="o">*</span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">rv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">target</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="o">*</span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rv</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">test_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lock</span><span class="p">));</span><span class="w"> </span><span class="c1">// busy wait</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">critical</span><span class="w"> </span><span class="n">section</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">test_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lock</span><span class="p">));</span><span class="w"> </span><span class="c1">// 忙等待</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">// 临界区</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="n">section</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">// 剩余区</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
 </code></pre></div>
-<ul>
-<li>Mutual Exclusion is preserved</li>
-<li>Progress is preserved</li>
-<li>Bounded waiting is not preserved!</li>
-</ul>
-<p><img alt="8" src="../8.png" /></p>
-<blockquote>
-<p>Solution: </p>
-</blockquote>
-<p><img alt="9" src="../9.png" /></p>
-<h4 id="compare-and-swap-compare-and-swap-contents-of-two-memory-words">compare-and-swap: compare and swap contents of two memory words<a class="headerlink" href="#compare-and-swap-compare-and-swap-contents-of-two-memory-words" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">compare_and_swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">new_value</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_value</span><span class="p">;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+<div class="admonition info">
+<p class="admonition-title">性质分析</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">性质</th>
+<th style="text-align: center;">是否满足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">互斥</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">前进</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">有界等待</td>
+<td style="text-align: center;">✗</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Test-and-Set问题" src="../8.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">有界等待的解决方案</p>
+<p><img alt="解决方案" src="../9.png" /></p>
+</div>
+<h4 id="compare-and-swap">Compare-and-Swap<a class="headerlink" href="#compare-and-swap" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">compare_and_swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">new_value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">expected</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_value</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">特点</p>
 <ul>
-<li>Executed atomically</li>
-<li>Returns the original value of passed parameter value</li>
-<li>Set the variable value the value of the passed parameter <code>new_value</code> but only if <code>*value == expected</code> is true. That is, the swap takes place only under this condition.</li>
+<li><strong>原子执行</strong></li>
+<li>返回传入参数 <code>value</code> 的原始值</li>
+<li>仅当 <code>*value == expected</code> 时才设置变量 <code>value</code> 为 <code>new_value</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lock</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="cm">/* do nothing */</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="cm">/* critical section */</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="cm">/* remainder section */</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lock</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 空操作 */</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="cm">/* 临界区 */</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="cm">/* 剩余区 */</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="in-practice">In Practice<a class="headerlink" href="#in-practice" title="Permanent link">&para;</a></h4>
-<p><img alt="11" src="../11.png" /></p>
+<h4 id="_7">实践中的实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><img alt="实践实现" src="../11.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">ARM 的 LDXR 和 STXR 机制</p>
 <ul>
-<li>In ARM, <code>LDREX</code> and <code>STREX</code> instructions are used to implement <code>compare-and-swap</code></li>
+<li><strong>LDXR (Load Exclusive Register)</strong>：从内存地址加载值，并进入 Exclusive Access 状态（由 local monitor 管理）</li>
+<li><strong>STXR (Store Exclusive Register)</strong>：尝试写入 LDXR 加载的地址，仅当 local monitor 保持 Exclusive Access 状态时才成功</li>
 </ul>
-<p>ARM 的 LDXR 和 STXR 机制</p>
-<ul>
-<li>LDXR (Load Exclusive Register):从一个内存地址加载值，并在硬件层面进入 Exclusive Access 状态。这种状态由一个 本地监视器 (local monitor) 管理。</li>
-<li>Exclusive Access 状态表示线程声明对这块内存的独占权限。</li>
-<li>STXR (Store Exclusive Register): 试图将一个值写入 LDXR 加载的内存地址，但只有当 local monitor 保持 Exclusive Access 状态时，写入才能成功。</li>
-<li>如果 local monitor 检测到 Exclusive Access 状态被破坏（例如，其他线程也访问了该地址），STXR 写入会失败。</li>
-<li>STXR 会返回一个状态码来指示操作是否成功：</li>
-<li>成功：Exclusive Access 状态未被破坏，写入成功，状态码为 0。</li>
-<li>失败：Exclusive Access 状态被破坏，写入失败，状态码为 1。</li>
-</ul>
-<p><img alt="12" src="../12.png" /></p>
-<ol>
-<li>thread 1 的 LDXR 会使 local monitor 进入 Exclusive Access 状态。</li>
-<li>如果 thread 2 也在相同的内存地址执行了 LDXR，local monitor 不会直接变为 Open Access，但会使 thread 1 的独占访问状态失效。</li>
-<li>当 thread 1 尝试执行 STXR 写回时，由于 Exclusive Access 状态已经丢失，STXR 写回失败</li>
-</ol>
-<p><img alt="13" src="../13.png" /></p>
-<ol>
-<li>当 thread 1 在执行 STXR 前，如果 thread 2 或其他线程（比如 thread 3）对相同的内存地址执行了 LDXR，thread 1 的 Exclusive Access 状态就会失效。</li>
-<li>如果此时 thread 3 </li>
-</ol>
-<ul>
-<li>当 thread 3 执行 LDXR 时， 重新进入 Exclusive Access 状态</li>
-<li>如果此时 thread 1 尝试执行 <strong>STXR 写回</strong>，由于 Exclusive Access 状态已经丢失，STXR 写回失败 -- LDXR 和 STXR 是 <strong>coresponding</strong> 的！</li>
-</ul>
-<h3 id="atomic-variables">Atomic variables<a class="headerlink" href="#atomic-variables" title="Permanent link">&para;</a></h3>
-<p>Typically, instructions such as compare-and-swap are used as <strong>building blocks</strong> for other synchronization tools.</p>
-<p>One tool is an atomic variable that provides atomic (uninterruptible) updates on basic data types such as integers and booleans.</p>
-<p>For example, the <strong>increment()</strong> operation on the atomic variable sequence ensures sequence is incremented without interruption:</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">返回状态码</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">成功，Exclusive Access 状态未被破坏</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">失败，Exclusive Access 状态被破坏</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="LDXR/STXR示例1" src="../12.png" /></p>
+<p><img alt="LDXR/STXR示例2" src="../13.png" /></p>
+<hr />
+<h2 id="atomic-variables">原子变量（Atomic Variables）<a class="headerlink" href="#atomic-variables" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
+<p>通常，compare-and-swap 等指令作为其他同步工具的<strong>构建块</strong>。</p>
+<p>原子变量提供对基本数据类型（如整数和布尔值）的原子（不可中断）更新。</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">increment</span><span class="p">(</span><span class="kt">atomic_int</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w"> </span><span class="p">}</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">temp</span><span class="o">+</span><span class="mi">1</span><span class="p">)));</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)));</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
 </code></pre></div>
-<blockquote>
-<p>In case another modification occurs </p>
-</blockquote>
-<h3 id="mutex-locks">Mutex Locks<a class="headerlink" href="#mutex-locks" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="mutex-locks">互斥锁（Mutex Locks）<a class="headerlink" href="#mutex-locks" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">acquire</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">locked</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">;</span><span class="w"> </span><span class="c1">//busy waiting</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">release</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">acquire</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">compare_and_swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">locked</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="p">;</span><span class="w"> </span><span class="c1">// 忙等待</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">release</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>These two functions must be implemented <strong>atomically</strong>.</li>
-<li>Both test-and-set and compare-and-swap can be used to implement these functions.</li>
-</ul>
-<p><strong>Problem</strong>: Busy waiting is inefficient </p>
-<ul>
-<li>This lock therefore called a spinlock</li>
-</ul>
-<blockquote>
-<p>Too Much Busy Waiting!</p>
-</blockquote>
-<p><img alt="14" src="../14.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">问题</p>
+<p>忙等待效率低下 — 这种锁称为<strong>自旋锁（spinlock）</strong></p>
+</div>
+<p><img alt="自旋锁问题" src="../14.png" /></p>
+<h3 id="_8">改进方案<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">lock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">test_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">yield</span><span class="p">();</span><span class="w"> </span><span class="c1">// give up the CPU</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">unlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">lock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">test_set</span><span class="p">(</span><span class="o">&amp;</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="n">yield</span><span class="p">();</span><span class="w"> </span><span class="c1">// 让出 CPU</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">unlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span>
 </code></pre></div>
-<p>How to implement?</p>
-<h3 id="semaphores">Semaphores<a class="headerlink" href="#semaphores" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="semaphores">信号量（Semaphores）<a class="headerlink" href="#semaphores" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">改进思路</p>
 <ul>
-<li>Add a queue</li>
-<li>
-<p>When the lock is locked, change process’s state to SLEEP, add to the queue, and call <code>schedule()</code></p>
-</li>
-<li>
-<p>Semaphore Contain S – integer variable</p>
-</li>
-<li>Can only be accessed via two indivisible (atomic) operations</li>
-<li>
-<p>wait() and signal() (Originally called P() and V()Dutch)
+<li>添加一个队列</li>
+<li>当锁被锁定时，将进程状态改为 SLEEP，添加到队列，并调用 <code>schedule()</code></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">信号量定义</p>
+<ul>
+<li>信号量包含 <strong>S — 整数变量</strong></li>
+<li>只能通过两个不可分割（原子）操作访问：</li>
+<li><code>wait()</code> 和 <code>signal()</code>（原名 P() 和 V()，荷兰语）</li>
+</ul>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">wait</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// busy wait</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 忙等待</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">S</span><span class="o">--</span><span class="p">;</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">signal</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="n">S</span><span class="o">++</span><span class="p">;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Counting semaphore: S can range over an unrestricted domain</p>
-</li>
-<li>Binary semaphore: S can only be 0 or 1</li>
-<li>Can implement a counting semaphore S as a binary semaphore</li>
-</ul>
-<h4 id="waiting-queue">Waiting Queue<a class="headerlink" href="#waiting-queue" title="Permanent link">&para;</a></h4>
-<ul>
-<li>With each semaphore there is an associated waiting queue</li>
-<li>Each entry in a waiting queue has two data items:
-  1. value (of type integer)
-  2. pointer to next record in the list</li>
-</ul>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">signal</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="n">S</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>计数信号量</strong></td>
+<td style="text-align: left;">S 可以在无限制范围内变化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>二进制信号量</strong></td>
+<td style="text-align: left;">S 只能是 0 或 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">等待队列实现<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_head</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">waiting_queue</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_head</span><span class="w"> </span><span class="o">*</span><span class="n">waiting_queue</span><span class="p">;</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span><span class="w"> </span><span class="n">semaphore</span><span class="p">;</span>
 </code></pre></div>
-<p>Two operations:</p>
+<p><strong>两个操作：</strong></p>
 <ul>
-<li>block – place the process invoking the operation on the appropriate waiting queue</li>
-<li>wakeup – remove one of processes in the waiting queue and place it in the ready queue</li>
+<li><strong>block</strong> — 将调用操作的进程放入适当的等待队列</li>
+<li><strong>wakeup</strong> — 从等待队列中移除一个进程并放入就绪队列</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">wait</span><span class="p">(</span><span class="n">semaphore</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">--</span><span class="p">;</span>
@@ -3641,104 +4248,98 @@ It assumes that <strong>LOAD</strong> and <strong>STORE</strong> are atomic</p>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">signal</span><span class="p">(</span><span class="n">semaphore</span><span class="w"> </span><span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">++</span><span class="p">;</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="n">remove</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">proc</span><span class="p">.</span><span class="n">P</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">list</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="n">remove</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">proc</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S</span><span class="o">-&gt;</span><span class="n">list</span><span class="p">;</span>
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">        </span><span class="n">wakeup</span><span class="p">(</span><span class="n">P</span><span class="p">);</span>
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
 </code></pre></div>
-<p>wait(semaphore *S)
-1.  S-&gt;value--：减少信号量的值。</p>
-<ul>
-<li>如果 S-&gt;value &gt;= 0：说明有可用的资源，当前进程成功获取资源。</li>
-<li>如果 S-&gt;value &lt; 0：说明资源已被占用，当前进程需要等待资源，进入阻塞状态。</li>
-</ul>
-<ol start="2">
-<li>如果信号量值小于 0：</li>
-</ol>
-<ul>
-<li>当前进程被加入到信号量的等待队列 S-&gt;list。</li>
-<li>调用 block()，让当前进程进入阻塞状态，等待资源。</li>
-</ul>
-<p>signal(semaphore *S)</p>
-<ol>
-<li>S-&gt;value++：增加信号量的值。</li>
-</ol>
-<ul>
-<li>如果 S-&gt;value &gt; 0：说明没有进程在等待，直接结束。</li>
-<li>如果 S-&gt;value &lt;= 0：说明有进程在等待，唤醒等待队列中的一个进程。</li>
-</ul>
-<ol start="2">
-<li>如果有进程在等待队列中：</li>
-</ol>
-<ul>
-<li>从等待队列中移除一个等待的进程（比如 P）。</li>
-<li>调用 wakeup(P)，将进程 P 移到就绪队列中，准备运行。</li>
-</ul>
-<p><img alt="15" src="../15.png" /></p>
-<p><img alt="16" src="../16.png" /></p>
-<p><code>wait()</code> 和 <code>signal()</code> 操作是<strong>原子操作</strong>，不会被中断。-- 也需要<strong>Mutex Lock</strong> </p>
-<ul>
-<li>所以 critical section 没有busy waiting 但是 <code>wait()</code> 和 <code>signal()</code> 有busy waiting</li>
-</ul>
-<h3 id="comparison-between-mutex-and-semaphore">Comparison between mutex and semaphore<a class="headerlink" href="#comparison-between-mutex-and-semaphore" title="Permanent link">&para;</a></h3>
-<h4 id="mutex-or-spinlock">Mutex or spinlock<a class="headerlink" href="#mutex-or-spinlock" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Pros: no blocking</li>
-<li>Cons: Waste CPU on looping</li>
-<li>Good for short critical section</li>
-</ul>
-<h4 id="semaphore">Semaphore<a class="headerlink" href="#semaphore" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>Critical section short -- constant context switch is time-consuming</p>
-</blockquote>
-<ul>
-<li>Pros: no looping</li>
-<li>Cons: <strong>context switch is time-consuming</strong></li>
-<li>Good for <strong>long critical section</strong></li>
-</ul>
-<blockquote>
-<p>In Linux Kernel, spinlock is more common.</p>
-</blockquote>
-<p><img alt="17" src="../17.png" /></p>
-<ul>
-<li>Starvation <strong>不一定死锁</strong>，但是死锁一定饥饿</li>
-</ul>
-<h2 id="priority-inversion">Priority Inversion<a class="headerlink" href="#priority-inversion" title="Permanent link">&para;</a></h2>
-<p><img alt="18" src="../18.png" /></p>
-<h2 id="linux-implementation">Linux Implementation<a class="headerlink" href="#linux-implementation" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>See Slides</p>
-</blockquote>
-<h2 id="posix-synchronization">POSIX Synchronization<a class="headerlink" href="#posix-synchronization" title="Permanent link">&para;</a></h2>
-<h3 id="mutex-locks_1">mutex locks<a class="headerlink" href="#mutex-locks_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Creating and initializing the lock
+<p><img alt="信号量示例1" src="../15.png" /></p>
+<p><img alt="信号量示例2" src="../16.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p><code>wait()</code> 和 <code>signal()</code> 操作是<strong>原子操作</strong>，不会被中断 — 也需要 <strong>Mutex Lock</strong></p>
+<p>所以 critical section 没有 busy waiting，但是 <code>wait()</code> 和 <code>signal()</code> 有 busy waiting。</p>
+</div>
+<hr />
+<h2 id="vs">互斥锁 vs 信号量<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
+<h3 id="_10">互斥锁或自旋锁<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">优点</th>
+<th style="text-align: left;">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">无阻塞</td>
+<td style="text-align: left;">在循环上浪费 CPU</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">适用场景</p>
+<p>适合<strong>短临界区</strong></p>
+</div>
+<h3 id="_11">信号量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">考虑因素</p>
+<p>临界区短时 — 频繁的上下文切换很耗时</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">优点</th>
+<th style="text-align: left;">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">无循环</td>
+<td style="text-align: left;"><strong>上下文切换耗时</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">适用场景</p>
+<p>适合<strong>长临界区</strong></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Linux 内核</p>
+<p>在 Linux 内核中，spinlock 更常见。</p>
+</div>
+<p><img alt="比较" src="../17.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">饥饿与死锁</p>
+<p>饥饿<strong>不一定死锁</strong>，但是死锁一定饥饿。</p>
+</div>
+<hr />
+<h2 id="priority-inversion">优先级反转（Priority Inversion）<a class="headerlink" href="#priority-inversion" title="Permanent link">&para;</a></h2>
+<p><img alt="优先级反转" src="../18.png" /></p>
+<hr />
+<h2 id="posix">POSIX 同步<a class="headerlink" href="#posix" title="Permanent link">&para;</a></h2>
+<h3 id="_12">互斥锁<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="cm">/* create and initialize the mutex lock */</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Acquiring and releasing the lock
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">/* acquire the mutex lock */</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cm">/* critical section */</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cm">/* release the mutex lock */</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
-</code></pre></div></p>
-</li>
-</ul>
-<h3 id="semaphores_1">semaphores<a class="headerlink" href="#semaphores_1" title="Permanent link">&para;</a></h3>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="cm">/* 创建并初始化互斥锁 */</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="cm">/* 获取互斥锁 */</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cm">/* 临界区 */</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="cm">/* 释放互斥锁 */</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_13">信号量<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Named semaphores &amp; Unnamed semaphores</li>
+<li>命名信号量 &amp; 无名信号量</li>
 </ul>
-<h3 id="condition-variable">condition variable<a class="headerlink" href="#condition-variable" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>See Slides
-</font></p>
-</blockquote>
+<h3 id="_14">条件变量<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">参考</p>
+<p>详见课件（See Slides）</p>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -3823,7 +4424,7 @@ It assumes that <strong>LOAD</strong> and <strong>STORE</strong> are atomic</p>
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../lec6/lec6/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 6 - Thread">
+          <a href="../../lec6/lec6/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Thread">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -3833,20 +4434,20 @@ It assumes that <strong>LOAD</strong> and <strong>STORE</strong> are atomic</p>
                 上一页
               </span>
               <div class="md-ellipsis">
-                Lecture 6 - Thread
+                Thread
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../lec8/lec8/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 8 - Synchronization II">
+          <a href="../../lec8/lec8/" class="md-footer__link md-footer__link--next" aria-label="下一页: Synchronization II">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 8 - Synchronization II
+                Synchronization II
               </div>
             </div>
             <div class="md-footer__button md-icon">
