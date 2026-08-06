@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,8 +55,6 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
-    
-      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -67,6 +65,8 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
   
     
     
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -286,26 +286,6 @@
         
   
   
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../RL/Eras/" class="md-tabs__link">
-          
-  
-    
-  
-  RL Learning Notes
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
     
   
   
@@ -325,7 +305,7 @@
   
     
   
-  CS Courses (ZJU)
+  Computer Science and Related Courses(ZJU)
 
         </a>
       </li>
@@ -546,6 +526,8 @@
       
         
       
+        
+      
     
     
     
@@ -607,6 +589,26 @@
   
   <span class="md-ellipsis">
     DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Papers/DM/FlowMatching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Matching
   </span>
   
 
@@ -811,72 +813,11 @@
       
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../RL/Eras/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    RL Learning Notes
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            RL Learning Notes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
     
     
-      
-        
-      
-        
       
         
       
@@ -898,24 +839,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    CS Courses (ZJU)
+    Computer Science and Related Courses(ZJU)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            CS Courses (ZJU)
+            Computer Science and Related Courses(ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -956,10 +897,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -970,8 +911,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -987,7 +928,7 @@
         
   
   <span class="md-ellipsis">
-    Finite Automata
+    Lecture 1 - Finite Automata
   </span>
   
 
@@ -1007,7 +948,7 @@
         
   
   <span class="md-ellipsis">
-    Regular Language
+    Lecture 2 - Regular Language
   </span>
   
 
@@ -1027,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    Context-Free Language
+    Lecture 3 - Context-Free Language
   </span>
   
 
@@ -1047,7 +988,7 @@
         
   
   <span class="md-ellipsis">
-    Push-Down Automata
+    Lecture 4 - Push-Down-Automata
   </span>
   
 
@@ -1067,7 +1008,7 @@
         
   
   <span class="md-ellipsis">
-    Turing Machine
+    Lecture 5 - Turing Machine
   </span>
   
 
@@ -1087,7 +1028,7 @@
         
   
   <span class="md-ellipsis">
-    Language Properties
+    Lecture 6 - Containments properties of languages
   </span>
   
 
@@ -1107,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Decidability
+    Lecture 7 - Decidability
   </span>
   
 
@@ -1127,7 +1068,7 @@
         
   
   <span class="md-ellipsis">
-    Gödel's Theorems
+    Lecture 8 - Gödel's Incompleteness Theorems
   </span>
   
 
@@ -1147,7 +1088,7 @@
         
   
   <span class="md-ellipsis">
-    Time Complexity
+    Lecture 9 - Complexity - Time
   </span>
   
 
@@ -1167,7 +1108,7 @@
         
   
   <span class="md-ellipsis">
-    Space Complexity
+    Lecture 10 - Complexity - Space
   </span>
   
 
@@ -1232,10 +1173,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1246,8 +1187,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1263,7 +1204,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Lecture 1 - Introduction
   </span>
   
 
@@ -1283,7 +1224,7 @@
         
   
   <span class="md-ellipsis">
-    OS Structure
+    Lecture 2 - OS Structure
   </span>
   
 
@@ -1303,7 +1244,7 @@
         
   
   <span class="md-ellipsis">
-    Process
+    Lecture 3 - Process
   </span>
   
 
@@ -1323,7 +1264,7 @@
         
   
   <span class="md-ellipsis">
-    Scheduling
+    Lecture 4 - Schedule
   </span>
   
 
@@ -1343,7 +1284,7 @@
         
   
   <span class="md-ellipsis">
-    IPC
+    Lecture 5 - IPC
   </span>
   
 
@@ -1363,7 +1304,7 @@
         
   
   <span class="md-ellipsis">
-    Thread
+    Lecture 6 - Thread
   </span>
   
 
@@ -1383,7 +1324,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization
+    Lecture 7 - Synchronization
   </span>
   
 
@@ -1403,7 +1344,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization II
+    Lecture 8 - Synchronization II
   </span>
   
 
@@ -1423,7 +1364,7 @@
         
   
   <span class="md-ellipsis">
-    Deadlock
+    Lecture 9 - Deadlock
   </span>
   
 
@@ -1443,7 +1384,7 @@
         
   
   <span class="md-ellipsis">
-    Main Memory
+    Lecture 10 - Main Memory
   </span>
   
 
@@ -1463,7 +1404,7 @@
         
   
   <span class="md-ellipsis">
-    Virtual Memory
+    Lecture 11 - Virtual Memory
   </span>
   
 
@@ -1483,7 +1424,7 @@
         
   
   <span class="md-ellipsis">
-    Mass Storage
+    Lecture 12 - Mass Storage
   </span>
   
 
@@ -1503,7 +1444,7 @@
         
   
   <span class="md-ellipsis">
-    I/O System
+    Lecture 13 -I/O System
   </span>
   
 
@@ -1523,7 +1464,7 @@
         
   
   <span class="md-ellipsis">
-    File System
+    Lecture 14 - File System
   </span>
   
 
@@ -1543,7 +1484,7 @@
         
   
   <span class="md-ellipsis">
-    OS Security
+    Lecture 15 - OS Security
   </span>
   
 
@@ -1584,24 +1525,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Advanced Data Structures
+    Anvanced Data Structure and Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Advanced Data Structures
+            Anvanced Data Structure and Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1676,24 +1617,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Algorithm Analysis
+    Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Algorithm Analysis
+            Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1707,7 +1648,7 @@
         
   
   <span class="md-ellipsis">
-    Backtracking
+    backtracking
   </span>
   
 
@@ -1727,7 +1668,7 @@
         
   
   <span class="md-ellipsis">
-    Divide & Conquer
+    Divide and Conquer
   </span>
   
 
@@ -1857,420 +1798,6 @@
                 
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../assembly/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    x86 Assembly
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            x86 Assembly
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    寄存器
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    基础指令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    堆栈
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    函数调用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    中断服务
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    显卡输出
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    端口
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Digital Image Processing
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Digital Image Processing
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Binary Image & Morphology
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic Operations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/morph/morph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Morphing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/filter/filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Filtering
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fourier Transform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/feature/feature/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Features
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -2292,24 +1819,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    General Physics II
+    General physics II
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            General Physics II
+            General physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2340,10 +1867,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2354,8 +1881,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2413,8 +1940,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -2443,8 +1968,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2453,50 +1976,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    磁场基础
+  <a href="#the-magnetic-field" class="md-nav__link">
+    The Magnetic Field
   </a>
   
-    <nav class="md-nav" aria-label="磁场基础">
+    <nav class="md-nav" aria-label="The Magnetic Field">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    洛伦兹力
+  <a href="#circulating-charges" class="md-nav__link">
+    Circulating Charges
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    带电粒子在磁场中的运动
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-hall-effect" class="md-nav__link">
-    霍尔效应（The Hall Effect）
+    The Hall Effect
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    载流导线在磁场中
-  </a>
-  
-    <nav class="md-nav" aria-label="载流导线在磁场中">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    电流环上的力矩
+  <a href="#current-carrying-wire" class="md-nav__link">
+    Current-Carrying Wire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torque-on-a-current-loop" class="md-nav__link">
+    Torque on a Current Loop
   </a>
   
 </li>
@@ -2507,16 +2017,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    电流产生的磁场
+  <a href="#magnetic-field-of-a-current" class="md-nav__link">
+    Magnetic Field of a Current
   </a>
   
-    <nav class="md-nav" aria-label="电流产生的磁场">
+    <nav class="md-nav" aria-label="Magnetic Field of a Current">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#biot-savart" class="md-nav__link">
-    Biot-Savart 定律
+  <a href="#biot-savart-law" class="md-nav__link">
+    Biot-Savart-law
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-long-straight-wire" class="md-nav__link">
+    A Long Straight Wire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-between-two-parallel-wires" class="md-nav__link">
+    Force Between Two Parallel Wires
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-circulation" class="md-nav__link">
+    Magnetic Field Circulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnetic Field Circulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-sheet-of-moving-charge" class="md-nav__link">
+    A Sheet of Moving Charge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-of-a-solenoid" class="md-nav__link">
+    Magnetic Field of a Solenoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-of-a-toroid" class="md-nav__link">
+    Magnetic Field of a Toroid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-curl-of-vecb" class="md-nav__link">
+    The Curl of \(\vec{B}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-divergence-of-vecb" class="md-nav__link">
+    The Divergence of \(\vec{B}\)
   </a>
   
 </li>
@@ -2527,126 +2112,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    应用实例
+  <a href="#magnetic-properties-of-materials" class="md-nav__link">
+    Magnetic Properties of Materials
   </a>
   
-    <nav class="md-nav" aria-label="应用实例">
+    <nav class="md-nav" aria-label="Magnetic Properties of Materials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    无限长直导线
+  <a href="#the-magnetic-dipole" class="md-nav__link">
+    The Magnetic Dipole
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    两平行导线间的力
+  <a href="#magnetic-field-of-a-circular-arc-of-wire" class="md-nav__link">
+    Magnetic Field of a Circular Arc of Wire
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    安培环路定律
-  </a>
-  
-    <nav class="md-nav" aria-label="安培环路定律">
+    <nav class="md-nav" aria-label="Magnetic Field of a Circular Arc of Wire">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    运动电荷片
+  <a href="#at-the-center" class="md-nav__link">
+    At the center
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    螺线管磁场
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toroid" class="md-nav__link">
-    环形线圈（Toroid）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    磁场的旋度与散度
-  </a>
-  
-    <nav class="md-nav" aria-label="磁场的旋度与散度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    磁场的旋度
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    磁场的散度
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    材料的磁性
-  </a>
-  
-    <nav class="md-nav" aria-label="材料的磁性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    磁偶极子
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    圆弧导线的磁场
-  </a>
-  
-    <nav class="md-nav" aria-label="圆弧导线的磁场">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    圆心处
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#z-gg-r" class="md-nav__link">
-    轴线远场（\(z \gg R\)）
+  <a href="#at-axial-points-far-from-the-loopz-r" class="md-nav__link">
+    at axial points far from the loop\((z ≫ R)\)
   </a>
   
 </li>
@@ -2656,37 +2153,37 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    磁性材料分类
+          <li class="md-nav__item">
+  <a href="#magnetic-materials" class="md-nav__link">
+    Magnetic Materials
   </a>
   
-    <nav class="md-nav" aria-label="磁性材料分类">
+    <nav class="md-nav" aria-label="Magnetic Materials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#paramagnetism" class="md-nav__link">
-    顺磁性（Paramagnetism）
+    Paramagnetism
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#diamagnetism" class="md-nav__link">
-    抗磁性（Diamagnetism）
+    Diamagnetism
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#ferromagnetism" class="md-nav__link">
-    铁磁性（Ferromagnetism）
+    Ferromagnetism
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2759,10 +2256,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2773,8 +2270,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2915,10 +2412,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2929,8 +2426,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -3083,10 +2580,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3097,8 +2594,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -3135,10 +2632,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3149,8 +2646,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -3333,10 +2830,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3347,8 +2844,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -3511,10 +3008,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3525,8 +3022,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -3559,10 +3056,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3573,8 +3070,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3712,8 +3209,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3722,50 +3217,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    磁场基础
+  <a href="#the-magnetic-field" class="md-nav__link">
+    The Magnetic Field
   </a>
   
-    <nav class="md-nav" aria-label="磁场基础">
+    <nav class="md-nav" aria-label="The Magnetic Field">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    洛伦兹力
+  <a href="#circulating-charges" class="md-nav__link">
+    Circulating Charges
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    带电粒子在磁场中的运动
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-hall-effect" class="md-nav__link">
-    霍尔效应（The Hall Effect）
+    The Hall Effect
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    载流导线在磁场中
-  </a>
-  
-    <nav class="md-nav" aria-label="载流导线在磁场中">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    电流环上的力矩
+  <a href="#current-carrying-wire" class="md-nav__link">
+    Current-Carrying Wire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torque-on-a-current-loop" class="md-nav__link">
+    Torque on a Current Loop
   </a>
   
 </li>
@@ -3776,16 +3258,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    电流产生的磁场
+  <a href="#magnetic-field-of-a-current" class="md-nav__link">
+    Magnetic Field of a Current
   </a>
   
-    <nav class="md-nav" aria-label="电流产生的磁场">
+    <nav class="md-nav" aria-label="Magnetic Field of a Current">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#biot-savart" class="md-nav__link">
-    Biot-Savart 定律
+  <a href="#biot-savart-law" class="md-nav__link">
+    Biot-Savart-law
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-long-straight-wire" class="md-nav__link">
+    A Long Straight Wire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-between-two-parallel-wires" class="md-nav__link">
+    Force Between Two Parallel Wires
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-circulation" class="md-nav__link">
+    Magnetic Field Circulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnetic Field Circulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-sheet-of-moving-charge" class="md-nav__link">
+    A Sheet of Moving Charge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-of-a-solenoid" class="md-nav__link">
+    Magnetic Field of a Solenoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetic-field-of-a-toroid" class="md-nav__link">
+    Magnetic Field of a Toroid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-curl-of-vecb" class="md-nav__link">
+    The Curl of \(\vec{B}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-divergence-of-vecb" class="md-nav__link">
+    The Divergence of \(\vec{B}\)
   </a>
   
 </li>
@@ -3796,126 +3353,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    应用实例
+  <a href="#magnetic-properties-of-materials" class="md-nav__link">
+    Magnetic Properties of Materials
   </a>
   
-    <nav class="md-nav" aria-label="应用实例">
+    <nav class="md-nav" aria-label="Magnetic Properties of Materials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    无限长直导线
+  <a href="#the-magnetic-dipole" class="md-nav__link">
+    The Magnetic Dipole
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    两平行导线间的力
+  <a href="#magnetic-field-of-a-circular-arc-of-wire" class="md-nav__link">
+    Magnetic Field of a Circular Arc of Wire
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    安培环路定律
-  </a>
-  
-    <nav class="md-nav" aria-label="安培环路定律">
+    <nav class="md-nav" aria-label="Magnetic Field of a Circular Arc of Wire">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    运动电荷片
+  <a href="#at-the-center" class="md-nav__link">
+    At the center
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    螺线管磁场
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#toroid" class="md-nav__link">
-    环形线圈（Toroid）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    磁场的旋度与散度
-  </a>
-  
-    <nav class="md-nav" aria-label="磁场的旋度与散度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    磁场的旋度
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    磁场的散度
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    材料的磁性
-  </a>
-  
-    <nav class="md-nav" aria-label="材料的磁性">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    磁偶极子
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    圆弧导线的磁场
-  </a>
-  
-    <nav class="md-nav" aria-label="圆弧导线的磁场">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    圆心处
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#z-gg-r" class="md-nav__link">
-    轴线远场（\(z \gg R\)）
+  <a href="#at-axial-points-far-from-the-loopz-r" class="md-nav__link">
+    at axial points far from the loop\((z ≫ R)\)
   </a>
   
 </li>
@@ -3925,37 +3394,37 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    磁性材料分类
+          <li class="md-nav__item">
+  <a href="#magnetic-materials" class="md-nav__link">
+    Magnetic Materials
   </a>
   
-    <nav class="md-nav" aria-label="磁性材料分类">
+    <nav class="md-nav" aria-label="Magnetic Materials">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#paramagnetism" class="md-nav__link">
-    顺磁性（Paramagnetism）
+    Paramagnetism
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#diamagnetism" class="md-nav__link">
-    抗磁性（Diamagnetism）
+    Diamagnetism
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#ferromagnetism" class="md-nav__link">
-    铁磁性（Ferromagnetism）
+    Ferromagnetism
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3979,277 +3448,141 @@
                   
 
 
-<h1 id="the-magnetic-field">磁场（The Magnetic Field）<a class="headerlink" href="#the-magnetic-field" title="Permanent link">&para;</a></h1>
-<div class="admonition abstract">
-<p class="admonition-title">Overview</p>
-<p>本讲涵盖<strong>磁场基础</strong>、<strong>洛伦兹力</strong>、<strong>安培定律</strong>、<strong>Biot-Savart定律</strong>以及<strong>磁性材料</strong>等内容。</p>
-</div>
-<hr />
-<h2 id="_1">磁场基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">洛伦兹力<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="admonition success">
-<p class="admonition-title">洛伦兹力公式</p>
-<div class="arithmatex">\[\vec{F} = q\vec{v} \times \vec{B}\]</div>
-<p>使用<strong>右手定则</strong>确定力的方向。</p>
-</div>
-<h3 id="_3">带电粒子在磁场中的运动<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">螺旋运动</p>
-<p>若带电粒子速度与均匀磁场有一定夹角 <span class="arithmatex">\(\phi\)</span>：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">分量</th>
-<th style="text-align: left;">公式</th>
-<th style="text-align: left;">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">平行分量</td>
-<td style="text-align: left;"><span class="arithmatex">\(v_{\parallel} = v\cos\phi\)</span></td>
-<td style="text-align: left;">决定螺旋的<strong>螺距</strong> <span class="arithmatex">\(p\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">垂直分量</td>
-<td style="text-align: left;"><span class="arithmatex">\(v_{\perp} = v\sin\phi\)</span></td>
-<td style="text-align: left;">决定螺旋的<strong>半径</strong> <span class="arithmatex">\(r = \frac{mv_{\perp}}{\|q\|B}\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr />
-<h2 id="the-hall-effect">霍尔效应（The Hall Effect）<a class="headerlink" href="#the-hall-effect" title="Permanent link">&para;</a></h2>
-<p><img alt="霍尔效应1" src="../1.png" /></p>
-<p><img alt="霍尔效应2" src="../2.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">原理</p>
-<p>载流导体在磁场中会产生横向电压，可用于测量磁场强度或载流子类型。</p>
-</div>
-<hr />
-<h2 id="_4">载流导线在磁场中<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><img alt="载流导线" src="../3.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">微分形式</p>
-<p>若导线不是直的或磁场不均匀，可将导线分成小段：</p>
-<div class="arithmatex">\[d\vec{F} = i\,d\vec{L} \times \vec{B}\]</div>
-</div>
-<h3 id="_5">电流环上的力矩<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img alt="力矩1" src="../4.png" />
-<img alt="力矩2" src="../6.png" />
-<img alt="力矩3" src="../5.png" />
-<img alt="力矩4" src="../7.png" /></p>
-<hr />
-<h2 id="_6">电流产生的磁场<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="biot-savart">Biot-Savart 定律<a class="headerlink" href="#biot-savart" title="Permanent link">&para;</a></h3>
-<div class="admonition success">
-<p class="admonition-title">Biot-Savart 定律</p>
-<div class="arithmatex">\[d\vec{B} = \frac{\mu_0}{4\pi} \frac{i\,d\vec{s} \times \vec{r}}{r^3}\]</div>
-<p>其中<strong>磁导率常数</strong> <span class="arithmatex">\(\mu_0 = 4\pi \times 10^{-7} \text{ T·m/A}\)</span></p>
-</div>
-<hr />
-<h2 id="_7">应用实例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h3 id="_8">无限长直导线<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p><img alt="直导线" src="../8.png" /></p>
-<details class="abstract">
-<summary>推导过程</summary>
-<div class="arithmatex">\[\begin{align*}
-d\vec{B} &amp;= \frac{\mu_0}{4\pi} \frac{i\,d\vec{s} \times \vec{r}}{r^3} = \frac{\mu_0}{4\pi} \frac{i\,d\vec{s} \times \vec{R}}{r^3} \\
-B &amp;= \frac{\mu_0 i}{4\pi R} \int_{-\infty}^{+\infty} \frac{R^2 \, dS}{r^3}
-\end{align*}\]</div>
-<p>其中 <span class="arithmatex">\(\sin\theta = R/r\)</span>，<span class="arithmatex">\(\cos\theta = -s/r\)</span>，<span class="arithmatex">\(dr/ds = s/r\)</span></p>
-<div class="arithmatex">\[B = \frac{\mu_0 i}{4\pi R} \int_0^\pi \sin\theta \, d\theta = \frac{\mu_0 i}{2\pi R}\]</div>
-</details>
-<h3 id="_9">两平行导线间的力<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><img alt="平行导线" src="../9.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">记忆</p>
+  <h1>The Magnetic Field</h1>
+
+<p><font face = 'Times New Roman'></p>
+<h2 id="the-magnetic-field">The Magnetic Field<a class="headerlink" href="#the-magnetic-field" title="Permanent link">&para;</a></h2>
 <ul>
-<li>同向电流：<strong>相吸</strong></li>
-<li>反向电流：<strong>相斥</strong></li>
+<li><span class="arithmatex">\(\vec{F}=q\vec{v}\times \vec{B}\)</span></li>
+<li>Right-hand rule </li>
 </ul>
-</div>
-<hr />
-<h2 id="_10">安培环路定律<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<div class="admonition success">
-<p class="admonition-title">安培环路定律</p>
-<div class="arithmatex">\[\oint \vec{B} \cdot d\vec{s} = \mu_0 i_{enc}\]</div>
-<p>其中 <span class="arithmatex">\(i_{enc}\)</span> 是穿过安培环路的<strong>总电流</strong>。</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">导体内部磁场</p>
-<p>对于导体内部的同心安培环路：</p>
-<div class="arithmatex">\[i_{enc} = i \frac{\pi r^2}{\pi R^2}\]</div>
-<p>因此：<span class="arithmatex">\(B = \frac{\mu_0 i r}{2\pi R^2}\)</span></p>
-</div>
-<h3 id="_11">运动电荷片<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p><img alt="电荷片" src="../10.png" /></p>
-<h3 id="_12">螺线管磁场<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><img alt="螺线管" src="../11.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">理想螺线管</p>
+<h3 id="circulating-charges">Circulating Charges<a class="headerlink" href="#circulating-charges" title="Permanent link">&para;</a></h3>
+<p>If the velocity of a charged particle has a component parallel to the uniform magnetic field, such that : </p>
+<p><span class="arithmatex">\(v_{||}=vcos\phi\)</span></p>
+<p><span class="arithmatex">\(v_{⊥}=vsin\phi\)</span></p>
 <ul>
-<li>无限长且匝数密集</li>
-<li>内部磁场<strong>均匀</strong>且平行于轴向</li>
-<li>外部磁场为<strong>零</strong></li>
+<li>The perpendicular component <span class="arithmatex">\(v_{⊥}\)</span> determines the radius of the helix <span class="arithmatex">\(r=\frac{mv_{⊥}}{|q|B}\)</span></li>
+<li>The parallel component <span class="arithmatex">\(v_{||}\)</span>determines the pitch p of the helix ,that is,the distance between adjacent turns.</li>
 </ul>
-</div>
-<div class="admonition success">
-<p class="admonition-title">螺线管磁场公式</p>
-<p>由安培定律：
-<span class="arithmatex">\(<span class="arithmatex">\(Bh = \mu_0 i n h \Rightarrow B = \mu_0 i n\)</span>\)</span></p>
-<p>其中 <span class="arithmatex">\(n\)</span> 为单位长度匝数。</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">实际应用</p>
-<p>螺线管提供了一种实用的方法来建立已知的均匀磁场，就像平行板电容器提供了建立已知均匀电场的方法一样。</p>
-</div>
-<h3 id="toroid">环形线圈（Toroid）<a class="headerlink" href="#toroid" title="Permanent link">&para;</a></h3>
-<p><img alt="环形线圈" src="../12.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">与螺线管的区别</p>
+<h3 id="the-hall-effect">The Hall Effect<a class="headerlink" href="#the-hall-effect" title="Permanent link">&para;</a></h3>
+<p><img alt="1" src="../1.png" /></p>
+<p><img alt="2" src="../2.png" /></p>
+<h3 id="current-carrying-wire">Current-Carrying Wire<a class="headerlink" href="#current-carrying-wire" title="Permanent link">&para;</a></h3>
+<p><img alt="3" src="../3.png" /></p>
 <ul>
-<li>磁场在截面上<strong>不是常数</strong></li>
-<li>理想环形线圈外部磁场为零</li>
+<li>If a wire is not straight or the field is not uniform, we can imagine the wire broken up into small straight segments and, in the differential limit, we can write <span class="arithmatex">\(d\vec{F}=id\vec{L}\times\vec{B}\)</span></li>
 </ul>
-</div>
-<hr />
-<h2 id="_13">磁场的旋度与散度<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h3 id="_14">磁场的旋度<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">由斯托克斯定理</p>
-<div class="arithmatex">\[\oint \vec{B} \cdot d\vec{s} = \iint (\nabla \times \vec{B}) \cdot d\vec{A} = \mu_0 i_{enc} = \mu_0 \iint_S \vec{J} \cdot d\vec{A}\]</div>
-</div>
-<div class="admonition success">
-<p class="admonition-title">微分形式</p>
-<div class="arithmatex">\[\nabla \times \vec{B}(\vec{r}) = \mu_0 \vec{J}(\vec{r})\]</div>
-</div>
-<h3 id="_15">磁场的散度<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>对于体电流分布，Biot-Savart 定律变为：</p>
-<div class="arithmatex">\[\vec{B}(x,y,z) = \frac{\mu_0}{4\pi} \iiint \frac{\vec{J}(x',y',z') \times \vec{r}}{r^3} dx'dy'dz'\]</div>
-<div class="admonition info">
-<p class="admonition-title">推导</p>
+<h3 id="torque-on-a-current-loop">Torque on a Current Loop<a class="headerlink" href="#torque-on-a-current-loop" title="Permanent link">&para;</a></h3>
+<p><img alt="4" src="../4.png" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p><img alt="5" src="../5.png" /></p>
+<p><img alt="7" src="../7.png" /></p>
+<h2 id="magnetic-field-of-a-current">Magnetic Field of a Current<a class="headerlink" href="#magnetic-field-of-a-current" title="Permanent link">&para;</a></h2>
+<h3 id="biot-savart-law">Biot-Savart-law<a class="headerlink" href="#biot-savart-law" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(d\vec{B}= \frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{r}}{r^3}\)</span></p>
+<p>Where the constant <span class="arithmatex">\(\mu_0=4\pi \cdot 10^{-7(T\cdot m/A)}\)</span>is called the <strong>permeability constant</strong></p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<h4 id="a-long-straight-wire">A Long Straight Wire<a class="headerlink" href="#a-long-straight-wire" title="Permanent link">&para;</a></h4>
+<p><img alt="8" src="../8.png" /></p>
 <ul>
-<li>线元 <span class="arithmatex">\(i\,d\vec{s}\)</span> 替换为体元 <span class="arithmatex">\(JdV' = \vec{J}(x',y',z')dx'dy'dz'\)</span></li>
-<li><span class="arithmatex">\(\vec{r} = (x-x')\hat{x} + (y-y')\hat{y} + (z-z')\hat{z}\)</span></li>
+<li>Derivation</li>
 </ul>
-</div>
-<p>应用散度：</p>
-<div class="arithmatex">\[\nabla \cdot \vec{B} = \frac{\mu_0}{4\pi} \int \nabla \cdot \left(\frac{\vec{J} \times \vec{r}}{r^3}\right) dV' = -\frac{\mu_0}{4\pi} \int \vec{J} \cdot \left(\nabla \times \frac{\vec{r}}{r^3}\right) dV'\]</div>
-<div class="admonition note">
-<p class="admonition-title">关键</p>
-<p><span class="arithmatex">\(\frac{\vec{r}}{r^3} = -\nabla(1/r)\)</span> 正是点电荷的电场形式（取 <span class="arithmatex">\(q = 4\pi\varepsilon_0\)</span>）。</p>
-<p>它只向外发散，不旋转，因此旋度为零。</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">磁场无散</p>
-<div class="arithmatex">\[\nabla \cdot \vec{B} = 0\]</div>
-</div>
-<p>构造闭合高斯面：</p>
-<div class="arithmatex">\[\oint \vec{B} \cdot d\vec{A} = \int (\nabla \cdot \vec{B}) dV = 0\]</div>
-<div class="admonition danger">
-<p class="admonition-title">重要意义</p>
-<p>通过任意闭合高斯面的净磁通量 <span class="arithmatex">\(\Phi_B\)</span> 为零。</p>
-<p>这是"<strong>磁单极子不存在</strong>"的正式表述。最简单的磁结构是<strong>磁偶极子</strong>。</p>
-</div>
-<hr />
-<h2 id="_16">材料的磁性<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<h3 id="_17">磁偶极子<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">磁偶极矩</p>
-<div class="arithmatex">\[\vec{\mu} = Ni\vec{A}\]</div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">力矩与能量</p>
-<div class="arithmatex">\[\tau = \vec{\mu} \times \vec{B} = -\mu B \sin\theta = -\frac{\partial}{\partial\theta}(-\mu B \cos\theta)\]</div>
-<div class="arithmatex">\[U_B = -\vec{\mu} \cdot \vec{B} = -\mu B \cos\theta\]</div>
-</div>
-<p><img alt="磁偶极子" src="../13.png" /></p>
-<h3 id="_18">圆弧导线的磁场<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<h4 id="_19">圆心处<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p><img alt="圆心" src="../14.png" /></p>
-<div class="admonition success">
-<p class="admonition-title">单匝线圈圆心处</p>
-<div class="arithmatex">\[B = \frac{\mu_0 i}{2R} = \frac{\mu_0 \mu}{2\pi R^3}\]</div>
-</div>
-<h4 id="z-gg-r">轴线远场（<span class="arithmatex">\(z \gg R\)</span>）<a class="headerlink" href="#z-gg-r" title="Permanent link">&para;</a></h4>
-<p><img alt="轴线1" src="../15.png" />
-<img alt="轴线2" src="../16.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">远场近似</p>
-<div class="arithmatex">\[B(z) = \frac{\mu_0}{2\pi} \frac{\mu}{r^3}\]</div>
-<p>与电偶极子的场形式相同！</p>
-</div>
-<hr />
-<h2 id="_20">磁性材料分类<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
-<h3 id="paramagnetism">顺磁性（Paramagnetism）<a class="headerlink" href="#paramagnetism" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">特点</p>
-<p>原子具有永久磁偶极矩 <span class="arithmatex">\(\vec{\mu}\)</span></p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">居里定律（Curie's Law）</p>
-<div class="arithmatex">\[M = C \frac{B_{ext}}{T}\]</div>
+<p><span class="arithmatex">\(\begin{align*}d\vec{B}&amp;=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{r}}{r^3}\\ &amp;=\frac{\mu_0}{4\pi}\frac{id\vec{s}\times\vec{R}}{r^3} \\B&amp;=\frac{\mu_0i}{4\pi R}\int_{-\infty}^{+\infty}\frac{R^2dS}{r^3} (sin\theta=R/r \ cos\theta=-s/r \ dr/ds=s/r)\\ &amp;=\frac{\mu_0i}{4\pi R}\int_{0}^{\pi}sin\theta d\theta \ (cos\theta d\theta = d(sin\theta)=-\frac{R^2dr}{r^2ds}ds=-\frac{R^2s}{r^2r}ds=cos\theta \frac{Rds}{r^2})\\ &amp;= \frac{\mu_0 i}{2\pi R}\end{align*}\)</span></p>
+<h4 id="force-between-two-parallel-wires">Force Between Two Parallel Wires<a class="headerlink" href="#force-between-two-parallel-wires" title="Permanent link">&para;</a></h4>
+<p><img alt="9" src="../9.png" /></p>
+<h3 id="magnetic-field-circulation">Magnetic Field Circulation<a class="headerlink" href="#magnetic-field-circulation" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(Circulation =\oint \vec{B}\cdot d\vec{s} = \mu_0 i_{enc}\)</span>  (<strong>Amperian Loop</strong>)</p>
 <ul>
-<li>仅当 <span class="arithmatex">\(B_{ext}/T\)</span> 不太大时有效</li>
-<li>足够强的外场下，所有偶极子排列，磁化强度饱和：<span class="arithmatex">\(M_{max} = N\mu/V\)</span></li>
+<li>For a concentric Amperian loop inside the wire <span class="arithmatex">\(i_{enc}=i\frac{\pi r^2}{\pi R^2}\)</span>  Thus, <span class="arithmatex">\(B=\frac{\mu_0ir}{2\pi R^2}\)</span></li>
 </ul>
-</div>
-<p><img alt="顺磁性解释" src="../17.png" /></p>
-<h3 id="diamagnetism">抗磁性（Diamagnetism）<a class="headerlink" href="#diamagnetism" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">特点</p>
+<h4 id="a-sheet-of-moving-charge">A Sheet of Moving Charge<a class="headerlink" href="#a-sheet-of-moving-charge" title="Permanent link">&para;</a></h4>
+<p><img alt="10" src="../10.png" /></p>
+<h4 id="magnetic-field-of-a-solenoid">Magnetic Field of a Solenoid<a class="headerlink" href="#magnetic-field-of-a-solenoid" title="Permanent link">&para;</a></h4>
+<p><img alt="11" src="../11.png" /></p>
+<p>In the limiting case of an ideal solenoid, which is infinitely long and consists of tightly packed (close-packed) turns of square wire, the field inside the coil is uniform and parallel to the solenoid axis. The magnetic field outside the solenoid is zero.</p>
+<p>The direction of the magnetic field along the solenoid axis is given by a curled-straight right-hand rule: Grasp the solenoid with your right hand so that your fingers follow the direction of the current in the windings; your extended right thumb then points in the direction of the axial magnetic field.</p>
 <ul>
-<li>存在于所有材料中</li>
-<li>仅在原子偶极矩为零的材料中可观察到</li>
-<li>可用等量顺时针/逆时针轨道电子模型解释</li>
+<li>From Ampere's Law : <span class="arithmatex">\(Bh=\mu_0inh \Rightarrow B=\mu_0in\)</span></li>
 </ul>
-</div>
-<p><img alt="抗磁性" src="../18.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">原理</p>
-<p>外加磁场会加速或减速这些电子，产生净磁偶极矩，方向与外场<strong>相反</strong>。</p>
-</div>
-<h3 id="ferromagnetism">铁磁性（Ferromagnetism）<a class="headerlink" href="#ferromagnetism" title="Permanent link">&para;</a></h3>
-<div class="admonition danger">
-<p class="admonition-title">特点</p>
+<p>A solenoid thus provides a practical way to set up a known</p>
+<p>uniform magnetic field for experimentation, just as a parallel-plate capacitor provides a practical way to set up a known uniform electric field.</p>
+<h4 id="magnetic-field-of-a-toroid">Magnetic Field of a Toroid<a class="headerlink" href="#magnetic-field-of-a-toroid" title="Permanent link">&para;</a></h4>
+<p><img alt="12" src="../12.png" /></p>
+<p>In contrast to the situation for a solenoid, B is not constant over the cross section of a toroid.</p>
+<p>One can show, with Ampere’s law, that B = 0 for points outside an ideal toroid (as if the toroid were made from an ideal solenoid).</p>
+<h3 id="the-curl-of-vecb">The Curl of <span class="arithmatex">\(\vec{B}\)</span><a class="headerlink" href="#the-curl-of-vecb" title="Permanent link">&para;</a></h3>
 <ul>
-<li>具有强而持久的磁性</li>
-<li>相邻原子间存在<strong>强相互作用</strong></li>
-<li>即使去除外磁场，偶极矩仍保持排列</li>
+<li>By Stokes's theorem : <span class="arithmatex">\(\oint\vec{B}\cdot d\vec{s} = \iint(\triangledown \times \vec{B})\cdot d\vec{A}=\mu_0i_{enc}=\mu_0\iint_S\vec{J}\cdot d\vec{A}\)</span></li>
+<li>Thus <span class="arithmatex">\(\triangledown \times \vec{B}(\vec{r}) = \mu_0\vec{J}(\vec{r})\)</span></li>
 </ul>
-</div>
-<p><img alt="铁磁性" src="../19.png" /></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">材料类型</th>
-<th style="text-align: left;">永久偶极矩</th>
-<th style="text-align: left;">外场响应</th>
-<th style="text-align: left;">典型材料</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">顺磁性</td>
-<td style="text-align: left;">有</td>
-<td style="text-align: left;">与外场同向，弱</td>
-<td style="text-align: left;">铝、铂</td>
-</tr>
-<tr>
-<td style="text-align: left;">抗磁性</td>
-<td style="text-align: left;">无</td>
-<td style="text-align: left;">与外场反向，很弱</td>
-<td style="text-align: left;">铜、金、水</td>
-</tr>
-<tr>
-<td style="text-align: left;">铁磁性</td>
-<td style="text-align: left;">有（强）</td>
-<td style="text-align: left;">与外场同向，很强</td>
-<td style="text-align: left;">铁、钴、镍</td>
-</tr>
-</tbody>
-</table>
+<h3 id="the-divergence-of-vecb">The Divergence of <span class="arithmatex">\(\vec{B}\)</span><a class="headerlink" href="#the-divergence-of-vecb" title="Permanent link">&para;</a></h3>
+<p>For volume currents, the Biot-Savart law becomes</p>
+<p><span class="arithmatex">\(\vec{B}(x,y,z)=\frac{\mu_0}{4\pi}\iiint\frac{\vec{J}(x',y',z')\times \vec{r}}{r^3}dx'dy'dz'\)</span></p>
+<ul>
+<li>
+<p>The length element <span class="arithmatex">\(id\vec{s}\)</span> is replace by the volume element <span class="arithmatex">\(JdV'= \vec{J}(x',y',z')dx'dy'dz'\)</span> and <span class="arithmatex">\(r =(x − x' ) \hat{x} + ( y − y' )\hat{y} + ( z − z') \hat{z}\)</span> </p>
+</li>
+<li>
+<p>Applying the divergence, we obtain:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\triangledown \cdot \vec{B}=\frac{\mu_0}{4\pi}\int \triangledown (\frac{\vec{J}\times \vec{r}}{r^3})dV'=-\frac{\mu_0}{4\pi}\int \vec{J} (\triangledown \times \frac{\vec{r}}{r^3})dV'\)</span></p>
+<ul>
+<li>Note that <span class="arithmatex">\(\frac{\vec{r}}{r^3}= −\triangledown(1/\vec{r} )\)</span> is nothing but the electric field of a point charge (q = 4πε0)</li>
+<li>
+<p>It does not twists around; it only spreads out. Its curl is zero (as known in electrostatics).</p>
+</li>
+<li>
+<p>Thus <span class="arithmatex">\(\triangledown \cdot \vec{B} = 0\)</span></p>
+</li>
+<li>
+<p>Constructing a closed Gaussian surface,we have:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(\oint\vec{B}\cdot d\vec{A}=\int(\triangledown\cdot\vec{B})dV=0\)</span></p>
+<ul>
+<li>
+<p>The law asserts that the net magnetic flux <span class="arithmatex">\(\Phi _B\)</span> through any closed Gaussian surface is zero. </p>
+</li>
+<li>
+<p>This is a formal way of saying that magnetic monopoles do not exist. The simplest magnetic structure that can exist is a magnetic dipole.</p>
+</li>
+</ul>
+<h2 id="magnetic-properties-of-materials">Magnetic Properties of Materials<a class="headerlink" href="#magnetic-properties-of-materials" title="Permanent link">&para;</a></h2>
+<h3 id="the-magnetic-dipole">The Magnetic Dipole<a class="headerlink" href="#the-magnetic-dipole" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(\vec{\mu}=Ni\vec{A}\)</span></p>
+<p><span class="arithmatex">\(\tau = \vec{\mu} \times \vec{B}=-\mu Bsin\theta=-\frac{\partial}{\partial \theta}(-\mu Bcos\theta)\)</span></p>
+<p><span class="arithmatex">\(U_B=-\vec{\mu}\cdot\vec{B} = -\mu Bcos\theta\)</span></p>
+<p><img alt="13" src="../13.png" /></p>
+<h3 id="magnetic-field-of-a-circular-arc-of-wire">Magnetic Field of a Circular Arc of Wire<a class="headerlink" href="#magnetic-field-of-a-circular-arc-of-wire" title="Permanent link">&para;</a></h3>
+<h4 id="at-the-center">At the center<a class="headerlink" href="#at-the-center" title="Permanent link">&para;</a></h4>
+<p><img alt="14" src="../14.png" /></p>
+<ul>
+<li>Thus , at the center of a single-loop coil, we have <span class="arithmatex">\(B=\frac{\mu_0i}{2R}=\frac{\mu_0\mu}{2\pi R^3}\)</span></li>
+</ul>
+<h4 id="at-axial-points-far-from-the-loopz-r">at axial points far from the loop<span class="arithmatex">\((z ≫ R)\)</span><a class="headerlink" href="#at-axial-points-far-from-the-loopz-r" title="Permanent link">&para;</a></h4>
+<p><img alt="15" src="../15.png" /></p>
+<p><img alt="16" src="../16.png" /></p>
+<p>Which means <span class="arithmatex">\(B(z)=\frac{\mu_0}{2\pi}\frac{\mu}{r^3}\)</span> Just like the  electric dipole</p>
+<h3 id="magnetic-materials">Magnetic Materials<a class="headerlink" href="#magnetic-materials" title="Permanent link">&para;</a></h3>
+<h4 id="paramagnetism">Paramagnetism<a class="headerlink" href="#paramagnetism" title="Permanent link">&para;</a></h4>
+<p>Paramagnetism occurs in materials whose atoms have permanent magnetic dipole moments <span class="arithmatex">\(\vec{\mu}\)</span></p>
+<ul>
+<li><strong>Curie’s law</strong> : <span class="arithmatex">\(M=C\frac{B_{ext}}{T}\)</span></li>
+<li>The law is actually an approximation that is valid only when the ratio <span class="arithmatex">\(B_{ext}/T\)</span> is not too large.</li>
+<li>With sufficient strong <span class="arithmatex">\(\vec{B}_{ext}\)</span> all dipoles in a sample of N atoms and a volume V line up with <span class="arithmatex">\(\vec{B}\)</span> hence M saturates at <span class="arithmatex">\(M_{max}=N\mu/V\)</span></li>
+</ul>
+<p>Explain:</p>
+<p><img alt="17" src="../17.png" /></p>
+<h4 id="diamagnetism">Diamagnetism<a class="headerlink" href="#diamagnetism" title="Permanent link">&para;</a></h4>
+<p>Diamagnetism occurs in all materials, but the weak effect is only observable in materials having atomic dipole moments of zero.</p>
+<p>Such a material can be modeled by equal numbers of electrons orbiting counterclockwise or clockwise. An external magnetic field will either accelerate or decelerate these electrons, leading to a net magnetic dipole moment</p>
+<p><img alt="18" src="../18.png" /></p>
+<h4 id="ferromagnetism">Ferromagnetism<a class="headerlink" href="#ferromagnetism" title="Permanent link">&para;</a></h4>
+<p>A ferromagnet has strong, permanent magnetism. What distinguishes ferromagnets from paramagnets is that there is a strong interaction between neighboring atoms.</p>
+<p>The interaction keeps the dipole moments of atoms aligned even when the magnetic field is removed.</p>
+<p><img alt="19" src="../19.png" /></p>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
@@ -4418,8 +3751,6 @@ B &amp;= \frac{\mu_0 i}{4\pi R} \int_{-\infty}^{+\infty} \frac{R^2 \, dS}{r^3}
         <script src="../../../javascripts/extra.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,8 +55,6 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
-    
-      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -67,6 +65,8 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
   
     
     
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -286,26 +286,6 @@
         
   
   
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../RL/Eras/" class="md-tabs__link">
-          
-  
-    
-  
-  RL Learning Notes
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
     
   
   
@@ -325,7 +305,7 @@
   
     
   
-  CS Courses (ZJU)
+  Computer Science and Related Courses(ZJU)
 
         </a>
       </li>
@@ -546,6 +526,8 @@
       
         
       
+        
+      
     
     
     
@@ -607,6 +589,26 @@
   
   <span class="md-ellipsis">
     DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Papers/DM/FlowMatching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Matching
   </span>
   
 
@@ -811,72 +813,11 @@
       
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../RL/Eras/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    RL Learning Notes
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            RL Learning Notes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
     
     
-      
-        
-      
-        
       
         
       
@@ -898,24 +839,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    CS Courses (ZJU)
+    Computer Science and Related Courses(ZJU)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            CS Courses (ZJU)
+            Computer Science and Related Courses(ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -956,10 +897,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -970,8 +911,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -987,7 +928,7 @@
         
   
   <span class="md-ellipsis">
-    Finite Automata
+    Lecture 1 - Finite Automata
   </span>
   
 
@@ -1007,7 +948,7 @@
         
   
   <span class="md-ellipsis">
-    Regular Language
+    Lecture 2 - Regular Language
   </span>
   
 
@@ -1027,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    Context-Free Language
+    Lecture 3 - Context-Free Language
   </span>
   
 
@@ -1047,7 +988,7 @@
         
   
   <span class="md-ellipsis">
-    Push-Down Automata
+    Lecture 4 - Push-Down-Automata
   </span>
   
 
@@ -1067,7 +1008,7 @@
         
   
   <span class="md-ellipsis">
-    Turing Machine
+    Lecture 5 - Turing Machine
   </span>
   
 
@@ -1087,7 +1028,7 @@
         
   
   <span class="md-ellipsis">
-    Language Properties
+    Lecture 6 - Containments properties of languages
   </span>
   
 
@@ -1107,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Decidability
+    Lecture 7 - Decidability
   </span>
   
 
@@ -1127,7 +1068,7 @@
         
   
   <span class="md-ellipsis">
-    Gödel's Theorems
+    Lecture 8 - Gödel's Incompleteness Theorems
   </span>
   
 
@@ -1147,7 +1088,7 @@
         
   
   <span class="md-ellipsis">
-    Time Complexity
+    Lecture 9 - Complexity - Time
   </span>
   
 
@@ -1167,7 +1108,7 @@
         
   
   <span class="md-ellipsis">
-    Space Complexity
+    Lecture 10 - Complexity - Space
   </span>
   
 
@@ -1232,10 +1173,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1246,8 +1187,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1263,7 +1204,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Lecture 1 - Introduction
   </span>
   
 
@@ -1283,7 +1224,7 @@
         
   
   <span class="md-ellipsis">
-    OS Structure
+    Lecture 2 - OS Structure
   </span>
   
 
@@ -1303,7 +1244,7 @@
         
   
   <span class="md-ellipsis">
-    Process
+    Lecture 3 - Process
   </span>
   
 
@@ -1323,7 +1264,7 @@
         
   
   <span class="md-ellipsis">
-    Scheduling
+    Lecture 4 - Schedule
   </span>
   
 
@@ -1343,7 +1284,7 @@
         
   
   <span class="md-ellipsis">
-    IPC
+    Lecture 5 - IPC
   </span>
   
 
@@ -1363,7 +1304,7 @@
         
   
   <span class="md-ellipsis">
-    Thread
+    Lecture 6 - Thread
   </span>
   
 
@@ -1383,7 +1324,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization
+    Lecture 7 - Synchronization
   </span>
   
 
@@ -1403,7 +1344,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization II
+    Lecture 8 - Synchronization II
   </span>
   
 
@@ -1423,7 +1364,7 @@
         
   
   <span class="md-ellipsis">
-    Deadlock
+    Lecture 9 - Deadlock
   </span>
   
 
@@ -1443,7 +1384,7 @@
         
   
   <span class="md-ellipsis">
-    Main Memory
+    Lecture 10 - Main Memory
   </span>
   
 
@@ -1463,7 +1404,7 @@
         
   
   <span class="md-ellipsis">
-    Virtual Memory
+    Lecture 11 - Virtual Memory
   </span>
   
 
@@ -1483,7 +1424,7 @@
         
   
   <span class="md-ellipsis">
-    Mass Storage
+    Lecture 12 - Mass Storage
   </span>
   
 
@@ -1503,7 +1444,7 @@
         
   
   <span class="md-ellipsis">
-    I/O System
+    Lecture 13 -I/O System
   </span>
   
 
@@ -1523,7 +1464,7 @@
         
   
   <span class="md-ellipsis">
-    File System
+    Lecture 14 - File System
   </span>
   
 
@@ -1543,7 +1484,7 @@
         
   
   <span class="md-ellipsis">
-    OS Security
+    Lecture 15 - OS Security
   </span>
   
 
@@ -1584,24 +1525,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Advanced Data Structures
+    Anvanced Data Structure and Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Advanced Data Structures
+            Anvanced Data Structure and Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1676,24 +1617,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Algorithm Analysis
+    Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Algorithm Analysis
+            Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1707,7 +1648,7 @@
         
   
   <span class="md-ellipsis">
-    Backtracking
+    backtracking
   </span>
   
 
@@ -1727,7 +1668,7 @@
         
   
   <span class="md-ellipsis">
-    Divide & Conquer
+    Divide and Conquer
   </span>
   
 
@@ -1857,420 +1798,6 @@
                 
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../assembly/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    x86 Assembly
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            x86 Assembly
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    寄存器
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    基础指令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    堆栈
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    函数调用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    中断服务
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    显卡输出
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    端口
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Digital Image Processing
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Digital Image Processing
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Binary Image & Morphology
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic Operations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/morph/morph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Morphing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/filter/filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Filtering
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fourier Transform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/feature/feature/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Features
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -2292,24 +1819,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    General Physics II
+    General physics II
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            General Physics II
+            General physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2338,10 +1865,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2352,8 +1879,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2474,10 +2001,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2488,8 +2015,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2632,10 +2159,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2646,8 +2173,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2765,16 +2292,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    氢原子之谜
+  <a href="#quiz" class="md-nav__link">
+    Quiz
   </a>
   
-    <nav class="md-nav" aria-label="氢原子之谜">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mystery-of-the-hydrogen-atom" class="md-nav__link">
+    Mystery of the Hydrogen Atom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bohr-model-of-hydrogen-1913" class="md-nav__link">
+    The Bohr Model of Hydrogen (1913)
+  </a>
+  
+    <nav class="md-nav" aria-label="The Bohr Model of Hydrogen (1913)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    经典力学描述
+  <a href="#physical-meaning-of-the-assumption" class="md-nav__link">
+    Physical meaning of the assumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-based-on-bohrs-model" class="md-nav__link">
+    Analysis based on Bohr’s model
   </a>
   
 </li>
@@ -2785,23 +2333,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1913" class="md-nav__link">
-    玻尔模型（1913）
+  <a href="#the-hydrogen-spectrum" class="md-nav__link">
+    The Hydrogen Spectrum
   </a>
   
-    <nav class="md-nav" aria-label="玻尔模型（1913）">
+    <nav class="md-nav" aria-label="The Hydrogen Spectrum">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    假设的物理意义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    基于玻尔模型的分析
+  <a href="#combinations-of-physical-constants" class="md-nav__link">
+    Combinations of Physical Constants
   </a>
   
 </li>
@@ -2812,83 +2353,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    氢光谱
+  <a href="#gs-energy-from-uncertainty-principleground-state" class="md-nav__link">
+    GS Energy from Uncertainty Principle[Ground State]
   </a>
   
-    <nav class="md-nav" aria-label="氢光谱">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schroedingers-equation-for-the-h-atom" class="md-nav__link">
+    Schroedinger's Equation for the H-atom
+  </a>
+  
+    <nav class="md-nav" aria-label="Schroedinger's Equation for the H-atom">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    物理常数组合
+  <a href="#derive" class="md-nav__link">
+    Derive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-state-wave-function" class="md-nav__link">
+    Ground State Wave Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excited-states-of-the-hydrogen-atom" class="md-nav__link">
+    Excited States of the Hydrogen Atom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bohrs-correspondence-principle" class="md-nav__link">
+    Bohr’s Correspondence Principle
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    基态能量的不确定性原理推导
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    氢原子的薛定谔方程
-  </a>
-  
-    <nav class="md-nav" aria-label="氢原子的薛定谔方程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    推导过程
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    基态波函数
-  </a>
-  
-    <nav class="md-nav" aria-label="基态波函数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    概率密度
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    激发态
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    玻尔对应原理
-  </a>
   
 </li>
       
@@ -2968,10 +2476,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2982,8 +2490,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -3020,10 +2528,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3034,8 +2542,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -3218,10 +2726,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3232,8 +2740,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -3396,10 +2904,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3410,8 +2918,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -3444,10 +2952,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3458,8 +2966,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3607,16 +3115,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    氢原子之谜
+  <a href="#quiz" class="md-nav__link">
+    Quiz
   </a>
   
-    <nav class="md-nav" aria-label="氢原子之谜">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mystery-of-the-hydrogen-atom" class="md-nav__link">
+    Mystery of the Hydrogen Atom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bohr-model-of-hydrogen-1913" class="md-nav__link">
+    The Bohr Model of Hydrogen (1913)
+  </a>
+  
+    <nav class="md-nav" aria-label="The Bohr Model of Hydrogen (1913)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    经典力学描述
+  <a href="#physical-meaning-of-the-assumption" class="md-nav__link">
+    Physical meaning of the assumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-based-on-bohrs-model" class="md-nav__link">
+    Analysis based on Bohr’s model
   </a>
   
 </li>
@@ -3627,23 +3156,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1913" class="md-nav__link">
-    玻尔模型（1913）
+  <a href="#the-hydrogen-spectrum" class="md-nav__link">
+    The Hydrogen Spectrum
   </a>
   
-    <nav class="md-nav" aria-label="玻尔模型（1913）">
+    <nav class="md-nav" aria-label="The Hydrogen Spectrum">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    假设的物理意义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    基于玻尔模型的分析
+  <a href="#combinations-of-physical-constants" class="md-nav__link">
+    Combinations of Physical Constants
   </a>
   
 </li>
@@ -3654,83 +3176,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    氢光谱
+  <a href="#gs-energy-from-uncertainty-principleground-state" class="md-nav__link">
+    GS Energy from Uncertainty Principle[Ground State]
   </a>
   
-    <nav class="md-nav" aria-label="氢光谱">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schroedingers-equation-for-the-h-atom" class="md-nav__link">
+    Schroedinger's Equation for the H-atom
+  </a>
+  
+    <nav class="md-nav" aria-label="Schroedinger's Equation for the H-atom">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    物理常数组合
+  <a href="#derive" class="md-nav__link">
+    Derive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-state-wave-function" class="md-nav__link">
+    Ground State Wave Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excited-states-of-the-hydrogen-atom" class="md-nav__link">
+    Excited States of the Hydrogen Atom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bohrs-correspondence-principle" class="md-nav__link">
+    Bohr’s Correspondence Principle
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    基态能量的不确定性原理推导
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    氢原子的薛定谔方程
-  </a>
-  
-    <nav class="md-nav" aria-label="氢原子的薛定谔方程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    推导过程
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    基态波函数
-  </a>
-  
-    <nav class="md-nav" aria-label="基态波函数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    概率密度
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    激发态
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    玻尔对应原理
-  </a>
   
 </li>
       
@@ -3749,208 +3238,102 @@
                   
 
 
-<h1 id="the-hydrogen-atom">氢原子（The Hydrogen Atom）<a class="headerlink" href="#the-hydrogen-atom" title="Permanent link">&para;</a></h1>
-<div class="admonition abstract">
-<p class="admonition-title">Overview</p>
-<p>本讲涵盖<strong>氢原子的玻尔模型</strong>、<strong>氢光谱</strong>、<strong>薛定谔方程求解</strong>以及<strong>波函数的物理意义</strong>。</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">推荐视频</p>
+<p><font face = 'Times New Roman'></p>
+<h1 id="the-hydrogen-atom">The Hydrogen Atom<a class="headerlink" href="#the-hydrogen-atom" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.youtube.com/watch?v=-Y0XL-K0jy0">https://www.youtube.com/watch?v=-Y0XL-K0jy0</a></p>
+<p><a href="https://youtube.com/watch?v=acN7E7AUHPk">https://youtube.com/watch?v=acN7E7AUHPk</a></p>
+<h3 id="quiz">Quiz<a class="headerlink" href="#quiz" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.youtube.com/watch?v=9GOuZAh9Wg0">https://www.youtube.com/watch?v=9GOuZAh9Wg0</a></p>
+<h2 id="mystery-of-the-hydrogen-atom">Mystery of the Hydrogen Atom<a class="headerlink" href="#mystery-of-the-hydrogen-atom" title="Permanent link">&para;</a></h2>
+<p>Because the proton’s mass is much greater than the electron’s mass, we shall assume that the proton is fixed in place. So, the atom is a fixed potential trap with the electron moving around inside it.</p>
+<p>A hydrogen atom contains an electron that is trapped by the Coulomb force it experiences from the proton, which is the nucleus of the atom.</p>
+<p>Under Newtonian laws, the electron would move around the proton, like planets around the Sun, i.e. <span class="arithmatex">\(\frac{1}{4\pi\epsilon_0}\frac{e^2}{r^2}=m\frac{v^2}{r}\)</span></p>
+<p>Multiplying by −r, we obtain <span class="arithmatex">\(E_c=-\frac{e^2}{4\pi \epsilon _0 r}=-mv^2=-2E_k\)</span></p>
+<p>Alternatively, the total energy of the electron is<span class="arithmatex">\(E=E_k+E_c=\frac{E_c}{2}=-E_k\)</span></p>
+<p>However, any charged particle which moves in a curved path will emit electromagnetic radiation, hence losing energy continuously. Why doesn’t the electrical attraction between the electron and the positive charge simply cause the two to collapse together?</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=-Y0XL-K0jy0">YouTube: Hydrogen Atom 1</a></li>
-<li><a href="https://youtube.com/watch?v=acN7E7AUHPk">YouTube: Hydrogen Atom 2</a></li>
-<li><a href="https://www.youtube.com/watch?v=9GOuZAh9Wg0">Quiz</a></li>
+<li>One clue lies in the experimental fact that a hydrogen atom can emit and absorb only four wavelengths in the visible spectrum (656 nm, 486 nm, 434 nm, and 410 nm).</li>
 </ul>
-</div>
-<hr />
-<h2 id="_1">氢原子之谜<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">基本设定</p>
-<p>由于质子质量远大于电子质量，我们假设质子固定不动。原子是一个固定的势阱，电子在其中运动。</p>
-</div>
-<p>氢原子包含一个被<strong>库仑力</strong>束缚的电子，质子是原子核。</p>
-<h3 id="_2">经典力学描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>根据牛顿定律，电子绕质子运动，类似于行星绕太阳：</p>
-<div class="arithmatex">\[\frac{1}{4\pi\varepsilon_0} \frac{e^2}{r^2} = m\frac{v^2}{r}\]</div>
-<p>两边乘以 <span class="arithmatex">\(-r\)</span>：</p>
-<div class="arithmatex">\[E_c = -\frac{e^2}{4\pi\varepsilon_0 r} = -mv^2 = -2E_k\]</div>
-<div class="admonition success">
-<p class="admonition-title">能量关系</p>
-<p>电子总能量：
-<span class="arithmatex">\(<span class="arithmatex">\(E = E_k + E_c = \frac{E_c}{2} = -E_k\)</span>\)</span></p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">经典物理的困境</p>
-<p>任何做曲线运动的带电粒子都会辐射电磁波，从而持续损失能量。</p>
-<p><strong>为什么电子和质子不会因库仑吸引而塌缩在一起？</strong></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">实验线索</p>
-<p>氢原子在可见光谱中只能发射和吸收<strong>四个特定波长</strong>：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">波长 (nm)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">656</td>
-</tr>
-<tr>
-<td style="text-align: left;">486</td>
-</tr>
-<tr>
-<td style="text-align: left;">434</td>
-</tr>
-<tr>
-<td style="text-align: left;">410</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr />
-<h2 id="1913">玻尔模型（1913）<a class="headerlink" href="#1913" title="Permanent link">&para;</a></h2>
-<div class="admonition quote">
-<p class="admonition-title">玻尔的两个大胆假设</p>
-<ol>
-<li>电子在圆轨道上绕原子核运动，类似地球绕太阳</li>
-<li>电子角动量<strong>量子化</strong>：<span class="arithmatex">\(L = n\hbar\)</span>，其中 <span class="arithmatex">\(n = 1, 2, 3, \ldots\)</span></li>
-</ol>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">历史地位</p>
-<p>玻尔理论成功解释了四条可见光谱线以及原子为何不塌缩，但在其他方面几乎都是错误的。</p>
-</div>
-<h3 id="_3">假设的物理意义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>自由粒子的德布罗意波长：<span class="arithmatex">\(\lambda = h/p = h/mv\)</span></p>
-<p>对于轨道半径为 <span class="arithmatex">\(r\)</span> 的氢原子电子：</p>
-<div class="arithmatex">\[\frac{\lambda}{r} = \frac{h}{rmv} = \frac{h}{L}\]</div>
-<p>因此：</p>
-<div class="arithmatex">\[\frac{2\pi r}{\lambda} = \frac{L}{\hbar}\]</div>
-<div class="admonition success">
-<p class="admonition-title">关键理解</p>
-<p><span class="arithmatex">\(L = n\hbar\)</span> 意味着轨道周长是波长的整数倍。</p>
-<p>即：电子波函数绑轨道一周后<strong>相位回到初始值</strong>。</p>
-</div>
-<h3 id="_4">基于玻尔模型的分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">量子化条件</p>
-<div class="arithmatex">\[L = rmv = n\hbar \Rightarrow v = \frac{n\hbar}{mr}\]</div>
-</div>
-<p>结合牛顿力学结果 <span class="arithmatex">\(\frac{e^2}{4\pi\varepsilon_0 r^2} = m\frac{v^2}{r}\)</span>：</p>
-<div class="arithmatex">\[r_n = n^2 a_B\]</div>
-<div class="admonition success">
-<p class="admonition-title">玻尔半径</p>
-<div class="arithmatex">\[a_B = \frac{\hbar^2}{me^2/(4\pi\varepsilon_0)} = 0.529 \text{ Å}\]</div>
-<p>这是电子的最小轨道半径（<span class="arithmatex">\(n = 1\)</span> 时）。</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">能量量子化</p>
-<div class="arithmatex">\[E_n = \frac{1}{2}mv^2 - \frac{1}{4\pi\varepsilon_0}\frac{e^2}{r} = -\frac{E_R}{n^2}\]</div>
-<p>其中<strong>里德伯能量</strong>：
-<span class="arithmatex">\(<span class="arithmatex">\(E_R = \frac{me^4/(4\pi\varepsilon_0)^2}{2\hbar^2} = 13.6 \text{ eV}\)</span>\)</span></p>
-</div>
-<p>每个轨道仍满足：<span class="arithmatex">\(E = E_k + E_c = \frac{E_c}{2} = -E_k\)</span></p>
-<hr />
-<h2 id="_5">氢光谱<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="admonition success">
-<p class="admonition-title">光谱跃迁公式</p>
-<p>氢原子发射或吸收光子时：
-<span class="arithmatex">\(<span class="arithmatex">\(\hbar\omega_{nm} = E_R \left(\frac{1}{n^2} - \frac{1}{m^2}\right)\)</span>\)</span></p>
-<p>其中整数 <span class="arithmatex">\(m &gt; n\)</span>。</p>
-</div>
-<p>波长公式：</p>
-<div class="arithmatex">\[\frac{1}{\lambda} = \frac{E_R}{hc} \left(\frac{1}{n^2} - \frac{1}{m^2}\right)\]</div>
-<p><img alt="氢光谱系列" src="../1.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">单位</p>
-<p><span class="arithmatex">\(1 \text{ Ångström} = 1 \times 10^{-10} \text{ m}\)</span></p>
-</div>
-<h3 id="_6">物理常数组合<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><img alt="物理常数" src="../2.png" /></p>
-<hr />
-<h2 id="_7">基态能量的不确定性原理推导<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">基本思想</p>
-<p>基态能量是海森堡不确定性原理允许的<strong>最低能量</strong>。</p>
-</div>
+<h2 id="the-bohr-model-of-hydrogen-1913">The Bohr Model of Hydrogen (1913)<a class="headerlink" href="#the-bohr-model-of-hydrogen-1913" title="Permanent link">&para;</a></h2>
+<p>Bohr made two bold (and completely unjustified) assumptions:</p>
 <ul>
-<li>波函数的"尺寸" <span class="arithmatex">\(\Delta r\)</span> 是位置的不确定度</li>
-<li>由不确定性原理：<span class="arithmatex">\(\Delta p \sim \hbar / \Delta r\)</span></li>
+<li>The electron in a hydrogen atom orbits the nucleus in a circlemuch like Earth orbits the Sun.</li>
+<li>The magnitude of the angular momentum <span class="arithmatex">\(\vec{L}\)</span> of the electron in its orbit is restricted (quantized) to the values <span class="arithmatex">\(L = n\bar{h}\)</span>, for <span class="arithmatex">\(n = 1,2,3,....\)</span></li>
 </ul>
-<p>电子能量估计：</p>
-<div class="arithmatex">\[E \sim \frac{(\Delta p)^2}{2m} - \frac{e^2}{4\pi\varepsilon_0 \Delta r} = \frac{\hbar^2}{2m(\Delta r)^2} - \frac{e^2}{4\pi\varepsilon_0 \Delta r}\]</div>
-<div class="admonition tip">
-<p class="admonition-title">说明</p>
-<p>由于 <span class="arithmatex">\(\langle p \rangle = 0\)</span>，用 <span class="arithmatex">\(\Delta p\)</span> 近似 <span class="arithmatex">\(p\)</span>。</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">最小化能量</p>
-<p>令 <span class="arithmatex">\(\frac{dE}{d(\Delta r)} = 0\)</span>：</p>
-<div class="arithmatex">\[\Delta r = \frac{\hbar^2}{me^2/(4\pi\varepsilon_0)} = a_B\]</div>
-<div class="arithmatex">\[E = -\frac{me^4/(4\pi\varepsilon_0)^2}{2\hbar^2} = -E_R\]</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">能量确定性</p>
-<p>定态能量是<strong>唯一确定的</strong>，这是因为能量-时间不确定性原理：
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta t \cdot \Delta E \geq \hbar/2\)</span>\)</span></p>
-<p>对于定态，<span class="arithmatex">\(\Delta t = \infty\)</span>，所以 <span class="arithmatex">\(\Delta E = 0\)</span>。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">注意</p>
-<p>虽然总能量确定，但动能和势能各自都有<strong>不确定性</strong>（由于位置和动量的不确定性）。</p>
-</div>
-<p>氢原子是一个三维有限势阱，阱深随距离变化。</p>
-<hr />
-<h2 id="_8">氢原子的薛定谔方程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p><img alt="薛定谔方程" src="../3.png" /></p>
-<p><img alt="球坐标" src="../4.png" /></p>
-<h3 id="_9">推导过程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><img alt="推导1" src="../1.jpg" />
-<img alt="推导2" src="../2.jpg" />
-<img alt="推导3" src="../3.jpg" />
-<img alt="推导4" src="../5.png" />
-<img alt="量子数" src="../14.png" />
-<img alt="推导5" src="../4.jpg" />
-<img alt="波函数" src="../6.png" />
-<img alt="能级图" src="../7.png" />
-<img alt="径向分布" src="../8.png" />
-<img alt="角度分布" src="../9.png" />
-<img alt="概率密度" src="../10.png" /></p>
-<hr />
-<h2 id="_10">基态波函数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<div class="admonition success">
-<p class="admonition-title">基态波函数</p>
-<div class="arithmatex">\[\psi_{100}(\vec{r}) = R_{10}(r) = \frac{1}{\sqrt{\pi} a_B^{3/2}} e^{-r/a_B}\]</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">与玻尔模型的差异</p>
-<p>基态氢原子的角动量为<strong>零</strong>（<span class="arithmatex">\(l = 0\)</span>），这在玻尔模型中没有预测到。</p>
-</div>
-<h3 id="_11">概率密度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>电子在半径 <span class="arithmatex">\(r\)</span> 处的无穷小体积元 <span class="arithmatex">\(dV\)</span> 中被探测到的概率：</p>
-<div class="arithmatex">\[|\psi_{100}(\vec{r})|^2 dV\]</div>
-<div class="admonition note">
-<p class="admonition-title">径向概率密度</p>
-<p>定义 <span class="arithmatex">\(P(r)\)</span> 使得 <span class="arithmatex">\(P(r)dr = |\psi_{100}(\vec{r})|^2 dV\)</span>（其中 <span class="arithmatex">\(dV = 4\pi r^2 dr\)</span>）</p>
+<p>However, as successful as his theory was on the four visible wavelengths and on why the atom did not simply collapse, it turned out to be quite wrong in almost every other aspect of the atom.</p>
+<h3 id="physical-meaning-of-the-assumption">Physical meaning of the assumption<a class="headerlink" href="#physical-meaning-of-the-assumption" title="Permanent link">&para;</a></h3>
+<p>The de Broglie wavelength <span class="arithmatex">\(λ\)</span> of a free particle with momentum p is <span class="arithmatex">\(λ = h/p = h/mv\)</span>.For an electron in a hydrogen atom whose orbital radius <span class="arithmatex">\(r\)</span>, the above equation leads to <span class="arithmatex">\(λ/r = h/rmv = h/L\)</span>. Therefore, we obtain <span class="arithmatex">\(2πr/λ = L/\bar{h}\)</span>.</p>
+<p><span class="arithmatex">\(L=n\bar{h}\)</span> means that the length of the orbit is an integer multiple of <span class="arithmatex">\(λ\)</span>. Namely, the phase of the electron wave function returns to the initial value by moving for one cycle of the orbit.</p>
+<h3 id="analysis-based-on-bohrs-model">Analysis based on Bohr’s model<a class="headerlink" href="#analysis-based-on-bohrs-model" title="Permanent link">&para;</a></h3>
 <ul>
-<li><span class="arithmatex">\(P(r)\)</span> 在 <span class="arithmatex">\(r = a_B\)</span> 处取得<strong>最大值</strong></li>
-<li>这是我们对基态电子位置所能知道的全部信息</li>
-<li>可用点图可视化</li>
+<li>Bohr to quantize the electron orbit <span class="arithmatex">\(L=rmv=n\bar{h} \Rightarrow v=\frac{n\bar{h}}{mr}\)</span></li>
+<li>Combining with the Newtonian result <span class="arithmatex">\(\frac{e^2}{4\pi\epsilon_0r^2}=m\frac{v^2}{r}\)</span> we find <span class="arithmatex">\(r_n =n^2a_B\)</span>. where the characteristic length <span class="arithmatex">\(a_B=\frac{\bar{h}^2}{me^2/(4\pi\epsilon_0)}=0.529 Å\)</span></li>
 </ul>
-</div>
-<hr />
-<h2 id="_12">激发态<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<p><img alt="激发态1" src="../11.png" /></p>
-<p><img alt="激发态2" src="../12.png" /></p>
-<hr />
-<h2 id="_13">玻尔对应原理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p><img alt="对应原理" src="../13.png" /></p>
-<div class="admonition quote">
-<p class="admonition-title">对应原理</p>
-<p>在量子数足够大时，量子力学的预测与经典物理的预测<strong>平滑过渡</strong>。</p>
-</div>
+<p>In the Bohr model of the hydrogen atom, the electron’s orbital radius r is quantized and the smallest possible orbital radius (for <span class="arithmatex">\(n = 1\)</span>) is <span class="arithmatex">\(a_B\)</span>, which is called the <strong>Bohr</strong> <strong>radius</strong>.</p>
+<ul>
+<li>
+<p>Can you obtain the length scale, alternatively, from dimension analysis?sIn order that the attraction between electron and nucleus does not simply collapse them together in the Bohr model, the electron should not get any closer to the nucleus than orbital radius aB by taking </p>
+</li>
+<li>
+<p>The energy of the hydrogen atom, according to the Bohr model, is then <span class="arithmatex">\(E_n=\frac{1}{2}mv^2-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r}=-\frac{E_R}{n^2}\)</span> where <span class="arithmatex">\(E_R=\frac{me^4/(4\pi\epsilon_0)^2}{2\bar{h}^2}=13.6eV\)</span></p>
+</li>
+<li>We still have, for each orbit  <span class="arithmatex">\(E=E_k+E_c=\frac{E_c}{2}=-E_k\)</span></li>
+</ul>
+<h2 id="the-hydrogen-spectrum">The Hydrogen Spectrum<a class="headerlink" href="#the-hydrogen-spectrum" title="Permanent link">&para;</a></h2>
+<p>The energy of a hydrogen atom (or, equivalently, of its electron) changes when the atom emits or absorbs light. Emission and absorption involve a quantum of light according to <span class="arithmatex">\(\bar{h}ω_{nm} =E_R(\frac{1}{n^2} −\frac{1}{m^2})\)</span>  for integers <span class="arithmatex">\(m &gt; n\)</span>.</p>
+<p>The wavelengths of the emitted or absorbed light are given by $ \frac{1}{\lambda}=\frac{E_R}{hc}(\frac{1}{n^2}-\frac{1}{m^2})$</p>
+<p><img alt="1" src="../1.png" /></p>
+<ul>
+<li><span class="arithmatex">\(1\ Ångström - 1×10^{−10}m\)</span></li>
+</ul>
+<h3 id="combinations-of-physical-constants">Combinations of Physical Constants<a class="headerlink" href="#combinations-of-physical-constants" title="Permanent link">&para;</a></h3>
+<p><img alt="2" src="../2.png" /></p>
+<h2 id="gs-energy-from-uncertainty-principleground-state">GS Energy from Uncertainty Principle[Ground State]<a class="headerlink" href="#gs-energy-from-uncertainty-principleground-state" title="Permanent link">&para;</a></h2>
+<p>The ground-state energy is the <strong>lowest energy</strong> allowed by Heisenberg’s uncertainty principle.</p>
+<ul>
+<li>For a hydrogen atom, the <strong>size of the wave</strong> function, <span class="arithmatex">\(∆r\)</span>, is the uncertainty in position.</li>
+<li>The uncertainty in momentum is, roughly speaking, <span class="arithmatex">\(∆p ∼ \bar{h}/∆r\)</span>, by the uncertainty principle.</li>
+<li>The energy of the electron can be estimated to be <span class="arithmatex">\(E ∼ \frac{(\triangle p)^2}{2m}-\frac{e^2}{4\pi\epsilon_0\triangle r}=\frac{\bar{h}^2}{2m(\triangle r)^2}-\frac{e^2}{4\pi\epsilon_0\triangle r}\)</span><span class="arithmatex">\((Mean(p)=0\ Thus\ use\ \triangle p\ to\ approximate\ p)\)</span></li>
+</ul>
+<p>To find the minimal energy, we solve for <span class="arithmatex">\(\triangle r\)</span>   <span class="arithmatex">\(\Rightarrow\frac{dE}{d(\triangle r)}=0 \Rightarrow \triangle r = \frac{\bar{h}^2}{me^2/(4\pi\epsilon_0)}=a_B\)</span> and <span class="arithmatex">\(E=-\frac{me^4/(4\pi\epsilon_0)^2}{2\bar{h}^2}=-E_R\)</span></p>
+<p>The energy of the ground state (or any stationary state) is <strong>uniquely determined</strong>. 「Though the uncertainty of <span class="arithmatex">\(t\ \&amp;\ x\)</span>」</p>
+<p>This is because of the energy-time uncertainty principle, <span class="arithmatex">\(∆t · ∆E ≥ \bar{h}/2\)</span>.</p>
+<ul>
+<li>In the extreme case of a stationary state, <span class="arithmatex">\(∆t = ∞\)</span>, so we have <span class="arithmatex">\(∆E = 0\)</span>.</li>
+</ul>
+<p>Note, however, both kinetic energy and potential energy have <strong>uncertainties</strong>, due to the uncertainties of position and momentum.</p>
+<p>Hydrogen is a three-dimensional, finite electron trap, with walls that vary in depth with distance.</p>
+<h2 id="schroedingers-equation-for-the-h-atom">Schroedinger's Equation for the H-atom<a class="headerlink" href="#schroedingers-equation-for-the-h-atom" title="Permanent link">&para;</a></h2>
+<p><img alt="3" src="../3.png" /></p>
+<p><img alt="4" src="../4.png" /></p>
+<h4 id="derive">Derive<a class="headerlink" href="#derive" title="Permanent link">&para;</a></h4>
+<p><img alt="1" src="../1.jpg" /></p>
+<p><img alt="2" src="../2.jpg" /></p>
+<p><img alt="3" src="../3.jpg" /></p>
+<p><img alt="5" src="../5.png" /></p>
+<p><img alt="14" src="../14.png" /></p>
+<p><img alt="4" src="../4.jpg" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p><img alt="7" src="../7.png" /></p>
+<p><img alt="8" src="../8.png" /></p>
+<p><img alt="9" src="../9.png" /></p>
+<p><img alt="10" src="../10.png" /></p>
+<h3 id="ground-state-wave-function">Ground State Wave Function<a class="headerlink" href="#ground-state-wave-function" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(ψ_{100}(\vec{r})=R_{10}(r)=\frac{1}{\sqrt{\pi}a_B^{3/2}}e^{\frac{r}{a_B}}\)</span></p>
+<p>Note that the hydrogen atom in its ground state has <strong>zero angular</strong> momentum (<span class="arithmatex">\(l = 0\)</span> more details will be discussed in the next lecture), which is not predicted in the Bohr model.)</p>
+<p>The probability that the electron can be detected in any given (infinitesimal) volume element <span class="arithmatex">\(dV\)</span> located at radius <span class="arithmatex">\(r\)</span> from the center of the atom is <span class="arithmatex">\(|ψ_{100}(\vec{r})|^2dV.\)</span></p>
+<ul>
+<li>Define radial Probability density <span class="arithmatex">\(P(r)\)</span> such that <span class="arithmatex">\(P(r)dr=|ψ_{100}(\vec{r})|^2dV\ (dV=4\pi r^2)\)</span>  </li>
+<li><span class="arithmatex">\(P(r)\)</span> takes a  maximum at <span class="arithmatex">\(r=a_B\)</span></li>
+<li>All we can ever know abount the location of the electron in the ground state of the hydrogen atom is the radial probability density</li>
+<li>Dot Plot</li>
+</ul>
+<h3 id="excited-states-of-the-hydrogen-atom">Excited States of the Hydrogen Atom<a class="headerlink" href="#excited-states-of-the-hydrogen-atom" title="Permanent link">&para;</a></h3>
+<p><img alt="11" src="../11.png" /></p>
+<p><img alt="12" src="../12.png" /></p>
+<h3 id="bohrs-correspondence-principle">Bohr’s Correspondence Principle<a class="headerlink" href="#bohrs-correspondence-principle" title="Permanent link">&para;</a></h3>
+<p><img alt="13" src="../13.png" /></p>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
@@ -4119,8 +3502,6 @@
         <script src="../../../javascripts/extra.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

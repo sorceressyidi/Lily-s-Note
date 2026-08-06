@@ -41,8 +41,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -51,8 +51,6 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
-    
-      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -63,6 +61,8 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -91,7 +91,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
   
     
     
@@ -149,7 +149,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -285,26 +285,6 @@
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../RL/Eras/" class="md-tabs__link">
-          
-  
-    
-  
-  RL Learning Notes
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
       
   
   
@@ -317,7 +297,7 @@
   
     
   
-  CS Courses (ZJU)
+  Computer Science and Related Courses(ZJU)
 
         </a>
       </li>
@@ -538,6 +518,8 @@
       
         
       
+        
+      
     
     
     
@@ -599,6 +581,26 @@
   
   <span class="md-ellipsis">
     DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Papers/DM/FlowMatching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Matching
   </span>
   
 
@@ -808,7 +810,11 @@
     
       
         
-          
+      
+        
+      
+        
+      
         
       
     
@@ -826,86 +832,21 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../RL/Eras/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
   
   <span class="md-ellipsis">
-    RL Learning Notes
+    Computer Science and Related Courses(ZJU)
   </span>
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            RL Learning Notes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    CS Courses (ZJU)
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            CS Courses (ZJU)
+            Computer Science and Related Courses(ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -946,10 +887,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -960,8 +901,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -977,7 +918,7 @@
         
   
   <span class="md-ellipsis">
-    Finite Automata
+    Lecture 1 - Finite Automata
   </span>
   
 
@@ -997,7 +938,7 @@
         
   
   <span class="md-ellipsis">
-    Regular Language
+    Lecture 2 - Regular Language
   </span>
   
 
@@ -1017,7 +958,7 @@
         
   
   <span class="md-ellipsis">
-    Context-Free Language
+    Lecture 3 - Context-Free Language
   </span>
   
 
@@ -1037,7 +978,7 @@
         
   
   <span class="md-ellipsis">
-    Push-Down Automata
+    Lecture 4 - Push-Down-Automata
   </span>
   
 
@@ -1057,7 +998,7 @@
         
   
   <span class="md-ellipsis">
-    Turing Machine
+    Lecture 5 - Turing Machine
   </span>
   
 
@@ -1077,7 +1018,7 @@
         
   
   <span class="md-ellipsis">
-    Language Properties
+    Lecture 6 - Containments properties of languages
   </span>
   
 
@@ -1097,7 +1038,7 @@
         
   
   <span class="md-ellipsis">
-    Decidability
+    Lecture 7 - Decidability
   </span>
   
 
@@ -1117,7 +1058,7 @@
         
   
   <span class="md-ellipsis">
-    Gödel's Theorems
+    Lecture 8 - Gödel's Incompleteness Theorems
   </span>
   
 
@@ -1137,7 +1078,7 @@
         
   
   <span class="md-ellipsis">
-    Time Complexity
+    Lecture 9 - Complexity - Time
   </span>
   
 
@@ -1157,7 +1098,7 @@
         
   
   <span class="md-ellipsis">
-    Space Complexity
+    Lecture 10 - Complexity - Space
   </span>
   
 
@@ -1222,10 +1163,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1236,8 +1177,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1253,7 +1194,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Lecture 1 - Introduction
   </span>
   
 
@@ -1273,7 +1214,7 @@
         
   
   <span class="md-ellipsis">
-    OS Structure
+    Lecture 2 - OS Structure
   </span>
   
 
@@ -1293,7 +1234,7 @@
         
   
   <span class="md-ellipsis">
-    Process
+    Lecture 3 - Process
   </span>
   
 
@@ -1313,7 +1254,7 @@
         
   
   <span class="md-ellipsis">
-    Scheduling
+    Lecture 4 - Schedule
   </span>
   
 
@@ -1333,7 +1274,7 @@
         
   
   <span class="md-ellipsis">
-    IPC
+    Lecture 5 - IPC
   </span>
   
 
@@ -1353,7 +1294,7 @@
         
   
   <span class="md-ellipsis">
-    Thread
+    Lecture 6 - Thread
   </span>
   
 
@@ -1373,7 +1314,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization
+    Lecture 7 - Synchronization
   </span>
   
 
@@ -1393,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization II
+    Lecture 8 - Synchronization II
   </span>
   
 
@@ -1413,7 +1354,7 @@
         
   
   <span class="md-ellipsis">
-    Deadlock
+    Lecture 9 - Deadlock
   </span>
   
 
@@ -1433,7 +1374,7 @@
         
   
   <span class="md-ellipsis">
-    Main Memory
+    Lecture 10 - Main Memory
   </span>
   
 
@@ -1453,7 +1394,7 @@
         
   
   <span class="md-ellipsis">
-    Virtual Memory
+    Lecture 11 - Virtual Memory
   </span>
   
 
@@ -1473,7 +1414,7 @@
         
   
   <span class="md-ellipsis">
-    Mass Storage
+    Lecture 12 - Mass Storage
   </span>
   
 
@@ -1493,7 +1434,7 @@
         
   
   <span class="md-ellipsis">
-    I/O System
+    Lecture 13 -I/O System
   </span>
   
 
@@ -1513,7 +1454,7 @@
         
   
   <span class="md-ellipsis">
-    File System
+    Lecture 14 - File System
   </span>
   
 
@@ -1533,7 +1474,7 @@
         
   
   <span class="md-ellipsis">
-    OS Security
+    Lecture 15 - OS Security
   </span>
   
 
@@ -1574,24 +1515,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Advanced Data Structures
+    Anvanced Data Structure and Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Advanced Data Structures
+            Anvanced Data Structure and Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1666,24 +1607,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Algorithm Analysis
+    Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Algorithm Analysis
+            Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1697,7 +1638,7 @@
         
   
   <span class="md-ellipsis">
-    Backtracking
+    backtracking
   </span>
   
 
@@ -1717,7 +1658,7 @@
         
   
   <span class="md-ellipsis">
-    Divide & Conquer
+    Divide and Conquer
   </span>
   
 
@@ -1852,18 +1793,6 @@
     
       
         
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1878,426 +1807,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../assembly/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    x86 Assembly
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            x86 Assembly
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    寄存器
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    基础指令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    堆栈
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    函数调用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    中断服务
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    显卡输出
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    端口
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Digital Image Processing
+    General physics II
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Digital Image Processing
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Binary Image & Morphology
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic Operations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/morph/morph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Morphing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/filter/filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Filtering
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fourier Transform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/feature/feature/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Features
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    General Physics II
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            General Physics II
+            General physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2326,10 +1853,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2340,8 +1867,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2462,10 +1989,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2476,8 +2003,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2618,10 +2145,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2632,8 +2159,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2786,10 +2313,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2800,8 +2327,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -2838,10 +2365,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2852,8 +2379,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -3036,10 +2563,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3050,8 +2577,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -3214,10 +2741,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3228,8 +2755,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -3262,10 +2789,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3276,8 +2803,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3426,29 +2953,15 @@
       
         <li class="md-nav__item">
   <a href="#sequence-to-sequence-with-rnns" class="md-nav__link">
-    Sequence-to-Sequence with RNNs
+    Sequence to Sequence with RNNs
   </a>
   
-    <nav class="md-nav" aria-label="Sequence-to-Sequence with RNNs">
+    <nav class="md-nav" aria-label="Sequence to Sequence with RNNs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-architecture" class="md-nav__link">
-    Basic Architecture
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training-strategies" class="md-nav__link">
-    Training Strategies
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hidden-state-passing" class="md-nav__link">
-    Hidden State Passing
+  <a href="#how-to-pass-hidden-state" class="md-nav__link">
+    How to Pass Hidden State?
   </a>
   
 </li>
@@ -3459,23 +2972,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attention-mechanism" class="md-nav__link">
-    Attention Mechanism
+  <a href="#attention" class="md-nav__link">
+    Attention
   </a>
   
-    <nav class="md-nav" aria-label="Attention Mechanism">
+    <nav class="md-nav" aria-label="Attention">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
+  <a href="#sequence-to-sequence-with-rnns-and-attention" class="md-nav__link">
+    Sequence to Sequence with RNNs and Attention
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Sequence to Sequence with RNNs and Attention">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sequence-to-sequence-with-attention" class="md-nav__link">
-    Sequence-to-Sequence with Attention
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -3484,13 +2998,13 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#image-captioning-with-attention" class="md-nav__link">
-    Image Captioning with Attention
+        
+          <li class="md-nav__item">
+  <a href="#image-captioning-using-spatial-features" class="md-nav__link">
+    Image Captioning using spatial features
   </a>
   
-    <nav class="md-nav" aria-label="Image Captioning with Attention">
+    <nav class="md-nav" aria-label="Image Captioning using spatial features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3501,86 +3015,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#with-attention" class="md-nav__link">
-    With Attention
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#self-attention-layer" class="md-nav__link">
-    Self-Attention Layer
-  </a>
-  
-    <nav class="md-nav" aria-label="Self-Attention Layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#attention-layer-components" class="md-nav__link">
-    Attention Layer Components
+  <a href="#image-captioning-with-rnns-and-attention" class="md-nav__link">
+    Image Captioning with RNNs and Attention
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#attention-functions" class="md-nav__link">
-    Attention Functions
+  <a href="#attention-layer" class="md-nav__link">
+    Attention Layer
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#query-key-value-transformation" class="md-nav__link">
-    Query, Key, Value Transformation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positional-encoding" class="md-nav__link">
-    Positional Encoding
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#masked-self-attention" class="md-nav__link">
-    Masked Self-Attention
+    Masked Self Attention
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#multi-head-attention" class="md-nav__link">
     Multi-Head Attention
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#transformer-architecture" class="md-nav__link">
-    Transformer Architecture
-  </a>
-  
-    <nav class="md-nav" aria-label="Transformer Architecture">
-      <ul class="md-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#encoder-decoder-structure" class="md-nav__link">
-    Encoder-Decoder Structure
-  </a>
+      </ul>
+    </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    Transformers
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformers">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#image-captioning-with-transformers" class="md-nav__link">
@@ -3589,22 +3062,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#vision-transformer-vit" class="md-nav__link">
-    Vision Transformer (ViT)
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
-  </a>
   
 </li>
       
@@ -3624,258 +3088,105 @@
 
 
 <h1 id="attention-and-transformers">Attention and Transformers<a class="headerlink" href="#attention-and-transformers" title="Permanent link">&para;</a></h1>
-<div class="admonition abstract">
-<p class="admonition-title">Overview</p>
-<p>This lecture covers attention mechanisms, self-attention layers, and the Transformer architecture for sequence-to-sequence learning and beyond.</p>
-</div>
-<hr />
-<h2 id="sequence-to-sequence-with-rnns">Sequence-to-Sequence with RNNs<a class="headerlink" href="#sequence-to-sequence-with-rnns" title="Permanent link">&para;</a></h2>
-<h3 id="basic-architecture">Basic Architecture<a class="headerlink" href="#basic-architecture" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Log on probability : Preserve precision : </p>
+<ul>
+<li>特别小的数字 negative 保留精度</li>
+<li>求导easy</li>
+<li>prevent 梯度消失</li>
+</ul>
+</blockquote>
+<h2 id="sequence-to-sequence-with-rnns">Sequence to Sequence with RNNs<a class="headerlink" href="#sequence-to-sequence-with-rnns" title="Permanent link">&para;</a></h2>
 <p><img alt="1" src="../1.png" /></p>
 <p><img alt="6" src="../6.png" /></p>
-<h3 id="training-strategies">Training Strategies<a class="headerlink" href="#training-strategies" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Teacher Forcing</p>
-<p>During training, feed the <strong>ground truth</strong> (reference) target sentence into the decoder, regardless of decoder predictions.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Scheduled Sampling</p>
-<p>Mix teacher forcing with decoder predictions (e.g., 70% teacher forcing, 30% model predictions).</p>
-</div>
-<h3 id="hidden-state-passing">Hidden State Passing<a class="headerlink" href="#hidden-state-passing" title="Permanent link">&para;</a></h3>
+<p><img alt="9" src="../9.png" /></p>
+<ul>
+<li>During training, we feed the gold (aka reference) target sentence into the decoder, regardless of what the decoder predicts. This training method is called Teacher Forcing.</li>
+<li>Use Teacher forcing &amp; feed decoder predictions together. 3:7 ?</li>
+</ul>
+<h4 id="how-to-pass-hidden-state">How to Pass Hidden State?<a class="headerlink" href="#how-to-pass-hidden-state" title="Permanent link">&para;</a></h4>
 <p><img alt="10" src="../10.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Bottleneck Problem</p>
-<p>Input sequence is compressed through a <strong>fixed-sized vector</strong>. What if sequence length T = 1000? Information is lost!</p>
-</div>
-<hr />
-<h2 id="attention-mechanism">Attention Mechanism<a class="headerlink" href="#attention-mechanism" title="Permanent link">&para;</a></h2>
-<h3 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h3>
-<div class="admonition success">
-<p class="admonition-title">Solution</p>
-<p>Instead of compressing everything into one vector, let the decoder <strong>attend to different parts</strong> of the input at each step.</p>
-</div>
-<h3 id="sequence-to-sequence-with-attention">Sequence-to-Sequence with Attention<a class="headerlink" href="#sequence-to-sequence-with-attention" title="Permanent link">&para;</a></h3>
+<p>Problem: Input sequence <strong>bottlenecked through fixed-sized vector</strong>. What if T=1000?</p>
+<h2 id="attention">Attention<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h2>
+<h3 id="sequence-to-sequence-with-rnns-and-attention">Sequence to Sequence with RNNs and Attention<a class="headerlink" href="#sequence-to-sequence-with-rnns-and-attention" title="Permanent link">&para;</a></h3>
 <p><img alt="2" src="../2.png" /></p>
-<p><strong>Process at each decoder step:</strong></p>
-<ol>
-<li>Use decoder state <span class="arithmatex">\(s_t\)</span> to compute <strong>attention scores</strong> over encoder states <span class="arithmatex">\(\{h_i\}\)</span></li>
-<li>Apply softmax to get <strong>attention weights</strong> <span class="arithmatex">\(\alpha_i\)</span></li>
-<li>Compute <strong>context vector</strong> <span class="arithmatex">\(c_t = \sum_i \alpha_i h_i\)</span></li>
-<li>Use <span class="arithmatex">\(c_t\)</span> to compute next state <span class="arithmatex">\(s_{t+1}\)</span> and output <span class="arithmatex">\(y_t\)</span></li>
-</ol>
+<ul>
+<li>Repeat: </li>
+</ul>
+<p>Use <span class="arithmatex">\(s_1\)</span> to compute new context vector <span class="arithmatex">\(c_2\)</span></p>
+<p>Use <span class="arithmatex">\(c_2\)</span> to compute <span class="arithmatex">\(s_2\)</span>, <span class="arithmatex">\(y_2\)</span></p>
 <p><img alt="3" src="../3.png" /></p>
 <p><img alt="4" src="../4.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Key Insight</p>
-<p>The decoder treats encoder hidden states as an <strong>unordered set</strong> <span class="arithmatex">\(\{h_i\}\)</span> — it doesn't use their sequential ordering.</p>
-</div>
-<hr />
-<h2 id="image-captioning-with-attention">Image Captioning with Attention<a class="headerlink" href="#image-captioning-with-attention" title="Permanent link">&para;</a></h2>
-<h3 id="original-version">Original Version<a class="headerlink" href="#original-version" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Input</strong></td>
-<td>Image <span class="arithmatex">\(I\)</span></td>
-</tr>
-<tr>
-<td><strong>Output</strong></td>
-<td>Sequence <span class="arithmatex">\(y = y_1, y_2, ..., y_T\)</span></td>
-</tr>
-<tr>
-<td><strong>Encoder</strong></td>
-<td><span class="arithmatex">\(h_0 = f_W(z)\)</span> where <span class="arithmatex">\(z\)</span> is spatial CNN features</td>
-</tr>
-<tr>
-<td><strong>Decoder</strong></td>
-<td><span class="arithmatex">\(y_t = g_V(y_{t-1}, h_{t-1}, c)\)</span> where <span class="arithmatex">\(c = h_0\)</span></td>
-</tr>
-</tbody>
-</table>
-<h3 id="with-attention">With Attention<a class="headerlink" href="#with-attention" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Attention Idea</p>
-<p>New context vector at every time step. Each context vector attends to <strong>different image regions</strong>.</p>
-</div>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p><img alt="5" src="../5.png" /></p>
+<ul>
+<li>The decoder doesn’t use the fact that <span class="arithmatex">\(h_i\)</span> form an ordered sequence – it just treats them as an <strong>unordered set</strong> <span class="arithmatex">\(\{h_i\}\)</span>.</li>
+</ul>
+<h3 id="image-captioning-using-spatial-features">Image Captioning using spatial features<a class="headerlink" href="#image-captioning-using-spatial-features" title="Permanent link">&para;</a></h3>
+<h4 id="original-version">Original Version<a class="headerlink" href="#original-version" title="Permanent link">&para;</a></h4>
+<p><strong>Input</strong>: Image <strong>I</strong></p>
+<p><strong>Output:</strong> Sequence <strong>y</strong> = <span class="arithmatex">\(y_1, y_2,..., y_T\)</span></p>
+<p><strong>Encoder</strong>: <span class="arithmatex">\(h_0\)</span> = <span class="arithmatex">\(f_W(z)\)</span>  where <strong>z</strong> is spatial CNN features <span class="arithmatex">\(f_W(.)\)</span> is an MLP</p>
+<p><strong>Decoder</strong>: <span class="arithmatex">\(y_t = g_V(y_{t-1},h_{t-1}, c)\)</span>  where context vector c is often <span class="arithmatex">\(c = h_0\)</span></p>
+<p><img alt="11" src="../11.png" /></p>
+<h4 id="image-captioning-with-rnns-and-attention">Image Captioning with RNNs and Attention<a class="headerlink" href="#image-captioning-with-rnns-and-attention" title="Permanent link">&para;</a></h4>
+<p><strong>Attention idea: New context vector at every time step.Each context vector will attend to different image regions</strong></p>
 <p><img alt="12" src="../12.png" /></p>
 <p><img alt="13" src="../13.png" /></p>
-<div class="admonition success">
-<p class="admonition-title">End-to-End Learning</p>
-<p>The entire process is <strong>differentiable</strong> — the model learns its own attention weights without supervision.</p>
-</div>
-<hr />
-<h2 id="self-attention-layer">Self-Attention Layer<a class="headerlink" href="#self-attention-layer" title="Permanent link">&para;</a></h2>
-<h3 id="attention-layer-components">Attention Layer Components<a class="headerlink" href="#attention-layer-components" title="Permanent link">&para;</a></h3>
-<p><img alt="14" src="../14.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Properties</p>
+<p>This entire process is differentiable:</p>
 <ul>
-<li>Attention is <strong>permutation invariant</strong> — doesn't care about input ordering</li>
-<li>Can reshape H × W spatial features into N vectors</li>
+<li>model chooses its own attention weights. No attention supervision is required.</li>
 </ul>
-</div>
-<h3 id="attention-functions">Attention Functions<a class="headerlink" href="#attention-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Formula</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Additive</strong></td>
-<td><span class="arithmatex">\(f_{att}(q, k) = W^T \tanh(W_q q + W_k k)\)</span></td>
-<td>Original attention</td>
-</tr>
-<tr>
-<td><strong>Dot Product</strong></td>
-<td><span class="arithmatex">\(f_{att}(q, k) = q^T k\)</span></td>
-<td>Simple but needs key/value transform</td>
-</tr>
-<tr>
-<td><strong>Scaled Dot Product</strong></td>
-<td><span class="arithmatex">\(f_{att}(q, k) = \dfrac{q^T k}{\sqrt{D}}\)</span></td>
-<td>Prevents softmax saturation</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">Why Scale by √D?</p>
-<ul>
-<li>Larger dimensions → more terms in dot product</li>
-<li>Higher variance in logits</li>
-<li>Post-softmax distribution has lower entropy</li>
-<li>Large magnitude vectors cause softmax to peak, assigning very little weight to others</li>
-</ul>
-</div>
-<h3 id="query-key-value-transformation">Query, Key, Value Transformation<a class="headerlink" href="#query-key-value-transformation" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Adding Expressivity</p>
-<p>Apply different linear transformations before alignment and attention:</p>
-<ul>
-<li><strong>Query</strong>: <span class="arithmatex">\(q = W_q x\)</span></li>
-<li><strong>Key</strong>: <span class="arithmatex">\(k = W_k x\)</span>  </li>
-<li><strong>Value</strong>: <span class="arithmatex">\(v = W_v x\)</span></li>
-</ul>
-</div>
-<p><img alt="15" src="../15.png" /></p>
-<p><img alt="16" src="../16.png" /></p>
-<h3 id="positional-encoding">Positional Encoding<a class="headerlink" href="#positional-encoding" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Order Problem</p>
-<p>Self-attention doesn't care about input order — need to inject position information!</p>
-</div>
-<p><img alt="17" src="../17.png" /></p>
-<p><strong>Desiderata for positional encoding <span class="arithmatex">\(pos(.)\)</span>:</strong></p>
+<p>Each timestep of decoder uses a different context vector that looks at different parts of the input image.</p>
+<h4 id="attention-layer">Attention Layer<a class="headerlink" href="#attention-layer" title="Permanent link">&para;</a></h4>
+<p><img alt="14" src="../14.png" />
+Attention operation is permutation invariant.
+- Doesn't care about ordering of the features
+- Stretch H x W = N into N vectors</p>
+<p>Change <span class="arithmatex">\(f_{att}\)</span> to a simple dot product
+- only works well with key &amp; value transformation trick (will mention in a few slides)</p>
+<p>Change <span class="arithmatex">\(f_{att}(.)\)</span> to a scaled simple dot product
+- Larger dimensions means more terms in the dot product sum.
+- So, the variance of the logits is higher. Large magnitude vectors will produce much higher logits.
+- So, the post-softmax distribution has lower-entropy, assuming logits are IID.
+- Ultimately, these large magnitude vectors will cause softmax to peak and assign very little weight to all others
+- Divide by √D to reduce effect of large magnitude vectors</p>
+<p>Notice that the input vectors are used for both the alignment as well as the attention calculations.
+- We can add more expressivity to the layer by adding a different FC layer before each of the two steps.
+<img alt="15" src="../15.png" />
+<img alt="16" src="../16.png" />
+* Self Attention Layer does not <strong>CARE</strong> about the order of the input vectors!
+* Use positional encoding to give the model some notion of order.
+<img alt="17" src="../17.png" /> </p>
+<p><img alt="31" src="../31.png" /></p>
+<p><strong>Desiderata of pos(.) :</strong></p>
 <ol>
-<li>Unique encoding for each position</li>
-<li>Consistent distance between time-steps across different sequence lengths</li>
-<li>Bounded values (generalizes to longer sequences)</li>
-<li>Deterministic</li>
+<li>It should output a unique encoding for each time-step (word’s position in a sentence)</li>
+<li>Distance between any two time-steps should be <strong>consistent</strong> across sentences with different lengths.</li>
+<li>Our model should generalize to longer sentences without any efforts. Its values should be bounded.</li>
+<li>It must be <strong>deterministic</strong>.
+<img alt="18" src="../18.png" /></li>
 </ol>
-<p><img alt="18" src="../18.png" /></p>
-<hr />
-<h2 id="masked-self-attention">Masked Self-Attention<a class="headerlink" href="#masked-self-attention" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Purpose</p>
-<p>Prevent vectors from looking at <strong>future</strong> vectors (for autoregressive generation).</p>
-</div>
-<p><strong>Implementation</strong>: Set alignment scores to <span class="arithmatex">\(-\infty\)</span> for future positions before softmax.</p>
-<p><img alt="19" src="../19.png" /></p>
-<div class="admonition example">
-<p class="admonition-title">Applications</p>
-<p>Commonly used for <strong>language modeling</strong> tasks where we predict the next token.</p>
-</div>
-<hr />
-<h2 id="multi-head-attention">Multi-Head Attention<a class="headerlink" href="#multi-head-attention" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Motivation</p>
-<p>Allow the model to attend to information from different representation subspaces.</p>
-</div>
-<p><img alt="21" src="../21.png" /></p>
-<p><strong>Process:</strong></p>
-<ol>
-<li>Project Q, K, V into <span class="arithmatex">\(h\)</span> different subspaces</li>
-<li>Apply attention in parallel for each head</li>
-<li>Concatenate outputs and project back</li>
-</ol>
-<p><img alt="20" src="../20.png" /></p>
-<p><img alt="22" src="../22.png" /></p>
-<hr />
-<h2 id="transformer-architecture">Transformer Architecture<a class="headerlink" href="#transformer-architecture" title="Permanent link">&para;</a></h2>
-<h3 id="encoder-decoder-structure">Encoder-Decoder Structure<a class="headerlink" href="#encoder-decoder-structure" title="Permanent link">&para;</a></h3>
-<p><img alt="23" src="../23.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Encoder</strong></td>
-<td>Stack of self-attention + FFN layers</td>
-</tr>
-<tr>
-<td><strong>Decoder</strong></td>
-<td>Masked self-attention + cross-attention + FFN</td>
-</tr>
-<tr>
-<td><strong>Add &amp; Norm</strong></td>
-<td>Residual connection + Layer Normalization</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="24" src="../24.png" /></p>
-<h3 id="image-captioning-with-transformers">Image Captioning with Transformers<a class="headerlink" href="#image-captioning-with-transformers" title="Permanent link">&para;</a></h3>
-<p><img alt="25" src="../25.png" /></p>
-<p><img alt="26" src="../26.png" /></p>
-<h3 id="vision-transformer-vit">Vision Transformer (ViT)<a class="headerlink" href="#vision-transformer-vit" title="Permanent link">&para;</a></h3>
-<div class="admonition success">
-<p class="admonition-title">Transformers for Images</p>
-<p>Treat image patches as tokens and apply transformer architecture directly.</p>
-</div>
-<p><img alt="27" src="../27.png" /></p>
-<p><img alt="28" src="../28.png" /></p>
+<h4 id="masked-self-attention">Masked Self Attention<a class="headerlink" href="#masked-self-attention" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Prevent vectors from looking at future vectors.</li>
+<li>Manually set alignment scores to infinity
+<img alt="19" src="../19.png" /></li>
+<li>Commonly used for language modeling tasks</li>
+</ul>
+<h4 id="multi-head-attention">Multi-Head Attention<a class="headerlink" href="#multi-head-attention" title="Permanent link">&para;</a></h4>
+<p><img alt="21" src="../21.png" />
+<img alt="20" src="../20.png" />
+<img alt="22" src="../22.png" /></p>
+<h3 id="transformers">Transformers<a class="headerlink" href="#transformers" title="Permanent link">&para;</a></h3>
+<p><img alt="23" src="../23.png" />
+<img alt="24" src="../24.png" /></p>
+<h4 id="image-captioning-with-transformers">Image Captioning with Transformers<a class="headerlink" href="#image-captioning-with-transformers" title="Permanent link">&para;</a></h4>
+<p><img alt="25" src="../25.png" />
+<img alt="26" src="../26.png" /></p>
+<p><img alt="27" src="../27.png" />
+<img alt="28" src="../28.png" /></p>
 <p><img alt="30" src="../30.png" /></p>
-<hr />
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Architecture</th>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>RNN</strong></td>
-<td>Handles variable length, parameter sharing</td>
-<td>Sequential (slow), vanishing gradients</td>
-</tr>
-<tr>
-<td><strong>RNN + Attention</strong></td>
-<td>Better long-range dependencies</td>
-<td>Still sequential</td>
-</tr>
-<tr>
-<td><strong>Transformer</strong></td>
-<td>Fully parallelizable, excellent performance</td>
-<td>Quadratic complexity in sequence length</td>
-</tr>
-</tbody>
-</table>
 
   <hr>
 <div class="md-source-file">
@@ -4006,8 +3317,6 @@
         <script src="../../../javascripts/extra.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

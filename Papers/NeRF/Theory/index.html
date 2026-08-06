@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"DM Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -55,8 +55,6 @@
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
-    
-      <link rel="stylesheet" href="../../../css/elegant-theme.css">
     
       <link rel="stylesheet" href="../../../css/custom.css">
     
@@ -67,6 +65,8 @@
       <link rel="stylesheet" href="../../../css/flink.css">
     
       <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -95,7 +95,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
   
     
     
@@ -153,7 +153,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
@@ -293,26 +293,6 @@
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../RL/Eras/" class="md-tabs__link">
-          
-  
-    
-  
-  RL Learning Notes
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
       
   
   
@@ -325,7 +305,7 @@
   
     
   
-  CS Courses (ZJU)
+  Computer Science and Related Courses(ZJU)
 
         </a>
       </li>
@@ -548,6 +528,8 @@
       
         
       
+        
+      
     
     
     
@@ -609,6 +591,26 @@
   
   <span class="md-ellipsis">
     DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/FlowMatching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Matching
   </span>
   
 
@@ -698,23 +700,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    Core Idea
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipeline-overview" class="md-nav__link">
-    Pipeline Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Pipeline Overview">
+    <nav class="md-nav" aria-label="Introduction">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rendering-process" class="md-nav__link">
-    Rendering Process
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parts" class="md-nav__link">
+    Detailed Parts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-radiance-field-scene-representation" class="md-nav__link">
+    Neural Radiance Field Scene Representation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-volume-sampling" class="md-nav__link">
+    Hierarchical volume sampling
   </a>
   
 </li>
@@ -723,92 +754,16 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#neural-radiance-field-representation" class="md-nav__link">
-    Neural Radiance Field Representation
-  </a>
-  
-    <nav class="md-nav" aria-label="Neural Radiance Field Representation">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#network-architecture" class="md-nav__link">
-    Network Architecture
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation Details
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volume-rendering" class="md-nav__link">
-    Volume Rendering
-  </a>
-  
-    <nav class="md-nav" aria-label="Volume Rendering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mathematical-formulation" class="md-nav__link">
-    Mathematical Formulation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discrete-approximation" class="md-nav__link">
-    Discrete Approximation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-techniques" class="md-nav__link">
-    Key Techniques
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Techniques">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-positional-encoding" class="md-nav__link">
-    1. Positional Encoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-hierarchical-volume-sampling" class="md-nav__link">
-    2. Hierarchical Volume Sampling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training-details" class="md-nav__link">
-    Training Details
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
-  </a>
   
 </li>
       
@@ -973,7 +928,11 @@
     
       
         
-          
+      
+        
+      
+        
+      
         
       
     
@@ -991,86 +950,21 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../RL/Eras/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
   
   <span class="md-ellipsis">
-    RL Learning Notes
+    Computer Science and Related Courses(ZJU)
   </span>
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            RL Learning Notes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    CS Courses (ZJU)
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            CS Courses (ZJU)
+            Computer Science and Related Courses(ZJU)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1111,10 +1005,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1125,8 +1019,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Theoretical Computer Science
           </label>
@@ -1142,7 +1036,7 @@
         
   
   <span class="md-ellipsis">
-    Finite Automata
+    Lecture 1 - Finite Automata
   </span>
   
 
@@ -1162,7 +1056,7 @@
         
   
   <span class="md-ellipsis">
-    Regular Language
+    Lecture 2 - Regular Language
   </span>
   
 
@@ -1182,7 +1076,7 @@
         
   
   <span class="md-ellipsis">
-    Context-Free Language
+    Lecture 3 - Context-Free Language
   </span>
   
 
@@ -1202,7 +1096,7 @@
         
   
   <span class="md-ellipsis">
-    Push-Down Automata
+    Lecture 4 - Push-Down-Automata
   </span>
   
 
@@ -1222,7 +1116,7 @@
         
   
   <span class="md-ellipsis">
-    Turing Machine
+    Lecture 5 - Turing Machine
   </span>
   
 
@@ -1242,7 +1136,7 @@
         
   
   <span class="md-ellipsis">
-    Language Properties
+    Lecture 6 - Containments properties of languages
   </span>
   
 
@@ -1262,7 +1156,7 @@
         
   
   <span class="md-ellipsis">
-    Decidability
+    Lecture 7 - Decidability
   </span>
   
 
@@ -1282,7 +1176,7 @@
         
   
   <span class="md-ellipsis">
-    Gödel's Theorems
+    Lecture 8 - Gödel's Incompleteness Theorems
   </span>
   
 
@@ -1302,7 +1196,7 @@
         
   
   <span class="md-ellipsis">
-    Time Complexity
+    Lecture 9 - Complexity - Time
   </span>
   
 
@@ -1322,7 +1216,7 @@
         
   
   <span class="md-ellipsis">
-    Space Complexity
+    Lecture 10 - Complexity - Space
   </span>
   
 
@@ -1387,10 +1281,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1401,8 +1295,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Operating System
           </label>
@@ -1418,7 +1312,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction
+    Lecture 1 - Introduction
   </span>
   
 
@@ -1438,7 +1332,7 @@
         
   
   <span class="md-ellipsis">
-    OS Structure
+    Lecture 2 - OS Structure
   </span>
   
 
@@ -1458,7 +1352,7 @@
         
   
   <span class="md-ellipsis">
-    Process
+    Lecture 3 - Process
   </span>
   
 
@@ -1478,7 +1372,7 @@
         
   
   <span class="md-ellipsis">
-    Scheduling
+    Lecture 4 - Schedule
   </span>
   
 
@@ -1498,7 +1392,7 @@
         
   
   <span class="md-ellipsis">
-    IPC
+    Lecture 5 - IPC
   </span>
   
 
@@ -1518,7 +1412,7 @@
         
   
   <span class="md-ellipsis">
-    Thread
+    Lecture 6 - Thread
   </span>
   
 
@@ -1538,7 +1432,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization
+    Lecture 7 - Synchronization
   </span>
   
 
@@ -1558,7 +1452,7 @@
         
   
   <span class="md-ellipsis">
-    Synchronization II
+    Lecture 8 - Synchronization II
   </span>
   
 
@@ -1578,7 +1472,7 @@
         
   
   <span class="md-ellipsis">
-    Deadlock
+    Lecture 9 - Deadlock
   </span>
   
 
@@ -1598,7 +1492,7 @@
         
   
   <span class="md-ellipsis">
-    Main Memory
+    Lecture 10 - Main Memory
   </span>
   
 
@@ -1618,7 +1512,7 @@
         
   
   <span class="md-ellipsis">
-    Virtual Memory
+    Lecture 11 - Virtual Memory
   </span>
   
 
@@ -1638,7 +1532,7 @@
         
   
   <span class="md-ellipsis">
-    Mass Storage
+    Lecture 12 - Mass Storage
   </span>
   
 
@@ -1658,7 +1552,7 @@
         
   
   <span class="md-ellipsis">
-    I/O System
+    Lecture 13 -I/O System
   </span>
   
 
@@ -1678,7 +1572,7 @@
         
   
   <span class="md-ellipsis">
-    File System
+    Lecture 14 - File System
   </span>
   
 
@@ -1698,7 +1592,7 @@
         
   
   <span class="md-ellipsis">
-    OS Security
+    Lecture 15 - OS Security
   </span>
   
 
@@ -1739,24 +1633,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Advanced Data Structures
+    Anvanced Data Structure and Algorithm Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Advanced Data Structures
+            Anvanced Data Structure and Algorithm Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1831,24 +1725,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Algorithm Analysis
+    Analysis
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Algorithm Analysis
+            Analysis
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1862,7 +1756,7 @@
         
   
   <span class="md-ellipsis">
-    Backtracking
+    backtracking
   </span>
   
 
@@ -1882,7 +1776,7 @@
         
   
   <span class="md-ellipsis">
-    Divide & Conquer
+    Divide and Conquer
   </span>
   
 
@@ -2017,18 +1911,6 @@
     
       
         
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -2043,426 +1925,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../assembly/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    x86 Assembly
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            x86 Assembly
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%AF%84%E5%AD%98%E5%99%A8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    寄存器
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    基础指令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%A0%86%E6%A0%88/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    堆栈
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    函数调用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E4%B8%AD%E6%96%AD/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    中断服务
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E6%98%BE%E5%8D%A1%E8%BE%93%E5%87%BA/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    显卡输出
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../assembly/%E7%AB%AF%E5%8F%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    端口
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Digital Image Processing
+    General physics II
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Digital Image Processing
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Basic/DIP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap2/chap2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Binary Image & Morphology
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/chap3/chap3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic Operations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/morph/morph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Morphing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/filter/filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Filtering
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/Fourier/Fourier/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fourier Transform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../DIP/feature/feature/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Image Features
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    General Physics II
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            General Physics II
+            General physics II
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2491,10 +1971,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2505,8 +1985,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
             <span class="md-nav__icon md-icon"></span>
             Electromagnetics
           </label>
@@ -2627,10 +2107,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2641,8 +2121,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
             <span class="md-nav__icon md-icon"></span>
             Optics
           </label>
@@ -2783,10 +2263,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2797,8 +2277,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
             <span class="md-nav__icon md-icon"></span>
             Quantum
           </label>
@@ -2951,10 +2431,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2965,8 +2445,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Computer Vision
           </label>
@@ -3003,10 +2483,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3017,8 +2497,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             ML-4360
           </label>
@@ -3201,10 +2681,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3215,8 +2695,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             EECS 498.008 / 598.008
           </label>
@@ -3379,10 +2859,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3393,8 +2873,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             My Writings
           </label>
@@ -3427,10 +2907,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3441,8 +2921,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             High-School Writings
           </label>
@@ -3590,23 +3070,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    Core Idea
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipeline-overview" class="md-nav__link">
-    Pipeline Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Pipeline Overview">
+    <nav class="md-nav" aria-label="Introduction">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rendering-process" class="md-nav__link">
-    Rendering Process
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parts" class="md-nav__link">
+    Detailed Parts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-radiance-field-scene-representation" class="md-nav__link">
+    Neural Radiance Field Scene Representation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-neural-radiance-field" class="md-nav__link">
+    Optimizing a Neural Radiance Field
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimizing a Neural Radiance Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    Positional Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-volume-sampling" class="md-nav__link">
+    Hierarchical volume sampling
   </a>
   
 </li>
@@ -3615,92 +3124,16 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#neural-radiance-field-representation" class="md-nav__link">
-    Neural Radiance Field Representation
-  </a>
-  
-    <nav class="md-nav" aria-label="Neural Radiance Field Representation">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#network-architecture" class="md-nav__link">
-    Network Architecture
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation Details
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volume-rendering" class="md-nav__link">
-    Volume Rendering
-  </a>
-  
-    <nav class="md-nav" aria-label="Volume Rendering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mathematical-formulation" class="md-nav__link">
-    Mathematical Formulation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discrete-approximation" class="md-nav__link">
-    Discrete Approximation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-techniques" class="md-nav__link">
-    Key Techniques
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Techniques">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-positional-encoding" class="md-nav__link">
-    1. Positional Encoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-hierarchical-volume-sampling" class="md-nav__link">
-    2. Hierarchical Volume Sampling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training-details" class="md-nav__link">
-    Training Details
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
-  </a>
   
 </li>
       
@@ -3719,182 +3152,78 @@
                   
 
 
+<p><font face = "Times New Roman"></p>
 <h1 id="nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis<a class="headerlink" href="#nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis" title="Permanent link">&para;</a></h1>
-<div class="admonition abstract">
-<p class="admonition-title">Paper Overview</p>
-<p><strong>Title:</strong> NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis<br />
-<strong>Authors:</strong> Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, et al.<br />
-<strong>Venue:</strong> ECCV 2020 (Best Paper Honorable Mention)<br />
-<strong>Key Contribution:</strong> Represents 3D scenes as continuous neural radiance fields, enabling photorealistic novel view synthesis from sparse input images.</p>
-</div>
-<hr />
-<h2 id="core-idea">Core Idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h2>
-<p><img alt="NeRF Overview" src="../1.png" /></p>
-<div class="admonition success">
-<p class="admonition-title">Key Insight</p>
-<p><strong>Overfit a single MLP</strong> to represent one specific scene. The network learns a continuous volumetric representation that maps 3D coordinates to color and density.</p>
-</div>
-<p><strong>Input/Output:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Input</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3D position <span class="arithmatex">\((x, y, z)\)</span></td>
-<td>Volume density <span class="arithmatex">\(\sigma\)</span></td>
-</tr>
-<tr>
-<td>Viewing direction <span class="arithmatex">\((\theta, \phi)\)</span></td>
-<td>RGB color <span class="arithmatex">\((r, g, b)\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="pipeline-overview">Pipeline Overview<a class="headerlink" href="#pipeline-overview" title="Permanent link">&para;</a></h2>
-<h3 id="rendering-process">Rendering Process<a class="headerlink" href="#rendering-process" title="Permanent link">&para;</a></h3>
-<p><img alt="Rendering Pipeline" src="../2.png" /></p>
-<ol>
-<li><strong>Sample</strong> 5D coordinates along camera rays</li>
-<li><strong>Query</strong> MLP to get color and density at each point</li>
-<li><strong>Composite</strong> values using volume rendering</li>
-<li><strong>Optimize</strong> by minimizing reconstruction loss</li>
-</ol>
-<hr />
-<h2 id="neural-radiance-field-representation">Neural Radiance Field Representation<a class="headerlink" href="#neural-radiance-field-representation" title="Permanent link">&para;</a></h2>
-<h3 id="network-architecture">Network Architecture<a class="headerlink" href="#network-architecture" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">MLP Structure</p>
-<p><img alt="Network Architecture" src="../2.png" /></p>
-<p>The network <span class="arithmatex">\(F_\Theta\)</span> processes inputs as follows:</p>
-<ol>
-<li><strong>Input:</strong> 3D coordinate <span class="arithmatex">\((x, y, z)\)</span></li>
-<li><strong>8 fully-connected layers</strong> (ReLU, 256 channels)</li>
-<li><strong>Output:</strong> Density <span class="arithmatex">\(\sigma\)</span> + 256-dim feature vector</li>
-<li><strong>Concatenate</strong> feature with viewing direction <span class="arithmatex">\((\theta, \phi)\)</span></li>
-<li><strong>1 additional FC layer</strong> (ReLU, 128 channels)</li>
-<li><strong>Output:</strong> View-dependent RGB color</li>
-</ol>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Design Choice</p>
-<ul>
-<li><strong>Density <span class="arithmatex">\(\sigma\)</span></strong> depends only on <strong>position</strong> → multiview consistent geometry</li>
-<li><strong>Color</strong> depends on <strong>both position and direction</strong> → view-dependent effects (specular highlights)</li>
-</ul>
-</div>
-<hr />
-<h2 id="volume-rendering">Volume Rendering<a class="headerlink" href="#volume-rendering" title="Permanent link">&para;</a></h2>
-<h3 id="mathematical-formulation">Mathematical Formulation<a class="headerlink" href="#mathematical-formulation" title="Permanent link">&para;</a></h3>
-<p>The expected color <span class="arithmatex">\(C(\mathbf{r})\)</span> along ray <span class="arithmatex">\(\mathbf{r}(t) = \mathbf{o} + t\mathbf{d}\)</span> is:</p>
-<div class="arithmatex">\[C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \cdot \sigma(\mathbf{r}(t)) \cdot \mathbf{c}(\mathbf{r}(t), \mathbf{d}) \, dt\]</div>
-<p>Where <strong>transmittance</strong> <span class="arithmatex">\(T(t)\)</span> represents the probability of the ray traveling from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> without hitting anything:</p>
-<div class="arithmatex">\[T(t) = \exp\left(-\int_{t_n}^{t} \sigma(\mathbf{r}(s)) \, ds\right)\]</div>
-<p><img alt="Volume Rendering Equation" src="../4.png" /></p>
-<h3 id="discrete-approximation">Discrete Approximation<a class="headerlink" href="#discrete-approximation" title="Permanent link">&para;</a></h3>
-<p><img alt="Discrete Rendering" src="../6.png" /></p>
-<p>Using quadrature with <span class="arithmatex">\(N\)</span> samples:</p>
-<div class="arithmatex">\[\hat{C}(\mathbf{r}) = \sum_{i=1}^{N} T_i \cdot \alpha_i \cdot \mathbf{c}_i\]</div>
-<p>where <span class="arithmatex">\(\alpha_i = 1 - \exp(-\sigma_i \delta_i)\)</span> and <span class="arithmatex">\(T_i = \prod_{j=1}^{i-1}(1-\alpha_j)\)</span></p>
-<p><img alt="Final Rendering Formula" src="../7.png" /></p>
-<hr />
-<h2 id="key-techniques">Key Techniques<a class="headerlink" href="#key-techniques" title="Permanent link">&para;</a></h2>
-<h3 id="1-positional-encoding">1. Positional Encoding<a class="headerlink" href="#1-positional-encoding" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Problem</p>
-<p>MLPs struggle to learn high-frequency functions directly from low-dimensional inputs.</p>
-</div>
-<p><strong>Solution:</strong> Map inputs to higher-dimensional space using sinusoidal functions:</p>
-<div class="arithmatex">\[\gamma(p) = \left( \sin(2^0\pi p), \cos(2^0\pi p), \ldots, \sin(2^{L-1}\pi p), \cos(2^{L-1}\pi p) \right)\]</div>
-<p><img alt="Positional Encoding" src="../8.png" /></p>
-<p><img alt="Effect of Positional Encoding" src="../9.png" /></p>
-<hr />
-<h3 id="2-hierarchical-volume-sampling">2. Hierarchical Volume Sampling<a class="headerlink" href="#2-hierarchical-volume-sampling" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Efficiency Improvement</p>
-<p>Use <strong>two networks</strong> to focus samples where matter exists:</p>
-</div>
-<table>
-<thead>
-<tr>
-<th>Network</th>
-<th>Purpose</th>
-<th>Samples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Coarse</strong></td>
-<td>Identify relevant regions</td>
-<td><span class="arithmatex">\(N_c\)</span> uniform samples</td>
-</tr>
-<tr>
-<td><strong>Fine</strong></td>
-<td>Detailed rendering</td>
-<td><span class="arithmatex">\(N_f\)</span> importance-sampled</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Process:</strong></p>
-<ol>
-<li>Run coarse network with uniform samples</li>
-<li>Compute weights <span class="arithmatex">\(w_i = T_i \alpha_i\)</span> from coarse output</li>
-<li>Sample <span class="arithmatex">\(N_f\)</span> additional points proportional to weights</li>
-<li>Run fine network with all <span class="arithmatex">\(N_c + N_f\)</span> samples</li>
-</ol>
-<p><img alt="Hierarchical Sampling" src="../10.png" /></p>
-<div class="admonition success">
-<p class="admonition-title">At Test Time</p>
-<p>Only the <strong>fine network</strong> is used for final rendering.</p>
-</div>
-<hr />
-<h2 id="training-details">Training Details<a class="headerlink" href="#training-details" title="Permanent link">&para;</a></h2>
-<p><img alt="Implementation Details" src="../11.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Coarse samples (<span class="arithmatex">\(N_c\)</span>)</td>
-<td>64</td>
-</tr>
-<tr>
-<td>Fine samples (<span class="arithmatex">\(N_f\)</span>)</td>
-<td>128</td>
-</tr>
-<tr>
-<td>Batch size</td>
-<td>4096 rays</td>
-</tr>
-<tr>
-<td>Iterations</td>
-<td>100-300K</td>
-</tr>
-<tr>
-<td>Positional encoding (position)</td>
-<td><span class="arithmatex">\(L = 10\)</span></td>
-</tr>
-<tr>
-<td>Positional encoding (direction)</td>
-<td><span class="arithmatex">\(L = 4\)</span></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<div class="admonition quote">
-<p class="admonition-title">The Takeaway</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p><img alt="1" src="../1.png" /></p>
+<p><strong>Overfit a single neural network for a particular scene to train an overfitted nerual network which represents the scene.</strong></p>
+<p><strong>Input : <span class="arithmatex">\((x,y,z,\theta,\phi)\)</span>: <span class="arithmatex">\((x,y,z)\)</span> is the space location and <span class="arithmatex">\((\theta,\phi)\)</span> is the viewing direction</strong>  </p>
+<p><strong>Output : (colour, density)</strong></p>
+<p>Therefore, when the network is well-overfitted, it can give you results depending on the given viewing directions -- Catch Transparency and Colour.</p>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p><strong>a.</strong> Sample 5D coordinates along camera rays.</p>
+<p><strong>b.</strong> Feed those locations into an <strong>MLP</strong> to produce a color and volume density.</p>
+<p><img alt="2" src="../2.png" /></p>
 <blockquote>
-<p><strong>"The weight is the scene"</strong> — NeRF encodes an entire 3D scene within the weights of a single neural network.</p>
+<p><span class="arithmatex">\(F_{\Theta}\)</span> : </p>
+<ol>
+<li>
+<p>Process the input 3D coordinate with <strong>8 fully-connected layers</strong> (with <strong>ReLU</strong> activations and <strong>256</strong> channels per layer)</p>
+</li>
+<li>
+<p>Output <span class="arithmatex">\(\sigma\)</span> and a <strong>256-dimensional feature vector</strong>.</p>
+</li>
+<li>
+<p>Concatenate the feature vector with the camera ray's viewing direction and passed to one additional <strong>fully-connected layer</strong> (using <strong>ReLU activation</strong> and <strong>128 channels</strong>.)</p>
+</li>
+<li>It outputs the <strong>view-dependent</strong> RGB colour.</li>
+</ol>
 </blockquote>
-</div>
+<p>From above we can see that, NeRF encourages the representation to be multivies consistent by restricting the network to predict the volume density <span class="arithmatex">\(\sigma\)</span> as a function of <strong>ONLY</strong> the location, while we allow the RGB colour to be predicted as a fucntion of <strong>both</strong> location and viewing direction.</p>
+<p><strong>c.</strong> Use volume rendering techniques to composite these values into an image</p>
+<p><strong>d.</strong> The rendering function is differentiable, we optimize the scene representation by minimizing the residual between synthesized and ground truth observed images.</p>
+<p><strong>The weight is the scene</strong></p>
+<h3 id="detailed-parts">Detailed Parts<a class="headerlink" href="#detailed-parts" title="Permanent link">&para;</a></h3>
+<h3 id="neural-radiance-field-scene-representation">Neural Radiance Field Scene Representation<a class="headerlink" href="#neural-radiance-field-scene-representation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Volume density <span class="arithmatex">\(\sigma(x)\)</span> : differential probability of a ray terminating at an infinitesimal particle at location <strong>x</strong> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(C(r)\)</span> : The expected color of ray <span class="arithmatex">\(r(t) = o+td\)</span>  with near and far bound <span class="arithmatex">\(t_n\)</span> and <span class="arithmatex">\(t_f\)</span>​</p>
+</li>
+<li>
+<p><span class="arithmatex">\(T(t)\)</span> : accumulated transmittance along the ray from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> ,i.e., the <strong>probability</strong> that the ray travels from <span class="arithmatex">\(t_n\)</span> to <span class="arithmatex">\(t\)</span> without hitting any other particle. And therefore <span class="arithmatex">\(T(t)=exp(-\int_{t_n}^{t}\sigma(r(s))ds)\)</span>​</p>
+</li>
+</ul>
+<p><img alt="4" src="../4.png" /></p>
+<p><img alt="6" src="../6.png" /></p>
+<p>Thus , <span class="arithmatex">\(C(r) = \int_{t_n}^{t_f} T(t) \sigma(r(t))c(r(t),d)dt\)</span>​  : Clearly color depends on both position and direction.</p>
+<p><img alt="5" src="../5.png" /></p>
+<p>Numerically estimate this continuous integral using <strong>quadrature</strong> and finally we get:</p>
+<p><img alt="7" src="../7.png" /></p>
+<h3 id="optimizing-a-neural-radiance-field">Optimizing a Neural Radiance Field<a class="headerlink" href="#optimizing-a-neural-radiance-field" title="Permanent link">&para;</a></h3>
+<h4 id="positional-encoding">Positional Encoding<a class="headerlink" href="#positional-encoding" title="Permanent link">&para;</a></h4>
+<p><strong>Better Performace at representing high-frequency variation</strong></p>
+<p>Reform <span class="arithmatex">\(F_{\theta}\)</span> as a composition of two functions <span class="arithmatex">\(F_{\theta}=F_{\theta}'*\gamma\)</span> one learned and one not.</p>
+<ul>
+<li><span class="arithmatex">\(\gamma\)</span> is a mapping from <span class="arithmatex">\(R\)</span> into a higher dimensional space <span class="arithmatex">\(R^{2L}\)</span> and <span class="arithmatex">\(F_{\theta}'\)</span> is still simply a regular MLP.</li>
+</ul>
+<p><img alt="8" src="../8.png" /></p>
+<p><img alt="9" src="../9.png" /></p>
+<h4 id="hierarchical-volume-sampling">Hierarchical volume sampling<a class="headerlink" href="#hierarchical-volume-sampling" title="Permanent link">&para;</a></h4>
+<p>Implement two networks: Use the result of the coarse network to determine where to sample in the fine network. </p>
+<ul>
+<li>one "coarse"</li>
+<li>one "fine"</li>
+</ul>
+<p>To do this, we rewrite the <strong>alpha composited color</strong> from thecoarse network <span class="arithmatex">\(\hat{C}_c(r)\)</span> as a weighted sum of all sampled colors <span class="arithmatex">\(c_i\)</span>​ along the ray.</p>
+<p><img alt="10" src="../10.png" /></p>
+<p>Normalize the wights as <span class="arithmatex">\(\hat{w}_i=\frac{w_i}{\sum_{j=1}^{N_c}w_j}\)</span> , we sample a second set of <span class="arithmatex">\(N_f\)</span> locations from the distribution using <strong>inverse transform sampling</strong> (<a href="https://en.wikipedia.org/wiki/Inverse_transform_sampling">https://en.wikipedia.org/wiki/Inverse_transform_sampling</a>)</p>
+<p>Compute the final result using all <span class="arithmatex">\(N_c + N_f\)</span>​ samples(Training Time), at test time use <strong>ONLY</strong> fine network.</p>
+<h3 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h3>
+<p><img alt="11" src="../11.png" /></p>
+<p></font></p>
 
   <hr>
 <div class="md-source-file">
@@ -4063,8 +3392,6 @@
         <script src="../../../javascripts/extra.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
