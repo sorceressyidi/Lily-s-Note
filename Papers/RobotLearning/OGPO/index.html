@@ -1,0 +1,4481 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lily's Notebook">
+      
+      
+      
+        <link rel="canonical" href="https://note.zhangyidi.tech/Papers/RobotLearning/OGPO/">
+      
+      
+        <link rel="prev" href="../EmbodimentTax/">
+      
+      
+        <link rel="next" href="../../NeRF/Theory/">
+      
+      
+      <link rel="icon" href="../../../log.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>OGPO - Lily's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../css/more_changelog.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-ES1C2PJ4CE"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-ES1C2PJ4CE",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-ES1C2PJ4CE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ogpo-sample-efficient-full-finetuning-of-generative-control-policies" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-header__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lily's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OGPO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-pink" data-md-color-accent="brown"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../DM/DDPM/" class="md-tabs__link">
+          
+  
+    
+  
+  Misc CS Notes/Paper Reading
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../TCS/lec1/Lecture1/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science and Related Courses(ZJU)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../CV/ML-4360/BS/lec2/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-tabs__link">
+          
+  
+    
+  
+  My Writings
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lily&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lily's Notebook" data-md-component="logo">
+      
+  <img src="../../../log.ico" alt="logo">
+
+    </a>
+    Lily's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Misc CS Notes/Paper Reading
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Misc CS Notes/Paper Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diffusion Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Diffusion Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DDPM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DDPM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DDIM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DDIM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/FlowMatching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/DiffusionForcing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diffusion Forcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DM/SD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stable Diffusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Robot Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Robot Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DiffusionPolicy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diffusion Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    π₀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi_series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    π series (π0.5/0.6/0.7)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EmbodimentTax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embodiment Tax (blog)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OGPO
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    OGPO
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-setup" class="md-nav__link">
+    Part I — Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I — Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-tension-ogpo-is-trying-to-resolve" class="md-nav__link">
+    1. The tension OGPO is trying to resolve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-preliminaries-the-rl-toolkit-this-paper-is-built-from" class="md-nav__link">
+    2. Preliminaries: the RL toolkit this paper is built from
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preliminaries: the RL toolkit this paper is built from">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-environment-mdp-return-and-qv" class="md-nav__link">
+    2.1 The environment MDP, return, and Q/V
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-action-chunking-and-the-reward-it-induces" class="md-nav__link">
+    2.2 Action chunking and the reward it induces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-on-policy-policy-gradient-reinforce" class="md-nav__link">
+    2.3 On-policy policy gradient — REINFORCE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-off-policy-rl-the-td-loss-is-the-bellman-equation-sample-approximated" class="md-nav__link">
+    2.4 Off-policy RL: the TD loss is the Bellman equation, sample-approximated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-on-policyoff-policy-vs-onlineoffline-two-independent-axes" class="md-nav__link">
+    2.5 On-policy/off-policy vs. online/offline — two independent axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-what-bootstrapping-does-and-why-it-needs-stabilizing" class="md-nav__link">
+    2.6 What bootstrapping does, and why it needs stabilizing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-generative-control-policies-and-why-their-density-is-intractable" class="md-nav__link">
+    3. Generative Control Policies, and why their density is intractable
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Generative Control Policies, and why their density is intractable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gcps" class="md-nav__link">
+    3.1 GCPs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-flow-based-gcp-pretraining" class="md-nav__link">
+    3.2 Flow-based GCP pretraining
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-central-obstacle-and-how-prior-work-routes-around-it" class="md-nav__link">
+    Part II — The central obstacle, and how prior work routes around it
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II — The central obstacle, and how prior work routes around it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-camp-1s-dodge-freeze-the-gcp-train-something-with-an-explicit-density-instead" class="md-nav__link">
+    4. Camp 1's dodge: freeze the GCP, train something with an explicit density instead
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-camp-2s-dodge-dppo-turns-the-intractable-marginal-into-a-chain-of-tractable-gaussians" class="md-nav__link">
+    5. Camp 2's dodge: DPPO turns the intractable marginal into a chain of tractable Gaussians
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-ogpo-itself" class="md-nav__link">
+    Part III — OGPO itself
+  </a>
+  
+    <nav class="md-nav" aria-label="Part III — OGPO itself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-ogpos-insight-sever-the-bi-level-mdp-at-the-environment-transition" class="md-nav__link">
+    6. OGPO's insight: sever the bi-level MDP at the environment transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-ppo-loss-on-the-now-cheap-denoising-chain-answering-question-a" class="md-nav__link">
+    7. The PPO loss on the (now cheap) denoising chain: answering question (A)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-making-it-stable" class="md-nav__link">
+    Part IV — Making it stable
+  </a>
+  
+    <nav class="md-nav" aria-label="Part IV — Making it stable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8-ogpo-and-ogpoca-stabilizing-against-critic-over-exploitation" class="md-nav__link">
+    8. OGPO+ and OGPO+CA: stabilizing against critic over-exploitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-v-results-and-takeaways" class="md-nav__link">
+    Part V — Results and takeaways
+  </a>
+  
+    <nav class="md-nav" aria-label="Part V — Results and takeaways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9-headline-empirical-results" class="md-nav__link">
+    9. Headline empirical results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-a-surprising-finding-full-finetuning-does-not-collapse-exploration" class="md-nav__link">
+    10. A surprising finding: full finetuning does not collapse exploration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-where-this-sits-relative-to-what-you-already-know" class="md-nav__link">
+    11. Where this sits relative to what you already know
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NeRF/Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NeRF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4DGS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            4DGS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4DGS/paper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023.10-ICLR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            RL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../RL/PG/PG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy Gradient Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science and Related Courses(ZJU)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science and Related Courses(ZJU)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Theoretical Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Theoretical Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec1/Lecture1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1 - Finite Automata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec2/Lecture2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2 - Regular Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec3/Lecture3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3 - Context-Free Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec4/Lecture4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4 - Push-Down-Automata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec5/Lecture5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5 - Turing Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec6/Lecture6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6 - Containments properties of languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec7/Lecture7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 7 - Decidability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec8/Lecture8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 8 - Gödel's Incompleteness Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec9/Lecture9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 9 - Complexity - Time
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TCS/lec10/Lecture10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 10 - Complexity - Space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operating System
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operating System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec1/lec1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1 - Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec2/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2 - OS Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec3/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3 - Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec4/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 4 - Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec5/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 5 - IPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec6/lec6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 6 - Thread
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec7/lec7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 7 - Synchronization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec8/lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 8 - Synchronization II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec9/lec9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 9 - Deadlock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec10/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 10 - Main Memory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec11/lec11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 11 - Virtual Memory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec12/lec12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 12 - Mass Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec13/lec13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 13 -I/O System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec14/lec14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 14 - File System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/lec15/lec15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 15 - OS Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Anvanced Data Structure and Algorithm Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Anvanced Data Structure and Algorithm Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/Tree/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/Heap/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/back/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/D%26C/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/dy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/greedy/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/NP/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NP-Completeness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/approx/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approximation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADS/rand/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Randomized Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General physics II
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            General physics II
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electromagnetics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Electromagnetics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/lec1-3/lec1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electrci Charge & Field & Potential
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/current/current/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Current
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/mag/mag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Magnetic Field
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/com/com/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electromagnetic Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Optics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/light/light/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light Waves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/light/inteference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    interference & refraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/light/df/diffraction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diffraction(&inteference)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/Polar/Polarization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polarization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/light/quantum%20light/quantum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/matter%20wave/matter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    matter wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/sch/sch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schroedinger's Equation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/QW/QW/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Wells
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/HA/HA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Hydrogen Atom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GP/AMAS/AMAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Angular Momentum and Spin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML-4360
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML-4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/BS/lec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SFM/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    structure from motion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SR/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stereo Reconstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/PGM/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probabilistic Graphical Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/SFX/lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shape-From-X
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/Recognition/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/ML-4360/Self/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Supervised Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    EECS 498.008 / 598.008
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            EECS 498.008 / 598.008
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/class/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/neural/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/CNN/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convolutional Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/Pytorch/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/TN/lec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Traning Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL_CV/Recognition/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recognision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    My Writings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            My Writings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    High-School Writings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            High-School Writings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%A4%A7%E4%BE%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大侠
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../writing/invisible.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../writing/Pandora.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandora
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../writing/nightmare.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一个噩梦
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../writing/%E9%9D%92%E9%B8%9F.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    青鸟
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-setup" class="md-nav__link">
+    Part I — Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I — Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-tension-ogpo-is-trying-to-resolve" class="md-nav__link">
+    1. The tension OGPO is trying to resolve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-preliminaries-the-rl-toolkit-this-paper-is-built-from" class="md-nav__link">
+    2. Preliminaries: the RL toolkit this paper is built from
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preliminaries: the RL toolkit this paper is built from">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-environment-mdp-return-and-qv" class="md-nav__link">
+    2.1 The environment MDP, return, and Q/V
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-action-chunking-and-the-reward-it-induces" class="md-nav__link">
+    2.2 Action chunking and the reward it induces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-on-policy-policy-gradient-reinforce" class="md-nav__link">
+    2.3 On-policy policy gradient — REINFORCE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-off-policy-rl-the-td-loss-is-the-bellman-equation-sample-approximated" class="md-nav__link">
+    2.4 Off-policy RL: the TD loss is the Bellman equation, sample-approximated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-on-policyoff-policy-vs-onlineoffline-two-independent-axes" class="md-nav__link">
+    2.5 On-policy/off-policy vs. online/offline — two independent axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-what-bootstrapping-does-and-why-it-needs-stabilizing" class="md-nav__link">
+    2.6 What bootstrapping does, and why it needs stabilizing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-generative-control-policies-and-why-their-density-is-intractable" class="md-nav__link">
+    3. Generative Control Policies, and why their density is intractable
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Generative Control Policies, and why their density is intractable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gcps" class="md-nav__link">
+    3.1 GCPs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-flow-based-gcp-pretraining" class="md-nav__link">
+    3.2 Flow-based GCP pretraining
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-central-obstacle-and-how-prior-work-routes-around-it" class="md-nav__link">
+    Part II — The central obstacle, and how prior work routes around it
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II — The central obstacle, and how prior work routes around it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-camp-1s-dodge-freeze-the-gcp-train-something-with-an-explicit-density-instead" class="md-nav__link">
+    4. Camp 1's dodge: freeze the GCP, train something with an explicit density instead
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-camp-2s-dodge-dppo-turns-the-intractable-marginal-into-a-chain-of-tractable-gaussians" class="md-nav__link">
+    5. Camp 2's dodge: DPPO turns the intractable marginal into a chain of tractable Gaussians
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-ogpo-itself" class="md-nav__link">
+    Part III — OGPO itself
+  </a>
+  
+    <nav class="md-nav" aria-label="Part III — OGPO itself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-ogpos-insight-sever-the-bi-level-mdp-at-the-environment-transition" class="md-nav__link">
+    6. OGPO's insight: sever the bi-level MDP at the environment transition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-ppo-loss-on-the-now-cheap-denoising-chain-answering-question-a" class="md-nav__link">
+    7. The PPO loss on the (now cheap) denoising chain: answering question (A)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-making-it-stable" class="md-nav__link">
+    Part IV — Making it stable
+  </a>
+  
+    <nav class="md-nav" aria-label="Part IV — Making it stable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8-ogpo-and-ogpoca-stabilizing-against-critic-over-exploitation" class="md-nav__link">
+    8. OGPO+ and OGPO+CA: stabilizing against critic over-exploitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-v-results-and-takeaways" class="md-nav__link">
+    Part V — Results and takeaways
+  </a>
+  
+    <nav class="md-nav" aria-label="Part V — Results and takeaways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9-headline-empirical-results" class="md-nav__link">
+    9. Headline empirical results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-a-surprising-finding-full-finetuning-does-not-collapse-exploration" class="md-nav__link">
+    10. A surprising finding: full finetuning does not collapse exploration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-where-this-sits-relative-to-what-you-already-know" class="md-nav__link">
+    11. Where this sits relative to what you already know
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><font face="Times New Roman"></p>
+<h1 id="ogpo-sample-efficient-full-finetuning-of-generative-control-policies">OGPO: Sample-Efficient Full-Finetuning of Generative Control Policies<a class="headerlink" href="#ogpo-sample-efficient-full-finetuning-of-generative-control-policies" title="Permanent link">&para;</a></h1>
+<p><a href="https://arxiv.org/abs/2605.03065">arXiv:2605.03065</a> · <a href="https://simchowitzlabpublic.github.io/ogpo-site/">project page</a> · <a href="https://github.com/simchowitzlabpublic/OGPO_public">code</a></p>
+<h2 id="part-i-setup">Part I — Setup<a class="headerlink" href="#part-i-setup" title="Permanent link">&para;</a></h2>
+<h3 id="1-the-tension-ogpo-is-trying-to-resolve">1. The tension OGPO is trying to resolve<a class="headerlink" href="#1-the-tension-ogpo-is-trying-to-resolve" title="Permanent link">&para;</a></h3>
+<p>A <strong>Generative Control Policy (GCP)</strong> is any policy parameterized as an iterative generative process — a diffusion or flow model that maps noise <span class="arithmatex">\(a_{t,K}\sim\mathcal N(0,I)\)</span> through <span class="arithmatex">\(K\)</span> denoising steps down to a clean action <span class="arithmatex">\(a_{t,0}\)</span>, conditioned on state <span class="arithmatex">\(s_t\)</span> (Diffusion Policy, π₀'s flow head, etc.). Fine-tuning a pretrained GCP with RL had, before this paper, split into two camps that each give up something:</p>
+<table>
+<thead>
+<tr>
+<th>Camp</th>
+<th>Examples</th>
+<th>Sample-efficient?</th>
+<th>Expressive?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Partial/off-policy</strong> — steer initial noise, add a residual, or rank/BC-distill, on top of a <em>frozen</em> GCP</td>
+<td>DSRL, EXPO, QC</td>
+<td>✅ off-policy critic reuses all past data</td>
+<td>❌ capped by the frozen decoder</td>
+</tr>
+<tr>
+<td><strong>Full on-policy</strong> — RL through the <em>entire</em> denoising process</td>
+<td>DPPO, ReinFlow, RL-100</td>
+<td>❌ every step needs fresh real rollouts</td>
+<td>✅ every one of the <span class="arithmatex">\(K\)</span> steps gets updated</td>
+</tr>
+</tbody>
+</table>
+<p>OGPO's claim: you can get both, because "denoising steps" and "environment steps" have wildly different sample costs (Parts II–III). The rest of Part I is the background needed to make that claim precise.</p>
+<h3 id="2-preliminaries-the-rl-toolkit-this-paper-is-built-from">2. Preliminaries: the RL toolkit this paper is built from<a class="headerlink" href="#2-preliminaries-the-rl-toolkit-this-paper-is-built-from" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>§</th>
+<th>Object</th>
+<th>Key equation</th>
+<th>Reused in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>MDP, return, Q/V</td>
+<td>Bellman consistency equation</td>
+<td>§2.4 TD loss, §5/§6 critics</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Action chunking</td>
+<td><span class="arithmatex">\(n\)</span>-step TD critic target</td>
+<td>every critic in the paper</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>On-policy PG (REINFORCE)</td>
+<td><span class="arithmatex">\(\nabla_\theta J=\mathbb E[\sum_t\nabla_\theta\log\pi_\theta(a_t\mid s_t)r_t]\)</span></td>
+<td>§5, §7 verbatim</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>Off-policy TD</td>
+<td>semi-gradient TD + Expected SARSA + ensemble target</td>
+<td>§6's critic</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>on/off-policy × online/offline</td>
+<td>2×2 grid</td>
+<td>classifies OGPO &amp; RECAP (§11)</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>Bootstrapping</td>
+<td>MC target vs. TD target</td>
+<td>motivates §8's stabilizers</td>
+</tr>
+</tbody>
+</table>
+<h4 id="21-the-environment-mdp-return-and-qv">2.1 The environment MDP, return, and Q/V<a class="headerlink" href="#21-the-environment-mdp-return-and-qv" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+M_{\text{Env}} := (S, A, P_0, P, R, \gamma),\qquad s_{t+1}\sim P(\cdot\mid s_t,a_t),\ \ a_t\sim\pi(\cdot\mid s_t).
+\]</div>
+<div class="arithmatex">\[
+J(\pi):=\mathbb E_\pi\Big[\sum_{t\geq0}\gamma^tR(s_t,a_t)\Big],\qquad
+Q^\pi(s,a):=\mathbb E_\pi\Big[\sum_{t\geq0}\gamma^tR(s_t,a_t)\ \Big|\ (s_0,a_0)=(s,a)\Big],\qquad
+V^\pi(s):=\mathbb E_{a\sim\pi(s)}[Q^\pi(s,a)].
+\]</div>
+<div class="arithmatex">\[
+\boxed{Q^\pi(s,a) = R(s,a) + \gamma\,\mathbb E_{s'\sim P(\cdot\mid s,a)}\,\mathbb E_{a'\sim\pi(\cdot\mid s')}\big[Q^\pi(s',a')\big].}\quad\textbf{(Bellman consistency)}
+\]</div>
+<details>
+<summary>Derivation — why the Bellman equation holds (peel off the <span class="arithmatex">\(t=0\)</span> term)</summary>
+<p>Peel off the <span class="arithmatex">\(t=0\)</span> term of <span class="arithmatex">\(Q^\pi\)</span> and re-index:</p>
+<div class="arithmatex">\[
+Q^\pi(s,a)=\mathbb E\Big[\textstyle\sum_{t\geq0}\gamma^tR(s_t,a_t)\ \Big|\ s_0=s,a_0=a\Big]
+= R(s,a) + \gamma\,\mathbb E_{s_1\sim P(\cdot\mid s,a)}\Big[\mathbb E\big[\textstyle\sum_{t\geq0}\gamma^tR(s_{1+t},a_{1+t})\mid s_1\big]\Big].
+\]</div>
+<p>The inner expectation is exactly <span class="arithmatex">\(V^\pi(s_1)\)</span>, and <span class="arithmatex">\(V^\pi(s')=\mathbb E_{a'\sim\pi(\cdot\mid s')}[Q^\pi(s',a')]\)</span> by definition — giving the boxed equation above. The TD loss in §2.4 is nothing but a sampled version of this identity.</p>
+</details>
+<h4 id="22-action-chunking-and-the-reward-it-induces">2.2 Action chunking and the reward it induces<a class="headerlink" href="#22-action-chunking-and-the-reward-it-induces" title="Permanent link">&para;</a></h4>
+<p>Executing an <span class="arithmatex">\(h\)</span>-step chunk <span class="arithmatex">\(a_{t:t+h-1}\)</span> open-loop as a single "action" of <span class="arithmatex">\(M_{\text{Env}}\)</span> forces the critic's TD target to bootstrap <span class="arithmatex">\(h\)</span> real steps ahead, collecting <span class="arithmatex">\(h\)</span> real rewards along the way — plain <span class="arithmatex">\(n\)</span>-step TD with <span class="arithmatex">\(n=h\)</span> (collapses to §2.4's one-step loss when <span class="arithmatex">\(h=1\)</span>):</p>
+<div class="arithmatex">\[
+L_{\text{critic}}(\phi)=\mathbb E_{s_t,a_{t:t+h},s_{t+h}\sim\mathcal B}\Big[\Big(Q_\phi(s_t,a_{t:t+h})-\underbrace{\textstyle\sum_{t'=1}^{h}\gamma^{t'}r_{t+t'}}_{h\text{ real rewards}}-\gamma^h Q_{\mathrm{targ}}(s_{t+h},a_{t+h:t+2h})\Big)^2\Big].
+\]</div>
+<h4 id="23-on-policy-policy-gradient-reinforce">2.3 On-policy policy gradient — REINFORCE<a class="headerlink" href="#23-on-policy-policy-gradient-reinforce" title="Permanent link">&para;</a></h4>
+<p>For <span class="arithmatex">\(\tau=(s_0,a_0,\dots)\sim p_\theta\)</span> and <span class="arithmatex">\(G(\tau):=\sum_{t\geq0}\gamma^tR(s_t,a_t)\)</span>, so <span class="arithmatex">\(J(\theta)=\mathbb E_{\tau\sim p_\theta}[G(\tau)]\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{\nabla_\theta J(\theta)=\mathbb E\Big[\sum_{t\geq0}\nabla_\theta\log\pi_\theta(a_t\mid s_t)\cdot r_t(s_t,a_t)\Big]},\qquad r_t(s_t,a_t):=\sum_{\tau\geq t}\gamma^\tau R(s_\tau,a_\tau).
+\]</div>
+<details>
+<summary>Derivation — log-derivative trick + causality (why only <span class="arithmatex">\(t'\geq t\)</span> terms survive)</summary>
+<p><strong>Step 1 (log-derivative trick).</strong> <span class="arithmatex">\(\nabla_\theta p_\theta(\tau)=p_\theta(\tau)\nabla_\theta\log p_\theta(\tau)\)</span>, so <span class="arithmatex">\(\nabla_\theta J(\theta)=\mathbb E_{\tau\sim\pi_\theta}\big[\nabla_\theta\log p_\theta(\tau)\cdot G(\tau)\big]\)</span>.</p>
+<p><strong>Step 2 (only policy factors depend on <span class="arithmatex">\(\theta\)</span>).</strong> <span class="arithmatex">\(P_0,P\)</span> are environment-fixed, so <span class="arithmatex">\(\nabla_\theta\log p_\theta(\tau)=\sum_{t\geq0}\nabla_\theta\log\pi_\theta(a_t\mid s_t)\)</span> — giving a double sum over <span class="arithmatex">\(t\)</span> (log-prob) and <span class="arithmatex">\(t'\)</span> (from <span class="arithmatex">\(G(\tau)\)</span>).</p>
+<p><strong>Step 3 (causality kills "future policy, past reward" terms).</strong> For <span class="arithmatex">\(t'&lt;t\)</span>, <span class="arithmatex">\(R(s_{t'},a_{t'})\)</span> is measurable before <span class="arithmatex">\(a_t\)</span> is drawn, so by the tower rule
+$$
+\mathbb E\big[\nabla_\theta\log\pi_\theta(a_t\mid s_t)\cdot R(s_{t'},a_{t'})\big]
+=\mathbb E\Big[\underbrace{\mathbb E_{a_t\sim\pi_\theta(\cdot\mid s_t)}\big[\nabla_\theta\log\pi_\theta(a_t\mid s_t)\big]}<em>{= \nabla</em>\theta\int\pi_\theta(a\mid s_t)\,da = 0}\cdot R(s_{t'},a_{t'})\Big]=0.
+$$
+Only <span class="arithmatex">\(t'\geq t\)</span> survives, giving the boxed result. The same zero-expectation identity licenses subtracting any baseline <span class="arithmatex">\(\hat V(s_t)\)</span> from <span class="arithmatex">\(r_t\)</span> for free — the source of the advantage estimator <span class="arithmatex">\(\hat A=r_t-\hat V(s_t)\)</span> used throughout the paper (and PPO).</p>
+</details>
+<p>This exact derivation is reused <strong>verbatim</strong> in §5 and §7, just relabeling <span class="arithmatex">\((s,a,t)\)</span>.</p>
+<h4 id="24-off-policy-rl-the-td-loss-is-the-bellman-equation-sample-approximated">2.4 Off-policy RL: the TD loss is the Bellman equation, sample-approximated<a class="headerlink" href="#24-off-policy-rl-the-td-loss-is-the-bellman-equation-sample-approximated" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+L_{\text{critic}}(\phi)=\mathbb E_{(s_t,a_t,r_t,s_{t+1})\sim\mathcal B,\ a_{t+1}\sim\pi_{\bar\theta}(\cdot\mid s_{t+1})}\Big[\big(Q_\phi(s_t,a_t)-(r_t+\gamma\,Q_{\mathrm{targ}}(s_{t+1},a_{t+1}))\big)^2\Big].
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Why it's there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(Q_{\mathrm{targ}}\)</span> = Polyak copy, <span class="arithmatex">\(\bar\phi\leftarrow(1-\tau)\bar\phi+\tau\phi\)</span></td>
+<td><strong>Semi-gradient TD</strong> — never differentiate through the target, or you chase a constantly-shifting goal</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(a_{t+1}\)</span> freshly sampled from <span class="arithmatex">\(\pi_{\bar\theta}(\cdot\mid s_{t+1})\)</span>, not from the buffer</td>
+<td><strong>Expected SARSA</strong>, not Q-learning — and exactly why old <span class="arithmatex">\((s_t,a_t,r_t,s_{t+1})\)</span> from <em>any</em> past policy stays valid: only the bootstrapped <span class="arithmatex">\(a_{t+1}\)</span> must match the current policy</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(Q_{\mathrm{targ}}=\frac1M\sum_iQ_{\bar\phi_i}\)</span> (ensemble mean)</td>
+<td>double-Q/REDQ-style guard against value overestimation</td>
+</tr>
+</tbody>
+</table>
+<p>This is the object that gets severed away from the denoising process in §6 and trained purely on real (expensive) environment transitions.</p>
+<h4 id="25-on-policyoff-policy-vs-onlineoffline-two-independent-axes">2.5 On-policy/off-policy vs. online/offline — two independent axes<a class="headerlink" href="#25-on-policyoff-policy-vs-onlineoffline-two-independent-axes" title="Permanent link">&para;</a></h4>
+<p><strong>On-policy</strong> = the training target is <em>defined</em> as an expectation under the current policy (§2.3) — the moment <span class="arithmatex">\(\theta\)</span> changes, data from the old <span class="arithmatex">\(\theta\)</span> is a biased sample of a different expectation, not just "stale." <strong>Off-policy</strong> = the target is defined by something policy-independent, e.g. §2.4's Bellman equation, where <span class="arithmatex">\(s'\sim P(\cdot\mid s,a)\)</span> and <span class="arithmatex">\(R(s,a)\)</span> are facts about physics, not about who chose <span class="arithmatex">\(a\)</span> — so any past transition stays valid forever (only the bootstrapped <span class="arithmatex">\(a_{t+1}\)</span> needs resampling under the current policy).</p>
+<p><strong>Online</strong> = the environment keeps producing fresh transitions throughout training. <strong>Offline</strong> = training runs against one dataset, collected once, that never grows. Crossing the two axes:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>On-policy</th>
+<th>Off-policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Online</strong></td>
+<td>PPO/REINFORCE's policy update: rollout, use once, discard, resample</td>
+<td><strong>OGPO's critic</strong>: environment queried forever; TD loss trains on the <em>whole</em> accumulated buffer</td>
+</tr>
+<tr>
+<td><strong>Offline</strong></td>
+<td><em>(empty — on-policy demands data matching an ever-changing <span class="arithmatex">\(\theta\)</span>)</em></td>
+<td>Classical offline RL (CQL, IQL, …): one fixed dataset, no further contact</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OGPO, precisely:</strong> its <em>policy</em> update (§6–7) is on-policy but resampled for free (no real rollout needed); its <em>critic</em> (§2.4) is off-policy on an ever-growing buffer; the <em>system</em> is online throughout. §11 uses this to contrast OGPO (online) against RECAP (offline/iterated-batch).</p>
+<details>
+<summary>Why not skip real interaction and go pure offline?</summary>
+<p>A fixed dataset never lets a critic's mistakes get checked against reality: if <span class="arithmatex">\(Q_\phi\)</span> overestimates some out-of-distribution action, nothing in offline training can ever produce a transition that contradicts it — and since the policy optimizes <em>against</em> <span class="arithmatex">\(Q_\phi\)</span>, it walks straight into that overestimated region and stays there, undetected. (This is the OOD-overestimation failure mode CQL/IQL-style conservative regularizers exist to patch.) Staying online lets the real environment periodically correct the critic with an actual reward — off-policy training buys offline RL's data-reuse efficiency, while staying online buys back the safety net pure offline RL gives up.</p>
+</details>
+<h4 id="26-what-bootstrapping-does-and-why-it-needs-stabilizing">2.6 What bootstrapping does, and why it needs stabilizing<a class="headerlink" href="#26-what-bootstrapping-does-and-why-it-needs-stabilizing" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Target</th>
+<th>Variance</th>
+<th>Bias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monte Carlo</strong> (§2.3's <span class="arithmatex">\(r_t\)</span>)</td>
+<td><span class="arithmatex">\(\sum_{\tau\geq t}\gamma^\tau R(s_\tau,a_\tau)\)</span> — all real rewards</td>
+<td>high (bakes in all future randomness)</td>
+<td>none</td>
+</tr>
+<tr>
+<td><strong>TD / bootstrapped</strong> (§2.4)</td>
+<td><span class="arithmatex">\(r_t+\gamma Q_{\mathrm{targ}}(s_{t+1},a_{t+1})\)</span> — one real reward + the critic's <em>own guess</em> for the rest</td>
+<td>low</td>
+<td>biased whenever <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span> is currently wrong</td>
+</tr>
+</tbody>
+</table>
+<p>Bootstrapping lets training start after a single transition instead of a whole episode, at the cost of building the target out of the critic's own (possibly-wrong) estimate — a self-referential structure that three pieces of machinery specifically patch: <strong>target networks</strong> (§2.4, stop the target from shifting mid-update), <strong>ensembles/min-over-critics</strong> (§8 Fix 2, stop an accidental overestimate at <span class="arithmatex">\((s_{t+1},a_{t+1})\)</span> from compounding forward through every later bootstrapped update), and <strong>Expected SARSA</strong> (§2.4, avoid the extra <strong>maximization bias</strong> an explicit <span class="arithmatex">\(\max_a\)</span> would add).</p>
+<details>
+<summary>Does off-policy training make this worse?</summary>
+<p>Yes, but it isn't the root cause — bootstrapping itself is (it exists even on-policy, just more mildly). Off-policy training adds a wider, more heterogeneous buffer (more chances to hit poorly-covered actions) and lets any one bad estimate get <em>reused</em> across many future updates instead of being discarded after one on-policy batch — so an error that would fade quickly on-policy instead gets reinforced repeatedly. §8's stabilizers are the cost of safely combining bootstrapping with off-policy reuse, not a flaw specific to off-policy training alone.</p>
+</details>
+<h3 id="3-generative-control-policies-and-why-their-density-is-intractable">3. Generative Control Policies, and why their density is intractable<a class="headerlink" href="#3-generative-control-policies-and-why-their-density-is-intractable" title="Permanent link">&para;</a></h3>
+<h4 id="31-gcps">3.1 GCPs<a class="headerlink" href="#31-gcps" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+a_{t,K}\sim\bar\pi_\theta(\cdot\mid a_{t,k}=\varnothing,\,k{=}K,\,s_t),\qquad a_{t,k-1}\sim\bar\pi_\theta(\cdot\mid a_{t,k},k,s_t)\quad(k=K,\dots,1).
+\]</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>a_{t,K}  --πθ--&gt;  a_{t,K-1}  --πθ--&gt;  ...  --πθ--&gt;  a_{t,0}
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(pure noise)                                        (clean action)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>each arrow  :  a tractable per-step density   ✓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>whole chain :  Law(a_{t,0} | s_t)  — no closed form   ✗
+</code></pre></div>
+<p>Running the recursion to <span class="arithmatex">\(k=0\)</span> defines the marginal <span class="arithmatex">\(\pi_\theta(\cdot\mid s_t):=\mathrm{Law}(a_{t,0}\mid s_t)\)</span> — this <em>is</em> "a GCP has no tractable log-probability": <span class="arithmatex">\(\pi_\theta\)</span> exists, it simply has no closed form, since writing it down needs the Jacobian log-determinant of the <span class="arithmatex">\(K\)</span>-step composite map (intractable for realistic action dimension and <span class="arithmatex">\(K\)</span>). <strong>Everything in Part II is a strategy for never actually needing this marginal.</strong></p>
+<h4 id="32-flow-based-gcp-pretraining">3.2 Flow-based GCP pretraining<a class="headerlink" href="#32-flow-based-gcp-pretraining" title="Permanent link">&para;</a></h4>
+<p>The conditional flow-matching objective from <code>FlowMatching.md</code>, conditioned on <span class="arithmatex">\(s\)</span>:</p>
+<div class="arithmatex">\[
+z\sim\mathcal N(0,I),\quad \tau\sim\mathrm{Unif}[0,1],\quad a_{(\tau)}=\tau a+(1-\tau)z\ \Rightarrow\ \tfrac{d}{d\tau}a_{(\tau)}=a-z,
+\]</div>
+<div class="arithmatex">\[
+\boxed{\mathcal L_{\mathrm{CFM}}=\mathbb E_{(s,a,\tau)}\big\|v_\theta(a_{(\tau)},\tau;s)-(a-z)\big\|^2.}
+\]</div>
+<p>Inference discretizes the reverse ODE with <span class="arithmatex">\(K\)</span> Euler steps, re-indexed from the diffusion-style <span class="arithmatex">\(k=K\)</span> (noise) down to <span class="arithmatex">\(0\)</span> (clean action) via <span class="arithmatex">\(k=K(1-\tau)\)</span>, so it shares bookkeeping with diffusion-based GCPs elsewhere in the paper.</p>
+<details>
+<summary>Paper OCR artifacts, fixed here</summary>
+<p>The paper's own Preliminaries section is missing an "<span class="arithmatex">\(a\)</span>" coefficient in the interpolation (should be <span class="arithmatex">\(a_{(\tau)}=\tau a+(1-\tau)z\)</span>, or "target velocity <span class="arithmatex">\(=a-z\)</span>" doesn't dimension-check) and states the boundary condition as <span class="arithmatex">\(a_{t,0}\sim\mathcal N(0,I)\)</span> where it should read <span class="arithmatex">\(a_{t,K}\sim\mathcal N(0,I)\)</span> — consistent with §3.1, where <span class="arithmatex">\(a_{t,K}\)</span> is the initial noise and <span class="arithmatex">\(a_{t,0}\)</span> is the final action.</p>
+</details>
+<h2 id="part-ii-the-central-obstacle-and-how-prior-work-routes-around-it">Part II — The central obstacle, and how prior work routes around it<a class="headerlink" href="#part-ii-the-central-obstacle-and-how-prior-work-routes-around-it" title="Permanent link">&para;</a></h2>
+<p>Both camps from §1's table have to somehow route around the fact that <span class="arithmatex">\(\pi_\theta(a_{t,0}\mid s_t)\)</span> (§3.1) has no closed form. They do it in two structurally different ways — and OGPO (Part III) turns out to <em>inherit</em> Camp 2's resolution rather than invent a third one.</p>
+<h3 id="4-camp-1s-dodge-freeze-the-gcp-train-something-with-an-explicit-density-instead">4. Camp 1's dodge: freeze the GCP, train something with an explicit density instead<a class="headerlink" href="#4-camp-1s-dodge-freeze-the-gcp-train-something-with-an-explicit-density-instead" title="Permanent link">&para;</a></h3>
+<p>The intractable-density problem only bites when you need a density <em>of the GCP itself</em> to compute a policy-gradient/likelihood-based update. All three Camp-1 methods sidestep this by <strong>freezing the GCP outright</strong> and only ever training a small auxiliary module whose own distribution is an explicit, simple one:</p>
+<ul>
+<li><strong>DSRL (noise steering).</strong> Train a small policy <span class="arithmatex">\(\pi_\psi(z\mid s_t)\)</span> — typically an explicit Gaussian, <span class="arithmatex">\(z=\mu_\psi(s_t)+\sigma_\psi(s_t)\epsilon,\ \epsilon\sim\mathcal N(0,I)\)</span> — that chooses the <em>initial noise</em> <span class="arithmatex">\(z=a_{t,K}\)</span> fed into the frozen decoder. <span class="arithmatex">\(\log\pi_\psi(z\mid s_t)\)</span> is available in closed form by construction, so standard reparameterized actor-critic applies directly: <span class="arithmatex">\(\max_\psi\mathbb E_\epsilon[Q_{\mathrm{targ}}(s_t,\mathrm{Decoder}_{\text{frozen}}(s_t,\mu_\psi(s_t)+\sigma_\psi(s_t)\epsilon))]\)</span>. Gradients do pass through the frozen decoder's Jacobian, but only to inform <span class="arithmatex">\(\psi\)</span> — the decoder's own weights never move, so there's none of the moving-target instability that plagues updating the decoder's own parameters this way.</li>
+<li><strong>EXPO (residual).</strong> Same trick, applied after the GCP instead of before it: freeze <span class="arithmatex">\(a_{t,0}\)</span>, learn an explicit Gaussian residual <span class="arithmatex">\(\pi^{\text{res}}_\psi(\Delta a\mid s_t,a_{t,0})\)</span>, output <span class="arithmatex">\(a_{\text{final}}=a_{t,0}+\Delta a\)</span>. Again, standard reparameterized actor-critic on <span class="arithmatex">\(\psi\)</span> alone; the GCP's own (intractable) density never enters the optimization problem.</li>
+<li><strong>QC (Best-of-N + BC).</strong> Avoids likelihoods altogether. Best-of-N is pure forward evaluation + ranking (sample <span class="arithmatex">\(N\)</span> candidates from the frozen GCP, score with <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span>, take the arg max — no gradient, no density needed). Any further policy update is an ordinary <strong>behavior-cloning regression</strong> (the flow-matching MSE loss itself) fit to the top-ranked/successful actions — supervised regression never requires writing down <span class="arithmatex">\(\log\pi_\theta(a\mid s)\)</span> in the first place.</li>
+</ul>
+<p>The shared mechanism: <strong>once the GCP is frozen, its intractable density is irrelevant</strong> — it's just a fixed, differentiable (or non-differentiable, for QC) black box. Whatever <em>does</em> get RL-updated (a noise-selector, a residual, or nothing at all) lives in a space with an explicit, tractable distribution. This is also exactly the source of Camp 1's ceiling: nothing here can ever move the GCP's own generative capability past what it already learned at pretraining time.</p>
+<h3 id="5-camp-2s-dodge-dppo-turns-the-intractable-marginal-into-a-chain-of-tractable-gaussians">5. Camp 2's dodge: DPPO turns the intractable marginal into a chain of tractable Gaussians<a class="headerlink" href="#5-camp-2s-dodge-dppo-turns-the-intractable-marginal-into-a-chain-of-tractable-gaussians" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1 — find one tractable ingredient to build the whole construction on.</strong> </p>
+<p>Don't try to get a density for <span class="arithmatex">\(a_{t,0}\mid s_t\)</span> (the full marginal) at all. Instead, use <strong>only the per-step transition densities</strong>, which for a <em>diffusion</em> policy are Gaussian by construction (the same DDPM reverse kernel from <code>DDPM.md</code>, with the fixed, closed-form scheduled variance you already know):</p>
+<div class="arithmatex">\[
+p_\theta(a^{k-1}\mid a^k,s)=\mathcal N\big(a^{k-1};\ \mu_\theta(a^k,\varepsilon_\theta(a^k,k,s)),\ \sigma_k^2I\big),
+\]</div>
+<p>with <span class="arithmatex">\(\mu_\theta(\cdot)\)</span> the same <span class="arithmatex">\(\theta\)</span>-independent affine function of the predicted noise from <code>DDPM.md</code>, and <span class="arithmatex">\(\sigma_k^2\)</span> a fixed, non-learned schedule. The full chain's marginal <span class="arithmatex">\(p_\theta(a^0\mid s)\)</span> still has no closed form — but ✅ policy gradients and PPO ratios never need the marginal, only per-step densities, and here every per-step density is an explicit Gaussian.</p>
+<p><strong>Step 2 — flatten the two nested loops into one line.</strong> </p>
+<p>Define a single <strong>lexicographic index</strong></p>
+<div class="arithmatex">\[
+\bar t(t,k):=tK+(K-k-1),\qquad k=K{-}1,K{-}2,\dots,0,
+\]</div>
+<p>which just means: <em>list every sub-step of block <span class="arithmatex">\(t=0\)</span> first (in decreasing order of <span class="arithmatex">\(k\)</span>), then every sub-step of block <span class="arithmatex">\(t=1\)</span>, and so on.</em> Worked out for <span class="arithmatex">\(K=3\)</span> (three denoising steps per real action), <span class="arithmatex">\(t=0,1\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(\bar t\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\((t,k)\)</span></th>
+<th style="text-align: center;">state <span class="arithmatex">\(\bar s_{\bar t}\)</span></th>
+<th style="text-align: center;">action <span class="arithmatex">\(\bar a_{\bar t}\)</span></th>
+<th style="text-align: center;">reward <span class="arithmatex">\(\bar R_{\bar t}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\((0,2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_0,a_0^{3})\)</span> — pure noise</td>
+<td style="text-align: center;"><span class="arithmatex">\(a_0^{2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="arithmatex">\((0,1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_0,a_0^{2})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(a_0^{1}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\((0,0)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_0,a_0^{1})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(a_0^{0}\)</span> — <strong>clean action</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(R(s_0,a_0^0)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="arithmatex">\((1,2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_1,a_1^{3})\)</span> — pure noise</td>
+<td style="text-align: center;"><span class="arithmatex">\(a_1^{2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="arithmatex">\((1,1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_1,a_1^{2})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(a_1^{1}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\((1,0)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((s_1,a_1^{1})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(a_1^{0}\)</span> — <strong>clean action</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(R(s_1,a_1^0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice <span class="arithmatex">\(\bar t\)</span> just counts <span class="arithmatex">\(0,1,2,3,\dots\)</span> with no gaps — that is the entire content of "flattening." In general, DPPO sets</p>
+<div class="arithmatex">\[
+\bar s_{\bar t(t,k)}=(s_t,a_t^{k+1}),\qquad \bar a_{\bar t(t,k)}=a_t^{k},\qquad
+\bar R_{\bar t(t,k)}=\begin{cases}0 &amp; k&gt;0\\ R(s_t,a_t^0) &amp; k=0.\end{cases}
+\]</div>
+<p>Read off the table: every intermediate row (<span class="arithmatex">\(k&gt;0\)</span>) is bookkeeping — zero reward, a deterministic hand-off to the next row — while only the <span class="arithmatex">\(k=0\)</span> row (⭐ in the table, gold in the figure) gets a real reward, and only <em>there</em> does the real environment actually advance: <span class="arithmatex">\(s_{t+1}\sim P(\cdot\mid s_t,a_t^0)\)</span>, with a fresh <span class="arithmatex">\(a_{t+1}^K\sim\mathcal N(0,I)\)</span> drawn to restart the next block. Nesting the <strong>denoising MDP</strong> (<span class="arithmatex">\(k\)</span>) inside the outer <strong>environment MDP</strong> (<span class="arithmatex">\(t\)</span>) like this, then reading it off along the single flattened axis <span class="arithmatex">\(\bar t\)</span>, is exactly what "<strong>bi-level MDP</strong>" means.</p>
+<p><img alt="DPPO flattens the nested (t, k) loop into a single index t̄" src="../dppo_bilevel_flatten.png" /></p>
+<p><strong>Step 3 — identify the policy of this new flat MDP.</strong> </p>
+<p>It's just Step 1's Gaussian kernel, relabeled:</p>
+<div class="arithmatex">\[
+\bar\pi_\theta(\bar a_{\bar t(t,k)}\mid\bar s_{\bar t(t,k)})=\pi_\theta(a_t^k\mid a_t^{k+1},s_t)=\mathcal N\big(a_t^k;\ \mu(a_t^{k+1},\varepsilon_\theta(a_t^{k+1},k{+}1,s_t)),\ \sigma_{k+1}^2I\big).
+\]</div>
+<p>Nothing changed mathematically here — this is the same object as Step 1's <span class="arithmatex">\(p_\theta(a^{k-1}\mid a^k,s)\)</span>, just wearing the new <span class="arithmatex">\((\bar s,\bar a)\)</span> notation so it slots into the flat-MDP formulas below.</p>
+<p><strong>Step 4 — apply REINFORCE and PPO with <em>zero</em> modification.</strong> </p>
+<p>Because <span class="arithmatex">\(\bar\pi_\theta\)</span> is an explicit Gaussian (Step 3) living on an ordinary flat MDP (Step 2), the §2.3 REINFORCE derivation goes through <strong>literally unchanged</strong> — every "<span class="arithmatex">\(s,a,t\)</span>" in that derivation gets relabeled "<span class="arithmatex">\(\bar s,\bar a,\bar t\)</span>" and not one line of the proof needs to be redone:</p>
+<div class="arithmatex">\[
+\nabla_\theta\bar J(\bar\pi_\theta)=\mathbb E\Big[\sum_{\bar t\geq0}\nabla_\theta\log\bar\pi_\theta(\bar a_{\bar t}\mid\bar s_{\bar t})\cdot\bar r(\bar s_{\bar t},\bar a_{\bar t})\Big].
+\]</div>
+<p>Likewise, ordinary PPO's clipped-ratio objective drops in unchanged:</p>
+<div class="arithmatex">\[
+L(\theta)=\mathbb E\Big[\min\big(\bar\rho\,\hat A,\ \mathrm{clip}(\bar\rho,1-\epsilon,1+\epsilon)\,\hat A\big)\Big],\qquad \bar\rho=\frac{\bar\pi_\theta(\bar a_{\bar t}\mid\bar s_{\bar t})}{\bar\pi_{\theta_{\mathrm{old}}}(\bar a_{\bar t}\mid\bar s_{\bar t})}.
+\]</div>
+<p>Concretely, at row <span class="arithmatex">\(\bar t=2\)</span> of the table above, <span class="arithmatex">\(\bar\rho\)</span> is just the ratio of two Gaussian densities — the current vs. old policy's probability of denoising <span class="arithmatex">\(a_0^1\to a_0^0\)</span> — exactly one factor in the product <span class="arithmatex">\(\rho=\prod_{k=1}^K(\cdots)\)</span> that reappears in §7.</p>
+<p><strong>Step 5 — derive the denoising-discounted advantage (why no per-<span class="arithmatex">\(k\)</span> value function is needed).</strong></p>
+<p><strong>5a. What we're avoiding, stated precisely.</strong> </p>
+<p>The naive way to run PPO on the flat MDP of Step 2 would be to learn a value function of the <em>flat</em> state <span class="arithmatex">\(\bar V_\phi(\bar s_{\bar t})=\bar V_\phi(s_t,a_t^{k+1})\)</span> — i.e., a separate value estimate for every one of the <span class="arithmatex">\(K\)</span> denoising sub-states, not just for the <span class="arithmatex">\(T\)</span> real states. The paper finds this actually hurts (the ablated design choice mentioned below): a diffusion policy is already highly stochastic, and asking a <span class="arithmatex">\(k\)</span>-dependent value function to also absorb that stochasticity makes it noisier to learn. Step 5's whole goal is to show that you can get away with training <strong>only one ordinary value function <span class="arithmatex">\(\hat V_\phi(s_t)\)</span></strong> — exactly the one you already know how to train from §2.1 — and <em>derive</em>, rather than guess, how to correctly spread its signal across the <span class="arithmatex">\(K\)</span> sub-steps.</p>
+<p><strong>5b. Set up the return-to-go, generally.</strong> </p>
+<p>Suppose the flat MDP is discounted by one number <span class="arithmatex">\(\bar\gamma\)</span> per <span class="arithmatex">\(\bar t\)</span>-step (this is a <em>hypothetical</em> single discount for the derivation — Step 5f below revisits it). Then, exactly as in §2.3,</p>
+<div class="arithmatex">\[
+\bar r_{\bar t(t,k)}:=\sum_{\bar\tau\geq \bar t(t,k)}\bar\gamma^{\,\bar\tau-\bar t(t,k)}\,\bar R_{\bar\tau}.
+\]</div>
+<p>This is just "sum up all future (discounted) rewards from this row of the table onward" — the only question is which terms in that sum are actually nonzero.</p>
+<p><strong>5c. Watch the zero-reward terms disappear — a fully worked instance.</strong> </p>
+<p>Extend the §5-Step-2 table one more block (<span class="arithmatex">\(t=0,1,2\)</span>, <span class="arithmatex">\(K=3\)</span>, so <span class="arithmatex">\(\bar t=0,\dots,8\)</span>, rewards nonzero only at <span class="arithmatex">\(\bar t=2,5,8\)</span>), and compute the return-to-go at the very first row, <span class="arithmatex">\(\bar t=0\)</span> (i.e. <span class="arithmatex">\((t,k)=(0,2)\)</span>), by writing out every term of the sum instead of skipping ahead:</p>
+<div class="arithmatex">\[
+\bar r_0=\bar\gamma^{0}\underbrace{\bar R_0}_{0}+\bar\gamma^{1}\underbrace{\bar R_1}_{0}+\bar\gamma^{2}\underbrace{\bar R_2}_{R(s_0,a_0^0)}+\bar\gamma^{3}\underbrace{\bar R_3}_{0}+\bar\gamma^{4}\underbrace{\bar R_4}_{0}+\bar\gamma^{5}\underbrace{\bar R_5}_{R(s_1,a_1^0)}+\bar\gamma^{6}\underbrace{\bar R_6}_{0}+\bar\gamma^{7}\underbrace{\bar R_7}_{0}+\bar\gamma^{8}\underbrace{\bar R_8}_{R(s_2,a_2^0)}+\cdots
+\]</div>
+<p>Every underbraced <span class="arithmatex">\(0\)</span> just vanishes, leaving only three surviving terms:</p>
+<div class="arithmatex">\[
+\bar r_0=\bar\gamma^{2}R(s_0,a_0^0)+\bar\gamma^{5}R(s_1,a_1^0)+\bar\gamma^{8}R(s_2,a_2^0)+\cdots
+\]</div>
+<p>Compare this to computing the return-to-go at <span class="arithmatex">\(\bar t=1\)</span> (i.e. <span class="arithmatex">\((t,k)=(0,1)\)</span>, one row later): the <em>same</em> three reward terms appear, just each missing exactly one power of <span class="arithmatex">\(\bar\gamma\)</span> — <span class="arithmatex">\(\bar r_1=\bar\gamma^{1}R(s_0,a_0^0)+\bar\gamma^{4}R(s_1,a_1^0)+\bar\gamma^{7}R(s_2,a_2^0)+\cdots=\bar\gamma^{-1}\bar r_0\)</span>. This is the concrete instance of the general fact used below: moving one row later inside the same zero-reward block just divides out one factor of <span class="arithmatex">\(\bar\gamma\)</span>.</p>
+<p><strong>5d. Generalize and telescope.</strong> </p>
+<p>For general <span class="arithmatex">\((t,k)\)</span>, the exponent on <span class="arithmatex">\(R(s_t,a_t^0)\)</span> in the sum is always exactly <span class="arithmatex">\(k\)</span> — because row <span class="arithmatex">\(\bar t(t,0)\)</span> (where that reward sits) is always <span class="arithmatex">\(k\)</span> rows after row <span class="arithmatex">\(\bar t(t,k)\)</span> (check against the table: <span class="arithmatex">\(\bar t(t,0)-\bar t(t,k)=(tK{+}K{-}1)-(tK{+}K{-}k{-}1)=k\)</span> ✓, matching the worked example: at <span class="arithmatex">\(\bar t=0=(0,2)\)</span>, <span class="arithmatex">\(k=2\)</span>, and the first surviving term was indeed <span class="arithmatex">\(\bar\gamma^2 R(s_0,a_0^0)\)</span>). Every later block's reward picks up one <em>extra</em> full block's worth of discounting, <span class="arithmatex">\(\bar\gamma^K\)</span>, per block skipped — so, pulling the common <span class="arithmatex">\(\bar\gamma^k\)</span> out front (exactly as in the worked example, where <span class="arithmatex">\(\bar\gamma^2\)</span> was common to all three terms):</p>
+<div class="arithmatex">\[
+\bar r_{\bar t(t,k)}=\bar\gamma^{\,k}\Big[R(s_t,a_t^0)+\bar\gamma^{K}R(s_{t+1},a_{t+1}^0)+\bar\gamma^{2K}R(s_{t+2},a_{t+2}^0)+\cdots\Big]=\bar\gamma^{\,k}\sum_{t'\geq t}\big(\bar\gamma^{K}\big)^{t'-t}R(s_{t'},a_{t'}^0).
+\]</div>
+<p><strong>5e. Recognize the bracket as an ordinary environment-level return.</strong> </p>
+<p>The quantity in brackets is a sum of real rewards, geometrically discounted by <span class="arithmatex">\(\bar\gamma^K\)</span> per real environment step skipped — which is <em>exactly</em> the shape of <span class="arithmatex">\(r_t^{\text{ENV}}(s_t,a_t^0):=\sum_{t'\geq t}\gamma_{\text{ENV}}^{\,t'-t}R(s_{t'},a_{t'}^0)\)</span> from §2.1/§2.3, provided we <em>name</em> <span class="arithmatex">\(\gamma_{\text{ENV}}:=\bar\gamma^{K}\)</span> (sensible, since consecutive real-reward rows are always exactly <span class="arithmatex">\(K\)</span> apart in <span class="arithmatex">\(\bar t\)</span>, so <span class="arithmatex">\(\bar\gamma^K\)</span> is precisely the effective per-real-step discount the flat MDP already has built in). With that naming,</p>
+<div class="arithmatex">\[
+\bar r_{\bar t(t,k)}=\bar\gamma^{\,k}\cdot r_t^{\text{ENV}}(s_t,a_t^0).
+\]</div>
+<p><strong>5f. Turn the return into an advantage, and rename <span class="arithmatex">\(\bar\gamma\to\gamma_{\text{DENOISE}}\)</span>.</strong> </p>
+<p>Subtracting the usual state-only baseline <span class="arithmatex">\(\hat V_\phi(s_t)\)</span> — licensed for free by the exact zero-expectation identity from §2.3's Step 3, no new argument needed — and relabeling <span class="arithmatex">\(\bar\gamma=\gamma_{\text{DENOISE}}\)</span> gives the boxed result:</p>
+<div class="arithmatex">\[
+\boxed{\hat A_{\bar t(t,k)} := \gamma_{\text{DENOISE}}^{\,k}\cdot\Big[\underbrace{r_t^{\text{ENV}}(s_t,a_t^0)-\hat V_\phi(s_t)}_{\text{ordinary environment-level GAE-}\lambda\text{ advantage, computed once}}\Big]}
+\]</div>
+<p><strong>5g. Make it numeric.</strong> </p>
+<p>Suppose, for one real state <span class="arithmatex">\(s_t\)</span>, the environment-level advantage happens to be <span class="arithmatex">\(r_t^{\text{ENV}}(s_t,a_t^0)-\hat V_\phi(s_t)=+2.0\)</span> ("this chunk did better than expected"), with <span class="arithmatex">\(K=3\)</span> and <span class="arithmatex">\(\gamma_{\text{DENOISE}}=0.9\)</span>. Step 5f says every one of that chunk's 3 denoising sub-steps gets <em>the same underlying <span class="arithmatex">\(+2.0\)</span> signal</em>, just shrunk by how many steps away from the clean action it is:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(k\)</span></th>
+<th style="text-align: left;">denoising sub-step</th>
+<th style="text-align: center;"><span class="arithmatex">\(\gamma_{\text{DENOISE}}^{k}\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\hat A_{\bar t(t,k)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: left;">first step, from pure noise</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9^2=0.81\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.62\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: left;">middle step</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9^1=0.90\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.80\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: left;">last step, producing the clean action</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9^0=1.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.00\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The step that <em>actually produced</em> the evaluated action gets full credit; steps further back — whose contribution to the final action is more indirect — get progressively discounted PPO gradients, without ever needing a value function that knows which sub-step it's looking at.</p>
+<p>⚠️ <strong>Where this derivation is exact vs. where DPPO takes a deliberate shortcut.</strong> Steps 5b–5f are a fully rigorous identity — <em>provided</em> <span class="arithmatex">\(\gamma_{\text{ENV}}=\bar\gamma^{K}\)</span> holds, i.e. <span class="arithmatex">\(\bar\gamma=\gamma_{\text{ENV}}^{1/K}\)</span> (Step 5e's naming choice). DPPO instead treats <span class="arithmatex">\(\gamma_{\text{DENOISE}}\)</span> and <span class="arithmatex">\(\gamma_{\text{ENV}}\)</span> as two <strong>independently-tuned hyperparameters</strong>, not tied together by this <span class="arithmatex">\(K\)</span>-th-root relationship. Concretely, why this matters: with a realistic <span class="arithmatex">\(\gamma_{\text{ENV}}=0.99\)</span> and <span class="arithmatex">\(K=50\)</span> denoising steps, the "consistent" value would be <span class="arithmatex">\(\bar\gamma=0.99^{1/50}\approx0.9998\)</span> — so even at the <em>first</em> denoising step (<span class="arithmatex">\(k=49\)</span>), the shrink factor would be <span class="arithmatex">\(0.9998^{49}\approx0.951\)</span>, barely different from <span class="arithmatex">\(1\)</span>. That's much too weak a penalty if you actually want early, noisy denoising steps to be trusted far less than the final one — so DPPO simply picks <span class="arithmatex">\(\gamma_{\text{DENOISE}}\)</span> freely (e.g. <span class="arithmatex">\(0.9\)</span>, giving <span class="arithmatex">\(0.9^{49}\approx0.0057\)</span>, a much more aggressive discount) instead of deriving it from <span class="arithmatex">\(\gamma_{\text{ENV}}\)</span> and <span class="arithmatex">\(K\)</span>.</p>
+<p>The consequence: <span class="arithmatex">\(\hat A_{\bar t(t,k)}\)</span> is no longer <em>literally</em> the return-to-go advantage of one internally-consistent discounted MDP once <span class="arithmatex">\(\gamma_{\text{DENOISE}}\ne\gamma_{\text{ENV}}^{1/K}\)</span> — it becomes a deliberately-designed <strong>credit-assignment heuristic</strong> that keeps the exact <em>shape</em> of Steps 5b–5f's derivation (one environment-level number, broadcast to all <span class="arithmatex">\(K\)</span> sub-steps, shrinking geometrically for earlier/noisier steps) while decoupling the shrink rate from the environment's own discounting, purely so it can be tuned for how aggressively to trust early denoising steps. This remains a <em>valid</em> PPO advantage estimator regardless — PPO only needs <em>some</em> fixed, consistently-applied weighting, not literally "the" MDP's true discounted return — it just stops being a literal Bellman/return-to-go identity the moment the two discounts are decoupled.</p>
+<p><strong>5h. The one remaining practical detail.</strong> <span class="arithmatex">\(\hat V_\phi(s_t)\)</span> depends <strong>only on the real state</strong> <span class="arithmatex">\(s_t\)</span> (never on <span class="arithmatex">\(k\)</span>) — this is the "one ordinary value function" promised in 5a, and the paper finds conditioning it on <span class="arithmatex">\(k\)</span> as well actively hurts on hard tasks, conjectured to be because diffusion policies already have high intrinsic stochasticity that a <span class="arithmatex">\(k\)</span>-dependent value function would otherwise have to absorb on top of that.</p>
+<p><strong>5i. How is <span class="arithmatex">\(\hat V_\phi(s_t)\)</span> actually trained?</strong> This is a genuinely separate question from <em>using</em> it as a baseline (5f) — worth spelling out end-to-end, because it's easy to mix up with §2.4's off-policy critic <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span>, and it is <strong>not</strong> trained the same way.</p>
+<ul>
+<li><strong>On-policy, not off-policy.</strong> <span class="arithmatex">\(\hat V_\phi\)</span> is DPPO's <em>on-policy</em> actor-critic value function — the same kind of object as in vanilla PPO — trained <em>only</em> on the batch of real trajectories just collected under the <strong>current</strong> policy <span class="arithmatex">\(\pi_{\bar\theta}\)</span>, then thrown away and refit from scratch on the <em>next</em> batch after <span class="arithmatex">\(\theta\)</span> updates. This is §2.5's on-policy rule applied literally: the moment <span class="arithmatex">\(\theta\)</span> changes, old rollouts are biased samples of a different expectation, so they can't be reused (contrast with OGPO's <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span>, which lives in an ever-growing off-policy replay buffer, §6).</li>
+<li><strong>Step 1 — collect a batch of real rollouts.</strong> Run <span class="arithmatex">\(\pi_{\bar\theta}\)</span> in the environment for a batch of real trajectories, recording every real state <span class="arithmatex">\(s_t\)</span>, action <span class="arithmatex">\(a_t^0\)</span>, and reward <span class="arithmatex">\(R(s_t,a_t^0)\)</span> actually encountered (not the denoising sub-states — <span class="arithmatex">\(\hat V_\phi\)</span> only ever sees real states, 5h).</li>
+<li><strong>Step 2 — evaluate the <em>current</em> <span class="arithmatex">\(\hat V_\phi\)</span> at every visited state.</strong> One cheap forward pass per <span class="arithmatex">\(s_t\)</span> in the batch, using the value network's parameters <em>before</em> this update (call them <span class="arithmatex">\(\phi_{\text{old}}\)</span>, frozen for the rest of this step).</li>
+<li><strong>Step 3 — compute TD residuals, then GAE-<span class="arithmatex">\(\lambda\)</span> advantages, by a backward recursion.</strong> Define the one-step TD residual <span class="arithmatex">\(\delta_t := R(s_t,a_t^0)+\gamma_{\text{ENV}}\hat V_{\phi_{\text{old}}}(s_{t+1})-\hat V_{\phi_{\text{old}}}(s_t)\)</span> at every real step, then combine them geometrically (Generalized Advantage Estimation, a second, <em>independent</em> <span class="arithmatex">\(\lambda\)</span> from <span class="arithmatex">\(\gamma_{\text{DENOISE}}\)</span>/<span class="arithmatex">\(\gamma_{\text{ENV}}\)</span>):
+  $$
+  \hat A_t^{\mathrm{GAE}}=\sum_{l\geq0}(\gamma_{\text{ENV}}\lambda)^l\,\delta_{t+l}\qquad\Longleftrightarrow\qquad \hat A_t^{\mathrm{GAE}}=\delta_t+\gamma_{\text{ENV}}\lambda\,\hat A_{t+1}^{\mathrm{GAE}}  (\text{computed backward from the end of the batch}).
+  $$
+  This is precisely how <span class="arithmatex">\(r_t^{\text{ENV}}(s_t,a_t^0)-\hat V_\phi(s_t)\)</span> from 5f is actually <em>computed</em> in practice: the idealized infinite Monte-Carlo sum <span class="arithmatex">\(r_t^{\text{ENV}}\)</span> from Step 5e is never literally summed to infinity — <span class="arithmatex">\(\hat A_t^{\mathrm{GAE}}\)</span> (with <span class="arithmatex">\(\lambda&lt;1\)</span>, e.g. <span class="arithmatex">\(0.95\)</span>) is the practical, lower-variance stand-in for it, using <span class="arithmatex">\(\hat V_\phi\)</span> itself to bootstrap whatever lies beyond the finite batch of real rollouts collected. (<span class="arithmatex">\(\lambda=1\)</span> would recover the literal Monte-Carlo sum of 5e exactly; <span class="arithmatex">\(\lambda&lt;1\)</span> trades a little bias for much less variance — the standard PPO/GAE tradeoff.)</li>
+<li><strong>Step 4 — turn advantages back into value regression targets.</strong> <span class="arithmatex">\(\hat R_t:=\hat A_t^{\mathrm{GAE}}+\hat V_{\phi_{\text{old}}}(s_t)\)</span> — i.e. "whatever <span class="arithmatex">\(\hat V_{\phi_{\text{old}}}\)</span> said, corrected by how much better/worse things actually went."</li>
+<li><strong>Step 5 — regress.</strong> Update <span class="arithmatex">\(\phi\)</span> (usually a handful of gradient epochs over the same batch, mirroring how the PPO actor loss is also replayed a few epochs over one batch before it's discarded) by plain MSE regression:
+  $$
+  \mathcal L_V(\phi)=\mathbb E_t\Big[\big(\hat V_\phi(s_t)-\hat R_t\big)^2\Big].
+  $$</li>
+</ul>
+<p>The whole loop — collect on-policy batch → evaluate old <span class="arithmatex">\(\hat V\)</span> → GAE backward pass → regress toward <span class="arithmatex">\(\hat R_t\)</span> → discard the batch → repeat with the updated policy — is completely standard PPO machinery, entirely unmodified by anything GCP-specific; the <em>only</em> DPPO-specific ideas are (i) which states get fed into it (real states only, 5h) and (ii) how the resulting single number gets redistributed across <span class="arithmatex">\(K\)</span> denoising sub-steps afterward (5b–5g). This on-policy retraining-every-batch cost is, not coincidentally, the exact same cost §5's closing paragraph below flags as DPPO's sample-efficiency bottleneck.</p>
+<p><strong>Where this leaves us, heading into Part III:</strong> DPPO's five-step construction is a complete, correct answer to "how do you run policy gradient RL on a GCP" — it works precisely because per-step Gaussian densities are tractable even though the marginal isn't. Its problem is purely a <em>sample-efficiency</em> one: it runs <strong>on-policy PPO over the entire extended MDP</strong>, real environment transitions included, so every gradient update needs fresh real-environment rollouts, and the effective horizon of the flattened MDP is <span class="arithmatex">\(K\times(\text{task horizon})\)</span>, not just the task horizon. Camp 1 never pays this cost (§4) but is capped by a frozen decoder. OGPO's question: can you keep DPPO's expressiveness (update every step of the chain) while paying Camp 1's cost (reuse real data indefinitely)?</p>
+<h2 id="part-iii-ogpo-itself">Part III — OGPO itself<a class="headerlink" href="#part-iii-ogpo-itself" title="Permanent link">&para;</a></h2>
+<h3 id="6-ogpos-insight-sever-the-bi-level-mdp-at-the-environment-transition">6. OGPO's insight: sever the bi-level MDP at the environment transition<a class="headerlink" href="#6-ogpos-insight-sever-the-bi-level-mdp-at-the-environment-transition" title="Permanent link">&para;</a></h3>
+<p>Before the insight, pin down precisely <em>what problem</em> OGPO is solving — it's the same "policy extraction" problem Camp 1 solves (§4), just now applied to the GCP's <em>own</em> weights <span class="arithmatex">\(\theta\)</span> instead of a small auxiliary module bolted onto a frozen decoder:</p>
+<div class="arithmatex">\[
+\max_\theta\ \mathbb E_{s_t\sim\mathcal D}\big[Q_{\mathrm{targ}}(s_t,a_{t,0})\big],\qquad a_{t,0}:=\text{output of the full $K$-step GCP chain started from }s_t.
+\tag{3.1}
+\]</div>
+<p>In words: choose <span class="arithmatex">\(\theta\)</span> so that, on average over states already sitting in the replay buffer, the critic's evaluation of the chain's <em>output</em> is as large as possible. Actually training against (3.1) requires answering two separate questions:</p>
+<ul>
+<li><strong>(A) How do you get a usable gradient through "run the whole <span class="arithmatex">\(K\)</span>-step chain, then evaluate <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span>"?</strong> Answered in §7.</li>
+<li><strong>(B) How do you avoid needing a fresh, expensive real-environment rollout every single time you touch this objective?</strong> Answered right here.</li>
+</ul>
+<p><strong>The insight, for (B):</strong> denoising trajectories are pure computation — you can resample <span class="arithmatex">\(a_{t,K:0}\)</span> as many times as you like from a given <span class="arithmatex">\(s_t\)</span>, for free, with no robot/sim interaction. Environment transitions are the <em>only</em> genuinely expensive step in DPPO's extended MDP (§5). So: <strong>sever the bi-level MDP exactly at the environment transition</strong>, and treat the two halves completely differently.</p>
+<p><img alt="OGPO severs the bi-level MDP at each environment transition" src="../ogpo_bilevel_mdp.png" /></p>
+<ul>
+<li><strong>Outer loop (expensive, real robot):</strong> train an off-policy critic <span class="arithmatex">\(Q(s,a)\)</span> via ordinary TD-learning (§2.4's Bellman-consistency loss, exactly), on a growing replay buffer <span class="arithmatex">\(\mathcal D_{\text{roll}}\)</span> that accumulates transitions from <em>every</em> policy version ever deployed. This is where all the sample-efficiency comes from — real transitions get reused indefinitely, exactly as in Camp 1. In §2.5's language, this loop is <strong>online + off-policy</strong>: the environment keeps getting queried, but the critic doesn't care when or by which policy a given transition was produced.</li>
+<li><strong>Inner loop (cheap, computational):</strong> treat <span class="arithmatex">\(Q_{\mathrm{targ}}(s_t,a_{t,0})\)</span> as a <strong>terminal reward</strong> for a short, self-contained RL problem whose only actions are the <span class="arithmatex">\(K\)</span> denoising steps that produced <span class="arithmatex">\(a_{t,0}\)</span> — i.e. exactly objective (3.1) again, but now with <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span> frozen and <span class="arithmatex">\(s_t\)</span> drawn from the buffer, so nothing in this inner problem ever touches the real environment. Solve <em>this</em> inner problem with on-policy PPO — which is fine, because "on-policy" here just means "resample fresh denoising trajectories," which costs nothing, unlike DPPO's on-policy requirement over the <em>whole</em> extended MDP.</li>
+</ul>
+<p>This is structurally the same move RECAP makes with Bayes' rule — both papers take a policy-improvement problem for a GCP and route it through <em>something else that already has a tractable objective</em> (RECAP: reduce to ordinary flow-matching MLE on relabeled data; OGPO: reduce to ordinary PPO on a short, cheap MDP), specifically so they never have to differentiate through, or define a density for, the generative process directly. §11 returns to this comparison in full.</p>
+<h3 id="7-the-ppo-loss-on-the-now-cheap-denoising-chain-answering-question-a">7. The PPO loss on the (now cheap) denoising chain: answering question (A)<a class="headerlink" href="#7-the-ppo-loss-on-the-now-cheap-denoising-chain-answering-question-a" title="Permanent link">&para;</a></h3>
+<p><strong>7.1 The default answer — reparameterization — and exactly why it breaks for a <span class="arithmatex">\(K\)</span>-step chain.</strong> The standard way to optimize an objective shaped like (3.1) is the <strong>reparameterization trick</strong>: write the policy as a deterministic function of state and noise, <span class="arithmatex">\(a=\pi_\theta(s;w)\)</span> for <span class="arithmatex">\(w\)</span> drawn from a fixed, non-learned distribution, push the expectation onto <span class="arithmatex">\(w\)</span> (which doesn't depend on <span class="arithmatex">\(\theta\)</span>, so differentiating under the integral is safe), and differentiate straight through:</p>
+<div class="arithmatex">\[
+\nabla_\theta\,\mathbb E_w\big[Q_{\mathrm{targ}}(s,\pi_\theta(s;w))\big]=\mathbb E_w\Big[\nabla_a Q_{\mathrm{targ}}(s,a)\big|_{a=\pi_\theta(s;w)}\cdot\nabla_\theta\pi_\theta(s;w)\Big].
+\]</div>
+<p>For a one-shot Gaussian policy <span class="arithmatex">\(a=\mu_\theta(s)+\sigma_\theta(s)\odot w\)</span>, <span class="arithmatex">\(w\sim\mathcal N(0,I)\)</span>, this is completely benign — <span class="arithmatex">\(\nabla_\theta\pi_\theta(s;w)\)</span> is a single Jacobian — and it's exactly what DSRL and EXPO already do for their small auxiliary policies (§4). The trouble is specific to a <span class="arithmatex">\(K\)</span>-step GCP: applying the <em>identical</em> idea means treating <span class="arithmatex">\(a_{t,0}=\pi_\theta(s_t;w)\)</span> as the <strong>composition of all <span class="arithmatex">\(K\)</span> denoising steps</strong> with <span class="arithmatex">\(w=a_{t,K}\)</span>, so the chain rule now has to pass through every one of them:</p>
+<div class="arithmatex">\[
+\nabla_\theta\,Q_{\mathrm{targ}}(s_t,a_{t,0})=\nabla_a Q_{\mathrm{targ}}(s_t,a)\Big|_{a=a_{t,0}}\cdot\underbrace{\frac{\partial a_{t,0}}{\partial a_{t,1}}\cdot\frac{\partial a_{t,1}}{\partial a_{t,2}}\cdots\frac{\partial a_{t,K-1}}{\partial a_{t,K}}}_{K\text{ chained Jacobians}}\cdot\frac{\partial a_{t,K}}{\partial\theta}.
+\]</div>
+<p>Two concrete, mechanistically distinct failure modes show up empirically once this is actually tried (validated in an ablation, Appendix H.1):</p>
+<ol>
+<li><strong>Exploding gradients through the denoising chain</strong> — the product of <span class="arithmatex">\(K\)</span> chained Jacobians is exactly the object whose instability motivated running denoising <em>iteratively</em> rather than as one giant function in the first place (recall from <code>DDPM.md</code>/<code>FlowMatching.md</code> why the reverse/flow process is broken into many small steps); differentiating end-to-end through all <span class="arithmatex">\(K\)</span> at once reintroduces that instability at training time.</li>
+<li><strong><span class="arithmatex">\(\nabla_a Q_{\mathrm{targ}}\)</span> is a bad training signal in contact-rich tasks</strong> — <span class="arithmatex">\(Q\)</span>-functions for tasks with hard contact/discontinuities tend to be very non-smooth in <span class="arithmatex">\(a\)</span>, so their gradient is noisy and unreliable even when the <em>value</em> <span class="arithmatex">\(Q(s,a)\)</span> itself is perfectly fine.</li>
+</ol>
+<p><strong>7.2 OGPO's fix: zeroth-order (likelihood-ratio) optimization instead of first-order.</strong> </p>
+<p>Never differentiate through <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span>, and never chain-rule through the <span class="arithmatex">\(K\)</span> steps. Use <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span> only as a <strong>scalar reward</strong> — exactly the terminal-reward idea from §6 — and update the chain with an ordinary policy-gradient method, PPO, whose gradient flows <em>only</em> through log-probabilities:</p>
+<p><img alt="Reparameterization/BPTT vs. OGPO's zero-order PPO" src="../ogpo_zeroth_order.png" /></p>
+<p>Concretely (Eq. 3.2 in the paper):</p>
+<div class="arithmatex">\[
+\ell_{\mathrm{PPO}}(\theta; s_t, a_{t,K:0}, \hat V)
+= \min\!\Big(\rho\,\hat A,\ \mathrm{clip}(\rho, 1-\epsilon, 1+\epsilon)\,\hat A\Big),
+\qquad
+\rho = \prod_{k=1}^{K} \frac{\pi_\theta(a_{t,k-1}\mid s_t, a_{t,k})}{\pi_{\bar\theta}(a_{t,k-1}\mid s_t, a_{t,k})},
+\qquad
+\hat A = Q_{\mathrm{targ}}(s_t, a_{t,0}) - \hat V.
+\]</div>
+<p>Read this the way you'd read any PPO loss (indeed, the same object as §5's <span class="arithmatex">\(\bar\rho\)</span>, restricted to just the inner denoising sub-steps of one chunk), just with one twist: the importance ratio <span class="arithmatex">\(\rho\)</span> is a <strong>product over all <span class="arithmatex">\(K\)</span> denoising steps</strong> — i.e. the "action" being importance-weighted is the <em>entire denoising trajectory</em>, not the final action alone, and every one of the <span class="arithmatex">\(K\)</span> steps' parameters gets a gradient. The advantage <span class="arithmatex">\(\hat A\)</span>, however, is computed just once, from the <em>final</em> clean action <span class="arithmatex">\(a_{t,0}\)</span> via the critic, and is treated as a <strong>frozen scalar constant</strong> (never differentiated) when computing <span class="arithmatex">\(\ell_{\mathrm{PPO}}\)</span> — this is the "terminal reward" idea made precise: the whole <span class="arithmatex">\(K\)</span>-step chain is judged only by where it ends up, and that judgment never needs a gradient of its own.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># one PPO update on the denoising chain, given a replay-buffer state s_t</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">action_dim</span><span class="p">)</span>                      <span class="c1"># a_{t,K}, pure noise</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">log_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">a_new</span><span class="p">,</span> <span class="n">log_ratio_k</span> <span class="o">=</span> <span class="n">sample_and_score</span><span class="p">(</span><span class="n">policy_theta</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s_t</span><span class="p">)</span>      <span class="c1"># a_{t,k-1} ~ pi_theta</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">_</span><span class="p">,</span>      <span class="n">log_ratio_k_ref</span> <span class="o">=</span> <span class="n">score_under</span><span class="p">(</span><span class="n">policy_theta_bar</span><span class="p">,</span> <span class="n">a_new</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s_t</span><span class="p">)</span>  <span class="c1"># under old params</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">log_ratio</span> <span class="o">+=</span> <span class="n">log_ratio_k</span> <span class="o">-</span> <span class="n">log_ratio_k_ref</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">a_new</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">a_clean</span> <span class="o">=</span> <span class="n">a</span>                                 <span class="c1"># a_{t,0}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">A_hat</span> <span class="o">=</span> <span class="n">Q_targ</span><span class="p">(</span><span class="n">s_t</span><span class="p">,</span> <span class="n">a_clean</span><span class="p">)</span> <span class="o">-</span> <span class="n">V_hat</span>        <span class="c1"># advantage from the OFF-POLICY critic, terminal only</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">ratio</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">log_ratio</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">loss</span> <span class="o">=</span> <span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">ratio</span> <span class="o">*</span> <span class="n">A_hat</span><span class="p">,</span> <span class="n">clip</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">eps</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">eps</span><span class="p">)</span> <span class="o">*</span> <span class="n">A_hat</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>   <span class="c1"># gradient flows through all K steps&#39; log-likelihoods, NOT through Q</span>
+</code></pre></div>
+<p><strong>"One update, whole-chain gradient" — exactly why the product form achieves that, and why it is <em>not</em> BPTT.</strong> Inside the trust region (<span class="arithmatex">\(\rho\in[1-\epsilon,1+\epsilon]\)</span>, so the <span class="arithmatex">\(\min\)</span>/clip is inactive and <span class="arithmatex">\(\ell_{\mathrm{PPO}}=\rho\hat A\)</span>), take the gradient of the loss directly:</p>
+<div class="arithmatex">\[
+\nabla_\theta\,\ell_{\mathrm{PPO}}=\hat A\cdot\nabla_\theta\rho=\hat A\cdot\rho\cdot\nabla_\theta\log\rho=\hat A\cdot\rho\cdot\underbrace{\sum_{k=1}^{K}\nabla_\theta\log\pi_\theta(a_{t,k-1}\mid s_t,a_{t,k})}_{\log\text{ of a product }=\text{ sum of logs}},
+\]</div>
+<p>using <span class="arithmatex">\(\nabla_\theta\log\pi_{\bar\theta}(\cdots)=0\)</span> since the reference policy <span class="arithmatex">\(\bar\theta\)</span> is frozen. <strong>This is precisely the mechanism</strong>, and it answers your question exactly: yes, <em>one</em> <code>loss.backward()</code> call does update the parameters governing <em>every</em> one of the <span class="arithmatex">\(K\)</span> steps, and yes, the aggregate gradient does "account for" the whole chain in the sense that all <span class="arithmatex">\(K\)</span> steps' contributions to the advantage-weighted objective are present in the sum — but it is a <strong>sum of <span class="arithmatex">\(K\)</span> independent, local score-function terms</strong>, not a single differentiable path threaded through the chain. Concretely, in the pseudocode above: <code>a_new</code> returned by <code>sample_and_score</code> is a <strong>sample</strong> — a fixed, detached number by the time it's fed into the <em>next</em> iteration's <code>sample_and_score(policy_theta, a, k-1, s_t)</code> — so autograd never differentiates <span class="arithmatex">\(a_{t,k-1}\)</span> <em>as a function of</em> <span class="arithmatex">\(\theta\)</span> the way reparameterization (§7.1) would; each <code>log_ratio_k</code> only ever backpropagates into <span class="arithmatex">\(\theta\)</span>'s local contribution to <span class="arithmatex">\(\log\pi_\theta(a_{t,k-1}\mid s_t,a_{t,k})\)</span>, treating both <span class="arithmatex">\(a_{t,k-1}\)</span> and <span class="arithmatex">\(a_{t,k}\)</span> as already-fixed constants. This is why summing <span class="arithmatex">\(K\)</span> such terms carries no risk of the exploding-gradient pathology from §7.1 — there is no product of <span class="arithmatex">\(K\)</span> chained Jacobians <span class="arithmatex">\(\partial a_{t,k-1}/\partial a_{t,k}\)</span> anywhere in this expression, only a <strong>sum</strong> of <span class="arithmatex">\(K\)</span> individually well-behaved score-function gradients, each scaled by the <em>same</em> shared scalar <span class="arithmatex">\(\hat A\)</span>. (This is the standard REINFORCE/likelihood-ratio "score function" trick, §2.3, applied independently at every step and merely <em>added together</em> by the <span class="arithmatex">\(\log\)</span>-of-a-product identity — never composed into one continuous chain-ruled path the way BPTT would require.)</p>
+<p><strong>7.3 Multiple denoising-trajectory sampling (GRPO-style, borrowed from LLM RLHF).</strong> </p>
+<p>Because denoising trajectories are free to resample (§6), OGPO doesn't sample just one trajectory per buffer state — it samples a whole <em>group</em>. Draw <span class="arithmatex">\(N_{\text{batch}}\)</span> states <span class="arithmatex">\(s^{(i)}\)</span> from the replay buffer (think: <span class="arithmatex">\(N_{\text{batch}}\)</span> "prompts"), and for each, draw <span class="arithmatex">\(N_{\text{group}}\)</span> i.i.d. denoising trajectories <span class="arithmatex">\(a^{(i,j)}_{K:0}\sim\pi_{\bar\theta}(\cdot\mid s^{(i)})\)</span> (think: <span class="arithmatex">\(N_{\text{group}}\)</span> "responses" to that prompt) — exactly the GRPO recipe from LLM post-training. The value baseline is then estimated <em>directly</em> as the empirical mean of the critic over that state's own group — <strong>no separate value network needed</strong>:</p>
+<div class="arithmatex">\[
+\hat V^{(i)} = \frac1{N_{\text{group}}}\sum_{j=1}^{N_{\text{group}}} Q_{\mathrm{targ}}\big(s^{(i)}, a_0^{(i,j)}\big),
+\]</div>
+<p>and the total loss (Eq. 3.3 in the paper) averages <span class="arithmatex">\(\ell_{\mathrm{PPO}}\)</span> over all <span class="arithmatex">\(N_{\text{tot}}:=N_{\text{batch}}\times N_{\text{group}}\)</span> sampled trajectories:</p>
+<div class="arithmatex">\[
+\hat{\mathcal L}_{\mathrm{PPO}}(\theta)=\frac1{N_{\text{tot}}}\sum_{i=1}^{N_{\text{batch}}}\sum_{j=1}^{N_{\text{group}}}\ell_{\mathrm{PPO}}\big(\theta;\,s^{(i)},\,a^{(i,j)}_{K:0},\,\hat V^{(i)}\big).
+\]</div>
+<p>Concretely, with e.g. <span class="arithmatex">\(N_{\text{batch}}=8\)</span> states and <span class="arithmatex">\(N_{\text{group}}=4\)</span> trajectories each: <span class="arithmatex">\(\hat V^{(1)}\)</span> (the baseline used for state <span class="arithmatex">\(s^{(1)}\)</span>'s 4 trajectories) only ever averages <span class="arithmatex">\(Q_{\mathrm{targ}}\)</span> over <span class="arithmatex">\(a_0^{(1,1)},\dots,a_0^{(1,4)}\)</span> — never mixing in values computed for <span class="arithmatex">\(s^{(2)},\dots,s^{(8)}\)</span> — so it's a fresh, per-state Monte-Carlo baseline rather than a learned function of <span class="arithmatex">\(s\)</span>. All <span class="arithmatex">\(N_{\text{tot}}=32\)</span> trajectory evaluations happen purely "in imagination": zero additional real-environment steps.</p>
+<p><strong>7.4 The one flow-specific fix: debiasing noise injection.</strong> Flow-matching inference is a deterministic ODE, so <span class="arithmatex">\(\pi(a_{t,k-1}\mid a_{t,k})\)</span> is literally a point mass — the PPO ratio <span class="arithmatex">\(\rho\)</span> above is undefined for a flow policy (unlike a diffusion policy, whose per-step kernel in §5 is already a genuine Gaussian). Following ReinFlow, OGPO injects Gaussian noise at each flow step to make the transition non-singular (Eq. 3.4 in the paper):</p>
+<div class="arithmatex">\[
+a_{t,k-1}\sim\bar\pi_{\mathrm{FLOW}}(\cdot\mid a_{t,k},k,s_t):=\mathcal N\Big(v_\theta\big(a_{t,k},\tfrac{k}{K},s_t\big),\ \sigma_k^2 I\Big),
+\]</div>
+<p>i.e. exactly the deterministic Euler step from <code>FlowMatching.md</code>, now with variance <span class="arithmatex">\(\sigma_k^2\)</span> added on top purely so it has a non-degenerate density to plug into <span class="arithmatex">\(\rho\)</span>. Naively adding noise like this would perturb <em>which</em> clean actions the chain tends to produce, not just the individual step — so OGPO additionally applies a stochastic-interpolant correction (Albergo et al.) ensuring that, in the limit of many steps, the <em>marginal</em> action distribution still matches standard deterministic flow sampling. Net effect: flow policies now satisfy the same "tractable, non-degenerate per-step density" property that diffusion policies have natively (§5), which is exactly what <span class="arithmatex">\(\rho\)</span> needs to be well-defined.</p>
+<p><strong>Putting §6 and §7 together — Algorithm 1 (abbreviated).</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>for each environment step until done:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    execute a_t ~ π_θ̄(·|s_t); push (s_t, a_t, r_t, s_{t+1}, done) into buffer D_roll
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    # --- critic update: off-policy, on real data --------------- (§2.4, §6) ---
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    update critics φ_1,...,φ_M via TD error on a batch sampled from D_roll
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    # --- actor update: on-policy PPO, purely computational ------------ (§7) ---
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    for i = 1..N_batch:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        sample state s^(i) from D_roll
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        sample N_group denoising trajectories a^(i,j)_{K:0} ~ π_θ̄(·|s^(i))   # free, zero env. steps
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        V̂^(i) ← mean_j  Q_targ(s^(i), a_0^(i,j))                            # §7.3, no value net
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    update θ using the aggregated PPO loss (§7.2-7.3)
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    # --- slow-moving (Polyak) targets --------------------------- (§2.4) ---
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    θ̄ ← (1-τ)θ̄ + τθ,     φ̄_i ← (1-τ)φ̄_i + τφ_i,     Q_targ ← mean_i Q_φ̄_i
+</code></pre></div>
+<p>Every line traces back to a section above: the critic loop is §2.4/§6, the actor loop is §7.2's PPO loss aggregated per §7.3, and the target updates are the same Polyak-averaging machinery from §2.4/§2.6.</p>
+<h2 id="part-iv-making-it-stable">Part IV — Making it stable<a class="headerlink" href="#part-iv-making-it-stable" title="Permanent link">&para;</a></h2>
+<h3 id="8-ogpo-and-ogpoca-stabilizing-against-critic-over-exploitation">8. OGPO+ and OGPO+CA: stabilizing against critic over-exploitation<a class="headerlink" href="#8-ogpo-and-ogpoca-stabilizing-against-critic-over-exploitation" title="Permanent link">&para;</a></h3>
+<p>Vanilla OGPO's PPO updates are aggressive — full-policy, all <span class="arithmatex">\(K\)</span> steps, every gradient step — which means it can overfit hard to whatever the critic gets wrong. Two failure modes show up in practice, and two fixes:</p>
+<ul>
+<li><strong>Success–speed tradeoff.</strong> With the standard sparse "<span class="arithmatex">\(-1\)</span> per timestep until success" reward, minimizing cumulative cost also rewards finishing <em>fast</em> — so OGPO can start truncating episodes before reliably succeeding, causing success rate to plateau or oscillate even as episode length keeps shrinking. Concretely (Fig. 4a, TOOLHANG — a high-precision task): mean successful-episode length drops sharply almost immediately, while success rate itself oscillates rather than climbing monotonically; on TRANSPORT (Fig. 4d, a long-horizon task), the same pressure instead shows up as an outright <em>plateau</em> in success rate. The variance-reduced critic update of Eq. (4.1) below, tried in isolation, does <strong>not</strong> fix this tradeoff — it's a critic-accuracy fix, not a policy-extraction-aggressiveness fix, and this failure mode is squarely the latter.</li>
+<li><strong>Overexploitation is worse with pixel-based critics.</strong> A critic trained on richer (image) observations is itself noisier/less accurate, giving OGPO's aggressive extraction more room to chase spurious value estimates. To isolate exactly where this comes from, the paper ablates actor/critic observation modality independently on ROBOMIMIC SQUARE (Fig. 5), comparing four combinations: (1) state actor / state critic, (2) pixel actor / state critic, (3) pixel actor / pixel critic, (4) state actor / pixel critic. Variants (1) and (2) train fine — so a pixel-based <em>actor</em> alone is not the problem. Variants (3) and (4), which both involve a <strong>pixel-based critic</strong>, fail (variant (4) collapses outright and is omitted from the plot). Conclusion: it's specifically the accuracy of <span class="arithmatex">\(Q\)</span> over a large, rich pixel-embedding-plus-proprioception-plus-action space that degrades, and OGPO's zero-order extraction has no built-in defense against confidently exploiting a <span class="arithmatex">\(Q\)</span> that's wrong in that space.</li>
+</ul>
+<p><strong>Fix 1 — Success-buffer regularization (→ OGPO+).</strong> Keep a separate buffer <span class="arithmatex">\(\mathcal D_{\text{succ}}\subseteq \mathcal D_{\text{roll}}\)</span> of transitions from episodes that actually succeeded, and add a behavior-cloning loss on it (denoising-score-matching / flow-matching loss, whichever the GCP uses) alongside the PPO loss:</p>
+<div class="arithmatex">\[
+L_{\text{Total}}(\theta) = L_{\text{PPO}}(\theta) + \lambda_{\text{bc}}\, L_{\text{BC}}(\theta), \qquad L_{\text{BC}} \text{ computed only on } \mathcal D_{\text{succ}}.
+\]</div>
+<p>This is a <em>one-directional</em> anchor: it can only raise the likelihood of provably-successful actions, never lower the likelihood of failed ones — so it puts a floor under which modes PPO is allowed to abandon, without constraining exploration elsewhere. Ablations (Fig. 19) find this is the single most important OGPO+ ingredient.</p>
+<p><strong>Fix 2 — Conservative advantages (→ OGPO+CA).</strong> Train an <em>ensemble</em> of <span class="arithmatex">\(M\)</span> critics. For a candidate action, compute each ensemble member's advantage <span class="arithmatex">\(A_{j,m}\)</span> relative to the group mean, and only use it if <strong>every</strong> member agrees on its sign:</p>
+<div class="arithmatex">\[
+\hat A^{\text{cons}}_j =
+\begin{cases}
+\min_m A_{j,m} &amp; \text{if } \min_m A_{j,m} &gt; 0 \quad\text{(all members say "good")}\\[2pt]
+\max_m A_{j,m} &amp; \text{if } \max_m A_{j,m} &lt; 0 \quad\text{(all members say "bad")}\\[2pt]
+0 &amp; \text{otherwise (disagreement} \Rightarrow \text{no gradient)}
+\end{cases}
+\]</div>
+<p>Two effects fall out of this: (i) the policy is only ever pushed in directions the <em>whole</em> critic ensemble agrees on — no gradient at all when they disagree — and (ii) even on directions of agreement, the update magnitude is capped by the <em>most pessimistic</em> member, damping outlier-driven overshoot. This is exactly the same shape of idea as double-Q / min-over-ensemble tricks in SAC/TD3, just applied at the <em>advantage</em> (not the raw <span class="arithmatex">\(Q\)</span>) level, because OGPO's zeroth-order extraction only ever needs advantages, never absolute <span class="arithmatex">\(Q\)</span> values — so a systematic, additive bias shared by the whole ensemble is harmless, while a <em>sign</em> disagreement is exactly what should be conservative.</p>
+<p>Empirically this is what fixes the notorious "offline-to-online dip": the paper takes early-/mid-/late-training checkpoints, rolls out 32 trajectories from each, and plots <span class="arithmatex">\(\min/\text{mean}/\max\)</span> over the critic ensemble against the <em>true</em> Monte-Carlo return (Fig. 7). For vanilla OGPO (early 25% → mid 75% → late 91% success), the <span class="arithmatex">\(Q\)</span> estimates fluctuate widely above and below the <span class="arithmatex">\(y=x\)</span> line at every checkpoint — both over- and under-estimation are present simultaneously. For OGPO+CA (early 56% → mid 78% → late 94% success), the same plot tracks <span class="arithmatex">\(y=x\)</span> tightly throughout training — i.e. conservative advantages don't just gate <em>when</em> gradients fire, they visibly improve the <em>calibration</em> of the critic's own value estimates as a side effect. This carries over to image observations too (Fig. 8, ROBOMIMIC pixel tasks): plain success-buffer regularization (OGPO+) alone is not sufficient to reach convergence, whereas adding conservative advantages (OGPO+CA) both prevents the dip and stabilizes training in this much higher-dimensional setting — while DSRL and EXPO fail to converge at all on these image tasks when no offline data is present in the replay buffer.</p>
+<p><strong>Fix 3 — Q-variance reduction (optional, larger effect on pixel-based critics).</strong> Instead of bootstrapping the TD target from a single sampled next action, average over <span class="arithmatex">\(N_{\mathrm{vr}}\)</span> i.i.d. samples:</p>
+<div class="arithmatex">\[
+L_{\text{critic,vr}}(\phi) = \mathbb E\Big[\big(Q(s_t,a_t) - (r_t + \gamma \cdot \tfrac1{N_{\mathrm{vr}}}\textstyle\sum_i Q_{\mathrm{targ}}(s_{t+1}, a_{t+1}^{(i)}))\big)^2\Big].
+\]</div>
+<p>Plain Monte-Carlo variance reduction on the bootstrap target — always helps a little, more so when the critic itself is harder to learn (pixels).</p>
+<p><strong>(Optional) Best-of-N inference.</strong> The motivation is the <strong>verification–generation gap</strong>: in many domains (language modeling included), judging how good a candidate is ("verification," i.e. what a critic does) is an easier learning problem than producing a good candidate from scratch ("generation," i.e. what the policy does). If that gap holds, it should pay to <em>generate several</em> candidates and let the (easier-to-train) critic pick the best one, rather than relying on the policy alone. Concretely (Eq. 4.4 in the paper):</p>
+<div class="arithmatex">\[
+a_{\mathrm{BoN},t}:=\arg\max\Big\{Q_{\mathrm{targ}}(s_t,a_t^{(i)})\ :\ a_t^{(1)},\dots,a_t^{(N)}\overset{\text{i.i.d.}}{\sim}\pi_{\theta_{\mathrm{EMA}}}(\cdot\mid s_t)\Big\},
+\]</div>
+<p>i.e. sample <span class="arithmatex">\(N\)</span> full denoising rollouts from the (EMA-smoothed) policy at inference time, score each with the critic, deploy only the top-scoring one. OGPO+ uses a slightly modified critic <span class="arithmatex">\(Q_{\mathrm{BoN}}\)</span> for this ranking step (Appendix A.1). Empirically, though, the paper finds this gives only <em>marginal</em> additional gains once OGPO+/OGPO+CA are already in place — because the policy is <em>already</em> being aggressively steered by PPO toward high-<span class="arithmatex">\(Q\)</span> actions, so there's less of a generation/verification gap left for BoN to exploit than in, say, language modeling. The success-buffer regularizer (Fix 1) remains the crucial ingredient; the authors recommend skipping Best-of-N whenever inference-time compute is constrained, treating it more as a sanity check on critic quality than a real driver of improvement.</p>
+<h2 id="part-v-results-and-takeaways">Part V — Results and takeaways<a class="headerlink" href="#part-v-results-and-takeaways" title="Permanent link">&para;</a></h2>
+<h3 id="9-headline-empirical-results">9. Headline empirical results<a class="headerlink" href="#9-headline-empirical-results" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>~10× more sample-efficient than DPPO</strong> (the on-policy baseline) at matched final success rate on Robomimic Square/Transport — the direct payoff of moving TD-learning outside the denoising loop.</li>
+<li><strong>Only method that can fine-tune a badly-initialized BC policy (clipped to ≤50% success) to near-full success with <em>zero</em> expert data in the online replay buffer</strong> — steering (DSRL) and residual (EXPO) baselines need a base policy that's already decent, since they can't move outside its support; OGPO can, because it updates every denoising step.</li>
+<li>Table 1 in the paper is a useful cheat-sheet of <em>when full finetuning matters</em>. Each method gets two marks per row — <strong>left</strong>: does it converge to high success with <em>task-specific</em> hyperparameter tuning; <strong>right</strong>: does it still converge with <em>one fixed</em> hyperparameter setting shared across all tasks in that category (harder bar, more realistic for deployment):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align: center;">OGPO(+)</th>
+<th style="text-align: center;">QC</th>
+<th style="text-align: center;">DSRL</th>
+<th style="text-align: center;">EXPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mixed data quality</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✗ / ✗</td>
+</tr>
+<tr>
+<td>High-precision tasks</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✗ / ✗</td>
+<td style="text-align: center;">✓ / ✓</td>
+</tr>
+<tr>
+<td>Partial demonstrations</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✗ / ✗</td>
+</tr>
+<tr>
+<td>Long horizon</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✗</td>
+<td style="text-align: center;">✓ / ✗</td>
+<td style="text-align: center;">✗ / ✗</td>
+</tr>
+<tr>
+<td>Dense / dexterous</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✗</td>
+<td style="text-align: center;">✓ / ✓</td>
+</tr>
+<tr>
+<td>High sample efficiency</td>
+<td style="text-align: center;">✓ / ✓</td>
+<td style="text-align: center;">✓ / ✗</td>
+<td style="text-align: center;">✗ / ✗</td>
+<td style="text-align: center;">✓ / ✗</td>
+</tr>
+</tbody>
+</table>
+<p>Reading it row by row: OGPO is the <em>only</em> method with a "✓/✓" on every single criterion — it holds up across mixed-data-quality, high-precision, partial-demo, long-horizon, dexterous, <em>and</em> sample-efficient settings simultaneously, without per-task hyperparameter tuning. Every baseline fails outright (✗) on at least one axis: DSRL on high-precision tasks, EXPO on mixed-quality/partial-demo data, and both QC and DSRL lose the "high sample efficiency" mark once hyperparameters are fixed across tasks. This is the concrete, task-by-task evidence behind the headline claim that full finetuning specifically helps in <em>exactly</em> the regimes where a frozen decoder's limited expressiveness (Camp 1's structural ceiling, §4) becomes the bottleneck.
+- A comparison across policy-extraction methods (paper §6.2) finds plain PPO-style likelihood extraction beats AWR-style exponentiated-advantage reweighting (à la RECAP's <span class="arithmatex">\(\exp(A/\beta)\)</span> mechanism) <em>in this online setting</em> — the authors' explanation is that PPO's clipped-ratio update is simply more aggressive at exploiting the critic than a softly-reweighted regression loss, and that aggression is exactly what's needed when you can generate unlimited free on-policy denoising rollouts. This is a nice point of contrast with RECAP, where the advantage-conditioning/Bayes'-rule route was preferred specifically <em>because</em> the offline setting made an on-policy method infeasible.</p>
+<h3 id="10-a-surprising-finding-full-finetuning-does-not-collapse-exploration">10. A surprising finding: full finetuning does not collapse exploration<a class="headerlink" href="#10-a-surprising-finding-full-finetuning-does-not-collapse-exploration" title="Permanent link">&para;</a></h3>
+<p>Naively, aggressively maximizing a sparse reward with full-policy updates should quickly collapse the action distribution to a single deterministic optimum — bad for continued exploration and for tasks with multiple valid solution modes (e.g. going left vs. right around an obstacle). OGPO empirically does <em>not</em> do this. The mechanism the paper identifies, via UMAP visualization of sampled actions against <span class="arithmatex">\(\nabla_a Q(s,a)\)</span>:</p>
+<ul>
+<li>In states where the critic gradient <span class="arithmatex">\(\nabla_a Q(s,a)\)</span> has strong ensemble consensus (a clear "better direction" exists), OGPO sharply contracts the policy <em>along that direction</em> — good, since there's a genuinely correct answer there.</li>
+<li>In states admitting multiple near-equally-good actions, the critic gradient has no consensus direction, and OGPO preserves substantial action variance <em>orthogonal</em> to whatever local gradient exists — because perturbing the action along that direction has ~zero first-order effect on <span class="arithmatex">\(Q\)</span>, so PPO has no incentive to squash it.</li>
+</ul>
+<p>The net effect: variance gets "stretched" where it matters for staying near separate high-value modes, and "squeezed" only along directions that actually affect success — multimodality (e.g. both branches of a bimanual insertion task) survives training even though the objective has no explicit entropy bonus or diversity term.</p>
+<h3 id="11-where-this-sits-relative-to-what-you-already-know">11. Where this sits relative to what you already know<a class="headerlink" href="#11-where-this-sits-relative-to-what-you-already-know" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RECAP (π0.6)</th>
+<th>OGPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setting</td>
+<td>Offline / iterated-batch (train from a fixed accumulated dataset, redeploy, repeat)</td>
+<td>Online (continuously interleaves environment collection and training)</td>
+</tr>
+<tr>
+<td>What the "critic" looks like</td>
+<td>Distributional value function <span class="arithmatex">\(p_\phi(V\mid o,\ell)\)</span>, trained via cross-entropy on discretized Monte-Carlo returns</td>
+<td>Ensemble of scalar <span class="arithmatex">\(Q_\phi(s,a)\)</span>, trained via ordinary TD/Bellman-residual regression</td>
+</tr>
+<tr>
+<td>How the policy is actually updated</td>
+<td><em>No</em> separate optimization step — Bayes' rule shows <span class="arithmatex">\(\hat\pi(a\mid o,I{=}1)\)</span> <strong>is</strong> the reference policy conditioned on an "improvement" flag; training is just ordinary flow-matching MLE on <span class="arithmatex">\((o,a,I)\)</span>-labeled real data</td>
+<td>Genuine on-policy PPO gradient steps on freshly (re)sampled denoising trajectories, using the critic purely as a terminal reward</td>
+</tr>
+<tr>
+<td>Why no backprop through the GCP / no explicit density needed</td>
+<td>Bayes' rule sidesteps ever needing <span class="arithmatex">\(\pi_{\text{ref}}\)</span>'s density — CFG-style conditioning does the work</td>
+<td>Zeroth-order (likelihood-ratio) PPO sidesteps needing <span class="arithmatex">\(\nabla_a Q\)</span> or backprop through the <span class="arithmatex">\(K\)</span>-step chain</td>
+</tr>
+<tr>
+<td>Cost model exploited</td>
+<td>Data reuse across policy iterations (the <em>dataset</em> grows, re-finetune from scratch each round)</td>
+<td>Sample-cost asymmetry <em>within</em> one iteration (real transitions are expensive; denoising rollouts are free)</td>
+</tr>
+</tbody>
+</table>
+<p>Both papers are answers to the same underlying question — "how do you improve a diffusion/flow policy with a learned value signal, without a tractable policy log-likelihood to plug into standard policy-gradient math" — arrived at from two different constraints (offline-batch vs. online-interactive) and landing on two different but structurally similar tricks (Bayes'-rule conditioning vs. severed-MDP + zeroth-order PPO). In §2.5's four-way classification: RECAP never leaves the <strong>offline</strong> cell (each round retrains on a fixed, if periodically-refreshed, dataset); OGPO lives in the <strong>online</strong> row throughout, with an on-policy policy update layered on top of an off-policy critic.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Patil et al. <a href="https://arxiv.org/abs/2605.03065">OGPO: Sample Efficient Full-Finetuning of Generative Control Policies</a>.</li>
+<li>Ren et al. <a href="https://arxiv.org/abs/2409.00588">Diffusion Policy Policy Optimization</a> (DPPO) — the on-policy bi-level MDP baseline OGPO builds on and compares against.</li>
+<li>Wagenmaker et al. <a href="https://arxiv.org/abs/2506.13887">Steering Your Generalists: Improving Robotic Policies with Value-Guided Action Selection</a> (DSRL) — noise-steering baseline.</li>
+<li>Dong et al. <a href="https://arxiv.org/abs/2507.07986">EXPO: Stable Reinforcement Learning with Expressive Policies</a> — residual-correction baseline.</li>
+<li>Zhang et al. <a href="https://arxiv.org/abs/2505.22094">ReinFlow: Fine-tuning Flow Matching Policy with Online Reinforcement Learning</a> — flow-policy extension of DPPO; source of the debiased-noise-injection idea OGPO adapts.</li>
+</ol>
+<p></font></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年8月14日 11:05:09</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2026年8月14日 11:05:09</span>
+      
+    
+  </small>
+</div>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Is this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9h4m4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21H9m0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03V19Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12h-4M15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3h9m0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97V5Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! 
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! 
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../EmbodimentTax/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Embodiment Tax (blog)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Embodiment Tax (blog)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../NeRF/Theory/" class="md-footer__link md-footer__link--next" aria-label="下一页: NeRF">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                NeRF
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://github.com/sorceressyidi"  target="_blank" rel="noopener">sorceressyidi</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sorceressyidi/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
